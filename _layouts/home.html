@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {% assign default_paths = site.pages | map: "path" %}
+  {% assign page_paths = site.header_pages | default: default_paths %}
+
+  <h1 class="page-heading">Welcome! This is the documentation for Microshare.</h1>
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for path in page_paths %}
+      <li>
+        {% assign my_page = site.pages | where: "path", path | first %}
+        {% if my_page.title %}
+        <a class="post-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

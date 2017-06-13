@@ -1,18 +1,11 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Accessed via {{ site.title }}
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+
 title: Microshare Documentation
 email: contact@microshare.io
 description: > # this means to ignore newlines until "baseurl:"
@@ -26,12 +19,10 @@ github_username:  microshare
 
 # Build settings
 markdown: kramdown
-#theme: minima
+theme: minima
 gems:
   - jekyll-feed
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
-
-
-theme: jekyll-theme-minimal
