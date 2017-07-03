@@ -1,28 +1,36 @@
-# Site settings
-# Accessed via {{ site.title }}
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
 
-collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
+kramdown:
+  auto_ids: true
 
-title: Microshare Documentation
-email: contact@microshare.io
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: microshare_io
-github_username:  microshare
+# Permalinks
+permalink:        pretty
 
-# Build settings
-markdown: kramdown
-theme: minima
 gems:
-  - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-toc
+
 exclude:
   - Gemfile
   - Gemfile.lock
+
+baseurl: ""
+url: ""
+
+# Info
+title: Microshare
+description: Store, Protect & Share the data you want, the way you want.
+email: contact@microshare.io
+twitter: microshare_io
+github: microshare
+social_logo_path: /assets/brand/default-icon.png
+social_image_path: /assets/brand/default-icon.png
+
+# Custom vars
+current_version:  0.1
+docs_version:     0.1
+repo:             https://github.com/microshare/microshare.github.io
+blog:             https://microshare.io/blog
