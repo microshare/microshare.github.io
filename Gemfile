@@ -11,7 +11,7 @@ group :jekyll_plugins do
   #gem 'jekyll', '~> 3.4.3'
   gem 'jekyll-redirect-from', '~> 0.12.1'
   gem 'jekyll-sitemap', '~> 1.0.0'
-  gem 'jekyll-toc', '~> 0.3.0.pre1'
+  gem 'jekyll-toc'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
