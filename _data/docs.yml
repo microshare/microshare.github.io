@@ -1,22 +1,24 @@
 - title: Meet Microshare
-  docs:
-  - whats-new
-  - technical-overview
-  - why-microshare
+  pages:
+  - title: Welcome
+  - title: What's new?
+  - title: Technical Overview
+  - title: Why Microshare?
 
 - title: Getting Started
-  docs:
-  - installation
-  - facts
-  - tutorial
-  - data-ingestion
-  - api-overview
-  - data-sharing
-  - data-pipelines
+  pages:
+  - title: Quick Start
+  - title: Facts Guide
+  - title: Tutorial
+  - title: Data Ingestion
+  - title: API Overview
+  - title: Data Sharing
+  - title: Data Pipelines
 
-- title: Referenced Documentation and Advanced Topics
-  docs:
-  - api
-  - configuration
-  - external-processes
-  - maintenance
+- title: Advanced
+  pages:
+  - title: API Reference
+  - title: Configuration
+  - title: External Processes
+  - title: Maintenance
+  - title: Contributing
