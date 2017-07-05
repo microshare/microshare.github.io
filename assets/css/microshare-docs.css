@@ -47,3 +47,28 @@
 .bd-sidebar {
   background-color: #f1f6f9;
 }
+
+/* TOC */
+.toc-list {
+  padding-left: 0;
+  border-left: 1px solid #eee;
+}
+
+.toc-list ul {
+  padding-left: 1rem;
+}
+
+.toc-item {
+  display: block;
+}
+
+.toc-item a {
+  display: block;
+  padding: .125rem 1.5rem;
+  color: #99979c;
+}
+
+.toc-item a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
