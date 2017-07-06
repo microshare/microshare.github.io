@@ -23,3 +23,5 @@ Microshare™ is a Data Governance Platform for the Internet of Every Thing, pro
 The Policy Fabric™ platform and product suite can take massive amounts of data, stored in thousands of locations, generated from thousands of sources and put it into the hands of a single, empowered individual to use as needed.
 
 You can access the Microshare platform [right here](https://msaf.microshare.io/composer).
+
+{% include image.html url="/assets/img/banner.jpg" description="Banner" %}
