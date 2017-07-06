@@ -1,0 +1,4054 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API - Microshare</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>body {
+  position: relative;
+}
+
+h1 {
+  margin-top: 5px;
+}
+
+.api-content>h2:not(:first-child) {
+  margin-top: 3rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.nav.nav-tabs>li>a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.tab-content {
+  padding-top: 8px;
+}
+
+.table {
+  margin-bottom: 8px;
+}
+
+pre {
+  border-radius: 0px;
+  border: none;
+}
+
+.request {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.response-text-sample {
+  padding: 0px !important;
+}
+
+.response-text-sample pre {
+  margin-bottom: 0px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 220px;
+  width: 220px;
+  height: 100%;
+  margin-left: -220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#sidebar-wrapper ul {
+  width: 220px;
+  padding-left: 0;
+  border-right: 1px solid #eee;
+}
+
+#sidebar-wrapper ul li a:hover {
+  background: inherit;
+  text-decoration: none;
+}
+
+#sidebar-wrapper ul li a {
+  display: block;
+  padding: .125rem 1.5rem;
+  color: #99979c;
+}
+
+#sidebar-wrapper ul li ul {
+  padding-left: 30px;
+  font-size: 0.875rem;
+}
+
+#sidebar-wrapper ul li ul li a {
+  padding: 1px 0px;
+  padding-right: 3px;
+}
+
+#sidebar-wrapper ul li a:hover, #sidebar-wrapper ul li a:focus {
+  color: #215b7a;
+}
+
+#sidebar-wrapper ul li>a.active {
+  color: #215b7a;
+  border-right: solid 2px #215b7a;
+}
+
+#sidebar-wrapper ul li a:not(.active)+ul {
+  display: none;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px 15px 15px 250px;
+}
+
+.doc-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+
+/* Anchors */
+
+.anchorjs-link {
+  padding-right: .25em !important;
+  margin-left: -.75em !important;
+  color: inherit;
+}
+
+*:hover>.anchorjs-link {
+  opacity: .75;
+  transition: color .16s linear;
+}
+
+*:hover>.anchorjs-link:hover, .anchorjs-link:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+</style>
+</head>
+<body data-spy="scroll" data-target="#sidebar-wrapper">
+<div id="sidebar-wrapper">
+    <ul id="main-menu" class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link" href="#doc-general-notes">Introduction</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#doc-api-structures">API structures</a>
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#struct-Robots">Robots</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#struct-Rules">Rules</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#struct-Shares">Shares</a>
+            </li>
+
+        </ul>
+    </li>
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="#folder-authentication">Authentication</a>
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-authentication-request-token">Request Token</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#folder-robots">Robots</a>
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-get-one-robot">Get one Robot</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-get-robots-by-rectype">Get Robots by recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-get-robots-by-tags-and-rectype">Get Robots by Tags and recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-create-one-robot">Create one Robot</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-create-one-robot-with-tags">Create one Robot with Tags</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-update-one-robot">Update one Robot</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-delete-one-robot">Delete one Robot</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-robots-test-one-rule">Test one Rule</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#folder-rules">Rules</a>
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-get-one-rule">Get one Rule</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-get-rules-by-rectype">Get Rules by recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-get-rules-by-tags-and-rectype">Get Rules by Tags and recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-create-one-rule">Create one Rule</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-create-one-rule-with-tags">Create one Rule with Tags</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-update-one-rule">Update one Rule</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-delete-one-rule">Delete one Rule</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-rules-test-one-robot">Test one Robot</a>
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="#folder-shares">Shares</a>
+        <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-get-one-share">Get one Share</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-get-shares-by-rectype">Get Shares by recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-get-shares-by-tags-and-rectype">Get Shares by Tags and recType</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-create-one-share">Create one Share</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-create-one-share-with-tags">Create one Share with Tags</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#request-shares-delete-one-share">Delete one Share</a>
+            </li>
+
+        </ul>
+    </li>
+
+</ul>
+
+</div>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 api-content">
+                <h1 class="doc-title">Microshare HTTP API</h1>
+
+                <h2 id="doc-general-notes">
+                    Introduction
+                </h2>
+
+                <p>Welcome to Microshare&rsquo;s API!</p>
+
+<p>This API allows you to create and manage your data within Microshare&rsquo;s data lake.</p>
+
+<p>With Shares, you&rsquo;ll be able to directly create, search, retrieve and delete data.</p>
+
+<p>Rules will allow you to share this data or limit its visibility.</p>
+
+<p>Robots are helpful scripts that run against your data to manipulate data structures, and perform actions initiated by the data itself.</p>
+
+
+
+                <h2 id="doc-api-structures">
+                    API structures
+                </h2>
+
+
+
+                    <h3 id="struct-Robots">
+                        Robots
+                    </h3>
+
+                    <p>Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake</p>
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>recType</th>
+                            <td>string</td>
+                            <td>Record type using the dot notation format (eg. io.microshare.test)</td>
+                        </tr>
+
+                        <tr>
+                            <th>id</th>
+                            <td>ObjectId</td>
+                            <td>An auto-generated unique identifier for the robot</td>
+                        </tr>
+
+                        <tr>
+                            <th>name</th>
+                            <td>string</td>
+                            <td>Name of the robot</td>
+                        </tr>
+
+                        <tr>
+                            <th>desc</th>
+                            <td>string</td>
+                            <td>Description of the robot</td>
+                        </tr>
+
+                        <tr>
+                            <th>data</th>
+                            <td>JSON Object</td>
+                            <td>The data object contains a <strong>scope</strong> array with a list of scopes, a token under the <strong>auth</strong> key, the script of the robot under the <strong>script</strong> key, and a boolean <strong>isActive</strong> flag to activate or deactivate the robot</td>
+                        </tr>
+
+                    </table>
+
+
+
+                    <h3 id="struct-Rules">
+                        Rules
+                    </h3>
+
+                    <p>Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake</p>
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>recType</th>
+                            <td>string</td>
+                            <td>Record type using the dot notation format (eg. io.microshare.test)</td>
+                        </tr>
+
+                        <tr>
+                            <th>id</th>
+                            <td>ObjectId</td>
+                            <td>An auto-generated unique identifier for the rule</td>
+                        </tr>
+
+                        <tr>
+                            <th>name</th>
+                            <td>string</td>
+                            <td>Name of the rule</td>
+                        </tr>
+
+                        <tr>
+                            <th>desc</th>
+                            <td>string</td>
+                            <td>Description of the rule</td>
+                        </tr>
+
+                        <tr>
+                            <th>data</th>
+                            <td>JSON Object</td>
+                            <td>The data object contains an <strong>operations</strong> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the `POST /rule`</td>
+                        </tr>
+
+                    </table>
+
+
+
+                    <h3 id="struct-Shares">
+                        Shares
+                    </h3>
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <table class="table table-bordered">
+
+                        <tr>
+                            <th>recType</th>
+                            <td>string</td>
+                            <td>Record type using the dot notation format (eg. io.microshare.test)</td>
+                        </tr>
+
+                        <tr>
+                            <th>id</th>
+                            <td>ObjectId</td>
+                            <td>An auto-generated unique identifier for the share</td>
+                        </tr>
+
+                        <tr>
+                            <th>data</th>
+                            <td>JSON Object</td>
+                            <td>The data object is where your data is stored in our data lake</td>
+                        </tr>
+
+                    </table>
+
+
+
+
+
+
+                <div class="endpoints-group">
+                    <h3 id="folder-authentication">
+                        Authentication
+                    </h3>
+
+                    <div><p>Request and revoke tokens used to authenticate to our API</p>
+</div>
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-authentication-request-token">
+                                Request Token
+                            </h4>
+
+                            <div><p>Request an Authentification token required to use this API.</p>
+
+<p>You will need to provide username, password, as well as a valid API Key. You can manage your API keys in our <a href="https://msaf.microshare.io/composer#/keys">Keys Console</a>.</p>
+
+<p>The default scope is ALL:ALL, but you can replace it to request tokens that will allow limited operations. For example, if the scope is SHARE:READ the token will only allow you to read Shares.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-request-token-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-request-token-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-request-token-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" "https://auth.microshare.io/oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=password&scope=ALL:ALL"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-request-token-example-http">
+                                        <pre><code class="hljs http">POST /oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=password&scope=ALL:ALL HTTP/1.1
+Host: auth.microshare.io</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <hr>
+                        </div>
+
+
+
+
+                </div>
+
+                <div class="endpoints-group">
+                    <h3 id="folder-robots">
+                        Robots
+                    </h3>
+
+                    <div><p>Robots allow you to write scripts against your data stored as Shares in Microshare&rsquo;s data lake</p>
+</div>
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-get-one-robot">
+                                Get one Robot
+                            </h4>
+
+                            <div><p>Retrieve one robot by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-robot-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/robo/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-robot-example-http">
+                                        <pre><code class="hljs http">GET /robo/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-one-robot-responses-3a083079-fdb3-c45d-a347-40c849ebbd4e" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-one-robot-responses-3a083079-fdb3-c45d-a347-40c849ebbd4e">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:24:37 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Robot",
+            "createDate": {
+                "$date": 1495481284200
+            },
+            "_id": {
+                "$oid": "59233bc446e0fb0352c29400"
+            },
+            "data": {
+                "auth": "03e58d2671fb5c535086c5ca9c2c8d26c41ec248f90433e5f176546f5bf69aa5",
+                "scopes": [
+                    "SHARE:READ",
+                    "SHARE:WRITE",
+                    "SHARE:QUERY",
+                    "SHARE:DELETE",
+                    "SHARE:EXECUTE",
+                    "SHARE:POLICY"
+                ],
+                "script": "function main(text, auth) {print('Hello World');}",
+                "isActive": true
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59233bc446e0fb0352c29400",
+            "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250",
+            "updateDate": {
+                "$numberLong": "1495483298306"
+            },
+            "tstamp": {
+                "$numberLong": "1495483298306"
+            },
+            "origin": {
+                "desc": "Robo of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495481284200"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59233bc446e0fb0352c29400",
+                "checksum": "C0A2AC424C2645F519111D6B3497A057D47FC6EB5A2FE8053880DC1588BF57C8L1530"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-get-robots-by-rectype">
+                                Get Robots by recType
+                            </h4>
+
+                            <div><p>Retrieve all robots under a specific recType</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-robots-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-robots-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-robots-by-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/robo/:recType?details=true&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-robots-by-rectype-example-http">
+                                        <pre><code class="hljs http">GET /robo/:recType?details=true&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-robots-by-rectype-responses-39686951-4bac-8f3a-9ec0-5ae859ea1e0e" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-robots-by-rectype-responses-8bf912ce-75ed-4f06-2f24-95161e6883e1" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-robots-by-rectype-responses-39686951-4bac-8f3a-9ec0-5ae859ea1e0e">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:23:33 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "name": "New Robot",
+            "url": "/robo/io.microshare.test/59233bc446e0fb0352c29400",
+            "_id": {
+                "$oid": "59233bc446e0fb0352c29400"
+            },
+            "id": "59233bc446e0fb0352c29400",
+            "tstamp": "05/22/2017 08:01:38:306 PM",
+            "recType": "io.microshare.test"
+        },
+        {
+            "name": "New Robot Update",
+            "url": "/robo/io.microshare.test/592343c346e0fb0352c2940f",
+            "_id": {
+                "$oid": "592343c346e0fb0352c2940f"
+            },
+            "id": "592343c346e0fb0352c2940f",
+            "tstamp": "05/22/2017 08:04:55:379 PM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-robots-by-rectype-responses-8bf912ce-75ed-4f06-2f24-95161e6883e1">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:23:52 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Robot",
+            "createDate": {
+                "$date": 1495481284200
+            },
+            "_id": {
+                "$oid": "59233bc446e0fb0352c29400"
+            },
+            "data": {
+                "auth": "03e58d2671fb5c535086c5ca9c2c8d26c41ec248f90433e5f176546f5bf69aa5",
+                "scopes": [
+                    "SHARE:READ",
+                    "SHARE:WRITE",
+                    "SHARE:QUERY",
+                    "SHARE:DELETE",
+                    "SHARE:EXECUTE",
+                    "SHARE:POLICY"
+                ],
+                "script": "function main(text, auth) {print('Hello World');}",
+                "isActive": true
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59233bc446e0fb0352c29400",
+            "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250",
+            "updateDate": {
+                "$numberLong": "1495483298306"
+            },
+            "tstamp": {
+                "$numberLong": "1495483298306"
+            },
+            "origin": {
+                "desc": "Robo of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495481284200"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59233bc446e0fb0352c29400",
+                "checksum": "C0A2AC424C2645F519111D6B3497A057D47FC6EB5A2FE8053880DC1588BF57C8L1530"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        },
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Robot Update",
+            "createDate": {
+                "$date": 1495483331726
+            },
+            "_id": {
+                "$oid": "592343c346e0fb0352c2940f"
+            },
+            "data": {
+                "auth": "03e58d2671fb5c535086c5ca9c2c8d26c41ec248f90433e5f176546f5bf69aa5",
+                "scopes": [
+                    "SHARE:READ",
+                    "SHARE:WRITE",
+                    "SHARE:QUERY",
+                    "SHARE:DELETE",
+                    "SHARE:EXECUTE",
+                    "SHARE:POLICY"
+                ],
+                "script": "function main(text, auth) {print('Hello World');}",
+                "isActive": true
+            },
+            "creatorId": "vleput@point.io",
+            "id": "592343c346e0fb0352c2940f",
+            "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250",
+            "updateDate": {
+                "$numberLong": "1495483495379"
+            },
+            "tstamp": {
+                "$numberLong": "1495483495379"
+            },
+            "origin": {
+                "desc": "Robo of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495483331726"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "592343c346e0fb0352c2940f",
+                "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-get-robots-by-tags-and-rectype">
+                                Get Robots by Tags and recType
+                            </h4>
+
+                            <div><p>Retrieve all robots under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-robots-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-robots-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-robots-by-tags-and-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/robo/:recType/tags/:tag1/:tag2?details=true&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-robots-by-tags-and-rectype-example-http">
+                                        <pre><code class="hljs http">GET /robo/:recType/tags/:tag1/:tag2?details=true&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-robots-by-tags-and-rectype-responses-bd2c5f79-5282-cc28-3e15-4fab7ffa7acb" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-robots-by-tags-and-rectype-responses-0087efb0-e2c7-e082-9b60-3572b90c8ea4" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-robots-by-tags-and-rectype-responses-bd2c5f79-5282-cc28-3e15-4fab7ffa7acb">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:43:39 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Robot with Tags",
+            "url": "/robo/io.microshare.test/59234d4046e0fb0352c29420",
+            "_id": {
+                "$oid": "59234d4046e0fb0352c29420"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59234d4046e0fb0352c29420",
+            "tstamp": "05/22/2017 08:42:40:565 PM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-robots-by-tags-and-rectype-responses-0087efb0-e2c7-e082-9b60-3572b90c8ea4">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:44:28 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Robot with Tags",
+            "createDate": {
+                "$date": 1495485760565
+            },
+            "_id": {
+                "$oid": "59234d4046e0fb0352c29420"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "data": {
+                "auth": "03e58d2671fb5c535086c5ca9c2c8d26c41ec248f90433e5f176546f5bf69aa5",
+                "scopes": [
+                    "SHARE:READ",
+                    "SHARE:WRITE",
+                    "SHARE:QUERY",
+                    "SHARE:DELETE",
+                    "SHARE:EXECUTE",
+                    "SHARE:POLICY"
+                ],
+                "script": "function main(text, auth) {print('Hello World');}",
+                "isActive": true
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59234d4046e0fb0352c29420",
+            "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250",
+            "tstamp": {
+                "$numberLong": "1495485760565"
+            },
+            "origin": {
+                "desc": "Robo of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495485760565"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59234d4046e0fb0352c29420",
+                "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-create-one-robot">
+                                Create one Robot
+                            </h4>
+
+                            <div><p>Create a new robot by recType</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-robot-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Robot",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}' "https://api01.microshare.io/robo/:recType"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-robot-example-http">
+                                        <pre><code class="hljs http">POST /robo/:recType HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Robot",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-robot-responses-12d9c103-0708-c4f9-c0e3-95ce1b9a19e5" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-robot-responses-12d9c103-0708-c4f9-c0e3-95ce1b9a19e5">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:02:11 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Robot",
+            "url": "/robo/io.microshare.test/592343c346e0fb0352c2940f",
+            "_id": {
+                "$oid": "592343c346e0fb0352c2940f"
+            },
+            "id": "592343c346e0fb0352c2940f",
+            "tstamp": "05/22/2017 08:02:11:726 PM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-create-one-robot-with-tags">
+                                Create one Robot with Tags
+                            </h4>
+
+                            <div><p>Create a new robot by recType, with searchable tags. Tags allow you to search objects with the same recType. You can specify as many tags as you need.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-robot-with-tags-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-robot-with-tags-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-robot-with-tags-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Robot with Tags",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}' "https://api01.microshare.io/robo/:recType/tags/:tag1/:tag2"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-robot-with-tags-example-http">
+                                        <pre><code class="hljs http">POST /robo/:recType/tags/:tag1/:tag2 HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Robot with Tags",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-robot-with-tags-responses-9c3fc0ed-4bb9-eb93-f712-c8f564a768e8" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-robot-with-tags-responses-9c3fc0ed-4bb9-eb93-f712-c8f564a768e8">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:42:40 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Robot with Tags",
+            "url": "/robo/io.microshare.test/59234d4046e0fb0352c29420",
+            "_id": {
+                "$oid": "59234d4046e0fb0352c29420"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59234d4046e0fb0352c29420",
+            "tstamp": "05/22/2017 08:42:40:565 PM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-update-one-robot">
+                                Update one Robot
+                            </h4>
+
+                            <div><p>Update a robot by recType and object id. Updated robot is returned in the response.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-update-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-update-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-update-one-robot-example-curl">
+                                        <pre><code class="hljs curl">curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Robot Update",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}' "https://api01.microshare.io/robo/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-update-one-robot-example-http">
+                                        <pre><code class="hljs http">PUT /robo/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Robot Update",
+    "desc": "",
+    "data": {
+        "scopes": [
+            "SHARE:READ",
+            "SHARE:WRITE",
+            "SHARE:QUERY",
+            "SHARE:DELETE",
+            "SHARE:EXECUTE",
+            "SHARE:POLICY"
+        ],
+        "auth": "{{token}}",
+        "script": "function main(text, auth) {print('Hello World');}",
+        "isActive": true
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-update-one-robot-responses-f5c56434-c364-5270-8590-eb0b778874be" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-update-one-robot-responses-f5c56434-c364-5270-8590-eb0b778874be">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:04:55 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Robot Update",
+            "createDate": {
+                "$date": 1495483331726
+            },
+            "_id": {
+                "$oid": "592343c346e0fb0352c2940f"
+            },
+            "data": {
+                "auth": "03e58d2671fb5c535086c5ca9c2c8d26c41ec248f90433e5f176546f5bf69aa5",
+                "scopes": [
+                    "SHARE:READ",
+                    "SHARE:WRITE",
+                    "SHARE:QUERY",
+                    "SHARE:DELETE",
+                    "SHARE:EXECUTE",
+                    "SHARE:POLICY"
+                ],
+                "script": "function main(text, auth) {print('Hello World');}",
+                "isActive": true
+            },
+            "creatorId": "vleput@point.io",
+            "id": "592343c346e0fb0352c2940f",
+            "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250",
+            "updateDate": {
+                "$numberLong": "1495483495379"
+            },
+            "tstamp": {
+                "$numberLong": "1495483495379"
+            },
+            "origin": {
+                "desc": "Robo of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495483331726"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "592343c346e0fb0352c2940f",
+                "checksum": "3160B6B45EC5FB4885F80C45001E31FB6CA3F6587DF0D05331D3F3E0D437DDDDL250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-delete-one-robot">
+                                Delete one Robot
+                            </h4>
+
+                            <div><p>Permanently delete one robot by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-delete-one-robot-example-curl">
+                                        <pre><code class="hljs curl">curl -X DELETE -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/robo/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-delete-one-robot-example-http">
+                                        <pre><code class="hljs http">DELETE /robo/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-delete-one-robot-responses-023fa044-d5fd-c1a5-f9e1-620fee0c569e" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-delete-one-robot-responses-023fa044-d5fd-c1a5-f9e1-620fee0c569e">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:07:37 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "id": "59232d6746e0fb0352c293e4",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-robots-test-one-rule">
+                                Test one Rule
+                            </h4>
+
+                            <div><p>Test a rule configuration by recType and by object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-test-one-rule-example-curl">
+                                        <pre><code class="hljs curl">curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+	"content": "coming soon"
+}' "https://api01.microshare.io/rule/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-test-one-rule-example-http">
+                                        <pre><code class="hljs http">PATCH /rule/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"content": "coming soon"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>text/plain; charset=UTF-8</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:06:04 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+                </div>
+
+                <div class="endpoints-group">
+                    <h3 id="folder-rules">
+                        Rules
+                    </h3>
+
+                    <div><p>Rules allow you to share your data or limit its visibility</p>
+</div>
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-get-one-rule">
+                                Get one Rule
+                            </h4>
+
+                            <div><p>Retrieve one rule by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-rule-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/rule/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-rule-example-http">
+                                        <pre><code class="hljs http">GET /rule/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-one-rule-responses-be5d8866-2859-2eaa-211a-a853ac82b0ae" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-one-rule-responses-be5d8866-2859-2eaa-211a-a853ac82b0ae">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:27:28 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Rule",
+            "createDate": {
+                "$date": 1495505549233
+            },
+            "_id": {
+                "$oid": "59239a8d46e0fb0352c294a7"
+            },
+            "data": {
+                "resourceId": "",
+                "operations": [
+                    "Read",
+                    "Write",
+                    "Query",
+                    "Delete",
+                    "Execute",
+                    "Policy"
+                ],
+                "callingApp": "*",
+                "ownerApp": "*",
+                "resourceType": "objs",
+                "callingOrg": "*",
+                "ownerUser": "*",
+                "callingLoc": "*",
+                "ownerOrg": "io.microshare",
+                "callingRole": "*",
+                "callingUser": "*"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59239a8d46e0fb0352c294a7",
+            "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250",
+            "tstamp": {
+                "$numberLong": "1495505549233"
+            },
+            "origin": {
+                "desc": "Rule of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495505549232"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59239a8d46e0fb0352c294a7",
+                "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-get-rules-by-rectype">
+                                Get Rules by recType
+                            </h4>
+
+                            <div><p>Retrieve all rules under a specific recType</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-rules-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-rules-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-rules-by-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/rule/:recType?details=false&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-rules-by-rectype-example-http">
+                                        <pre><code class="hljs http">GET /rule/:recType?details=false&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-rules-by-rectype-responses-8b9ca2b1-1bd4-64ce-0a27-084a25a86a14" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-rules-by-rectype-responses-9dfaed1f-c10e-4928-cb88-cb7da4ea863d" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-rules-by-rectype-responses-8b9ca2b1-1bd4-64ce-0a27-084a25a86a14">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:25:34 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Rule",
+            "createDate": {
+                "$date": 1495505549233
+            },
+            "_id": {
+                "$oid": "59239a8d46e0fb0352c294a7"
+            },
+            "data": {
+                "resourceId": "",
+                "operations": [
+                    "Read",
+                    "Write",
+                    "Query",
+                    "Delete",
+                    "Execute",
+                    "Policy"
+                ],
+                "callingApp": "*",
+                "ownerApp": "*",
+                "resourceType": "objs",
+                "callingOrg": "*",
+                "ownerUser": "*",
+                "callingLoc": "*",
+                "ownerOrg": "io.microshare",
+                "callingRole": "*",
+                "callingUser": "*"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59239a8d46e0fb0352c294a7",
+            "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250",
+            "tstamp": {
+                "$numberLong": "1495505549233"
+            },
+            "origin": {
+                "desc": "Rule of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495505549232"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59239a8d46e0fb0352c294a7",
+                "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        },
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Rule",
+            "createDate": {
+                "$date": 1495506180835
+            },
+            "_id": {
+                "$oid": "59239d0446e0fb0352c294ad"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "data": {
+                "resourceId": "",
+                "operations": [
+                    "Read",
+                    "Write",
+                    "Query",
+                    "Delete",
+                    "Execute",
+                    "Policy"
+                ],
+                "callingApp": "*",
+                "ownerApp": "*",
+                "resourceType": "objs",
+                "callingOrg": "*",
+                "ownerUser": "*",
+                "callingLoc": "*",
+                "ownerOrg": "io.microshare",
+                "callingRole": "*",
+                "callingUser": "*"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59239d0446e0fb0352c294ad",
+            "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250",
+            "tstamp": {
+                "$numberLong": "1495506180835"
+            },
+            "origin": {
+                "desc": "Rule of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495506180835"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59239d0446e0fb0352c294ad",
+                "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-rules-by-rectype-responses-9dfaed1f-c10e-4928-cb88-cb7da4ea863d">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:25:56 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "name": "New Rule",
+            "url": "/rule/io.microshare.test/59239a8d46e0fb0352c294a7",
+            "_id": {
+                "$oid": "59239a8d46e0fb0352c294a7"
+            },
+            "id": "59239a8d46e0fb0352c294a7",
+            "tstamp": "05/23/2017 02:12:29:233 AM",
+            "recType": "io.microshare.test"
+        },
+        {
+            "name": "New Rule",
+            "url": "/rule/io.microshare.test/59239d0446e0fb0352c294ad",
+            "_id": {
+                "$oid": "59239d0446e0fb0352c294ad"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59239d0446e0fb0352c294ad",
+            "tstamp": "05/23/2017 02:23:00:835 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-get-rules-by-tags-and-rectype">
+                                Get Rules by Tags and recType
+                            </h4>
+
+                            <div><p>Retrieve all rules under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-rules-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-rules-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-rules-by-tags-and-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/rule/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-rules-by-tags-and-rectype-example-http">
+                                        <pre><code class="hljs http">GET /rule/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-rules-by-tags-and-rectype-responses-c6509036-9614-36bf-01ba-7f4fc155c7f5" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-rules-by-tags-and-rectype-responses-c94d1ab6-dfca-3e2c-1719-9a4d68f30eec" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-rules-by-tags-and-rectype-responses-c6509036-9614-36bf-01ba-7f4fc155c7f5">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:28:18 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Rule",
+            "createDate": {
+                "$date": 1495506180835
+            },
+            "_id": {
+                "$oid": "59239d0446e0fb0352c294ad"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "data": {
+                "resourceId": "",
+                "operations": [
+                    "Read",
+                    "Write",
+                    "Query",
+                    "Delete",
+                    "Execute",
+                    "Policy"
+                ],
+                "callingApp": "*",
+                "ownerApp": "*",
+                "resourceType": "objs",
+                "callingOrg": "*",
+                "ownerUser": "*",
+                "callingLoc": "*",
+                "ownerOrg": "io.microshare",
+                "callingRole": "*",
+                "callingUser": "*"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59239d0446e0fb0352c294ad",
+            "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250",
+            "tstamp": {
+                "$numberLong": "1495506180835"
+            },
+            "origin": {
+                "desc": "Rule of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495506180835"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59239d0446e0fb0352c294ad",
+                "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-rules-by-tags-and-rectype-responses-c94d1ab6-dfca-3e2c-1719-9a4d68f30eec">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:28:57 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Rule",
+            "url": "/rule/io.microshare.test/59239d0446e0fb0352c294ad",
+            "_id": {
+                "$oid": "59239d0446e0fb0352c294ad"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59239d0446e0fb0352c294ad",
+            "tstamp": "05/23/2017 02:23:00:835 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-create-one-rule">
+                                Create one Rule
+                            </h4>
+
+                            <div><p>Create a new rule by recType.</p>
+
+<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+
+<p>Parameters in the <code>data</code> object are described below:</p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>operations</td>
+<td align="center">array</td>
+<td align="right">The operations to which the rule will apply. Possible values are <code>Read</code>, <code>Write</code>, <code>Query</code>, <code>Delete</code>, <code>Execute</code>, <code>Policy</code></td>
+</tr>
+
+<tr>
+<td>resourceType</td>
+<td align="center">string</td>
+<td align="right">The type of resource to which the rule will apply. Common value is <code>objs</code> for the data stored in shares, but could also be <code>robos</code> to limit access or share robots</td>
+</tr>
+
+<tr>
+<td>resourceId</td>
+<td align="center">ObjectId</td>
+<td align="right">The id of the resource to which the rule will apply. Leave empty to apply the rule to all objects under the requested recType</td>
+</tr>
+
+<tr>
+<td><code>ownerUser</code>, <code>ownerOrg</code>, <code>ownerApp</code>, <code>callingUser</code>, <code>callingOrg</code>, <code>callingApp</code>, <code>callingRole</code>, <code>callingLoc</code></td>
+<td align="center">string</td>
+<td align="right">These 8 parameters define the rule itself by publishing or restricting access to the requested objects. Possible values are <code>*</code>, <code>&amp;</code>, <code>~</code>, <code>=</code> or a specific string</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-rule-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Rule",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}' "https://api01.microshare.io/rule/:recType"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-rule-example-http">
+                                        <pre><code class="hljs http">POST /rule/:recType HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Rule",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-rule-responses-aaf0f8d8-ef9c-da6b-b2bc-49bc21735b10" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-rule-responses-aaf0f8d8-ef9c-da6b-b2bc-49bc21735b10">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:12:29 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Rule",
+            "url": "/rule/io.microshare.test/59239a8d46e0fb0352c294a7",
+            "_id": {
+                "$oid": "59239a8d46e0fb0352c294a7"
+            },
+            "id": "59239a8d46e0fb0352c294a7",
+            "tstamp": "05/23/2017 02:12:29:233 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-create-one-rule-with-tags">
+                                Create one Rule with Tags
+                            </h4>
+
+                            <div><p>Create a new rule by recType, with searchable tags.</p>
+
+<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+
+<p>Tags allow you to later search objects with the same recType with a <code>GET</code> request. You can specify as many tags as you need.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-rule-with-tags-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-rule-with-tags-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-rule-with-tags-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Rule",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}' "https://api01.microshare.io/rule/:recType/tags/:tag1/:tag2"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-rule-with-tags-example-http">
+                                        <pre><code class="hljs http">POST /rule/:recType/tags/:tag1/:tag2 HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Rule",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-rule-with-tags-responses-c7d96584-04d2-33ae-295b-1998ecf5cb74" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-rule-with-tags-responses-c7d96584-04d2-33ae-295b-1998ecf5cb74">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:23:00 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "New Rule",
+            "url": "/rule/io.microshare.test/59239d0446e0fb0352c294ad",
+            "_id": {
+                "$oid": "59239d0446e0fb0352c294ad"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59239d0446e0fb0352c294ad",
+            "tstamp": "05/23/2017 02:23:00:835 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-update-one-rule">
+                                Update one Rule
+                            </h4>
+
+                            <div><p>Update a rule by recType and object id. Updated rule is returned in the response.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-update-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-update-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-update-one-rule-example-curl">
+                                        <pre><code class="hljs curl">curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "name": "New Rule Update",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}' "https://api01.microshare.io/rule/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-update-one-rule-example-http">
+                                        <pre><code class="hljs http">PUT /rule/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "New Rule Update",
+    "desc": "",
+    "data": {
+        "operations": [
+            "Read",
+            "Write",
+            "Query",
+            "Delete",
+            "Execute",
+            "Policy"
+        ],
+        "resourceType": "objs",
+        "resourceId": "",
+        "ownerUser": "*",
+        "ownerOrg": "io.microshare",
+        "ownerApp": "*",
+        "callingUser": "*",
+        "callingOrg": "*",
+        "callingApp": "*",
+        "callingRole": "*",
+        "callingLoc": "*"
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-update-one-rule-responses-dfceee9f-abec-8303-795a-aea41d1432c3" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-update-one-rule-responses-dfceee9f-abec-8303-795a-aea41d1432c3">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:30:37 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "New Rule Update",
+            "createDate": {
+                "$date": 1495505549233
+            },
+            "_id": {
+                "$oid": "59239a8d46e0fb0352c294a7"
+            },
+            "data": {
+                "resourceId": "",
+                "operations": [
+                    "Read",
+                    "Write",
+                    "Query",
+                    "Delete",
+                    "Execute",
+                    "Policy"
+                ],
+                "callingApp": "*",
+                "ownerApp": "*",
+                "resourceType": "objs",
+                "callingOrg": "*",
+                "ownerUser": "*",
+                "callingLoc": "*",
+                "ownerOrg": "io.microshare",
+                "callingRole": "*",
+                "callingUser": "*"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59239a8d46e0fb0352c294a7",
+            "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250",
+            "updateDate": {
+                "$numberLong": "1495506637279"
+            },
+            "tstamp": {
+                "$numberLong": "1495506637279"
+            },
+            "origin": {
+                "desc": "Rule of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495505549232"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59239a8d46e0fb0352c294a7",
+                "checksum": "8F268F41B5E729E1F3AD76A9E0779F682F3307A2D70A30CDE011DA6784BF7027L250"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-delete-one-rule">
+                                Delete one Rule
+                            </h4>
+
+                            <div><p>Permanently delete one rule by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-delete-one-rule-example-curl">
+                                        <pre><code class="hljs curl">curl -X DELETE -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/rule/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-delete-one-rule-example-http">
+                                        <pre><code class="hljs http">DELETE /rule/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-delete-one-rule-responses-2b5d307b-99d7-337b-20b9-c559bf20f0f0" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-delete-one-rule-responses-2b5d307b-99d7-337b-20b9-c559bf20f0f0">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 02:25:14 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "id": "59239cf246e0fb0352c294ac",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-rules-test-one-robot">
+                                Test one Robot
+                            </h4>
+
+                            <div><p>Test a robot configuration by recType and by object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-test-one-robot-example-curl">
+                                        <pre><code class="hljs curl">curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "robo": {
+        "name": "New Robot",
+        "desc": "",
+        "recType": "io.point.testtest",
+        "data": {
+            "scopes": [
+                "SHARE:READ",
+                "SHARE:WRITE"
+            ],
+            "auth": "{{token}}",
+            "script": "function main(text, auth) {print('Hello World');}"
+        }
+    },
+    "data": {
+        "objs": []
+    }
+}' "https://api01.microshare.io/robo/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-test-one-robot-example-http">
+                                        <pre><code class="hljs http">PATCH /robo/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "robo": {
+        "name": "New Robot",
+        "desc": "",
+        "recType": "io.point.testtest",
+        "data": {
+            "scopes": [
+                "SHARE:READ",
+                "SHARE:WRITE"
+            ],
+            "auth": "{{token}}",
+            "script": "function main(text, auth) {print('Hello World');}"
+        }
+    },
+    "data": {
+        "objs": []
+    }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>text/plain; charset=UTF-8</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Mon, 22 May 2017 20:06:04 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+                </div>
+
+                <div class="endpoints-group">
+                    <h3 id="folder-shares">
+                        Shares
+                    </h3>
+
+                    <div><p>Upload your data and easily share it with the Share API</p>
+</div>
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-get-one-share">
+                                Get one Share
+                            </h4>
+
+                            <div><p>Retrieve one share by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-share-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-share-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-one-share-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/share/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-one-share-example-http">
+                                        <pre><code class="hljs http">GET /share/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-one-share-responses-50bad8d9-2964-1777-af5f-9edfae9c4f75" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-one-share-responses-50bad8d9-2964-1777-af5f-9edfae9c4f75">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:15:41 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1495501715141
+            },
+            "_id": {
+                "$oid": "59238b9346e0fb0352c2948b"
+            },
+            "data": {
+                "hello": "world"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59238b9346e0fb0352c2948b",
+            "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+            "tstamp": {
+                "$numberLong": "1495501715141"
+            },
+            "origin": {
+                "tokendata": {
+                    "ip": "10.0.2.198",
+                    "id": "0d540f05-0dd9-4a78-b8b4-00416404da3a"
+                },
+                "desc": "Object of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495501715141"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59238b9346e0fb0352c2948b",
+                "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+                "remoteAddress": "99.230.49.67"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-get-shares-by-rectype">
+                                Get Shares by recType
+                            </h4>
+
+                            <div><p>Retrieve all shares under a specific recType</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-shares-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-shares-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-shares-by-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/share/:recType?details=false&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-shares-by-rectype-example-http">
+                                        <pre><code class="hljs http">GET /share/:recType?details=false&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-shares-by-rectype-responses-9928e381-0f4e-5534-8d9d-a60f956efeb4" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-shares-by-rectype-responses-d3486027-bf7a-9c87-7dcd-33a184d1799a" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-shares-by-rectype-responses-9928e381-0f4e-5534-8d9d-a60f956efeb4">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:19:00 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1495501715141
+            },
+            "_id": {
+                "$oid": "59238b9346e0fb0352c2948b"
+            },
+            "data": {
+                "hello": "world"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59238b9346e0fb0352c2948b",
+            "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+            "tstamp": {
+                "$numberLong": "1495501715141"
+            },
+            "origin": {
+                "tokendata": {
+                    "ip": "10.0.2.198",
+                    "id": "0d540f05-0dd9-4a78-b8b4-00416404da3a"
+                },
+                "desc": "Object of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495501715141"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59238b9346e0fb0352c2948b",
+                "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+                "remoteAddress": "99.230.49.67"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        },
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1495502001213
+            },
+            "_id": {
+                "$oid": "59238cb146e0fb0352c2948e"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "data": {
+                "hello": "world"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59238cb146e0fb0352c2948e",
+            "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+            "tstamp": {
+                "$numberLong": "1495502001213"
+            },
+            "origin": {
+                "tokendata": {
+                    "ip": "10.0.2.198",
+                    "id": "0d540f05-0dd9-4a78-b8b4-00416404da3a"
+                },
+                "desc": "Object of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495502001213"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59238cb146e0fb0352c2948e",
+                "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+                "remoteAddress": "99.230.49.67"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-shares-by-rectype-responses-d3486027-bf7a-9c87-7dcd-33a184d1799a">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:19:37 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 2,
+        "currentCount": 2
+    },
+    "objs": [
+        {
+            "name": "",
+            "url": "/share/io.microshare.test/59238b9346e0fb0352c2948b",
+            "_id": {
+                "$oid": "59238b9346e0fb0352c2948b"
+            },
+            "id": "59238b9346e0fb0352c2948b",
+            "tstamp": "05/23/2017 01:08:35:141 AM",
+            "recType": "io.microshare.test"
+        },
+        {
+            "name": "",
+            "url": "/share/io.microshare.test/59238cb146e0fb0352c2948e",
+            "_id": {
+                "$oid": "59238cb146e0fb0352c2948e"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59238cb146e0fb0352c2948e",
+            "tstamp": "05/23/2017 01:13:21:213 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-get-shares-by-tags-and-rectype">
+                                Get Shares by Tags and recType
+                            </h4>
+
+                            <div><p>Retrieve all shares under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+
+<hr />
+
+<h4>Query parameters available</h4>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th align="center">Type</th>
+<th align="right">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>details</td>
+<td align="center">boolean</td>
+<td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
+</tr>
+
+<tr>
+<td>page</td>
+<td align="center">int</td>
+<td align="right">Specifies the requested page, defaults to 1</td>
+</tr>
+
+<tr>
+<td>perPage</td>
+<td align="center">int</td>
+<td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
+</tr>
+
+<tr>
+<td>sort</td>
+<td align="center">string</td>
+<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-shares-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-shares-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-get-shares-by-tags-and-rectype-example-curl">
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-get-shares-by-tags-and-rectype-example-http">
+                                        <pre><code class="hljs http">GET /share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-get-shares-by-tags-and-rectype-responses-02ab16fe-7ccc-4498-268b-86d0b471ab13" data-toggle="tab">
+
+                                                Success - with details
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link"  href="#request-get-shares-by-tags-and-rectype-responses-771fe105-6940-7d47-c59d-9e933fc27044" data-toggle="tab">
+
+                                                Success - without details
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-get-shares-by-tags-and-rectype-responses-02ab16fe-7ccc-4498-268b-86d0b471ab13">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:29:23 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "vleput@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1495502001213
+            },
+            "_id": {
+                "$oid": "59238cb146e0fb0352c2948e"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "data": {
+                "hello": "world"
+            },
+            "creatorId": "vleput@point.io",
+            "id": "59238cb146e0fb0352c2948e",
+            "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+            "tstamp": {
+                "$numberLong": "1495502001213"
+            },
+            "origin": {
+                "tokendata": {
+                    "ip": "10.0.2.198",
+                    "id": "0d540f05-0dd9-4a78-b8b4-00416404da3a"
+                },
+                "desc": "Object of Type io.microshare.test",
+                "name": "io.microshare.test",
+                "createDate": {
+                    "$numberLong": "1495502001213"
+                },
+                "creatorId": "vleput@point.io",
+                "id": "59238cb146e0fb0352c2948e",
+                "checksum": "93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17",
+                "remoteAddress": "99.230.49.67"
+            },
+            "recType": "io.microshare.test",
+            "owner": {
+                "appid": "2FA9DF02-F4EC-4DA4-AEC1-0508E228328F",
+                "org": "io.point",
+                "user": "vleput@point.io"
+            }
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane" id="request-get-shares-by-tags-and-rectype-responses-771fe105-6940-7d47-c59d-9e933fc27044">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:29:41 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "",
+            "url": "/share/io.microshare.test/59238cb146e0fb0352c2948e",
+            "_id": {
+                "$oid": "59238cb146e0fb0352c2948e"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59238cb146e0fb0352c2948e",
+            "tstamp": "05/23/2017 01:13:21:213 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-create-one-share">
+                                Create one Share
+                            </h4>
+
+                            <div><p>Create a new share by recType. This inserts a new record into the Microshare data lake.</p>
+
+<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-share-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-share-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-share-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+    "hello": "world"
+}' "https://api01.microshare.io/share/:recType"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-share-example-http">
+                                        <pre><code class="hljs http">POST /share/:recType HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "hello": "world"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-share-responses-64736fa4-a809-01a1-c9a1-172ce1e9b98a" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-share-responses-64736fa4-a809-01a1-c9a1-172ce1e9b98a">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:08:35 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "",
+            "url": "/share/io.microshare.test/59238b9346e0fb0352c2948b",
+            "_id": {
+                "$oid": "59238b9346e0fb0352c2948b"
+            },
+            "id": "59238b9346e0fb0352c2948b",
+            "tstamp": "05/23/2017 01:08:35:141 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-create-one-share-with-tags">
+                                Create one Share with Tags
+                            </h4>
+
+                            <div><p>Create a new share by recType, with searchable tags. This inserts a new record into the Microshare data lake.</p>
+
+<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+
+<p>Tags allow you to later search objects with the same recType with a <code>GET</code> request. You can specify as many tags as you need.</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-share-with-tags-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-share-with-tags-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-create-one-share-with-tags-example-curl">
+                                        <pre><code class="hljs curl">curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
+	"hello": "world"
+}' "https://api01.microshare.io/share/:recType/tags/:tag1/:tag2"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-create-one-share-with-tags-example-http">
+                                        <pre><code class="hljs http">POST /share/:recType/tags/:tag1/:tag2 HTTP/1.1
+Host: api01.microshare.io
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+	"hello": "world"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-create-one-share-with-tags-responses-afb7cabb-5b89-a6fe-99ca-33463db2a0d8" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-create-one-share-with-tags-responses-afb7cabb-5b89-a6fe-99ca-33463db2a0d8">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:13:21 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "name": "",
+            "url": "/share/io.microshare.test/59238cb146e0fb0352c2948e",
+            "_id": {
+                "$oid": "59238cb146e0fb0352c2948e"
+            },
+            "tags": [
+                "foo",
+                "bar"
+            ],
+            "id": "59238cb146e0fb0352c2948e",
+            "tstamp": "05/23/2017 01:13:21:213 AM",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+
+                        <div class="request">
+
+                            <h4 id="request-shares-delete-one-share">
+                                Delete one Share
+                            </h4>
+
+                            <div><p>Permanently delete one share by recType and object id</p>
+</div>
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-share-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-share-example-http" data-toggle="tab">HTTP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="request-delete-one-share-example-curl">
+                                        <pre><code class="hljs curl">curl -X DELETE -H "Authorization: Bearer {{token}}" "https://api01.microshare.io/share/:recType/:id"</code></pre>
+                                    </div>
+                                    <div class="tab-pane" id="request-delete-one-share-example-http">
+                                        <pre><code class="hljs http">DELETE /share/:recType/:id HTTP/1.1
+Host: api01.microshare.io
+Authorization: Bearer {{token}}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="nav-item">
+                                        <a  class="nav-link active"  href="#request-delete-one-share-responses-cadf2e36-733e-03ec-59dd-9ceb86a04610" data-toggle="tab">
+
+                                                Response
+
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div class="tab-pane active" id="request-delete-one-share-responses-cadf2e36-733e-03ec-59dd-9ceb86a04610">
+                                        <table class="table table-bordered">
+                                            <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
+
+                                            <tr><th style="width: 20%;">content-encoding</th><td>gzip</td></tr>
+
+                                            <tr><th style="width: 20%;">content-type</th><td>application/json</td></tr>
+
+                                            <tr><th style="width: 20%;">date</th><td>Tue, 23 May 2017 01:18:55 GMT</td></tr>
+
+                                            <tr><th style="width: 20%;">status</th><td>200</td></tr>
+
+
+
+                                                <tr><td class="response-text-sample" colspan="2">
+                                                    <pre><code>{
+    "meta": {
+        "totalPages": 0,
+        "currentPage": 1,
+        "perPage": 0,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "id": "592331ce46e0fb0352c293ed",
+            "recType": "io.microshare.test"
+        }
+    ]
+}</code></pre>
+                                                </td></tr>
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <hr>
+                        </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.0.0/anchor.min.js"></script>
+<script>
+  (function () {
+    'use strict'
+    anchors.options.placement = 'left'
+    anchors.add('.api-content > h2, .api-content > h3, .api-content > h4, .api-content > h5, .endpoints-group > h3, .request > h4')
+  }())
+</script>
+</body>
+</html>
