@@ -72,3 +72,14 @@
   color: #007bff;
   text-decoration: none;
 }
+
+/* API Reference page */
+.api-main {
+  height: calc(100vh - 4rem);
+  padding: 0!important;
+  overflow: hidden;
+}
+
+.api-main iframe {
+  border: 0;
+}
