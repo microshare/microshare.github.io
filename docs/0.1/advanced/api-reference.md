@@ -1,7 +1,7 @@
 ---
-layout: docs
+layout: api
 title: API Reference
-description: Complete HTTP API Referenced
+description: Microshare HTTP API
 group: advanced
 redirect_from: "/advanced/"
 toc: true
