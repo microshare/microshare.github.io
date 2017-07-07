@@ -29,6 +29,11 @@ h5 {
   font-weight: bold;
 }
 
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .nav.nav-tabs>li>a {
   padding-top: 4px;
   padding-bottom: 4px;
@@ -168,6 +173,21 @@ pre code {
 .method-DELETE {
   color: #f93e3e;
 }
+
+.api-section {
+  margin-bottom: 2.5rem;
+}
+
+.request-url {
+  margin-bottom: 15px;
+  word-break: break-all;
+  border: 1px solid #e6e6e6;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  background-color: #f8f8f8;
+  letter-spacing: 0.3px;
+}
 </style>
 </head>
 <body data-spy="scroll" data-target="#sidebar-wrapper">
@@ -266,9 +286,9 @@ pre code {
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-test-one-rule">
+                <a class="nav-link" href="#request-robots-test-one-robot">
                   <small class="method-PATCH">PATCH</small>
-                  Test one Rule
+                  Test one Robot
                 </a>
             </li>
 
@@ -329,9 +349,9 @@ pre code {
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-test-one-robot">
+                <a class="nav-link" href="#request-rules-test-one-rule">
                   <small class="method-PATCH">PATCH</small>
-                  Test one Robot
+                  Test one Rule
                 </a>
             </li>
 
@@ -443,33 +463,33 @@ pre code {
                     <table class="table table-bordered">
 
                         <tr>
-                            <th>recType</th>
+                            <th><code>recType</code></th>
                             <td>string</td>
                             <td>Record type using the dot notation format (eg. io.microshare.test)</td>
                         </tr>
 
                         <tr>
-                            <th>id</th>
+                            <th><code>id</code></th>
                             <td>ObjectId</td>
                             <td>An auto-generated unique identifier for the robot</td>
                         </tr>
 
                         <tr>
-                            <th>name</th>
+                            <th><code>name</code></th>
                             <td>string</td>
                             <td>Name of the robot</td>
                         </tr>
 
                         <tr>
-                            <th>desc</th>
+                            <th><code>desc</code></th>
                             <td>string</td>
                             <td>Description of the robot</td>
                         </tr>
 
                         <tr>
-                            <th>data</th>
+                            <th><code>data</code></th>
                             <td>JSON Object</td>
-                            <td>The data object contains a <strong>scope</strong> array with a list of scopes, a token under the <strong>auth</strong> key, the script of the robot under the <strong>script</strong> key, and a boolean <strong>isActive</strong> flag to activate or deactivate the robot</td>
+                            <td>The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot</td>
                         </tr>
 
                     </table>
@@ -485,33 +505,33 @@ pre code {
                     <table class="table table-bordered">
 
                         <tr>
-                            <th>recType</th>
+                            <th><code>recType</th>
                             <td>string</td>
                             <td>Record type using the dot notation format (eg. io.microshare.test)</td>
                         </tr>
 
                         <tr>
-                            <th>id</th>
+                            <th><code>id</code></th>
                             <td>ObjectId</td>
                             <td>An auto-generated unique identifier for the rule</td>
                         </tr>
 
                         <tr>
-                            <th>name</th>
+                            <th><code>name</code></th>
                             <td>string</td>
                             <td>Name of the rule</td>
                         </tr>
 
                         <tr>
-                            <th>desc</th>
+                            <th><code>desc</code></th>
                             <td>string</td>
                             <td>Description of the rule</td>
                         </tr>
 
                         <tr>
-                            <th>data</th>
+                            <th><code>data</code></th>
                             <td>JSON Object</td>
-                            <td>The data object contains an <strong>operations</strong> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the `POST /rule`</td>
+                            <td>The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code></td>
                         </tr>
 
                     </table>
@@ -527,19 +547,19 @@ pre code {
                     <table class="table table-bordered">
 
                         <tr>
-                            <th>recType</th>
+                            <th><code>recType</code></th>
                             <td>string</td>
                             <td>Record type using the dot notation format (eg. io.microshare.test)</td>
                         </tr>
 
                         <tr>
-                            <th>id</th>
+                            <th><code>id</code></th>
                             <td>ObjectId</td>
                             <td>An auto-generated unique identifier for the share</td>
                         </tr>
 
                         <tr>
-                            <th>data</th>
+                            <th><code>data</code></th>
                             <td>JSON Object</td>
                             <td>The data object is where your data is stored in our data lake</td>
                         </tr>
@@ -568,14 +588,17 @@ pre code {
                                 <span class="method-POST">POST</span> Request Token
                             </h4>
 
-                            <div><p>Request an Authentification token required to use this API.</p>
+                            <div class="request-url">https://auth.microshare.io/oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=password&scope=ALL:ALL</div>
+
+                            <div class="api-section"><p>Request an Authentification token required to use this API.</p>
 
 <p>You will need to provide username, password, as well as a valid API Key. You can manage your API keys in our <a href="https://msaf.microshare.io/composer#/keys">Keys Console</a>.</p>
 
-<p>The default scope is ALL:ALL, but you can replace it to request tokens that will allow limited operations. For example, if the scope is SHARE:READ the token will only allow you to read Shares.</p>
+<p>The default scope is <code>ALL:ALL</code>, but you can replace it to request tokens that will allow limited operations. For example, if the scope is <code>SHARE:READ</code> the token will only allow you to read Shares.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-request-token-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-request-token-example-http" data-toggle="tab">HTTP</a></li>
@@ -618,10 +641,13 @@ Host: auth.microshare.io</code></pre>
                                 <span class="method-GET">GET</span> Get one Robot
                             </h4>
 
-                            <div><p>Retrieve one robot by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/:id</div>
+
+                            <div class="api-section"><p>Retrieve one robot by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-robot-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-robot-example-http" data-toggle="tab">HTTP</a></li>
@@ -639,7 +665,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -749,11 +776,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Robots by recType
                             </h4>
 
-                            <div><p>Retrieve all robots under a specific recType</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType?details=true&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all robots under a specific recType</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -766,25 +793,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -792,7 +819,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-robots-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-robots-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -810,7 +838,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1027,11 +1056,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Robots by Tags and recType
                             </h4>
 
-                            <div><p>Retrieve all robots under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/tags/:tag1/:tag2?details=true&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all robots under a specific <code>recType</code> and containing one or several <code>tags</code>. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -1044,25 +1073,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -1070,7 +1099,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-robots-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-robots-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -1088,7 +1118,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1251,10 +1282,13 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-POST">POST</span> Create one Robot
                             </h4>
 
-                            <div><p>Create a new robot by recType</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType</div>
+
+                            <div class="api-section"><p>Create a new robot by <code>recType</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-robot-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-robot-example-http" data-toggle="tab">HTTP</a></li>
@@ -1307,7 +1341,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1378,10 +1413,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-POST">POST</span> Create one Robot with Tags
                             </h4>
 
-                            <div><p>Create a new robot by recType, with searchable tags. Tags allow you to search objects with the same recType. You can specify as many tags as you need.</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/tags/:tag1/:tag2</div>
+
+                            <div class="api-section"><p>Create a new robot by <code>recType</code>, with searchable <code>tags</code>. Tags allow you to search objects with the same <code>recType</code>. You can specify as many tags as you need.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-robot-with-tags-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-robot-with-tags-example-http" data-toggle="tab">HTTP</a></li>
@@ -1434,7 +1472,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1509,10 +1548,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-PUT">PUT</span> Update one Robot
                             </h4>
 
-                            <div><p>Update a robot by recType and object id. Updated robot is returned in the response.</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/:id</div>
+
+                            <div class="api-section"><p>Update a robot by <code>recType</code> and object <code>id</code>. Updated robot is returned in the response.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-update-one-robot-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-update-one-robot-example-http" data-toggle="tab">HTTP</a></li>
@@ -1565,7 +1607,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1675,10 +1718,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-DELETE">DELETE</span> Delete one Robot
                             </h4>
 
-                            <div><p>Permanently delete one robot by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/:id</div>
+
+                            <div class="api-section"><p>Permanently delete one robot by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-robot-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-robot-example-http" data-toggle="tab">HTTP</a></li>
@@ -1696,7 +1742,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1757,43 +1804,77 @@ Authorization: Bearer {{token}}</code></pre>
 
                         <div class="request">
 
-                            <h4 id="request-robots-test-one-rule">
-                                <span class="method-PATCH">PATCH</span> Test one Rule
+                            <h4 id="request-robots-test-one-robot">
+                                <span class="method-PATCH">PATCH</span> Test one Robot
                             </h4>
 
-                            <div><p>Test a rule configuration by recType and by object id</p>
+                            <div class="request-url">https://api01.microshare.io/robo/:recType/:id</div>
+
+                            <div class="api-section"><p>Test a robot configuration by <code>recType</code> and by object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-rule-example-curl" data-toggle="tab">Curl</a></li>
-                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-rule-example-http" data-toggle="tab">HTTP</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-robot-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-robot-example-http" data-toggle="tab">HTTP</a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="request-test-one-rule-example-curl">
+                                    <div class="tab-pane active" id="request-test-one-robot-example-curl">
                                         <pre><code class="hljs curl">curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
-	"content": "coming soon"
-}' "https://api01.microshare.io/rule/:recType/:id"</code></pre>
+    "robo": {
+        "name": "New Robot",
+        "desc": "",
+        "recType": "io.point.testtest",
+        "data": {
+            "scopes": [
+                "SHARE:READ",
+                "SHARE:WRITE"
+            ],
+            "auth": "{{token}}",
+            "script": "function main(text, auth) {print('Hello World');}"
+        }
+    },
+    "data": {
+        "objs": []
+    }
+}' "https://api01.microshare.io/robo/:recType/:id"</code></pre>
                                     </div>
-                                    <div class="tab-pane" id="request-test-one-rule-example-http">
-                                        <pre><code class="hljs http">PATCH /rule/:recType/:id HTTP/1.1
+                                    <div class="tab-pane" id="request-test-one-robot-example-http">
+                                        <pre><code class="hljs http">PATCH /robo/:recType/:id HTTP/1.1
 Host: api01.microshare.io
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-	"content": "coming soon"
+    "robo": {
+        "name": "New Robot",
+        "desc": "",
+        "recType": "io.point.testtest",
+        "data": {
+            "scopes": [
+                "SHARE:READ",
+                "SHARE:WRITE"
+            ],
+            "auth": "{{token}}",
+            "script": "function main(text, auth) {print('Hello World');}"
+        }
+    },
+    "data": {
+        "objs": []
+    }
 }</code></pre>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
-                                        <a  class="nav-link active"  href="#request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5" data-toggle="tab">
+                                        <a  class="nav-link active"  href="#request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7" data-toggle="tab">
 
                                                 Response
 
@@ -1803,7 +1884,7 @@ Authorization: Bearer {{token}}
                                 </ul>
                                 <div class="tab-content">
 
-                                    <div class="tab-pane active" id="request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5">
+                                    <div class="tab-pane active" id="request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7">
                                         <table class="table table-bordered">
                                             <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
 
@@ -1848,10 +1929,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-GET">GET</span> Get one Rule
                             </h4>
 
-                            <div><p>Retrieve one rule by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/:id</div>
+
+                            <div class="api-section"><p>Retrieve one rule by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-rule-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-rule-example-http" data-toggle="tab">HTTP</a></li>
@@ -1869,7 +1953,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -1983,11 +2068,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Rules by recType
                             </h4>
 
-                            <div><p>Retrieve all rules under a specific recType</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType?details=false&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all rules under a specific recType</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -2000,25 +2085,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -2026,7 +2111,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-rules-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-rules-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -2044,7 +2130,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -2277,11 +2364,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Rules by Tags and recType
                             </h4>
 
-                            <div><p>Retrieve all rules under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all rules under a specific <code>recType</code> and containing one or several <code>tags</code>. Specify as many <code>tags</code> as you need, and objects containing all of these <code>tags</code> will be returned.</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -2294,25 +2381,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -2320,7 +2407,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-rules-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-rules-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -2338,7 +2426,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -2508,9 +2597,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-POST">POST</span> Create one Rule
                             </h4>
 
-                            <div><p>Create a new rule by recType.</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType</div>
 
-<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+                            <div class="api-section"><p>Create a new rule by <code>recType</code>.</p>
+
+<p>You must include a record type using the dot notation format (eg. <code>io.microshare.test</code>).</p>
 
 <p>Parameters in the <code>data</code> object are described below:</p>
 
@@ -2525,21 +2616,21 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>operations</td>
+<td><code>operations</code></td>
 <td align="center">array</td>
 <td align="right">The operations to which the rule will apply. Possible values are <code>Read</code>, <code>Write</code>, <code>Query</code>, <code>Delete</code>, <code>Execute</code>, <code>Policy</code></td>
 </tr>
 
 <tr>
-<td>resourceType</td>
+<td><code>resourceType</code></td>
 <td align="center">string</td>
 <td align="right">The type of resource to which the rule will apply. Common value is <code>objs</code> for the data stored in shares, but could also be <code>robos</code> to limit access or share robots</td>
 </tr>
 
 <tr>
-<td>resourceId</td>
+<td><code>resourceId</code></td>
 <td align="center">ObjectId</td>
-<td align="right">The id of the resource to which the rule will apply. Leave empty to apply the rule to all objects under the requested recType</td>
+<td align="right">The id of the resource to which the rule will apply. Leave empty to apply the rule to all objects under the requested <code>recType</code></td>
 </tr>
 
 <tr>
@@ -2551,7 +2642,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-rule-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-rule-example-http" data-toggle="tab">HTTP</a></li>
@@ -2618,7 +2710,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -2689,14 +2782,17 @@ Authorization: Bearer {{token}}
                                 <span class="method-POST">POST</span> Create one Rule with Tags
                             </h4>
 
-                            <div><p>Create a new rule by recType, with searchable tags.</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/tags/:tag1/:tag2</div>
 
-<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+                            <div class="api-section"><p>Create a new rule by <code>recType</code>, with searchable <code>tags</code>.</p>
 
-<p>Tags allow you to later search objects with the same recType with a <code>GET</code> request. You can specify as many tags as you need.</p>
+<p>You must include a record type using the dot notation format (eg. <code>io.microshare.test</code>).</p>
+
+<p>Tags allow you to later search objects with the same <code>recType</code> with a <code>GET</code> request. You can specify as many <code>tags</code> as you need.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-rule-with-tags-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-rule-with-tags-example-http" data-toggle="tab">HTTP</a></li>
@@ -2763,7 +2859,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -2838,10 +2935,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-PUT">PUT</span> Update one Rule
                             </h4>
 
-                            <div><p>Update a rule by recType and object id. Updated rule is returned in the response.</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/:id</div>
+
+                            <div class="api-section"><p>Update a rule by <code>recType</code> and object <code>id</code>. Updated rule is returned in the response.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-update-one-rule-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-update-one-rule-example-http" data-toggle="tab">HTTP</a></li>
@@ -2908,7 +3008,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3025,10 +3126,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-DELETE">DELETE</span> Delete one Rule
                             </h4>
 
-                            <div><p>Permanently delete one rule by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/:id</div>
+
+                            <div class="api-section"><p>Permanently delete one rule by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-rule-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-rule-example-http" data-toggle="tab">HTTP</a></li>
@@ -3046,7 +3150,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3107,73 +3212,47 @@ Authorization: Bearer {{token}}</code></pre>
 
                         <div class="request">
 
-                            <h4 id="request-rules-test-one-robot">
-                                <span class="method-PATCH">PATCH</span> Test one Robot
+                            <h4 id="request-rules-test-one-rule">
+                                <span class="method-PATCH">PATCH</span> Test one Rule
                             </h4>
 
-                            <div><p>Test a robot configuration by recType and by object id</p>
+                            <div class="request-url">https://api01.microshare.io/rule/:recType/:id</div>
+
+                            <div class="api-section"><p>Test a rule configuration by <code>recType</code> and by object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-robot-example-curl" data-toggle="tab">Curl</a></li>
-                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-robot-example-http" data-toggle="tab">HTTP</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-test-one-rule-example-curl" data-toggle="tab">Curl</a></li>
+                                    <li role="presentation" class="nav-item"><a class="nav-link" href="#request-test-one-rule-example-http" data-toggle="tab">HTTP</a></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="request-test-one-robot-example-curl">
+                                    <div class="tab-pane active" id="request-test-one-rule-example-curl">
                                         <pre><code class="hljs curl">curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer {{token}}" -d '{
-    "robo": {
-        "name": "New Robot",
-        "desc": "",
-        "recType": "io.point.testtest",
-        "data": {
-            "scopes": [
-                "SHARE:READ",
-                "SHARE:WRITE"
-            ],
-            "auth": "{{token}}",
-            "script": "function main(text, auth) {print('Hello World');}"
-        }
-    },
-    "data": {
-        "objs": []
-    }
-}' "https://api01.microshare.io/robo/:recType/:id"</code></pre>
+	"content": "coming soon"
+}' "https://api01.microshare.io/rule/:recType/:id"</code></pre>
                                     </div>
-                                    <div class="tab-pane" id="request-test-one-robot-example-http">
-                                        <pre><code class="hljs http">PATCH /robo/:recType/:id HTTP/1.1
+                                    <div class="tab-pane" id="request-test-one-rule-example-http">
+                                        <pre><code class="hljs http">PATCH /rule/:recType/:id HTTP/1.1
 Host: api01.microshare.io
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "robo": {
-        "name": "New Robot",
-        "desc": "",
-        "recType": "io.point.testtest",
-        "data": {
-            "scopes": [
-                "SHARE:READ",
-                "SHARE:WRITE"
-            ],
-            "auth": "{{token}}",
-            "script": "function main(text, auth) {print('Hello World');}"
-        }
-    },
-    "data": {
-        "objs": []
-    }
+	"content": "coming soon"
 }</code></pre>
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
-                                        <a  class="nav-link active"  href="#request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7" data-toggle="tab">
+                                        <a  class="nav-link active"  href="#request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5" data-toggle="tab">
 
                                                 Response
 
@@ -3183,7 +3262,7 @@ Authorization: Bearer {{token}}
                                 </ul>
                                 <div class="tab-content">
 
-                                    <div class="tab-pane active" id="request-test-one-robot-responses-e229a451-1338-af0b-0312-c872ee64c1b7">
+                                    <div class="tab-pane active" id="request-test-one-rule-responses-461cfac8-26a1-55f6-0452-3e65110057f5">
                                         <table class="table table-bordered">
                                             <tr><th style="width: 20%;">Status</th><td>200 OK</td></tr>
 
@@ -3228,10 +3307,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-GET">GET</span> Get one Share
                             </h4>
 
-                            <div><p>Retrieve one share by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType/:id</div>
+
+                            <div class="api-section"><p>Retrieve one share by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-one-share-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-one-share-example-http" data-toggle="tab">HTTP</a></li>
@@ -3249,7 +3331,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3353,11 +3436,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Shares by recType
                             </h4>
 
-                            <div><p>Retrieve all shares under a specific recType</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType?details=false&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all shares under a specific recType</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -3370,25 +3453,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -3396,7 +3479,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-shares-by-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-shares-by-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -3414,7 +3498,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3627,11 +3712,11 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Shares by Tags and recType
                             </h4>
 
-                            <div><p>Retrieve all shares under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort</div>
 
-<hr />
+                            <div class="api-section"><p>Retrieve all shares under a specific <code>recType</code> and containing one or several <code>tags</code>. Specify as many <code>tags</code> as you need, and objects containing all of these tags will be returned.</p>
 
-<h4>Query parameters available</h4>
+<h6>Query parameters available</h6>
 
 <table>
 <thead>
@@ -3644,25 +3729,25 @@ Authorization: Bearer {{token}}</code></pre>
 
 <tbody>
 <tr>
-<td>details</td>
+<td><code>details</code></td>
 <td align="center">boolean</td>
 <td align="right"><code>true</code> will return matching objects with their details, <code>false</code> will only return main information</td>
 </tr>
 
 <tr>
-<td>page</td>
+<td><code>page</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the requested page, defaults to 1</td>
 </tr>
 
 <tr>
-<td>perPage</td>
+<td><code>perPage</code></td>
 <td align="center">int</td>
 <td align="right">Specifies the number of objects to be returned per page, defaults to 999</td>
 </tr>
 
 <tr>
-<td>sort</td>
+<td><code>sort</code></td>
 <td align="center">string</td>
 <td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
 </tr>
@@ -3670,7 +3755,8 @@ Authorization: Bearer {{token}}</code></pre>
 </table>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-get-shares-by-tags-and-rectype-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-get-shares-by-tags-and-rectype-example-http" data-toggle="tab">HTTP</a></li>
@@ -3688,7 +3774,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3850,12 +3937,15 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-POST">POST</span> Create one Share
                             </h4>
 
-                            <div><p>Create a new share by recType. This inserts a new record into the Microshare data lake.</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType</div>
 
-<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+                            <div class="api-section"><p>Create a new share by <code>recType</code>. This inserts a new record into the Microshare data lake.</p>
+
+<p>You must include a record type using the dot notation format (eg. <code>io.microshare.test</code>).</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-share-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-share-example-http" data-toggle="tab">HTTP</a></li>
@@ -3880,7 +3970,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -3953,14 +4044,17 @@ Authorization: Bearer {{token}}
                                 <span class="method-POST">POST</span> Create one Share with Tags
                             </h4>
 
-                            <div><p>Create a new share by recType, with searchable tags. This inserts a new record into the Microshare data lake.</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType/tags/:tag1/:tag2</div>
 
-<p>You must include a record type using the dot notation format (eg. io.microshare.test).</p>
+                            <div class="api-section"><p>Create a new share by <code>recType</code>, with searchable <code>tags</code>. This inserts a new record into the Microshare data lake.</p>
 
-<p>Tags allow you to later search objects with the same recType with a <code>GET</code> request. You can specify as many tags as you need.</p>
+<p>You must include a record type using the dot notation format (eg. <code>io.microshare.test</code>).</p>
+
+<p>Tags allow you to later search objects with the same <code>recType</code> with a <code>GET</code> request. You can specify as many tags as you need.</p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-create-one-share-with-tags-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-create-one-share-with-tags-example-http" data-toggle="tab">HTTP</a></li>
@@ -3985,7 +4079,8 @@ Authorization: Bearer {{token}}
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -4062,10 +4157,13 @@ Authorization: Bearer {{token}}
                                 <span class="method-DELETE">DELETE</span> Delete one Share
                             </h4>
 
-                            <div><p>Permanently delete one share by recType and object id</p>
+                            <div class="request-url">https://api01.microshare.io/share/:recType/:id</div>
+
+                            <div class="api-section"><p>Permanently delete one share by <code>recType</code> and object <code>id</code></p>
 </div>
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Request</h6>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="nav-item"><a class="nav-link active" href="#request-delete-one-share-example-curl" data-toggle="tab">Curl</a></li>
                                     <li role="presentation" class="nav-item"><a class="nav-link" href="#request-delete-one-share-example-http" data-toggle="tab">HTTP</a></li>
@@ -4083,7 +4181,8 @@ Authorization: Bearer {{token}}</code></pre>
                             </div>
 
 
-                            <div>
+                            <div class="api-section">
+                                <h6>Sample Response</h6>
                                 <ul class="nav nav-tabs" role="tablist">
 
                                     <li role="presentation" class="nav-item">
@@ -4159,6 +4258,9 @@ Authorization: Bearer {{token}}</code></pre>
     'use strict'
     anchors.options.placement = 'left'
     anchors.add('.api-content > h2, .api-content > h3, .api-content > h4, .api-content > h5, .endpoints-group > h3, .request > h4')
+  }()),
+  (function () {
+    $('table').addClass("table table-bordered");
   }())
 </script>
 </body>
