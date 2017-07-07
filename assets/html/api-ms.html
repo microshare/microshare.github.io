@@ -47,6 +47,10 @@ pre {
   border: none;
 }
 
+pre code {
+  max-height: 400px;
+}
+
 .request {
   margin-top: 12px;
   margin-bottom: 24px;
@@ -142,6 +146,28 @@ pre {
   text-decoration: none;
   opacity: 1;
 }
+
+/* Methods */
+
+.method-GET {
+  color: #61affe;
+}
+
+.method-POST {
+  color: #49cc90;
+}
+
+.method-PUT {
+  color: #fca130;
+}
+
+.method-PATCH {
+  color: #50e3c2;
+}
+
+.method-DELETE {
+  color: #f93e3e;
+}
 </style>
 </head>
 <body data-spy="scroll" data-target="#sidebar-wrapper">
@@ -177,7 +203,10 @@ pre {
         <ul class="nav flex-column">
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-authentication-request-token">Request Token</a>
+                <a class="nav-link" href="#request-authentication-request-token">
+                  <small class="method-POST">POST</small>
+                  Request Token
+                </a>
             </li>
 
         </ul>
@@ -188,35 +217,59 @@ pre {
         <ul class="nav flex-column">
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-get-one-robot">Get one Robot</a>
+                <a class="nav-link" href="#request-robots-get-one-robot">
+                  <small class="method-GET">GET</small>
+                  Get one Robot
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-get-robots-by-rectype">Get Robots by recType</a>
+                <a class="nav-link" href="#request-robots-get-robots-by-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Robots by recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-get-robots-by-tags-and-rectype">Get Robots by Tags and recType</a>
+                <a class="nav-link" href="#request-robots-get-robots-by-tags-and-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Robots by Tags and recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-create-one-robot">Create one Robot</a>
+                <a class="nav-link" href="#request-robots-create-one-robot">
+                  <small class="method-POST">POST</small>
+                  Create one Robot
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-create-one-robot-with-tags">Create one Robot with Tags</a>
+                <a class="nav-link" href="#request-robots-create-one-robot-with-tags">
+                  <small class="method-POST">POST</small>
+                  Create one Robot with Tags
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-update-one-robot">Update one Robot</a>
+                <a class="nav-link" href="#request-robots-update-one-robot">
+                  <small class="method-PUT">PUT</small>
+                  Update one Robot
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-delete-one-robot">Delete one Robot</a>
+                <a class="nav-link" href="#request-robots-delete-one-robot">
+                  <small class="method-DELETE">DELETE</small>
+                  Delete one Robot
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-robots-test-one-rule">Test one Rule</a>
+                <a class="nav-link" href="#request-robots-test-one-rule">
+                  <small class="method-PATCH">PATCH</small>
+                  Test one Rule
+                </a>
             </li>
 
         </ul>
@@ -227,35 +280,59 @@ pre {
         <ul class="nav flex-column">
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-get-one-rule">Get one Rule</a>
+                <a class="nav-link" href="#request-rules-get-one-rule">
+                  <small class="method-GET">GET</small>
+                  Get one Rule
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-get-rules-by-rectype">Get Rules by recType</a>
+                <a class="nav-link" href="#request-rules-get-rules-by-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Rules by recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-get-rules-by-tags-and-rectype">Get Rules by Tags and recType</a>
+                <a class="nav-link" href="#request-rules-get-rules-by-tags-and-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Rules by Tags and recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-create-one-rule">Create one Rule</a>
+                <a class="nav-link" href="#request-rules-create-one-rule">
+                  <small class="method-POST">POST</small>
+                  Create one Rule
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-create-one-rule-with-tags">Create one Rule with Tags</a>
+                <a class="nav-link" href="#request-rules-create-one-rule-with-tags">
+                  <small class="method-POST">POST</small>
+                  Create one Rule with Tags
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-update-one-rule">Update one Rule</a>
+                <a class="nav-link" href="#request-rules-update-one-rule">
+                  <small class="method-PUT">PUT</small>
+                  Update one Rule
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-delete-one-rule">Delete one Rule</a>
+                <a class="nav-link" href="#request-rules-delete-one-rule">
+                  <small class="method-DELETE">DELETE</small>
+                  Delete one Rule
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-rules-test-one-robot">Test one Robot</a>
+                <a class="nav-link" href="#request-rules-test-one-robot">
+                  <small class="method-PATCH">PATCH</small>
+                  Test one Robot
+                </a>
             </li>
 
         </ul>
@@ -266,27 +343,45 @@ pre {
         <ul class="nav flex-column">
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-get-one-share">Get one Share</a>
+                <a class="nav-link" href="#request-shares-get-one-share">
+                  <small class="method-GET">GET</small>
+                  Get one Share
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-get-shares-by-rectype">Get Shares by recType</a>
+                <a class="nav-link" href="#request-shares-get-shares-by-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Shares by recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-get-shares-by-tags-and-rectype">Get Shares by Tags and recType</a>
+                <a class="nav-link" href="#request-shares-get-shares-by-tags-and-rectype">
+                  <small class="method-GET">GET</small>
+                  Get Shares by Tags and recType
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-create-one-share">Create one Share</a>
+                <a class="nav-link" href="#request-shares-create-one-share">
+                  <small class="method-POST">POST</small>
+                  Create one Share
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-create-one-share-with-tags">Create one Share with Tags</a>
+                <a class="nav-link" href="#request-shares-create-one-share-with-tags">
+                  <small class="method-POST">POST</small>
+                  Create one Share with Tags
+                </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#request-shares-delete-one-share">Delete one Share</a>
+                <a class="nav-link" href="#request-shares-delete-one-share">
+                  <small class="method-DELETE">DELETE</small>
+                  Delete one Share
+                </a>
             </li>
 
         </ul>
@@ -470,7 +565,7 @@ pre {
                         <div class="request">
 
                             <h4 id="request-authentication-request-token">
-                                Request Token
+                                <span class="method-POST">POST</span> Request Token
                             </h4>
 
                             <div><p>Request an Authentification token required to use this API.</p>
@@ -520,7 +615,7 @@ Host: auth.microshare.io</code></pre>
                         <div class="request">
 
                             <h4 id="request-robots-get-one-robot">
-                                Get one Robot
+                                <span class="method-GET">GET</span> Get one Robot
                             </h4>
 
                             <div><p>Retrieve one robot by recType and object id</p>
@@ -651,7 +746,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-robots-get-robots-by-rectype">
-                                Get Robots by recType
+                                <span class="method-GET">GET</span> Get Robots by recType
                             </h4>
 
                             <div><p>Retrieve all robots under a specific recType</p>
@@ -929,7 +1024,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-robots-get-robots-by-tags-and-rectype">
-                                Get Robots by Tags and recType
+                                <span class="method-GET">GET</span> Get Robots by Tags and recType
                             </h4>
 
                             <div><p>Retrieve all robots under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
@@ -1153,7 +1248,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-robots-create-one-robot">
-                                Create one Robot
+                                <span class="method-POST">POST</span> Create one Robot
                             </h4>
 
                             <div><p>Create a new robot by recType</p>
@@ -1280,7 +1375,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-robots-create-one-robot-with-tags">
-                                Create one Robot with Tags
+                                <span class="method-POST">POST</span> Create one Robot with Tags
                             </h4>
 
                             <div><p>Create a new robot by recType, with searchable tags. Tags allow you to search objects with the same recType. You can specify as many tags as you need.</p>
@@ -1411,7 +1506,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-robots-update-one-robot">
-                                Update one Robot
+                                <span class="method-PUT">PUT</span> Update one Robot
                             </h4>
 
                             <div><p>Update a robot by recType and object id. Updated robot is returned in the response.</p>
@@ -1577,7 +1672,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-robots-delete-one-robot">
-                                Delete one Robot
+                                <span class="method-DELETE">DELETE</span> Delete one Robot
                             </h4>
 
                             <div><p>Permanently delete one robot by recType and object id</p>
@@ -1663,7 +1758,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-robots-test-one-rule">
-                                Test one Rule
+                                <span class="method-PATCH">PATCH</span> Test one Rule
                             </h4>
 
                             <div><p>Test a rule configuration by recType and by object id</p>
@@ -1750,7 +1845,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-rules-get-one-rule">
-                                Get one Rule
+                                <span class="method-GET">GET</span> Get one Rule
                             </h4>
 
                             <div><p>Retrieve one rule by recType and object id</p>
@@ -1885,7 +1980,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-rules-get-rules-by-rectype">
-                                Get Rules by recType
+                                <span class="method-GET">GET</span> Get Rules by recType
                             </h4>
 
                             <div><p>Retrieve all rules under a specific recType</p>
@@ -2179,7 +2274,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-rules-get-rules-by-tags-and-rectype">
-                                Get Rules by Tags and recType
+                                <span class="method-GET">GET</span> Get Rules by Tags and recType
                             </h4>
 
                             <div><p>Retrieve all rules under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
@@ -2410,7 +2505,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-rules-create-one-rule">
-                                Create one Rule
+                                <span class="method-POST">POST</span> Create one Rule
                             </h4>
 
                             <div><p>Create a new rule by recType.</p>
@@ -2591,7 +2686,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-rules-create-one-rule-with-tags">
-                                Create one Rule with Tags
+                                <span class="method-POST">POST</span> Create one Rule with Tags
                             </h4>
 
                             <div><p>Create a new rule by recType, with searchable tags.</p>
@@ -2740,7 +2835,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-rules-update-one-rule">
-                                Update one Rule
+                                <span class="method-PUT">PUT</span> Update one Rule
                             </h4>
 
                             <div><p>Update a rule by recType and object id. Updated rule is returned in the response.</p>
@@ -2927,7 +3022,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-rules-delete-one-rule">
-                                Delete one Rule
+                                <span class="method-DELETE">DELETE</span> Delete one Rule
                             </h4>
 
                             <div><p>Permanently delete one rule by recType and object id</p>
@@ -3013,7 +3108,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-rules-test-one-robot">
-                                Test one Robot
+                                <span class="method-PATCH">PATCH</span> Test one Robot
                             </h4>
 
                             <div><p>Test a robot configuration by recType and by object id</p>
@@ -3130,7 +3225,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-shares-get-one-share">
-                                Get one Share
+                                <span class="method-GET">GET</span> Get one Share
                             </h4>
 
                             <div><p>Retrieve one share by recType and object id</p>
@@ -3255,7 +3350,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-shares-get-shares-by-rectype">
-                                Get Shares by recType
+                                <span class="method-GET">GET</span> Get Shares by recType
                             </h4>
 
                             <div><p>Retrieve all shares under a specific recType</p>
@@ -3529,7 +3624,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-shares-get-shares-by-tags-and-rectype">
-                                Get Shares by Tags and recType
+                                <span class="method-GET">GET</span> Get Shares by Tags and recType
                             </h4>
 
                             <div><p>Retrieve all shares under a specific recType and containing one or several tags. Specify as many tags as you need, and objects containing all of these tags will be returned.</p>
@@ -3752,7 +3847,7 @@ Authorization: Bearer {{token}}</code></pre>
                         <div class="request">
 
                             <h4 id="request-shares-create-one-share">
-                                Create one Share
+                                <span class="method-POST">POST</span> Create one Share
                             </h4>
 
                             <div><p>Create a new share by recType. This inserts a new record into the Microshare data lake.</p>
@@ -3855,7 +3950,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-shares-create-one-share-with-tags">
-                                Create one Share with Tags
+                                <span class="method-POST">POST</span> Create one Share with Tags
                             </h4>
 
                             <div><p>Create a new share by recType, with searchable tags. This inserts a new record into the Microshare data lake.</p>
@@ -3964,7 +4059,7 @@ Authorization: Bearer {{token}}
                         <div class="request">
 
                             <h4 id="request-shares-delete-one-share">
-                                Delete one Share
+                                <span class="method-DELETE">DELETE</span> Delete one Share
                             </h4>
 
                             <div><p>Permanently delete one share by recType and object id</p>
