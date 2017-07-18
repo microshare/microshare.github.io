@@ -7,5 +7,4 @@ redirect_from: "/advanced/"
 toc: true
 ---
 
-## API Reference
-A full API reference of our HTTP API can be found at [this link](https://msaf.microshare.io/resources/api-ms)
+# This page displays the file html/api-ms.html and this text won't be displayed
