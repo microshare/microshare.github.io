@@ -6,16 +6,29 @@ group: getting-started
 toc: true
 ---
 
-# What are robos?
+## What are robos?
 Pipeline/workflow agents for incoming data.  
 They run parallel to the data lake: listen to the data lake, write to the data lake.  
-Best practice: several robos chaining their recTypes, one for each action, that is your data pipeline.  
-<Example plus drawing here>  
+Best practice: several robos chaining their recTypes, one for each action, that is your data pipeline.
+
+//TODO drawing of an example of robos communicating with the data lake
+
 Each step is saved in the data lake, and reusable later. No such thing as too much data with microshare.  
 To use with rules.  
 Your biggest issue building a pipeline will be to choose the recTypes.  
 
-# What can I do with them?
+## How do I use them?
+### Accessing the UI
+server, composer, robos, create, update
+
+### Basic code (main function and import)
+
+### Triggered vs scheduled
+
+### Testing
+Important: the write doesn't really happen in a test so don't worry about polluting your data
+
+## What can I do with them?
 1. Data ingestion
 Listening and pulling incoming data.  
 2. Data parsing
@@ -24,6 +37,6 @@ Listening and pulling incoming data.
 5. External services triggers
 Ultimately, they write data in the lake. 
 
-# How do they work?
+## How do they work?
 Behind the scene each robo is an Akka Agent loaded with an ECMAScript 6 compatible script.  
 Our Java Service leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.
