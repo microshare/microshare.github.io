@@ -26,6 +26,7 @@ This is the config:
 For [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
 You can't do that yet either, but you'll be able to have a robo trigger on a regular basis (every x seconds/minutes/days). Use that to read your data in a REST platform from a GET call.  
 You'll have to parse the result and save it to a share in the robo too.  
+//TODO link to robo write
 This is the config:  
 <the config>  
 

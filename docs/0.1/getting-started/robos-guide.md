@@ -6,16 +6,22 @@ group: getting-started
 toc: true
 ---
 
-## What are robos?
-Pipeline/workflow agents for incoming data.  
-They run parallel to the data lake: listen to the data lake, write to the data lake.  
-Best practice: several robos chaining their recTypes, one for each action, that is your data pipeline.
+## What's a robo?
+A robo is a piece of your automatic pipeline that transforms, improves and creates new [microshares™](/microshares-guide) from your data. A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](/dashboards) and Applications.   
+Robos run in parallel to the data lake by reacting to new microshares being created, and being able to read and write them in your behalf.  
 
 //TODO drawing of an example of robos communicating with the data lake
 
-Each step is saved in the data lake, and reusable later. No such thing as too much data with microshare.  
-To use with rules.  
-Your biggest issue building a pipeline will be to choose the recTypes.  
+Each step of your data pipeline will and should create new data in the lake. Embrace it, there is no such thing as too much data with microshare.io. This builds multiple access points to your Dahsboards and Applications, as well as an automated audit trail.    
+
+## What can I do with them?
+1. Data ingestion
+Listening and pulling incoming data.  
+2. Data parsing
+3. Data transformation
+4. Data formatting (caching for dashboards)
+5. External services triggers
+Ultimately, they write data in the lake. 
 
 ## How do I use them?
 ### Accessing the UI
@@ -28,15 +34,11 @@ server, composer, robos, create, update
 ### Testing
 Important: the write doesn't really happen in a test so don't worry about polluting your data
 
-## What can I do with them?
-1. Data ingestion
-Listening and pulling incoming data.  
-2. Data parsing
-3. Data transformation
-4. Data formatting (caching for dashboards)
-5. External services triggers
-Ultimately, they write data in the lake. 
 
 ## How do they work?
-Behind the scene each robo is an Akka Agent loaded with an ECMAScript 6 compatible script.  
-Our Java Service leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.
+Behind the scene, each robo is an Akka Agent loaded with its ECMAScript 6 compatible script.  
+Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
+The Java libraries accessed by the robos point to to the adequate Service to read and write in the data lake.  
+
+
+LINK TABLE ?
