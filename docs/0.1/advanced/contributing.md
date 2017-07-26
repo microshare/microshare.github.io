@@ -38,7 +38,7 @@ To include a code snippet, just use the dedicated tag as below:
 ```
 {% highlight http %}
   POST /share/:recType HTTP/1.1
-  Host: api01.microshare.io
+  Host: api.microshare.io
   Content-Type: application/json
   Authorization: Bearer {{token}}
   {
