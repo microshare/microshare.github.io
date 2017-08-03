@@ -8,7 +8,7 @@ toc: true
 
 ## What's a robo?
 A robo is a piece of your automatic pipeline that transforms and improves data from your [microshares™](../microshares-guide).  
-A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](/dashboards) and Applications.  
+A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](../dashboards) and Applications.  
 Robos run in parallel to the data lake by reacting to new microshares being created, and by writing new ones in your behalf.  
 
 {% include image.html url="/assets/img/Robo_interacting_with_the_data_lake.jpg" description="Your fleet of robos" %}
@@ -27,7 +27,7 @@ Usually managed with several robos, to triage a bunch of records.
 Perfect for decoding an formatted IoT payload.  
   
 [4. Data formatting](../data-pipelines/#data-formatting)  
-Prepare your data to be used in a [Dashboard](/dashboards).  
+Prepare your data to be used in a [Dashboard](../dashboards).  
   
 [5. External services triggers](../data-pipelines/#external-services-triggering)  
 For a robo used to trigger another service on the web.  

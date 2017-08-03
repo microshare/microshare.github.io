@@ -19,8 +19,8 @@ No bulk upload yet.
 For [Orange Live Objects](https://liveobjects.orange-business.com/), [The Things Network](https://console.thethingsnetwork.org/), or a Sagemcom private gateway.  
 You can't do it yourself quite just yet, but you'll be able to have a robo listening to a websocket and save the data to a share for you.  
 This is the config:  
-<the config>  
-<WHAT ABOUT MQTT. Works the same way?>
+// TODO explain the config>  
+// TODO WHAT ABOUT MQTT. Does it work the same way?
 
 ## Set up a scheduled Robo to pull data
 For [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
@@ -28,11 +28,11 @@ You can't do that yet either, but you'll be able to have a robo trigger on a reg
 You'll have to parse the result and save it to a share in the robo too.  
 //TODO link to robo write
 This is the config:  
-<the config>  
+// TODO explain the config  
 
 ## Set up your platform to post the data
 For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerlink private gateway.
-Some platforms an be configured to POST data. Configure them to do a POST /share/<recType> call.  
+Some platforms an be configured to POST data. Configure them to do a POST /share/:recType call.  
 
 ## What's next?
 Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [data-pipeline](/data-pipelines) to parse, transform and format your data automatically.  
