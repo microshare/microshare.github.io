@@ -7,8 +7,9 @@ toc: true
 ---
 
 ## What's a robo?
-A robo is a piece of your automatic pipeline that transforms, improves and creates new [microshares™](../microshares-guide) from your data. A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](/dashboards) and Applications.   
-Robos run in parallel to the data lake by reacting to new microshares being created, and being able to read and write them in your behalf.  
+A robo is a piece of your automatic pipeline that transforms and improves data from your [microshares™](../microshares-guide).  
+A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](/dashboards) and Applications.  
+Robos run in parallel to the data lake by reacting to new microshares being created, and by writing new ones in your behalf.  
 
 {% include image.html url="/assets/img/Robo_interacting_with_the_data_lake.jpg" description="Your fleet of robos" %}
 
@@ -73,7 +74,10 @@ To activate it, be sure to check the Active checkbox.
 
 Once that is done, your robo will trigger __each time a new record with its RECORD TYPE is added to the data lake__. So set that RECORD TYPE in your robo accordingly.  
 
-Optionally, your robo can also run on a schedule, running periodically without waiting for a new record to be created. Set the Delay and Interval times, activate the checbox (ticked means on), sit back and relax.
+Optionally, your robo can also run on a schedule, without waiting for a new record to be created.  
+**Delay time** will run your robo once after the specified amount of time, the countdown starts when you activate the robo.  
+**Interval time** triggers your robo periodically every interval, forever.  
+Set the Delay and/or Interval times, activate the checbox (ticked means on), sit back and relax.
 
 {% include image.html url="/assets/img/Schedule_a_robo.png" description="Schedule a robo" %}
 
