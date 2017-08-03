@@ -35,4 +35,4 @@ For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerl
 Some platforms an be configured to POST data. Configure them to do a POST /share/:recType call.  
 
 ## What's next?
-Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [data-pipeline](/data-pipelines) to parse, transform and format your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [data-pipeline](../data-pipelines) to parse, transform and format your data automatically.  

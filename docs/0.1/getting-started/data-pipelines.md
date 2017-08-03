@@ -7,7 +7,7 @@ toc: true
 ---
 
 ## For preparing your data to be used in Apps and Dashboards
-You can set up automatic multisteps processes to transform your data so that it can be of the right format whan you access htat data in an App or Dashboard.  
+You can set up automatic multisteps processes to transform your data so that it can be of the right format whan you access that data in an App or Dashboard.  
 Each step of the pipeline is managed by a robo.  
 Here are some available robo actions.  
 
