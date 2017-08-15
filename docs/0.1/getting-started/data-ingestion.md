@@ -8,27 +8,43 @@ toc: true
 
 ## To aggregate your data from different sources
 Microshare.io is here to help you aggregate and use your data from several sources, especially IoT platforms.  
-Below are several way to move your data to the microshare.io data lake. Find your usage.  
+Below are several way to move your data as [microshares™](../microshares-guide) in the data lake.  
 
 ## Upload data manually
-For data in your own Database, or from a open data project.
-Upload your data manually by using a POST /share call.  
-No bulk upload yet.  
+Manual upload if the most basic way of loading data from your own database, or from a open data project.
+To do so, send your data as the body of a [POST /share call](../api-overview#post-share).  
+It will then be available to use from the data lake with [GET /share calls](../api-overview#get-share)
 
-## Set up a websocket Robo
-For [Orange Live Objects](https://liveobjects.orange-business.com/), [The Things Network](https://console.thethingsnetwork.org/), or a Sagemcom private gateway.  
-You can't do it yourself quite just yet, but you'll be able to have a robo listening to a websocket and save the data to a share for you.  
-This is the config:  
-// TODO explain the config>  
-// TODO WHAT ABOUT MQTT. Does it work the same way?
+## Set up a websocket robo
+Some IoT platforms act as websocket servers and allow websocket clients to listen and pull data live.  
+[Orange Live Objects](https://liveobjects.orange-business.com/), [The Things Network](https://console.thethingsnetwork.org/), or a Sagemcom private gateway support it.  
+In Microshare.io, you can setup a websocket client robo that takes care of writing your data as a microshare as soon as it is available.  
+There is no UI to configure your own yet, but here is the WS client configuration we've gone with:
+{% highlight java %}
+{
+  // A friendly name for the robo.
+  id = "My_WS_robo"
+  // This microshare token assigns ownership of the created records.
+  token = "My_MS_token"
+  // The recType the incoming data will be stored under.
+  recType = "io.sage.device.packed"
+  // A tag to apply to the stored record.
+  dType = "My_device"
+  // The URI to the websocket server
+  // If the WS service takes authorization as a query parameter, add it to the end of the URL.
+  uri = "ws://my.websocket.uri?Authorization=Basic+My_WS_token"
+  // if the service takes authorization as a header use below.
+  authHeader = "Basic My_WS_header"
+}
+{% endhighlight %}
 
-## Set up a scheduled Robo to pull data
-For [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
-You can't do that yet either, but you'll be able to have a robo trigger on a regular basis (every x seconds/minutes/days). Use that to read your data in a REST platform from a GET call.  
-You'll have to parse the result and save it to a share in the robo too.  
-//TODO link to robo write
-This is the config:  
-// TODO explain the config  
+## Set up a scheduled robo to pull data
+Alternatively, some platform offer RESTful APIs to request for the data they store, such as [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
+In that case you can setup a [scheduled robo](../robos-guide/#triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
+You are at liberty to setup your robo script the way you want, to decide when and what to store as a microshare from that data.
+Below is a sample code for a simple store all scenario.
+
+//TODO robo sample GET and write
 
 ## Set up your platform to post the data
 For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerlink private gateway.
