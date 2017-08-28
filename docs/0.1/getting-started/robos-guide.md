@@ -1,30 +1,39 @@
 ---
 layout: docs
-title: Robos Guide
-description: Comprehensive guide to understand robos
+title: Robot Guide
+description: Comprehensive guide to understand Robots
 group: getting-started
 toc: true
 ---
 
-## What's a robo?
-A robo is a piece of your automatic pipeline that transforms and improves data from your [microshares™](../microshares-guide).  
-A chain of robos is capable of preparing your data to be easily consumed in [Dashboards](../dashboards) and Applications.  
-Robos run in parallel to the data lake by reacting to new microshares being created, and by writing new ones in your behalf.  
+## What's a robo(t)?
+A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data pipeline. Robots can transform and improve data from your [microshares™](../microshares-guide). Robots can interact with external services to feed external systems and to pull new data into microshare to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
+1) easy to maintain, 
+2) fast and efficient with higher volumes, and 
+3) reusable in multiple projects.
+ 
+Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [Pipeline Workflow](../pipeline-workflow). Pipeline Workflows are capable of preparing your data to be easily consumed in [Dashboards](../dashboards) and multiple Applications. Each robotic 'step' of your Pipeline Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
 
-{% include image.html url="/assets/img/Robo_interacting_with_the_data_lake.jpg" description="Your fleet of robos" %}
+Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the microshare data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Accept for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
 
-Each step of your data pipeline will and should create new data in the lake. Embrace it, there is no such thing as too much data with microshare.io. This builds multiple access points to your Dahsboards and Applications, as well as an automated audit trail.    
+All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a microshare record, acting on it in some way, and writing a new record back into microshare.
+
+{% include image.html url="/assets/img/Robo_interacting_with_the_data_lake.jpg" description="Your fleet of Robots" %}
+
 
 ## What can I do with them?
-To keep your data pipeline clear, we suggest each one of your robos takes care of only one single action. Below are some typical use cases we identified.  
+To keep your data pipeline clear, we suggest each one of your Robots takes care of only one single action. Below are some typical use cases we identified.  
 [1. Data ingestion](../data-ingestion)  
-For robos tasked to pull or receive data sent by an external source.  
+For Robots tasked to pull or receive data sent by an external source.  
+* CSV files dropped in a target folder
+* active web socket connection to a remote server
+* interacting with an external service via API
 
 [2. Data parsing](../data-pipelines/#data-parsing)  
-Usually managed with several robos, to triage a bunch of records.  
+Often managed with a Pipeline Workflow to massage and enrich a bunch of records.  
   
 [3. Data transformation](../data-pipelines/#data-transformation)  
-Perfect for decoding an formatted IoT payload.  
+Perfect for decoding a formatted IoT payload.  
   
 [4. Data formatting](../data-pipelines/#data-formatting)  
 Prepare your data to be used in a [Dashboard](../dashboards).  
@@ -34,7 +43,7 @@ For a robo used to trigger another service on the web.
   
 ## How do I use them?
 ### Accessing the UI
-From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your robos here.  
+From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your Robots here.  
   
 ### Basic code  
 The guts of a robo is its JavaScript script. Below is most common template you will use.  
@@ -88,4 +97,4 @@ Important: the lib.write is only simulated in a test, so you are not at risk to 
 ## How do they work?
 Behind the scene, each robo is an Akka Agent loaded with its ECMAScript 6 compatible script.  
 Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
-The Java libraries accessed by the robos point to to the adequate Service to read and write in the data lake.  
+The Java libraries accessed by the Robots point to to the adequate Service to read and write in the data lake.  
