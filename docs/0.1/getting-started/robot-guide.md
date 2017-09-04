@@ -29,16 +29,16 @@ For Robots tasked to pull or receive data sent by an external source.
 * active web socket connection to a remote server
 * interacting with an external service via API
 
-[2. Data parsing](../data-pipelines/#data-parsing)  
+[2. Data parsing](../pipeline-workflow/#data-parsing)  
 Often managed with a Pipeline Workflow to massage and enrich a bunch of records.  
   
-[3. Data transformation](../data-pipelines/#data-transformation)  
+[3. Data transformation](../pipeline-workflow/#data-transformation)  
 Perfect for decoding a formatted IoT payload.  
   
-[4. Data formatting](../data-pipelines/#data-formatting)  
+[4. Data formatting](../pipeline-workflow/#data-formatting)  
 Prepare your data to be used in a [Dashboard](../dashboards).  
   
-[5. External services triggers](../data-pipelines/#external-services-triggering)  
+[5. External services triggers](../pipeline-workflow/#external-services-triggering)  
 For a Robot used to trigger another service on the web.  
   
 ## How do I use them?
@@ -73,7 +73,7 @@ You will use the two other functions 99.9% of the time:
 * ```lib.read(text, auth, []);``` reads the record that triggered your Robot from the data lake.
 * ```lib.write(newRecType, newRecord, auth, ['tags']);``` writes back a new record with a new recType in the data lake.  
 
-For more code samples, refer to the [data-pipelines page](../data-pipelines).  
+For more code samples, refer to the [Pipeline Workflow page](../pipeline-workflow).  
 
 ### Triggered vs scheduled  
 Your newly created Robot will first do... nothing!  

@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Data Pipelines
-description: Data Pipelines with Robos
+title: Pipeline Workflows
+description: Pipeline Workflows with Robots
 group: getting-started
 toc: true
 ---
