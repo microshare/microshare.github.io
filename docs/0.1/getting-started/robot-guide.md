@@ -18,7 +18,7 @@ Robots are typically configured through the management console by creating or ed
 
 All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a microshare record, acting on it in some way, and writing a new record back into microshare.
 
-{% include image.html url="/assets/img/Robo_interacting_with_the_data_lake.jpg" description="Your fleet of Robots" %}
+{% include image.html url="/assets/img/Robot_interacting_with_the_data_lake.jpg" description="Your fleet of Robots" %}
 
 
 ## What can I do with them?
@@ -48,7 +48,7 @@ From the management console available [here](https://app.microshare.io), open th
 ### Basic code  
 The guts of a Robot is its JavaScript script. Below is most common template you will use.  
 
-{% include image.html url="/assets/img/Basic_robo_script.png" description="Minimal script" %}
+{% include image.html url="/assets/img/Basic_robot_script.png" description="Minimal script" %}
 
 First of all, this part is compulsory:
 
@@ -79,7 +79,7 @@ For more code samples, refer to the [data-pipelines page](../data-pipelines).
 Your newly created Robot will first do... nothing!  
 To activate it, be sure to check the Active checkbox.  
 
-{% include image.html url="/assets/img/Activate_a_robo.png" description="Activating a Robot" %}
+{% include image.html url="/assets/img/Activate_a_robot.png" description="Activating a Robot" %}
 
 Once that is done, your Robot will trigger __each time a new record with its RECORD TYPE is added to the data lake__. So set that RECORD TYPE in your Robot accordingly.  
 
@@ -88,7 +88,7 @@ Optionally, your Robot can also run on a schedule, without waiting for a new rec
 **Interval time** triggers your Robot periodically every interval, forever.  
 Set the Delay and/or Interval times, activate the checbox (ticked means on), sit back and relax.
 
-{% include image.html url="/assets/img/Schedule_a_robo.png" description="Schedule a Robot" %}
+{% include image.html url="/assets/img/Schedule_a_robot.png" description="Schedule a Robot" %}
 
 ### Testing  
 If you edit an existing Robot, you will see that a testing panel is present. Follow the instruction to simulate a run of the Robot with sample data.  
