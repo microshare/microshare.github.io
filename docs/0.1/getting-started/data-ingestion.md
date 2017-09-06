@@ -44,11 +44,13 @@ In that case you can setup a [scheduled Robot](../robot-guide/#triggered-vs-sche
 You are at liberty to setup your Robot script the way you want, to decide when and what to store as a microshare from that data.
 Below is a sample code for a simple store all scenario.
 
-//TODO Robot sample GET and write
+{% highlight js %}
+  //TODO Robot sample GET and write
+{% endhighlight %}
 
 ## Set up your platform to post the data
 For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerlink private gateway.
 Some platforms an be configured to POST data. Configure them to do a POST /share/:recType call.  
 
 ## What's next?
-Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [data-pipeline](../data-pipelines) to parse, transform and format your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [Pipeline Workflow](../pipeline-workflow) to parse, transform and format your data automatically.  

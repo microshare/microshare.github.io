@@ -8,22 +8,38 @@ toc: true
 
 ## For preparing your data to be used in Apps and Dashboards
 You can set up automatic multisteps processes to transform your data so that it can be of the right format whan you access that data in an App or Dashboard.  
-Each step of the pipeline is managed by a robo.  
-Here are some available robo actions.  
+Each step of the pipeline is managed by a Robot.  
+Here are some available Robot actions.  
 
 FIRST, HAVE A LOOK AT THE ROBO GUIDE
-//TODO link to robo guide
+//TODO link to Robot guide
 
 ## Data lake Read
-### Read record triggering the robo
+### Read record triggering the Robot
 
 Ideal for validation
 
-Read the record that triggers the robo thanks to our handy lib.  
+Read the record that triggers the Robot thanks to our handy lib.  
 You can grab the data, the id, the recType...  
-//TODO code snippet of a lib.read()  
+
+{% highlight js %}
+  // Include the helper objects which allows you to read and write to microshare datalake
+  var lib = require('./libs/helpers');
+
+  // Always need a main function, but can have other functions to keep your code modular.
+  function main(text, auth) {
+    print('################################# RECORD READ START ###########################');
+    
+    var record = lib.read(text, auth, []);
+    
+    print('################################# RECORD READ END #############################');
+  }
+{% endhighlight %}
+  
 And the returned data model is  
-//TODO returned data model  
+{% highlight js %}
+  //TODO a real share result
+{% endhighlight %}
 
 An error will appear like this.  
 //TODO error data model
@@ -37,7 +53,7 @@ Will return an array all the time, you can have more than one record returned.
 Perform like the API call.  
 //TODO link to the API lib  
 //TODO code snippet of the advanced read  
-//Same recType as triggering the robo, returning an array of results  
+//Same recType as triggering the Robot, returning an array of results  
 
 Same error handling ?  
 
@@ -59,25 +75,43 @@ You can use FACTS to do advanced queries to the database.
 //TODO link to FACTS documentation
 Basically an aggregation query to the DB
 Calling a fact is done from the lib.read with special parameters  
+{% highlight js %}
+  //Include the helper objects which allows you to read and write to microshare datalake
+  var lib = require('./libs/helpers');
 
-// TODO code snippet of calling a facts
+  // Always need a main function, but can have other functions to keep your code modular.
+  function main(text, auth) {
+    print('################################# FACT READ START ###########################');
+    
+    var queryParams = {
+        "id": "any fact id"
+    };
+    
+    var factResult = lib.read(text, auth, [], queryParams);
+    
+    print('################################# FACT READ END #############################');
+  }
+{% endhighlight %}
+
 Also is an array of result
-// TODO data model
+{% highlight js %}
+  // TODO code snippet of calling a facts result 
+{% endhighlight %}
 
 Error handling
 // TODO error data model
 So
 // TODO code snippet
 
-IMPORTANT: Right now your Fact must have the same recType as the one triggering the robo !!!  
+IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!!  
 
 ## Data Parsing
 Ideal for seperating different message coming from the same platform.  
 For example if you have a single platform pushing records about 3 different devices through the same pipe (same recType), you might want to parse by devEUI after.  
-Best practice for parsing is to create one robo for each result you want. So for 3 devEUI you would create 3 robots like this:
+Best practice for parsing is to create one Robot for each result you want. So for 3 devEUI you would create 3 Robotts like this:
 // TODO code snippet listening to 1 recType and saving if the devEUI works.
 
-If you don't want to record a devEUI anymore you just have to turn the one robo off.    
+If you don't want to record a devEUI anymore you just have to turn the one Robot off.    
 
 ## Data Transformation
 Robo is a script, so you can do many actions.  
@@ -116,8 +150,8 @@ Code snippet of reading the first record and validating it
 Code snippet of parsing by devEUI
 Code snippet of calling another record to associate a name to a devEUI
 
-Code snippet of a robo, that does a final formatting and adds a timestamp?
-Code snippet of a schedule robo that log something externally every 12 hours
+Code snippet of a Robot, that does a final formatting and adds a timestamp?
+Code snippet of a schedule Robot that log something externally every 12 hours
 
 
 ## What's next?
