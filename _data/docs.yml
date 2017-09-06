@@ -8,12 +8,16 @@
 - title: Getting Started
   pages:
   - title: Quick Start
-  - title: Facts Guide
-  - title: Tutorial
+  - title: Microshares Guide
+  - title: Robot Guide
   - title: Data Ingestion
-  - title: API Overview
+  - title: Pipeline Workflow
+  - title: Facts Guide
+  - title: Rules Guide
   - title: Data Sharing
-  - title: Data Pipelines
+  - title: Dashboards
+  - title: Tutorial
+  - title: API Overview
 
 - title: Advanced
   pages:
