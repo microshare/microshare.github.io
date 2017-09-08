@@ -6,9 +6,36 @@ group: getting-started
 toc: true
 ---
 
-## What's a rule? 
+## What is a Rule? 
 
-## How do I use them?
+A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
+
+## Creating a Rule
+Rules can be created via API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
+
+{% include image.html url="/assets/img/composer-rule-ruleindex1.jpg" description="Rule Index - Card View" %}
+
+Click the "Create" button to create a new Rule for your owned data. 
+
+### Labels
+
+{% include image.html url="/assets/img/composer-rule-rulesection1.jpg" description="Rule Section - Labels" %}
+
+### Record Identification
+
+{% include image.html url="/assets/img/composer-rule-rulesection2.jpg" description="Rule Section - Record Identification" %}
+
+### Operations
+
+{% include image.html url="/assets/img/composer-rule-rulesection3.jpg" description="Rule Section - Operations" %}
+
+### Owner Context
+
+{% include image.html url="/assets/img/composer-rule-rulesection4.jpg" description="Rule Section - Owner Context" %}
+
+### Requestor Context
+
+{% include image.html url="/assets/img/composer-rule-rulesection5.jpg" description="Rule Section - Requestor Context" %}
 
 ## What can I do with them?
 
