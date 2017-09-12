@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generic REST API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+body {
+  position: relative;
+}
+h1 {
+  margin-top: 5px;
+}
+.api-content>h2:not(:first-child) {
+  margin-top: 3rem;
+}
+h3 {
+  margin-top: 1.5rem;
+}
+
+h5 {
+  font-weight: bold;
+}
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav.nav-tabs>li>a {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.tab-content {
+  padding-top: 8px;
+}
+
+.table {
+  margin-bottom: 8px;
+}
+pre {
+  border-radius: 0px;
+  border: none;
+}
+
+pre code {
+  max-height: 400px;
+}
+.request {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.response-text-sample {
+  padding: 0px !important;
+}
+
+.response-text-sample pre {
+  margin-bottom: 0px;
+}
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 220px;
+  width: 220px;
+  height: 100%;
+  margin-left: -220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#sidebar-wrapper ul {
+  width: 220px;
+  padding-left: 0;
+  border-right: 1px solid #eee;
+}
+
+#sidebar-wrapper ul li a:hover {
+  background: inherit;
+  text-decoration: none;
+}
+
+#sidebar-wrapper ul li a {
+  display: block;
+  padding: .125rem 1.5rem;
+  color: #99979c;
+}
+
+#sidebar-wrapper ul li ul {
+  padding-left: 30px;
+  font-size: 0.875rem;
+}
+
+#sidebar-wrapper ul li ul li a {
+  padding: 1px 0px;
+  padding-right: 3px;
+}
+
+#sidebar-wrapper ul li a:hover, #sidebar-wrapper ul li a:focus {
+  color: #215b7a;
+}
+
+#sidebar-wrapper ul li>a.active {
+  color: #215b7a;
+  border-right: solid 2px #215b7a;
+}
+
+#sidebar-wrapper ul li a:not(.active)+ul {
+  display: none;
+}
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px 15px 15px 250px;
+}
+
+.doc-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+
+/* Anchors */
+
+.anchorjs-link {
+  padding-right: .25em !important;
+  margin-left: -.75em !important;
+  color: inherit;
+}
+
+*:hover>.anchorjs-link {
+  opacity: .75;
+  transition: color .16s linear;
+}
+
+*:hover>.anchorjs-link:hover, .anchorjs-link:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+.api-section {
+  margin-bottom: 2.5rem;
+}
+    </style>
+</head>
+<body>
+	<div id="sidebar-wrapper">
+		<ul id="main-menu" class="nav flex-column">
+
+		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-general-intro">Introduction</a>
+		    </li>
+
+		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-robot-requirements">Robot Requirements</a>
+		        <ul class="nav flex-column">
+		          
+		            <li class="nav-item">
+		                <a class="nav-link" href="#library-helper">Library Helper</a>
+		            </li>
+		            
+		        </ul>
+		    </li>
+
+		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-url-url">URL</a>
+		    </li>
+
+		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-headers-headers">Headers</a>
+		        <ul class="nav flex-column">
+		            
+		            <li class="nav-item">
+		                <a class="nav-link" href="#authentication-auth">Authentication</a>
+		                <a class="nav-link" href="#content-type">Content Type</a>
+		            </li>
+		            
+		        </ul>
+		    </li>
+
+		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-api-calls">API calls</a>
+		        <ul class="nav flex-column">
+		            
+		            <li class="nav-item">
+		                <a class="nav-link" href="#get-api-call">GET</a>
+		                <a class="nav-link" href="#post-api-call">POST</a>
+		            </li>
+		            
+		        </ul>
+		    </li>
+
+	    </ul>
+	</div>
+
+	<div id="page-content-wrapper">
+	    <div class="container-fluid">
+	        <div class="row">
+	            <div class="col-lg-12 api-content">
+	                <h1 class="doc-title">Generic REST API</h1>
+	                <h2 id="doc-general-intro">
+	                    Introduction
+	                </h2>
+	                <p>Welcome to Microshare&rsquo;s API documentation!</p>
+
+					<p>This API allows you to create and manage your data within Microshare&rsquo;s data lake.</p>
+
+					<ul>
+					<li>With Shares, you&rsquo;ll be able to directly create, search, retrieve and delete data.</li>
+					</ul>
+
+					<p>To quickly get started, click on the button below to run the Microshare collection in Postman:</p>
+
+
+					<h2 id="doc-robot-requirements">
+	                    Robot Requirements
+	                </h2>
+
+                
+
+                    <h3 id="library-helper">
+                        Library Helper
+                    </h3>
+
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+                    <h2 id="doc-url-url">
+	                    URL
+	                </h2>
+	                <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+	                <h3 id="doc-headers-headers">
+	                    Headers
+	                </h3>
+
+	                <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+	                <h4 id="authentication-auth">
+                        Authentication
+                    </h4>
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+                    <h4 id="content-type">
+                        Content Type
+                    </h4>
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+                    <h3 id="doc-api-calls">
+	                    API calls
+	                </h3>
+
+	                <h4 id="get-api-call">
+                        GET
+                    </h4>
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+
+                    <h4 id="post-api-call">
+                        POST
+                    </h4>
+
+                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+
+                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                
+
+
+
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.0.0/anchor.min.js"></script>
+<script>
+  (function () {
+    'use strict'
+    anchors.options.placement = 'left'
+    anchors.add('.api-content > h2, .api-content > h3, .api-content > h4, .api-content > h5, .endpoints-group > h3, .request > h4')
+  }()),
+  (function () {
+    $('table').addClass("table table-bordered");
+  }())
+</script>
+</body>	
+
+</html>
