@@ -185,6 +185,10 @@ pre code {
 		    </li>
 
 		    <li class="nav-item">
+		        <a class="nav-link" href="#doc-body-body">Body</a>
+		    </li>
+
+		    <li class="nav-item">
 		        <a class="nav-link" href="#doc-api-calls">API calls</a>
 		        <ul class="nav flex-column">
 		            
@@ -207,15 +211,9 @@ pre code {
 	                <h2 id="doc-general-intro">
 	                    Introduction
 	                </h2>
-	                <p>Welcome to Microshare&rsquo;s API documentation!</p>
+	                <p>Welcome to Microshare&rsquo;s Generic REST API documentation!</p>
 
-					<p>This API allows you to create and manage your data within Microshare&rsquo;s data lake.</p>
-
-					<ul>
-					<li>With Shares, you&rsquo;ll be able to directly create, search, retrieve and delete data.</li>
-					</ul>
-
-					<p>To quickly get started, click on the button below to run the Microshare collection in Postman:</p>
+					<p>This API allows you to do GET/POST calls to any endpoints/external api urls through a robot script. .</p>
 
 
 					<h2 id="doc-robot-requirements">
@@ -229,40 +227,77 @@ pre code {
                     </h3>
 
 
-                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+                    <p>The library helper is required in the robot script to call the generic rest api functions.</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <pre><code>var url = require('./libs/helpers’);</code></pre>
 
                     <h2 id="doc-url-url">
 	                    URL
 	                </h2>
-	                <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+	                <p>This is the endpoint/external api url that you want to do the GET/POST call to.</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+	                <pre><code>var lib = 'https://any/endpoint';</code></pre>
 
 	                <h3 id="doc-headers-headers">
 	                    Headers
 	                </h3>
 
-	                <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+	                <p>Headers is where you pass in the authorization/authentication information like auth type, creds, and content type for your GET/POST calls. Headers can also be just an empty header but it is a required parameter for both get and post.</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <pre><code>var headers = {}; //required</code></pre>
 
 	                <h4 id="authentication-auth">
                         Authentication
                     </h4>
 
-                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+                    <p>The generic rest api supports three types of authentication: BASIC, OAUTH2, API. For each type different information is passed into the headers. Here is some sample code for each type below.</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <h5 id="authentication-basic-sample">
+                        BASIC
+                    </h5>
+
+                    <pre><code>headers["authType"] = "BASIC";
+headers["username"] = "YOUR USERNAME GOES HERE";
+headers["password"] = "YOUR PASSWORD GOES HERE”;</code></pre>
+
+                    <h5 id="authentication-oauth2-sample">
+                        OAUTH2
+                    </h5>
+
+                    <pre><code>headers["authType"] = "OAUTH2";
+headers["token"] = "YOUR ACCESS TOKEN GOES HERE";</code></pre>
+
+                    <h5 id="authentication-api-sample">
+                        API
+                    </h5>
+                    <p> This type requires you to pass the api key information into the url directly instead.</p>
+
+                    <pre><code>var url = 'https://any/endpoint?apikey=MY API KEY';</code></pre>
 
                     <h4 id="content-type">
                         Content Type
                     </h4>
 
-                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+                    <p>Content type is another one that gets added to the headers. It can be done for two different reasons. Content type can be added for GET call in order to be able to get the return/response type in the sepcified content type. And content type can be added for POST call to specify the content type of the body/data you are sending with the post call. For both types though the content type gets added to the headers in the exact same way. Note that for the POST call the default content type is application/json.</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <pre><code>headers["Content-Type"] = "application/json";</code></pre>
+
+                    <h5 id="content-type-options">
+                    	Content Type Options
+                    </h5>
+
+                    <ul> application/json </ul>
+                    <ul> application/xml </ul>
+                    <ul> text/plain </ul>
+                    <ul> text/xml </ul>
+                    <ul> text/csv </ul>
+                    <ul> text/html </ul>
+
+                    <h3 id="doc-body-body">
+	                    Body
+	                </h3>
+	                <p>Body is required to be able to do POST call.</p>
+	                <pre><code>var body = ‘{"data":"test"}';</code></pre>
 
                     <h3 id="doc-api-calls">
 	                    API calls
@@ -272,17 +307,19 @@ pre code {
                         GET
                     </h4>
 
-                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+                    <p>To do a get call in robot and print its response:</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <pre><code>var response = lib.get(url, headers);
+print(JSON.stringify(response));</code></pre>
 
                     <h4 id="post-api-call">
                         POST
                     </h4>
 
-                    <p>Shares represent your data stored in Microshare&#39;s data lake</p>
+                    <p>To do a post call in robot and print its response:</p>
 
-                    <pre><code>var lib = require('./libs/helpers’);</code></pre>
+                    <pre><code>var response = lib.post(url, headers, body);
+print(JSON.stringify(response));</code></pre>
                 
 
 
