@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body class="bd-docs" data-spy="scroll" data-target=".bd-sidenav-active">
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    {% include docs-navbar.html %}
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          {% include docs-sidebar.html %}
+        </div>
+        <main class="col-12 col-md-9 col-xl-10 bd-content api-main" role="main">
+          <iframe src="/assets/html/api-generic-rest.html" height="100%" width="100%">
+        </main>
+      </div>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
