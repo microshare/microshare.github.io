@@ -70,7 +70,7 @@ And trigger it with this Robot call:
       
       var now = new Date();
       
-      var oneMinuteAgo = new Date(now - 60000);
+      var oneMinuteAgo = new Date(now - 60000).getTime();
 
       var paramMap = {
             id: 1234,
