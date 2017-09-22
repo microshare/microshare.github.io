@@ -8,7 +8,7 @@ toc: true
 
 ## Default Fact query size
 
-To optimize the performance of your Fact query, it is not ran against your whole collection of records, that can reach millions of entries, but ran by default against the set of the most recent 999 records matching your match clause.
+To optimize the performance of your Fact query, it is not ran against your whole collection of records, that can reach millions of entries, but ran by default against the set of the most recent 999 records matching your match clause.  
 So a Fact query like this:
 
 {% highlight JSON %}  
@@ -39,7 +39,7 @@ the $project clause is ran against the most recent 42 records with the recType m
 
 ## String replacements for Facts
 Static and Query Facts support String replacement of variables with the syntax ```${myVariable}```.  
-The replacement values can be passed via the /share API call, or through the lib.read library of a Robot.
+The replacement values can be passed via the /share API call, or through the lib.read library of a [Robot](../robot-guide).
 
 ### Example 1: String replacement for Static Facts via /share calls
 Consider a static Fact with a recType of ```myRecType``` and an id of ```1234```, with the following static entry:
