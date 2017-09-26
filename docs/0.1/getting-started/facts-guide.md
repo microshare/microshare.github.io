@@ -59,7 +59,7 @@ A very powerful way to customize a Fact query is to pass it a dynamic variable c
 
 For example, if I want to get all records of recType myRecords *created in the last minute*, I can use this Fact query (Fact recType ```myRecType``` and id ```1234```):
 {% highlight JSON %}
-  [{"$match": {"recType": "myRecords", "tstamp": {"$gt": ${timeLimit} }]
+  [{"$match": {"recType": "myRecords", "tstamp": {"$gt": ${timeLimit} }}}]
 {% endhighlight %} 
 
 And trigger it with this Robot call:
