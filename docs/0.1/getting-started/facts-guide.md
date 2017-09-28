@@ -8,7 +8,7 @@ toc: true
 
 ## Default Fact query size
 
-To optimize the performance of your Fact query, it is not ran against your whole collection of records, that can reach millions of entries, but ran by default against the set of the most recent 999 records matching your match clause.  
+To optimize the performance of your Fact query, it is not run against your whole collection of records, that can reach millions of entries, but run by default against the set of the most recent 999 records matching your match clause.  
 So a Fact query like this:
 
 {% highlight JSON %}  
@@ -26,7 +26,7 @@ Is interpreted as:
   ]
 {% endhighlight %}
 
-To override this default behaviour, you can specify your own $limit clause.
+To override this default behavior, you can specify your own $limit clause.
 For example in this request:
 {% highlight JSON %}
   [
@@ -35,7 +35,7 @@ For example in this request:
     {"$project": {"myData":"$data"}
   ]
 {% endhighlight %}
-the $project clause is ran against the most recent 42 records with the recType myRecType, making it that much faster.
+the $project clause is run against the most recent 42 records with the recType myRecType, making it that much faster.
 
 ## String replacements for Facts
 Static and Query Facts support String replacement of variables with the syntax ```${myVariable}```.  
@@ -47,7 +47,7 @@ Consider a static Fact with a recType of ```myRecType``` and an id of ```1234```
   {"name":"${myName}", "age":${myAge}}
 {% endhighlight %}
 
-You can dynamically remplace the ```${myAge}``` and ```${myName}``` variable as you call the Fact via a API /share as such:   
+You can dynamically replace the ```${myAge}``` and ```${myName}``` variable as you call the Fact via a API /share as such:   
 ```/share/myRecType?id=1234&myName=Bob&myAge=35```
 Is interpreted as 
 {% highlight JSON %}
