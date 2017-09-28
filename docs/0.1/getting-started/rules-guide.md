@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Rules Guide
-description: Comprehensive guide to understand rules
+description: Comprehensive guide to understanding rules
 group: getting-started
 toc: true
 ---
@@ -11,7 +11,7 @@ toc: true
 A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
 
 ## Creating a Rule
-Rules can be created via API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
+Rules can be created via API or through the Rule editor in the Composer Console. To get the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
 
 {% include image.html url="/assets/img/composer-rule-ruleindex1.jpg" description="Rule Index - Card View" %}
 
@@ -63,7 +63,7 @@ Once you have used the tool, your entries will be saved in your user preferences
 
 The result of the test will be a truth table showing the Owner (you) and Requestor (from your list) and the results for each Operation governed by the Rule. The truth table only shows the results of the current Rule and does not take into account other Rules that may be active in the system.
 
-You can change the terms of your Rule and rerun your Simulation at any time. The tool will highlight difference between each subsequent simulation to help you track the impact of changes you are making to the Rule terms. Changed outcomes will be in Red text.
+You can change the terms of your Rule and rerun your Simulation at any time. The tool will highlight the difference between each subsequent simulation to help you track the impact of changes you are making to the Rule terms. Changed outcomes will be in red text.
 
 {% include image.html url="/assets/img/composer-rule-rulesimulation4.jpg" description="Rule Simulation Panel" %}
 

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Contributing
-description: Contributing to this Documentation
+description: Contributing to this documentation
 group: advanced
 toc: true
 ---
@@ -20,8 +20,8 @@ The documentation articles are written in [Markdown](https://daringfireball.net/
 To add a new article, head to [_data/docs.yml](https://github.com/microshare/microshare.github.io/_data/docs.yml) and add the title of the article.
 Then create a file with the same title in the desired folder in the [docs](https://github.com/microshare/microshare.github.io/docs) folder.
 
-### Add Images
-Use the `_includes/image.html` helper to add images to your content, simply add in your `.md` file:
+### Add images
+Use the `_includes/image.html` helper to add images to your content, simply :
 
 `{% include image.html url="/assets/img/banner.jpg" description="Banner" %}`
 
