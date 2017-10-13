@@ -59,7 +59,7 @@ To test the response of this fact in the api call, scroll down to the "Fact Prev
 
 Facts can be configured as queries into the data lake using MongoDB aggregation query. This will allow you to do the following searches, sorts, and groups:
 ##### * Search via $match;
-$match allows you to put in search criteria to find records, this will get you all records of the "recType" with value of "io.microshare.demo.sensor.temprature".
+$match allows you to put in search criteria to find records, this will get you all records of the "recType" with a value of "io.microshare.demo.sensor.temprature".
 {% highlight JSON %}  
   [
     {"$match": {"recType": "io.microshare.demo.sensor.temprature"}}
@@ -119,7 +119,7 @@ Group by is used when you have multiple returns and need to group the results fo
   }
 ]
 {% endhighlight %}  
-Or you can do a count of how many records there are for each of region:
+Or you can do a count of how many records there are for each of the regions:
 {% highlight JSON %}
     "$group": {
       "_id": "$data.region",
