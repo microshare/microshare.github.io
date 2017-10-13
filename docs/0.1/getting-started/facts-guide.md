@@ -8,30 +8,30 @@ toc: true
 
 ## What’s a Fact?
 
-Fact is a component for managing your data access. It lets you to send static data, or query into data lake, manage the content and format of data, 
-and put controls over data elements alone with sharing rules.
+A Fact is a component for managing your data access. It lets you send static data, or queries into the data lake, manage the content and format of data, 
+and put controls over data elements along with sharing rules.
 
 ## What can I do with them?
 
 #### - Give Sample Data
-Use "Static" option to give data sample for testing or data format and content type discovery.
+Use the "Static" option to give data samples for testing or data format and content type discovery.
 
 #### - Query Data Lake
-Use "ObjectStore" option to query data lake, current support mongoDB aggregation query. It can apply search criteria, group data elements, sort and project only necessary data elements as results.
+Use the "ObjectStore" option to query the data lake, current support mongoDB aggregation query. It can apply search criteria, group data elements, sort and project only necessary data elements as results.
 
 #### - Trigger a Data Process
-Use "Component" option to trigger start a microshare flow to process data.
+Use the "Component" option to trigger the start to a microshare flow to process data.
 
 
 
 
 ## How do I use them?
 
-You'll need to create and save a Fact into "FACTS" section in "MANAGE" of microshare portal.
+You'll need to create and save a Fact into the "FACTS" section in "MANAGE" of the microshare portal.
  
 #### - Creating a Fact
 
-Fact can be created via API or through the Rule editor in the Composer Console. To get the the Fact editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "FACTS" panel navigator on the left to see a view of all of your saved Facts. 
+Facts can be created via API or through the Rule editor in the Composer Console. To get to the Fact editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "FACTS" panel navigator on the left to see a view of all of your saved Facts. 
 
 {% include image.html url="/assets/img/composer-fact-factindex1.jpg" description="Fact Index - Card View" %}
 
@@ -39,7 +39,7 @@ Click the "Create" button to create a new Fact for your data.
 
 #### - A Static Fact
 
-Fact can be used to give static data content, by selecting the tab "Static", it will allow you to input or paste static data into the editor section in JSON format.
+Facts can be used to give static data content, by selecting the tab "Static", it will allow you to input or paste static data into the editor section in JSON format.
 
 {% include image.html url="/assets/img/composer-fact-create-static1.jpg" description="Fact Index - Card View" %}
 
@@ -47,19 +47,19 @@ Click the "Create" button on the top to create your new Fact.
 
 #### - Edit and Test Fact
 
-You can edit your Fact by select and click on pen icon to open the Fact editor view. 
+You can edit your Facts by selecting and clicking on the pen icon to open the Fact editor view. 
 
 {% include image.html url="/assets/img/composer-fact-edit-edit1.jpg" description="Fact Index - Card View" %}
 
-To test what the response of this fact in the api call, scroll down to "Fact Preview" section, click on "SAVE & TEST" button to see the test results. This also works great when you want to see the query results.
+To test the response of this fact in the api call, scroll down to the "Fact Preview" section, click on the "SAVE & TEST" button to see the test results. This also works great when you want to see the query results.
 
 {% include image.html url="/assets/img/composer-fact-edit-test1.jpg" description="Fact Index - Card View" %}
 
 #### - A Fact Query the Data Lake
 
-Fact can be a query into data lake using MongoDB aggregation query. This can let you do 
+Facts can be configured as queries into the data lake using MongoDB aggregation query. This will allow you to do the following searches, sorts, and groups:
 ##### * Search via $match;
-$match let you put in search criteria to find records, this get you all records of "recType" is "io.microshare.demo.sensor.temprature".
+$match allows you to put in search criteria to find records, this will get you all records of the "recType" with value of "io.microshare.demo.sensor.temprature".
 {% highlight JSON %}  
   [
     {"$match": {"recType": "io.microshare.demo.sensor.temprature"}}
@@ -78,7 +78,7 @@ For more criteria of search, just add them in the $match elements
 
 
 ##### * Sort when multiple records returns;
-This sample shows sort by timestamp on the record, but you can sort by any data element in your data or meta-data
+This sample shows what happens when you sort by timestamp on the record, but you can sort by any data element in your data or meta-data
 {% highlight JSON %}  
 [
   {
@@ -93,15 +93,15 @@ This sample shows sort by timestamp on the record, but you can sort by any data 
   }
 ]
 {% endhighlight %}  
-Or the sort can be any data elements in the records
+The sort can also be any data elements in the records
 {% highlight JSON %}
 "$sort": {
-    "tstamp": -1
+    "data.region": 1
 }
 {% endhighlight %}  
 
 ##### * Group by Defined Data Elements;
-Group by is used when you have multiple returns and need to group the results for certain operations like sum, count, avg, or as example shows, get only the first record.
+Group by is used when you have multiple returns and need to group the results for certain operations like sum, count, avg, or as examples show, get only the first record.
 {% highlight JSON %}  
 [
   {
@@ -119,7 +119,7 @@ Group by is used when you have multiple returns and need to group the results fo
   }
 ]
 {% endhighlight %}  
-Or the you can do a count of how many records for each of region:
+Or you can do a count of how many records there are for each of region:
 {% highlight JSON %}
     "$group": {
       "_id": "$data.region",
@@ -154,7 +154,7 @@ Be aware of the data return as above will be 4 elements with new names defined, 
 {% endhighlight %}  
 
 
-For more details of query syntex, please refer to mongodb doc site
+For more details of query syntex, please refer to the MongoDB doc site 
 [Aggregation Pipeline Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/)
 
 
