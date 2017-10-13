@@ -39,6 +39,10 @@ Click the "Create" button to create a new Rule for your owned data.
 
 ## What can I do with them?
 
+You can share your data with other people and control the access of that data by other people using the Rules. Rules allow you to share your data with specific people or a group of people.
+
+You can provide other people specific rights to your data, for example, only read access to your data, or read & write access to your data, etc.
+
 ## How do they work?
 
 ## Simulating a Rule
