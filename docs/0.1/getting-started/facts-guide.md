@@ -8,26 +8,23 @@ toc: true
 
 ## What’s a Fact?
 
-A Fact is a component for managing your data access. It lets you send static data, or queries into the data lake, manage the content and format of data, 
-and put controls over data elements along with sharing rules.
+A Fact is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules.
 
 ## What can I do with them?
 
-#### - Give Sample Data
-Use the "Static" option to give data samples for testing or data format and content type discovery.
+#### - Create Sample Data
+Use the "Static" option to create data samples for testing, formating data or content type discovery.
 
 #### - Query Data Lake
-Use the "ObjectStore" option to query the data lake, current support mongoDB aggregation query. It can apply search criteria, group data elements, sort and project only necessary data elements as results.
+Use the "ObjectStore" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
 
 #### - Trigger a Data Process
-Use the "Component" option to trigger the start to a microshare flow to process data.
-
-
+Use the "Component" option to trigger a microshare data process .
 
 
 ## How do I use them?
 
-You'll need to create and save a Fact into the "FACTS" section in "MANAGE" of the microshare portal.
+You'll need to create and save a Fact into the "FACTS" section from the "MANAGE" menu of the microshare portal.
  
 #### - Creating a Fact
 
@@ -39,7 +36,7 @@ Click the "Create" button to create a new Fact for your data.
 
 #### - A Static Fact
 
-Facts can be used to give static data content, by selecting the tab "Static", it will allow you to input or paste static data into the editor section in JSON format.
+Facts can be used to create static data, by selecting the tab "Static", it will allow you to input or paste static data into the editor section in JSON format.
 
 {% include image.html url="/assets/img/composer-fact-create-static1.jpg" description="Fact Index - Card View" %}
 
@@ -154,7 +151,7 @@ Be aware of the data return as above will be 4 elements with new names defined, 
 {% endhighlight %}  
 
 
-For more details of query syntex, please refer to the MongoDB doc site 
+For more details of query syntax, please refer to the MongoDB doc site 
 [Aggregation Pipeline Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/)
 
 
@@ -209,7 +206,7 @@ Is interpreted as
 ### Example 2: String replacement for Facts query from a Robot
 A very powerful way to customize a Fact query is to pass it a dynamic variable calculated by a Robot.
 
-For example, if I want to get all records of recType myRecords *created in the last minute*, I can use this Fact query (Fact recType ```myRecType``` and id ```1234```):
+For example, if you want to get all records of recType myRecords *created in the last minute*, you can use this Fact query (Fact recType ```myRecType``` and id ```1234```):
 {% highlight JSON %}
   [{"$match": {"recType": "myRecords", "tstamp": {"$gt": ${timeLimit} }}}]
 {% endhighlight %} 
