@@ -10,6 +10,10 @@ toc: true
 
 A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
 
+## What can I do with them?
+
+You can share your data with other people and control the access of that data by other people with Rules. Rules allow you to share your data with specific people or a group of people. You can provide other people with specific rights to your data, for example, only read access to your data, or read & write access to your data, etc.
+
 ## Creating a Rule
 Rules can be created via API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
 
@@ -36,14 +40,6 @@ Click the "Create" button to create a new Rule for your owned data.
 ### Requestor Context
 
 {% include image.html url="/assets/img/composer-rule-rulesection5.jpg" description="Rule Section - Requestor Context" %}
-
-## What can I do with them?
-
-You can share your data with other people and control the access of that data by other people using the Rules. Rules allow you to share your data with specific people or a group of people.
-
-You can provide other people specific rights to your data, for example, only read access to your data, or read & write access to your data, etc.
-
-## How do they work?
 
 ## Simulating a Rule
 
