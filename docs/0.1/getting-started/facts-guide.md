@@ -13,13 +13,13 @@ A Fact is a component for managing your data access. It lets you send static dat
 ## What can I do with them?
 
 #### - Create Sample Data
-Use the "Static" option to create data samples for testing, formating data or content type discovery.
+Use the "Static" option to create data samples for testing, formatting data or content type discovery.
 
 #### - Query Data Lake
 Use the "ObjectStore" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
 
 #### - Trigger a Data Process
-Use the "Component" option to trigger a microshare data process .
+Use the "Component" option to trigger a microshare data process.
 
 
 ## How do I use them?
@@ -28,7 +28,7 @@ You'll need to create and save a Fact into the "FACTS" section from the "MANAGE"
  
 #### - Creating a Fact
 
-Facts can be created via API or through the Rule editor in the Composer Console. To get to the Fact editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "FACTS" panel navigator on the left to see a view of all of your saved Facts. 
+Facts can be created via API or through the Rule editor in the Composer Console. To get to the Fact editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left side of the page. Select the "FACTS" panel navigator on the left to see a view of all of your saved Facts. 
 
 {% include image.html url="/assets/img/composer-fact-factindex1.jpg" description="Fact Index - Card View" %}
 
