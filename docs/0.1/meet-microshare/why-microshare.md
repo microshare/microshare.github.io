@@ -19,7 +19,7 @@ From Bluetooth to LoRa to Zigbee, we bring together IoT data from all sources an
 Add on-premise or cloud data with our APIData universal connectors.
 
 ###### Process it
-Use our APIFlow process engine to automate data and work
+Use our APIFlow process engine to automate data and work.
 
 ###### Microshare it
-Allow access to only the parties you want
+Allow access to only the parties you want.
