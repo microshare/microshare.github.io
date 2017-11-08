@@ -30,7 +30,7 @@ In this tutorial you're going to program the [B-L072Z-LRWAN1 LoRa®Discovery kit
 - **Check** the box next to `mlm32l07x01`
 - Click `Finish`
 
-### Initial Build of the mlm32l07x01 Porject
+### Initial Build of the mlm32l07x01 Project
 
 At this point you've opened the `mlm32l07x01` project and now you must build all the SDK libraries.
 
@@ -60,6 +60,12 @@ Before you begin programming the device to join the Senet LoRaWan network you mu
 
 If you don't have a Senet account go over to the [Senet website](http://www.senetco.com/developer-portal/) & apply for a developer account.  When your Senet Developer account is approved you must log into the Developer Portal and register your new device using the Over The Air `OTAA` activation using the [Senet Device Registration](http://docs.senetco.io/docs/dev/#device-registration) instructions.
 
+When registering a new device in the Senet portal interface do the following.
+
+- Generate a `DevEUI` by clicking the `Senet’s EUI Registry` link under the DevEUI Field. This will assign the device a DevEUI in the platform.
+- Activate Type:  `OTAA`
+- Device Type:  `Nucleo + ST SX1276 Shield`
+
 ### Capture Required LoRa Device Keys
 
 After adding your new device be sure to capture the MSB Hex Formated Numbers which resembles this example `{0x00,0x22,0x00,0x00,0x00,0x01,0x00,0x04}`
@@ -74,4 +80,69 @@ You will program the device with these values.
 
 ### Configure the Devices for OTAA Activation
 
-Fill the rest in
+Here you're going to change the values to some variables in the source code to match the values assigned to your device in the Senet platform.
+In the System Workbench IDE:
+
+- Expand the `mlm32l07x01` project in the Project Explorer
+- Expand the `Includes` folder
+- Find the Project's Include files which is mormally the last folder in this list. The file path is simialr to this `< filepath to your project folder>/Projects/Multi/Applications/LoRa/End_Node/inc`where the `< filepath to your project folder>` value is the location of your project on disk.
+- Expand the `inc` folder and open these files in the IDE:
+    - `hw_conf.h`
+    - `Commissioning.h`
+- Expand the `Projects\End_Node\` directory
+- Open the `main.c` file
+
+### Configure hw_conf.h File    
+
+The `hw_conf.h` file has some variables that should be set when using a sensor shield or when you need to debug your application.
+
+- UnComment the `#define SENSOR_ENABLED` variable
+- UnComment the `#define LOW_POWER_DISABLE` when you need to debug but leave it Commented for now
+
+### Configure Commissioning.h File
+
+At this point you're ready to configure the Senet `OTAA` values for your device.
+
+Open the `Commissioning.h` file. Find the following statements in the code & replace their values
+
+- #define STATIC_DEVICE_EUI         `1`
+- #define LORAWAN_DEVICE_EUI        `Device EUI value from Senet Platform converted to MSB Hexidecimal format`
+- #define LORAWAN_APPLICATION_EUI   `App EUI value from Senet Platform`
+- #define LORAWAN_APPLICATION_KEY   `AppKey value from Senet Platform`
+- Save your changes
+
+### Configure main.c File
+
+- Uncomment //#define CAYENNE_LPP
+
+
+### Build the Binary
+
+After configuring the device with the appropriate values from the Senet platform you can now build/compile the project which will produce a binary application.
+
+- Click the `Project` Menu > `Build All` or Press CTRL-B to build
+- You should see a Successful Build message in the IDE's Console Tab
+
+### Program the Device
+
+The binary is ready to be uploaded to the device.
+
+- Connect the device via USB to your computer
+- Open a file explorer widow and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
+
+Now you need to grab the binary and upload to the device.
+
+- Browse to `< filepath to your project folder> /Projects/Multi/Applications/LoRa/End_Node/SW4STM32/B-L072Z-LRWAN1/mlm32l07x01/Debug/` where the `< filepath to your project folder>` value is the location of your project on disk.
+- Find the `mlm32l07x01.bin` file and Copy/Paste or Drag & Drop it into the `DIS_L072Z` devic listed in your operating systems file explorer
+- The device led will flash green & red while the device is being programmed and will remain solid green when complete.
+
+### Confirm the Device it Transmitting to Senet
+
+Log into the Senet Portal and click on your registered B-L072Z device.  If the device is transmitting properly then you should see data in the Senet device portal. 
+
+
+
+### Hack the Device Code
+
+
+In Project Explorer > Browse to `mlm32l07x01\Projects\End_Node` and expand the folder
