@@ -85,7 +85,7 @@ In the System Workbench IDE:
 
 - Expand the `mlm32l07x01` project in the Project Explorer
 - Expand the `Includes` directory
-- Find the Project's Include files which is mormally the last directory in this list. The file path is simialr to this `< filepath to your project directory>/Projects/Multi/Applications/LoRa/End_Node/inc`where the `< filepath to your project directory>` value is the location of your project on disk.
+- Find the Project's Include files which is normally the last directory in this list. The file path is similar to this `< filepath to your project directory>/Projects/Multi/Applications/LoRa/End_Node/inc`where the `< filepath to your project directory>` value is the location of your project on disk.
 - Expand the `inc` directory and open these files in the IDE:
     - `hw_conf.h`
     - `Commissioning.h`
@@ -133,7 +133,7 @@ After configuring the device with the appropriate values from the Senet platform
 The binary is ready to be uploaded to the device.
 
 - Connect the device via USB to your computer
-- Open a file explorer widow and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
+- Open a file explorer window and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
 
 Now you need to grab the binary and upload to the device.
 
