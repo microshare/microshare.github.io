@@ -20,34 +20,34 @@ In this tutorial you're going to program the [B-L072Z-LRWAN1 LoRa®Discovery kit
 
 - Download & Install the [System Workbench for STM32 IDE](../system-workbench-st32-ide)
 
-### Import the I-CUBE-LRWAN SDK into the System Workbench IDE
+### Open the I-CUBE-LRWAN SDK in the System Workbench IDE
 
 - Open the System Workbench IDE
 - Click `File` > Open Projects from File System...
 - Click `Directory` > Browse to the `en.i-cube_lrwan` directory created when you unzipped the en.i-cube_lrwan.zip file
 - Continue browsing to `/Projects/Multi/Applications/LoRa/End_Node/SW4STM32/B-L072Z-LRWAN1/`
-- Select the `mlm32l07x01` Click `OK`
-- **Check** the box next to `mlm32l07x01`
+- Select the `mlm32l07x01` directory > Click `OK`
+- **Check** the box next to the `mlm32l07x01` directory
 - Click `Finish`
 
 ### Initial Build of the mlm32l07x01 Project
 
 At this point you've opened the `mlm32l07x01` project and now you must build all the SDK libraries.
 
-- In the Project Explorer you should see the `mlm32l07x01` folder
+- In the Project Explorer you should see the `mlm32l07x01` directory
 - Click the `Project` Menu > `Build All` or Press CTRL-B to build
-- When the build completes you should see a success messages such as this `15:13:22 Build Finished (took 22s.424ms)`
+- When the build completes you should see success messages such as this `15:13:22 Build Finished (took 22s.424ms)`
 
 ### Configure Global Environment Settings
 
 If you are in the USA you must change the LoRaWAN frequency to `915MHZ` in the project's `Preprocessor` setting in the IDE
 
 - In the Project Explorer window find the `mlm32l07x01` project
-- Right Click the `mlm32l07x01` folder > Click `Properties`
+- Right Click the `mlm32l07x01` directory > Click `Properties`
 - Expand `C/C++ Build` tree > Click `Settings`
 - Click `Tools Settings` tab > Expand the `MCU GCC Compiler` tree
-- Click `Preprocessor` folder > Double Click the `REGION_EU868` value in the Defined Symbols section
-- Click replace the REGION_EU868 value with `REGION_US915` > Click `OK` > Click `OK` again
+- Click `Preprocessor` directory > Double Click the `REGION_EU868` value in the Defined Symbols section
+- Click replace the **REGION_EU868** value with `REGION_US915` > Click `OK` > Click `OK` again
 - Recompile with new settings > Click the `Project` Menu > `Build All` or Press CTRL-B to build
 
 After the project Builds successfully you're ready to being programming the B-L072Z-LRWAN1 device to join a LoRaWAN network such as [Senet](http://www.senetco.com/) or [MachineQ](http://machineq.com/)
@@ -84,11 +84,14 @@ Here you're going to change the values to some variables in the source code to m
 In the System Workbench IDE:
 
 - Expand the `mlm32l07x01` project in the Project Explorer
-- Expand the `Includes` folder
-- Find the Project's Include files which is mormally the last folder in this list. The file path is simialr to this `< filepath to your project folder>/Projects/Multi/Applications/LoRa/End_Node/inc`where the `< filepath to your project folder>` value is the location of your project on disk.
-- Expand the `inc` folder and open these files in the IDE:
+- Expand the `Includes` directory
+- Find the Project's Include files which is mormally the last directory in this list. The file path is simialr to this `< filepath to your project directory>/Projects/Multi/Applications/LoRa/End_Node/inc`where the `< filepath to your project directory>` value is the location of your project on disk.
+- Expand the `inc` directory and open these files in the IDE:
     - `hw_conf.h`
     - `Commissioning.h`
+
+Open `main.c` file
+
 - Expand the `Projects\End_Node\` directory
 - Open the `main.c` file
 
@@ -97,7 +100,6 @@ In the System Workbench IDE:
 The `hw_conf.h` file has some variables that should be set when using a sensor shield or when you need to debug your application.
 
 - UnComment the `#define SENSOR_ENABLED` variable
-- UnComment the `#define LOW_POWER_DISABLE` when you need to debug but leave it Commented for now
 
 ### Configure Commissioning.h File
 
@@ -113,8 +115,11 @@ Open the `Commissioning.h` file. Find the following statements in the code & rep
 
 ### Configure main.c File
 
-- Uncomment //#define CAYENNE_LPP
+The payload data that this device is sending will be formatted using the Cayenne LPP format
 
+- Uncomment the `//#define CAYENNE_LPP` variable
+- Set ADR to **1**:  `#define LORAWAN_ADR_ON                              1`
+- Enable confirmed messages: `#define LORAWAN_CONFIRMED_MSG                    ENABLE`
 
 ### Build the Binary
 
@@ -132,17 +137,23 @@ The binary is ready to be uploaded to the device.
 
 Now you need to grab the binary and upload to the device.
 
-- Browse to `< filepath to your project folder> /Projects/Multi/Applications/LoRa/End_Node/SW4STM32/B-L072Z-LRWAN1/mlm32l07x01/Debug/` where the `< filepath to your project folder>` value is the location of your project on disk.
+- Browse to `< filepath to your project directory> /Projects/Multi/Applications/LoRa/End_Node/SW4STM32/B-L072Z-LRWAN1/mlm32l07x01/Debug/` where the `< filepath to your project directory>` value is the location of your project on disk.
 - Find the `mlm32l07x01.bin` file and Copy/Paste or Drag & Drop it into the `DIS_L072Z` devic listed in your operating systems file explorer
 - The device led will flash green & red while the device is being programmed and will remain solid green when complete.
 
+Congratulations the device is now running the code that you compiled.  Next we'll check the Senet dashboard to see actual LoRaWAN traffic being collected from your device.
+
 ### Confirm the Device it Transmitting to Senet
 
-Log into the Senet Portal and click on your registered B-L072Z device.  If the device is transmitting properly then you should see data in the Senet device portal. 
+Log into the Senet Portal and click on your registered B-L072Z device.  If the device is transmitting properly then you should see data in the Senet device portal in a few minutes.
 
+If you're not seeing any data after a few minutes then:
 
+- Confirm you properly configured the code with the proper values
+- Ensure the code compiled without any Errors
+- Copy the `.bin` file to the device again using steps in `Programming the Device` section
+- Ensure that you are withing range of a Senet LoRaWAN Gateway or in an area within Senet Outdoor coverage check the [coverage map here](http://www.senetco.com/coverage/)
 
-### Hack the Device Code
+## Integrating Mircoshare.io into the Senet Platform
 
-
-In Project Explorer > Browse to `mlm32l07x01\Projects\End_Node` and expand the folder
+### Coming Soon
