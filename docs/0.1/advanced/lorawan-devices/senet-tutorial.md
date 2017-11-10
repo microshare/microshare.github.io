@@ -95,8 +95,9 @@ Open the Authenticaiton -> Request Token call, and run it once with your same en
 
 For that call, specify the recType you used in the query params, and click send. This request a view of all the data THAT YOU HAVE ACCESS TO with THAT RECTYPE:
             
-
-
+{% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
+{% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
+{% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
 If the redirection works well, you should see some objs returned with your Senet data under objs -> data. The pdu key holds your sensor mesure.  
 If you rerun that call, the number of records will increase as the data is streamed. The microshare metadata tells you among others how many pages of records you have, and the total number of records stored under this recType, 
