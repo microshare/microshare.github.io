@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: B-L072Z-LRWAN1 Discovery kit
+title: Integrating microshare into Senet
 description:
 group: advanced
 toc: true
