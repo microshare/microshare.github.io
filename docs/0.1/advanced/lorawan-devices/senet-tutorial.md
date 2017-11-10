@@ -22,11 +22,11 @@ The account creation process is simple: we ask you for your email address and se
 To start the process, go to [https://app.microshare.io](https://app.microshare.io) and select [Sign Up](https://auth.microshare.io/portal/signup).  
 Your experience should be similar to the screenshots below.
 
-`{% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}`
-`{% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}`
-`{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}`
-`{% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}`
-`{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}`
+{% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}
+{% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}
+{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}
+{% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}
+{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
 ## How to send data to microshare
 

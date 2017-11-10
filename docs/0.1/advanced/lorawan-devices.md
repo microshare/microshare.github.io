@@ -13,3 +13,7 @@ toc: true
 ## Device Tutorials
 
 ### [ST B-L072Z-LRWAN1 LoRa Discovery kit](st-b-l072z-lrwan1-discovery-kit)
+
+## Platform Tutorials
+
+### [Stream IoT packets from Senet to Microshare](senet-tutorial)
