@@ -53,13 +53,15 @@ Once the key is created, click on it to copy it to your clipboard. (See the scre
 Go back to Postman and edit your environment. Copy the apikey and fill up your username and password.
 This allows you to run the Authentication -> Request pipe token one. The generated token is returned under access token, and is valid for an unlimited time, and used only to push data to microshare. 
 
-Later we'll use the Requst Token call that gets you a 48h validity tokn for other API calls.
+Later we'll use the Request Token call that gets you a 48h validity tokn for other API calls.
 
+{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
+Note that all generated tokens can be found and copied or revoked from the Manage -> Key -> Tokens screen in microshare. If you didn't grab the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
 
-
-BTW, all generated tokens can be found and copied or revoked from the Manage -> Key -> Tokens screen in microshare. If you didn't grab the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
-
+{% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
 ## Setup your notification target on Senet
 
@@ -78,9 +80,9 @@ And that's it for the microshare options! All the other options are Senet specif
 
 Finally, don’t forget to enable the notification target!
 
-
-
-
+{% include image.html url="/assets/img/senet-notification-target-1.png" description="Senet portal" %}
+{% include image.html url="/assets/img/senet-notification-target-2.png" description="Empty notification target" %}
+{% include image.html url="/assets/img/senet-notification-target-3.png" description="Microshare notification target" %}
 
 Note the you can only have one notification target by device, but that you can use the same recType for several devices if you want their packets to be rrive in microshare as a bundled stream.
 
