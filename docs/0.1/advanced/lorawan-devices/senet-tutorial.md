@@ -40,15 +40,15 @@ The category under which every one of your data packets get stored in microshare
 ## Generate a microshare pipe token
 
 I will now show you how to create a token with microshare's API. The easiest way is to use [the Postman collection](../../generic-rest-api) from the documentation website with its environment.  
-
 To use the token generation calls, you need to identify yourself with your username, password and an APIkey. 
 
 To get an APIkey, login to your microshare account and go to Manage -> Keys.
 Clicking 'CREATE NEW APP' opens a modal allowing you to name your APIkey.
 Once the key is created, click on it to copy it to your clipboard. (See the screenshots below)
 
-
-
+{% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
+{% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
+{% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
 Go back to Postman and edit your environment. Copy the apikey and fill up your username and password.
 This allows you to run the Authentication -> Request pipe token one. The generated token is returned under access token, and is valid for an unlimited time, and used only to push data to microshare. 
