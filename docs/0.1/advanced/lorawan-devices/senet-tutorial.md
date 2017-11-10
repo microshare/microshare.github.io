@@ -22,15 +22,15 @@ The account creation process is simple: we ask you for your email address and se
 To start the process, go to [https://app.microshare.io](https://app.microshare.io) and select [Sign Up](https://auth.microshare.io/portal/signup).  
 Your experience should be similar to the screenshots below.
 
-
-
-
-
-
+`{% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}`
+`{% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}`
+`{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}`
+`{% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}`
+`{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}`
 
 ## How to send data to microshare
 
-Now that you have created your account, you own a little piece of the microshare data lake. You will now use Senet's automated redirection of packets, aka a device's notification target, to pass that data through to microshare's RESTful API.  
+Now that you have created your account, you own a little piece of the microshare data lake. You will now use Senet's automated redirection of packets, aka a device's notification target, to pass that data through to [microshare's RESTful API](../../generic-rest-api).  
 The API needs to know two things when receiving data from an external service: which user is owner of that data, and under which category should it be stored in the data lake. Those two pieces of information are setup in Senet's notification target.  
 
 To identify yourself as the owner of the streamed data, you will generate a token from your microshare account. I will cover how to get one in the next session.  
@@ -39,7 +39,7 @@ The category under which every one of your data packets get stored in microshare
 
 ## Generate a microshare pipe token
 
-I will now show you how to create a token with microshare's API. The easiest way is to use the Postman collection from the documentation website with its environment.  
+I will now show you how to create a token with microshare's API. The easiest way is to use [the Postman collection](../../generic-rest-api) from the documentation website with its environment.  
 
 To use the token generation calls, you need to identify yourself with your username, password and an APIkey. 
 
@@ -63,7 +63,7 @@ BTW, all generated tokens can be found and copied or revoked from the Manage -> 
 
 ## Setup your notification target on Senet
 
-Now that you have your generated token, go to Senet and open the configuration of a device.
+Now that you have your generated token, [go to Senet](https://portal.senetco.io/) and open the configuration of a device.
 Select the Notification Target tab.
 To redirect the packets to our API, use the forward to HTTP option.
 
@@ -74,7 +74,7 @@ First, as you have the pipe token in your clipboard, let's set that up first. Ad
 Then enter this in the URL to point to the data POSTing API: https://api.microshare.io/share/< enter the recType you chose here>
 As a tip, I usually compose a recType from where the data comes from, from the most global to the more specific. For example, here my device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so my recType is: us.philadelphia.senet.sodaq.
 
-And that's it for the microshare options! All the other options are Senet specific, you don't need them on for your sensor mesure to be passed to microshare. Check what extra data you can add to your packet from the Senet documentation:  http://docs.senetco.io/docs/stream/#packet-data
+And that's it for the microshare options! All the other options are Senet specific, you don't need them on for your sensor mesure to be passed to microshare. Check what extra data you can add to your packet from the Senet documentation: [http://docs.senetco.io/docs/stream/#packet-data](http://docs.senetco.io/docs/stream/#packet-data)
 
 Finally, don’t forget to enable the notification target!
 
@@ -100,4 +100,4 @@ If the redirection works well, you should see some objs returned with your Senet
 If you rerun that call, the number of records will increase as the data is streamed. The microshare metadata tells you among others how many pages of records you have, and the total number of records stored under this recType, 
 
 Beware that the totalCount can be higher that the total number of records you own, because another user can be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see his or hers, unless you have created Rules to share your data together.  
-If you want to know more on how to work collaboratively with other users by sharing records, check our Rules guide. 
+If you want to know more on how to work collaboratively with other users by sharing records, check our [Rules guide](../../../getting-started/rules-guide). 
