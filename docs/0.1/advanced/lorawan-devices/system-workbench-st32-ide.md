@@ -27,6 +27,8 @@ On Mac OSX and Linux, open your command line at the location of the file then ma
 - Then run it with:  
 `> ./install_sw4stm32_XXX-vX.X.run`
 
+**Note** Please check to install the STLinkServer as the Install Wizard asks you, you will need libraries installed with this package.
+
 ## Next Steps
 
 Now that you have the System Workbench IDE installed you can jump over to one of our device programming tutorials and learn how to program your devices.
