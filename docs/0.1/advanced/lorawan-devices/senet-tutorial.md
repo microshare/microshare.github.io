@@ -10,7 +10,7 @@ toc: true
 
 This tutorial assumes that you already registered for and have [a Senet Developer account](http://www.senetco.com/developer-portal/). It also assumes that you have provisioned at least one device sending uplink packages to Senet.
 
-This tutorial will show you how to configure your Senet devices to forward IoT data to the microshare.io data lake. It'll also show you how to create a microshare account, generate a streaming token, and use it in a Senet notification target.  After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
+This tutorial will show you how to configure your Senet devices to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a Senet notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
 
 ## Register for a Microshare.io account
 
@@ -57,8 +57,8 @@ Once the key is created, click on it to copy it to your clipboard. (See the scre
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-Go back to Postman and edit your environment. Copy the apikey and enter your username and password.
-This allows you to run the Authentication -> Request pipe token. The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
+Go back to Postman and edit your environment. Copy the APIkey and enter your username and password.
+This allows you to run the request `Authentication -> Request pipe token`. The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
 
 Later we'll use the `Request Token` call that returns an access token which only valid for 48 hours and can be used with the other microshare APIs.
 
@@ -76,17 +76,17 @@ Now that you have your generated token [log into Senet](https://portal.senetco.i
 Click the `Notification Target` tab.
 To redirect the packets to our API, use the `Forward to HTTP` option.
 
-Since you have the pipe token in your clipboard, let's set that up first. Add a header parameter like this:
+Since you have the pipe token in your clipboard, set that up first. Add a header parameter like this:
 - Header Key: Authorization
 - Header Value: Bearer <enter the pipe token here>
 
 Then enter this in the URL field: `https://api.microshare.io/share/< enter the recType you chose here>`
 
-**Tip**: I usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so my recType is: `us.philadelphia.senet.sodaq`
+**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so the recType can be: `us.philadelphia.senet.sodaq`
 
-And that's it for the microshare options! All the other options are Senet specific, you don't need them enabled for your sensor data to be posted to microshare. Check out the other data you can add to your packet from the Senet documentation: [http://docs.senetco.io/docs/stream/#packet-data](http://docs.senetco.io/docs/stream/#packet-data)
+All the other options are Senet specific, you don't need them enabled for your sensor data to be posted to microshare. Learn more about the extra data you can add to your packet from the Senet documentation: [http://docs.senetco.io/docs/stream/#packet-data](http://docs.senetco.io/docs/stream/#packet-data)
 
-Finally, don’t forget to enable the notification target!
+Finally, don’t forget to enable the notification target.
 
 {% include image.html url="/assets/img/senet-notification-target-1.png" description="Senet portal" %}
 {% include image.html url="/assets/img/senet-notification-target-2.png" description="Empty notification target" %}
@@ -96,21 +96,21 @@ Finally, don’t forget to enable the notification target!
 
 ## Verify the data streaming to microshare
 
-Your Senet device data should now be streaming to your microshare account. Let me show you how to check that with the API.
+Your Senet device data should now be streaming to your microshare account. You can verify that with the microshare API.
 
-You are going to use the `Share -> Get Shares by recType` call. But to do that you need a password token as explained in the previous section.
+You are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
 
-Open the `Authenticaiton -> Request Token` call, and run it. The generated `access-token` is automatically copied to your environment, so you are ready to go and run `Get Shares by recType`.
+Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to go and run `Get Shares by recType`.
 
-For the `Get Shares by recType` call, specify the recType you used in the query params, and click send. This requests a view of all the data **THAT YOU ONLY HAVE ACCESS TO** associated to that recType:
+For the `Get Shares by recType` request, specify the recType you used in the query params, and click send. It returns a view of all the data **THAT YOU ONLY HAVE ACCESS TO** associated to that recType:
             
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
 {% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
-If the redirection worked, you should see data returned with your Senet data under the `objs -> data` keys. The `pdu key` holds your device's payload data which is generally sensor data such as temperature, gps or co2 measurements.
+As a consequence of the redirection, you now see your Senet data under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
 
-If you execute that call again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
 **Beware** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 
