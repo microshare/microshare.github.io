@@ -60,13 +60,13 @@ Once the key is created, click on it to copy it to your clipboard. (See the scre
 Go back to Postman and edit your environment. Copy the APIkey and enter your username and password.
 This allows you to run the request `Authentication -> Request pipe token`. The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
 
-Later we'll use the `Request Token` call that returns an access token which only valid for 48 hours and can be used with the other microshare APIs.
+Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
-**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't grab the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
+**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
