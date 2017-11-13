@@ -114,4 +114,4 @@ If you execute the request again, the number of records will increase as the dat
 
 **Beware** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 
-Learn more on how to work collaboratively with other users by sharing records, check out [Rules guide](../../../getting-started/rules-guide)
+Learn more on how to work collaboratively with other users by sharing records, check out our [Rules guide](../../../getting-started/rules-guide)
