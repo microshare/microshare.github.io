@@ -20,6 +20,19 @@ Download & install the System Workbench IDE. You can find installation instructi
 - [Linux](http://www.openstm32.org/Downloading%2Bthe%2BSystem%2BWorkbench%2Bfor%2BSTM32%2Binstaller#Linux)
  Pay attention to the installation instruction **warnings**
 
+To start the installation on Windows, launch the .exe file.  
+On Mac OSX and Linux, open your command line at the location of the file then make sure to
+- Set the file as an executable with:  
+`> chmod +x install_sw4stm32_XXX-vX.X.run`
+- Then run it with:  
+`> ./install_sw4stm32_XXX-vX.X.run`
+
+**Notes** 
+- Please check to install the `STLinkServer` option when the Wizard asks you, you will need libraries installed with this package.
+- As the installation goes on, a command line prompt will ask you for your password. Be sure to check your terminal if the install looks stuck.
+
+When the installation is over, you will find the IDE under System Workbench in your applications.
+
 ## Next Steps
 
 Now that you have the System Workbench IDE installed you can jump over to one of our device programming tutorials and learn how to program your devices.
