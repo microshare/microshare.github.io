@@ -1,0 +1,1247 @@
+{
+	"info": {
+		"name": "Microshare",
+		"_postman_id": "026b261b-e0e8-ad1e-21c2-02e4d30ee8a9",
+		"description": "Welcome to Microshare's API documentation!\n\nThis API allows you to create and manage your data within Microshare's data lake.\n\n- With Shares, you'll be able to directly create, search, retrieve and delete data.\n- Rules will allow you to share this data or limit its visibility.\n- Robots are helpful scripts that run against your data to manipulate data structures, and perform actions initiated by the data itself.\n\nTo quickly get started, click on the button below to run the Microshare collection in Postman:",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"description": "Request and revoke tokens used to authenticate to our API",
+			"item": [
+				{
+					"name": "Request Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+									"/*[[start postmanerator]]*/",
+									"function populateNewAPIStructures() {",
+									"    APIStructures['robot'] = {",
+									"        name: 'Robots',",
+									"        description: 'Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the robot', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the robot', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the robot', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['rule'] = {",
+									"        name: 'Rules',",
+									"        description: 'Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the rule', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the rule', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the rule', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code>', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['share'] = {",
+									"        name: 'Shares',",
+									"        description: 'Shares represent your data stored in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the share', type: 'ObjectId'},",
+									"            {name: '<code>data</code>', description: 'The data object is where your data is stored in our data lake', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"}",
+									"/*[[end postmanerator]]*/"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{authHostname}}/oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=password&scope=ALL:ALL",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"equals": true
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"equals": true
+								},
+								{
+									"key": "client_id",
+									"value": "{{apikey}}",
+									"equals": true
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"equals": true
+								},
+								{
+									"key": "scope",
+									"value": "ALL:ALL",
+									"equals": true
+								}
+							]
+						},
+						"description": "Request an Authentification token required to use this API. \n\nYou will need to provide username, password, as well as a valid API Key. You can manage your API keys in our [Keys Console](https://msaf.microshare.io/composer#/keys).\n\nThe default scope is `ALL:ALL`, but you can replace it to request tokens that will allow limited operations. For example, if the scope is `SHARE:READ` the token will only allow you to read Shares."
+					},
+					"response": []
+				},
+				{
+					"name": "Request pipe Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+									"/*[[start postmanerator]]*/",
+									"function populateNewAPIStructures() {",
+									"    APIStructures['robot'] = {",
+									"        name: 'Robots',",
+									"        description: 'Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the robot', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the robot', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the robot', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['rule'] = {",
+									"        name: 'Rules',",
+									"        description: 'Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the rule', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the rule', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the rule', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code>', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['share'] = {",
+									"        name: 'Shares',",
+									"        description: 'Shares represent your data stored in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the share', type: 'ObjectId'},",
+									"            {name: '<code>data</code>', description: 'The data object is where your data is stored in our data lake', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"}",
+									"/*[[end postmanerator]]*/"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{authHostname}}/oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=pipe&scope=ALL:ALL",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"equals": true
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"equals": true
+								},
+								{
+									"key": "client_id",
+									"value": "{{apikey}}",
+									"equals": true
+								},
+								{
+									"key": "grant_type",
+									"value": "pipe",
+									"equals": true
+								},
+								{
+									"key": "scope",
+									"value": "ALL:ALL",
+									"equals": true
+								}
+							]
+						},
+						"description": "Request a pipe Authentification token, required to stream data to your microshare account. \n\nYou will need to provide username, password, as well as a valid API Key. You can manage your API keys in our [Keys Console](https://dapp.microshare.io/composer#/keys).\n\nThe default scope is `ALL:ALL`, but you can replace it to request tokens that will allow limited operations. For example, if the scope is `SHARE:READ` the token will only allow you to read Shares."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shares",
+			"description": "Upload your data and easily share it with the Share API",
+			"item": [
+				{
+					"name": "Get one Share",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "59238b9346e0fb0352c2948b"
+								}
+							]
+						},
+						"description": "Retrieve one share by `recType` and object `id`"
+					},
+					"response": [
+						{
+							"id": "fa6572e8-4923-4c11-b0a3-0025a44813f9",
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hostname}}/share/:recType/:id",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										},
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:15:41 GMT",
+									"description": ""
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": ""
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": "198",
+							"body": "{\"meta\":{\"totalPages\":1,\"currentPage\":1,\"perPage\":999,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"updaterId\":\"vleput@point.io\",\"desc\":\"\",\"name\":\"\",\"createDate\":{\"$date\":1495501715141},\"_id\":{\"$oid\":\"59238b9346e0fb0352c2948b\"},\"data\":{\"hello\":\"world\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238b9346e0fb0352c2948b\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"tstamp\":{\"$numberLong\":\"1495501715141\"},\"origin\":{\"tokendata\":{\"ip\":\"10.0.2.198\",\"id\":\"0d540f05-0dd9-4a78-b8b4-00416404da3a\"},\"desc\":\"Object of Type io.microshare.test\",\"name\":\"io.microshare.test\",\"createDate\":{\"$numberLong\":\"1495501715141\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238b9346e0fb0352c2948b\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"remoteAddress\":\"99.230.49.67\"},\"recType\":\"io.microshare.test\",\"owner\":{\"appid\":\"2FA9DF02-F4EC-4DA4-AEC1-0508E228328F\",\"org\":\"io.point\",\"user\":\"vleput@point.io\"}}]}"
+						}
+					]
+				},
+				{
+					"name": "Get Shares by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{hostname}}/share/:recType?details=true&page&perPage",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"equals": false
+								},
+								{
+									"key": "perPage",
+									"value": "",
+									"equals": false
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all shares under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": [
+						{
+							"id": "8c88c4e8-051c-406b-b64b-a43a50edff6b",
+							"name": "Success - with details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hostname}}/share/:recType?details=true&page&perPage",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType"
+									],
+									"query": [
+										{
+											"key": "details",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"equals": false
+										},
+										{
+											"key": "perPage",
+											"value": "",
+											"equals": false
+										}
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:19:00 GMT",
+									"description": ""
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": ""
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": "88",
+							"body": "{\"meta\":{\"totalPages\":1,\"currentPage\":1,\"perPage\":999,\"totalCount\":2,\"currentCount\":2},\"objs\":[{\"updaterId\":\"vleput@point.io\",\"desc\":\"\",\"name\":\"\",\"createDate\":{\"$date\":1495501715141},\"_id\":{\"$oid\":\"59238b9346e0fb0352c2948b\"},\"data\":{\"hello\":\"world\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238b9346e0fb0352c2948b\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"tstamp\":{\"$numberLong\":\"1495501715141\"},\"origin\":{\"tokendata\":{\"ip\":\"10.0.2.198\",\"id\":\"0d540f05-0dd9-4a78-b8b4-00416404da3a\"},\"desc\":\"Object of Type io.microshare.test\",\"name\":\"io.microshare.test\",\"createDate\":{\"$numberLong\":\"1495501715141\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238b9346e0fb0352c2948b\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"remoteAddress\":\"99.230.49.67\"},\"recType\":\"io.microshare.test\",\"owner\":{\"appid\":\"2FA9DF02-F4EC-4DA4-AEC1-0508E228328F\",\"org\":\"io.point\",\"user\":\"vleput@point.io\"}},{\"updaterId\":\"vleput@point.io\",\"desc\":\"\",\"name\":\"\",\"createDate\":{\"$date\":1495502001213},\"_id\":{\"$oid\":\"59238cb146e0fb0352c2948e\"},\"tags\":[\"foo\",\"bar\"],\"data\":{\"hello\":\"world\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238cb146e0fb0352c2948e\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"tstamp\":{\"$numberLong\":\"1495502001213\"},\"origin\":{\"tokendata\":{\"ip\":\"10.0.2.198\",\"id\":\"0d540f05-0dd9-4a78-b8b4-00416404da3a\"},\"desc\":\"Object of Type io.microshare.test\",\"name\":\"io.microshare.test\",\"createDate\":{\"$numberLong\":\"1495502001213\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238cb146e0fb0352c2948e\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"remoteAddress\":\"99.230.49.67\"},\"recType\":\"io.microshare.test\",\"owner\":{\"appid\":\"2FA9DF02-F4EC-4DA4-AEC1-0508E228328F\",\"org\":\"io.point\",\"user\":\"vleput@point.io\"}}]}"
+						},
+						{
+							"id": "bdd78325-cdbd-4788-8a6f-61b01e3fdd35",
+							"name": "Success - without details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hostname}}/share/:recType?details=false&page&perPage",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType"
+									],
+									"query": [
+										{
+											"key": "details",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"equals": false
+										},
+										{
+											"key": "perPage",
+											"value": "",
+											"equals": false
+										}
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:19:37 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": "A name for the server"
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": "99",
+							"body": "{\"meta\":{\"totalPages\":1,\"currentPage\":1,\"perPage\":999,\"totalCount\":2,\"currentCount\":2},\"objs\":[{\"name\":\"\",\"url\":\"/share/io.microshare.test/59238b9346e0fb0352c2948b\",\"_id\":{\"$oid\":\"59238b9346e0fb0352c2948b\"},\"id\":\"59238b9346e0fb0352c2948b\",\"tstamp\":\"05/23/2017 01:08:35:141 AM\",\"recType\":\"io.microshare.test\"},{\"name\":\"\",\"url\":\"/share/io.microshare.test/59238cb146e0fb0352c2948e\",\"_id\":{\"$oid\":\"59238cb146e0fb0352c2948e\"},\"tags\":[\"foo\",\"bar\"],\"id\":\"59238cb146e0fb0352c2948e\",\"tstamp\":\"05/23/2017 01:13:21:213 AM\",\"recType\":\"io.microshare.test\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Get Shares by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2?details=true&page&perPage",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"equals": false
+								},
+								{
+									"key": "perPage",
+									"value": "",
+									"equals": false
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Retrieve all shares under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": [
+						{
+							"id": "492f9e04-c7ca-4cdf-8534-37f2b38a44e7",
+							"name": "Success - with details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2?details=true&page&perPage",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType",
+										"tags",
+										":tag1",
+										":tag2"
+									],
+									"query": [
+										{
+											"key": "details",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"equals": false
+										},
+										{
+											"key": "perPage",
+											"value": "",
+											"equals": false
+										}
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										},
+										{
+											"key": "tag1",
+											"value": ""
+										},
+										{
+											"key": "tag2",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:29:23 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": "A name for the server"
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": "299",
+							"body": "{\"meta\":{\"totalPages\":1,\"currentPage\":1,\"perPage\":999,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"updaterId\":\"vleput@point.io\",\"desc\":\"\",\"name\":\"\",\"createDate\":{\"$date\":1495502001213},\"_id\":{\"$oid\":\"59238cb146e0fb0352c2948e\"},\"tags\":[\"foo\",\"bar\"],\"data\":{\"hello\":\"world\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238cb146e0fb0352c2948e\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"tstamp\":{\"$numberLong\":\"1495502001213\"},\"origin\":{\"tokendata\":{\"ip\":\"10.0.2.198\",\"id\":\"0d540f05-0dd9-4a78-b8b4-00416404da3a\"},\"desc\":\"Object of Type io.microshare.test\",\"name\":\"io.microshare.test\",\"createDate\":{\"$numberLong\":\"1495502001213\"},\"creatorId\":\"vleput@point.io\",\"id\":\"59238cb146e0fb0352c2948e\",\"checksum\":\"93A23971A914E5EACBF0A8D25154CDA309C3C1C72FBB9914D47C60F3CB681588L17\",\"remoteAddress\":\"99.230.49.67\"},\"recType\":\"io.microshare.test\",\"owner\":{\"appid\":\"2FA9DF02-F4EC-4DA4-AEC1-0508E228328F\",\"org\":\"io.point\",\"user\":\"vleput@point.io\"}}]}"
+						},
+						{
+							"id": "1911d7a5-c0e9-4194-afc2-7bf5e8aac164",
+							"name": "Success - without details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2?details=false&page&perPage",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType",
+										"tags",
+										":tag1",
+										":tag2"
+									],
+									"query": [
+										{
+											"key": "details",
+											"value": "false",
+											"equals": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"equals": false
+										},
+										{
+											"key": "perPage",
+											"value": "",
+											"equals": false
+										}
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										},
+										{
+											"key": "tag1",
+											"value": ""
+										},
+										{
+											"key": "tag2",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:29:41 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": "A name for the server"
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": "79",
+							"body": "{\"meta\":{\"totalPages\":1,\"currentPage\":1,\"perPage\":999,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"name\":\"\",\"url\":\"/share/io.microshare.test/59238cb146e0fb0352c2948e\",\"_id\":{\"$oid\":\"59238cb146e0fb0352c2948e\"},\"tags\":[\"foo\",\"bar\"],\"id\":\"59238cb146e0fb0352c2948e\",\"tstamp\":\"05/23/2017 01:13:21:213 AM\",\"recType\":\"io.microshare.test\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Get Latest Shares by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/latest?details=true&page&perPage",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "page",
+									"value": "",
+									"equals": false
+								},
+								{
+									"key": "perPage",
+									"value": "",
+									"equals": false
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all shares under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |\n| `sort`        | string        | Specifies if sorting needs to be applied and to which field in the data |"
+					},
+					"response": []
+				},
+				{
+					"name": "Create one Share",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hello\": \"world\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`. This inserts a new record into the Microshare data lake.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`)."
+					},
+					"response": [
+						{
+							"id": "a882d1bc-56e3-4fd8-ab24-633ed792cf8f",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"hello\": \"world\"\n}"
+								},
+								"url": {
+									"raw": "{{hostname}}/share/:recType",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType"
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "access-control-allow-credentials",
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"name": "access-control-allow-origin",
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:08:35 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": "A name for the server"
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": "76",
+							"body": "{\"meta\":{\"totalPages\":0,\"currentPage\":1,\"perPage\":0,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"name\":\"\",\"url\":\"/share/io.microshare.test/59238b9346e0fb0352c2948b\",\"_id\":{\"$oid\":\"59238b9346e0fb0352c2948b\"},\"id\":\"59238b9346e0fb0352c2948b\",\"tstamp\":\"05/23/2017 01:08:35:141 AM\",\"recType\":\"io.microshare.test\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Create one Share with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"hello\": \"world\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`, with searchable `tags`. This inserts a new record into the Microshare data lake.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`).\n\nTags allow you to later search objects with the same `recType` with a `GET` request. You can specify as many tags as you need."
+					},
+					"response": [
+						{
+							"id": "25dae677-4663-4526-a5c8-d6e22b256b24",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"hello\": \"world\"\n}"
+								},
+								"url": {
+									"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType",
+										"tags",
+										":tag1",
+										":tag2"
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										},
+										{
+											"key": "tag1",
+											"value": ""
+										},
+										{
+											"key": "tag2",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "access-control-allow-credentials",
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"description": ""
+								},
+								{
+									"name": "access-control-allow-origin",
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"description": ""
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:13:21 GMT",
+									"description": ""
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": ""
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": "314",
+							"body": "{\"meta\":{\"totalPages\":0,\"currentPage\":1,\"perPage\":0,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"name\":\"\",\"url\":\"/share/io.microshare.test/59238cb146e0fb0352c2948e\",\"_id\":{\"$oid\":\"59238cb146e0fb0352c2948e\"},\"tags\":[\"foo\",\"bar\"],\"id\":\"59238cb146e0fb0352c2948e\",\"tstamp\":\"05/23/2017 01:13:21:213 AM\",\"recType\":\"io.microshare.test\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Delete one Share",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "592331ce46e0fb0352c293ed"
+								}
+							]
+						},
+						"description": "Permanently delete one share by `recType` and object `id`"
+					},
+					"response": [
+						{
+							"id": "4924a637-e3b6-4b7a-bb4a-4d64efd7dd08",
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{hostname}}/share/:recType/:id",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"share",
+										":recType",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "recType",
+											"value": ""
+										},
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"name": "access-control-allow-credentials",
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"name": "access-control-allow-origin",
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"name": "content-encoding",
+									"key": "content-encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "content-type",
+									"key": "content-type",
+									"value": "application/json",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "date",
+									"key": "date",
+									"value": "Tue, 23 May 2017 01:18:55 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "server",
+									"key": "server",
+									"value": "akka-http/10.0.3",
+									"description": "A name for the server"
+								},
+								{
+									"name": "status",
+									"key": "status",
+									"value": "200",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": "118",
+							"body": "{\"meta\":{\"totalPages\":0,\"currentPage\":1,\"perPage\":0,\"totalCount\":1,\"currentCount\":1},\"objs\":[{\"id\":\"592331ce46e0fb0352c293ed\",\"recType\":\"io.microshare.test\"}]}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
