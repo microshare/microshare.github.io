@@ -11,15 +11,12 @@ You can set up automatic multistep processes to transform your data so that it c
 Each step of the pipeline is managed by a Robot.  
 Here are some available Robot actions.  
 
-FIRST, HAVE A LOOK AT THE [ROBOT GUIDE] (https://microshare.github.io/docs/0.1/getting-started/robot-guide/)
+For an introduction to robots take a look at the [Robot Guide](../robot-guide)
 
 ## Data lake Read
 ### Read record triggering the Robot
 
-Ideal for validation
-
-Read the record that triggers the Robot thanks to our handy lib.  
-You can grab the data, the id, the recType...  
+Read the record that triggers the Robot using lib.read to get the data and metadata: 
 
 {% highlight js %}
   // Include the helper objects which allows you to read and write to microshare datalake
@@ -37,41 +34,109 @@ You can grab the data, the id, the recType...
   
 And the returned data model is  
 {% highlight js %}
-  //TODO a real share result
-{% endhighlight %}
 
-An error will appear like this.  
-//TODO error data model
-
-So this is how you would safely detect those errors.  
-//TODO code snippet  
+  {
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "jwang@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1507824651492
+            },
+            "_id": {
+                "$oid": "59df940b46e0fb0028fbb54c"
+            },
+            "tags": [
+                "tempID1234",
+                "demoOnly",
+                "raw"
+            ],
+            "data": {
+                "Freq": 868300000,
+                "upid": {
+                    "$numberLong": "23393998034011604"
+                },
+                "DR": 5,
+                "msgtype": "updf",
+                "DevEui": "58-A0-CB-FF-FF-FE-BB-15",
+                "SessID": 3,
+                "FCntUp": 165,
+                "ArrTime": 1506622798.0322363,
+                "confirm": false,
+                "region": "EU863",
+                "regionid": 1000,
+                "FRMPayload": "00EB05050046E90F",
+                "FPort": 102
+            },
+            "creatorId": "jwang@point.io",
+            "id": "59df940b46e0fb0028fbb54c",
+            "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266",
+            "tstamp": {
+                "$numberLong": "1507824651492"
+            },
+            "origin": {
+                "tokendata": {
+                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d89dc"
+                },
+                "desc": "Object of Type io.microshare.demo.sensor.temprature",
+                "name": "io.microshare.demo.sensor.temprature",
+                "createDate": {
+                    "$numberLong": "1507824651492"
+                },
+                "creatorId": "jwang@point.io",
+                "id": "59df940b46e0fb0028fbb54c",
+                "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266"
+            },
+            "recType": "io.microshare.demo.sensor.temprature",
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.point",
+                "user": "jwang@point.io"
+            }
+        }
+      ]  
+  }
+{% endhighlight %} 
 
 ### Read any record
 You can also read any record from which you know the recType and/or id.  
-Will return an array all the time, you can have more than one record returned.  
-Perform like the [API call](https://microshare.github.io/docs/0.1/getting-started/api-overview/).    
-//TODO code snippet of the advanced read  
-//Same recType as triggering the Robot, returning an array of results  
+This call will always return an array and depending on the read, you can have more than one record returned.
+To get records by the recType and associated tags:
 
-Same error handling ?  
+{% highlight js %}
+  var tags = ["tempID1234"]
+  var record = lib.read('{"message":"source=ShareService,type=objs,recType=io.microshare.demo.sensor.temprature,id="}', auth, tags);
+
+{% endhighlight %}
 
 ## Data lake Write
 You can write back a record after transformation of the data.  
-You need to choose the recType, tags if you want.  
-//TODO link to an article about tags
-//TODO code snippet of the write  
-This is what you get back:  
-//TODO write data model
+The recType is required with tags optional.   
+{% highlight js %}
+  var lib = require('./libs/helpers');
 
-And this is how errors can be handled:
-//TODO error data model
+  function main(text, auth) {
+    print('################################# FACT READ START ###########################');
 
-//TODO code snippet how to handle errors
+    var write = lib.write(recType, obj, auth, [tags]);
+    
+    print('################################# FACT READ END #############################');
+  }
+{% endhighlight %}
 
 ## Data lake advanced queries
-You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-guide/) to do advanced queries to the database.
-basically an aggregation query to the DB
-Calling a fact is done from the lib.read with special parameters.  
+You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-guide/) to do advanced queries to the data lake.
+
+Facts run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
+
 {% highlight js %}
   //Include the helper objects which allows you to read and write to microshare datalake
   var lib = require('./libs/helpers');
@@ -89,16 +154,6 @@ Calling a fact is done from the lib.read with special parameters.
     print('################################# FACT READ END #############################');
   }
 {% endhighlight %}
-
-Also is an array of result
-{% highlight js %}
-  // TODO code snippet of calling a facts result 
-{% endhighlight %}
-
-Error handling
-// TODO error data model
-So
-// TODO code snippet
 
 IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!!  
 
@@ -123,10 +178,18 @@ We will build or use libraries in the future for the common decoding.
 
 ## Data Formatting
 Best practice is to build another record containing specifically the data you want, formatted as you want.  
-For example, I take the last 100 recs of my recType via a fact, getting only the entries I want. I know I need to format that to an array to do a nice pie chart though.
-So that's what I do here with a foreach.  
-// TODO code snippet of transforming to an array or something
-// And saving a new record
+
+If a specific format were required for a report, the object could be reformatted and then a new entry written with '.reporting' appended to the record type.
+
+{% highlight js %}
+
+    var record = lib.read(text, auth, []);
+    var data = record.objs[0].data
+
+    for (i = 0; i < data.length; i++) { 
+         var res = lib.write("o.microshare.demo.sensor.temprature", data[i], auth, [data[i].DevEui, "raw"]);
+    }
+{% endhighlight %}
 
 Think about it, this will be triggered every time a new record is pushed through the initial entry pipe. So that final cache record will always be up to date.  
 But... we actually create a new record for this recType each time you say? Yes but we can easily grab only the latest as I will show you next.
@@ -135,7 +198,12 @@ But... we actually create a new record for this recType each time you say? Yes b
 You can actually do a POST to any endpoint. So that's how you trigger external services.  
 
 For example, at microshare.io we like to log on our slack channel, that is the code we use (after setting a webhook in Slack)
-//TODO code snippet of a post to slack
+
+{% highlight js %}
+  var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
+  var body = '{\"text\":\"' + JSON.stringify(m, null, '\t').replace(/"/g, "\\\"") + '\"}';
+  lib.post(webhookURL, headers, body);
+{% endhighlight %}
 
 We've got a very few libs you can use too:
 Twilio code snippet
