@@ -28,10 +28,10 @@ On Mac OSX and Linux, open your command line at the location of the file then ma
 `> ./install_sw4stm32_XXX-vX.X.run`
 
 **Notes** 
-- Please check to install the `STLinkServer` option when the Wizard asks you, you will need libraries installed with this package.
-- As the installation goes on, a command line prompt will ask you for your password. Be sure to check your terminal if the install looks stuck.
+- Check the `STLinkServer` option when the Wizard prompts you.
+- As the installation proceeds a command line prompt will ask you for your password. Be sure to check your terminal if the install appears stuck or takes longer than 5 minutes.
 
-When the installation is over, you will find the IDE under System Workbench in your applications.
+When the installation is over, you will be able to open the IDE under System Workbench in your applicationmenus
 
 ## Next Steps
 
