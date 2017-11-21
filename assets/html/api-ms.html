@@ -553,7 +553,7 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Shares by recType
                             </h4>
 
-                            <div class="request-url">https://api.microshare.io/share/:recType?details=false&page&perPage&sort</div>
+                            <div class="request-url">https://api.microshare.io/share/:recType?details=false&page=1&perPage=999&sort=name</div>
 
                             <div class="api-section"><p>Retrieve all shares under a specific recType</p>
 
@@ -590,7 +590,9 @@ Authorization: Bearer {{token}}</code></pre>
 <tr>
 <td><code>sort</code></td>
 <td align="center">string</td>
-<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+<td align="right">Specifies a comma-delimited list of field names to apply ascending alphabetical (0-9a-z) sorting</br>
+    eg. &sort=name &sort=name,tstamp &sort=data.priority
+</td>
 </tr>
 </tbody>
 </table>
@@ -604,10 +606,10 @@ Authorization: Bearer {{token}}</code></pre>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="request-get-shares-by-rectype-example-curl">
-                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api.microshare.io/share/:recType?details=false&page&perPage&sort"</code></pre>
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api.microshare.io/share/:recType?details=false&page=1&perPage=999&sort=name"</code></pre>
                                     </div>
                                     <div class="tab-pane" id="request-get-shares-by-rectype-example-http">
-                                        <pre><code class="hljs http">GET /share/:recType?details=false&page&perPage&sort HTTP/1.1
+                                        <pre><code class="hljs http">GET /share/:recType?details=false&page=1&perPage=999&sort=name HTTP/1.1
 Host: api.microshare.io
 Authorization: Bearer {{token}}</code></pre>
                                     </div>
@@ -829,7 +831,7 @@ Authorization: Bearer {{token}}</code></pre>
                                 <span class="method-GET">GET</span> Get Shares by Tags and recType
                             </h4>
 
-                            <div class="request-url">https://api.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort</div>
+                            <div class="request-url">https://api.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page=1&perPage=999&sort=name</div>
 
                             <div class="api-section"><p>Retrieve all shares under a specific <code>recType</code> and containing one or several <code>tags</code>. Specify as many <code>tags</code> as you need, and objects containing all of these tags will be returned.</p>
 
@@ -866,7 +868,9 @@ Authorization: Bearer {{token}}</code></pre>
 <tr>
 <td><code>sort</code></td>
 <td align="center">string</td>
-<td align="right">Specifies if sorting needs to be applied and to which field in the data</td>
+<td align="right">Specifies a comma-delimited list of field names to apply ascending alphabetical (0-9a-z) sorting</br>
+    eg. &sort=name &sort=name,tstamp &sort=data.priority
+</td>
 </tr>
 </tbody>
 </table>
@@ -880,10 +884,10 @@ Authorization: Bearer {{token}}</code></pre>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="request-get-shares-by-tags-and-rectype-example-curl">
-                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort"</code></pre>
+                                        <pre><code class="hljs curl">curl -X GET -H "Authorization: Bearer {{token}}" "https://api.microshare.io/share/:recType/tags/:tag1/:tag2?details=false&page=1&perPage=999&sort=name"</code></pre>
                                     </div>
                                     <div class="tab-pane" id="request-get-shares-by-tags-and-rectype-example-http">
-                                        <pre><code class="hljs http">GET /share/:recType/tags/:tag1/:tag2?details=false&page&perPage&sort HTTP/1.1
+                                        <pre><code class="hljs http">GET /share/:recType/tags/:tag1/:tag2?details=false&page=1&perPage=999&sort=name HTTP/1.1
 Host: api.microshare.io
 Authorization: Bearer {{token}}</code></pre>
                                     </div>
