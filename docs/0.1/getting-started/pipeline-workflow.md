@@ -19,10 +19,8 @@ For an introduction to robots take a look at the [Robot Guide](../robot-guide)
 Read the record that triggers the Robot using lib.read to get the data and metadata: 
 
 {% highlight js %}
-  // Include the helper objects which allows you to read and write to microshare datalake
   var lib = require('./libs/helpers');
 
-  // Always need a main function, but can have other functions to keep your code modular.
   function main(text, auth) {
     print('################################# RECORD READ START ###########################');
     
@@ -112,8 +110,16 @@ This call will always return an array and depending on the read, you can have mo
 To get records by the recType and associated tags:
 
 {% highlight js %}
-  var tags = ["tempID1234"]
-  var record = lib.read('{"message":"source=ShareService,type=objs,recType=io.microshare.demo.sensor.temprature,id="}', auth, tags);
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# RECORD READ START ###########################');
+
+    var tags = ["tempID1234"]
+    var record = lib.read('{"message":"source=ShareService,type=objs,recType=io.microshare.demo.sensor.temperature,id=1234"}', auth, tags);
+
+    print('################################# RECORD READ END #############################');
+  }
 
 {% endhighlight %}
 
@@ -124,11 +130,11 @@ The recType is required with tags optional.
   var lib = require('./libs/helpers');
 
   function main(text, auth) {
-    print('################################# FACT READ START ###########################');
+    print('################################# RECORD WRITE START ###########################');
 
     var write = lib.write(recType, obj, auth, [tags]);
     
-    print('################################# FACT READ END #############################');
+    print('################################# RECORD WRITE END #############################');
   }
 {% endhighlight %}
 
@@ -138,10 +144,8 @@ You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-
 Facts run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
 {% highlight js %}
-  //Include the helper objects which allows you to read and write to microshare datalake
   var lib = require('./libs/helpers');
 
-  // Always need a main function, but can have other functions to keep your code modular.
   function main(text, auth) {
     print('################################# FACT READ START ###########################');
     
@@ -182,6 +186,10 @@ Best practice is to build another record containing specifically the data you wa
 If a specific format were required for a report, the object could be reformatted and then a new entry written with '.reporting' appended to the record type.
 
 {% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# RECORD READ AND WRITE START ###########################');
 
     var record = lib.read(text, auth, []);
     var data = record.objs[0].data
@@ -189,6 +197,9 @@ If a specific format were required for a report, the object could be reformatted
     for (i = 0; i < data.length; i++) { 
          var res = lib.write("o.microshare.demo.sensor.temprature", data[i], auth, [data[i].DevEui, "raw"]);
     }
+
+    print('################################# RECORD READ AND WRITE END #############################');
+  }
 {% endhighlight %}
 
 Think about it, this will be triggered every time a new record is pushed through the initial entry pipe. So that final cache record will always be up to date.  
@@ -200,9 +211,17 @@ You can actually do a POST to any endpoint. So that's how you trigger external s
 For example, at microshare.io we like to log on our slack channel, that is the code we use (after setting a webhook in Slack)
 
 {% highlight js %}
-  var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
-  var body = '{\"text\":\"' + JSON.stringify(m, null, '\t').replace(/"/g, "\\\"") + '\"}';
-  lib.post(webhookURL, headers, body);
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# EXTERNAL POST START ###########################');
+
+    var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
+    var body = '{\"text\":\"' + JSON.stringify(m, null, '\t').replace(/"/g, "\\\"") + '\"}';
+    lib.post(webhookURL, headers, body);
+
+    print('################################# EXTERNAL POST END #############################');
+  }
 {% endhighlight %}
 
 We've got a very few libs you can use too:
