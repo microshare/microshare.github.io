@@ -6,7 +6,7 @@ group: getting-started
 toc: true
 ---
 
-## What's a Robot(t)?
+## What's a Robot?
 A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data pipeline. Robots can transform and improve data from your [microshares™](../microshares-guide). Robots can interact with external services to feed external systems and to pull new data into microshare to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
 1) easy to maintain, 
 2) fast and efficient with higher volumes, and 
