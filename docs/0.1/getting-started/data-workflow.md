@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Pipeline Workflows
-description: Pipeline Workflows with Robots
+title: Data Workflow
+description: Robot examples to build a Data Workflow
 group: getting-started
 toc: true
 ---
