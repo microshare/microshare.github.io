@@ -6,13 +6,14 @@ group: advanced
 toc: true
 ---
 
-### decoding a message under the LPP standard
+### decoding a message from the LPP standard
 
 {% highlight js %}
 var lib = require('./libs/helpers');
 function main(text, auth){
 
     var LPP = '0167FFD7067104D2FB2E0000';
+    print(LPP); /* 0167FFD7067104D2FB2E0000 */
 
     var decodedLPP = lib.decodeCayenneLPP(LPP);
     print(decodedLPP);
@@ -20,6 +21,10 @@ function main(text, auth){
     Outputs a String representation of a JsArray
     [{"channel":1,"type":"Temperature Sensor","measure":-4.1,"value":"-4.1°C"},{"channel":6,"type":"Accelerometer","measure":{"X":1.234,"Y":-1.234,"Z":0.0},"value":{"X":"1.234G","Y":"-1.234G","Z":"0.0G"}}] */
 
+    var decodedLPPJSON = JSON.parse(decodedLPP); /* To use as JSON */
+
+    var encodeToLpp = lib.encodeToCayenneLPP(decodedLPP);
+    print(encodeToLpp); /* 0167FFD7067104D2FB2E0000 */
 }
 {% endhighlight %}
 
