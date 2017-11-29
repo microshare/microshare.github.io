@@ -8,6 +8,9 @@ toc: true
 
 ### decoding a message from the LPP standard
 
+We are using the LPP specifications defined by Cayenne in [their documentation](https://mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload)
+An output JSON format is specified in the example below.
+
 {% highlight js %}
 var lib = require('./libs/helpers');
 function main(text, auth){
