@@ -6,14 +6,18 @@ group: getting-started
 toc: true
 ---
 
-## For preparing your data to be used in Apps and Dashboards
-You can set up automatic multistep processes to transform your data so that it can be of the right format when you access that data in an App or Dashboard.  
-Each step of the pipeline is managed by a Robot.  
-Here are some available Robot actions.  
+## What is a data workflow?
+You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
+This is called a data workflow. The automated actions are managed by [Robots](../robot-guide), and the access to transformed data is granted with [Rules](../rules-guide).  
+In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
 For an introduction to robots take a look at the [Robot Guide](../robot-guide)
 
-## Data lake Read
+## Read data from the data lake
+
+Your wokflow will usually start with reading data that was pushed to the data lake. This can be triggered automatically if your Robot was listening to a data stream recType, or periodically with a scheduled Robot.  
+Below are code snippets to read data from the data lake.  
+
 ### Read record triggering the Robot
 
 Read the record that triggers the Robot using lib.read to get the data and metadata: 
@@ -117,22 +121,7 @@ To get records by the recType and associated tags:
 
 {% endhighlight %}
 
-## Data lake Write
-You can write back a record after transformation of the data.  
-The recType is required with tags optional.   
-{% highlight js %}
-  var lib = require('./libs/helpers');
-
-  function main(text, auth) {
-    print('################################# FACT READ START ###########################');
-
-    var write = lib.write(recType, obj, auth, [tags]);
-    
-    print('################################# FACT READ END #############################');
-  }
-{% endhighlight %}
-
-## Data lake advanced queries
+### Data lake advanced queries
 You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-guide/) to do advanced queries to the data lake.
 
 Facts run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
@@ -155,7 +144,22 @@ Facts run an aggregation query on the data lake entries and can take parameters.
   }
 {% endhighlight %}
 
-IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!!  
+IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!! 
+
+## Write data to the data lake
+You can write back a record after transformation of the data.  
+The recType is required with tags optional.   
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# FACT READ START ###########################');
+
+    var write = lib.write(recType, obj, auth, [tags]);
+    
+    print('################################# FACT READ END #############################');
+  }
+{% endhighlight %} 
 
 ## Data Parsing
 Ideal for seperating different messages coming from the same platform.  
