@@ -34,7 +34,7 @@ function main(text, auth){
 ### decoding a payload from a TrackNet Tabs device
 
 Based on the [TrackNet Tabs specifications V1.1](/assets/pdf/Tabs.Sensors.Application.Payload.Specification.V1.1.pdf)
-Output JSON formats are specifieds in the example below.
+Output JSON formats are specified in the example below.
 
 {% highlight js %}
 var lib = require('./libs/helpers');
