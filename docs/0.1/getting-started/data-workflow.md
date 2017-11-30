@@ -282,7 +282,7 @@ Our data workflow is the following:
 4. Aggregate the latest 10 records with [a Fact](../facts-guide)
 5. Setup [a Rule](../rules-guide) so that all microshare employees can run the aggregation Fact
 
-At microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
+At microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
 
  1 would use the snippet from the [Data Parsing](#data-parsing) above  
  2 would use the snippet from the [Data Transformation](#data-transformation) above  
