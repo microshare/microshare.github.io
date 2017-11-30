@@ -213,22 +213,32 @@ Below is an example of Payload decoding, ending up in writing a new record in th
 {% endhighlight %}
 
 ## Data Formatting
-Best practice is to build another record containing specifically the data you want, formatted as you want.  
 
-If a specific format were required for a report, the object could be reformatted and then a new entry written with '.reporting' appended to the record type.
+Data formatting in a Robot allows you to identify interesting records, and format the data to be used in your report, App or Dashboard.  
+Below is an example of a Robot passing only high CO2 records.
 
 {% highlight js %}
+    var lib = require('./libs/helpers');
 
-    var record = lib.read(text, auth, []);
-    var data = record.objs[0].data
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
 
-    for (i = 0; i < data.length; i++) { 
-         var res = lib.write("io.microshare.demo.sensor.temperature", data[i], auth, [data[i].DevEui, "raw"]);
+    var rec = lib.read(text, auth, []);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+    
+    if(m.CO2 > 1500){
+        var highValueRecord = {'CO2':m.CO2, 'CO2Unit':m.CO2Unit, 'timestamp':m.timestamp};
+        
+        var newRecType = recType.replace('decoded','highCO2');
+        
+        lib.write(newRecType, highValueRecord, auth, ['highCO2', 'timestamp']);
+    
     }
-{% endhighlight %}
 
-Think about it, this will be triggered every time a new record is pushed through the initial entry pipe. So that final cache record will always be up to date.  
-But... we actually create a new record for this recType each time you say? Yes but we can easily grab only the latest as I will show you next.
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %}
 
 ## External services triggering
 You have access to notifications libraries, and RESTful POST and GET from a Robot script. This allows you to call external services from your data workflow.  
