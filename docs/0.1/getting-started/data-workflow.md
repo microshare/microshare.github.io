@@ -167,11 +167,13 @@ Another strategy would be to use one Robot per devEUI, that can be turned on and
     if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-15") {
         
         //Motion Sensor
+        //Write a new record with the Motion Sensor payload and the Time included in the network info
         lib.write(recType + '.motionsensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, auth, ['payload', 'timestamp']);
         
     } else if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-36") {
         
         //Healthy Home Sensor
+        //Write a new record with the Healthy Home Sensor payload and the Time included in the network info
         lib.write(recType + '.healthyhomesensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, auth, ['payload', 'timestamp']);
         
     }
@@ -181,15 +183,34 @@ Another strategy would be to use one Robot per devEUI, that can be turned on and
 {% endhighlight %} 
 
 ## Data Transformation
-Robot is a script, so you can do many actions.  
-Ideal for decoding an IoT record.  
-IMPORTANT this is ES6 only, so you can't rely on usual browser APIs
 
-Couple examples of decoding you can do
-//TODO code snippet of base64 decoding
-//TODO code snippet of temp decoding from binary
+Robots are running JS scripts, so any data trnsformation logic can be added to your workflow.  
+A usual transformation step of your workflow is the decoding of your IoT Payload. See our list of decoding methods [here](/docs/0.1/advanced/robots-libraries/decoding-payloads).
 
-We will build or use libraries in the future for the common decoding.
+IMPORTANT: The Robot scripts use ES6 only, so you can't rely on your usual browser APIs for data transformation
+
+Below is an example of Payload decoding, ending up in writing a new record in the datalake:
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
+
+    var rec = lib.read(text, auth, []);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+
+    var decodedRecord = lib.decodeTabsHealthyHomeSensor(m.payload);
+    var decodedRecordJSON = JSON.parse(decodedRecord);
+    decodedRecordJSON.timestamp = m.timestamp;
+
+    //Save the record enhanced with the decoded data
+    lib.write(recType + '.decoded', decodedRecordJSON, auth, ['status', 'battery', 'temperature', 
+'humidity', 'CO2', 'VOC', 'timestamp']);
+
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %}
 
 ## Data Formatting
 Best practice is to build another record containing specifically the data you want, formatted as you want.  
@@ -202,7 +223,7 @@ If a specific format were required for a report, the object could be reformatted
     var data = record.objs[0].data
 
     for (i = 0; i < data.length; i++) { 
-         var res = lib.write("o.microshare.demo.sensor.temprature", data[i], auth, [data[i].DevEui, "raw"]);
+         var res = lib.write("io.microshare.demo.sensor.temperature", data[i], auth, [data[i].DevEui, "raw"]);
     }
 {% endhighlight %}
 
@@ -210,9 +231,8 @@ Think about it, this will be triggered every time a new record is pushed through
 But... we actually create a new record for this recType each time you say? Yes but we can easily grab only the latest as I will show you next.
 
 ## External services triggering
-You can actually do a POST to any endpoint. So that's how you trigger external services.  
-
-For example, at microshare.io we like to log on our slack channel, that is the code we use (after setting a webhook in Slack)
+You have access to notifications libraries, and RESTful POST and GET from a Robot script. This allows you to call external services from your data workflow.  
+For example, at microshare.io we like to log on our slack channel, below is an example about how to do just that.
 
 {% highlight js %}
   var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
@@ -220,12 +240,10 @@ For example, at microshare.io we like to log on our slack channel, that is the c
   lib.post(webhookURL, headers, body);
 {% endhighlight %}
 
-We've got a very few libs you can use too:
-Twilio code snippet
-Email code snippet 
+For more examples, see our [notification methods](/docs/0.1/advanced/robots-libraries/sending-notifications) and [calling external APIs methods](/docs/0.1/advanced/robots-libraries/making-restful-calls)
 
 ## Write data to the data lake
-Each step of a workflow usually ends with writting a record in the data lake.  
+As shown above, each step of a workflow usually ends with writting a record in the data lake.  
 
 A data write use is twofold: it builds the audit trail of your data, and allows to trigger the next step of the workflow.
 
