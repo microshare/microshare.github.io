@@ -144,15 +144,41 @@ Facts run an aggregation query on the data lake entries and can take parameters.
   }
 {% endhighlight %}
 
-IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!! 
+IMPORTANT: Your Fact must have the same recType as the one triggering the Robot !!! 
 
 ## Data Parsing
-Ideal for seperating different messages coming from the same platform.  
-For example if you have a single platform pushing records about 3 different devices through the same pipe (same recType), you might want to parse by devEUI after.  
-Best practice for parsing is to create one Robot for each result you want. So for 3 devEUI you would create 3 Robotts like this:
-// TODO code snippet listening to 1 recType and saving if the devEUI works
 
-If you don't want to record a devEUI anymore you just have to turn the one Robot off.    
+Ideal for seperating different sensor records coming from the same stream of IoT packages.  
+For example if you have a single platform pushing records about 2 different devices through the same pipe (same recType), you might want to parse by devEUI after.  
+
+The example below shows how one Robot can parse two devEUI.  
+Another strategy would be to use one Robot per devEUI, that can be turned on and off to start or stop 2 data flows.  
+
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
+
+    var rec = lib.read(text, auth, []);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+
+    if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-15") {
+        
+        //Motion Sensor
+        lib.write(recType + '.motionsensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, auth, ['payload', 'timestamp']);
+        
+    } else if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-36") {
+        
+        //Healthy Home Sensor
+        lib.write(recType + '.healthyhomesensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, auth, ['payload', 'timestamp']);
+        
+    }
+
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %} 
 
 ## Data Transformation
 Robot is a script, so you can do many actions.  
