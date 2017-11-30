@@ -146,21 +146,6 @@ Facts run an aggregation query on the data lake entries and can take parameters.
 
 IMPORTANT: Right now your Fact must have the same recType as the one triggering the Robot !!! 
 
-## Write data to the data lake
-You can write back a record after transformation of the data.  
-The recType is required with tags optional.   
-{% highlight js %}
-  var lib = require('./libs/helpers');
-
-  function main(text, auth) {
-    print('################################# FACT READ START ###########################');
-
-    var write = lib.write(recType, obj, auth, [tags]);
-    
-    print('################################# FACT READ END #############################');
-  }
-{% endhighlight %} 
-
 ## Data Parsing
 Ideal for seperating different messages coming from the same platform.  
 For example if you have a single platform pushing records about 3 different devices through the same pipe (same recType), you might want to parse by devEUI after.  
@@ -212,6 +197,24 @@ For example, at microshare.io we like to log on our slack channel, that is the c
 We've got a very few libs you can use too:
 Twilio code snippet
 Email code snippet 
+
+## Write data to the data lake
+Each step of a workflow usually ends with writting a record in the data lake.  
+
+A data write use is twofold: it builds the audit trail of your data, and allows to trigger the next step of the workflow.
+
+As shown below, you can specify the recType and tags of your new data entry.
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# FACT READ START ###########################');
+
+    var write = lib.write(recType, obj, auth, [tags]);
+    
+    print('################################# FACT READ END #############################');
+  }
+{% endhighlight %} 
 
 ## Summary of a full example
 I'd like to display that as a set of tabs
