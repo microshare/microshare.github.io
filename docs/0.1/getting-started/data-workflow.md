@@ -270,15 +270,33 @@ As shown below, you can specify the recType and tags of your new data entry.
   }
 {% endhighlight %} 
 
-## Summary of a full example
-I'd like to display that as a set of tabs
-Code snippet of reading the first record and validating it
-Code snippet of parsing by devEUI
-Code snippet of calling another record to associate a name to a devEUI
+## Data workflow example
 
-Code snippet of a Robot, that does a final formatting and adds a timestamp
-Code snippet of a schedule Robot that log something externally every 12 hours 
+In this example we are receiving data from two Tabs sensor in a building in London.  
+We want to display the latest high CO2 alerts in an App, available to all microshare employees.  
 
+Our data workflow is the following:
+1. Parse the incoming data stream to single out the Healthy Home Sensor
+2. Decode the Payload from the Healthy Home Sensor
+3. Single out cases where the CO2 level is high, and pass only those to the next step
+4. Aggregate the latest 10 records with [a Fact](../facts-guide)
+5. Setup [a Rule](../rules-guide) so that all microshare employees can run the aggregation Fact
+
+At microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. Below is a data workflow template that describes this example.  
+
+// TODO put the template here: image plus link?
+
+ 1 would use the snippet from the [Data Parsing](#data-parsing) above  
+ 2 would use the snippet from the [Data Transformation](#data-transformation) above  
+ 3 would use the snippet from the [Data Formatting](#data-formatting) above  
+ 4 The Fact query would be:  
+{% highlight JSON %}
+  [
+    {"$match" : {"recType" : "uk.london.tabs.healthyhomesensor.highco2"}},
+    {"$limit" : 10}
+  ] 
+{% endhighlight %}
+ 5 The Rule would point to the Fact's recType, allow Execute operation, with the Requestor Organization set to &
 
 ## What's next?
 Next is calling the record in a [dashboard](https://microshare.github.io/docs/0.1/getting-started/dashboards/)...
