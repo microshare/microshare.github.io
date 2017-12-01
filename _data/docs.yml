@@ -11,7 +11,7 @@
   - title: Microshares Guide
   - title: Robot Guide
   - title: Data Ingestion
-  - title: Pipeline Workflow
+  - title: Data Workflow
   - title: Facts Guide
   - title: Rules Guide
   - title: Data Sharing
@@ -22,7 +22,7 @@
 - title: Advanced
   pages:
   - title: API Reference
-  - title: Robot Library
+  - title: Robots Libraries
   - title: Generic REST API Reference
   - title: Configuration
   - title: External Processes

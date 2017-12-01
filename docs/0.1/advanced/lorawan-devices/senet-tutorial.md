@@ -109,6 +109,7 @@ For the `Get Shares by recType` request, specify the recType you used in the que
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
 As a consequence of the redirection, you now see your Senet data under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
+Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
 
 If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 

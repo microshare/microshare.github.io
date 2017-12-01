@@ -16,7 +16,7 @@ To do so, send your data as the body of a [POST /share call](../api-overview#pos
 It will then be available to use from the data lake with [GET /share calls](../api-overview#get-share)
 
 ## Set up a websocket Robot
-Some IoT platforms act as [websocket servers] (https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live.  
+Some IoT platforms act as [websocket servers](https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live.  
 [Orange Live Objects](https://liveobjects.orange-business.com/), [The Things Network](https://console.thethingsnetwork.org/), or a Sagemcom private gateway support it.  
 In Microshare.io, you can setup a websocket client Robot that takes care of writing your data as a microshare as soon as it is available.  
 There is no UI to configure your own yet, but here is the WS client configuration we've gone with:
@@ -76,4 +76,4 @@ For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerl
 Some platforms can be configured to POST data. Configure them to do a POST /share/:recType call.  
 
 ## What's next?
-Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [Pipeline Workflow](../pipeline-workflow) to parse, transform and format your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  
