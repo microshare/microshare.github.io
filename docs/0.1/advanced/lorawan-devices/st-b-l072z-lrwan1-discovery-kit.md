@@ -8,12 +8,12 @@ toc: true
 
 # Getting Started
 
-In this tutorial you're going to program the [B-L072Z-LRWAN1 LoRa®Discovery kit](http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html) using the [System Workbench for STM32 IDE](../system-workbench-st32-ide).
+In this tutorial you're going to program the [B-L072Z-LRWAN1 LoRa®Discovery kit](http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html){:target="_blank"} using the [System Workbench for STM32 IDE](../system-workbench-st32-ide){:target="_blank"}.
 
 ## Get the ST Micro Resources
 
-- Log into your [ST Micro account](https://my.st.com/cas/login?service=https%3A%2F%2Fmy.st.com%2Fcontent%2Fmy_st_com%2Fen.html) or create an account if you don't already have one
-- Download the ST Micro [I-CUBE-LRWAN SDK](http://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-embedded-software-expansion/i-cube-lrwan.html)
+- Log into your [ST Micro account](https://my.st.com/cas/login?service=https%3A%2F%2Fmy.st.com%2Fcontent%2Fmy_st_com%2Fen.html){:target="_blank"} or create an account if you don't already have one
+- Download the ST Micro [I-CUBE-LRWAN SDK](http://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-embedded-software-expansion/i-cube-lrwan.html){:target="_blank"}
 - Unzip the I-CUBE-LRWAN SDK file `en.i-cube_lrwan.zip` you just downloaded
 
 ## System Workbench STM32 IDE
@@ -50,15 +50,15 @@ If you are in the USA you must change the LoRaWAN frequency to `915MHZ` in the p
 - Replace the **REGION_EU868** value with `REGION_US915` > Click `OK` > Click `OK` again
 - Recompile with new settings > Click the `Project` Menu > `Build All` or Press **CTRL-B** to build
 
-After the project compiles successfully you're ready to being programming the **B-L072Z-LRWAN1** device to join a LoRaWAN network such as [Senet](http://www.senetco.com/)
+After the project compiles successfully you're ready to being programming the **B-L072Z-LRWAN1** device to join a LoRaWAN network such as [Senet](http://www.senetco.com/){:target="_blank"}
 
-## Provision B-L072Z-LRWAN1 Discovery Kit on [Senet](http://www.senetco.com/)
+## Provision B-L072Z-LRWAN1 Discovery Kit on [Senet](http://www.senetco.com/){:target="_blank"}
 
 Before you begin programming the device to join the Senet LoRaWan network you must add your device to your Senet Developer account profile. 
 
 ### Register for a Senet Developer Account
 
-If you don't have a Senet account go over to the [Senet website](http://www.senetco.com/developer-portal/) & apply for a developer account.  When your Senet Developer account is approved you must log into the Developer Portal and register your new device using the Over The Air `OTAA` activation using the [Senet Device Registration](http://docs.senetco.io/docs/dev/#device-registration) instructions.
+If you don't have a Senet account go over to the [Senet website](http://www.senetco.com/developer-portal/){:target="_blank"} & apply for a developer account.  When your Senet Developer account is approved you must log into the Developer Portal and register your new device using the Over The Air `OTAA` activation using the [Senet Device Registration](http://docs.senetco.io/docs/dev/#device-registration){:target="_blank"} instructions.
 
 When registering a new device in the Senet portal interface do the following.
 
@@ -72,9 +72,10 @@ After adding your new device be sure to capture the MSB Hex Formated Numbers whi
 
 Get the values for the following keys:
 
-- Device EUI
-- App EUI
-- AppKey
+- Device EUI - You'll have to convert the `DevEUI` value from the Senet portal to the `MSB Hex` formatted number mentioned above. For example if you have the number `12345678` the `MSB Hex` value is: `{ 0x12, 0x34, 0x56, 0x78 }`. Break the values into pairs then prefix the number pairs with `0x` and use a comma to separate the pairs. Braces `{   }` must surround the entire `MSB` formatted value
+
+- App EUI - You can click the `Copy` icon next to the MSB number
+- AppKey - You can click the `Copy` icon next to the MSB number
 
 You will program the device with these values.
 
@@ -98,7 +99,7 @@ Open `main.c` file
 
 ### Configure hw_conf.h File    
 
-The `hw_conf.h` file has some variables that should be set when using a [sensor shield](http://www.st.com/en/ecosystems/x-nucleo-iks01a2.html) or when you need to debug your application.
+The `hw_conf.h` file has some variables that should be set when using a [sensor shield](http://www.st.com/en/ecosystems/x-nucleo-iks01a2.html){:target="_blank"} or when you need to debug your application.
 
 - If you have a [sensor shield](http://www.st.com/en/ecosystems/x-nucleo-iks01a2.html) attached the device then unComment the `#define SENSOR_ENABLED` statement
 
@@ -146,14 +147,14 @@ Congratulations! The device is now running the code that you compiled.  Next we'
 
 ### Confirm the Device is Transmitting to Senet
 
-Log into the Senet Portal and click on your registered B-L072Z device.  If the device is transmitting properly then you should see data in the Senet device portal in a few minutes.
+Log into the Senet Portal and click on your registered B-L072Z device.  If the device is transmitting properly then you should see data in the Senet device portal in a few minutes. Use the [Senet User Interface Documentation](http://docs.senetco.io/docs/#user-interface) to learn about the Senet UI
 
 If you're not seeing any data after a few minutes then:
 
 - Confirm you properly configured the code with the proper values from this tutorial
 - Ensure the code compiled without any Errors
 - Copy the `.bin` file to the device again using steps in `Programming the Device` section
-- Ensure that you are withing range of a Senet LoRaWAN Gateway or in an area within Senet Outdoor coverage check the [coverage map here](http://www.senetco.com/coverage/)
+- Ensure that you are withing range of a Senet LoRaWAN Gateway or in an area within Senet Outdoor coverage check the [coverage map here](http://www.senetco.com/coverage/){:target="_blank"}
 
 ## Stream IoT packets from Senet to Microshare
 
