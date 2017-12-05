@@ -319,7 +319,9 @@ We'll do the minimum to unlock all the Robot options for now.
 
 {% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
 
-You should be back in the Robot cards list and see your Robot should now be displayed.
+### Edit and test Robot
+
+You'll be back in the Robot cards list and your Robot should now be displayed.
 If you don't see your new Robot card listed:
 
 1. Open the option menu
@@ -367,12 +369,10 @@ Replace the code in your Robot script with:
   }
 {% endhighlight %}
 
-Be sure to change the `Write` recType (the first argument of the lib.write method) to decide which rectype the the decoded results will be saved to but **DO NOT set it to the same recType as the incoming Senet packages**, or you'll create a Robot triggering loop.
-
-Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake.
+Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
 You can use that second recType as the trigger to another Robot for data transformation, etc.
 
-## What's next ?
+## What's next?
 
 You have now access to decoded IoT data through the microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
