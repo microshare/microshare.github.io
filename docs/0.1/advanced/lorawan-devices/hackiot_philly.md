@@ -303,25 +303,45 @@ Learn more on how to work collaboratively with other users by sharing records, c
 
 ## Decode the STM32 payloads
 
-You can now create a [Robot](../../../getting-started/robot-guide) to automatically decode all received STM32 payload in microshare. A Robot is an script driven entity that is triggered to run when a specific recType write in the datalake happens.
+You can now create a [Robot](../../../getting-started/robot-guide) to automatically decode all received STM32 payload in microshare. A Robot is a script driven entity that is triggered to run when a specific recType write operation occurs in the datalake.
 
-Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`  
+### Create Robot
+
+1. Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`
+
 {% include image.html url="/assets/img/hackiot-create-a-robot.png" description="Create a Robot from the composer" %}
 
-We'll do the minimum to unlock all the Robot options for now: just give it a name and set the Record Type to the one you used in Senet. Complete the creation by clicking the `CREATE` button.
+We'll do the minimum to unlock all the Robot options for now.
+
+1. Give your Robot a name.
+2. Enter the exact Record Type you used in the Senet portal.
+3. Complete the creation by clicking the `CREATE` button.
+
 {% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
 
-You should be back to the Robot cards list, and see your Robot.
-If not, There is a known issue with our Robots cards ordering. To display your Robot, open the option menu and increase the `Cards per Page` to 999.
+You should be back in the Robot cards list and see your Robot should now be displayed.
+If you don't see your new Robot card listed:
+
+1. Open the option menu
+2. Increase the `Cards per Page` to 999 
+3. Click Apply
+
+The new Robot card should now be visible.
+
 {% include image.html url="/assets/img/hackiot-configure-robot.png" description="Increase Cards per Page" %}
 
-To open the Robot edition mode, find your Robot in the card list, click on it, then on the pencil icon at the top of the page.
+To edit an existing Robot, find your Robot in the list:
+
+1. Click on it 
+2. Click on the `pencil` icon at the top of the page
+
 {% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
 
-In edition mode you can:
+While in edit mode you can:
 1. Turn your Robot on and off
 2. Write the Robot script
 3. Test the script
+
 {% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
 
 Replace the code in your Robot script with:
@@ -340,13 +360,14 @@ Replace the code in your Robot script with:
           
           print(entry);
           print(JSON.stringify(entry));
+
           lib.write(recType + '.decoded', entry, auth, []);
-          
+
       });
   }
 {% endhighlight %}
 
-Be sure to change the Write recType (the first argument of the lib.write method) to decide which rectype the the decoded results will be saved to. But *DO NOT set it to the same recType as the incoming Senet packages*, or you'll create a Robot triggering loop.
+Be sure to change the `Write` recType (the first argument of the lib.write method) to decide which rectype the the decoded results will be saved to but **DO NOT set it to the same recType as the incoming Senet packages**, or you'll create a Robot triggering loop.
 
 Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake.
 You can use that second recType as the trigger to another Robot for data transformation, etc.
@@ -361,4 +382,4 @@ We have a few other data stream that we can share with you through the Share fun
 
 Additionally, ask us if you have data that you'd like to work on in the platform. We'll manage to get it imported for you. This data can also be shared with other teams if you want to.
 
-Have a good Hackathon!
+Have a great Hackathon!
