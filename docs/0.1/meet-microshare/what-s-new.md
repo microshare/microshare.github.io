@@ -6,4 +6,11 @@ group: meet-microshare
 toc: true
 ---
 
-v0.1 is currently under development, please come back later to check for updates!
+v1 is out! 
+
+Incoming updates are:
+- Dashboard Guide: how to visualize your data in microshare.
+- Alerts Guide: Get notified when something suspicious is detected in your data workflow.
+- Video Tutorials: Real life use of the platform presented by our development team.
+
+For anything that you'd like to see in that documentation, please contact us via email at `docs@microshare.io` or on LinkedIn, Twitter or Facebook.  
