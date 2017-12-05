@@ -188,13 +188,13 @@ If you're not seeing any data after a few minutes then:
 
 <hr>
 
-# Stream IoT packets from Senet to Microshare
+## Stream IoT packets from Senet to Microshare
 
 This tutorial assumes that you already registered for and have [a Senet Developer account](http://www.senetco.com/developer-portal/). It also assumes that you have provisioned at least one device sending uplink packages to Senet.
 
 This tutorial will show you how to configure your Senet devices to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a Senet notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
 
-## Register for a Microshare.io account
+### Register for a Microshare.io account
 
 The microshare registration process is simple. Browse to [https://app.microshare.io](https://app.microshare.io) and click [Sign Up](https://auth.microshare.io/portal/signup).
 
@@ -208,7 +208,7 @@ Your experience should be similar to the screenshots below.
 {% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}
 {% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
-## How to send data to microshare
+### How to send data to microshare
 
 Now that you have created your account, you own a little piece of the microshare data lake. You will now use Senet's automated redirection of packets, aka a device's notification target, to pass that data through to [microshare's RESTful API](../../generic-rest-api).
 
@@ -223,7 +223,7 @@ To identify yourself as the owner of the streamed data, you must generate a toke
 
 The category under which every one of your data packets get stored in microshare is called a recType (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later
 
-## Generate a Microshare Pipe Token
+### Generate a Microshare Pipe Token
 
 Now you'll genreate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use [the Postman collection](../../generic-rest-api) from the documentation website.
 
@@ -252,7 +252,7 @@ Later we'll use the `Request Token` call that returns an access token which is o
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
-## Setup your notification target on Senet
+### Setup your notification target on Senet
 
 Now that you have your generated token [log into Senet](https://portal.senetco.io/) and open the configuration of a device.
 Click the `Notification Target` tab.
@@ -276,7 +276,7 @@ Finally, don’t forget to enable the notification target.
 
 **Note** You can only have one notification target per device in the Senet platform but you can use the same recType for several devices if you want their packets to arrive in microshare as a bundled stream.
 
-## Verify the data streaming to microshare
+### Verify the data streaming to microshare
 
 Your Senet device data should now be streaming to your microshare account. You can verify that with the microshare API.
 
@@ -298,3 +298,88 @@ If you execute the request again, the number of records will increase as the dat
 **Beware** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 
 Learn more on how to work collaboratively with other users by sharing records, check out our [Rules guide](../../../getting-started/rules-guide)
+
+<hr>
+
+## Decode the STM32 payloads
+
+You can now create a [Robot](../../../getting-started/robot-guide) to automatically decode all received STM32 payload in microshare. A Robot is a script driven entity that is triggered to run when a specific recType write operation occurs in the datalake.
+
+### Create Robot
+
+1. Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`
+
+{% include image.html url="/assets/img/hackiot-create-a-robot.png" description="Create a Robot from the composer" %}
+
+We'll do the minimum to unlock all the Robot options for now.
+
+1. Give your Robot a name.
+2. Enter the exact Record Type you used in the Senet portal.
+3. Complete the creation by clicking the `CREATE` button.
+
+{% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
+
+### Edit and test Robot
+
+You'll be back in the Robot cards list and your Robot should now be displayed.
+If you don't see your new Robot card listed:
+
+1. Open the option menu
+2. Increase the `Cards per Page` to 999 
+3. Click Apply
+
+The new Robot card should now be visible.
+
+{% include image.html url="/assets/img/hackiot-configure-robot.png" description="Increase Cards per Page" %}
+
+To edit an existing Robot, find your Robot in the list:
+
+1. Click on it 
+2. Click on the `pencil` icon at the top of the page
+
+{% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
+
+While in edit mode you can:
+1. Turn your Robot on and off
+2. Write the Robot script
+3. Test the script
+
+{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
+
+Replace the code in your Robot script with:
+{% highlight js %}
+  var lib = require('./libs/helpers');
+  function main(text, auth) {
+      
+      var rec = lib.read(text, auth, []);
+      var m = rec.objs[0].data;
+      var recType = rec.objs[0].recType;
+      
+      var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
+      var decodedLPPJSON = JSON.parse(decodedLPP);
+      
+      decodedLPPJSON.forEach(function(entry){
+          
+          print(entry);
+          print(JSON.stringify(entry));
+
+          lib.write(recType + '.decoded', entry, auth, []);
+
+      });
+  }
+{% endhighlight %}
+
+Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
+You can use that second recType as the trigger to another Robot for data transformation, etc.
+
+## What's next?
+
+You have now access to decoded IoT data through the microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
+
+You can also create new Robots to further your automated data workflow: transform the Senet data further, create alerts, etc.
+
+We have a few other data stream that we can share with you through the Share functionality. Talk to us to know more.
+
+Additionally, ask us if you have data that you'd like to work on in the platform. We'll manage to get it imported for you. This data can also be shared with other teams if you want to.
+
+Have a great Hackathon!
