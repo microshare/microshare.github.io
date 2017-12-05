@@ -301,47 +301,60 @@ Learn more on how to work collaboratively with other users by sharing records, c
 
 ### Decode the STM32 payloads
 
-You can now start building your data workflow in microshare.io.
-Go create a Robot to automatically decode any incoming STM32 packets’ payload.
--> https://app.microshare.io/composer#/robos 
-Click ‘Create’
-For now, just give it a name and set the Record Type to the one you used in Senet.
-Click the ‘CREATE’ button
+You can now create a [Robot](../../../getting-started/robot-guide) to automatically decode all received STM32 payload in microshare. A Robot is an script driven entity that is triggered to run when a specific recType write in the datalake happens.
 
+Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`
+// TODO screenshot here: 1. on create
 
+We'll do the minimum to unlock all the Robot options for now: just give it a name and set the Record Type to the one you used in Senet. Complete the creation by clicking the `CREATE` button.
+// TODO screeenshot here
+
+You should be back to the Robot cards list, and see your Robot.
+If not, There is a known issue with our Robots cards ordering. To display your Robot , open the option menu and increase the per Page to 999.
+//TODO screenshot here
+
+To open the Robot edition mode
 Find your Robot in the card list, click on it, then on the pencil icon at the top of the page to edit it.
-On edition mode you can:
-set up the script the Robot will run each time a new record with your recType enters the data lake
-test that script in advance with a mock run against the data lake
-  Copy that code in your Robot script:
-var lib = require('./libs/helpers');
-function main(text, auth) {
-    
-    var rec = lib.read(text, auth, []);
-    var m = rec.objs[0].data;
-    var recType = rec.objs[0].recType;
-    
-    var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
-    var decodedLPPJSON = JSON.parse(decodedLPP);
-    
-    decodedLPPJSON.forEach(function(entry){
-        
-        print(entry);
-        print(JSON.stringify(entry));
-        lib.write(recType + '.decoded', entry, auth, []);
-        
-    });
-}
+//TODO screenshot here
 
-You can change the Write recType (first argument of the lib.write method) to whatever you want. But DO NOT set it to the same recType as the incoming Senet packages. we recommend adding a ‘.decoded’ suffix.
+This is the edition mode:
+// TODO screenshot here
+
+Replace the code in your Robot script with:
+{% highlight js}
+  var lib = require('./libs/helpers');
+  function main(text, auth) {
+      
+      var rec = lib.read(text, auth, []);
+      var m = rec.objs[0].data;
+      var recType = rec.objs[0].recType;
+      
+      var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
+      var decodedLPPJSON = JSON.parse(decodedLPP);
+      
+      decodedLPPJSON.forEach(function(entry){
+          
+          print(entry);
+          print(JSON.stringify(entry));
+          lib.write(recType + '.decoded', entry, auth, []);
+          
+      });
+  }
+{% endhiglight %}
+
+- Change the Write recType (first argument of the lib.write method) to whatever you want the decoded result to be saved to. But DO NOT set it to the same recType as the incoming Senet packages, or you'll create a Robot triggering loop.
+
 You can test your script against real data with the buttons situated under the Script editor:
 Select a record from the data lake with the Previous / Next button
 Edit the Example Data before running the test if you want to 
 Click the TEST button
-  The actions taken by your Robot will be printed on the screen.
-  The TEST doesn’t actually perform a real Write to the data lake, so you can use it confidently.
-  Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake.
-  You can use that second recType as the trigger to another Robot for data transformation, etc.
+The actions taken by your Robot will be printed on the screen.
+The TEST doesn’t actually perform a real Write to the data lake, so you can use it confidently.
+// TODO screenshot here
+
+
+Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake.
+You can use that second recType as the trigger to another Robot for data transformation, etc.
  
 
 
