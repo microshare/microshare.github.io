@@ -8,12 +8,12 @@ toc: true
 
 ## To aggregate your data from different sources
 Microshare.io is here to help you aggregate and use your data from several sources, especially IoT platforms.  
-Below are several ways to move your data as [microshares™](../microshares-guide) in the data lake.  
+Below are several ways to move your data as microshares™ in the data lake.  
 
 ## Upload data manually
 Manual upload is the most basic way of loading data from your own database, or from an open data project.
-To do so, send your data as the body of a [POST /share call](../api-overview#post-share).  
-It will then be available to use from the data lake with [GET /share calls](../api-overview#get-share)
+To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share).  
+It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share)
 
 ## Set up a websocket Robot
 Some IoT platforms act as [websocket servers](https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live.  
