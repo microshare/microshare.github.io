@@ -1,5 +1,8 @@
-# intellij ignors
+# intellij ignores
 .idea/
+
+# vscode ignores
+.vscode
 
 # macos files
 .DS_Store
