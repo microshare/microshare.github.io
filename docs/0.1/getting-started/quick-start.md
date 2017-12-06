@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Tutorial
+title: Quick Start
 description: Getting Set-up in Microshare
 group: getting-started
 toc: true
 ---
 
 
-This tutorial will provide an simple review of Microshare. In this tutorial we will:
+In this section we will do the following:
 
 1. Create an account  
 2. Get an access token  
