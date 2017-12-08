@@ -75,7 +75,7 @@ If you are in the USA you must change the LoRaWAN frequency to `915MHZ` in the p
 - In the Project Explorer window find the `mlm32l07x01` project
 - Right Click the `mlm32l07x01` directory > Click `Properties`
 - Expand `C/C++ Build` tree > Click `Settings`
-- Click `Tools Settings` tab > Expand the `MCU GCC Compiler` tree
+- Click `Tool Settings` tab > Expand the `MCU GCC Compiler` tree
 - Click `Preprocessor` directory > Double Click the `REGION_EU868` value in the Defined Symbols section
 - Replace the **REGION_EU868** value with `REGION_US915` > Click `OK` > Click `OK` again
 - Recompile with new settings > Click the `Project` Menu > `Build All` or Press **CTRL-B** to build
@@ -165,7 +165,7 @@ After configuring the device with the appropriate values from the Senet platform
 The binary file is ready to be uploaded to the device.
 
 - Connect the device via USB to your computer
-- Outside of the System Workbench IDE open a Widnows file explorer or OSX Finder window and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
+- Outside of the System Workbench IDE open a Windows file explorer or OSX Finder window and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
 
 Now you need to grab the binary and upload to the device.
 
