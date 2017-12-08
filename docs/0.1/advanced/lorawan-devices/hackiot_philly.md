@@ -75,7 +75,7 @@ If you are in the USA you must change the LoRaWAN frequency to `915MHZ` in the p
 - In the Project Explorer window find the `mlm32l07x01` project
 - Right Click the `mlm32l07x01` directory > Click `Properties`
 - Expand `C/C++ Build` tree > Click `Settings`
-- Click `Tools Settings` tab > Expand the `MCU GCC Compiler` tree
+- Click `Tool Settings` tab > Expand the `MCU GCC Compiler` tree
 - Click `Preprocessor` directory > Double Click the `REGION_EU868` value in the Defined Symbols section
 - Replace the **REGION_EU868** value with `REGION_US915` > Click `OK` > Click `OK` again
 - Recompile with new settings > Click the `Project` Menu > `Build All` or Press **CTRL-B** to build
@@ -165,7 +165,7 @@ After configuring the device with the appropriate values from the Senet platform
 The binary file is ready to be uploaded to the device.
 
 - Connect the device via USB to your computer
-- Outside of the System Workbench IDE open a Widnows file explorer or OSX Finder window and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
+- Outside of the System Workbench IDE open a Windows file explorer or OSX Finder window and find the attached device. It should appear as an external device and have a name similar to `DIS_L072Z`
 
 Now you need to grab the binary and upload to the device.
 
@@ -196,9 +196,11 @@ This tutorial will show you how to configure your Senet devices to forward IoT d
 
 ### Register for a Microshare.io account
 
-The microshare registration process is simple. Browse to [https://app.microshare.io](https://app.microshare.io) and click [Sign Up](https://auth.microshare.io/portal/signup).
+The microshare registration process is simple. 
+1. Browse to [https://app.microshare.io](https://app.microshare.io).
+2. Click [Sign Up](https://auth.microshare.io/portal/signup).
 
-You will receive an email asking you to confirm your account & setting your account password.
+3. You will receive an email asking you to confirm your account & setting your account password.
 
 Your experience should be similar to the screenshots below.
 
@@ -225,22 +227,34 @@ The category under which every one of your data packets get stored in microshare
 
 ### Generate a Microshare Pipe Token
 
-Now you'll genreate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use [the Postman collection](../../generic-rest-api) from the documentation website.
+Now you'll generate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use Postman.
 
-To use the token generation calls, you need to identify yourself with your username, password and an APIkey.
+**To install Postman on your computer:**
 
-To get an APIkey, login to your microshare account and go to Manage -> Keys.
+1. Go to our [API documentation page](../../generic-rest-api)
 
-Clicking 'CREATE NEW APP' opens a modal allowing you to name your APIkey.
+2. Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
+**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../generic-rest-api).
 
-Once the key is created, click on it to copy it to your clipboard. (See the screenshots below)
+3. Open Postman on your computer to see the microshare collection. You can select and manage environment from the top right of your Postman app.  
+To use the token generation calls, you need to identify yourself with your username, password and an APIkey.  
+
+**To get a microshare APIkey:**
+
+4. Log in your [microshare account](https://app.microshare.io)
+5. Go to `Manage -> Keys.`  
+6. Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
+5. Once the key is created, , click on the value in the API KEY (CLIENT ID) section to copy it to your clipboard. (See the screenshots below)
 
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-Go back to Postman and edit your environment. Copy the APIkey and enter your username and password.
-This allows you to run the request `Authentication -> Request pipe token`. The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
+**To finally generate the microshare Pipe Token:**
+6. Go back to Postman and edit your environment.
+7. Copy the APIkey and enter your username and password.
+
+8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
 
 Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
 
@@ -254,21 +268,21 @@ Later we'll use the `Request Token` call that returns an access token which is o
 
 ### Setup your notification target on Senet
 
-Now that you have your generated token [log into Senet](https://portal.senetco.io/) and open the configuration of a device.
-Click the `Notification Target` tab.
-To redirect the packets to our API, use the `Forward to HTTP` option.
+1. Now that you have your generated token [log into Senet](https://portal.senetco.io/) and open the configuration of a device.
+2. Click the `Notification Target` tab.
+3. To redirect the packets to our API, use the `Forward to HTTP` option.
 
-Since you have the pipe token in your clipboard, set that up first. Add a header parameter like this:
+4. Since you have the pipe token in your clipboard, set that up first. Add a header parameter like this:
 - Header Key: Authorization
 - Header Value: Bearer <enter the pipe token here>
 
-Then enter this in the URL field: `https://api.microshare.io/share/< enter the recType you chose here>`
+5. Then enter this in the URL field: `https://api.microshare.io/share/< enter the recType you chose here>`
 
 **Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so the recType can be: `us.philadelphia.senet.sodaq`
 
 All the other options are Senet specific, you don't need them enabled for your sensor data to be posted to microshare. Learn more about the extra data you can add to your packet from the Senet documentation: [http://docs.senetco.io/docs/stream/#packet-data](http://docs.senetco.io/docs/stream/#packet-data)
 
-Finally, don’t forget to enable the notification target.
+6. Finally, don’t forget to enable the notification target.
 
 {% include image.html url="/assets/img/senet-notification-target-1.png" description="Senet portal" %}
 {% include image.html url="/assets/img/senet-notification-target-2.png" description="Empty notification target" %}
@@ -282,16 +296,17 @@ Your Senet device data should now be streaming to your microshare account. You c
 
 You are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
 
-Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to go and run `Get Shares by recType`.
-
-For the `Get Shares by recType` request, specify the recType you used in the query params, and click send. It returns a view of all the data **THAT YOU ONLY HAVE ACCESS TO** associated to that recType:
+1. Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to run other requests.
+2. Open the `Shares -> Get Shares by recType` to configure it.
+3. Specify the recType you used in Senet in the query params.
+4. Click `Send`. 
+Ther response of the request is a view of all the data **THAT YOU ONLY HAVE ACCESS TO** stored under the specidifed recType:
             
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
 {% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
-As a consequence of the redirection, you now see your Senet data under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
-Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
+The Senet data is under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
 
 If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
@@ -372,9 +387,31 @@ Replace the code in your Robot script with:
 Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
 You can use that second recType as the trigger to another Robot for data transformation, etc.
 
+## Give your team mates access to the data
+
+The decoded data should be available to **only** one microshare account of your team right now.  
+But Rules will allow you to extend access to the data to your other team members, or anybody you want.
+
+To set one Rule up, login to your microshare account, go to `Manage -> Rules` and click `Create`.
+What you have to setup is:
+
+1. Give a firendly name to your Rule
+2. Enter the recType your decoded data is stored under
+3. This Rule has to allow the operations: Read and Query
+4. Set the `Requestor User` to `Specific Value`, and enter the login email of your team mate
+5. Click `Create`
+
+{% include image.html url="/assets/img/hackiot-configure-rules.png" description="Share data with my team mates" %}
+
+**Tip**  
+By default, all of your data is shared with your _Organization_.  
+Your _Organization_ is set from the suffixes of your login email address. For example, if you logged in as `franck@gmail.com`, your organization is set to `com.gmail`
+
+For more info about Rules, check our [Rules Guide](../../getting-started/rules-guide)
+
 ## What's next?
 
-You have now access to decoded IoT data through the microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
+You have now access to decoded IoT data as a team through the microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
 You can also create new Robots to further your automated data workflow: transform the Senet data further, create alerts, etc.
 
