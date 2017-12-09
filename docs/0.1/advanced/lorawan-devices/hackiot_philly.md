@@ -231,13 +231,21 @@ Now you'll generate a Pipe Token using microshare's API. The easiest way to inte
 
 **To install Postman on your computer:**
 
-1. Go to our [API documentation page](../../generic-rest-api)
+1. Go to our [API documentation page](../../api-reference)
 
 2. Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
-**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../generic-rest-api).
+**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../api-reference).
 
-3. Open Postman on your computer to see the microshare collection. You can select and manage environment from the top right of your Postman app.  
-To use the token generation calls, you need to identify yourself with your username, password and an APIkey.  
+3. Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
+{% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
+
+4. To see the Microshare Postman collection **collection**, click on `Collections` on the left hand pane.
+5. To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
+Then `Manage Environments`, then click on `Microshare`.
+
+{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
+
+Our next step is to set up the username, password and apike entries in the Environment.   
 
 **To get a microshare APIkey:**
 
@@ -252,14 +260,14 @@ To use the token generation calls, you need to identify yourself with your usern
 
 **To finally generate the microshare Pipe Token:**
 6. Go back to Postman and edit your environment.
-7. Copy the APIkey and enter your username and password.
-
+7. Copy the APIkey and enter your username and password. (see the screenshots below)
 8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
-
-Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+
+Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
+
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
 **Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
