@@ -6,88 +6,90 @@ group: getting-started
 toc: true
 ---
 
+Get your Internet of Things data workflow started with the following steps:
 
-In this section we will do the following:
+1. [Create a microshare account](./)
+2. [Get an API key](./)
+3. [Setup microshare's Postman API collection on your computer](./)
+4. [Write and Read data on microshare](./)
+5. [Transform incoming data with a Robot](./)
+6. [Aggregate data with a View](./)
+7. [Display data with an App](./)
 
-1. Create an account  
-2. Get an access token  
-3. Post data to Microshare  
-4. Make a rule to govern this data  
-5. Create a robot to moniter this data  
-6. Make a dashboard to view this data  
+# Register for a Microshare.io account
 
-This process will require Postman. It is avaliable to download and install [here](https://www.getpostman.com/)
+* Browse to [https://app.microshare.io](https://app.microshare.io).  
+{% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}
 
-## Create an Account
+* Click [Sign Up](https://auth.microshare.io/portal/signup).  
+{% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}
 
-1. Navigate to the [Microshare platform](https://app.microshare.io)
-2. Click on the "Sign up" link
-2. Input your email address, first name, and last name
-3. A link will be sent to your email, open this link 
-4. Create your password
-5. Login to the platform with your newly created account!
-    * Note: You do not need an organization code to sign in
+* You will receive an email asking you to confirm your account & setting your account password.  
+{% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
+* You can then log into your account from [https://app.microshare.io](https://app.microshare.io).
 
-## Get an Access Token
+# Get an API key
 
-You will need an access token to push data into the Microshare platform. Follow the steps listed below to get an access token.
+You will need to use the microshare Share API to Write and Read data into the platform. 
+You will first need an API key for authentication with the API.
 
-Note: you will need an account to get an access token
+* Log in your [microshare account](https://app.microshare.io)
+* Go to `Manage -> Keys.`  
+{% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
+* Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "My first IoT App"?).  
+{% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
+* Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
+{% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
+### Generate a Microshare Pipe Token
 
-1.  Navigate to the [Microshare platform](https://app.microshare.io) and sign in using your credentials
-2.  Click the "Manage" button in the top toolbar
-3.  Click the "Keys" button in the left toolbar
-4. Click on the "Create New App" button at the top right of the screen
-5. Type the app name and any appropriate notes relating to the app, then click "Create App"
-6. Click on the newly created API Key to copy it 
-7. Open Postman
-8. Make a Post call to https://auth.microshare.io
-    * See below for an example of the parameters for the Post Call:
+Now you'll generate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use Postman.
 
+**To install Postman on your computer:**
 
-{% highlight JSON%}
-{
-    "key": "grant_type",
-    "value": "password",
-    "equals": true,
-    "description": ""
-},
-{
-    "key": "client_id",
-    "value": "12345678-ABCD-9123-EFGH-456789IJKLMN",
-    "equals": true,
-    "description": ""
-},
-{
-    "key": "scope",
-    "value": "ALL:ALL",
-    "equals": true,
-    "description": ""
-},
-{
-    "key": "username",
-    "value": "example@microhare.io",
-    "equals": true,
-    "description": ""
-},
-{
-    "key": "password",
-    "value": "samplePassword",
-    "equals": true,
-    "description": ""
-},
-{% endhighlight %}
+1. Go to our [API documentation page](../../api-reference)
 
-* The parameters of the Post call explained:
-    * The key "grant_type" should have a value of "password"
-    * The key "client_id" should have the API Key as it's value
-    * The key "scope" should have a value of "ALL:ALL"
-    * The key "username" should have your email as it's value
-    * The key "password" should have your accounts password as it's value
+2. Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
+**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../api-reference).
 
-* This will return a JSON with an access token. The access token will be a series of letters and numbers that is associated with the "access_token" Key. You can post data to Microshare with this access token.
+3. Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
+{% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
+
+4. To see the Microshare Postman collection **collection**, click on `Collections` on the left hand pane.
+5. To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
+Then `Manage Environments`, then click on `Microshare`.
+
+{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
+
+Our next step is to set up the username, password and apike entries in the Environment.   
+
+**To get a microshare APIkey:**
+
+4. Log in your [microshare account](https://app.microshare.io)
+5. Go to `Manage -> Keys.`  
+6. Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
+5. Once the key is created, , click on the value in the API KEY (CLIENT ID) section to copy it to your clipboard. (See the screenshots below)
+
+{% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
+{% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
+{% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
+
+**To finally generate the microshare Pipe Token:**
+6. Go back to Postman and edit your environment.
+7. Copy the APIkey and enter your username and password. (see the screenshots below)
+8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
+
+{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+
+Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
+
+{% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
+
+**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
+
+{% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
 ## Post Data to Microshare
 
