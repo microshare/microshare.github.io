@@ -8,13 +8,11 @@ toc: true
 
 Get your Internet of Things data workflow started with the following steps:
 
-1. [Create a microshare account](./)
+1. [Create a microshare account](./#register-for-a-microshareio-account)
 2. [Get an API key](./)
 3. [Setup microshare's Postman API collection on your computer](./)
 4. [Write and Read data on microshare](./)
 5. [Transform incoming data with a Robot](./)
-6. [Aggregate data with a View](./)
-7. [Display data with an App](./)
 
 # Register for a Microshare.io account
 
@@ -42,56 +40,52 @@ You will first need an API key for authentication with the API.
 * Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-### Generate a Microshare Pipe Token
+# Setup Postman
 
-Now you'll generate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use Postman.
+This step is optional if you already have your own way of executing API call. If that's the case, go to [microshare API doc]() for a list of API call and move to the next section.
 
-**To install Postman on your computer:**
+Otherwise, you can setup the API manager Postman on your computer for a quick start access to microshare API collection.
 
-1. Go to our [API documentation page](../../api-reference)
+* Go to our [API documentation page](../../api-reference)
 
-2. Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
+* Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
 **If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../api-reference).
 
-3. Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
+* Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
 
-4. To see the Microshare Postman collection **collection**, click on `Collections` on the left hand pane.
-5. To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
+* To see the Microshare Postman **collection**, click on `Collections` on the left hand pane.
+* To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
 Then `Manage Environments`, then click on `Microshare`.
 
 {% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
 
-Our next step is to set up the username, password and apike entries in the Environment.   
+* In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fiels. 
+{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
-**To get a microshare APIkey:**
+That's it! You now have access to the microshare API collection, and got everything setup to authenticate, write data and read data with the platform. 
 
-4. Log in your [microshare account](https://app.microshare.io)
-5. Go to `Manage -> Keys.`  
-6. Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
-5. Once the key is created, , click on the value in the API KEY (CLIENT ID) section to copy it to your clipboard. (See the screenshots below)
+# Use the API
 
-{% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
-{% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
-{% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
+## Authenticate
 
-**To finally generate the microshare Pipe Token:**
-6. Go back to Postman and edit your environment.
-7. Copy the APIkey and enter your username and password. (see the screenshots below)
-8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
+* With your Postman environment setup, you can authenticate to the service by running the request `Authentication -> Request token` for the collection.   
 
-{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
-{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+* An access token, valid for 48h is generated and returned under the `access token` key in the result set.
 
-Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
+**Note** You could run the `Authentication -> Request Pipe token` request to generate a token valid for an unlimited time BUT that can only be used to post data to the microshare platform (no read). Such a token is convenient to setup a routed stream of IoT data from another platform.
 
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
 **Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
+ 
+* The access token was automatically pasted in your Postman environment. It is used by the other API calls to know that it is YOU that is writing or reading data on the platform.
 
-## Post Data to Microshare
+## Write data
+
+
 
 Make a post call using the same parameters as before, but with two notable additions. 
 
@@ -103,44 +97,45 @@ Make a post call using the same parameters as before, but with two notable addit
     * This will create a space for the data and attribute the above value as the recType's name  
         * It is recommended that your first recType follow a simple naming convention I.E. "yourFirstName.yourLastName"
 
+**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so the recType can be: `us.philadelphia.senet.sodaq`
 
-## Make a Rule 
+## Read data
 
-A rule governs the data you have uploaded in a specific recType. You can adjust who can see the data and what they can do with it. In this section we will allow a user of your choosing to read and write to the data you have posted to microshare.
+Use the read call
+You see your data
+You see who is the owner (you)
 
-1. Navigate to [our platform](https://app.microshare.io)
-2. Click the "Manage" button in the top toolbar
-3. Click the "Rules" button in the left toolbar
-4. Click the the "Create" button
-5. Input the Rule name in the top most text field
-5. Type "My First Rule" in the text field labeled "Description"
-5. Input the same recType used in the previous section in the text field labeled "Record Type"  
-5. In the section labeled operations check off the boxes for "Read" and "Write"
-5. Scroll down to the section labeled "Requestor"
-5. Click on the "user" dropdown within the "Requestor" section
-5. Select the "Specific Value" option
-    * A text box will appear with greyed out text reading "Please enter a value"
-5. Enter the email of the user whom will be allowed to access the data
-    * An example of a valid input would be "example@microshare.io"
-    * Note: this new user's email must associated with an account on our platform in order to access the data
+ou are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
 
-* Click the "Create" button at the top of the page 
+1. Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to run other requests.
+2. Open the `Shares -> Get Shares by recType` to configure it.
+3. Specify the recType you used in Senet in the query params.
+4. Click `Send`. 
+Ther response of the request is a view of all the data **THAT YOU ONLY HAVE ACCESS TO** stored under the specidifed recType:
+            
+{% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
+{% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
+{% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
-You have now made a Rule to govern access to your data! 
+If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
-Click [here](http://docs.microshare.io/docs/0.1/getting-started/data-sharing/) for more information.
+**Note** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 
-## Create a Robot 
+Rules are an advanced feature of the platform, out of the scope of this quick start. Learn more about Rules with our [Rules guide](../../../getting-started/rules-guide)
 
-1. Navigate to [our platform](https://app.microshare.io)
-2. Click the "Manage" button in the top toolbar
-3. Click the "Robots" button in the left toolbar
-4. Click the "Create" button 
-4. Input the Robot name in the top most text field 
-4. Type "My First Robot" in the text field labeled "Description"
-4. Check off the box labled "Active"
-4. Input the same recType from previouly in the "recType" section
-4. Copy and paste the code depicted below in the "Script" section
+# Create a Robot to transform incoming data
+
+* Navigate to [our platform](https://app.microshare.io)
+* Click the "Manage" button in the top toolbar
+* Click the "Robots" button in the left toolbar
+* Click the "Create" button 
+* Input the Robot name in the top most text field 
+* Type "My First Robot" in the text field labeled "Description"
+* Check off the box labled "Active"
+* Input the same recType from previouly in the "recType" section
+* Copy and paste the code depicted below in the "Script" section
+
+Chagne the date too
 
 {% highlight js %}
 
@@ -171,10 +166,120 @@ You should now receive an email whenever the recType is accessed! Test it out by
 
 Click [here](http://docs.microshare.io/docs/0.1/getting-started/robot-guide/) for more information.
 
+1. Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`
+
+{% include image.html url="/assets/img/hackiot-create-a-robot.png" description="Create a Robot from the composer" %}
+
+We'll do the minimum to unlock all the Robot options for now.
+
+1. Give your Robot a name.
+2. Enter the exact Record Type you used in the Senet portal.
+3. Complete the creation by clicking the `CREATE` button.
+
+{% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
+
+### Edit and test Robot
+
+You'll be back in the Robot cards list and your Robot should now be displayed.
+If you don't see your new Robot card listed:
+
+1. Open the option menu
+2. Increase the `Cards per Page` to 999 
+3. Click Apply
+
+The new Robot card should now be visible.
+
+{% include image.html url="/assets/img/hackiot-configure-robot.png" description="Increase Cards per Page" %}
+
+To edit an existing Robot, find your Robot in the list:
+
+1. Click on it 
+2. Click on the `pencil` icon at the top of the page
+
+{% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
+
+While in edit mode you can:
+1. Turn your Robot on and off
+2. Write the Robot script
+3. Test the script
+
+{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
+
+Replace the code in your Robot script with:
+{% highlight js %}
+  var lib = require('./libs/helpers');
+  function main(text, auth) {
+      
+      var rec = lib.read(text, auth, []);
+      var m = rec.objs[0].data;
+      var recType = rec.objs[0].recType;
+      
+      var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
+      var decodedLPPJSON = JSON.parse(decodedLPP);
+      
+      decodedLPPJSON.forEach(function(entry){
+          
+          print(entry);
+          print(JSON.stringify(entry));
+
+          lib.write(recType + '.decoded', entry, auth, []);
+
+      });
+  }
+{% endhighlight %}
+
+Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
+You can use that second recType as the trigger to another Robot for data transformation, etc.
 
 
+But think a second.
+What if you have 2 streams? You can combine those!
+3 streams? Combine them too! into an advanced record
 
-## Make a Dashboard 
+What if a friend of yours has data you want to collaborate: create a Rule !
+
+Let's move to the advanced features
+
+6. ADVANCED - [Aggregate data with a View](./)
+6. ADVANCED - [Share data with a Rule](./)
+7. ADVANCED - [Display data with an App](./)
+
+# Make a View
+
+Perform advanced DB query (filter, group by, sort, ...) with Views. Mongo aggregation queries.
+Go to the View screen
+
+Match the recType
+Make a filter on date ($gt)
+
+Test and Run
+
+Post under another recType
+Match on the two recTypes, then group by recType
+
+Test and Run
+
+Cool cool, but you can also use variables
+gt as a var
+Test and Run
+
+We'll use that in a moment
+
+# Create a Rule
 
 
-[Coming soon!]
+You can already stream data into the platform, get it automatically transformed, and read it back in different formats.
+
+So you can already build Apps
+
+Views
+
+# Create an App
+
+We have an App engine, supports Ember.js (preferred) and pure javascript/jquery
+Create a Form: call the Fact and display it
+There are a few reserved variables, an authenticated token is one 
+And you can use the variable here ! (now - 10 minutes)
+
+Then create an App that uses the Form
+And voila
