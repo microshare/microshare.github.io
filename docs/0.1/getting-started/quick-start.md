@@ -9,10 +9,10 @@ toc: true
 Get your Internet of Things data workflow started with the following steps:
 
 1. [Create a microshare account](./#register-for-a-microshareio-account)
-2. [Get an API key](./)
-3. [Setup microshare's Postman API collection on your computer](./)
-4. [Write and Read data on microshare](./)
-5. [Transform incoming data with a Robot](./)
+2. [Get an API key](./#get-an-api-key)
+3. [Setup microshare's Postman API collection on your computer](./#setup-postman)
+4. [Write and Read data on microshare](./#use-the-api)
+5. [Transform incoming data with a Robot](./#create-a-robot-to-transform-incoming-data)
 
 # Register for a Microshare.io account
 
@@ -42,7 +42,7 @@ You will first need an API key for authentication with the API.
 
 # Setup Postman
 
-This step is optional if you already have your own way of executing API call. If that's the case, go to [microshare API doc]() for a list of API call and move to the next section.
+This step is optional if you already have your own way of executing API call. If that's the case, go to [microshare API doc](../../api-reference) for a list of API call and move to the next section.
 
 Otherwise, you can setup the API manager Postman on your computer for a quick start access to microshare API collection.
 
@@ -73,6 +73,8 @@ That's it! You now have access to the microshare API collection, and got everyth
 
 * An access token, valid for 48h is generated and returned under the `access token` key in the result set.
 
+{% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
+
 **Note** You could run the `Authentication -> Request Pipe token` request to generate a token valid for an unlimited time BUT that can only be used to post data to the microshare platform (no read). Such a token is convenient to setup a routed stream of IoT data from another platform.
 
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
@@ -85,43 +87,34 @@ That's it! You now have access to the microshare API collection, and got everyth
 
 ## Write data
 
+* From the Postman collection, open the request `Shares -> Create one Share`.
 
+* Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in microshare. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
-Make a post call using the same parameters as before, but with two notable additions. 
+* Enter you own recType there  
+**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, if your IoT streams is from a TrackNet device, going through a Kerlink gateway, physically located in Philadelphia in the US, the recType can be: `us.philadelphia.kerlink.tracknet`
 
-1. Include the data you wish to upload into the body of the call in JSON format. For example:
+* Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
 
-    {"Test":"Data"}
-    
-2. Include a header with a key of "recType" 
-    * This will create a space for the data and attribute the above value as the recType's name  
-        * It is recommended that your first recType follow a simple naming convention I.E. "yourFirstName.yourLastName"
+* Click `Send`
 
-**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in Senet, physically located in Philadelphia in the US, so the recType can be: `us.philadelphia.senet.sodaq`
+* A confirmation message shows you that your data was successfully written to microshare, and returns you metadata usable with other API calls.
 
 ## Read data
 
-Use the read call
-You see your data
-You see who is the owner (you)
-
-ou are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
-
-1. Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to run other requests.
-2. Open the `Shares -> Get Shares by recType` to configure it.
-3. Specify the recType you used in Senet in the query params.
-4. Click `Send`. 
-Ther response of the request is a view of all the data **THAT YOU ONLY HAVE ACCESS TO** stored under the specidifed recType:
-            
-{% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
-{% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
+* From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
+* Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
+* Click `Send`. 
+Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the onwer of that data:
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
-If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+* If you execute the Write request again, and then the Read, the number of records increases as you have created a new record. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
 **Note** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 
-Rules are an advanced feature of the platform, out of the scope of this quick start. Learn more about Rules with our [Rules guide](../../../getting-started/rules-guide)
+Rules are an advanced feature of the platform, and are described in the ADVANCED section at the end of this quick start.
+
+* You can use the the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.  
 
 # Create a Robot to transform incoming data
 
