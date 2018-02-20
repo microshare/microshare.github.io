@@ -56,9 +56,7 @@ Otherwise, you can setup the API manager Postman on your computer for a quick st
 
 * To see the Microshare Postman **collection**, click on `Collections` on the left hand pane.
 * To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
-Then `Manage Environments`, then click on `Microshare`.
-
-{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
+Then `Manage Environments`, then click on `Microshare`.{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
 
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fiels. 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
@@ -91,8 +89,8 @@ That's it! You now have access to the microshare API collection, and got everyth
 
 * Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in microshare. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
-* Enter you own recType there  
-**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, if your IoT streams is from a TrackNet device, going through a Kerlink gateway, physically located in Philadelphia in the US, the recType can be: `us.philadelphia.kerlink.tracknet`
+* Enter you own recType there, by using your `firstName.lastName` combination.
+**Tip**: For IoT data streams, we usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, if your IoT streams is from a TrackNet device, going through a Kerlink gateway, physically located in Philadelphia in the US, the recType can be: `us.philadelphia.kerlink.tracknet`
 
 * Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
 
@@ -114,71 +112,37 @@ Ther response of the request is a view of all the data stored under the specifie
 
 Rules are an advanced feature of the platform, and are described in the ADVANCED section at the end of this quick start.
 
-* You can use the the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.  
+* You can use the the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
 
-# Create a Robot to transform incoming data
+* For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](http://docs.microshare.io/docs/0.1/advanced/lorawan-devices/). 
 
-* Navigate to [our platform](https://app.microshare.io)
-* Click the "Manage" button in the top toolbar
-* Click the "Robots" button in the left toolbar
-* Click the "Create" button 
-* Input the Robot name in the top most text field 
-* Type "My First Robot" in the text field labeled "Description"
-* Check off the box labled "Active"
-* Input the same recType from previouly in the "recType" section
-* Copy and paste the code depicted below in the "Script" section
+# Create Robots to transform data and send alerts
 
-Chagne the date too
+Robots are automated workflow elements allowing you to transform, analyse and report on incoming data on the fly.
 
-{% highlight js %}
+We are going to create a chain of two Robots to detect an abnormal temperature level, and send email notifications.
 
-var lib = require('./libs/helpers');
-function main(text, auth){
+* Go to the [microshare platform](https://app.microshare.io)
 
-    /* lib.sendMicroshareEmail(recipient's email address,
-          subject of your email,
-          body of your email);
-       The email sender will be notification@microshare.io
-    */
-
-    var TO = 'INPUT YOUR EMAIL HERE';
-    var SUBJECT = 'This is a test email';
-    var BODY = 'This is a test email!';
-
-    lib.sendMicroshareEmail(TO, SUBJECT, BODY);
-
-}
-
-{% endhighlight %}
-
-* Within the code pasted into the "Script" section change the variable "TO" to your email
-
-
-You should now receive an email whenever the recType is accessed! Test it out by posting data to your recType!
-
-
-Click [here](http://docs.microshare.io/docs/0.1/getting-started/robot-guide/) for more information.
-
-1. Go to [the Robot tab](https://app.microshare.io/composer#/robos) and click `CREATE`
+* Click the `Manage` button in the top toolbar
+* Click the `Robots` button in the left toolbar and click `CREATE`
 
 {% include image.html url="/assets/img/hackiot-create-a-robot.png" description="Create a Robot from the composer" %}
 
 We'll do the minimum to unlock all the Robot options for now.
 
-1. Give your Robot a name.
-2. Enter the exact Record Type you used in the Senet portal.
-3. Complete the creation by clicking the `CREATE` button.
+* Give your Robot a name.
+* Enter the Record Type you used in the calls in the previous section.
+* Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination.
 
 {% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
-
-### Edit and test Robot
 
 You'll be back in the Robot cards list and your Robot should now be displayed.
 If you don't see your new Robot card listed:
 
-1. Open the option menu
-2. Increase the `Cards per Page` to 999 
-3. Click Apply
+* Open the option menu
+* Increase the `Cards per Page` to 999 
+* Click Apply
 
 The new Robot card should now be visible.
 
@@ -186,43 +150,90 @@ The new Robot card should now be visible.
 
 To edit an existing Robot, find your Robot in the list:
 
-1. Click on it 
-2. Click on the `pencil` icon at the top of the page
+* Click on it 
+* Click on the `pencil` icon at the top of the page
 
 {% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
 
 While in edit mode you can:
-1. Turn your Robot on and off
-2. Write the Robot script
-3. Test the script
+* Turn your Robot on and off
+* Write the Robot script
+* Test the script
 
 {% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
 
-Replace the code in your Robot script with:
+We don't have real data to use here, so we going to transform it with our own fake data.
+We are going to add a fake temperature value, and the current date/time to the record, then save that transformed record.
+
+* Replace the code in your Robot script with:
 {% highlight js %}
   var lib = require('./libs/helpers');
   function main(text, auth) {
       
       var rec = lib.read(text, auth, []);
-      var m = rec.objs[0].data;
+      var newData = rec.objs[0].data;
       var recType = rec.objs[0].recType;
       
-      var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
-      var decodedLPPJSON = JSON.parse(decodedLPP);
-      
-      decodedLPPJSON.forEach(function(entry){
-          
-          print(entry);
-          print(JSON.stringify(entry));
+      var now = new Date();
 
-          lib.write(recType + '.decoded', entry, auth, []);
+      newData.temperature = now.getSeconds();
+      newData.dateTime = now.toString();
 
-      });
+      lib.write(recType + '.withTemperature', newData, auth, []);
+
   }
 {% endhighlight %}
 
-Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
+Activate and Update your Robot when done. It will now be triggered automatically to read, anhance, then write back a record to the data lake, with the added `.withTemperature` suffix to the recType.
+
+You can test that your Robot triggers by Writing a new piece of data with your initial recType, and Read the `recType.withTemperature` with the API.
+
 You can use that second recType as the trigger to another Robot for data transformation, etc.
+This is exactly what we are going to do now!
+
+* Create a new Robot
+* Give your Robot a name.
+* Enter the Record Type with the `.withTemperature` suffix.
+* Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination.
+* Now edit that Robot, and replace the script with:
+{% highlight js %}
+
+var lib = require('./libs/helpers');
+function main(text, auth){
+
+    var rec = lib.read(text, auth, []);
+    var data = rec.objs[0].data;
+
+    if (data.temperature > 30){
+
+        /* lib.sendMicroshareEmail(recipient's email address,
+            subject of your email,
+            body of your email);
+           The email sender will be notification@microshare.io
+        */
+
+        var TO = 'INPUT YOUR EMAIL HERE';
+        var SUBJECT = 'High temperature alert';
+        var BODY = 'A temperature of ' + data.temperature + ' was detected at ' + data.dateTime;
+
+        lib.sendMicroshareEmail(TO, SUBJECT, BODY);
+
+    }
+}
+
+{% endhighlight %}
+
+* Within the code pasted into the "Script" section change the variable "TO" to your email
+* Activate and update your Robot
+
+* Write a few record at your initial recType.
+
+The two Robots are activated in succession. If the fake temperature created is above 30, you receive an email alert.
+
+/*
+
+
+
 
 
 But think a second.
@@ -276,3 +287,4 @@ And you can use the variable here ! (now - 10 minutes)
 
 Then create an App that uses the Form
 And voila
+*/
