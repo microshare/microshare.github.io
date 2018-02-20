@@ -12,9 +12,9 @@ Get your Internet of Things data workflow started with the following steps:
 2. [Get an API key](./#get-an-api-key)
 3. [Setup microshare's Postman API collection on your computer](./#setup-postman)
 4. [Write and Read data on microshare](./#use-the-api)
-5. [Transform incoming data with a Robot](./#create-a-robot-to-transform-incoming-data)
+5. [Transform incoming data with a Robot](./#create-robots-to-transform-data-and-send-alerts)
 
-# Register for a Microshare.io account
+## Register for a Microshare.io account
 
 * Browse to [https://app.microshare.io](https://app.microshare.io).  
 {% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}
@@ -27,7 +27,7 @@ Get your Internet of Things data workflow started with the following steps:
 
 * You can then log into your account from [https://app.microshare.io](https://app.microshare.io).
 
-# Get an API key
+## Get an API key
 
 You will need to use the microshare Share API to Write and Read data into the platform. 
 You will first need an API key for authentication with the API.
@@ -40,16 +40,16 @@ You will first need an API key for authentication with the API.
 * Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-# Setup Postman
+## Setup Postman
 
-This step is optional if you already have your own way of executing API call. If that's the case, go to [microshare API doc](../../api-reference) for a list of API call and move to the next section.
+This step is optional if you already have your own way of executing API call. If that's the case, go to [microshare API doc](../../advanced/api-reference) for a list of API call and move to the next section.
 
 Otherwise, you can setup the API manager Postman on your computer for a quick start access to microshare API collection.
 
-* Go to our [API documentation page](../../api-reference)
+* Go to our [API documentation page](../../advanced/api-reference)
 
 * Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
-**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../api-reference).
+**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../advanced/api-reference).
 
 * Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
@@ -63,9 +63,9 @@ Then `Manage Environments`, then click on `Microshare`.{% include image.html url
 
 That's it! You now have access to the microshare API collection, and got everything setup to authenticate, write data and read data with the platform. 
 
-# Use the API
+## Use the API
 
-## Authenticate
+### Authenticate
 
 * With your Postman environment setup, you can authenticate to the service by running the request `Authentication -> Request token` for the collection.   
 
@@ -83,7 +83,7 @@ That's it! You now have access to the microshare API collection, and got everyth
  
 * The access token was automatically pasted in your Postman environment. It is used by the other API calls to know that it is YOU that is writing or reading data on the platform.
 
-## Write data
+### Write data
 
 * From the Postman collection, open the request `Shares -> Create one Share`.
 
@@ -98,7 +98,7 @@ That's it! You now have access to the microshare API collection, and got everyth
 
 * A confirmation message shows you that your data was successfully written to microshare, and returns you metadata usable with other API calls.
 
-## Read data
+### Read data
 
 * From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
 * Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
@@ -114,9 +114,9 @@ Rules are an advanced feature of the platform, and are described in the ADVANCED
 
 * You can use the the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
 
-* For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](http://docs.microshare.io/docs/0.1/advanced/lorawan-devices/). 
+* For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](../../advanced/lorawan-devices/). 
 
-# Create Robots to transform data and send alerts
+## Create Robots to transform data and send alerts
 
 Robots are automated workflow elements allowing you to transform, analyse and report on incoming data on the fly.
 
@@ -229,3 +229,5 @@ function main(text, auth){
 * Write a few record at your initial recType.
 
 The two Robots are activated in succession. If the fake temperature created is above 30, you receive an email alert.
+
+For more available Robot methods, check our [Robot's library](../../advanced/robots-libraries)
