@@ -15,6 +15,7 @@ It gives access to handy methods to ease your life.
 
 Below are categories and code snippets to guide you how to use these lib methods.
 
+### [Read and Write records](read-and-write)
 ### [Decoding payloads](decoding-payloads)
 ### [Making RESTful calls](making-restful-calls)
 ### [Sending notifications](sending-notifications)
