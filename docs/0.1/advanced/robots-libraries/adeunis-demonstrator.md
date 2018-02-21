@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Decoding Adeunis Demonstratr V1.1
+title: Decoding Adeunis Demonstrator V1.1
 description:
 group: advanced
 toc: true
