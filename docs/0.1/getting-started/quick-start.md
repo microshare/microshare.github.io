@@ -233,4 +233,4 @@ The two Robots are activated in succession. If the fake temperature created is a
 For more available Robot methods, check our [Robot's library](../../advanced/robots-libraries)
 
 You are now ready to setup your own IoT data stream, and transform, analyse, alert on data.
-For help on how to route your IoT stream from your favorite platform or gateway to icroshare, check our [IoT integration documentation](../../advanced/lorawan-devices).
+For help on how to route your IoT stream from your favorite platform or gateway to microshare, check our [IoT integration documentation](../../advanced/lorawan-devices).

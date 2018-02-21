@@ -17,3 +17,4 @@ toc: true
 ## Platform Tutorials
 
 ### [Stream IoT packets from Senet to Microshare](senet-tutorial)
+### [Configure Routing from Kerlink Gateway's SPN to Microshare](kerlink-tutorial)
