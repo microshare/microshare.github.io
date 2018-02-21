@@ -88,3 +88,22 @@ function main(text, auth){
 
 }
 {% endhighlight %}
+
+### calling an API using a CUSTOM authentication
+
+{% highlight js %}
+var lib = require('./libs/helpers');
+
+function main(text, auth) {
+    
+    var getUrl = customGetUrl;
+    var getHeaders = {};
+
+    getHeaders.authType = 'CUSTOM';
+    getHeaders.headerName = 'X-API-Key';
+    getHeaders.headerValue = '12345678900998877665544332211';
+
+    var getResponse = lib.get(getUrl, getHeaders);
+    print(JSON.stringify(getResponse));
+}
+{% endhighlight %}
