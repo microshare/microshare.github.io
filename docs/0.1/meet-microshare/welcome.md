@@ -14,7 +14,13 @@ toc: true
 
 Microshare makes it easy for you to work with shareable data. Once your data is uploaded on our platform, we provide all the tools you need to transform, visualize and share the data.
 
-While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`.
+While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`.  
+
+## Quick Links
+
+#### [Microshare quick start](../../getting-started/quick-start)
+#### [Link your favorite IoT gateway to Microshare](../../advanced/lorawan-devices)
+#### [Decode your IoT devices payload](../../advanced/robots-libraries)
 
 ## Platform
 
