@@ -6,14 +6,14 @@ group: advanced
 toc: true
 ---
 
-This this configuration, we assume that you have followed the [quick start](../../getting-started-quick-start). You should know how to generate a Pipe Token, and what a recType is.
+In this configuration, we assume that you have followed the [quick start](../../getting-started-quick-start). You should know how to generate a Pipe Token, and what a recType is.
 
 To route all new packets recevied by a Kerlink gateway to your microshare.io account:
 
 * Login to your Kerlink SPN
 * Go to Configuration -> Service (on the left hand side tabs)
 
-* There will be 3 fields to fill in as follow:
+* There will be 3 fields to fill in as shown below:
 1. in hostname, enter `https://api.microsahre.io`
 2. in port `443`
 3. in path enter `/share/:recType/token/:pipeToken/` and replace `:recType` by the record type you have selected for this data, and `:pipeToken` by the pipe token you have generated.
