@@ -14,7 +14,7 @@ To route all new packets recevied by a Kerlink gateway to your microshare.io acc
 * Go to Configuration -> Service (on the left hand side tabs)
 
 * There will be 3 fields to fill in as follow:
-1. in hostname, enter `https://api.microsahre.io`
+1. in hostname, enter `https://api.microshare.io`
 2. in port `443`
 3. in path enter `/share/:recType/token/:pipeToken/` and replace `:recType` by the record type you have selected for this data, and `:pipeToken` by the pipe token you have generated.
 
