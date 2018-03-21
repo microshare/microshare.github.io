@@ -374,7 +374,7 @@ Replace the code in your Robot script with:
   var lib = require('./libs/helpers');
   function main(text, auth) {
       
-      var rec = lib.read(text, auth, []);
+      var rec = lib.parseMsg(text);
       var m = rec.objs[0].data;
       var recType = rec.objs[0].recType;
       
@@ -382,11 +382,10 @@ Replace the code in your Robot script with:
       var decodedLPPJSON = JSON.parse(decodedLPP);
       
       decodedLPPJSON.forEach(function(entry){
-          
+         
           print(entry);
           print(JSON.stringify(entry));
-
-          lib.write(recType + '.decoded', entry, auth, []);
+          lib.writeShare(auth, recType + '.decoded', entry, []);
 
       });
   }

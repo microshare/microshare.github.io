@@ -66,12 +66,12 @@ First of all, this part is compulsory:
 The ```require``` method loads the library of function your Robot will be able to use,  
 and the ```main``` function is what's actually run, so it **must** encapsulate all of Robot's actions.
 Its two parameters are
-* ```text``` that is the metadata about the record that triggered the Robot.  
+* ```text``` that is the metadata about the event that triggered the Robot.  
 * ```auth``` is your auth token to allow this Robot to access the data lake on your behalf.  
 
 You will use the two other functions 99.9% of the time:
-* ```lib.read(text, auth, []);``` reads the record that triggered your Robot from the data lake.
-* ```lib.write(newRecType, newRecord, auth, ['tags']);``` writes back a new record with a new recType in the data lake.  
+* ```lib.parseMsg(text);``` parses the message that triggered your Robot from the data lake.
+* ```lib.writeShare(auth, newRecType, newRecord, ['tags']);``` writes back a new record with a new recType in the data lake.  
 
 For more code samples, refer to the [Data Workflow page](../data-workflow).  
 
