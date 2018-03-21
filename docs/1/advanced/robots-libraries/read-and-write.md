@@ -13,7 +13,7 @@ Below are code snippets to read data from the data lake.
 
 ### Read record triggering the Robot
 
-Read the record that triggers the Robot using lib.read to get the data and metadata: 
+Parse the message that triggered the Robot using lib.parseMsg to get the data and metadata: 
 
 {% highlight js %}
   // Include the helper objects which allows you to read and write to microshare datalake
@@ -23,7 +23,13 @@ Read the record that triggers the Robot using lib.read to get the data and metad
   function main(text, auth) {
     print('################################# RECORD READ START ###########################');
     
-    var record = lib.read(text, auth, []);
+    var resp1 = lib.parseMsg(text);
+    if (resp1.err != 1) {
+        print('resp1 = ' + JSON.stringify(resp1));
+        print('obj = ' + JSON.stringify(resp1.objs[0]));
+        print('updater = ' + JSON.stringify(resp1.objs[0].updaterId));
+        print('recType = ' + JSON.stringify(resp1.recType));
+    }
     
     print('################################# RECORD READ END #############################');
   }
@@ -103,29 +109,44 @@ And the returned data model is
   }
 {% endhighlight %} 
 
-### Read any record
+### Read any record(s)
 You can also read any record from which you know the recType and/or id.  
-This call will always return an array and depending on the read, you can have more than one record returned.
-To get records by the recType and associated tags:
+This call will always return an array and depending on the read, you may have 0 or more records returned. The final parameter to each readShareBy call is optional.
+
+To get records by the recType and id:
 
 {% highlight js %}
-  // Include the helper objects which allows you to read and write to microshare datalake
+// Include the helper objects which allows you to read and write to Microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
   function main(text, auth) {
-    print('################################# RECORD READ START ###########################');
-    var tags = ["tempID1234"]
-    var record = lib.read('{"message":"source=ShareService,type=objs,recType=io.microshare.demo.sensor.temprature,id="}', auth, tags);
+      print('################################# RECORD READ START ###########################');
+      var tags = ["tag1", "tag2"]
+      var record = lib.readShareById(auth, "com.yourdomain.yourrecType", "yourid");
+      print('################################# RECORD READ END #############################');
+  }
+{% endhighlight %}
 
-    print('################################# RECORD READ END #############################');
+To get records by the recType and associated tags:
+
+{% highlight js %}
+// Include the helper objects which allows you to read and write to Microshare datalake
+  var lib = require('./libs/helpers');
+
+  // Always need a main function, but can have other functions to keep your code modular.
+  function main(text, auth) {
+      print('################################# RECORD READ START ###########################');
+      var tags = ["tag1", "tag2"]
+      var record = lib.readShareByTags(auth, "com.your.recType", tags);
+      print('################################# RECORD READ END #############################');
   }
 {% endhighlight %}
 
 ### Data lake advanced queries
 You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-guide/) to do advanced queries to the data lake.
 
-Facts run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
+Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
 {% highlight js %}
   //Include the helper objects which allows you to read and write to microshare datalake
@@ -133,32 +154,120 @@ Facts run an aggregation query on the data lake entries and can take parameters.
 
   // Always need a main function, but can have other functions to keep your code modular.
   function main(text, auth) {
-    print('################################# FACT READ START ###########################');
+    print('################################# VIEW READ START ###########################');
     
     var queryParams = {
         "id": "any fact id"
     };
     
-    var factResult = lib.read(text, auth, [], queryParams);
+    var factResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
     
-    print('################################# FACT READ END #############################');
+    print('################################# VIEW READ END #############################');
   }
 {% endhighlight %}
 
 ## Write data to the data lake
-As shown above, each step of a workflow usually ends with writting a record in the data lake.  
+As shown above, each step of a workflow usually ends with writing a record in the data lake.  
 
-A data write use is twofold: it builds the audit trail of your data, and allows to trigger the next step of the workflow.
+A data write use is three-fold: commits data to long-term storage, generates an audit trail of your data, and triggers the create event to start the next step of the workflow.
 
 As shown below, you can specify the recType and tags of your new data entry.
 {% highlight js %}
   var lib = require('./libs/helpers');
 
   function main(text, auth) {
-    print('################################# FACT READ START ###########################');
-
-    var write = lib.write(recType, obj, auth, [tags]);
+    print('################################# WRITE START ###########################');
     
-    print('################################# FACT READ END #############################');
+    var tags = ['some', 'tag', 'list'];
+
+    var write = lib.writeShare(auth, recType, obj, tags);
+    
+    print('################################# WRITE END #############################');
   }
 {% endhighlight %} 
+
+## Function Quick Reference
+**function parseMsg(text)**
+
+    usage: parse the triggering message to obtain object and metadata
+    input: text: JsObject
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of triggering shares [should be index 0]
+            id: id of returned share
+            recType: recType of returned share
+    }
+
+**function readShareById(auth, recType, id, params)**
+
+    usage: read a single share from the datalake with the specified id and recType
+    input: auth: String, recType: String, [optional] params: JsObject
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of returned shares [should be index 0]
+            id: id of returned share
+            recType: recType of returned share
+    }
+
+**function readShareByTags(auth, recType, tags, params)** 
+
+    usage: read a shares from the datalake that contain all tags
+    input: auth: String, recType: String, tags: Array[String], [optional] params: JsObject
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of returned shares
+            id: empty string
+            recType: recType of returned shares
+    }
+
+function readShareByView(auth, recType, viewId, params)**
+
+    usage: read a view from the datalake by recType and viewId
+    input: auth: String, recType: String, viewId: String, [optional] params: JsObject
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of the returned view objects
+            viewId: id of the invoked view
+            recType: recType of the invoked view
+    }
+
+**function writeShare(auth, recType, obj, tags)**
+
+    usage: write a new share into the datalake
+    input: auth: String, recType: String, obj: JsObject, tag: Array[String]
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of the returned view objects
+            id: id of created share
+            recType: recType of the invoked view
+    }
+
+**function writeShareWithOwners(auth, recType, obj, tags, owners)**
+
+    usage: write a new share into the datalake with specified co-owners
+    input: auth: String, recType: String, obj: JsObject, tag: Array[String], owners: JsObject
+    output: JsObject{
+        err: 0 = good, 1 = fail
+        msg: error string or Success
+        if err = 0
+            meta: counts of returned shares
+            objs[]: array of the returned view objects
+            id: id of created share
+            recType: recType of the invoked view
+    }
+
