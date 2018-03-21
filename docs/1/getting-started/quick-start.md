@@ -170,7 +170,7 @@ We are going to add a fake temperature value, and the current date/time to the r
   var lib = require('./libs/helpers');
   function main(text, auth) {
       
-      var rec = lib.read(text, auth, []);
+      var rec = lib.parseMsg(text);
       var newData = rec.objs[0].data;
       var recType = rec.objs[0].recType;
       
@@ -179,7 +179,7 @@ We are going to add a fake temperature value, and the current date/time to the r
       newData.temperature = now.getSeconds();
       newData.dateTime = now.toString();
 
-      lib.write(recType + '.withTemperature', newData, auth, []);
+      lib.writeShare(auth, recType + '.withTemperature', newData, []);
 
   }
 {% endhighlight %}
@@ -201,7 +201,7 @@ This is exactly what we are going to do now!
 var lib = require('./libs/helpers');
 function main(text, auth){
 
-    var rec = lib.read(text, auth, []);
+    var rec = lib.parseMsg(text);
     var data = rec.objs[0].data;
 
     if (data.temperature > 30){
