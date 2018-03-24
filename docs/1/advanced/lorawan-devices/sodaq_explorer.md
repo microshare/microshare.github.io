@@ -189,7 +189,4 @@ Log into the TTN Portal and navigate to your TTN application and find your regis
 
 {% include image.html url="/assets/img/ttn_dev_data_view.png" description="TTN Device Payload View" %}
 
-- Confirm you properly configured the code with the proper values from this tutorial
-- Ensure the code compiled without any Errors
-- Copy the `.bin` file to the device again using steps in `Programming the Device` section
-- Ensure that you are withing range of a Senet LoRaWAN Gateway or in an area within Senet Outdoor coverage check the [coverage map here](http://www.senetco.com/coverage/){:target="_blank"}
+You're device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
