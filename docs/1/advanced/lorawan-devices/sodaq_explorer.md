@@ -33,7 +33,7 @@ gpasswd -a $USER lock
 ### Configure Arduino for the SODAQ ExpLoRer Libraries
 - Open Arduino IDE
 - Click `File` > `Preferences`
-- In the `Addittional Boards Manager URLs` field enter this url to set the SODAQ Explorer board's libraries
+- In the `Additional Boards Manager URLs` field enter this url to set the SODAQ Explorer board's libraries
 
     ```
     http://downloads.sodaq.net/package_sodaq_samd_index.json
@@ -45,7 +45,7 @@ gpasswd -a $USER lock
 ### Install Arduino the SODAQ Explorer Libraries via Board Manager
 - Click `Tools` > `Board` > `Boards Manager`
 - Type `SODAQ` in the filter text field
-- Click the `Install` butons for each of the SODAQ devices listed
+- Click the `Install` buttons for each of the SODAQ devices listed
 
 {% include image.html url="/assets/img/sodaq_explorer_install_libs.png" description="Install the SODAQ Board Libraries" %}
 
