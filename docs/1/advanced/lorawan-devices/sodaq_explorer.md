@@ -189,7 +189,7 @@ Log into the TTN Portal and navigate to your TTN application and find your regis
 
 {% include image.html url="/assets/img/ttn_dev_data_view.png" description="TTN Device Payload View" %}
 
-You're device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
+Your device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
 
 ## Stream IoT packets from Senet to Microshare
 

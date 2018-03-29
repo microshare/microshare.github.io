@@ -129,9 +129,9 @@ The response of the request is a view of all the data **THAT YOU ONLY HAVE ACCES
             
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
 {% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
-{% include image.html url="/assets/img/get-share-call-3.png" description="TTN data in microshare example" %}
+{% include image.html url="/assets/img/get-share-call-3-ttn-json.png" description="TTN data in microshare example" %}
 
-The TTN data is under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
+The TTN data is under the `objs -> data` keys. The `payload_fields` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
 Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
 
 If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
