@@ -61,7 +61,7 @@ To use the token generation calls, you need to identify yourself with your usern
 
 4. Log in your [microshare account](https://app.microshare.io){:target="_blank"}
 5. Go to `Manage -> Keys.`  
-6. Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
+6. Click `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
 5. Once the key is created, , click on the value in the API KEY (CLIENT ID) section to copy it to your clipboard. (See the screenshots below)
 
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
