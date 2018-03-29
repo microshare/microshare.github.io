@@ -392,7 +392,7 @@ Replace the code in your Robot script with:
 Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
 You can use that second recType as the trigger to another Robot for data transformation, etc.
 
-## Give your team mates access to the data
+## Give your teammates access to the data
 
 The decoded data should be available to **only** one microshare account of your team right now.  
 But Rules will allow you to extend access to the data to your other team members, or anybody you want.
@@ -403,10 +403,10 @@ What you have to setup is:
 1. Give a firendly name to your Rule
 2. Enter the recType your decoded data is stored under
 3. This Rule has to allow the operations: Read and Query
-4. Set the `Requestor User` to `Specific Value`, and enter the login email of your team mate
+4. Set the `Requestor User` to `Specific Value`, and enter the login email of your teammate
 5. Click `Create`
 
-{% include image.html url="/assets/img/hackiot-configure-rules.png" description="Share data with my team mates" %}
+{% include image.html url="/assets/img/hackiot-configure-rules.png" description="Share data with my teammates" %}
 
 **Tip**  
 By default, all of your data is shared with your _Organization_.  
