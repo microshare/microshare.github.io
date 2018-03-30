@@ -369,24 +369,28 @@ While in edit mode you can:
 
 Replace the code in your Robot script with:
 {% highlight js %}
-  var lib = require('./libs/helpers');
-  function main(text, auth) {
-      
-      var rec = lib.parseMsg(text);
-      var m = rec.objs[0].data;
-      var recType = rec.objs[0].recType;
-      
-      var decodedLPP = lib.decodeCayenneLPP(m.pdu);    
-      var decodedLPPJSON = JSON.parse(decodedLPP);
-      
-      decodedLPPJSON.forEach(function(entry){
-         
-          print(entry);
-          print(JSON.stringify(entry));
-          lib.writeShare(auth, recType + '.decoded', entry, []);
+	var lib = require('./libs/helpers');
+	function main(text, auth) {
+		print('########### START: Demo C to F Convert ##########');
+		// this is to get the content of the incoming data
+		var record = lib.parseMsg(text);
+		var recordData = record.objs[0].data;
+		var recType = record.recType;
+		// if the payload needs to be decoded, then use our library lib.decode***(newData.payload);
+		// In this demo, Celsius temperature will be coming directly in element .tempC
+	   if (recordData.tempC !== undefined){
+			recordData.tempF = recordData.tempC * 9/5 + 32;
+		
+		// If you need to create a new piece of data after processing the source, use the lib.write to commit to microshare
+			var newRecType = recType + '.processed';
+			var newTags = ['demo', 'test01', 'CtoF']
+			lib.write(newRecType, recordData, auth, ['tag']);
+		} else {
+			print("******* tempC is not defined.")
+		}
+		print('########### START: Demo C to F Convert ##########');
+	}
 
-      });
-  }
 {% endhighlight %}
 
 Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
