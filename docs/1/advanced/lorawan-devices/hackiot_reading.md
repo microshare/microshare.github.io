@@ -9,7 +9,7 @@ toc: true
 Here you'll find some of the resources and software that'll be used at HackIoT Reading.  
 
 # Getting Started
-In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Aurduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  This tutorial is going guide you in programming the SODAQ Explorer board and connecting it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
+In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Aurduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  This tutorial is going to guide you in programming the SODAQ Explorer board and connecting it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
 
 **Important** You must be within range of The Things Network coverage area or gateway.  You can see the [The Things Network Coverage Map](https://www.thethingsnetwork.org/map){:target="_blank"} to check coverage in your area or install your own [LoRaWAN gateway](https://www.thethingsnetwork.org/docs/gateways/gateway/){:target="_blank"} connected to The Things Network.  If you are **not** within The Things Network coverage area your device will not connect and transmit data to the The Things Network platform.
 
@@ -77,7 +77,7 @@ Learn more about [Cayenne LPP here](https://mydevices.com/cayenne/docs_stage/lor
 {% include image.html url="/assets/img/arduino_menu_select_sodaq.png" description="Select the SODAQ Board Libraries" %}
 
 ### Setup the Arduino Serial Port
-The Serial Monitor enables you to interact, log & debug applications on connected devices.  You will be using the Serial Monitor to get information from the connected device. At this point connect the micros usb to the device then to the computer. Next select the serial port in Arduino IDE.
+The Serial Monitor enables you to interact, log & debug applications on connected devices.  You will be using the Serial Monitor to get information from the connected device. At this point connect the micro usb cable to the device then to the computer. Next select the serial port in Arduino IDE.
 
 **Note** The actual `Port Names` will vary between different Operating Systems.  The screenshots below are from the Ubuntu OS.
 
@@ -106,7 +106,7 @@ The application will be compiled and uploaded to the SODAQ board.  You should se
 
 {% include image.html url="/assets/img/arduino_upload.png" description="Arduino Upload Success" %}
 
-In the Serial Monitor window you should start seeing information scrolling. Un-check the `Auto Scroll` check box to stop the auto scrolling. Manually scroll to the top of the Serial Monitor and record or copy the `DevEUI` value listed
+In the Serial Monitor window you should start seeing information scrolling. Un-check the `Auto Scroll` check box to stop the auto scrolling. Manually scroll to the top of the Serial Monitor and record or copy the `DevEUI` value listed.
 
 {% include image.html url="/assets/img/arduino_sodaq_deveui.png" description="Arduino Upload Success" %}
 
@@ -197,7 +197,7 @@ Your device is now programmed to read and transmit it's sensor data to the TTN p
 
 # Integrate Microshare to The Things Network (TTN)
 
-Now show you how to configure your TTN applications to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
+Now we'll show you how to configure your TTN applications to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
 
 ### Register for a Microshare.io account
 
@@ -228,7 +228,7 @@ These two pieces of information are configured in TTN's Application Integrations
 
 To identify yourself as the owner of the streamed data, you must generate a token for your microshare account. Generating this token will be covered in the next section.
 
-The category under which every one of your data packets get stored in microshare is called a `recType` (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later
+The category under which every one of your data packets get stored in microshare is called a `recType` (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later.
 
 ### Generate a Microshare Pipe Token
 
@@ -319,7 +319,7 @@ The response of the request is a view of all the data **THAT YOU ONLY HAVE ACCES
 {% include image.html url="/assets/img/get-share-call-3-ttn-json.png" description="TTN data in microshare example" %}
 
 The TTN data is under the `objs -> data` keys. The `payload_fields` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
-Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
+Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload.
 
 If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
@@ -404,7 +404,7 @@ But Rules will allow you to extend access to the data to your other team members
 To set one Rule up, login to your microshare account, go to `Manage -> Rules` and click `Create`.
 What you have to setup is:
 
-1. Give a firendly name to your Rule
+1. Give a friendly name to your Rule
 2. Enter the recType your decoded data is stored under
 3. This Rule has to allow the operations: Read and Query
 4. Set the `Requestor User` to `Specific Value`, and enter the login email of your teammate
