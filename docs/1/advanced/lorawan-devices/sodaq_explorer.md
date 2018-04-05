@@ -12,7 +12,7 @@ In this tutorial you're going to program the [SODAQ ExpLoRer board](http://suppo
 **Important** You must be within range of The Things Network coverage area or gateway.  You can see the [The Things Network Coverage Map](https://www.thethingsnetwork.org/map){:target="_blank"} to check coverage in your area or install your own [LoRaWAN gateway](https://www.thethingsnetwork.org/docs/gateways/gateway/){:target="_blank"} connected to The Things Network.  If you are **not** within The Things Network coverage area your device will not connect and transmit data to the The Things Network platform.
 
 ## Linux Requirement
-**This applies to Linux ONLY** `Linux Users` you may need to give your current user read/write access to the serial device file. This usually requires you to add the current user to a sysetm group. These group names vary depending on the Linux distro that you're using. Here are some examples for Ubuntu & Arch Linux.
+**This applies to Linux ONLY** `Linux Users` you may need to give your current user read/write access to the serial device file. This usually requires you to add the current user to a system group. These group names vary depending on the Linux distro that you're using. Here are some examples for Ubuntu & Arch Linux.
 
 `Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
 ```
@@ -33,7 +33,7 @@ gpasswd -a $USER lock
 ### Configure Arduino for the SODAQ ExpLoRer Libraries
 - Open Arduino IDE
 - Click `File` > `Preferences`
-- In the `Addittional Boards Manager URLs` field enter this url to set the SODAQ Explorer board's libraries
+- In the `Additional Boards Manager URLs` field enter this url to set the SODAQ Explorer board's libraries
 
     ```
     http://downloads.sodaq.net/package_sodaq_samd_index.json
@@ -45,14 +45,14 @@ gpasswd -a $USER lock
 ### Install Arduino the SODAQ Explorer Libraries via Board Manager
 - Click `Tools` > `Board` > `Boards Manager`
 - Type `SODAQ` in the filter text field
-- Click the `Install` butons for each of the SODAQ devices listed
+- Click the `Install` buttons for each of the SODAQ devices listed
 
 {% include image.html url="/assets/img/sodaq_explorer_install_libs.png" description="Install the SODAQ Board Libraries" %}
 
 ### Install The Things Network Arduino Libraries
 Install the TTN arduino device libraries
 - Click `Sketch` > `Include Library` > `Manage Libraries`
-- Type `TheThings Network` in the filter text field
+- Type `The Things Network` in the filter text field
 - Click the install button in the `The Things Network Arduino Library` section
 
 {% include image.html url="/assets/img/arduino_install_ttn_lib.png" description="Install the TTN Arduino Libraries" %}
@@ -75,7 +75,7 @@ Learn more about [Cayenne LPP here](https://mydevices.com/cayenne/docs_stage/lor
 {% include image.html url="/assets/img/arduino_menu_select_sodaq.png" description="Select the SODAQ Board Libraries" %}
 
 ### Setup the Arduino Serial Port
-The Serial Monitor enables you to interact, log & debug applications on connected devices.  You will be using the Serial Monitor get information from the connected device. At this point connect the micros usb to the device then to the computer. Next select the serial port in Arduino IDE.
+The Serial Monitor enables you to interact, log & debug applications on connected devices.  You will be using the Serial Monitor to get information from the connected device. At this point connect the micros usb to the device then to the computer. Next select the serial port in Arduino IDE.
 
 **Note** The actual `Port Names` will vary between different Operating Systems.  The screenshots below are from the Ubuntu OS.
 
@@ -121,7 +121,7 @@ In this console you'll need to create a new TTN Application which is essentially
 - Click `Add Application`
 - Enter a name for your Application. You can enter whatever you like here.
 - Enter a description for your app
-- Select the appropriate Handler from the list.  These are based on location your device will operate from.
+- Select the appropriate Handler from the list.  These are based on the location your device will operate from.
     - Europe:   `ttn-handler-eu`
     - USA:      `ttn-handler-us-west`
     - Asia:     `ttn-handler-asia-se`
@@ -145,17 +145,17 @@ Now that you have created a new application we need to register a new device to 
 {% include image.html url="/assets/img/ttn_dev_tab.png" description="TTN Register Device" %}
 
 - **Device ID:** Enter a name for your device (this name is permanent and can not be changed after created)
-- **DeviceEUI:** Enter the `DevEUI` for your device that you recorded in previous steps form the Serial Monitor.
+- **DeviceEUI:** Enter the `DevEUI` for your device that you recorded in previous steps from the Serial Monitor.
 - Click the `Register` button
 
 {% include image.html url="/assets/img/ttn_reg_device.png" description="TTN Register Device" %}
 
-After Clicking the `Register` button you will be redirected to the `Device Overview` console. Scroll down the `Example Code` section at the the bottom of the page. There you will see variable definitions for the `appEUI` and `appKey` parameters. Copy these values you're going to need them when programming the SODAQ board. These values are used by TTN to identify and secure the data flowing between the device and TTN.
+After Clicking the `Register` button you will be redirected to the `Device Overview` console. Scroll down the `Example Code` section at the bottom of the page. There you will see variable definitions for the `appEUI` and `appKey` parameters. Copy these values, you're going to need them when programming the SODAQ board. These values are used by TTN to identify and secure the data flowing between the device and TTN.
 
 {% include image.html url="/assets/img/ttn_dev_ex_code_vals.png" description="TTN Register Device" %}
 
 ## Program the Device
-You now have all the information you need to program the SODAQ board to connect and transmit data to TTN. in this section you'll update the `ttn_sodaq_hackiot_reading.ino` code with the latest values
+You now have all the information you need to program the SODAQ board to connect and transmit data to TTN. In this section you'll update the `ttn_sodaq_hackiot_reading.ino` code with the latest values
 
 - Connect the device via USB to your computer
 - Open the `ttn_sodaq_hackiot_reading.ino` file in Arduino IDE
@@ -189,4 +189,8 @@ Log into the TTN Portal and navigate to your TTN application and find your regis
 
 {% include image.html url="/assets/img/ttn_dev_data_view.png" description="TTN Device Payload View" %}
 
-You're device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
+Your device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
+
+## Stream IoT packets from Senet to Microshare
+
+Follow [this The Things Network (TTN) tutorial](../ttn_tutorial) to set up a redirection of IoT packets to the microshare platform.
