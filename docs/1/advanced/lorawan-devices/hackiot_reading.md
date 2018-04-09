@@ -9,7 +9,7 @@ toc: true
 Here you'll find some of the resources and software that'll be used at HackIoT Reading.  
 
 # Getting Started
-In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Aurduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  This tutorial is going to guide you in programming the SODAQ Explorer board and connecting it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
+In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Arduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  This tutorial is going to guide you in programming the SODAQ Explorer board and connecting it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
 
 **Important** You must be within range of The Things Network coverage area or gateway.  You can see the [The Things Network Coverage Map](https://www.thethingsnetwork.org/map){:target="_blank"} to check coverage in your area or install your own [LoRaWAN gateway](https://www.thethingsnetwork.org/docs/gateways/gateway/){:target="_blank"} connected to The Things Network.  If you are **not** within The Things Network coverage area your device will not connect and transmit data to the The Things Network platform.
 
@@ -64,7 +64,7 @@ You can learn more about the TTN Arduino Library from the project's [github repo
 ### Install the Cayenne Low Power Payload (LPP) Libraries
 Install the Cayenne LPP library in the Arduino IDE.
 - Click `Sketch` > `Include Library` > `Manage Libraries`
-- Type `CayanneLPP` in the filter text field
+- Type `CayenneLPP` in the filter text field
 - Click the install button in the `CayenneLPP Arduino Library` section
 
 {% include image.html url="/assets/img/arduino_sodaq_install_cayanneLPP.png" description="Install the CayenneLPP Arduino Libraries" %}
@@ -171,7 +171,7 @@ Ensure that you specify the correct LoRa frequency for your location.
 Europe: `TTN_FP_EU868`
 USA:    `TTN_FP_US915`
 
-- #define freqPlan `TTN_FP_EU86`
+- #define freqPlan `TTN_FP_EU868`
 
 Your code is now ready to be compiled and uploaded to the device.
 
