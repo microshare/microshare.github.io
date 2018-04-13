@@ -197,7 +197,7 @@ Your device is now programmed to read and transmit it's sensor data to the TTN p
 
 # Integrate Microshare to The Things Network (TTN)
 
-Now we'll show you how to configure your TTN applications to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
+Now we'll show you how to configure your TTN applications to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a TTN notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
 
 ### Register for a Microshare.io account
 
