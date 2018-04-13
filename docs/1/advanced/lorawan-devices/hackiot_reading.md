@@ -72,7 +72,7 @@ Install the Cayenne LPP library in the Arduino IDE.
 Learn more about [Cayenne LPP here](https://mydevices.com/cayenne/docs_stage/lora/#lora-cayenne-low-power-payload){:target="_blank"}
 
 ### Select the SODAQ Explorer Board
-- Click `Tools` > `Board` > `Boards Manager` scroll down the menu find & click on the `SODAQ Explorer` option in the list
+- Click `Tools` > `Board` and scroll down the menu to find and click on the `SODAQ ExpLoRer` option in the list
  
 {% include image.html url="/assets/img/arduino_menu_select_sodaq.png" description="Select the SODAQ Board Libraries" %}
 
