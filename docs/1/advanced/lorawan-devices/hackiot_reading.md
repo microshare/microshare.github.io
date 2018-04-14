@@ -18,8 +18,10 @@ In this tutorial you're going to program the [SODAQ ExpLoRer board](http://suppo
 
 `Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
 {% highlight js %} sudo usermod -a -G dialout $USER {% endhighlight %}
+
 `Arch Linux Serial Access` run this command in a terminal & `REBOOT` the machine
 {% highlight js %} gpasswd -a $USER uucp {% endhighlight %}
+
 {% highlight js %} gpasswd -a $USER lock {% endhighlight %}
 
 ## Arduino Desktop IDE
