@@ -17,7 +17,8 @@ In this tutorial you're going to program the [SODAQ ExpLoRer board](http://suppo
 **This applies to Linux ONLY** `Linux Users` you may need to give your current user read/write access to the serial device file. This usually requires you to add the current user to a system group. These group names vary depending on the Linux distro that you're using. Here are some examples for Ubuntu & Arch Linux.
 
 `Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
-```
+
+```shell
 sudo usermod -a -G dialout $USER
 ```
 
