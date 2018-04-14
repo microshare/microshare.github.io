@@ -18,9 +18,7 @@ In this tutorial you're going to program the [SODAQ ExpLoRer board](http://suppo
 
 `Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
 
-{% highlight shell %}  
-sudo usermod -a -G dialout $USER
-{% endhighlight %}
+{% highlight js %} sudo usermod -a -G dialout $USER {% endhighlight %}
 
 `Arch Linux Serial Access` run this command in a terminal & `REBOOT` the machine
 ```
