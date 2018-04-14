@@ -17,17 +17,12 @@ In this tutorial you're going to program the [SODAQ ExpLoRer board](http://suppo
 **This applies to Linux ONLY** `Linux Users` you may need to give your current user read/write access to the serial device file. This usually requires you to add the current user to a system group. These group names vary depending on the Linux distro that you're using. Here are some examples for Ubuntu & Arch Linux.
 
 `Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
-```
-sudo usermod -a -G dialout $USER
-```
+{% highlight js %} sudo usermod -a -G dialout $USER {% endhighlight %}
 
 `Arch Linux Serial Access` run this command in a terminal & `REBOOT` the machine
-```
-gpasswd -a $USER uucp
-```
-``` 
-gpasswd -a $USER lock
-```
+{% highlight js %} gpasswd -a $USER uucp {% endhighlight %}
+
+{% highlight js %} gpasswd -a $USER lock {% endhighlight %}
 
 ## Arduino Desktop IDE
 - Download & Install the [Arduino Desktop IDE](../arduino_ide)
@@ -36,10 +31,7 @@ gpasswd -a $USER lock
 - Open Arduino IDE
 - Click `File` > `Preferences`
 - In the `Additional Boards Manager URLs` field enter this url to set the SODAQ Explorer board's libraries
-
-    ```
-    http://downloads.sodaq.net/package_sodaq_samd_index.json
-    ```
+	{% highlight js %} http://downloads.sodaq.net/package_sodaq_samd_index.json {% endhighlight %}
 - Click `OK`
 
 {% include image.html url="/assets/img/ardunino_sodaq_libs_preferences.png" description="Configure the SODAQ Board Libraries" %}
