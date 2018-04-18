@@ -407,7 +407,7 @@ function main(text, auth) {
 
 {% endhighlight %}
 
-Activate and Update your Robot when done. It will now be triggered automatically to read, compare then send an email alert if the threshold is exceeded.  In this example the emails will be sent continuously until the temperature threshold is not exceeded or you manually de-activate the robot.
+Activate and Update your Robot when done. It will now be triggered automatically to read, compare the incoming temperature then send an email alert if the threshold is exceeded.  In this example the emails will be sent continuously until the temperature threshold is not exceeded or you manually de-activate the robot.
 
 ## Give your teammates access to the data
 
