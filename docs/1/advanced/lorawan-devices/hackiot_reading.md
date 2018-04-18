@@ -324,7 +324,7 @@ A Robot is a script driven entity that is triggered to run when a specific recTy
 
 {% include image.html url="/assets/img/hackiot-create-a-robot.png" description="Create a Robot from the composer" %}
 
-We'll do the minimum to unlock all the Robot options for now.
+In this example we'll create a robot that will parse an incoming temperature sensor reading, compare the temp to a set threshold then send an alert email if the temp exceeds the defined threshold.
 
 1. Give your Robot a name.
 2. Enter the exact Record Type you used in the TTN portal.
@@ -357,36 +357,57 @@ While in edit mode you can:
 2. Write the Robot script
 3. Test the script
 
-{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edit mode" %}
 
 Replace the code in your Robot script with:
 {% highlight js %}
-	var lib = require('./libs/helpers');
-	function main(text, auth) {
-		print('########### START: Demo C to F Convert ##########');
-		// this is to get the content of the incoming data
-		var record = lib.parseMsg(text);
-		var recordData = record.objs[0].data;
-		var recType = record.recType;
-		// if the payload needs to be decoded, then use our library lib.decode***(newData.payload);
-		// In this demo, Celsius temperature will be coming directly in element .tempC
-	   if (recordData.tempC !== undefined){
-			recordData.tempF = recordData.tempC * 9/5 + 32;
-		
-		// If you need to create a new piece of data after processing the source, use the lib.write to commit to microshare
-			var newRecType = recType + '.processed';
-			var newTags = ['demo', 'test01', 'CtoF']
-			lib.write(newRecType, recordData, auth, ['tag']);
-		} else {
-			print("******* tempC is not defined.")
-		}
-		print('########### START: Demo C to F Convert ##########');
-	}
+
+// Include the helper objects which allows you to read and write to microshare datalake
+var lib = require('./libs/helpers');
+
+// Always need a main function, but can have other functions to keep your code modular.
+function main(text, auth) {
+    print('################################# HackIoT Reading SCRIPT START ###########################');
+
+    // If you need the actual data record that triggered the robot, use the lib.read to retrieve it
+    var record = lib.read(text, auth, []);
+    var recordData = record.objs[0].data;
+    var temp = recordData.payload_fields.temperature_3; // Get the current Temp data
+    var deviceName = recordData.dev_id;                 // Device Name
+    
+    var recType = record.recType;                       // Specifies the recType
+    var maxTemp = 26.6;                                 // Set Temperature Threshold which triggers email when exceed by temp variable
+                                                        
+    /*
+      Do something with the payload here using pure javascript calls.
+    */
+
+    // If you need to create a new piece of data after processing the source, use the lib.write to commit to microshare
+    // var processedRecord = recordData;
+    // var newRecType = recType + '.processed';
+    // lib.write(newRecType, processedPayload, auth, ['tag']);
+    
+    if (temp !== undefined){
+    
+        if (temp > maxTemp){
+            var emailTo = "< Enter and Email address here >"   	// Email recipient
+            var emailSubject = "HackIoT Reading Alert"         	// Email Subject
+            var msg = "Device: "+deviceName+" is reading "+
+                        temp+"C and has exceeded the Maximum threshold of "+maxTemp+"C"
+
+            // Send email
+            lib.sendMicroshareEmail(emailTo, emailSubject, msg );
+        }
+    }else{
+        print("*********************** temp is not defined. ***********************")
+    }
+
+    print("################################# HackIoT Reading SCRIPT END #############################");
+}
 
 {% endhighlight %}
 
-Activate and Update your Robot when done. It will now be triggered automatically to read, decode, then write back a record to the data lake, with the added `.decoded` suffix to the recType.
-You can use that second recType as the trigger to another Robot for data transformation, etc.
+Activate and Update your Robot when done. It will now be triggered automatically to read, compare then send an email alert if the threshold is exceeded.  In this example the emails will be sent continuously until the temperature threshold is not exceeded or you manually de-activate the robot.
 
 ## Give your teammates access to the data
 
