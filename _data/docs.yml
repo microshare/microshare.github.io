@@ -8,22 +8,16 @@
 - title: Getting Started
   pages:
   - title: Quick Start
-  - title: Microshares Guide
   - title: Robot Guide
   - title: Data Ingestion
-  - title: Pipeline Workflow
+  - title: Data Workflow
   - title: Facts Guide
   - title: Rules Guide
-  - title: Data Sharing
-  - title: Dashboards
-  - title: Tutorial
-  - title: API Overview
 
 - title: Advanced
   pages:
   - title: API Reference
-  - title: Generic REST API Reference
-  - title: Configuration
-  - title: External Processes
-  - title: Maintenance
+  - title: Robots Libraries
+  - title: LoRaWAN Devices
   - title: Contributing
+

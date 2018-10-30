@@ -1,3 +1,14 @@
+# intellij ignores
+.idea/
+
+# vscode ignores
+.vscode
+
+# macos files
+.DS_Store
+
+# Jekyll ignores
 _site/
 .sass-cache/
 .jekyll-metadata
+Gemfile.lock

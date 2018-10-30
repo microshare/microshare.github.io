@@ -8,38 +8,96 @@ toc: true
 
 ## What is a Rule? 
 
-A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
+A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default--which means if you have no Rules defined, only the Owner can access the stored data.
 
 ## What can I do with them?
 
 You can share your data with other people and control the access of that data by other people with Rules. Rules allow you to share your data with specific people or a group of people. You can provide other people with specific rights to your data, for example, only read access to your data, or read & write access to your data, etc.
 
 ## Creating a Rule
-Rules can be created via API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
+Rules can be created via our API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
 
 {% include image.html url="/assets/img/composer-rule-ruleindex1.jpg" description="Rule Index - Card View" %}
 
-Click the "Create" button to create a new Rule for your owned data. 
+Click the "Create" button to navigate to the "Create Rule" page. 
 
-### Labels
+### Create a name and description
+
+The rest of this guide will work down the Rules page and describe the various functions found on this screen
+
+The image below displays where the user can input the respective name and description of the rule they are making.
 
 {% include image.html url="/assets/img/composer-rule-rulesection1.jpg" description="Rule Section - Labels" %}
 
+This ascribes a label and description to the Rule
+
 ### Record Identification
+
+The image below displays where the user will determine what Record Type the Rule applies to
 
 {% include image.html url="/assets/img/composer-rule-rulesection2.jpg" description="Rule Section - Record Identification" %}
 
+The Rule will allow select users to access the Record type input here
+
 ### Operations
+
+The image below displays where the user will determine what Operations are enabled by the Rule
 
 {% include image.html url="/assets/img/composer-rule-rulesection3.jpg" description="Rule Section - Operations" %}
 
+The Rule will allow select users to execute the Operations chosen here
+
 ### Owner Context
+
+The image below displays where the user will determine who owns the Rule. This section is locked unless the editor is an administrator of an organization. These fields allow an administrator to set default Rules for their Organization. This can allow an organization to set global policy Rules that will apply regardless of the Rules set by individual data owners. This is useful ensuring that data will always be accessible for auditing purposes.
 
 {% include image.html url="/assets/img/composer-rule-rulesection4.jpg" description="Rule Section - Owner Context" %}
 
+The rule can be owned by a specific users or to an organization. There are three dropdowns here:
+
+1. **User** - Set to the account of the user currently making the Rule
+2. **Orgnization** - Set to the organization of the user currently making the Rule
+3. **APIKey/AppId** - Can be set to "All (*)" to let all APIKeys associated with the user to own the Rule or "Specific Value" to allow a specific APIKey to own the Rule
+
 ### Requestor Context
 
+The image below displays where the user will determine whom the Rule applies to 
+
 {% include image.html url="/assets/img/composer-rule-rulesection5.jpg" description="Rule Section - Requestor Context" %}
+
+The **User** dropdown has three options:
+This option allows for control of sharing to individual Microshare users (typically referred to by email address). The user need not have a Microshare account when the Rule is set but they will require valid credentials when API calls are made to retrieve the data. This may be done for them through a developer's account if they are using an application. 
+
+1. All (*) - This will make the Rule apply to all users
+2. Exact Match to Owner (=) - This will make the Rule apply only to the owner of the Rule
+3. Specific Value - This will make the rule apply only to accounts entered here
+
+The **Organization** dropdown has four options:
+This option focuses on sharing details within an organization--internal sharing. The exception is the 'Specific Value' setting which is generally used to share with explicitly defined partner organizations. The organizational hierarchy is defined by setting in the associated Active Directory structure. Rules with organizational settings 
+
+1. All (*) - This will make the Rule apply to all organizations
+2. Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization
+3. Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization
+4. Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule
+5. Specific Value - This will make the rule apply only to the organization entered here
+
+The **APIKey/AppId** dropdown has three options:
+This option allows for access to the governed data from a specific application, for instance, a mobile application or an enterprise application integrated through the REST API. 
+
+1. All (*) - This will make the Rule apply to all APIKeys 
+2. Exact Math to Owner (=) - This will make the Rule only apply in conjunction with an API key belonging to the owner of the Rule
+3. Specific Value - This will make the rule apply only to an APIKey entered here
+
+The **Role** dropdown has three options:
+
+1. All (*) - This will make the Rule apply to all Roles
+2. Exact Match to Owner (=) - This will make the Rule apply to the same Role as the Owner
+3. Specific Value - This will make the Rule apply only to the Role entered here 
+
+The **Location** dropdown has two options:
+
+1. All (*) - This will make the Rule apply to all Roles
+2. Ring-fence Polygon - Here a user can set a geographical area in which a Rule will apply to a user
 
 ## Simulating a Rule
 
