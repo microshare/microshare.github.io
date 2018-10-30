@@ -5,11 +5,10 @@ Get started with Microshare, the world's only prebuilt, scalable data management
 ## Contribute to this documentation
 This documentation is built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at https://microshare.github.io.
 
-It can be run locally by following the [Jekyll installation](https://jekyllrb.com/docs/installation/) instructions
-Run with `bundle exec jekyll serve`
-
 ## Writing new articles
-The documentation articles are written in [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder.
+The documentation articles are written in [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder. Documents are arranged according to version. You will usually wish to contribute to the highest numbered version. 
+
+A Markdown editor is recommended for easiest contribution. Many Markdown editors will provide a WYSIWYG representation so you can ignore the details of Markdown notation.
 
 To add a new article, head to [_data/docs.yml](_data/docs.yml) and add the title of the article.
 Then create a file with the same title in the desired folder in the [docs](docs) folder.
@@ -42,3 +41,16 @@ To include a code snippet, just use the dedicated tag as below:
 ```
 
 A list of tags and supported languages is available at [List of supported languages and lexers](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers)
+
+## Running the site locally
+It is not necessary to run the site locally in order to contribute updates to the documents, but it may be useful for larger contributions.
+
+If you have ruby installed you can install Jekyll with`gem install jekyll bundler`
+
+Clone this repo to your local disk. Open a terminal and cd into the repo directory.
+
+Run with `bundle exec jekyll serve`
+
+Once Jekyll is running, the site can be visited at http://localhost:4000
+
+For complete instructions on how to run Jekyll locally, by follow the [Jekyll Installation](https://jekyllrb.com/docs/installation/) and [Jekyll Quick Start](https://jekyllrb.com/docs/) documents.
