@@ -8,7 +8,11 @@ toc: true
 
 ## What is a Rule? 
 
-A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
+A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default--which means if you have no Rules defined, only the Owner can access the stored data.
+
+## What can I do with them?
+
+You can share your data with other people and control the access of that data by other people with Rules. Rules allow you to share your data with specific people or a group of people. You can provide other people with specific rights to your data, for example, only read access to your data, or read & write access to your data, etc.
 
 ## Creating a Rule
 Rules can be created via our API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
@@ -45,7 +49,7 @@ The Rule will allow select users to execute the Operations chosen here
 
 ### Owner Context
 
-The image below displays where the user will determine who owns the Rule
+The image below displays where the user will determine who owns the Rule. This section is locked unless the editor is an administrator of an organization. These fields allow an administrator to set default Rules for their Organization. This can allow an organization to set global policy Rules that will apply regardless of the Rules set by individual data owners. This is useful ensuring that data will always be accessible for auditing purposes.
 
 {% include image.html url="/assets/img/composer-rule-rulesection4.jpg" description="Rule Section - Owner Context" %}
 
@@ -62,12 +66,14 @@ The image below displays where the user will determine whom the Rule applies to
 {% include image.html url="/assets/img/composer-rule-rulesection5.jpg" description="Rule Section - Requestor Context" %}
 
 The **User** dropdown has three options:
+This option allows for control of sharing to individual Microshare users (typically referred to by email address). The user need not have a Microshare account when the Rule is set but they will require valid credentials when API calls are made to retrieve the data. This may be done for them through a developer's account if they are using an application. 
 
 1. All (*) - This will make the Rule apply to all users
 2. Exact Match to Owner (=) - This will make the Rule apply only to the owner of the Rule
 3. Specific Value - This will make the rule apply only to accounts entered here
 
 The **Organization** dropdown has four options:
+This option focuses on sharing details within an organization--internal sharing. The exception is the 'Specific Value' setting which is generally used to share with explicitly defined partner organizations. The organizational hierarchy is defined by setting in the associated Active Directory structure. Rules with organizational settings 
 
 1. All (*) - This will make the Rule apply to all organizations
 2. Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization
@@ -76,6 +82,7 @@ The **Organization** dropdown has four options:
 5. Specific Value - This will make the rule apply only to the organization entered here
 
 The **APIKey/AppId** dropdown has three options:
+This option allows for access to the governed data from a specific application, for instance, a mobile application or an enterprise application integrated through the REST API. 
 
 1. All (*) - This will make the Rule apply to all APIKeys 
 2. Exact Math to Owner (=) - This will make the Rule only apply in conjunction with an API key belonging to the owner of the Rule
