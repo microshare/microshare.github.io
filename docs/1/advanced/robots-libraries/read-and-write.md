@@ -144,7 +144,7 @@ To get records by the recType and associated tags:
 {% endhighlight %}
 
 ### Data lake advanced queries
-You can use [FACTS](https://microshare.github.io/docs/0.1/getting-started/facts-guide/) to do advanced queries to the data lake.
+You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
@@ -157,10 +157,10 @@ Views run an aggregation query on the data lake entries and can take parameters.
     print('################################# VIEW READ START ###########################');
     
     var queryParams = {
-        "id": "any fact id"
+        "id": "any view id"
     };
     
-    var factResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
+    var viewResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
     
     print('################################# VIEW READ END #############################');
   }

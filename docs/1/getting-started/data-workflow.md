@@ -130,7 +130,7 @@ To get records by the recType and associated tags:
 {% endhighlight %}
 
 ### Data lake advanced queries
-You can use [FACTS](https://Microshare.github.io/docs/1/getting-started/facts-guide/) to do advanced queries to the data lake.
+You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
@@ -146,7 +146,7 @@ Views run an aggregation query on the data lake entries and can take parameters.
         "substitute": "value"
     };
     
-    var factResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
+    var viewResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
     
     print('################################# VIEW READ END #############################');
   }
@@ -286,7 +286,7 @@ Our data workflow is the following:
 1. Parse the incoming data stream to single out the Healthy Home Sensor
 2. Decode the Payload from the Healthy Home Sensor
 3. Single out cases where the CO2 level is high, and pass only those to the next step
-4. Aggregate the latest 10 records with [a View](../facts-guide)
+4. Aggregate the latest 10 records with [a View](../views-guide)
 5. Setup [a Rule](../rules-guide) so that all Microshare employees can run the aggregation View
 
 At Microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
