@@ -230,3 +230,92 @@ You can edit your Views by selecting and clicking on the pen icon to open the Vi
 To test the response of this fact in the api call, scroll down to the "View Preview" section, click on the "SAVE & TEST" button to see the test results. This also works great when you want to see the query results.
 
 {% include image.html url="/assets/img/composer-fact-edit-test1.jpg" description="View Index - Card View" %}
+
+## Putting it together: 
+
+### Use-case: Tracking Record Count
+
+The intent of the solution is to provide a simple programmatic way to check that the count of received records at the Microshare layer is consistent with the expected count. 
+
+An API call can be used to invoke a View within Microshare whose job is to request a count between a given datetime range that corresponds with the sample duration. The response from the API can be compared against the actual recorded records to determine if they are in agreement.
+
+To start, create a new View in Composer under the account that owns the data records in Microshare. That view should look something like:
+
+##### Query
+{% highlight JSON %}
+[
+  {
+    "$match": {
+      "recType": "${recType}",
+      "createDate": {
+        "$gte": "${from}",
+        "$lte": "${to}"
+      }
+    }
+  },
+  {
+    "$sort": {
+      "createDate": -1
+    }
+  },
+  {
+    "$limit": 2500
+  },
+  {
+    "$count": "count"
+  }
+]
+{% endhighlight %}
+
+The time values might also come from a data-level datetime stamp such as data.meta.iot.time when available for common IoT data formats.
+
+{% include image.html url="/assets/img/view-example-usecase1.png" description="View Setup for Use Case 1" %}
+
+##### Test Parameter Example
+{% highlight JSON %}
+{
+    "recType":"com.myco.sensor.unpacked",
+    "from":"2019-04-03T00:00:00-0400",
+    "to":"2019-04-04T00:00:00-0400"
+}
+{% endhighlight %}
+
+##### API Call
+{{hostname}}/share/com.myco.count?id=5cd9809446e0fb002312cebe&from=2019-04-03T00:00:00-0400&to=2019-04-04T00:00:00-0400&recType=com.myco.sensor.unpacked
+
+Notice that the recType included in the path is the recType assigned to the View. It is arbitrary but must agree with the recType used to create the View in Composer. The ?id= query string parameter is the id of the View.
+
+The other query parameter values align with the text inserts in the query (eg. &from => ${from}). The parameterization allows the calling agent to specify the datetime range and recType to allow for maximum flexibility. The recType may be the recType of either the raw OR the unpacked records. 
+
+##### Example API Response:
+{% highlight JSON %}
+{
+  "meta": {
+    "totalPages": 1,
+    "currentPage": 1,
+    "perPage": 999,
+    "totalCount": 1,
+    "currentCount": 1
+  },
+  "objs": [
+    {
+      "desc": "Derived from com.myco.count",
+      "name": "Derived Data",
+      "url": "/share/com.myco.count",
+      "_id": "5cd9809446e0fb002312cebe",
+      "tags": [],
+      "data": {
+        "count": 18688
+      },
+      "id": "5cd9809446e0fb002312cebe",
+      "tstamp": "05/13/2019 02:40:38:311 PM",
+      "recType": "com.myco.count"
+    }
+  ]
+}
+{% endhighlight %}
+
+##### API Authorization
+The API may authenticate as the owner of the View OR the API may leverage a separate authentication entity. In the event that a different credential is used, a Rule must be created to share the View with the API's user. To do so, select "Shares: filtered objects (via View)" from the Resource Type drop-down of the Rule and allow Read/Query/Execute operations. See documentation on [Rules](../rules-guide) for more information.
+
+{% include image.html url="/assets/img/rule-share-view-with-select.png" description="Rule Setup for Use Case 1" %}

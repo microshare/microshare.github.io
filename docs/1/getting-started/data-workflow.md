@@ -304,9 +304,8 @@ At Microshare.io we usually represent data workflows with [draw.io](https://www.
  5 The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
 
 ## What's next?
-
 You have now access to decoded IoT data through the Microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
-You can also create new Robots to further your automated data workflow: transform the Senet data further, create alerts, etc.
+
 
 
