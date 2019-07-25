@@ -7,7 +7,7 @@ toc: true
 ---
 
 
-### calling an API using apikey authentication
+### calling an API (GET) using apikey authentication
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -15,9 +15,7 @@ function main(text, auth){
 
     /* BASIC GET API call */
 
-    var msg = JSON.parse(text);
-
-    var getUrl = msg.apiGetUrl;
+    var getUrl = 'https://api.your.com/v1/object';
     var getHeaders = {};
 
     getHeaders['authType'] = 'API';
@@ -29,7 +27,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### calling an API using a BASIC authentication
+### calling an API (GET) using a BASIC authentication
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -37,9 +35,7 @@ function main(text, auth){
 
     /* BASIC GET API call */
 
-    var msg = JSON.parse(text);
-
-    var getUrl = msg.basicGetUrl;
+    var getUrl = 'https://api.your.com/v1/object';
     var getHeaders = {};
 
     getHeaders['authType'] = 'BASIC';
@@ -53,31 +49,35 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### calling an API using an OAUTH2 authentication
+### calling an API (POST/GET) using an OAUTH2 authentication
 
 {% highlight js %}
 var lib = require('./libs/helpers');
 function main(text, auth){
 
+    var share = lib.parseMsg(text);
+    
     /* OAUTH2 POST API call */
 
-    var msg = JSON.parse(text);
-
-    var postUrl = msg.oauthPostUrl;
+    var postUrl = 'https://api.your.com/v1/object';
     var postHeaders = {};
 
     postHeaders['authType'] = 'OAUTH2';
     postHeaders['token'] = msg.oauthToken;
     postHeaders['contentType'] = 'application/json';
 
-    var body = '{\"test\":\"data\"}';
-    var postResponse = lib.post(postUrl, postHeaders, JSON.parse(body));
+    // Body from JSON String
+    var body1 = '{\"test\":\"data\"}';
+    
+    // Body from triggering share
+    var body2 = JSON.stringify(share.objs[0].data);
+    
+    var postResponse = lib.post(postUrl, postHeaders, JSON.parse(body2));
     print(JSON.stringify(postResponse));
-
 
     /* OAUTH2 GET API call */
 
-    var getUrl = msg.oauthGetUrl;
+    var getUrl = 'https://api.your.com/v1/object';
     var getHeaders = {};
 
     getHeaders['authType'] = 'OAUTH2';
@@ -89,14 +89,14 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### calling an API using a CUSTOM authentication
+### calling an API (GET) using a CUSTOM authentication
 
 {% highlight js %}
 var lib = require('./libs/helpers');
 
 function main(text, auth) {
     
-    var getUrl = customGetUrl;
+    var getUrl = 'https://api.your.com/v1/object';
     var getHeaders = {};
 
     getHeaders.authType = 'CUSTOM';
