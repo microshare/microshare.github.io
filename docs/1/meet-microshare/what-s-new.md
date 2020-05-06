@@ -6,7 +6,7 @@ group: meet-microshare
 toc: true
 ---
 
-v1 is out! 
+**v1 is out!** 
 
 Incoming updates are:
 - Dashboard Guide: how to visualize your data in microshare.

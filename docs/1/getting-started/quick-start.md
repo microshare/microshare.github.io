@@ -1,20 +1,20 @@
 ---
 layout: docs
-title: Quick Start
-description: Getting Set-up in Microshare
+title: Quickstart
+description: Getting Started
 group: getting-started
 toc: true
 ---
 
 Get your Internet of Things data workflow started with the following steps:
 
-1. [Create a microshare account](./#register-for-a-microshareio-account)
+1. [Create a Microshare account](./#register-for-a-microshare-account)
 2. [Get an API key](./#get-an-api-key)
 3. [Setup microshare's Postman API collection on your computer](./#setup-postman)
 4. [Write and Read data on microshare](./#use-the-api)
 5. [Transform incoming data with a Robot](./#create-robots-to-transform-data-and-send-alerts)
 
-## Register for a Microshare.io account
+## Register for a Microshare account
 
 * Browse to [https://app.microshare.io](https://app.microshare.io).  
 {% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}
@@ -22,20 +22,20 @@ Get your Internet of Things data workflow started with the following steps:
 * Click [Sign Up](https://auth.microshare.io/portal/signup).  
 {% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}
 
-* You will receive an email asking you to confirm your account & setting your account password.  
+* You will receive an email requesting you to confirm your account and set your account password.  
 {% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
 * You can then log into your account from [https://app.microshare.io](https://app.microshare.io).
 
 ## Get an API key
 
-You will need to use the microshare Share API to Write and Read data into the platform. 
-You will first need an API key for authentication with the API.
+Request an API key for authentication with the services.
+You can then use the Microshare Share API to read and write data into the platform. 
 
 * Log in your [microshare account](https://app.microshare.io)
 * Go to `Manage -> Keys.`  
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
-* Clic `CREATE NEW APP` and give a friendly name to your APIkey (why not "My first IoT App"?).  
+* Click `CREATE NEW APP` and give a friendly name to your APIkey (why not "My first IoT App"?).  
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
 * Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
@@ -46,7 +46,7 @@ This step is optional if you already have your own way of executing API call. If
 
 Otherwise, you can setup the API manager Postman on your computer for a quick start access to microshare API collection.
 
-* Go to our [API documentation page](../../advanced/api-reference)
+* Visit our [API documentation page](../../advanced/api-reference)
 
 * Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
 **If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../advanced/api-reference).
@@ -61,7 +61,7 @@ Then `Manage Environments`, then click on `Microshare`.{% include image.html url
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fiels. 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
-That's it! You now have access to the microshare API collection, and got everything setup to authenticate, write data and read data with the platform. 
+That's it! You now have access to the Microshare API collection, and are setup to authenticate, write data and read data with the platform. 
 
 ## Use the API
 
@@ -96,23 +96,23 @@ That's it! You now have access to the microshare API collection, and got everyth
 
 * Click `Send`
 
-* A confirmation message shows you that your data was successfully written to microshare, and returns you metadata usable with other API calls.
+* A confirmation message will be sent, indicating that the data was successfully written to Microshare. It returns metadata usable with other API calls.
 
 ### Read data
 
 * From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
 * Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
 * Click `Send`. 
-Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the onwer of that data:
+Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
-* If you execute the Write request again, and then the Read, the number of records increases as you have created a new record. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+* If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
-**Note** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
+**Note**: The `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other users will only see their data, unless you have created Rules to share your data.
 
 Rules are an advanced feature of the platform, and are described in the ADVANCED section at the end of this quick start.
 
-* You can use the the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
+* You can use the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
 
 * For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](../../advanced/lorawan-devices/). 
 
@@ -226,11 +226,11 @@ function main(text, auth){
 * Within the code pasted into the "Script" section change the variable "TO" to your email
 * Activate and update your Robot
 
-* Write a few record at your initial recType.
+* Write a few record for your recType.
 
 The two Robots are activated in succession. If the fake temperature created is above 30, you receive an email alert.
 
 For more available Robot methods, check our [Robot's library](../../advanced/robots-libraries)
 
-You are now ready to setup your own IoT data stream, and transform, analyse, alert on data.
-For help on how to route your IoT stream from your favorite platform or gateway to microshare, check our [IoT integration documentation](../../advanced/lorawan-devices).
+You are now ready to setup your own IoT data stream, and transform, analyze, alert on data.
+For help on how to route your IoT stream from your favorite platform or gateway to Microshare, check our [IoT integration documentation](../../advanced/lorawan-devices).

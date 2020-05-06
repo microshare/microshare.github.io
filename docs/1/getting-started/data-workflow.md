@@ -1,24 +1,24 @@
 ---
 layout: docs
 title: Data Workflow
-description: Robot examples to build a Data Workflow
+description: Guide to understanding Data Workflow
 group: getting-started
 toc: true
 ---
 
-## What is a data workflow?
+## What is a Data Workflow?
 You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
 This is called a data workflow. The automated actions are managed by [Robots](../robot-guide), and the access to transformed data is granted with [Rules](../rules-guide).  
 In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
 For an introduction to robots take a look at the [Robot Guide](../robot-guide)
 
-## Read data from the data lake
+## Read Data from the Data Lake
 
 Your workflow will usually start with reading data that was pushed to the data lake. This can be triggered automatically if your Robot was listening to a data stream recType, or periodically with a scheduled Robot.  
 Below are code snippets to read data from the data lake.  
 
-### Read record triggering the Robot
+### Read Record Triggering the Robot
 
 Parse the message that triggers the Robot using lib.parseMsg to get the data and metadata from the 'text' parameter: 
 
@@ -110,8 +110,8 @@ And the returned data model is
   }
 {% endhighlight %} 
 
-### Read any record(s)
-You can also read any record from which you know the recType and/or id.  
+### Read Record(s)
+You can also read any record for which you know the recType and/or id.  
 This call will always return an array and depending on the read, you may have 0 or more records returned.
 
 To get records by the recType and id:
@@ -129,8 +129,8 @@ To get records by the recType and associated tags:
 
 {% endhighlight %}
 
-### Data lake advanced queries
-You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
+### Data Lake Advanced Queries
+You can use [Views Guide](../views-guide) for running advanced queries against the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
@@ -247,7 +247,7 @@ Below is an example of a Robot passing only high CO2 records.
   }
 {% endhighlight %}
 
-## External services triggering
+## External Services Triggering
 You have access to notifications libraries, and RESTful POST and GET from a Robot script. This allows you to call external services from your data workflow.  
 For example, at Microshare.io we like to log on our slack channel, below is an example about how to do just that.
 
@@ -259,7 +259,7 @@ For example, at Microshare.io we like to log on our slack channel, below is an e
 
 For more examples, see our [notification methods](/docs/1/advanced/robots-libraries/sending-notifications) and [calling external APIs methods](/docs/1/advanced/robots-libraries/making-restful-calls)
 
-## Write data to the data lake
+## Write Data to the Data Lake
 As shown above, each step of a workflow usually ends with writting a record in the data lake.  
 
 A data write use is twofold: it builds the audit trail of your data, and allows to trigger the next step of the workflow.
@@ -277,7 +277,7 @@ As shown below, you can specify the recType and tags of your new data entry.
   }
 {% endhighlight %} 
 
-## Data workflow example
+## Data Workflow Example
 
 In this example we are receiving data from two Tabs sensor in a building in London.  
 We want to display the latest high CO2 alerts in an App, available to all Microshare employees.  
@@ -291,19 +291,19 @@ Our data workflow is the following:
 
 At Microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
 
- 1 would use the snippet from the [Data Parsing](#data-parsing) above  
- 2 would use the snippet from the [Data Transformation](#data-transformation) above  
- 3 would use the snippet from the [Data Formatting](#data-formatting) above  
- 4 The View query would be:  
+ Step 1 above would use the snippet from the [Data Parsing](#data-parsing)  
+ Step 2 uses the snippet from the [Data Transformation](#data-transformation)  
+ Step 3 uses the snippet from the [Data Formatting](#data-formatting)   
+ Step 4 uses the View query:  
 {% highlight JSON %}
   [
     {"$match" : {"recType" : "uk.london.tabs.healthyhomesensor.highco2"}},
     {"$limit" : 10}
   ] 
 {% endhighlight %}
- 5 The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
+ For Step 5, the Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
 
-## What's next?
+## What's Next?
 You have now access to decoded IoT data through the Microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
 
