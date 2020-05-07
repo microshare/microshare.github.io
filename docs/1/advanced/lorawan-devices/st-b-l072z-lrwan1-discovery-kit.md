@@ -6,9 +6,7 @@ group: advanced
 toc: true
 ---
 
-# Getting Started
-
-In this tutorial you're going to program the [B-L072Z-LRWAN1 LoRa®Discovery kit](http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html){:target="_blank"} using the [System Workbench for STM32 IDE](../system-workbench-st32-ide){:target="_blank"}.
+Follow this tutorial to program the [B-L072Z-LRWAN1 LoRa®Discovery kit](http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html){:target="_blank"} using the [System Workbench for STM32 IDE](../system-workbench-st32-ide){:target="_blank"}.
 
 ## Get the ST Micro Resources
 

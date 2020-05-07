@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Rules Guide
-description: Guide to understanding rules
+description: 
 group: getting-started
 toc: true
 ---

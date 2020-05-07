@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Robot Guide
-description: Guide to understanding Robots
+description: 
 group: getting-started
 toc: true
 ---
@@ -78,7 +78,7 @@ You will use the two other functions 99.9% of the time:
 
 For more code samples, refer to the [Data Workflow page](../data-workflow).  
 
-### Triggered vs scheduled  
+### Triggered vs. Scheduled  
 Your newly created Robot will first do... nothing!  
 To activate it, be sure to check the Active checkbox.  
 
@@ -99,5 +99,5 @@ Important: the lib.write is only simulated in a test, so you are not at risk to 
 
 ## How do they work?
 Behind the scene, each Robot is an Akka Agent loaded with its ECMAScript 6 compatible script.  
-Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
-The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  
+
+Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts. The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  

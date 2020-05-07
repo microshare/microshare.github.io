@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Views Guide
-description: Guide to managing data access
+description: 
 group: getting-started
 toc: true
 ---

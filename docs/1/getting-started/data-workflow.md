@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Data Workflow
-description: Guide to understanding Data Workflow
+description: 
 group: getting-started
 toc: true
 ---

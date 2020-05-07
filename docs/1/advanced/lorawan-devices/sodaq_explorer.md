@@ -2,24 +2,23 @@
 layout: docs
 title: SODAQ ExpLoRer
 description:
-group: advanced
+group: lorawan-devices
 toc: true
 ---
 
-# Getting Started
-In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Aurduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  This tutorial is going guide you in programming the SODAQ Explorer board and connecting it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
+In this tutorial you're going to program the [SODAQ ExpLoRer board](http://support.sodaq.com/sodaq-one/explorer/){:target="_blank"} using the [Aurduino IDE](https://www.arduino.cc/en/Main/Software){:target="_blank"}.  Follow this guide to program the SODAQ Explorer board and connect it to the [The Thinks Network (TTN)](https://www.thethingsnetwork.org/)
 
 **Important** You must be within range of The Things Network coverage area or gateway.  You can see the [The Things Network Coverage Map](https://www.thethingsnetwork.org/map){:target="_blank"} to check coverage in your area or install your own [LoRaWAN gateway](https://www.thethingsnetwork.org/docs/gateways/gateway/){:target="_blank"} connected to The Things Network.  If you are **not** within The Things Network coverage area your device will not connect and transmit data to the The Things Network platform.
 
-## Linux Requirement
+### Linux Requirement
 **This applies to Linux ONLY** `Linux Users` you may need to give your current user read/write access to the serial device file. This usually requires you to add the current user to a system group. These group names vary depending on the Linux distro that you're using. Here are some examples for Ubuntu & Arch Linux.
 
-`Ubuntu Serial Access` run this command in a terminal & `REBOOT` the machine
+`Ubuntu Serial Access` run this command in a terminal and `REBOOT` the machine
 ```
 sudo usermod -a -G dialout $USER
 ```
 
-`Arch Linux Serial Access` run this command in a terminal & `REBOOT` the machine
+`Arch Linux Serial Access` run this command in a terminal and `REBOOT` the machine
 ```
 gpasswd -a $USER uucp
 ```

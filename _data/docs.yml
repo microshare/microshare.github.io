@@ -8,11 +8,11 @@
 - title: Getting Started
   pages:
   - title: Quick Start
-  - title: Robot Guide
   - title: Data Ingestion
   - title: Data Workflow
   - title: Views Guide
   - title: Rules Guide
+  - title: Robot Guide
 
 - title: Advanced
   pages:
