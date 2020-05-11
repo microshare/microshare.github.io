@@ -33,3 +33,28 @@ current_version:  1
 docs_version:     1
 repo:             https://github.com/microshare/microshare.github.io
 blog:             https://microshare.io/blog
+
+###
+
+#url: "https://microshare.io" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: microshare_io
+#github_username:  microshare
+#github_url: "https://github.com/microshare"
+
+# _redirects file for Netlify should be included
+#include: ["_redirects"]
+
+# Build settings
+#plugins:
+#  - jekyll-feed
+
+#sass:
+#  style: compressed
+
+# Pages permalink
+#defaults:
+#  -
+#    scope:
+#      type: "posts"
+#    values:
+#      permalink: /blog/:year/:month/:day/:title/

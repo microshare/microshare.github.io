@@ -6,7 +6,7 @@ group: advanced
 toc: true
 ---
 
-### decoding a message from the LPP standard
+### Decoding a message from the LPP standard
 
 Based on the LPP specifications defined by Cayenne in [their documentation](https://mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload)
 An output JSON format is specified in the example below.
@@ -31,7 +31,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### encoding or decoding base64 messages
+### Encoding/Decoding Base64 messages
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -48,7 +48,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### translating between decimal, hexadecimal and binary, positive or negative
+### Translating between Decimal, Hexadecimal and Binary, Positive or Negative
 
 {% highlight js %}
 var lib = require('./libs/helpers');

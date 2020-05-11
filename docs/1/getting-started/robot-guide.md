@@ -1,20 +1,23 @@
 ---
 layout: docs
 title: Robot Guide
-description: Comprehensive guide to understand Robots
+description: 
 group: getting-started
 toc: true
 ---
 
 ## What's a Robot?
-A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into microshare to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
-1) easy to maintain, 
-2) fast and efficient with higher volumes, and 
-3) reusable in multiple projects.
- 
-Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [Data Workflow](../data-workflow). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robottic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
+A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into microshare to further enrich your data. 
 
-Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the microshare data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
+A single Robot usually automates a single task. Keeping each Robot simple ensures that it will be:
+
+1. Easier to maintain 
+2. Faster and more efficient with higher volumes 
+3. Reusable in multiple projects.
+ 
+Robots can be chained together to cooperate in fulfillment of more complicated needs. Such a chain is called a [Data Workflow](../data-workflow). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robotic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
+
+Robots can be configured in the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the microshare data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
 
 All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a microshare record, acting on it in some way, and writing a new record back into microshare.
 
@@ -75,7 +78,7 @@ You will use the two other functions 99.9% of the time:
 
 For more code samples, refer to the [Data Workflow page](../data-workflow).  
 
-### Triggered vs scheduled  
+### Triggered vs. Scheduled  
 Your newly created Robot will first do... nothing!  
 To activate it, be sure to check the Active checkbox.  
 
@@ -96,5 +99,5 @@ Important: the lib.write is only simulated in a test, so you are not at risk to 
 
 ## How do they work?
 Behind the scene, each Robot is an Akka Agent loaded with its ECMAScript 6 compatible script.  
-Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
-The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  
+
+Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts. The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  

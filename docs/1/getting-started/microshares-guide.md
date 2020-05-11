@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Microshares Guide
-description: Comprehensive guide to understand microshares
+description: Guide to understanding microshares
 group: getting-started
 toc: true
 ---

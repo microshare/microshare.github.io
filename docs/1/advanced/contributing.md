@@ -1,21 +1,22 @@
 ---
 layout: docs
 title: Contributing
-description: Contributing to this documentation
+description: 
 group: advanced
 toc: true
 ---
 
-## Contribute to this documentation
 You can find the repository here: [Microshare Documentation]({{ site.repo }}).
 
-This documentation is built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at https://microshare.github.io.
+The documentation is built using [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at [Microshare github](https://microshare.github.io/) 
 
 It can be run locally by following the [Jekyll installation](https://jekyllrb.com/docs/installation/) instructions.
-Run with `bundle exec jekyll serve`.
+Run with
 
-## Writing new articles
-The documentation articles are written in [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder.
+ ```bundle exec jekyll serve```
+
+## Writing New Articles
+The documentation is written using [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder.
 
 To add a new article, head to `_data/docs.yml` and add the title of the article.
 Then create a file with the same title in the desired folder in the `docs` folder.

@@ -8,7 +8,7 @@ toc: true
 
 ## Read data from the data lake
 
-Your wokflow will usually start with reading data that was pushed to the data lake. This can be triggered automatically if your Robot was listening to a data stream recType, or periodically with a scheduled Robot.  
+Your workflow will usually start with reading data that was pushed to the data lake. This can be triggered automatically if your Robot was listening to a data stream recType, or periodically with a scheduled Robot.  
 Below are code snippets to read data from the data lake.  
 
 ### Read record triggering the Robot
@@ -144,7 +144,7 @@ To get records by the recType and associated tags:
 {% endhighlight %}
 
 ### Data lake advanced queries
-You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
+Review [Views Guide](../../../getting-started/views-guide/) to perform advanced queries against the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
@@ -169,7 +169,7 @@ Views run an aggregation query on the data lake entries and can take parameters.
 ## Write data to the data lake
 As shown above, each step of a workflow usually ends with writing a record in the data lake.  
 
-A data write use is three-fold: commits data to long-term storage, generates an audit trail of your data, and triggers the create event to start the next step of the workflow.
+A data write use is threefold: commits data to long-term storage, generates an audit trail of your data, and triggers the create event to start the next step of the workflow.
 
 As shown below, you can specify the recType and tags of your new data entry.
 {% highlight js %}

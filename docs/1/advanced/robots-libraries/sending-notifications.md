@@ -1,12 +1,12 @@
 ---
 layout: docs
-title: Sending notifications from Robots
+title: Sending Notifications from Robots
 description:
 group: advanced
 toc: true
 ---
 
-### logging a message in microshare
+### Logging a message in microshare
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -18,7 +18,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### sending an email as notification@microshare.io
+### Sending an email as notification@microshare.io
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -39,7 +39,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### sending an email
+### Sending an email
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -61,7 +61,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### send a SMS via Twilio
+### Send a SMS via Twilio
 
 {% highlight js %}
 var lib = require('./libs/helpers');
@@ -85,7 +85,7 @@ function main(text, auth){
 }
 {% endhighlight %}
 
-### sending a message to a WebSocket service
+### Sending a message to a WebSocket service
 
 {% highlight js %}
 var lib = require('./libs/helpers');

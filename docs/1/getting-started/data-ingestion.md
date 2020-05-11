@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Data Ingestion
-description: Guide to Data Ingestion
+description: 
 group: getting-started
 toc: true
 ---
