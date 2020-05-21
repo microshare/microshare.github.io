@@ -5,19 +5,28 @@
   - title: Technical Overview
   - title: Why Microshare?
 
-- title: Getting Started
+- title: Deploy M
+  pages:
+  - title: Download the app
+  - title: App Guide
+  - title: Installation Tutorials
+
+- title: Microshare Platform
   pages:
   - title: Quick Start
   - title: Data Ingestion
-  - title: Data Workflow
+  - title: Data Formatting
   - title: Views Guide
+  - title: Dashboards Guide
   - title: Rules Guide
   - title: Robot Guide
+  - title: API Guide
 
 - title: Advanced
   pages:
-  - title: API Reference
+  - title: Microshare Security
   - title: Robots Libraries
-  - title: LoRaWAN Devices
+  - title: API Collection
+  - title: Lorawan Technology
+  - title: Lorawan Devices
   - title: Contributing
-
