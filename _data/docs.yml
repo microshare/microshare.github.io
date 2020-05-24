@@ -1,32 +1,98 @@
-- title: Meet Microshare
+- title: General User
   pages:
   - title: Welcome
-  - title: What's new?
-  - title: Technical Overview
-  - title: Why Microshare?
-
-- title: Deploy M
-  pages:
-  - title: Download the app
-  - title: App Guide
-  - title: Installation Tutorials
-
-- title: Microshare Platform
-  pages:
+  subpages:
+  - title: Meet Microshare
+    pages:
+    - title: What's new?
+    - title: Technical Overview
+    - title: Why Microshare?
+    - title: Demo
+    - title: FAQ
   - title: Quick Start
-  - title: Data Ingestion
-  - title: Data Formatting
-  - title: Views Guide
-  - title: Dashboards Guide
-  - title: Rules Guide
-  - title: Robot Guide
-  - title: API Guide
+    pages:
+    - title: Create an Account
+    - title: Access my Apps
+    - title: See my Data
 
-- title: Advanced
-  pages:
-  - title: Microshare Security
-  - title: Robots Libraries
-  - title: API Collection
-  - title: Lorawan Technology
-  - title: Lorawan Devices
-  - title: Contributing
+
+- title: Admin
+  subpages:
+  - title: Admin Management
+    pages:
+    - title: Overview
+    - title: First step as an Admin
+    - title: FAQ Admin
+  - title: Microshare Platform
+    pages:
+    - title: Identity Guide
+    - title: Device Cluster Guide
+    - title: Rules Guide
+    - title: Dashboard Guide
+
+- title: Installer
+  subpages:
+  - title: Quick Start
+    pages:
+    - title: Overview
+    - title: From a Sensor to a Dashboard
+    - title: FAQ About Installations
+    - title: Validation of a Successfull Installation
+  - title: Deploy-M
+    pages:
+    - title: Download the App
+    - title: App Guide
+    - title: Installation Tutorials
+  - title: LoRaWan
+    pages:
+    - title: Overview
+    - title: LoRaWan Network
+    - title: Gateway Installation
+    - title: Device Declaration
+
+- title: Technical
+  subpages:
+  - title: Quick Start
+    pages:
+    - title: Overview
+    - title: Microshare Technical Structure
+    - title: Basic Dev Roadmap
+    - title: Advanced Dev Roadmap
+  - title: Microshare Platform
+    pages:
+    - title: Quick Start
+    - title: Device Cluster Guide
+    - title: Views Guide
+    - title: Dashboard Guide
+    - title: Rules Guide
+  - title: Microshare Platform Advanced
+    pages:
+    - title: Identity Guide
+    - title: Robots Guide
+    - title: Data Ingestion
+    - title: Data Ingestion by Robots
+    - title: Data Formatting
+    - title: Data Formatting by Robots
+    - title: Robots library
+  - title: API
+    pages:
+    - title: Quick Start
+    - title: Authentication
+    - title: Simple Requests
+    - title: Complex Requests
+    - title: API Collection
+    - title: Partners Complementary APIs
+  - title: LoRaWan
+    pages:
+    - title: LoRaWan Technology
+    - title: LoRaWan Network
+    - title: LoRaWan Gateways
+    - title: LoRaWan Sensors
+  - title: Extra Information
+    pages:
+    - title: PowerBI
+    - title: Microshare Security
+  - title: PreBuild Solution
+    pages:
+    - title: My Own Dashboard
+    - title: Use Microshare BigData Tools Only

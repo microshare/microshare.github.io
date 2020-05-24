@@ -6,27 +6,36 @@
 
 <nav class="collapse bd-links" id="bd-docs-nav">
   {% assign page_slug = page.url | split: '/' | last %}
+  {% assign url_split = page.url | split: '/' %}
+  {% assign page_main_group = url_split[3] | slugify %}
+  {% assign page_sub_group = url_split[4] | slugify %}
   {% for group in site.data.docs %}
-  {% assign link = group.pages | first %}
-  {% assign link_slug = link.title | slugify %}
-  {% assign group_slug = group.title | slugify %}
-  {% assign active = nil %}
+    {% assign link = group.pages | first %}
+    {% assign link_slug = link.title | slugify %}
+    {% assign group_slug = group.title | slugify %}
+    {% if link_slug == nil %}
+      {% assign link = group.subpages | first %}
+      {% assign link_slug = link.title | slugify %}
+      {% assign sublink = link.pages | first %}
+      {% assign sublink_slug = sublink.title | slugify %}
+    {% endif %}
+    {% assign active = nil %}
 
-  {% if page.group == group_slug %}
-    {% assign active = 'active' %}
-  {% endif %}
+    {% if page_main_group == group_slug %}
+      {% assign active = 'active' %}
+    {% endif %}
 
-  <div class="bd-toc-item {{ active }}">
-      <a class="bd-toc-link" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+    <div class="bd-toc-item {{ active }}">
+      <a class="bd-toc-link" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}{% if sublink_slug %}{{sublink_slug}}/{% endif %}">
         {{ group.title }}
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav bd-sidenav ml-3">
         {% for doc in group.pages %}
           {% assign doc_slug = doc.title | slugify %}
           {% assign active = nil %}
 
-          {% if page.group == group_slug and page_slug == doc_slug %}
+          {% if page_main_group == group_slug and page_slug == doc_slug %}
             {% assign active = 'active bd-sidenav-active' %}
           {% endif %}
 
@@ -50,6 +59,58 @@
             {% endcomment %}
           </li>
         {% endfor %}
+
+        {% for subgroup in group.subpages %}
+          {% assign link = subgroup.pages | first %}
+          {% assign link_slug = link.title | slugify %}
+          {% assign subgroup_slug = subgroup.title | slugify %}
+          {% assign active = 'unactive' %}
+      
+          {% if page_sub_group == subgroup_slug %}
+            {% assign active = 'active' %}
+          {% endif %}
+      
+          <!-- <div class="bd-sub-toc-item {{active}} "> -->
+          <div class="bd-sub-toc-item {{active}} ">
+            <a class="bd-sub-toc-link" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+              {{ subgroup.title }}
+            </a>
+      
+            <ul class="nav bd-sidenav ml-3">
+              {% for doc in subgroup.pages %}
+
+                {% assign doc_slug = doc.title | slugify %}
+                {% assign active = nil %}
+      
+                {% if page_sub_group == subgroup_slug and page_slug == doc_slug %}
+                  {% assign active = 'active bd-sidenav-active' %}
+                {% endif %}
+      
+                <li class="{{ active }}">
+                <!-- <li class="active bd-sidenav-active"> -->
+                  <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ doc_slug }}/">
+                    {{ doc.title }}
+                  </a>
+      
+                  {% comment %}
+                  {% unless doc.sections == nil %}
+                    <ul class="nav">
+                      {% for section in doc.sections %}
+                        <li>
+                          <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
+                            {{ section.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endunless %}
+                  {% endcomment %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+
       </ul>
     </div>
   {% endfor %}
