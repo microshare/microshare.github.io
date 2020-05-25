@@ -60,3 +60,25 @@ Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget
 ### C. Sub Part 3
 
 Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+
+
+
+
+
+
+
+
+
+
+
+## 5. Set up your platform to post the data
+---------------------------------------
+
+For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerlink private gateway.
+Some platforms can be configured to POST data. Configure them to do a POST /share/:recType call.
+
+
+## 6. What's next?
+---------------------------------------
+
+Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  

@@ -1,62 +1,327 @@
 ---
 layout: docs
-title: title
-description: description
+title: Data Formatting
+description: Robot examples to build a Data Workflow
 toc: true
 ---
-
-Inro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [Formatting the data with a robot](./#3-access-to-device-cluster)
+  - A. [What is a data workflow?](./#4-add-a-device)
+  - B. [Read data from the data lake](./#4-add-a-device)
+  - C. [Read record triggering the Robot](./#5-change-a-device)
+  - D. [Read any record(s)](./#6-delete-a-device)
+  - E. [Data lake advanced queries](./#6-delete-a-device)
+  - F. [Data Parsing](./#6-delete-a-device)
+  - G. [Data Transformation](./#6-delete-a-device)
+  - H. [Data Formatting](./#6-delete-a-device)
+  - I. [External services triggering](./#6-delete-a-device)
+  - J. [Write data to the data lake](./#6-delete-a-device)
+2. [What's next ?](./#3-access-to-device-cluster)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+## 1. Formatting the data with a robot
 
-## 1. Part1
----------------------------------------
+### A. What is a data workflow?
+You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
+This is called a data workflow. The automated actions are managed by [Robots](../robot-guide), and the access to transformed data is granted with [Rules](../rules-guide).  
+In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+For an introduction to robots take a look at the [Robot Guide](../robot-guide)
 
-### A. Sub Part 1
+### B. Read data from the data lake
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
+Your workflow will usually start with reading data that was pushed to the data lake. This can be triggered automatically if your Robot was listening to a data stream recType, or periodically with a scheduled Robot.  
+Below are code snippets to read data from the data lake.  
 
-### B. Sub Part 2
+### C. Read record triggering the Robot
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+Parse the message that triggers the Robot using lib.parseMsg to get the data and metadata from the 'text' parameter: 
 
+{% highlight js %}
+  // Include the helper objects which allows you to read and write to Microshare datalake
+  var lib = require('./libs/helpers');
 
-## 2. Part 2
----------------------------------------
+  // Always need a main function, but can have other functions to keep your code modular.
+  function main(text, auth) {
+    print('################################# RECORD READ START ###########################');
+    
+    var record = lib.parseMsg(text, auth, []);
+    
+    print('################################# RECORD READ END #############################');
+  }
+{% endhighlight %}
+  
+And the returned data model is  
+{% highlight js %}
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+  {
+    "meta": {
+        "totalPages": 1,
+        "currentPage": 1,
+        "perPage": 999,
+        "totalCount": 1,
+        "currentCount": 1
+    },
+    "objs": [
+        {
+            "updaterId": "jwang@point.io",
+            "desc": "",
+            "name": "",
+            "createDate": {
+                "$date": 1507824651492
+            },
+            "_id": {
+                "$oid": "59df940b46e0fb0028fbb54c"
+            },
+            "tags": [
+                "tempID1234",
+                "demoOnly",
+                "raw"
+            ],
+            "data": {
+                "Freq": 868300000,
+                "upid": {
+                    "$numberLong": "23393998034011604"
+                },
+                "DR": 5,
+                "msgtype": "updf",
+                "DevEui": "58-A0-CB-FF-FF-FE-BB-15",
+                "SessID": 3,
+                "FCntUp": 165,
+                "ArrTime": 1506622798.0322363,
+                "confirm": false,
+                "region": "EU863",
+                "regionid": 1000,
+                "FRMPayload": "00EB05050046E90F",
+                "FPort": 102
+            },
+            "creatorId": "jwang@point.io",
+            "id": "59df940b46e0fb0028fbb54c",
+            "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266",
+            "tstamp": {
+                "$numberLong": "1507824651492"
+            },
+            "origin": {
+                "tokendata": {
+                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d89dc"
+                },
+                "desc": "Object of Type io.Microshare.demo.sensor.temprature",
+                "name": "io.Microshare.demo.sensor.temprature",
+                "createDate": {
+                    "$numberLong": "1507824651492"
+                },
+                "creatorId": "jwang@point.io",
+                "id": "59df940b46e0fb0028fbb54c",
+                "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266"
+            },
+            "recType": "io.Microshare.demo.sensor.temprature",
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.point",
+                "user": "jwang@point.io"
+            }
+        }
+      ]  
+  }
+{% endhighlight %} 
 
-## 3. Part 3
----------------------------------------
+### D. Read any record(s)
+You can also read any record from which you know the recType and/or id.  
+This call will always return an array and depending on the read, you may have 0 or more records returned.
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+To get records by the recType and id:
 
-### A. Sub Part 1
+{% highlight js %}
+  var record = lib.readShareById(auth, "com.yourdomain.yourrecType", "yourid");
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+{% endhighlight %}
 
-### B. Sub Part 2
+To get records by the recType and associated tags:
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+{% highlight js %}
+  var tags = ["tag1", "tag2"]
+  var record = lib.readShareByTags(auth, "com.yourdomain.yourrecType", tags);
 
-### C. Sub Part 3
+{% endhighlight %}
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+### E. Data lake advanced queries
+You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
+
+Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
+
+{% highlight js %}
+  //Include the helper objects which allows you to read and write to Microshare datalake
+  var lib = require('./libs/helpers');
+
+  // Always need a main function, but can have other functions to keep your code modular.
+  function main(text, auth) {
+    print('################################# VIEW READ START ###########################');
+    
+    var queryParams = {
+        "substitute": "value"
+    };
+    
+    var viewResult = lib.readShareByView(auth, "com.your.recType", "1234viewid", queryParams);
+    
+    print('################################# VIEW READ END #############################');
+  }
+{% endhighlight %}
+
+IMPORTANT: Your View must have the same recType as the one triggering the Robot !!! 
+
+### F. Data Parsing
+
+Ideal for separating different sensor records coming from the same stream of IoT packages.  
+For example if you have a single platform pushing records about 2 different devices through the same pipe (same recType), you might want to parse by devEUI after.  
+
+The example below shows how one Robot can parse two devEUI.  
+Another strategy would be to use one Robot per devEUI, that can be turned on and off to start or stop 2 data flows.  
+
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
+
+    var rec = lib.parseMsg(text);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+
+    if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-15") {
+        
+        //Motion Sensor
+        //Write a new record with the Motion Sensor payload and the Time included in the network info
+        lib.writeShare(auth, recType + '.motionsensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, ['payload', 'timestamp']);
+        
+    } else if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-36") {
+        
+        //Healthy Home Sensor
+        //Write a new record with the Healthy Home Sensor payload and the Time included in the network info
+        lib.writeShare(auth, recType + '.healthyhomesensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, ['payload', 'timestamp']);        
+    }
+
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %} 
+
+### G. Data Transformation
+
+Robots are running JS scripts, so any data trnsformation logic can be added to your workflow.  
+A usual transformation step of your workflow is the decoding of your IoT Payload. See our list of decoding methods [here](/docs/1/advanced/robots-libraries/decoding-payloads).
+
+IMPORTANT: The Robot scripts use ES6 only, so you can't rely on your usual browser APIs for data transformation
+
+Below is an example of Payload decoding, ending up in writing a new record in the datalake:
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
+
+    var rec = lib.parseMsg(text);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+
+    var decodedRecord = lib.decodeTabsHealthyHomeSensor(m.payload);
+    var decodedRecordJSON = JSON.parse(decodedRecord);
+    decodedRecordJSON.timestamp = m.timestamp;
+
+    //Save the record enhanced with the decoded data
+    lib.writeShare(auth, recType + '.decoded', decodedRecordJSON, ['status', 'battery', 'temperature', 
+'humidity', 'CO2', 'VOC', 'timestamp']);
+
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %}
+
+### H. Data Formatting
+
+Data formatting in a Robot allows you to identify interesting records, and format the data to be used in your report, App or Dashboard.  
+Below is an example of a Robot passing only high CO2 records.
+
+{% highlight js %}
+    var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# MY SCRIPT START ###########################');
+
+    var rec = lib.parseMsg(text, auth, []);
+    var m = rec.objs[0].data;
+    var recType = rec.objs[0].recType;
+    
+    if(m.CO2 > 1500){
+        var highValueRecord = {'CO2':m.CO2, 'CO2Unit':m.CO2Unit, 'timestamp':m.timestamp};
+        
+        var newRecType = recType.replace('decoded','highCO2');
+        
+        lib.writeShare(auth, newRecType, highValueRecord, ['highCO2', 'timestamp']);
+    
+    }
+
+    print('################################# MY SCRIPT END #############################');
+  }
+{% endhighlight %}
+
+### I. External services triggering
+You have access to notifications libraries, and RESTful POST and GET from a Robot script. This allows you to call external services from your data workflow.  
+For example, at Microshare.io we like to log on our slack channel, below is an example about how to do just that.
+
+{% highlight js %}
+  var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
+  var body = '{\"text\":\"' + JSON.stringify(m, null, '\t').replace(/"/g, "\\\"") + '\"}';
+  lib.post(webhookURL, headers, body);
+{% endhighlight %}
+
+For more examples, see our [notification methods](/docs/1/advanced/robots-libraries/sending-notifications) and [calling external APIs methods](/docs/1/advanced/robots-libraries/making-restful-calls)
+
+### J. Write data to the data lake
+As shown above, each step of a workflow usually ends with writting a record in the data lake.  
+
+A data write use is twofold: it builds the audit trail of your data, and allows to trigger the next step of the workflow.
+
+As shown below, you can specify the recType and tags of your new data entry.
+{% highlight js %}
+  var lib = require('./libs/helpers');
+
+  function main(text, auth) {
+    print('################################# VIEW READ START ###########################');
+    var tags = ['some', 'list', 'tags'];
+    var write = lib.writeShare(auth, recType, obj, tags);
+    
+    print('################################# VIEW READ END #############################');
+  }
+{% endhighlight %} 
+
+### K. Data workflow example
+
+In this example we are receiving data from two Tabs sensor in a building in London.  
+We want to display the latest high CO2 alerts in an App, available to all Microshare employees.  
+
+Our data workflow is the following:
+1. Parse the incoming data stream to single out the Healthy Home Sensor
+2. Decode the Payload from the Healthy Home Sensor
+3. Single out cases where the CO2 level is high, and pass only those to the next step
+4. Aggregate the latest 10 records with [a View](../views-guide)
+5. Setup [a Rule](../rules-guide) so that all Microshare employees can run the aggregation View
+
+At Microshare.io we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
+
+ 1 would use the snippet from the [Data Parsing](#data-parsing) above  
+ 2 would use the snippet from the [Data Transformation](#data-transformation) above  
+ 3 would use the snippet from the [Data Formatting](#data-formatting) above  
+ 4 The View query would be:  
+{% highlight JSON %}
+  [
+    {"$match" : {"recType" : "uk.london.tabs.healthyhomesensor.highco2"}},
+    {"$limit" : 10}
+  ] 
+{% endhighlight %}
+ 5 The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
+
+## 2. What's next?
+You have now access to decoded IoT data through the Microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  

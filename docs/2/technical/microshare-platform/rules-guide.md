@@ -1,62 +1,136 @@
 ---
 layout: docs
-title: title
-description: description
+title: Rules Guide
+description: Comprehensive guide to understand rules
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [What’s a Rule?](./#1-requirements)
+2. [Creating a Rule](./#2-sign-in)
+  - A. [Create a name and description](./#1-requirements)
+  - B. [Record Identification](./#1-requirements)
+  - C. [Operations](./#1-requirements)
+  - D. [Owner Context](./#1-requirements)
+  - E. [Requestor Context]()
+3. [Simulating a Rule](./#3-access-to-device-cluster)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+## 1. What is a Rule? 
 
-## 1. Part1
----------------------------------------
+A Rule is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+## 2. Creating a Rule
+Rules can be created via our API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
 
-### A. Sub Part 1
+{% include image.html url="/assets/img/composer-rule-ruleindex1.jpg" description="Rule Index - Card View" %}
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
+Click the "Create" button to navigate to the "Create Rule" page. 
 
-### B. Sub Part 2
+### A. Create a name and description
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+The rest of this guide will work down the Rules page and describe the various functions found on this screen
 
+The image below displays where the user can input the respective name and description of the rule they are making.
 
-## 2. Part 2
----------------------------------------
+{% include image.html url="/assets/img/composer-rule-rulesection1.jpg" description="Rule Section - Labels" %}
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+This ascribes a label and description to the Rule
 
-## 3. Part 3
----------------------------------------
+### B. Record Identification
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+The image below displays where the user will determine what Record Type the Rule applies to
 
-### A. Sub Part 1
+{% include image.html url="/assets/img/composer-rule-rulesection2.jpg" description="Rule Section - Record Identification" %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+The Rule will allow select users to access the Record type input here
 
-### B. Sub Part 2
+### C. Operations
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+The image below displays where the user will determine what Operations are enabled by the Rule
 
-### C. Sub Part 3
+{% include image.html url="/assets/img/composer-rule-rulesection3.jpg" description="Rule Section - Operations" %}
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+The Rule will allow select users to execute the Operations chosen here
+
+### D. Owner Context
+
+The image below displays where the user will determine who owns the Rule
+
+{% include image.html url="/assets/img/composer-rule-rulesection4.jpg" description="Rule Section - Owner Context" %}
+
+The rule can be owned by a specific users or to an organization. There are three dropdowns here:
+
+1. **User** - Set to the account of the user currently making the Rule
+2. **Orgnization** - Set to the organization of the user currently making the Rule
+3. **APIKey/AppId** - Can be set to "All (*)" to let all APIKeys associated with the user to own the Rule or "Specific Value" to allow a specific APIKey to own the Rule
+
+### E. Requestor Context
+
+The image below displays where the user will determine whom the Rule applies to 
+
+{% include image.html url="/assets/img/composer-rule-rulesection5.jpg" description="Rule Section - Requestor Context" %}
+
+The **User** dropdown has three options:
+
+1. All (*) - This will make the Rule apply to all users
+2. Exact Match to Owner (=) - This will make the Rule apply only to the owner of the Rule
+3. Specific Value - This will make the rule apply only to accounts entered here
+
+The **Organization** dropdown has four options:
+
+1. All (*) - This will make the Rule apply to all organizations
+2. Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization
+3. Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization
+4. Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule
+5. Specific Value - This will make the rule apply only to the organization entered here
+
+The **APIKey/AppId** dropdown has three options:
+
+1. All (*) - This will make the Rule apply to all APIKeys 
+2. Exact Math to Owner (=) - This will make the Rule only apply in conjunction with an API key belonging to the owner of the Rule
+3. Specific Value - This will make the rule apply only to an APIKey entered here
+
+The **Role** dropdown has three options:
+
+1. All (*) - This will make the Rule apply to all Roles
+2. Exact Match to Owner (=) - This will make the Rule apply to the same Role as the Owner
+3. Specific Value - This will make the Rule apply only to the Role entered here 
+
+The **Location** dropdown has two options:
+
+1. All (*) - This will make the Rule apply to all Roles
+2. Ring-fence Polygon - Here a user can set a geographical area in which a Rule will apply to a user
+
+## 3. Simulating a Rule
+
+Rule Simulation is a good way to explore the impact of different settings on Operation Grant outcomes.
+
+When you are editing a Rule in the Composer Console, you will see a panel at the bottom of the Rule form labelled "Rule Simulation". Interacting with this panel will not change the content of your Rule so feel free to play-around to get the feel of how the tool works.
+
+{% include image.html url="/assets/img/composer-rule-rulesimulation1.jpg" description="Rule Simulation Panel" %}
+
+To start fill-in the first row with the details for a simulated Requestor including email address, expected organizational identity, and role. Email is the only required field.
+
+To add more rows to your simulation, click the "ADD" button. To remove a row, click the "X" button next to the row that you wish to remove.
+
+{% include image.html url="/assets/img/composer-rule-rulesimulation2.jpg" description="Rule Simulation Panel" %}
+
+Click on the "TEST" button at any time to see a simulation of what your Rule would grant for each of the Requestors in your list.
+
+Once you have used the tool, your entries will be saved in your user preferences record. If you want to retrieve the last set of entries, click the link labeled "Load data from your previous test". You can always edit the entries.
+
+{% include image.html url="/assets/img/composer-rule-rulesimulation3.jpg" description="Rule Simulation Panel" %}
+
+The result of the test will be a truth table showing the Owner (you) and Requestor (from your list) and the results for each Operation governed by the Rule. The truth table only shows the results of the current Rule and does not take into account other Rules that may be active in the system.
+
+You can change the terms of your Rule and rerun your Simulation at any time. The tool will highlight difference between each subsequent simulation to help you track the impact of changes you are making to the Rule terms. Changed outcomes will be in Red text.
+
+{% include image.html url="/assets/img/composer-rule-rulesimulation4.jpg" description="Rule Simulation Panel" %}
+
+Running the simulation does 

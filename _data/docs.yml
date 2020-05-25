@@ -1,19 +1,18 @@
 - title: General User
   pages:
   - title: Welcome
+  - title: What's new?
   subpages:
   - title: Meet Microshare
     pages:
-    - title: What's new?
-    - title: Technical Overview
     - title: Why Microshare?
+    - title: Technical Overview
     - title: Demo
     - title: FAQ
   - title: Quick Start
     pages:
     - title: Create an Account
     - title: Access my Apps
-    - title: See my Data
 
 
 - title: Admin
