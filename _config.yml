@@ -29,8 +29,8 @@ social_logo_path: /assets/brand/default-icon.png
 social_image_path: /assets/brand/default-icon.png
 
 # Custom vars
-#current_version:  2
-docs_version:     2
+current_version:  1
+docs_version:     1
 repo:             https://github.com/microshare/microshare.github.io
 blog:             https://microshare.io/blog
 
