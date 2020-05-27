@@ -32,9 +32,9 @@ While reading this documentation if you encounter any issues or have any feedbac
 ## 2. Quick Links
 ---------------------------------------
 
-### > [Microshare quick start](../../getting-started/quick-start)
-### > [Link your favorite IoT gateway to Microshare](../../advanced/lorawan-devices)
-### > [Decode your IoT devices payload](../../advanced/robots-libraries)
+###  [Microshare quick start](../../getting-started/quick-start)
+###  [Link your favorite IoT gateway to Microshare](../../advanced/lorawan-devices)
+###  [Decode your IoT devices payload](../../advanced/robots-libraries)
 
 ## 3. Platform
 ---------------------------------------
