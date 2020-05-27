@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: title
+title: Documentation Contact
 description: description
 toc: true
 ---
