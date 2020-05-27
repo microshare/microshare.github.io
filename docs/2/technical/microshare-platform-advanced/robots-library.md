@@ -23,9 +23,9 @@ It gives access to handy methods to ease your life.
 
 Below are categories and code snippets to guide you how to use these lib methods :
 
-##### > [Reading and Writing records](read-and-write)
-##### > [Making RESTful calls](making-restful-calls)
-##### > [Sending notifications](sending-notifications)
+#####  [Reading and Writing records](read-and-write)
+#####  [Making RESTful calls](making-restful-calls)
+#####  [Sending notifications](sending-notifications)
 
 
 
@@ -33,8 +33,8 @@ Below are categories and code snippets to guide you how to use these lib methods
 
 As presented in the pages on data ingest and transformation, for Microshare compatible sensors the decoders are linked to the device clusters, so this step is not necessary. 
 
-##### > [TrackNet Tabs devices V1.1](tracknet-tabs)
-##### > [Globalsat LT-100 LoRaWAN GPS Tracker](globalsat-lt-100)
-##### > [Sagemcom Siconia](sagemcom-siconia)
-##### > [Adeunis LoRaWAN Demonstrator V1.1](adeunis-demonstrator)
-##### > [Generic decoding](decoding-payloads)
+#####  [TrackNet Tabs devices V1.1](tracknet-tabs)
+#####  [Globalsat LT-100 LoRaWAN GPS Tracker](globalsat-lt-100)
+#####  [Sagemcom Siconia](sagemcom-siconia)
+#####  [Adeunis LoRaWAN Demonstrator V1.1](adeunis-demonstrator)
+#####  [Generic decoding](decoding-payloads)

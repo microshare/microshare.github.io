@@ -11,16 +11,16 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What's a Robot?](./#1-requirements)
-2. [What can I do with them?](./#2-sign-in)
-3. [How do I use them?](./#3-access-to-device-cluster)
-  - A. [Accessing the UI](./#1-requirements)
-  - B. [Basic code](./#1-requirements)
-  - C. [Triggered vs scheduled](./#1-requirements)
-  - D. [Testing](./#1-requirements)
-4. [Create a Robot to Transform data and Send alerts]()
-5. [How do they work?](./#2-sign-in)
-6. [More Information]()
+1. [What's a Robot?](./#1-whats-a-robot)
+2. [What can I do with them?](./#2-what-can-i-do-with-them)
+3. [How do I use them?](./#3-how-do-i-use-them)
+  - A. [Accessing the UI](./#a-accessing-the-ui)
+  - B. [Basic code](./#b-basic-code)
+  - C. [Triggered vs scheduled](./#c-triggered-vs-scheduled)
+  - D. [Testing](./#d-testing)
+4. [Create a Robot to Transform data and Send alerts](./#4-create-a-robot-to-transform-data-and-send-alerts)
+5. [How do they work?](./#5-how-do-they-work)
+6. [More Information](./#6-more-information)
 
 ---------------------------------------
 
