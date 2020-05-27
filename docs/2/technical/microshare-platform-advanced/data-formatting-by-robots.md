@@ -9,18 +9,19 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Formatting the data with a robot](./#3-access-to-device-cluster)
-  - A. [What is a data workflow?](./#4-add-a-device)
-  - B. [Read data from the data lake](./#4-add-a-device)
-  - C. [Read record triggering the Robot](./#5-change-a-device)
-  - D. [Read any record(s)](./#6-delete-a-device)
-  - E. [Data lake advanced queries](./#6-delete-a-device)
-  - F. [Data Parsing](./#6-delete-a-device)
-  - G. [Data Transformation](./#6-delete-a-device)
-  - H. [Data Formatting](./#6-delete-a-device)
-  - I. [External services triggering](./#6-delete-a-device)
-  - J. [Write data to the data lake](./#6-delete-a-device)
-2. [What's next ?](./#3-access-to-device-cluster)
+1. [Formatting the data with a robot](./#1-formatting-the-data-with-a-robot)
+  - A. [What is a data workflow?](./#a-what-is-a-data-workflow)
+  - B. [Read data from the data lake](./#b-read-data-from-the-data-lake)
+  - C. [Read record triggering the Robot](./#c-read-record-triggering-the-robot)
+  - D. [Read any record(s)](./#d-read-any-records)
+  - E. [Data lake advanced queries](./#e-data-lake-advanced-queries)
+  - F. [Data Parsing](./#f-data-parsing)
+  - G. [Data Transformation](./#g-data-transformation)
+  - H. [Data Formatting](./#h-data-formatting)
+  - I. [External services triggering](./#i-external-services-triggering)
+  - J. [Write data to the data lake](./#j-write-data-to-the-data-lake)
+  - K. [Data workflow example](./#k-data-workflow-example)
+2. [What's next ?](./#2-whats-next)
 
 ---------------------------------------
 

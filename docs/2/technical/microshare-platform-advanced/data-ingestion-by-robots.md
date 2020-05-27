@@ -9,10 +9,10 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [To aggregate your data from different sources](./#1-part-A)
-2. [Upload data manually](./#2-part-2)
-3. [Set up a websocket Robot](./#3-part-3)
-4. [Set up a scheduled Robot to pull data](./#2-part-2)
+1. [To aggregate your data from different sources](./#1-to-aggregate-your-data-from-different-sources)
+2. [Upload data manually](./#2-upload-data-manually)
+3. [Set up a websocket Robot](./#3-set-up-a-websocket-robot)
+4. [Set up a scheduled Robot to pull data](./#4-set-up-a-scheduled-robot-to-pull-data)
 
 ---------------------------------------
 
@@ -60,7 +60,7 @@ There is no UI to configure your own yet, but here is the WS client configuratio
 Alternatively, some platforms offer RESTful APIs to request for the data they store, such as [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
 In that case you can setup a [scheduled Robot](../robot-guide/#triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
 You are at liberty to setup your Robot script the way you want, to decide when and what to store as a microshare from that data.  
-Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the microsahre data lake:
+Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the microshare data lake:
 
 {% highlight js %}
   var lib = require('./libs/helpers');
