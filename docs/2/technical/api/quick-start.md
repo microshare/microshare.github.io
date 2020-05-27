@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: title
+title: API Quick Start
 description: description
 toc: true
 ---
@@ -45,7 +45,7 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 * To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
 Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
 
-* In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fiels. 
+* In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
 That's it! You now have access to the microshare API collection, and are setup to authenticate, write data and read data with the platform. 

@@ -10,14 +10,14 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What’s a Rule?](./#1-requirements)
-2. [Creating a Rule](./#2-sign-in)
-  - A. [Create a name and description](./#1-requirements)
-  - B. [Record Identification](./#1-requirements)
-  - C. [Operations](./#1-requirements)
-  - D. [Owner Context](./#1-requirements)
-  - E. [Requestor Context]()
-3. [Simulating a Rule](./#3-access-to-device-cluster)
+1. [What’s a Rule?](./#1-what-is-a-rule)
+2. [Creating a Rule](./#2-creating-a-rule)
+  - A. [Create a name and description](./#a-create-a-name-and-description)
+  - B. [Record Identification](./#b-record-identification)
+  - C. [Operations](./#c-operations)
+  - D. [Owner Context](./#d-owner-context)
+  - E. [Requestor Context](./#e-requestor-context)
+3. [Simulating a Rule](./#3-simulating-a-rule)
 
 ---------------------------------------
 

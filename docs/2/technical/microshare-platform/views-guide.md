@@ -9,17 +9,17 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What’s a View?](./#1-requirements)
-2. [What can I do with them?](./#2-sign-in)
-  - A. [Query Data Lakes](./#1-requirements)
-  - A. [Create Sample or Reference Data](./#1-requirements)
-3. [How do I use them?](./#3-access-to-device-cluster)
-  - A. [Creating a View](./#4-add-a-device)
-  - B. [A Static View](./#5-change-a-device)
-  - C. [A Pipeline Query View](./#6-delete-a-device)
-4. [Default View query size](./#3-access-to-device-cluster)
-5. [String replacements for Views](./#2-sign-in)
-6. [Putting it together (Tracking Record Count Use Case)](./#3-access-to-device-cluster)
+1. [What’s a View?](./#1-whats-a-view)
+2. [What can I do with them?](./#2-what-can-i-do-with-them)
+  - A. [Query Data Lakes](./#--query-data-lake)
+  - A. [Create Sample or Reference Data](./#--create-sample-or-reference-data)
+3. [How do I use them?](./#3-how-do-i-use-them)
+  - A. [Creating a View](./#--a-creating-a-view)
+  - B. [A Static View](./#--b-a-static-view)
+  - C. [A Pipeline Query View](./#--c-a-pipeline-query-view)
+4. [Default View query size](./#4-default-view-query-size)
+5. [String replacements for Views](./#5-string-replacements-for-views)
+6. [Putting it together (Tracking Record Count Use Case)](./#6-putting-it-together)
 
 ---------------------------------------
 
