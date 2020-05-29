@@ -2,8 +2,6 @@
 layout: docs
 title: Robot Guide
 description: Comprehensive guide to understand Robots
-redirect_from:
-  - /docs/2/admin/microshare-platform/rules-guide/
 toc: true
 ---
 

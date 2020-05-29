@@ -11,10 +11,15 @@ toc: true
 
 1. [Get an API key](./#1-get-an-api-key)
 2. [Setup Postman](./#2-setup-postman)
+2. [Demo API](./#demo-api)
+    A. [Authentification](./#demo-api)
+    B. [Simple Request](./#demo-api)
+    2. [Complexe Request](./#demo-api)
 
 ---------------------------------------
 
 ## 1. Get an API key
+---------------------------------------
 
 Request an API key for authentication with the services.
 You can then use Microshare Share API to read data from, as well as write data to the platform. 
@@ -28,6 +33,7 @@ You can then use Microshare Share API to read data from, as well as write data t
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
 ## 2. Setup Postman
+---------------------------------------
 
 This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](./api-collection) for a list of API call and move to the next section.
 
@@ -49,3 +55,48 @@ Then `Manage Environments`, then click on `microshare`.{% include image.html url
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
 That's it! You now have access to the microshare API collection, and are setup to authenticate, write data and read data with the platform. 
+
+## 3. Demo API
+---------------------------------------
+
+To let you try out our API system, we have created demo APIs. 
+
+To try them out, you will need a Microshare account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you don't have one. 
+
+Then you will need to create your API key and Postman setup as described above.
+1. [Get an API key](./#1-get-an-api-key)
+2. [Setup Postman](./#2-setup-postman) 
+
+Once this is done you will need to follow the [authentication tutorials](../authentication). 
+
+It is necessary to understand how these requests work as we will add an extra parameter. 
+
+Indeed when you will make the request request token you will add at the end of it 
+`&identity=External_ID`
+
+In order to have 
+{% include image.html url="/assets/img/authentification_demo.png" description="authentification demo" %}
+
+This will allow you at runtime to join Demo's identity.
+
+Once this has been achieved it is now possible to use simple and then complex data reading queries.
+
+### A. Simple request
+
+We will now see how to read the demo data. For this it is necessary that you follow the tutorial on how to use [the simple queries](../simple-requests), which are available in the APi collection you have downloaded.
+
+Once the reading principle is well understood we will now simply list a number of Endpoints that you will be able to use once authenticated under the demo identity. 
+
+{% include image.html url="/assets/img/simple_request_demo.png" description="simple request demo" %}
+
+
+###### WARNING : This data is not real data and is provided solely for demo purposes.
+<br>
+
+Temperature : `io.microshare.demo.environment.unpacked`
+
+Fridge : `io.microshare.demo.fridge.unpacked`
+
+Desk, Room, Batroom occupancy/activity : `io.microshare.demo.motion.unpacked`
+
+Feedback : `io.microshare.demo.feedback.unpacked`
