@@ -22,3 +22,11 @@ toc: true
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
  
 * The access token was automatically pasted in your Postman environment. It is used by the other API calls to know that it is YOU that is writing or reading data on the platform.
+
+
+
+---------------------------------------
+
+Now that you have passed authentication, you can now make your first requests.
+
+###### > [Simple Request](../simple-requests)
