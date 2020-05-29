@@ -9,34 +9,63 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Write Data](./#1-write-data)
-2. [Read Data](./#2-read-data)
-3. [From a postman call to a piece of code](./#3-from-a-postman-call-to-a-piece-of-code)
+1. [Overview](./#1-overview)
+2. [Write Data](./#2-write-data)
+3. [Read Data](./#3-read-data)
+4. [From a postman call to a piece of code](./#4-from-a-postman-call-to-a-piece-of-code)
 
 ---------------------------------------
 
-## 1. Write data
+## 1. Overview
+---------------------------------------
+
+Now that you have passed authentication, you can now make your first requests.
+
+So we will see how to write a piece of data, but also how to read data. 
+
+For this there are endpoints, similar to addresses where data is stored. 
+
+In the examples below we will create your own specific endpoints. But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page](). 
+
+If you then want to read more conventional data, you can try the [demo APIs]() now that you have mastered the main tools.
+
+
+
+## 2. Write data
+---------------------------------------
 
 * From the Postman collection, open the request `Shares -> Create one Share`.
 
 * Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in microshare. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
+{% include image.html url="/assets/img/api/create_one_share_1.png" description="create one share" %}
+
 * Enter you own recType there, by using your `firstName.lastName` combination.
-**Tip**: For IoT data streams, we usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, if your IoT streams is from a TrackNet device, going through a Kerlink gateway, physically located in Philadelphia in the US, the recType can be: `us.philadelphia.kerlink.tracknet`
 
 * Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
 
+{% include image.html url="/assets/img/api/create_one_share_2.png" description="create one share" %}
+
 * Click `Send`
+
+{% include image.html url="/assets/img/api/create_one_share_3.png" description="create one share" %}
 
 * A confirmation message will be sent, indicating that the data was successfully written to Microshare. It returns metadata usable with other API calls.
 
-## 2. Read data
+
+
+## 3. Read data
+---------------------------------------
 
 * From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
 * Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
+
+{% include image.html url="/assets/img/api/read_share_1.png" description="read share" %}
+
 * Click `Send`. 
 Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
-{% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
+
+{% include image.html url="/assets/img/api/read_share_2.png" description="read share" %}
 
 * If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
@@ -49,4 +78,23 @@ Rules are an advanced feature of the platform, and are described in the ADVANCED
 * For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](../../advanced/lorawan-devices/). 
 
 
-## 3. From a postman call to a piece of code
+
+## 4. From a postman call to a piece of code
+---------------------------------------
+
+So we have a list of 7 fairly simple API requests available in this Postman Collection. You can find the information and parameters of each of them in the API Collection file.
+
+##### > [API Collection](../api-collection)
+
+Once you have found the query you need on Postman, you can very quickly extract a functional code for your application: 
+
+- Simply click on the code button once your query is good. 
+
+{% include image.html url="/assets/img/api/get_code_postman_0.png" description="read share" %}
+
+- Choose your programming language and you will get your code. 
+
+{% include image.html url="/assets/img/api/get_code_postman_1.png" description="read share" %}
+
+
+<!> Be careful the token is valid only for a duration of 48 hours, it is generally necessary to have beforehand a request of authentification and then the use of this token through your request. <!>

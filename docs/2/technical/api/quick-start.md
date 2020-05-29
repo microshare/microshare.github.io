@@ -12,9 +12,9 @@ toc: true
 1. [Get an API key](./#1-get-an-api-key)
 2. [Setup Postman](./#2-setup-postman)
 2. [Demo API](./#demo-api)
-    A. [Authentification](./#demo-api)
-    B. [Simple Request](./#demo-api)
-    2. [Complexe Request](./#demo-api)
+    - A. [Authentification](./#demo-api)
+    - B. [Simple Request](./#demo-api)
+    - C. [Complexe Request](./#demo-api)
 
 ---------------------------------------
 
@@ -54,7 +54,10 @@ Then `Manage Environments`, then click on `microshare`.{% include image.html url
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
-That's it! You now have access to the microshare API collection, and are setup to authenticate, write data and read data with the platform. 
+That's it! You now have access to the microshare API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
+
+###### > [Authentication](../authentication)
+###### > [Simple Request](../simple-requests)
 
 ## 3. Demo API
 ---------------------------------------
