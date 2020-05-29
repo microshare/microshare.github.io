@@ -14,7 +14,6 @@
     - title: Create an Account
     - title: Access my Apps
 
-
 - title: Admin
   subpages:
   - title: Admin Management
@@ -45,7 +44,7 @@
   - title: LoRaWan
     pages:
     - title: Overview
-    - title: LoRaWan Network
+    - title: LoRaWan Technology
     - title: Gateway Installation
     - title: Device Declaration
 
@@ -84,7 +83,6 @@
   - title: LoRaWan
     pages:
     - title: LoRaWan Technology
-    - title: LoRaWan Network
     - title: LoRaWan Gateways
     - title: LoRaWan Sensors
   - title: Extra Information
