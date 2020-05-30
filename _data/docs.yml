@@ -20,22 +20,16 @@
     pages:
     - title: Overview
     - title: First step as an Admin
+    - title: Microshare Super Admin
     - title: FAQ Admin
-  - title: Microshare Platform
-    pages:
-    - title: Identity Guide
-    - title: Device Cluster Guide
-    - title: Rules Guide
-    - title: Dashboard Guide
 
 - title: Installer
   subpages:
   - title: Quick Start
     pages:
     - title: Overview
-    - title: From a Sensor to a Dashboard
-    - title: FAQ About Installations
     - title: Validation of a Successfull Installation
+    - title: FAQ About Installations
   - title: Deploy-M
     pages:
     - title: Download the App
@@ -43,8 +37,6 @@
     - title: Installation Tutorials
   - title: LoRaWan
     pages:
-    - title: Overview
-    - title: LoRaWan Technology
     - title: Gateway Installation
     - title: Device Declaration
 
@@ -89,7 +81,3 @@
     pages:
     - title: PowerBI
     - title: Microshare Security
-  - title: PreBuild Solution
-    pages:
-    - title: My Own Dashboard
-    - title: Use Microshare BigData Tools Only

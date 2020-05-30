@@ -56,7 +56,7 @@ There are two types of dashboards, that for your trending apps and that for your
  * Form to Display: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
  * Facts: See next section for specific details
  
- {% include image.html url="/docs/2/tech/microshare-platform/Tech_Dash.png" description="Dashboardsettings" %}
+ {% include image.html url="/assets/img/Tech_Dash.png" description="Dashboardsettings" %}
  
 
 ## 4. App Facts

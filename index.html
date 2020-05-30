@@ -47,55 +47,18 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body 
 
-* {
-  box-sizing: border-box;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #ffffff;
-}
-
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #215b7a;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #215b7a;
-}
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-</style>
 </head>
 <body>
 
-<form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-<p>&nbsp </p>
+    <div class="container justify-content-md-center">
+      <form class="example" action="/action_page.php" class="col-10">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <p>&nbsp </p>
+    </div>
 
-   
-</body>
     <div class="container">
       <div class="card-deck mb-4 text-center">
         <div class="card mb-3 box-shadow col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
@@ -144,14 +107,15 @@ form.example::after {
           </div>
         </div>
       </div>
+    </body>
 
       <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <h5>Contact</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Support</a></li>
-              <li><a class="text-muted" href="#">Documentation Request</a></li>
+              <li><a class="text-muted" href="mailto:support@microshare.io">Support</a></li>
+              <li><a class="text-muted" href="mailto:docs@microshare.io">Documentation Request</a></li>
             </ul>
           </div>
           <div class="col-md-4 col-sm-12">
@@ -195,3 +159,44 @@ form.example::after {
     </script>
   </body>
 </html>
+
+
+<style>
+  body 
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #ffffff;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #215b7a;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #215b7a;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  </style>

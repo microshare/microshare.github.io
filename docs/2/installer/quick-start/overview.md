@@ -1,62 +1,75 @@
 ---
 layout: docs
-title: title
-description: description
+title: Overview
+description: Installation Overview
 toc: true
 ---
-
-Inro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [What needs to be install ?](./#1-part-A)
+2. [Requirements](./#2-part-2)
+3. [Steps](./#3-part-3)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
-## 1. Part1
+
+
+## 1. What needs to be install ?
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+The purpose of an installation is to allow the customer to use the data from the installed sensors as quickly as possible. 
 
-### A. Sub Part 1
+But for this it is necessary to quickly understand what to install and why. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
+To start our sensors use LoRaWan technology, to better understand this technology you can read more information here: 
 
-### B. Sub Part 2
+###### > [LoRaWan Technology](../../../technical/lorawan/lorawan-technology)
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+This technology works like this: 
+The sensor sends data via "Lora" to the gateway or to a public network. Thus the gateway or the public network LoRaWan are connected to the Internet via WIFI, Ethernet or 3G/4G/5G. 
+
+Then the data will be processed and used once in the cloud.
+
+Here is a summary diagram: 
 
 
-## 2. Part 2
+{% include image.html url="/assets/img/lorawan-network.png" description="LoRaWan Network" %}
+
+Image from [reasearchgate.net](https://www.researchgate.net/publication/323620460_IoT-based_wireless_seismic_quality_control/figures?lo=1)
+
+
+During the installation it is therefore necessary that the sensors and the gateway(s) are well installed and it is also necessary to make sure that they are transmitting properly to conclude that the installation is complete. 
+
+
+
+## 2. Requirements
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+To ensure proper installation it is best to check a few points: 
 
-## 3. Part 3
+- have prepared the necessary quantity of sensors and gateways
+- It is better to know in advance the location of the sensors and gateways.
+- Have downloaded the [Deploy-M application](../../deploy-m/download-the-app).
+- Learn how to use [Deploy-M](../../deploy-m/app-guide)
+- Have prepared the [prerequisites](../../deploy-m/app-guide/#1-requirements) for using Deploy-M
+- Have all the necessary fixations for sensors and gateways (3M Stickers, Tabs Brackets, Velcro stickers ...)
+- Have all the necessary tools for installation.
+
+## 3. Steps
 ---------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+To do this we will follow the following steps, first install the gateways, then install the devices (with the possibility of using Deploy-M for more efficiency), and then we will validate that the installation was successful.
 
-### A. Sub Part 1
+###### > [Gateway Guide](../../lorawan/gateway-installation)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+###### > [Device Guide](../../lorawan/device-declaration)
 
-### B. Sub Part 2
+###### > [Deploy-M](../../deploy-m/app-guide)
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+###### > [Validation](../../quick-start/validation-of-a-succesfull-installation)
 
-### C. Sub Part 3
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+If you have more question, you can have a look at our [FAQ about installations](../fag-about-installations) page

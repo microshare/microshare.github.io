@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Access My Apps
+title: Access My App.pngs
 description: You are a new user then let see how to use Microshare.
 toc: true
 ---
@@ -19,30 +19,67 @@ toc: true
 ## 1. Log In
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+Now that you have [created an account](../create-an-account) you will be able to log in.
 
+To do this simply go to the following pages: 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
+Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
+Prod : [app.microshare.io](https://app.microshare.io/login)
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+{% include image.html url="/assets/img/access-my-apps/log-in.png" description="Log in" %}
 
+You will go directly to the main age of your account which looks like this: 
+
+{% include image.html url="/assets/img/access-my-apps/microshare-homepage.png" description="microshare homepage" %}
+
+This is the dashboard of the identity you're on. 
+
+Continue this tutorial to understand how to switch from one identity to another. 
 
 ## 2. Select My Identity
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+Identities make it easy to navigate on microshare from one dashboard/data set to another without changing accounts. 
+
+Here we will simply look at the general information about the identities. For more information on identities an in-depth tutorial can be found here: 
+
+##### > [Identity guide](../../../technical/microshare-platform-advanced/identity-guide)
+
+So when we log in we're directly on the last identity we used. 
+When creating an account you were simply added to the `Microshare Default` identity. This one is unique to your organization. 
+
+If you are a Microshare customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare technology. 
+
+For example, for 4 sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
+
+So you just have to click on the small icon in the top right corner of your screen to select the identity you want to access and you will be immediately switched to it. 
+
+{% include image.html url="/assets/img/access-my-apps/microshare-identity.png" description="microshare identity" %}
+
+Here for example we can simply navigate between two identities.
+
 
 ## 3. Navigate on my Account
 ---------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+Once you have logged in and chosen the identity that corresponds to what you are looking for you will be able to use the different Microshare tools. 
+
+To get started your homepage is full of applications. Just click on one of them to launch it and you will be able to see and use your data easily.
+
+{% include image.html url="/assets/img/access-my-apps/demo-dashboard.png" description="microshare demo" %}
+
+Then by going to `Manage` you will have access to more advanced tools. If you want to better understand all of Microshare's tools continue on the technical documentation. 
+
+{% include image.html url="/assets/img/access-my-apps/microshare-manage.png" description="microshare homepage" %}
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+##### > [Technical](../../../technical/quick-start/overview)
 
+If you are an administrator of your identity, specific documentation is available for you. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+##### > [Admin]()
 
+Finally, if you have created your account and want to use the installation tools, please continue here: 
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+##### > [Installer]()

@@ -11,7 +11,7 @@ toc: true
 
 Here you can find the answers to the most frequently asked questions. On the other hand, you can ask yourself other questions and our documentation is here to answer them. 
 
-If after reading our documentation some questions remain incomplete for you then do not hesitate to contact us at `docs@microshare.io` or on the [contact page]().
+If after reading our documentation some questions remain incomplete for you then do not hesitate to contact us at `docs@microshare.io`.
 
 ---------------------------------------
 ---------------------------------------
