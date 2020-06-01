@@ -9,7 +9,7 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What needs to be install ?](./#1-part-A)
+1. [What needs to be installed?](./#1-part-A)
 2. [Requirements](./#2-part-2)
 3. [Steps](./#3-part-3)
 
@@ -18,12 +18,12 @@ toc: true
 
 
 
-## 1. What needs to be install ?
+## 1. What needs to be installed?
 ---------------------------------------
 
 The purpose of an installation is to allow the customer to use the data from the installed sensors as quickly as possible. 
 
-But for this it is necessary to quickly understand what to install and why. 
+But for this, it is necessary to quickly understand what to install and why. 
 
 To start our sensors use LoRaWan technology, to better understand this technology you can read more information here: 
 
@@ -42,7 +42,7 @@ Here is a summary diagram:
 Image from [reasearchgate.net](https://www.researchgate.net/publication/323620460_IoT-based_wireless_seismic_quality_control/figures?lo=1)
 
 
-During the installation it is therefore necessary that the sensors and the gateway(s) are well installed and it is also necessary to make sure that they are transmitting properly to conclude that the installation is complete. 
+During the process of installation, it is crucial that you confirm that both the sensors and the gateway(s) are properly installed and transmitting information.
 
 
 

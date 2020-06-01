@@ -13,7 +13,6 @@ Here you can find the answers to the most frequently asked questions about insta
 If after reading our documentation some questions remain incomplete for you then do not hesitate to contact us at `docs@microshare.io`.
 
 ---------------------------------------
----------------------------------------
 
 ### Q. How should I start as an admin ? 
 <br>
@@ -22,7 +21,27 @@ A. All the information concerning the administration of an entity is available i
 
 ---------------------------------------
 
-### Q. 
+### Q. What and where is a dev EUI for my device?
 <br>
-A.
+A. A dev EUI is the unique identifier for each device. It can be found here on all Tabs Devices.
 <br>
+
+{% include image.html url="/assets/img/Install_FAQ_1.png" width="550" height="550" description="dev EUI" %}
+
+---------------------------------------
+
+### Q. Where is the Tabs Motion Sensor on my Device?
+<br>
+A. The Tabs Motion Sensor has an infrared sensor on the side of the device. This sensor is used in Room Occupancy, Desk Occupancy and Motion solutions.
+<br>
+
+{% include image.html url="/assets/img/Install_FAQ_2.png" width="550" height="550" description="Motion Sensor" %}
+
+---------------------------------------
+
+### Q. How can I tell the difference between the Tabs Temperature/ Humidity and the Air Quality Sensor?
+<br>
+A. To differentiate your devices, look at the information on the back. The Air Quality sensor has the model number ‘TBHV110’ and the temperature humidity sensor has the model number ‘TBHH100’. 
+<br>
+
+{% include image.html url="/assets/img/Install_FAQ_3.png" width="550" height="550" description="Motion Sensor" %}

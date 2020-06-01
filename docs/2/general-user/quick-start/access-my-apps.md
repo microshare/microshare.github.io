@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Access My App.pngs
-description: You are a new user then let see how to use Microshare.
+title: Access My App
+description: How to use Microshare Apps
 toc: true
 ---
 
@@ -29,7 +29,7 @@ Prod : [app.microshare.io](https://app.microshare.io/login)
 
 {% include image.html url="/assets/img/access-my-apps/log-in.png" description="Log in" %}
 
-You will go directly to the main age of your account which looks like this: 
+You will go directly to the main page of your account which looks like this: 
 
 {% include image.html url="/assets/img/access-my-apps/microshare-homepage.png" description="microshare homepage" %}
 
@@ -40,24 +40,24 @@ Continue this tutorial to understand how to switch from one identity to another.
 ## 2. Select My Identity
 ---------------------------------------
 
-Identities make it easy to navigate on microshare from one dashboard/data set to another without changing accounts. 
+Identities make it easy to navigate on Microshare from one dashboard/data set to another without changing accounts. 
 
 Here we will simply look at the general information about the identities. For more information on identities an in-depth tutorial can be found here: 
 
 ##### > [Identity guide](../../../technical/microshare-platform-advanced/identity-guide)
 
-So when we log in we're directly on the last identity we used. 
-When creating an account you were simply added to the `Microshare Default` identity. This one is unique to your organization. 
+When you log in, the identity will be the your most recently active one. 
+When creating an account, you were simply added to the `Microshare Default` identity. This one is unique to your organization. 
 
 If you are a Microshare customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare technology. 
 
 For example, for 4 sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
 
-So you just have to click on the small icon in the top right corner of your screen to select the identity you want to access and you will be immediately switched to it. 
+Clicking on the profile icon in the top right han dcorner will allow you to quickly switch identities.  
 
 {% include image.html url="/assets/img/access-my-apps/microshare-identity.png" description="microshare identity" %}
 
-Here for example we can simply navigate between two identities.
+Here, for example, we can simply navigate between two identities.
 
 
 ## 3. Navigate on my Account
@@ -69,17 +69,18 @@ To get started your homepage is full of applications. Just click on one of them 
 
 {% include image.html url="/assets/img/access-my-apps/demo-dashboard.png" description="microshare demo" %}
 
-Then by going to `Manage` you will have access to more advanced tools. If you want to better understand all of Microshare's tools continue on the technical documentation. 
+Then by going to `Manage` you will have access to more advanced tools.  
 
 {% include image.html url="/assets/img/access-my-apps/microshare-manage.png" description="microshare homepage" %}
 
+If you want to better understand all of Microshare's tools continue on the technical documentation:
 
 ##### > [Technical](../../../technical/quick-start/overview)
 
-If you are an administrator of your identity, specific documentation is available for you. 
+If you are an administrator of your identity, specific documentation is available for you: 
 
-##### > [Admin]()
+##### > [Admin](/docs/2/admin/admin-management/overview/)
 
 Finally, if you have created your account and want to use the installation tools, please continue here: 
 
-##### > [Installer]()
+##### > [Installer](/docs/2/installer/quick-start/overview/)
