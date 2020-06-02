@@ -8,20 +8,20 @@ toc: true
 ## Introduction
 ---------------------------------------
 
-Here you can find the answers to the most frequently asked questions about installations. On the other hand, you can ask yourself other questions and our documentation is here to answer them. 
+Here you can find the answers to the most frequently asked questions about the installation process. Our documentation is here to clarify the process of using the Microshare platform. 
 
-If after reading our documentation some questions remain incomplete for you then do not hesitate to contact us at `docs@microshare.io`.
+Have a question not answered here? Do not hesitate to contact us at `docs@microshare.io`!
 
 ---------------------------------------
 
-### Q. How should I start as an admin ? 
+### Q. How should I start as an admin? 
 <br>
 A. All the information concerning the administration of an entity is available in this part of the documentation: [Admin Management](../../../admin/admin-management/overview)
 <br>
 
 ---------------------------------------
 
-### Q. What and where is a dev EUI for my device?
+### Q. What and where is the dev EUI for my device?
 <br>
 A. A dev EUI is the unique identifier for each device. It can be found here on all Tabs Devices.
 <br>
@@ -41,7 +41,7 @@ A. The Tabs Motion Sensor has an infrared sensor on the side of the device. This
 
 ### Q. How can I tell the difference between the Tabs Temperature/ Humidity and the Air Quality Sensor?
 <br>
-A. To differentiate your devices, look at the information on the back. The Air Quality sensor has the model number ‘TBHV110’ and the temperature humidity sensor has the model number ‘TBHH100’. 
+A. To differentiate your devices, look at the information on the back. The Air Quality sensor has the model number ‘TBHV110’ and the Temperature/ Humidity sensor has the model number ‘TBHH100’. 
 <br>
 
 {% include image.html url="/assets/img/Install_FAQ_3.png" width="550" height="550" description="Motion Sensor" %}

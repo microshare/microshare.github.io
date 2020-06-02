@@ -25,12 +25,12 @@ The purpose of an installation is to allow the customer to use the data from the
 
 But for this, it is necessary to quickly understand what to install and why. 
 
-To start our sensors use LoRaWan technology, to better understand this technology you can read more information here: 
+To start our sensors use LoRaWan technology. To better understand this technology you can read more information here: 
 
 ###### > [LoRaWan Technology](../../../technical/lorawan/lorawan-technology)
 
 This technology works like this: 
-The sensor sends data via "Lora" to the gateway or to a public network. Thus the gateway or the public network LoRaWan are connected to the Internet via WIFI, Ethernet or 3G/4G/5G. 
+The sensor sends data via "Lora" to the gateway or to a public network. This way, the gateway or the public network LoRaWan are connected to the Internet via WIFI, Ethernet or 3G/4G/5G. 
 
 Then the data will be processed and used once in the cloud.
 
@@ -49,27 +49,29 @@ During the process of installation, it is crucial that you confirm that both the
 ## 2. Requirements
 ---------------------------------------
 
-To ensure proper installation it is best to check a few points: 
+To ensure proper installation it is best to check a few points:
 
-- have prepared the necessary quantity of sensors and gateways
-- It is better to know in advance the location of the sensors and gateways.
+Before installation you should...
+
+- have prepared the necessary quantity of sensors and gateways.
+- Know the location of the sensors and gateways in advance.
 - Have downloaded the [Deploy-M application](../../deploy-m/download-the-app).
-- Learn how to use [Deploy-M](../../deploy-m/app-guide)
-- Have prepared the [prerequisites](../../deploy-m/app-guide/#1-requirements) for using Deploy-M
-- Have all the necessary fixations for sensors and gateways (3M Stickers, Tabs Brackets, Velcro stickers ...)
+- Learned how to use [Deploy-M](../../deploy-m/app-guide).
+- Have prepared the [prerequisites](../../deploy-m/app-guide/#1-requirements) for using Deploy-M.
+- Have all the necessary fixations for sensors and gateways (3M Stickers, Tabs Brackets, Velcro stickers ...).
 - Have all the necessary tools for installation.
 
 ## 3. Steps
 ---------------------------------------
 
-To do this we will follow the following steps, first install the gateways, then install the devices (with the possibility of using Deploy-M for more efficiency), and then we will validate that the installation was successful.
+To do this we will follow the following steps: 
 
-###### > [Gateway Guide](../../lorawan/gateway-installation)
+###### > First install the [Gateways](../../lorawan/gateway-installation).
 
-###### > [Device Guide](../../lorawan/device-declaration)
+###### > Install the [Devices](../../lorawan/device-declaration).
 
-###### > [Deploy-M](../../deploy-m/app-guide)
+###### > Use [Deploy-M](../../deploy-m/app-guide) for a more efficient installation.
 
-###### > [Validation](../../quick-start/validation-of-a-succesfull-installation)
+###### > Finally, [Validate](../../quick-start/validation-of-a-succesfull-installation) that the installation was successful.
 
-If you have more question, you can have a look at our [FAQ about installations](../fag-about-installations) page
+If you have more question, you can have a look at our [FAQ about installations](../fag-about-installations) page.

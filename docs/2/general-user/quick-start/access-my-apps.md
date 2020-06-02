@@ -51,9 +51,9 @@ When creating an account, you were simply added to the `Microshare Default` iden
 
 If you are a Microshare customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare technology. 
 
-For example, for 4 sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
+For example, if you have four sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
 
-Clicking on the profile icon in the top right han dcorner will allow you to quickly switch identities.  
+Clicking on the profile icon in the top right hand corner will allow you to quickly switch identities.  
 
 {% include image.html url="/assets/img/access-my-apps/microshare-identity.png" description="microshare identity" %}
 

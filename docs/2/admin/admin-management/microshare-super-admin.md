@@ -23,13 +23,13 @@ toc: true
 ---------------------------------------
 
 1. To determine user access, first log into Microshare as the appropriate ms_admin account. 
-2. Head over to the Manage tab, then Keys, Organization. Here you can click on specific users next to the identity that you want to add them too 
-3. Add the client's email address in the email section
-4. Click the add button 
-5. Repeat for the other clients as necessary 
+2. Head over to the Manage tab, then Keys, Organization. Here you can click on specific users next to the identity that you want to add them too.
+3. Add the client's email address in the email section.
+4. Click the add button.
+5. Repeat for the other clients as necessary. 
 6. Client POC should send an email similar to the sample below to the clients who have just been added to:
-* confirm that they have been added correctly and 
-* confirm that they are able to see the appropriate dashboards as we've had customers reach back out to us with issues with both 
+* confirm that they have been added correctly.
+* confirm that they are able to see the appropriate dashboards as we've had customers reach back out to us with issues with both.
 
 Email Sample: 
 

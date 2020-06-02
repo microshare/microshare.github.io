@@ -9,9 +9,7 @@ toc: true
 
 You want to see how Microshare's dashboards looks like ? 
 
-Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null),ou will have access to few of our multiples dashboards. Like the picture bellow show you, you have access to many apps. <br>
-
-Please, help yourself
+Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), you will have access to few of our dashboards. As seen in the graphic below, you have access to many apps. <br>
 
 <a href="https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null">
     {% include image.html url="/assets/img/demo-dashboard.jpg" description="Demo Suite App" %}

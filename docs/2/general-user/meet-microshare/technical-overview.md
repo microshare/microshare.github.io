@@ -22,7 +22,7 @@ toc: true
 - Data can be stored both in our Data Lake and in any other storage on-premise or in the cloud.
 
 ## 2. Runs everywhere
-- microshare™ can run as-a-service from our secure cloud.
+- Microshare™ can run as-a-service from our secure cloud.
 - We can run all or part of the service in your Data Center. 
 - We can also run directly on devices.
 
