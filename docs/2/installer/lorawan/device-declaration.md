@@ -1,62 +1,56 @@
 ---
 layout: docs
-title: title
+title: Device Declaration
 description: description
 toc: true
 ---
-
-Inro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [Possibilities](./#1-part-A)
+2. [Device Cluster Creation](./#2-part-2)
+2. [Add a device](./#2-part-2)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
-## 1. Part1
+## 1. Possibilities
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+In the management of devices to install sensors there are two solutions. 
 
-### A. Sub Part 1
+The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
+The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
 
-### B. Sub Part 2
+For both methods you need to create the cluster device first and then add the sensors. 
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+PS: Device Clusters are often managed by the admin, please anticipate the needs with the admin to understand how devices are distributed by device clusters. 
 
 
-## 2. Part 2
+## 2. Device Cluster Creation
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+To create a cluster device we will take the basic information here. If you need, you will find more information [here]().
 
-## 3. Part 3
+Firstly, a device cluster represents a grouping of sensors. This is first of all done by sensor type. A cluster device cannot contain two types of sensors. Then cluster devices are often cross-referenced by global location (site or building) and finally by usecase.
+
+Let's take an example, we have for example temperature sensors that we want to install in our WeWork building.
+
+We know as follows: 
+the type of sensor: Tabs Environment TBHV100
+the global location: Europe,UK,London,Paddington,5 merchant Square
+the use case: temperature management
+
+We can now create the cluster device. As previously recalled the cluster device are normally on the main administrator account. And this one is usually created by the administrator. You will simply make a request to the administrator of your entity to create the necessary cluster device.
+
+## 3. Add a device
 ---------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+Once the cluster device has been created, all that remains to be done is to add the sensors. You can follow the [device cluster guide]() to add the devices the old way. 
 
-### A. Sub Part 1
+Or simply download the [Deploy-M application]() and follow this tutorial to use it and add all your sensors very quickly directly on site. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### B. Sub Part 2
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
-
-### C. Sub Part 3
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+##### > [Deploy-M Guide]()

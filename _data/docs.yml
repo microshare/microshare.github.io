@@ -19,9 +19,9 @@
   - title: Admin Management
     pages:
     - title: Overview
-    - title: First step as an Admin
-    - title: Microshare Super Admin
-    - title: FAQ Admin
+    - title: Identity Admin
+    - title: MS Admin
+    - title: Super Admin
 
 - title: Installer
   subpages:
@@ -77,7 +77,3 @@
     - title: LoRaWan Technology
     - title: LoRaWan Gateways
     - title: LoRaWan Sensors
-  - title: Extra Information
-    pages:
-    - title: PowerBI
-    - title: Microshare Security
