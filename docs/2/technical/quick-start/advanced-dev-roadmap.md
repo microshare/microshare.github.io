@@ -1,62 +1,45 @@
 ---
 layout: docs
-title: title
-description: description
+title: The Advanced Developer's Roadmap to Microshare
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
+ [microshare](https://microshare.io) 
 
 ---------------------------------------
 
-##### SUMMARY : 
+##### What else can a developer do?
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the "Microshare Platform Advanced" section and follow the folowing steps:
 
----------------------------------------
+#### 1. Creating Robots
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
-
-## 1. Part1
----------------------------------------
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### A. Sub Part 1
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Use the [Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) to learn how you can create robots to automate tasks within your system. Additionally, the Robots Guide will go over the alerts setting, allowing you to create notifications for when an event occurs. Upon Completion, the [Robots Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great resource to find examples of robots in action.
 
 
-## 2. Part 2
----------------------------------------
+#### 2. Creating Complex Requests with Microshare's API
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+Now that you have become familar with creating [Simple Requests](/docs/2/technical/api/simple-requests/) with Microshare's API, its now time to communicate with the API to draw more information using [Complex Requests](/docs/2/technical/api/complex-requests/)
 
-## 3. Part 3
----------------------------------------
+#### 3. Working with Identities
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/identity-guide/), you will find that different identities have different access to viewing, creating, and owning information. Understanding the applications of different identities will better allow you to determine who gets to see certain information and have access to certain robots, devices, clusters and rules when working for different clients of Microshare.  
 
-### A. Sub Part 1
+#### 4. Creating Dashboards
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organise apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. Although the Dashboards Guide is not under the advanced section, but the guide dives heavily into advanced material. 
 
-### B. Sub Part 2
+#### 5. Data Management/ Workflow
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+Finally, you will learn how to manage your data within Microshare. It is crucial that you have first followed the [Creating Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/) steps, as they will play a key role in managing data. The path of Data management is:
 
-### C. Sub Part 3
+1. [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
+2. [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
+3. [Data Formatting](/docs/2/technical/microshare-platform-advanced/data-formatting/)
+4. [Data Formating by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/)
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
+
+
+
+

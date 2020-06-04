@@ -22,7 +22,7 @@ toc: true
 
 ### A. Development or Production
 
-Microshare consists of two environments, the development environment and the production environment; each has its own characterisitcs and fufill different needs. 
+Microshare consists of two environments, the development environment and the production environment; each has its own characterisitics and fufill different needs. 
 
 Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
