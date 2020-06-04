@@ -17,6 +17,16 @@ toc: true
 
 ---------------------------------------
 
+## 1. What are the Administrator's responsibilities?
+---------------------------------------
+
+
+The administrator controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Apps](/docs/2/technical/microshare-platform/dashboard-guide/) for their data and devices. The administrator is supported by a 'Microshare Super Admin', who helps you manage your devices and data. 
+These roles are further explored in the [Types of Administrators](./#3-types-of-administrators) section.
+
+While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`. 
+
+
 
 
 ### 1. Providing Client Access via Microshare
