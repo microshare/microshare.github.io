@@ -9,7 +9,7 @@ toc: true
 
 * With your Postman environment setup, you can authenticate to the service by running the request `Authentication -> Request token` for the collection.   
 
-* An access token, valid for 48h is generated and returned under the `access token` key in the result set.
+* An access token, valid for 48 hours, is generated and returned under the `access token` key in the result set.
 
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
 

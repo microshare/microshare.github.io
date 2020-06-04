@@ -1,62 +1,77 @@
 ---
 layout: docs
-title: title
-description: description
+title: The Novice Developer's Roadmap to Microshare
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
+[microshare](https://microshare.io)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [Where do I start?](./#1-where-do-i-start)
+2. [Creating your Microshare Developer Account](./#2-creating-your-microshare-developer-account)
+3. [Working with the API](./#3-becoming-familiar-with-the-microshare-api)
+4. [Getting started with the Microshare platform](./#4-getting-started-with-the-microshare-platform)
+5. [Ready for more](./#5-ready-for-more)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+### 1. Where do I start?
+There may seem like a lot of resources for the developer, and this page serves to outline the steps you should follow to learn how to interact with the Microshare platform. 
 
-## 1. Part1
+After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
+
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+### 2. Creating your Microshare Developer account
 
-### A. Sub Part 1
+Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating Device Clusters, Dashboards, editing Views, creating Rules and Robots. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
-
-
-## 2. Part 2
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+### 3. Becoming familiar with the Microshare API
 
-## 3. Part 3
+##### Authentication
+
+First, Head over to the API Quick Start to install the Postman application, and learn the terminology of Microshare's API. Next
+use the [Authentication Guide](/docs/2/technical/api/authentication/) where will learn how to navigate the security features of Microshare's API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
+
+##### Simple Requests
+
+Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare's API. Understanding these concepts are the fundamental behind working with Robots and Device Clusters moving forward. 
+
 ---------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+### 4. Getting Started with the Microshare Platform
 
-### A. Sub Part 1
+Once you have set yourself up in the developer environment, follow the next steps to interact with the Microshare environment.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+##### Device Clusters
 
-### B. Sub Part 2
+[Device Clusters](/docs/2/technical/microshare-platform/device-cluster-guide/) allow you to group your devices that are in similar locations, combining the individual devices' data together. From here, you can create apps to display an analyse the cluster's information, and use rules to what extent others may view that information. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+##### Views
 
-### C. Sub Part 3
+[A View](/docs/2/technical/microshare-platform/views-guide/) is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules. 
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+##### Dashboard
+
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organise apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. It is important to note that a lot of the material under the Dashboard Guide fall under the Advanced Developer catagory. 
+
+##### Rules 
+
+[A Rule](/docs/2/technical/microshare-platform/rules-guide/) is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
+
+---------------------------------------
+
+
+### 5. Ready for more?
+
+Head on over to the [Advanced Developer's Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) to take a deeper dive into incteracting with the Microshare platform.
+
+Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
+
+
+
