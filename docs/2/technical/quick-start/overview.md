@@ -1,62 +1,29 @@
 ---
 layout: docs
-title: title
-description: description
+title: Overview
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
+[microshare](https://microshare.io) 
 
 ---------------------------------------
 
-##### SUMMARY : 
-
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
-
+## 1. Overview
 ---------------------------------------
-
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
-
-## 1. Part1
----------------------------------------
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### A. Sub Part 1
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+Microshare brings data of your environment to your fingertips, but how? Underneath Microshare’s plug-n-play module lies a system of collecting data and communicating the results through our API. As you can see, the Technical side of the documentation site is separated into Microshare Platform, API and LoRaWAN categories. These three sections represent the columns of Microshare’s technical structure. 
 
 
-## 2. Part 2
----------------------------------------
+{% include image.html url="/assets/img/LoRa00.png" description="LoRa" %}
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
 
-## 3. Part 3
----------------------------------------
+Firstly, Microshare uses hardware set around the client’s environment to communicate with our API. This is done via three type of devices: Sensors, Gateways and our Networks. The sensor is a LoRaWAN device which collects data and sends that information via Lora signal to the LoRaWAN Gateway, which is also installed in the environment. That Gateway then sends the information to the Microshare Network via cellular or WiFi signal. The Microshare API takes the information, and represents it within your dashboard, which you can access on the [app](https://app.microshare.io/) website or on the Deploy- M app. You can learn how these devices are installed [here](/docs/2/technical/api/authentication/).
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
 
-### A. Sub Part 1
+The API, or Application Programming Interface, has Microshare’s specific protocols and tools to communicate the devices data. Microshare’s API takes many security procautions to ensure the protection of client data, understanding [Authentication](/docs/2/technical/api/authentication/) will be crucial for learning the interface. Learning simple requests will allow you to create and manage your data within Microshare’s data lake.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
 
-### B. Sub Part 2
+The Microshare Platform allows the control over the visualization of the data collected by the devices. Creating a Device Cluster, you can group data from multiple devices to be represented together. Creating an App allows you to customize how that data is represented. Implementing Rules and Views allow you to control who has access to certain data, and Robots allow you to automate certain tasks within the platform. Identities give certain clearance to view data,further regulating who has access to certain tools and information. All tools are key components to the platform, and allow you to have complete control over your data. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
 
-### C. Sub Part 3
+As a developer, you will explore the features and applications of these components in greater detail. [The Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/) walks you through, step- by- step, how you can best become familiar with what Microshare has to offer behind the scenes. Furthermore, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more difficult concepts of the Microshare Platform and API. 
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
