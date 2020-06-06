@@ -11,56 +11,58 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Providing Client Access via Microshare](./#1-part-A)
-2. [Setting Favorites](./#2-part-2)
+1. [Quick Start](./#1-part-A)
+2. [Setting Favorite](./#2-part-2)
+
 
 
 ---------------------------------------
 
-## 1. What are the Administrator's responsibilities?
+## 1. Quick Start
 ---------------------------------------
 
+Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page]() of the Admin part explains this very well. Because indeed you are administrator of the ms_admin account but this includes being administrator of the corresponding identities.
 
-The administrator controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Apps](/docs/2/technical/microshare-platform/dashboard-guide/) for their data and devices. The administrator is supported by a 'Microshare Super Admin', who helps you manage your devices and data. 
-These roles are further explored in the [Types of Administrators](./#3-types-of-administrators) section.
+##### As administrator your first role will be to create the device clusters on Microshare.
 
-While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`. 
+{% include image.html url="/assets/img/cards/dc-card.png" description="Banner" width="200" %} 
 
+In order add the sensors using your computer. Or for your installer to use the Deploy-M application to install all the sensors very quickly. 
 
+To do this please follow the Technical tutorial on how device clusters work and follow the best practices.
 
+###### > [Device Clusters](/docs/2/technical/microshare-platform/device-cluster-guide/)
+<br>
 
-### 1. Providing Client Access via Microshare
----------------------------------------
+##### The administrator controls also a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
 
-1. To determine user access, first log into Microshare as the appropriate ms_admin account. 
-2. Head over to the Manage tab, then Keys, Organization. Here you can click on specific users next to the identity that you want to add them too.
-3. Add the client's email address in the email section.
-4. Click the add button.
-5. Repeat for the other clients as necessary. 
-6. Client POC should send an email similar to the sample below to the clients who have just been added to:
-* confirm that they have been added correctly.
-* confirm that they are able to see the appropriate dashboards as we've had customers reach back out to us with issues with both.
+{% include image.html url="/assets/img/cards/rule-card.png" description="Banner" width="200" %} 
 
-Email Sample: 
+Once the cluster devices are created, you will receive data on the ms_admin account. This data can be used to create applications or robots. But first of all you will be able to share it. 
 
- 
-{% highlight js %}
+To do this you will create shares rules. Notament has the identity who must use this data. So you will share the data of a cluster device only to the group of people registered to the selected identity. They will be able to use the data with the applications of the identity.
+<br>
 
-To: All clients who have just been provided access 
+##### The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/).
 
-Attach: Update this attachment to be specific for your client and insert a version of it in the email to your client  
+{% include image.html url="/assets/img/cards/robot-card.png" description="Banner" width="200" %} 
 
-All, 
+Robots are used on Microshare to automate tasks. For example to trigger an action when a particular event occurs. 
+For example send an email alert when a temperature in a room is exceeded.
 
- 
-I have just added you to be able to access the Microshare dashboards.  You will be able to access the (INSERT NAMES OF DASHBOARDS PROVIDED) Dashboards. 
+To do this, you just need to link a robot to a data stream from a cluster device. 
+People accessing the identity according to the rights you have given them with the sharing rules will be able to create their own robots on the data streams you share with them if they wish.
+But it is still advisable to have the general robots on the ms_admin account. This way you can simply make the email alerts be received by other users from one and the same robot.
+<br>
 
-I am also attaching a set of instructions to help you access the dashboards.  There are some common troubleshooting tips available if needed. 
+##### The administrator also has the ability to own [Apps](/docs/2/technical/microshare-platform/dashboard-guide/).
 
- 
-Please reach out to support@microshare.io if you have any questions or run into any issues. 
+{% include image.html url="/assets/img/cards/app-card.png" description="Banner" width="200" %} 
 
-{% endhighlight %}
+For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare Default identity which is particular. 
+
+On the other hand, seeing the applications does not mean that they will work because it is necessary to have shared the data correctly with the users of the identity, for these applications to be able to use the data.
+
 
 ### 2. Setting Favorites
 ---------------------------------------
