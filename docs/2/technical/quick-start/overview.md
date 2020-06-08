@@ -1,62 +1,41 @@
 ---
 layout: docs
-title: title
-description: description
+title: Technical Overview
+description: A guide to interacting with Microshare Technology
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
-
----------------------------------------
-
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [Introduction](./#1-introduction-the-architecture)
+2. [What can you expect to work with](./#2-what-can-you-expect-to-work-with)
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+## 1. Introduction: The Architecture
 
-## 1. Part1
+
+The Microshare Platform is built as a set of microservices to communicate data from your devices to you. The platform operates through JSON based RESTful API calls which makes it very applicable to other systems. The data is stored in the Microshare Data Lake, any other on-storage premise or the cloud. 
+ 
+The Microshare service is very versatile in that Microshare can run on directly on all devices, through our secure cloud, or your Data Center. 
+
 ---------------------------------------
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### A. Sub Part 1
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+## 2. What can you expect to work with?
 
 
-## 2. Part 2
----------------------------------------
+As a developer, you will mostly be working with the Microshare platform and the API. You can get started with understanding how to work with these tools in the [Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/).  After walking through the basic developer roadmap, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more complicated interactions with the Microshare platform and API. Additionally, the [Technical Struture Page](/docs/2/technical/quick-start/microshare-technical-structure/) guides you through the framework on how the components interact with each other to a greater extent. 
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+#### The Microshare Platform
 
-## 3. Part 3
----------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+The [Microshare Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare Platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administer who can see your devices’ data. 
 
-### A. Sub Part 1
+#### The Microshare API
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
 
-### B. Sub Part 2
+You will first interact with the [Microshare API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare Platform. You will learn basic calls to receive information from Microshare to implement into your Microshare Dashboard. The Microshare Structure takes many cryptic precautions to ensure the privacy of the user, and interactions with the Microshare API will help you navigate these characteristics. 
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+#### LoRaWAN Technology
 
-### C. Sub Part 3
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+LoRaWAN devices are the sensors that you will use to collect data on your environment. They use a signal called Lora rather than Wi-Fi or a cellular signal to communicate with LoRaWAN gateways. Lora provides a significantly larger area of communication and extends the battery life of the devices. LoRaWAN gateways take the information from the sensors and send them to the Micoshare Network, where the data is represented on your dashboard. The [LoRaWAN Technology](/docs/2/technical/lorawan/lorawan-technology/) page describes the relationship and technology in greater detail, while the [LoRaWAN Sensors](/docs/2/technical/lorawan/lorawan-sensors/) and [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways/) pages explore the specific models of devices that you will work with. 

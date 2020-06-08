@@ -16,10 +16,10 @@ Intro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
-## 1. Part 1
+## 1. Adding Devices
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+List out the things that you have to do to edit the device/ make a cluster
 
 ## 2. Updating a Device Cluster
 ---------------------------------------
