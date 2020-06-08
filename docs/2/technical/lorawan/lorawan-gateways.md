@@ -4,8 +4,6 @@ title: LoRaWAN Gateways
 toc: true
 ---
 
- [microshare.io](https://microshare.io) 
-
 ---------------------------------------
 
 ##### SUMMARY : 
