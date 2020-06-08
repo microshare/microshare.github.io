@@ -1,62 +1,74 @@
 ---
 layout: docs
-title: title
-description: description
+title: Quick Start to the Microshare Platform
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
 
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [Introduction](./#1-introduction)
+2. [Setting up your account](./#2-setting-up-your-account)
+3. [Tools and abilities](./#3-tools-and-abilites)
+    - A. [Device Clusters](./#a-device-clusters)
+    - B. [Views](./#b-views)
+    - C. [Dashboards](./#c-dashboards)
+    - D. [Rules](./#c-rules)
+    - E. [Identities](./#e-identities)
+    - F. [Robots](./#f-robots)
+    - G. [Data Ingestion](./#g-data-ingestion)
+    - H. [Data Formatting](./#h-data-formatting) 
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
-## 1. Part1
+## 1. Introduction
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### A. Sub Part 1
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+The Microshare Platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. There is a difference between a general user and Developer. The general user only has access to the data and tools administered by their Admin. Meanwhile, the Developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user only has the jurisdiction over what has been mandated to them. 
 
 
-## 2. Part 2
+
+## 2. Setting up your Account
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+If you do not already have a developer account, follow the [Create an Account tutorial] to get started. If you already have an account, continue reading the background on the various Microshare tools, head over to [The developer login page]( https://dapp.microshare.io/login?requestURL=%2F) and start reading the [Technical Overview Page].
 
-## 3. Part 3
+## 3. Tools and Abilities
 ---------------------------------------
+Below is the list of the various tools and abilities you can expect to work with as a developer using the Microshare Platform:
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+### A. Device Cluster
 
-### A. Sub Part 1
+Device Clusters give you the ability to group data from sensors together. This is most useful for sensors in the same area. You can add Devices to the cluster either through the Deploy M app or via the Microshare Platform (refer to the [Device Clusters Page](/docs/2/technical/microshare-platform/device-cluster-guide/)). You can view the cluster data in the Dashboard. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
+### B. Views
 
-### B. Sub Part 2
+A view is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats. Views also put controls over data along with sharing rules. You can learn how to create and manage views through the [Views Guide](/docs/2/technical/microshare-platform/views-guide/).
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+### C. Dashboards
 
-### C. Sub Part 3
+The Dashboard is the place where you can view your apps. Your apps represent your devices’ data according to your preferences. [The Dashboard Guide](/docs/2/technical/microshare-platform/dashboard-guide/) will walk you through creating apps for your devices and configuring your apps to your preferences. 
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+### D. Rules 
+
+Rules allow the administrator to manage what data certain individuals can see. This enforces the security and shareability of your data. Refer to [The Rules Guide](/docs/2/technical/microshare-platform/rules-guide/) to learn how to create and customize your data’s rules.
+
+### E. Identities
+
+Your identity determines what data you can view, and what tools you are able to access and/ or create. As a developer, you will be alternating between identities to change what you are able to view. Use [The Identities Guide](/docs/2/technical/microshare-platform-advanced/identity-guide/) to learn how to create and alternate between your identities.
+
+### F. Robots
+
+Robots give the ability to automate certain tasks for your data. For example, you could program a robot to alert you if your sensor detects a significant temperature drop or if your meeting room is vacant. [The Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) will navigate you through the process of automating tasks according to your sensors, and [The Robot Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great source to refer to examples of task automation in Microshare.
+
+### F. Data Ingestion
+
+[The Data Ingestion Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-guide/) will walk you through moving your data from several sources to the Microshare data lake as microshares. Additionally, you can create a robot to automatically perform this task using [The Data Ingestion by Robots Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/).
+
+### F. Data Formatting
+
+You can set up automated multistep processes to route and transform your data so it’s ready to be consumed by an App or a Dashboard using [The Data Formatting Guide](/docs/2/technical/microshare-platform-advanced/data-formatting/) and automate this task using the [The Data Formatting with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/).
+

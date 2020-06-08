@@ -9,7 +9,7 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What are the Administrator Responsabilities](./#1-part-A)
+1. [What are the Administrator Responsibilities](./#1-part-A)
 2. [Identity Admin](./#2-part-2)
 3. [Type of Administrator](./#3-part-3)
 
@@ -25,7 +25,7 @@ Depending on the degree of administration you have powerful tools in your hands,
 While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`. 
 
 
-## 2. What Data or Apps are normally Shared?
+## 2. What Data or Apps are normally shared?
 ---------------------------------------
 
 By default the data from a device is NOT SHARED. Only the device cluster's owner can see it (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that record type to be created in order to allow other parties to view the data. The cluster device is managed by the MS admin.

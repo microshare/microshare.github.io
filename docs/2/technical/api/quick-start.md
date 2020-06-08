@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: API Quick Start
-description: description
 toc: true
 ---
 
@@ -9,16 +8,21 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Get an API key](./#1-get-an-api-key)
-2. [Setup Postman](./#2-setup-postman)
-2. [Demo API](./#demo-api)
-    - A. [Authentification](./#demo-api)
-    - B. [Simple Request](./#demo-api)
-    - C. [Complexe Request](./#demo-api)
+1. [Introduction](./#1-introduction)
+2. [Get an API key](./#2-get-an-api-key)
+3. [Setup Postman](./#3-setup-postman)
+4. [Demo API](./#4-demo-api)
+    - A. [Authentification](./#a-authentification)
+    - B. [Simple Request](./#b-simple-request)
+    - C. [Complex Request](./#c-complex-request)
 
 ---------------------------------------
+## 1. Introduction
 
-## 1. Get an API key
+You will us the Microshare API to set up your interactions with the Microshare Platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communivate with the Microshare Platform. This guide will walk you through setting up the Postman Software to interact with the API and start operating with the Microshare Platform.
+
+
+## 2. Get an API key
 ---------------------------------------
 
 Request an API key for authentication with the services.
@@ -32,7 +36,7 @@ You can then use Microshare Share API to read data from, as well as write data t
 * Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-## 2. Setup Postman
+## 3. Setup Postman
 ---------------------------------------
 
 This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](./api-collection) for a list of API call and move to the next section.
@@ -59,7 +63,7 @@ That's it! You now have access to the microshare API collection, and are setup t
 ###### > [Authentication](../authentication)
 ###### > [Simple Request](../simple-requests)
 
-## 3. Demo API
+## 4. Demo API
 ---------------------------------------
 
 To let you try out our API system, we have created demo APIs. 

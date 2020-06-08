@@ -11,11 +11,12 @@ toc: true
 1. [Introduction](./#1-introduction)
 2. [Types of Sensors](./#2-types of sensors)
 3. [Sensors Microshare Uses](./#3-sensors-microshare-uses)
-    - A. [Browan Sensors](./#a-browan-sensors)
-    - B. [Kerlink Wave](./#b-kerlink-wave)
-    - C. [Skiply Smilio Action Feedback Sensor](./#c-skiply-smilio-action-feedback-sensor)
-    - D. [Adeunis Temp 3 Sensor](./#d-adeunis-temp-3)
-    - E. [SmartEnds Sensors](./#e-smartends-brighterbins-smart-waste-sensors)
+- A. [Browan Sensors](./#a-browan-sensors)
+- B. [Kerlink Wave](./#b-kerlink-wave)
+- C. [Skiply Smilio Action Feedback Sensor](./#c-skiply-smilio-action-feedback-sensor)
+- D. [Adeunis Temp 3 Sensor](./#d-adeunis-temp-3)
+- E. [SmartEnds Sensors](./#e-smartends-brighterbins-smart-waste-sensors)
+4. [External Resources](./#4-external-resources)
 
 ---------------------------------------
 
@@ -143,6 +144,20 @@ The BrighterBin sensor detects when a waste bin is overflowing and alerts for co
 
 image from [Smart Ends](https://www.smartends.com/single-post/2019/05/09/A-new-IoT-sensor-device-for-a-growing-market-of-8-million-public-waste-bins)
 
+## 4. External Resources
+---------------------------------------
 
+### Interactive Development Environment
+* [Arduino IDE](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/arduino_ide)
+* [System Workbench ST32](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/system-workbench-st32-ide)
+
+### Device Tutorials
+* [SODAQ ExLoRer](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/sodaq_explorer)
+* [ST B-L072Z-LRWAN1 LoRa Discovery kit](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/st-b-1072z-lrwan1-discovery-kit)
+
+### Platform Tutorials
+* [Stream IoT packets from Senet to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/senet-tutorial)
+* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/ttn_tutorial)
+* [Configure Routing from Kerlink Gateway's SPN to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/kerlink-tutorial)
 
 
