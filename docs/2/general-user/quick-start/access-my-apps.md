@@ -12,6 +12,7 @@ toc: true
 1. [Log In](./#1-log-in)
 2. [Select my identity](./#2-select-my-identity)
 3. [Navigate on my account](./#3-navigate-on-my-account)
+4. [What Data or Apps are normally Shared?](./#3-navigate-on-my-account)
 
 ---------------------------------------
 
@@ -84,3 +85,15 @@ If you are an administrator of your identity, specific documentation is availabl
 Finally, if you have created your account and want to use the installation tools, please continue here: 
 
 ##### > [Installer](/docs/2/installer/quick-start/overview/)
+
+
+## 4. What Data or Apps are normally Shared?
+---------------------------------------
+
+By default the data from a device is NOT SHARED. Only the device cluster's owner can see it (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that record type to be created in order to allow other parties to view the data. The cluster device is managed by the MS admin.
+
+Apps, however, by default are shared at the organizational level. They do not require share rules to be created. They can't be restricted in access although they can be filtered out of the default user view using favorites. Ainsi l’accessibilité d’une entité est géré par toute personne étant accrédité comme un administrateur d’identité.
+
+Robots are visible to only the creator. There is not currently a mechanism to share robots. 
+
+It is possible to share views very simply so that they can be reused by another user, but simply their use will be shared, they will not be visible on the account of the one who receives the right to use them. 

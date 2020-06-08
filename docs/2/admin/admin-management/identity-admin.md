@@ -8,7 +8,7 @@ toc: true
 ---------------------------------------
 
 
-### 1. Providing Client Access via Microshare
+### Providing Client Access via Microshare to the identity
 ---------------------------------------
 
 If you are the administrator of an identity you will be able to add people to it. To better understand the identities you can read our [identity guide]().

@@ -12,13 +12,6 @@ Inro sentence [link](https://microshare.io) (non required)
 ##### SUMMARY : 
 
 1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
 
 ---------------------------------------
 
