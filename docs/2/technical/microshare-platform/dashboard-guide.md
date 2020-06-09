@@ -5,9 +5,7 @@ description: Understanding your Apps
 toc: true
 ---
 
-[microshare.io](https://microshare.io) 
 
----------------------------------------
 
 ##### SUMMARY : 
 
@@ -20,13 +18,16 @@ toc: true
 7. [Configuring other components of the Touchfree feedback App](./configuring-other-components-of-the-touchfree-feedback-app)
   
 
----------------------------------------
+
 
 
 ## 1. Types of Dashboards
 ---------------------------------------
 
-There are two types of dashboards, dashboards for your trending apps and dashboards for your realtime apps. Trending Apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
+There are two types of dashboards:
+* dashboards for your trending apps
+* dashboards for your realtime apps. 
+Trending Apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
 
 
 
@@ -34,19 +35,27 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
 ---------------------------------------
 
  1. Configure the client accounts and identities and differentiate between which accounts will have the ability to own the apps or own the data. 
- 2. Create a Push on the Network
- 3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` )
+ 2. Create a Push on the Network.
+ 3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
  
 
  
 ## 3. Dashboard Configuration
 ---------------------------------------
 <!--Add Pictures??-->
- 1. Create [Rules](./#2-dashboard-configuration)  to share the views to the customer organization through the [assets@microshare.io](./assets@microshare.io) account 
- * Check ON Active
- * Use the Record Type: io.microshare.fm.master.agg
- * Check ON Operations: Read, Query, and Execute
- 2. Create a New App with the configuration:
+ #### 1. Create Rule
+ * Create [Rules](/docs/2/technical/microshare-platform/rules-guide/) to share the views to the customer organization through the [assets@microshare.io](./assets@microshare.io) account.  
+ 
+ {% include image.html url="\assets\img\dashboard-guide-1.png" height="900" width="900" description="Dashboard Guide1" %}
+ 
+ * Check ON Active, underlined in blue. 
+ * Use the Record Type: io.microshare.fm.master.agg underlined in red.
+ * Check ON Operations: Read, Query, and Execute underlined in green.
+ 
+ #### 2. Create a New App with the configuration:
+ 
+ {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
+ 
  * `App Type`: Display
  * `Parent Tag(s)`: Leave Blank
  * `Style Choice`: Showcase
@@ -56,17 +65,21 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
  * `Form to display`: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
  * `Facts`: See next section for specific details
  
- {% include image.html url="/assets/img/Tech_Dash.png" description="Dashboardsettings" %}
+
  
 
 ## 4. App Facts
 ---------------------------------------
 <!-- I need help from Julien on this one-->
 ### For all apps
+Create a new fact by pressing the button above the green arrow and hitting apend. 
+
+{% include image.html url="\assets\img\dashboard-guide-3.png" height="900" width="900" description="Dashboard Guide3" %}
+
 * `appTitle`: Should match the name you provided as the app’s Name (above)
 * `navOptions`: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
 * `selectionOptions`: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
-* `dataRecType`: math teh target recType of the device cluster
+* `dataRecType`: math the target recType of the device cluster
 * `dataContext`: Use the meta tag you chose in the device cluster
 * `queryId`, `queryId1`, `queryId2`, `queryId3`: it is recommended to leave the query settings the same as they are in the example json
 * `footerLogo`, `headerLogo`, `header SecondaryLogo` and `get RecType`: leave untouched unless requested otherwise
@@ -79,7 +92,7 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
 
 ### Trending Apps
 
-1. Optional Parameters:
+#### 1. Optional Parameters:
 * `location1`: title of location1 dropdown 
 * `location2`: title of location2 dropdown 
 * `location3`: title of location3 dropdown
@@ -89,16 +102,16 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
 * `colorOfThresholdBand`: shade the ideal range on charts
 * `colorOfOffHoursBand`: shade the off-hours on charts
 
-2. Feedback Charts: 
+#### 2. Feedback Charts: 
 * The `fieldName` determines what kind of chart will be displayed, must be set to "feedback"
 * `buttons`: the label dact can be set to anything, set the hide fact to true for buttons that you do not need
 
-3. Trending Usage and Trending Access Usage (include only one chart):
+#### 3. Trending Usage and Trending Access Usage (include only one chart):
 * `fieldName`: must be "counter"
 * `title`: Give a name for the chart
 * `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available
 
-4. Trending Desk Availability (Use only one chart):
+#### 4. Trending Desk Availability (Use only one chart):
 * `fieldName`: must be "occupied"
 * `title`: Give a name for the chart
 * `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available
@@ -106,12 +119,12 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
 * If “columns” parameter is NOT included, default columns are “Active Desks” and “Configured Desks” 
 * If unrecognized column name is included, this is plotted as if it were “Active Desks” - this allows the fulfillment to customize the name of this line 
 
-5. Trending Refrigerator (can include up to two charts):
+#### 5. Trending Refrigerator (can include up to two charts):
 * `fieldName`: "internal temp" and/or "external temp"
 * `convertTempToFahrenheit`: set to true to convert the data from Celsius to Fahrenheit
 * `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available
 
-6. Air Quality (up to six charts) and Environment (up to two charts):
+#### 6. Air Quality (up to six charts) and Environment (up to two charts):
 `feildName` for Air Quality: temp, humidity, co2, voc, pressure and/or illuminance
 `feildName` for Environment: temp and/ or humidity
 
@@ -119,6 +132,7 @@ There are two types of dashboards, dashboards for your trending apps and dashboa
 ---------------------------------------
 A Suite App allows you to encapsulate multiple apps into a single interface that is more straightforward to configure and navigate than using the sandwich menu in the trending or realtime forms.  It’s easy to set up one or more suite apps that group "child" apps together. 
 1. Create a new App:
+{% include image.html url="\assets\img\dashboard-guide-4.png" height="900" width="900" description="Dashboard Guide 4" %}
 * `App Type`: Suite
 * `Name`: Enter the user- facing name for the new application
 * `Parent Tag(s)`: (Optional) this allows suite app to itself be configured within another suite app
@@ -145,7 +159,9 @@ The Touchfree app creates business events tied to specific locations just like t
 
 You will still need to plan out your tagging system even if you are creating a Touchfree app which is not tied to physical devices. If you already have a device template (ie a file already in the proprietary format used to create a device cluster in the Microshare platform), you can start with that.  Create a spreadsheet with a header row that includes Location1, Location2, Location3, as well as a new DataContext column that describes your tagging system.  Note that you CAN use your existing device templates that can now me imported to create the device cluster in the Microshare platform.  Let’s call this file, the location schema. 
 
- ### Create a new App with the configurations:
+ **Create a new App with the configurations:**
+ 
+ {% include image.html url="\assets\img\dashboard-guide-5.png" height="900" width="900" description="Dashboard Guide 5" %}
 * `App Type`: Display
 * `Parent Tag(s)`: leave blank
 * `Style Choice`: showcase

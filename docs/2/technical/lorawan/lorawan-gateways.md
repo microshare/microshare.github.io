@@ -17,7 +17,7 @@ toc: true
 
 {% include image.html url="/assets/img/LoRaWan/LoRaWan06.png" description="LoRaWan Technology" %}
 
-As seen above, the gateways serve as the bridge between your devices and the network server using bandwidth networks like WiFi, Ethernet or Cellular to communicate. LoRaWAN gateways have the ability to recieve LoRa packets from your device, while regular gateways rely on WiFi or Cellular technology (3G, 4G, 5G, etc.). 
+As seen above, the gateways serve as the bridge between your devices and the network server using bandwidth networks like WiFi, Ethernet or Cellular to communicate. LoRaWAN® gateways have the ability to recieve LoRa packets from your device, while regular gateways rely on WiFi or Cellular technology (3G, 4G, 5G, etc.). 
 
 Gateways run on an operating system such as Kerlink IoT Station which is run behind the scenes interpreting your device's packets. The Gateway Admin will use this operating system to manage their gateway. 
 
@@ -75,7 +75,7 @@ Our [installation page](/docs/2/installer/lorawan/gateway-installations/outdoor-
 
 ### 3. More information on gateways
 
-The LoRaWAN gateways used by Microshare fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
+The LoRaWAN® gateways used by Microshare fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
 
 
 

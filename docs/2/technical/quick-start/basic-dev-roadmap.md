@@ -4,8 +4,6 @@ title: The Novice Developer's Roadmap to Microshare
 toc: true
 ---
 
-[microshare](https://microshare.io)
-
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -19,7 +17,7 @@ toc: true
 ---------------------------------------
 
 ### 1. Where do I start?
-There may seem like a lot of resources for the developer, and this page serves to outline the steps you should follow to learn how to interact with the Microshare platform. 
+There may seem like a lot of resources for the developer, and this page serves to outline the steps you should follow to learn how to interact with the Microshare Platform. 
 
 After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
 
@@ -35,8 +33,8 @@ Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-
 
 ##### Authentication
 
-First, Head over to the API Quick Start to install the Postman application, and learn the terminology of Microshare's API. Next
-use the [Authentication Guide](/docs/2/technical/api/authentication/) where will learn how to navigate the security features of Microshare's API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
+First, Head over to the [API Quick Start](/docs/2/technical/api/quick-start/) to install the Postman application, and learn the terminology of Microshare's API. Next
+use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare's API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
 
 ##### Simple Requests
 

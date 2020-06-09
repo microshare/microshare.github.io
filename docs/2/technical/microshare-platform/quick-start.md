@@ -27,14 +27,16 @@ toc: true
 ## 1. Introduction
 ---------------------------------------
 
-The Microshare Platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. There is a difference between a general user and Developer. The general user only has access to the data and tools administered by their Admin. Meanwhile, the Developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user only has the jurisdiction over what has been mandated to them. 
+The Microshare Platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. 
+
+There is a difference in what a general user and developer have the ability to do. The general user only has access to the data and tools administered by their Admin. Meanwhile, the Developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user can only view what data has been mandated to them. 
 
 
 
 ## 2. Setting up your Account
 ---------------------------------------
 
-If you do not already have a developer account, follow the [Create an Account tutorial] to get started. If you already have an account, continue reading the background on the various Microshare tools, head over to [The developer login page]( https://dapp.microshare.io/login?requestURL=%2F) and start reading the [Technical Overview Page].
+If you do not already have a developer account, follow the [Create an Account Tutorial](/docs/2/general-user/quick-start/create-an-account/) to get started. If you already have an account, continue reading the background on the various Microshare tools, head over to [The developer login page]( https://dapp.microshare.io/login?requestURL=%2F) and start reading the [Technical Overview Page](/docs/2/technical/quick-start/overview/).
 
 ## 3. Tools and Abilities
 ---------------------------------------

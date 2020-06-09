@@ -27,7 +27,7 @@ Microshare's Smart Facilities solutions are powered by devices that quickly and 
 
 LoRaWAN devices offer a more effiecient solution to communicate data than cellular or WiFi. Sending information via Lora, the range of communication increases to hundreds of square kilometers. The power efficiency of LoRa Devices far exceed their WiFi or Cellular counterparts, giving a battery life of your devices up to six years. 
 
-Microshare sets up your solution before it even arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare. Have more questions on Microshare's solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/)
+Microshare sets up your solution before it even arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare. Have more questions on Microshare's solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/).
 
 ## 2. Types of Sensors
 ---------------------------------------
@@ -115,7 +115,7 @@ Although Kerlink products are mostly used as [LoRaWAN Gateways]() for your devic
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Kerlink_Wave.png" height="250" width="250" description="Kerlink" %}
 
-picture taken from the [Kerlink Website](https://www.kerlink.com/product/wanesy-wave/)
+picture from the [Kerlink Website](https://www.kerlink.com/product/wanesy-wave/)
 
 
 ### C. Skiply Smilio A- Microshare 5 Button Feedback Sensor
