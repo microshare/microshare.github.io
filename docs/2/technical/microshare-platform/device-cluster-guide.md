@@ -47,6 +47,9 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 * 	Add the tags describing the location of the device. For example, include tags for the city, building, room, and what part of the room
 * 	Repeat these steps for all of your devices that you wish to add to the cluster
 9.	Underlined in teal is your network provider. Click the drop down and select the appropriate network.
+
+##### <!> These following steps are not often used just take care of them if you are using Lora OTAA <!>
+
 10.	Underlined in green is a LoRa OTAA checkbox. OTAA stands for Over the Air Authentication. This is a gateway with extra data security. If you plan on using this service for your device cluster, check this box. Only follow the next few steps if you are using LoRa OTAA
 
 {% include image.html url="\assets\img\device-cluster-image-4.png" height="900" width="900" description="Device Cluster 4" %}
