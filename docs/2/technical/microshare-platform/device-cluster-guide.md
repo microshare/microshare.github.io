@@ -12,6 +12,7 @@ toc: true
 1. [Introduction](./#1-introduction-what-is-a-device-cluster)
 2. [Creating a Device Cluster](/.#2-creating-a-device-cluster)
 3. [Updating a Device Cluster](/.#3-updating-a-device-cluster)
+4. [Reauthorizing a Device Cluster](/.#4-reauthorizing-a-device-cluster)
 
 ---------------------------------------
 
@@ -38,7 +39,13 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 3.	Make sure your Cluster is turned on. Make sure the box underlined in green is checked.
 4.	The Record types are underlined in blue. The source record type is where the device cluster’s data is coming from. The target record type is the name under which your data from the device clusters will be stored. The naming convention works where the the first part of the rectype details who made the naming convention. So for example, if comcast owned the record type, their source record type would be com.microshare.environment. The unpacked label for the target rectype details that the data has been decrypted, which is very important for when you call on the rectype to be represented in your dashboard. As of right now, Microshare is the only source of naming the client’s rectypes, but the ability for clients to create their own naming conventions exists. 
 5.	Underlined in orange is the device manufacturer box. Click the drop down and select the type of device your device cluster has. Selecting the model will automatically fill in the box labeled Device Payload Unpacker.
-6.	Underlined in purple is the location metadata category. Enter tags detailing the location of the device so it is easier to identify the device later-on. For example, you should enter a tag for what city, building and room the device is in.
+6.	Underlined in purple is the location metadata category. Enter tags detailing the location of the device cluster so it is easier to identify the devices later-on, it's a general location for all the devices of the device cluster. Here is an exemple of what it should be : 
+
+* *Europe,United Kingdom,London,5 Merchant Square,desk*
+
+So as you can understand the structure is as follows: 
+
+`continent` **/** `country` **/** `city` **/** `address` **/** `usecase`
 
 {% include image.html url="\assets\img\device-cluster-image-3.png" height="900" width="900" description="Device Cluster 3" %}
 7.	Underlined in yellow is where your cluster performance will be graphed when you add your devices to the cluster in the next step.
@@ -67,109 +74,28 @@ You can also learn to create rules and views to manage who can see the data from
 
 ## 3. Updating a Device Cluster
 ---------------------------------------
-There's currently a bug that at times when a Device Cluster has been updated, there is duplicate data unpacked.  In order to mitigate this before the bug is fixed, do the following when you update a Device Cluster to confirm that there's only one Device Cluster 
 
-1. Update the Device Cluster 
+To update your cluster device, simply go to the Device Cluster page, then click update. You will be able to modify the information of your cluster device and your devices. 
 
-2. View the logs/write a query to see if duplicate data is being unpacked 
+Warning: 
+* You won't be able to change the rectypes
+* Do not reuse an old cluster device for a new type of device. It is better to create a new cluster device for this purpose.
 
-Query to check for a single device:
+You can simply upgrade your cluster device and it will work. 
 
-{% highlight js %}
-  [ 
+If you feel that your changes have not been taken into account, please click on re-authorize on the update page.
 
-  { 
+## 4. Reauthorizing a Device Cluster
+---------------------------------------
 
-    "$match": { 
+With Microshare you have the possibility to reauthorize a cluster device, you can do the same thing with a robot as well. 
 
-      "recType": "io.microshare.occupancy.unpacked", 
+What does reauthorize mean?
 
-      "data.device.id": "58-A0-CB-00-00-10-B1-55" 
+To understand this it is necessary to understand the principle of [identity](../../microshare-platform-advanced/identity-guide). And ownership linked to share rules. 
 
-    } 
+The reauthorization will allow to reassociate the ownership of a cluster device. When you click on this button, Microshare will take the account under which you are logged in, as well as the identity you are currently on, and will reauthorize the ownership and identity of the Device Cluster. 
 
-  }, 
+This is especially useful when the device cluster has been created under the wrong identity. Because usually we recommend to create it under the Microshare Default identity.
 
-  { 
-
-    "$sort": { 
-
-      "data.meta.iot.time": -1 
-
-    } 
-
-  }, 
-
-  { 
-
-    "$limit": 25 
-
-  }, 
-
-  { 
-
-    "$project": { 
-
-      "time": "$data.meta.iot.time", 
-
-      "hour": { 
-
-        "$hour": { 
-
-          "date": { 
-
-            "$dateFromString": { 
-
-              "dateString": "$data.meta.iot.time" 
-
-            } 
-
-          }, 
-
-          "timezone": "America/New_York" 
-
-        } 
-
-      }, 
-
-      "status": "$data.status_label", 
-
-      "length": "$data.time_label", 
-
-      "sensor": "$data.device.id" 
-
-    } 
-
-  }, 
-
-  { 
-
-    "$group": { 
-
-      "_id": "$sensor", 
-
-      "pings": { 
-
-        "$push": { 
-
-          "time": "$time", 
-
-          "status": "$status", 
-
-          "length": "$length", 
-
-          "hour": "$hour" 
-
-        } 
-
-      } 
-
-    } 
-
-  } 
-
-]  
-{% endhighlight %}
-
-
-
+Be careful, changing the ownership of the data means that it can also impact the sharing of the data, if the Share Rules do not match anymore.

@@ -37,14 +37,17 @@ Trending Apps will graphically represent your data over any period you wish, whi
  1. Configure the client accounts and identities and differentiate between which accounts will have the ability to own the apps or own the data. 
  2. Create a Push on the Network.
  3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
- 
 
- 
-## 3. Dashboard Configuration
----------------------------------------
-<!--Add Pictures??-->
- #### 1. Create Rule
- * Create [Rules](/docs/2/technical/microshare-platform/rules-guide/) to share the views to the customer organization through the [assets@microshare.io](./assets@microshare.io) account.  
+
+ #### Create Rule If Needed
+
+ The views used by the generic applications are generic views created by Microshare and hosted on the account **asset@microshare.io**. 
+
+These views are normally already shared with all accounts and you can find more information about this in the [view guide](../view-guide).
+
+If a new view is created for the dashboards it is necessary to follow the following steps:
+
+ * Create [Rules](/docs/2/technical/microshare-platform/rules-guide/) to share the views to everyone through the **assets@microshare.io** account.  
  
  {% include image.html url="\assets\img\dashboard-guide-1.png" height="900" width="900" description="Dashboard Guide1" %}
  
@@ -52,7 +55,13 @@ Trending Apps will graphically represent your data over any period you wish, whi
  * Use the Record Type: io.microshare.fm.master.agg underlined in red.
  * Check ON Operations: Read, Query, and Execute underlined in green.
  
- #### 2. Create a New App with the configuration:
+
+ 
+## 3. Dashboard Configuration
+---------------------------------------
+
+ 
+#### Create a New App with the configuration:
  
  {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
