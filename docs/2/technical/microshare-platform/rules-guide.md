@@ -18,6 +18,7 @@ toc: true
   - D. [Owner Context](./#d-owner-context)
   - E. [Requestor Context](./#e-requestor-context)
 3. [Simulating a Rule](./#3-simulating-a-rule)
+4. [Best Sharing Practices](./#4-best-sharing-practices)
 
 ---------------------------------------
 
@@ -133,4 +134,11 @@ You can change the terms of your Rule and rerun your Simulation at any time. The
 
 {% include image.html url="/assets/img/composer-rule-rulesimulation4.jpg" description="Rule Simulation Panel" %}
 
-Running the simulation does 
+## 4. Best Practices for Sharing Rules
+
+<!--Link to Creating a guest app-->
+When deciding to share data, it is always better to share less than share more. Yo can always create another rule that allows more access later on if requested. 
+
+Outline which parts of your data are essential and which are strictly for your eyes only. Share the bare essentials of the data that others need to learn from your sensors and refrain from sharing the sensitive data. The data in the grey area is up to you wether you grant others access to it. It may be best to withold the grey area data, and release it if multiple requests follow for access.
+
+If you want to create an share an app that allows someone without a Microshare account to view your data, follow the [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/)

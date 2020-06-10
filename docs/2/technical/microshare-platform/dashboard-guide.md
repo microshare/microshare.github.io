@@ -25,8 +25,10 @@ toc: true
 ---------------------------------------
 
 There are two types of dashboards:
-* dashboards for your trending apps
-* dashboards for your realtime apps. 
+* Dashboards for your trending apps
+* Dashboards for your realtime apps. 
+
+
 Trending Apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
 
 
@@ -39,7 +41,10 @@ Trending Apps will graphically represent your data over any period you wish, whi
  3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
 
 
- #### Create Rule If Needed
+ **Create Rule If Needed**
+ 
+ ---------------------------------------
+
 
  The views used by the generic applications are generic views created by Microshare and hosted on the account **asset@microshare.io**. 
 
@@ -65,34 +70,36 @@ If a new view is created for the dashboards it is necessary to follow the follow
  
  {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
- * `App Type`: Display
- * `Parent Tag(s)`: Leave Blank
- * `Style Choice`: Showcase
- * `Theme`: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
- * `Include`: Leave Blank unless requested otherwise
- * `Facts to display`: None 
- * `Form to display`: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
- * `Facts`: See next section for specific details
+ ```
  
-
+ App Type: Display
+ Parent Tag(s): Leave Blank
+ Style Choice: Showcase
+ Theme: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
+ Include: Leave Blank unless requested otherwise
+ Facts to display: None 
+ Form to display: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
+ Facts: See next section for specific details
+ 
+```
  
 
 ## 4. App Facts
 ---------------------------------------
-<!-- I need help from Julien on this one-->
 ### For all apps
+
 Create a new fact by pressing the button above the green arrow and hitting apend. 
 
 {% include image.html url="\assets\img\dashboard-guide-3.png" height="900" width="900" description="Dashboard Guide3" %}
-
-* `appTitle`: Should match the name you provided as the app’s Name (above)
-* `navOptions`: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
-* `selectionOptions`: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
-* `dataRecType`: math the target recType of the device cluster
-* `dataContext`: Use the meta tag you chose in the device cluster
-* `queryId`, `queryId1`, `queryId2`, `queryId3`: it is recommended to leave the query settings the same as they are in the example json
-* `footerLogo`, `headerLogo`, `header SecondaryLogo` and `get RecType`: leave untouched unless requested otherwise
-
+```
+appTitle: Should match the name you provided as the app’s Name (above)
+navOptions: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
+selectionOptions: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
+dataRecType: math the target recType of the device cluster
+dataContext: Use the meta tag you chose in the device cluster
+queryId, queryId1, queryId2, queryId3: it is recommended to leave the query settings the same as they are in the example json
+footerLogo, headerLogo, header SecondaryLogo and get RecType: leave untouched unless requested otherwise
+```
 
 ### Realtime Apps
 * `viewType`: Use the "desk","room" or "field" option for Realtime Desk Availability app, Realtime Room Availability app and Realtime Value app respectively.  
@@ -106,8 +113,8 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 * `location2`: title of location2 dropdown 
 * `location3`: title of location3 dropdown
 * `startOfWorkDay` and `endOfWorkDay`: used to filter out data from outside the workday  OR to shade data from outside the workday.  It is not used in Trending Feedback
-* `debug`: set to truw ro output debug messages to the consule
-* `useWeekendColorBan`: shade the weekend on charts
+* `debug`: set to true to output debug messages to the consule
+* `useWeekendColorBand`: shade the weekend on charts
 * `colorOfThresholdBand`: shade the ideal range on charts
 * `colorOfOffHoursBand`: shade the off-hours on charts
 
@@ -142,21 +149,24 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 A Suite App allows you to encapsulate multiple apps into a single interface that is more straightforward to configure and navigate than using the sandwich menu in the trending or realtime forms.  It’s easy to set up one or more suite apps that group "child" apps together. 
 1. Create a new App:
 {% include image.html url="\assets\img\dashboard-guide-4.png" height="900" width="900" description="Dashboard Guide 4" %}
-* `App Type`: Suite
-* `Name`: Enter the user- facing name for the new application
-* `Parent Tag(s)`: (Optional) this allows suite app to itself be configured within another suite app
-* `Child Tag`: Enter a unique tag that your suite app uses to select its child app, MUST match the parent tag(s) of the child apps
-* `Style Choice`: showcase
-* `Theme`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
-* `Include`: Leave blank unless instructed otherwise
-* `Icon`: Select the same as seein in the demo suite app in the assets account
-* `Facts to Display`: None
-* `Form to Display`: pick Suite icon form v2.5
-* `footerLogo`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer.png)
-* `headerLogo`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/header.png)
-* `sortedApps`: (optional) a list of the app names. Should only be used if the sort order is not alphabetic
-2. To Configure the Child Apps of the Suite App
-Add the child tag in the suite tag to the parent tag(s) feild of the relevant app(s) 
+
+```
+App Type: Suite
+Name: Enter the user- facing name for the new application
+Parent Tag(s): (Optional) this allows suite app to itself be configured within another suite app
+Child Tag: Enter a unique tag that your suite app uses to select its child app, MUST match the parent tag(s) of the child apps
+Style Choice: showcase
+Theme: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
+Include: Leave blank unless instructed otherwise
+Icon: Select the same as seein in the demo suite app in the assets account
+Facts to Display: None
+Form to Display: pick Suite icon form v2.5
+footerLogo: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer.png)
+headerLogo: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/header.png)
+sortedApps: (optional) a list of the app names. Should only be used if the sort order is not alphabetic
+```
+
+To Configure the Child Apps of the Suite App add the child tag in the suite tag to the parent tag(s) feild of the relevant app(s).
 
 
 
@@ -171,14 +181,17 @@ You will still need to plan out your tagging system even if you are creating a T
  **Create a new App with the configurations:**
  
  {% include image.html url="\assets\img\dashboard-guide-5.png" height="900" width="900" description="Dashboard Guide 5" %}
-* `App Type`: Display
-* `Parent Tag(s)`: leave blank
-* `Style Choice`: showcase
-* `Theme`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
-* `Include`: leave blank unless requested otherwise
-* `Icon`: pick the same icon as seen in the demo suite app in the assets account 
-* `Facts to Display`: None 
-* `Form to Display`: pick Touchfree Feedback Form v2.6 
+
+```
+App Type: Display
+Parent Tag(s): leave blank
+Style Choice: showcase
+Theme: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
+Include: leave blank unless requested otherwise
+Icon: pick the same icon as seen in the demo suite app in the assets account 
+Facts to Display: None 
+Form to Display: pick Touchfree Feedback Form v2.6 
+```
 
 ### Required Facts:
 * the user facing title of the Touchfree Feedback App
@@ -224,6 +237,8 @@ Follow the instructions “Instructions - Guest Access” to configure the Touch
 
 You should now have a URL – let's call it the baseURL that can be used to launch your app.  But it does not operate properly as is.  If you navigate to this default URL, you will see warnings that the locations and/or dataContext and/or backboard are not defined.  You need to add URL parameters to the URL to make it work properly.  For example, you can navigate to the example Touchfree app in the assets account by using these URL: 
 [https://dapp.microshare.io/guest/](https://dapp.microshare.io/guest/5e77ac483a0000df97452437?loc1=Haverhill&loc2=3rd%20Floor&loc3=C&dataContext=toilet) 
+
+You can learn more on how to create any type of Guest Access App through our [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/)
 
 ### Backboard Template
 Microshare needs to supply customers with physical backboards that can be printed out and mounted on the wall.  End users can use their smart phone to scan a QR code on this physical backboard to bring up the Touchfree app on their phone.  To produce these physical backboards, follow the steps below: 
