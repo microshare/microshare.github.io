@@ -9,27 +9,27 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [To aggregate your data from different sources](./#1-to-aggregate-your-data-from-different-sources)
-2. [Upload data manually](./#2-upload-data-manually)
-3. [Set up a websocket Robot](./#3-set-up-a-websocket-robot)
-4. [Set up a scheduled Robot to pull data](./#4-set-up-a-scheduled-robot-to-pull-data)
+   [To aggregate your data from different sources](./#to-aggregate-your-data-from-different-sources)
+1. [Upload data manually](./#2-upload-data-manually)
+2. [Set up a websocket Robot](./#3-set-up-a-websocket-robot)
+3. [Set up a scheduled Robot to pull data](./#4-set-up-a-scheduled-robot-to-pull-data)
 
 ---------------------------------------
 
-## 1. To aggregate your data from different sources
+##  To aggregate your data from different sources
 ---------------------------------------
 
 Microshare.io is here to help you aggregate and use your data from several sources, especially IoT platforms.  
 Below are several ways to move your data as microshares™ in the data lake.  
 
-## 2. Upload data manually
+## 1. Upload data manually
 ---------------------------------------
 
 Manual upload is the most basic way of loading data from your own database, or from an open data project.
 To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share).  
 It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share)
 
-## 3. Set up a websocket Robot
+## 2. Set up a websocket Robot
 ---------------------------------------
 
 Some IoT platforms act as [websocket servers](https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live.  
@@ -54,7 +54,7 @@ There is no UI to configure your own yet, but here is the WS client configuratio
 }
 {% endhighlight %}
 
-## 4. Set up a scheduled Robot to pull data
+## 3. Set up a scheduled Robot to pull data
 ---------------------------------------
 
 Alternatively, some platforms offer RESTful APIs to request for the data they store, such as [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  

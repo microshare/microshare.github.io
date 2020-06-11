@@ -1,62 +1,62 @@
 ---
 layout: docs
-title: title
-description: description
+title: Data Ingestion
+description: How your data gets into the Microshare Data Lake
 toc: true
 ---
 
-Inro sentence [link](https://microshare.io) (non required)
-
 ---------------------------------------
-
 ##### SUMMARY : 
 
-1. [Part1](./#1-part-A)
-    - A. [Sub Part 1](./#a-sub-part-1)
-    - B. [Sub Part 2](./#b-sub-part-2)
-2. [Part 2](./#2-part-2)
-3. [Part 3](./#3-part-3)
-    - A. [Sub Part 1](./#1-sub-part-1)
-    - B. [Sub Part 2](./#2-sub-part-2)
-    - C. [Sub Part 3](./#3-sub-part-3)
+1. [What is Data Ingestion?](./#1-what-is-data-ingestion)
+2. [New Process](./#2-new-process)
+3. [Ingesting Data Manually](./#3-ingesting-data-manually)
+4. [How do I set up my Device Cluster to ingest my data automatically into the Data Lake?](./#4-how-do-i-set-up-my-device-cluster-to-ingest-my-data-automatically-into-the-data-lake)
+5. [How does the Data Ingestion Process work?](./#5-how-does-the-data-ingestion-process-work)
+
+
+
+## 1. What is Data Ingestion? 
 
 ---------------------------------------
 
-image exemple : (here top page image non required)
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+Data Ingestion is the process by which Microshare can help you migrate data from various other sources and store them in the Microshare Data Lake. This is most applicable to take the data from your sensors and display them on your dashboard/ App. 
 
-## 1. Part1
+
+## 2. New Process
+
 ---------------------------------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
-
-### A. Sub Part 1
-
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt. 
-
-### B. Sub Part 2
-
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+Microshare used to automate this process through the use of Robots but have sense developed programs to gather and unpack data more efficiently through the Device Clusters. You can learn a lot more about how Microshare used to ingest and format data in the [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/) and the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/) pages.
 
 
-## 2. Part 2
+
+## 3. Ingesting Data Manually
+
 ---------------------------------------
 
-Etiam tellus ligula, lacinia in ligula non, posuere vehicula lorem. Sed vulputate tortor in leo consectetur, ac condimentum ligula sagittis. Donec sit amet viverra nisi. Duis vel molestie lectus. Donec sollicitudin interdum sapien, sit amet porta dolor semper id. Cras scelerisque non ipsum eu rhoncus. Donec in aliquet diam. In nec ullamcorper arcu, a tempor risus. Vestibulum mauris elit, scelerisque vitae est vel, sodales vestibulum ante. Fusce molestie vehicula ipsum. Aliquam porttitor sodales ligula at feugiat. Phasellus maximus cursus erat congue sagittis. Aenean eu massa rutrum massa blandit tempor sed eu lorem. Phasellus lacinia rhoncus maximus.
+You can also upload data to the Microshare data lake without the Device Cluster or Robots. Manual upload is the most basic way of loading data from your own database, or from an open data project. To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share).
 
-## 3. Part 3
+
+## 4. How do I set up my Device Cluster to ingest my data automatically into the Data Lake?
+
 ---------------------------------------
 
-Phasellus cursus aliquam sagittis. Quisque eget quam quam. Vestibulum eget lectus commodo, fringilla metus sit amet, viverra nisi. Donec sit amet lacus erat. Fusce quis tellus id ante accumsan laoreet ut quis nisl. Maecenas et ex rhoncus, blandit ipsum ac, tempus mauris. In eget leo tellus. Ut sed risus ullamcorper, facilisis ex eu, volutpat ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras et orci id massa efficitur placerat non id mi. Donec dui ligula, ornare sed magna non, porttitor porttitor felis. Suspendisse sagittis posuere sem, a tincidunt nunc faucibus in.
+[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the Device Cluster. In this guide, there will be a more in depth description regarding the numerous parameters for the Device Cluster. 
 
-### A. Sub Part 1
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices libero nec erat egestas ullamcorper. Ut vel lacinia elit. Sed dictum semper imperdiet. Sed euismod laoreet ex non pretium. In hac habitasse platea dictumst. In sit amet efficitur lectus, ac feugiat massa. Pellentesque urna neque, rutrum vel placerat sed, vehicula vitae elit. Nullam pretium neque eu luctus viverra.
 
-### B. Sub Part 2
+## 5. How does the Data Ingestion Process Work?
 
-Sed dolor dui, faucibus nec diam at, mollis dictum mauris. In iaculis metus eget eros auctor tempor. Curabitur eu sapien eget magna pharetra scelerisque in ut turpis. Cras eleifend, tortor ut sagittis egestas, orci purus tempus lacus, at aliquet nisl leo sit amet tortor. Nam varius mollis massa, ut semper est volutpat sit amet. Curabitur porta vestibulum blandit. Donec ante purus, dignissim a fringilla non, sollicitudin vel tortor. Praesent dignissim volutpat odio, quis laoreet diam imperdiet id. Nulla rutrum viverra purus et tincidunt.
+---------------------------------------
 
-### C. Sub Part 3
+{% include image.html url="/assets/img/data-ingestion-1.png" description="DI1" %}
 
-Vivamus lacus metus, dictum ut porttitor vel, porttitor eu lectus. Donec bibendum dui eget tellus sodales, vitae viverra tellus venenatis. Vestibulum ut sapien tincidunt, iaculis velit at, volutpat nisl. Cras in ante vitae tellus consequat faucibus. Proin iaculis massa odio, sed accumsan justo pretium sodales. Pellentesque a auctor metus, vitae venenatis libero. Fusce hendrerit, orci in facilisis sagittis, sapien sem mollis tellus, nec scelerisque magna felis sit amet tortor.
+The part of the device cluster involved in data ingestion is collecting the data from the devices and depositing them into the lake. When creating the Device Cluster, the **source** recType, marked in green, denotes the name under which the encrypted information is coming from, and the **target** recType, marked in blue, is where it will be stored. In the unpacker code, the program will read the data stream from the source recType and store under the target recType. The target recType will be useful later when you want to pull the data from the data lake. The unpacked directory of the target recType is very important as it signifies that the data has been decoded. 
+
+
+## What's Next?
+---------------------------------------
+
+After the data is injested into the lake, the data is then unpacked, or decrypted. This process is explained in detail in the [Data Formatting page](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/).
+

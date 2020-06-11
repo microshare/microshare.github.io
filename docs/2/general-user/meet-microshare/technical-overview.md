@@ -15,6 +15,7 @@ toc: true
 
 ---------------------------------------
 
+Microshare brings data of your environment to your fingertips, but how? Underneath Microshare’s plug-n-play module lies a system of collecting data and communicating the results through our API. Data from your devices are sent to our network, where it is configured for your analysis on your Dashboard. Microshare operates on three main principles:
 
 ## 1. Architecture
 - The platform is built as a set of microservices, which can be used independently to support your own offering.
@@ -29,3 +30,9 @@ toc: true
 ## 3. Proven embedded
 - Part of the Microshare™ platform has already successfully been integrated in other software by large publicly traded enterprise software companies.
 - Proven code quality through seamless integration and external audits (e.g. Black Duck).
+
+# What will I be working with?
+
+In order to view data on your environment, you will be interacting with the Microshare Platform online. After setting up a [Microshare Account](/docs/2/general-user/quick-start/create-an-account/) and your company's Microshare Admin shares the data with you, viewing data is as easy as heading over to the [https://app.microshare.io/](https://app.microshare.io/) page and following the [Access my Apps Guide](/docs/2/general-user/quick-start/access-my-apps/).
+
+Alternatively, if your Microshare Admin creates a guest app, no Microshare account is necessary! Just follow the link sent to your email inbox. 

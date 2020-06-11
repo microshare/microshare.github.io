@@ -212,7 +212,7 @@ Another strategy would be to use one Robot per devEUI, that can be turned on and
 
 ### G. Data Transformation
 
-Robots are running JS scripts, so any data trnsformation logic can be added to your workflow.  
+Robots are running JS scripts, so any data transformation logic can be added to your workflow.  
 A usual transformation step of your workflow is the decoding of your IoT Payload. See our list of decoding methods [here](/docs/1/advanced/robots-libraries/decoding-payloads).
 
 IMPORTANT: The Robot scripts use ES6 only, so you can't rely on your usual browser APIs for data transformation
