@@ -74,22 +74,28 @@ The Tabs Motion Sensor uses a Passive Infared Detector and Fresnel Lens to detec
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_MS.png" height="300" width="300" description="Tabs Motion Sensor" %}
 
+For more information on the specifications on the Tabs Motion Sensor and sample decoding code for the device, refer to the [TBMS100](/assets/pdf/TBMS100).
+
 #### Tabs Temperature and Humidity Sensor
 
 US Model Number: TMHV110-915
-EU Model Number: TMHW110-868
+EU Model Number: TMHV110-868
 The Tabs Temperature and Humidity Sensor measures the indoor temperature, relative humidity and air quality of your building. 
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_TH.png" height="300" width="300" description="Tabs Temp/Humid" %}
 
+For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBHV100](/assets/pdf/TBHV100) or [TBHV110](/assets/pdf/TBHV110).
+
 #### Tabs Door and Window Sensor 
 
-US Model Number: TMBW100-915
-EU Model Number: TMBW100-868
+US Model Number: TMDW100-915
+EU Model Number: TMDW100-868
 
 The Tabs Door and Window Sensor detects the proximity of a magnet which is placed on the moving element of either a door or window using a Hall Effect sensor. 
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_DW.png" height="300" width="300" description="Tabs Door/Window Sensor" %}
+
+For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBDW100](/assets/pdf/TBDW100).
 
 #### Tabs Water Leakage Sensor
 
@@ -100,6 +106,8 @@ The Tabs Water Leakage Sensor uses a probe to detect droplets of water.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_L.png" height="300" width="300" description="Tabs Leak Sensor" %}
 
+For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBDW100](/assets/pdf/TBDW100).
+
 #### Tabs Ambient Light Sensor
 
 US Model Number: TBAM100-915
@@ -108,6 +116,8 @@ EU Model Number: TBAM100-868
 The Tabs Ambient Light Sensor measures the amount of ambient light intensity in context of the human eye in various lighting scenarios. 
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_AL.png" height="250" width="250" description="Tabs Light Sensor" %}
+
+For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBAM100](/assets/pdf/TBAM100).
 
 ### B. Kerlink 
 
