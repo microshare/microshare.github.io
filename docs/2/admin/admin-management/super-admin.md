@@ -12,7 +12,7 @@ toc: true
 ##### SUMMARY : 
 
 1. [Create the Organization](./#1-create-the-organization)
-2. [Create the ms_admin account](./#2-providing-client-access-via-microshare)
+2. [Create the ms_admin account](./#2-create-the-ms_admin-account)
 
 
 ---------------------------------------

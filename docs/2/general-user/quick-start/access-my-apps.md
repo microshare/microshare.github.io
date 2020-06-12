@@ -12,7 +12,7 @@ toc: true
 1. [Log In](./#1-log-in)
 2. [Select my identity](./#2-select-my-identity)
 3. [Navigate on my account](./#3-navigate-on-my-account)
-4. [What Data or Apps are normally Shared?](./#3-navigate-on-my-account)
+4. [What Data or Apps are normally Shared?](./#4-what-data-or-apps-are-normally-shared)
 
 ---------------------------------------
 

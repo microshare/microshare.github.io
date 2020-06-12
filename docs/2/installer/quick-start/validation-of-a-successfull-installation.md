@@ -9,13 +9,6 @@ toc: true
 
 ---------------------------------------
 
-##### SUMMARY : 
-
-1. [Gateway Working](./#1-part-A)
-2. [Device Working](./#2-part-2)
-3. [Data on Microshare](./#3-part-3)
-
----------------------------------------
 
 
 ## 1. Overview

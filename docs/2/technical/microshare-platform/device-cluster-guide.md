@@ -10,9 +10,10 @@ toc: true
 ##### SUMMARY : 
 
 1. [Introduction](./#1-introduction-what-is-a-device-cluster)
-2. [Creating a Device Cluster](/.#2-creating-a-device-cluster)
-3. [Updating a Device Cluster](/.#3-updating-a-device-cluster)
-4. [Reauthorizing a Device Cluster](/.#4-reauthorizing-a-device-cluster)
+2. [Creating a Device Cluster](./#2-creating-a-device-cluster)
+3. [Set the right RecType](./#3-set-the-right-rectype)
+4. [Updating a Device Cluster](./#4-updating-a-device-cluster)
+5. [Reauthorizing a Device Cluster](./#5-reauthorizing-a-device-cluster)
 
 ---------------------------------------
 
@@ -38,6 +39,9 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 2.	Give a brief description elaborating on the Device Cluster
 3.	Make sure your Cluster is turned on. Make sure the box underlined in green is checked.
 4.	The Record types are underlined in blue. The source record type is where the device cluster’s data is coming from. The target record type is the name under which your data from the device clusters will be stored. The naming convention works where the the first part of the rectype details who made the naming convention. So for example, if comcast owned the record type, their source record type would be com.microshare.environment. The unpacked label for the target rectype details that the data has been decrypted, which is very important for when you call on the rectype to be represented in your dashboard. As of right now, Microshare is the only source of naming the client’s rectypes, but the ability for clients to create their own naming conventions exists. 
+
+#### <!> Please make sure to follow the (RecType best practices)[./#3-set-the-right-rectype] ! <!>
+
 5.	Underlined in orange is the device manufacturer box. Click the drop down and select the type of device your device cluster has. Selecting the model will automatically fill in the box labeled Device Payload Unpacker.
 6.	Underlined in purple is the location metadata category. Enter tags detailing the location of the device cluster so it is easier to identify the devices later-on, it's a general location for all the devices of the device cluster. Here is an exemple of what it should be : 
 
@@ -70,9 +74,124 @@ So as you can understand the structure is as follows:
 
 Once you have created your Device Cluster, You can now create a dashboard to view your clusters data using the tutorial in the [Dashboard Guide](/docs/2/technical/microshare-platform/dashboard-guide/). You can also learn on how to update your device cluster in the next section. 
 
-You can also learn to create rules and views to manage who can see the data from your device cluster through following the guides in the Microshare Platform Documentation.  
+You can also learn to create rules and views to manage who can see the data from your device cluster through following the guides in the Microshare Platform Documentation. 
 
-## 3. Updating a Device Cluster
+
+## 3. Set the right RecType
+---------------------------------------
+
+To make sure you have a working system it is important to follow the instructions for using the correct RecType. 
+
+The pattern is:  
+
+`<reverse DNS of model owner>.<data domain tag>.<data state/stage>`
+
+ 
+
+The device formats will be owned by io.microshare because of our Data Domain Modules (DDM) define the standard JSON models for given domains.
+
+ 
+
+eg. 
+
+    io.microshare.motion.packed => io.microshare.motion.unpacked 
+
+---------------------------------------
+
+###### <!>It is possible that the corresponding packed RecType has something different, although not recommended, if the organization is old or more representative. But it is necessary that the unpacked RecType follows best practices. <!>
+
+---------------------------------------
+
+**Examples**
+
+ 
+
+Using standard conventions for different types of data:  
+
+* io.microshare.motion.unpacked
+
+* io.microshare.feedback.unpacked 
+
+* io.microshare.environment.unpacked 
+
+* io.microshare.gps.unpacked 
+
+* io.microshare.alarm.unpacked 
+
+ 
+
+Common recTypes will allow greater consistency for pipeline processing downstream. Data that shares a recType should have JSON formats in common and can take advantage of common processing steps. Common recTypes will create consistency in the product apps and downstream analytics products by eliminating the need for tweeks to code and config. 
+
+ 
+
+The rules engine automatically filters out records with the same recType that are owned (and not shared) making inclusion of organizational context in the recType unnecessary. 
+
+ 
+
+Tags should be used to distinguish the contextual information used to filter the data from data with similar tags. Good tagging practices is important to allow consistent recTypes to function.  
+
+ 
+
+Ownership/client is already denoted separately in the records through the "owner" segment of the record. Additional owner context can be provided through tags. 
+
+ 
+
+##### Devices 
+
+Here is a table of unpackers with the fields they generate and the domains they might be appropriate for: 
+
+ 
+| Unpacker                          | Fields                                                             | Domain(s)               |
+| --------------------------------- | ------------------------------------------------------------------ | ----------------------- |
+| ch.parametric.counter.PCR1LR      | motions\_since\_transmit,                                          | motion                  |
+| cn.winext.smoke.AN102C            | alarm, smokiness, temperature, humidity, haziness,                 | alarm, environment      |
+| cn.winext.gas.AN302               | alarm, gas,                                                        | alarm, environment      |
+| cn.winext.sos.AN301               | alarm,                                                             | alarm                   |
+| com.adeunis.motion.ARF8276A       | motions\_since\_reset,                                             | motion                  |
+| com.adeunis.temperature.ARF8180   | temperature,                                                       | environment             |
+| com.bosch.parking.TPS110          | presence,                                                          | motion                  |
+| com.brighterbins.level.V00001     | distance, temperature,                                             | distance, environment   |
+| com.brighterbins.level.V00001     | fill, temperature,                                                 | environment, ??         |
+| com.gemteks.tracker.WSMS116       | presence, gps,                                                     | motion, gps             |
+| com.mcf88.environment.LW12VOC     | iso\_time, temperature, humidity, pressure, illuminance, voc       | environment             |
+| com.netvox.environment.R711       | temperature, humidity,                                             | environment             |
+| com.netvox.leak.R311W             | alarm                                                              | alarm                   |
+| com.netvox.motion.RB11E           | temperature, illuminance, presence,                                | environment             |
+| com.netvox.panic.RB02I            | alarm,                                                             | alarm                   |
+| com.netvox.security.R311A         | closed,                                                            | ??                      |
+| com.netvox.smoke.RA02A            | alarm                                                              | alarm                   |
+| com.risinghf.environment.RHF1S001 | temperature, humidity,                                             | environment             |
+| eu.skiply.button.SmilioAction     | swipe, pushes\_since\_reset                                        | feedback                |
+| io.tracknet.healthy.TBHV100       | temperature, humidity, co2, voc,                                   | environment             |
+| io.tracknet.leak.TBWT100          | leak, temperature, humidity,                                       | environment, ??         |
+| io.tracknet.light.TBAM100         | temperature, illuminance,                                          | environment             |
+| io.tracknet.motion.TMBS100        | presence, temperature, motions\_since\_reset,                      | motion, environment,    |
+| io.tracknet.security.TBDW100      | closed, temperature, motions\_since\_reset,                        | environment, motion, ?? |
+| io.tracknet.sound.TBSL100         | temperature, loudness,                                             | environment, ??         |
+| se.elsys.environment.ERSCO2       | temperature, humidity, illuminance, motions\_since\_transmit, co2, | environment, motion     |
+| se.elsys.motion.ERSEye            | temperature, humidity, illuminance,                                | environment             |
+
+Here is a list of our product apps along with the domain data they require: 
+
+| App                       | recType                 |                                                         |
+| ------------------------- | ----------------------- | ------------------------------------------------------- |
+| air\_quality              | environment, airquality | Used to be airquality, now moving to environment        |
+| attendance                |                         |                                                         |
+| available\_desks          | motion                  |                                                         |
+| available\_meeting\_rooms | motion                  |                                                         |
+| environment               | environment             |                                                         |
+| feedback\_3               | feedback                |                                                         |
+| feedback\_5               | feedback                |                                                         |
+| floorplan                 | occupancy, environment  | Uses both IF floorplan displays occupancy AND temp data |
+| motion                    | motion                  |                                                         |
+| occupancy                 | motion                  |                                                         |
+| occupancy\_meeting\_rooms | motion                  |                                                         |
+| refrigerator              | environment             |                                                         |
+ 
+
+
+
+## 4. Updating a Device Cluster
 ---------------------------------------
 
 To update your cluster device, simply go to the Device Cluster page, then click update. You will be able to modify the information of your cluster device and your devices. 
@@ -85,7 +204,7 @@ You can simply upgrade your cluster device and it will work.
 
 If you feel that your changes have not been taken into account, please click on re-authorize on the update page.
 
-## 4. Reauthorizing a Device Cluster
+## 5. Reauthorizing a Device Cluster
 ---------------------------------------
 
 With Microshare you have the possibility to reauthorize a cluster device, you can do the same thing with a robot as well. 

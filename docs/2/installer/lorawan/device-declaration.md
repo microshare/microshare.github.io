@@ -9,9 +9,9 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Possibilities](./#1-part-A)
-2. [Device Cluster Creation](./#2-part-2)
-2. [Add a device](./#2-part-2)
+1. [Possibilities](./#1-possibilities)
+2. [Device Cluster Creation](./#2-device-cluster-creation)
+2. [Add a device](./#3-add-a-device)
 
 ---------------------------------------
 
@@ -49,8 +49,8 @@ We can now create the cluster device. As previously recalled the cluster device 
 ## 3. Add a device
 ---------------------------------------
 
-Once the cluster device has been created, all that remains to be done is to add the sensors. You can follow the [device cluster guide]() to add the devices the old way. 
+Once the cluster device has been created, all that remains to be done is to add the sensors. You can follow the [device cluster guide](../../../technical/microshare-platform/device-cluster-guide/) to add the devices the old way. 
 
-Or simply download the [Deploy-M application]() and follow this tutorial to use it and add all your sensors very quickly directly on site. 
+Or simply download the [Deploy-M application](../../deploy-m/download-the-app) and follow this tutorial to use it and add all your sensors very quickly directly on site. 
 
-##### > [Deploy-M Guide]()
+##### > [Deploy-M Guide](../../deploy-m/app-guide)

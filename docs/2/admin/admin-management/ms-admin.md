@@ -11,8 +11,8 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Quick Start](./#1-part-A)
-2. [Setting Favorite](./#2-part-2)
+1. [Quick Start](./#1-quick-start)
+2. [Setting Favorites](./#2-setting-favorites)
 
 
 
@@ -21,7 +21,7 @@ toc: true
 ## 1. Quick Start
 ---------------------------------------
 
-Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page]() of the Admin part explains this very well. Because indeed you are administrator of the ms_admin account but this includes being administrator of the corresponding identities.
+Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page](../overview) of the Admin part explains this very well. Because indeed you are administrator of the ms_admin account but this includes being administrator of the corresponding identities.
 
 ##### As administrator your first role will be to create the device clusters on Microshare.
 

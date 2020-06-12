@@ -9,9 +9,9 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What are the Administrator Responsibilities](./#1-part-A)
-2. [Identity Admin](./#2-part-2)
-3. [Type of Administrator](./#3-part-3)
+1. [What are the Administrator Responsibilities](./#1-what-are-the-administrators-responsibilities)
+2. [What Data or Apps are normally shared?](./#2-what-data-or-apps-are-normally-shared)
+3. [Types of Administrators](./#3-types-of-administrators)
 
 ---------------------------------------
 
@@ -37,15 +37,15 @@ Robots are visible to only the creator. There is not currently a mechanism to sh
 It is possible to share views very simply so that they can be reused by another user, but simply their use will be shared, they will not be visible on the account of the one who receives the right to use them. 
 
 
-## 3. Types of Admininstrators
+## 3. Types of Administrators
 ---------------------------------------
 
 There are thus 3 types of administrator. 
 
 The [identity administrator](../identity-admin) which is accessible to any user, but given to people who manage entities. 
 
-The [MS administrator](ms-admin) who is the `ms_admin@*customer.org*` account has a more important feature management.
+The [MS administrator](../ms-admin) who is the `ms_admin@*customer.org*` account has a more important feature management.
 
-The [Super Admin at Microshare](super-admin) is a member of Microshare and is therefore able to create ms_admin accounts and identities. 
+The [Super Admin at Microshare](../super-admin) is a member of Microshare and is therefore able to create ms_admin accounts and identities. 
 
 

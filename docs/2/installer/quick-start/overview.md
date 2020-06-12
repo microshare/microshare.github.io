@@ -9,9 +9,9 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What needs to be installed?](./#1-part-A)
-2. [Requirements](./#2-part-2)
-3. [Steps](./#3-part-3)
+1. [What needs to be installed?](./#1-what-needs-to-be-installed)
+2. [Requirements](./#2-requirements)
+3. [Steps](./#3-steps)
 
 ---------------------------------------
 
@@ -72,6 +72,6 @@ To do this we will follow the following steps:
 
 ###### > Use [Deploy-M](../../deploy-m/app-guide) for a more efficient installation.
 
-###### > Finally, [Validate](../../quick-start/validation-of-a-succesfull-installation) that the installation was successful.
+###### > Finally, [Validate](../../quick-start/validation-of-a-successfull-installation) that the installation was successful.
 
-If you have more question, you can have a look at our [FAQ about installations](../fag-about-installations) page.
+If you have more question, you can have a look at our [FAQ about installations](../faq-about-installations) page.
