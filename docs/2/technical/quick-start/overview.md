@@ -17,7 +17,7 @@ toc: true
 
 The Microshare Platform is built as a set of microservices to communicate data from your devices to you. The platform operates through JSON based RESTful API calls which makes it very applicable to other systems. The data can be stored either in the Microshare Data Lake, any other on-storage premise or the cloud. 
  
-The Microshare service is very versatile in that Microshare can run on directly on all devices, through our secure cloud, or your Data Center. 
+The Microshare service is very versatile in that Microshare can run on directly on all devices through our secure cloud or your Data Center. 
 
 ---------------------------------------
 ## 2. What can you expect to work with?

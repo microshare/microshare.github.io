@@ -33,7 +33,7 @@ PS: Device Clusters are often managed by the admin, please anticipate the needs 
 ## 2. Device Cluster Creation
 ---------------------------------------
 
-To create a cluster device we will take the basic information here. If you need, you will find more information [here]().
+To create a device cluster we will take the basic information here. If you need, you will find more information [here](../../../technical/microshare-platform/device-cluster-guide/).
 
 Firstly, a device cluster represents a grouping of sensors. This is first of all done by sensor type. A cluster device cannot contain two types of sensors. Then cluster devices are often cross-referenced by global location (site or building) and finally by usecase.
 
@@ -41,10 +41,10 @@ Let's take an example, we have for example temperature sensors that we want to i
 
 We know as follows: 
 the type of sensor: Tabs Environment TBHV100
-the global location: Europe,UK,London,Paddington,5 merchant Square
+the global location: Europe,UK,London,Paddington,5 Merchant Square
 the use case: temperature management
 
-We can now create the cluster device. As previously recalled the cluster device are normally on the main administrator account. And this one is usually created by the administrator. You will simply make a request to the administrator of your entity to create the necessary cluster device.
+We can now create the cluster device. As previously recalled the cluster device are normally on the main administrator account. And this one is usually created by the administrator. You will simply make a request to the administrator of your entity to create the necessary device cluster.
 
 ## 3. Add a device
 ---------------------------------------

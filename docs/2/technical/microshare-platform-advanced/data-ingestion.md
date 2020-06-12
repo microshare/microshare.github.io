@@ -54,6 +54,11 @@ You can also upload data to the Microshare data lake without the Device Cluster 
 
 The part of the device cluster involved in data ingestion is collecting the data from the devices and depositing them into the lake. When creating the Device Cluster, the **source** recType, marked in green, denotes the name under which the encrypted information is coming from, and the **target** recType, marked in blue, is where it will be stored. In the unpacker code, the program will read the data stream from the source recType and store under the target recType. The target recType will be useful later when you want to pull the data from the data lake. The unpacked directory of the target recType is very important as it signifies that the data has been decoded. 
 
+{% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
+
+
+Marked in teal is the network provider category. This field is required as each network has their own format to deliver information to the Microshare Network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your Dashboard. 
+
 
 ## What's Next?
 ---------------------------------------

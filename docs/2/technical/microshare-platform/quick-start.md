@@ -36,7 +36,7 @@ There is a difference in what a general user and developer have the ability to d
 ## 2. Setting up your Account
 ---------------------------------------
 
-If you do not already have a developer account, follow the [Create an Account Tutorial](/docs/2/general-user/quick-start/create-an-account/) to get started. If you already have an account, continue reading the background on the various Microshare tools, head over to [The developer login page]( https://dapp.microshare.io/login?requestURL=%2F) and start reading the [Technical Overview Page](/docs/2/technical/quick-start/overview/).
+If you do not already have a developer account, follow the [Create an Account Tutorial](/docs/2/general-user/quick-start/create-an-account/) to get started. If you already have an account, continue reading this page and head over to [The developer login page]( https://dapp.microshare.io/login?requestURL=%2F). After, make sure to check out the [Technical Overview Page](/docs/2/technical/quick-start/overview/).
 
 ## 3. Tools and Abilities
 ---------------------------------------

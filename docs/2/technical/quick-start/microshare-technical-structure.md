@@ -4,9 +4,13 @@ title: The Microshare Technical Structure
 toc: true
 ---
 
----------------------------------------
 
-Microshare brings data of your environment to your fingertips, but how? Underneath Microshare’s plug-n-play module lies a system of collecting data and communicating the results through our API. As you can see, the Technical side of the documentation site is separated into Microshare Platform, API and LoRaWAN categories. These three sections represent the columns of Microshare’s technical structure. 
+
+
+---------------------------------------
+#### Introduction
+
+Microshare brings data of your environment to your fingertips, but how? Underneath Microshare’s plug-n-play module lies a system of collecting data and communicating the results through our API. As you can see, the Technical side of the documentation site is separated into Microshare Platform, API and LoRaWAN categories. These three sections represent the cornerstones of Microshare’s technical structure. 
 
 
 {% include image.html url="/assets/img/LoRa00.png" description="LoRa" %}

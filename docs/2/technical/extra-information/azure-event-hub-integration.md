@@ -9,7 +9,7 @@ toc: true
 ## 1. Overview
 ---------------------------------------
 
-Event Hub integration is a streaming data integration that pushes data from the Smart Network into a client's Azure tenancy in real-time. Data is typically made available to an Event Hub with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. 
+Event Hub integration is a streaming data integration that pushes data from the Smart Network into a client's Azure tenancy in real-time. Data is typically made available to an Event Hub with sub-second latency to ensure that event handling and analytics are delivered with the most current state of the measured space. 
 
 
 ## 2. Setup

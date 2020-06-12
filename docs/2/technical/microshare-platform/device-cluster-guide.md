@@ -20,8 +20,12 @@ toc: true
 ## 1. Introduction: What is a Device Cluster?
 ---------------------------------------
 
-A Device Cluster is a group of sensors, most applicable to sensors in the same area, where their data is combined and displayed together when configured in your dashboard. This is most practical when looking to observe the area, and not just data from a single sensor. For example, Observing occupancy of all the desks in the office over the course of the workday, rather than just a single desk. 
+A Device Cluster is a group of sensors, most applicable to sensors in the same area, where their data is combined and displayed together when configured in your dashboard. This is most practical when looking to observe the area, and not just data from a single sensor. For example, Observing occupancy of all the desks in the office over the course of the workday, rather than just a single desk. It is important to note that all the devices within a cluster must be the same model of sensor. 
 
+#### What does the Device Cluster process look like?
+
+Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare network under the source recType name. The Device Cluster program takes the data from the source recType, and pushes it into the Microshare Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your Dashboard or App.  
+Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare network under the source recType name. The Device Cluster program takes the data from the source recType, and pushes it into the Microshare Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your Dashboard or App.  
 
 ## 2. Creating a Device Cluster
 ---------------------------------------

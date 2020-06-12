@@ -10,7 +10,7 @@ toc: true
 
 ##### What else can a developer do?
 
-Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the "Microshare Platform Advanced" section and follow the folowing steps:
+Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the "Microshare Platform Advanced" section and follow the following steps:
 
 #### 1. Creating Robots
 
@@ -31,11 +31,11 @@ Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/iden
 
 #### 5. Data Management/ Workflow
 
-Finally, you will learn how to manage your data within Microshare. It is crucial that you have first followed the [Creating Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/) steps, as they will play a key role in managing data. The path of Data management is:
+Finally, you will learn how to manage your data within Microshare. Microshare no longer uses Robots for Data Ingestion and Formatting, but the guides will be a great resource to understanding what the new method is doing and how powerfult he applications of Robots can be. The path of Data management is:
 
 1. [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
-2. [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
-3. [Data Formatting](/docs/2/technical/microshare-platform-advanced/data-formatting/)
+2. [Data Formatting](/docs/2/technical/microshare-platform-advanced/data-formatting/)
+3. [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
 4. [Data Formating by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/)
 
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 

@@ -25,12 +25,12 @@ Data Processing is the process by which Microshare takes encrypted data from you
 ## 2. New Process
 ---------------------------------------
 
-Microshare used to perform data formatting with a series of robots, but have hence engineered a new solution for representing your data through Device Clusters. You can learn a lot more about how Microshare used to format data in  the [Data Formatting by Robots] page.
+Microshare used to perform data formatting with a series of robots, but have hence engineered a new solution for representing your data through Device Clusters. You can learn a lot more about how Microshare used to format data in  the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots) page.
 
 ## 3. Setting up the Device Cluster for Data Ingestion
 ---------------------------------------
 
-[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the Device Cluster. In this guide, there will be a more in depth description regarding the numerous parameters for the Device Cluster. 
+[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the Device Cluster. The Data Formatting Page will be a more in depth description regarding the numerous parameters for the Device Cluster. 
 
 ## 4. How does the Data Formatting Process Work?
 ---------------------------------------
@@ -40,9 +40,16 @@ After completing the source and target recTypes, the next set of information tha
 
 {% include image.html url="/assets/img/data-formatting-1.png" description="DF1" %}
 
-The device model specifications catagory is marked in green and the device payload unpacker is marked in blue. The device payload unpacker is specific to the format of information that you device sends, and relates to the specific function that  decrypts your information. You then give each of your devices' EUI or Id and the location tags. These specifications are underlined in red and orange. These specifications allow the unpacker code to only decipher information from your devices and differentiate from records coming from multiple devices. After being parsed, the payload is then transformed by the unpacker code. Depending on what you are recording, an event can be triggered and the data  is stored with extra information on the value that was decoded, its unit, the device it came from, the time the recording occurred and so on. 
+The device model specifications catagory is marked in green and the device payload unpacker is marked in blue. The device payload unpacker is specific to the format of information that you device sends, and relates to the specific function that  decrypts your information. 
+
+
+You then give each of your devices' EUI or Id and the location tags. These specifications are underlined in red and orange. These specifications allow the unpacker code to only decipher information from your devices and differentiate from records coming from multiple devices. After being parsed, the payload is then transformed by the unpacker code. Depending on what you are recording, an event can be triggered and the data  is stored with extra information on the value that was decoded, its unit, the device it came from, the time the recording occurred and so on. 
 
 Finally, the data is written to the data lake under the target recType.unpacked name along with the tags specified while creating the device cluster. The datawrite builds the audit trail of your data and allows the triggering of the next step in the workflow. 
+
+#### The entire process looks like this:
+
+Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare network under the source recType name. The Device Cluster program takes the data from the source recType, and pushes it into the Microshare Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your Dashboard or App.  
 
 
 ## 5. Set up your platform to post the data
