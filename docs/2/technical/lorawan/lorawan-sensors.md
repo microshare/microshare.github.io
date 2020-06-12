@@ -74,7 +74,7 @@ The Tabs Motion Sensor uses a Passive Infared Detector and Fresnel Lens to detec
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_MS.png" height="300" width="300" description="Tabs Motion Sensor" %}
 
-For more information on the specifications on the Tabs Motion Sensor and sample decoding code for the device, refer to the [TBMS100](/assets/pdf/TBMS100).
+For more information on the specifications on the Tabs Motion Sensor and sample decoding code for the device, refer to the [TBMS100 document](/assets/pdf/TBMS100.pdf).
 
 #### Tabs Temperature and Humidity Sensor
 
@@ -84,7 +84,7 @@ The Tabs Temperature and Humidity Sensor measures the indoor temperature, relati
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_TH.png" height="300" width="300" description="Tabs Temp/Humid" %}
 
-For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBHV100](/assets/pdf/TBHV100) or [TBHV110](/assets/pdf/TBHV110).
+For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBHV100 document](/assets/pdf/TBHV100.pdf) or the [TBHV110 document](/assets/pdf/TBHV110.pdf).
 
 #### Tabs Door and Window Sensor 
 
@@ -95,7 +95,7 @@ The Tabs Door and Window Sensor detects the proximity of a magnet which is place
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_DW.png" height="300" width="300" description="Tabs Door/Window Sensor" %}
 
-For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBDW100](/assets/pdf/TBDW100).
+For more information on the specifications on the Tabs Door and Window Sensor and sample decoding code for the device, refer to the [TBDW100 document](/assets/pdf/TBDW100.pdf).
 
 #### Tabs Water Leakage Sensor
 
@@ -106,7 +106,7 @@ The Tabs Water Leakage Sensor uses a probe to detect droplets of water.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_L.png" height="300" width="300" description="Tabs Leak Sensor" %}
 
-For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBDW100](/assets/pdf/TBDW100).
+For more information on the specifications on the Tabs Water Leakage Sensor and sample decoding code for the device, refer to the [TBDW100 document](/assets/pdf/TBDW100.pdf).
 
 #### Tabs Ambient Light Sensor
 
@@ -117,18 +117,19 @@ The Tabs Ambient Light Sensor measures the amount of ambient light intensity in 
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_AL.png" height="250" width="250" description="Tabs Light Sensor" %}
 
-For more information on the specifications on the Tabs Temperature and Humidity Sensor and sample decoding code for the device, refer to the [TBAM100](/assets/pdf/TBAM100).
+For more information on the specifications on the Ambient Light Sensor and sample decoding code for the device, refer to the [TBAM100 document](/assets/pdf/TBAM100.pdf).
 
 ### B. Kerlink 
 
-Although Kerlink products are mostly used as [LoRaWAN Gateways]() for your devices to communicate with Microshare platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
+Although Kerlink products are mostly used as [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways) for your devices to communicate with Microshare platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Kerlink_Wave.png" height="250" width="250" description="Kerlink" %}
 
 picture from the [Kerlink Website](https://www.kerlink.com/product/wanesy-wave/)
 
 
-### C. Skiply Smilio A- Microshare 5 Button Feedback Sensor
+
+### C. Skiply Smilio Action Microshare 5 Button Feedback Sensor
 
 US Model Number: SKPF000185
 EU Model Number: SKPF000184
@@ -136,6 +137,8 @@ EU Model Number: SKPF000184
 The Microshare version of the Smilio A Feedback Sensor gives give options to record feedback from your intended audience. The sensor sends data through to the Microshare Platfrom where it is represented on your dashboard.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Smilio.png" height="250" width="250" description="Smilio Feedback Sensor" %}
+
+For more information on the specifications on the Skiplo Smilio Action and sample decoding code for the device, refer to the [Smilio Action document](/assets/pdf/SKPF00018.pdf).
 
 ### D. Adeunis Temp 3
 
@@ -146,6 +149,8 @@ The Adeunis Temp 3 is a Temperature Monitoring 1 Probe which measures and monite
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Temp3.webp" height="250" width="250" description="Temp 3 Sensor" %}
 
+For more information on the specifications on the Adeunis Temp 3 and sample decoding code for the device, refer to the [Temp 3 document](/assets/pdf/Temp-3.pdf).
+
 ### E. SmartEnds BrighterBins Smart Waste Sensors
 
 The BrighterBin sensor detects when a waste bin is overflowing and alerts for commercial waste pickup. Implementing the BrighterBin sensor will make cleaning routes more effecient and  predicable. 
@@ -153,6 +158,8 @@ The BrighterBin sensor detects when a waste bin is overflowing and alerts for co
 {% include image.html url="\assets\img\LoRaWAN Device pictures\BrighterBins.webp"  description="Brighter Bins" %}
 
 image from [Smart Ends](https://www.smartends.com/single-post/2019/05/09/A-new-IoT-sensor-device-for-a-growing-market-of-8-million-public-waste-bins)
+
+For more information on the specifications on the SmartEnds Brighterbin and sample decoding code for the device, refer to the [Brighterbins document](/assets/pdf/brighterbins.pdf).
 
 ## 4. External Resources
 ---------------------------------------
