@@ -16,7 +16,7 @@ toc: true
 5. [Configuring the Suite App](./#5-configuring-the-suite-app)
 6. [Configuring the Touchfree feedback App](./#6-configuring-the-touchfree-app)
 7. [Configuring other components of the Touchfree feedback App](./configuring-other-components-of-the-touchfree-feedback-app)
-  
+8. [How to create a guest app](../creating-guest-app-guide)
 
 
 
@@ -70,36 +70,50 @@ If a new view is created for the dashboards it is necessary to follow the follow
  
  {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
- ```
+
+ * `App Type`: Display
+ * `Parent Tag(s)`: Leave Blank
+ * `Style Choice`: Showcase
+ * `Theme`: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
+ * `Include`: Leave Blank unless requested otherwise
+ * `Facts to display`: None 
+ * `Form to display`: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
+ * `Facts`: See next section for specific details
  
- App Type: Display
- Parent Tag(s): Leave Blank
- Style Choice: Showcase
- Theme: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
- Include: Leave Blank unless requested otherwise
- Facts to display: None 
- Form to display: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
- Facts: See next section for specific details
- 
-```
  
 
 ## 4. App Facts
 ---------------------------------------
+
+### Tips 
+
+In order to make the best use of the Facts, it is possible to modify their presentation in json code form. To do so, simply click on the tree button and choose code.
+
+{% include image.html url="\assets\img\app-facts-tree.png" width="800" description="Factes Tree" %}
+
+{% include image.html url="\assets\img\app-facts-code.png" width="800" description="Facts Code" %}
+
+
+### Github Facts Apps
+
+
+##### > [Comming Soon]()
+
+<br>
+
 ### For all apps
 
 Create a new fact by pressing the button above the green arrow and hitting apend. 
 
 {% include image.html url="\assets\img\dashboard-guide-3.png" height="900" width="900" description="Dashboard Guide3" %}
-```
-appTitle: Should match the name you provided as the app’s Name (above)
-navOptions: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
-selectionOptions: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
-dataRecType: math the target recType of the device cluster
-dataContext: Use the meta tag you chose in the device cluster
-queryId, queryId1, queryId2, queryId3: it is recommended to leave the query settings the same as they are in the example json
-footerLogo, headerLogo, header SecondaryLogo and get RecType: leave untouched unless requested otherwise
-```
+
+* `appTitle`: Should match the name you provided as the app’s Name (above)
+* `navOptions`: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
+* `selectionOptions`: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
+* `dataRecType`: math the target recType of the device cluster
+* `dataContext`: Use the meta tag you chose in the device cluster
+* `queryId`, `queryId1`, `queryId2`, `queryId3`: it is recommended to leave the query settings the same as they are in the example json
+* `footerLogo`, `headerLogo`, `header SecondaryLogo` and `get RecType`: leave untouched unless requested otherwise
 
 ### Realtime Apps
 * `viewType`: Use the "desk","room" or "field" option for Realtime Desk Availability app, Realtime Room Availability app and Realtime Value app respectively.  
@@ -141,8 +155,8 @@ footerLogo, headerLogo, header SecondaryLogo and get RecType: leave untouched un
 * `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available
 
 #### 6. Air Quality (up to six charts) and Environment (up to two charts):
-`feildName` for Air Quality: temp, humidity, co2, voc, pressure and/or illuminance
-`feildName` for Environment: temp and/ or humidity
+* `fieldName` for Air Quality: temp, humidity, co2, voc, pressure and/or illuminance
+* `fieldName` for Environment: temp and/ or humidity
 
 ## 5. Configuring the Suite App
 ---------------------------------------
@@ -150,21 +164,19 @@ A Suite App allows you to encapsulate multiple apps into a single interface that
 1. Create a new App:
 {% include image.html url="\assets\img\dashboard-guide-4.png" height="900" width="900" description="Dashboard Guide 4" %}
 
-```
-App Type: Suite
-Name: Enter the user- facing name for the new application
-Parent Tag(s): (Optional) this allows suite app to itself be configured within another suite app
-Child Tag: Enter a unique tag that your suite app uses to select its child app, MUST match the parent tag(s) of the child apps
-Style Choice: showcase
-Theme: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
-Include: Leave blank unless instructed otherwise
-Icon: Select the same as seein in the demo suite app in the assets account
-Facts to Display: None
-Form to Display: pick Suite icon form v2.5
-footerLogo: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer.png)
-headerLogo: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/header.png)
-sortedApps: (optional) a list of the app names. Should only be used if the sort order is not alphabetic
-```
+* `App Type`: Suite
+* `Name`: Enter the user- facing name for the new application
+* `Parent Tag(s)`: (Optional) this allows suite app to itself be configured within another suite app
+* `Child Tag`: Enter a unique tag that your suite app uses to select its child app, MUST match the parent tag(s) of the child apps
+* `Style Choice`: showcase
+* `Theme`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
+* `Include`: Leave blank unless instructed otherwise
+* `Icon`: Select the same as seein in the demo suite app in the assets account
+* `Facts to Display`: None
+* `Form to Display`: pick Suite icon form v2.5
+* `footerLogo`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer.png)
+* `headerLogo`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/header.png)
+* `sortedApps`: (optional) a list of the app names. Should only be used if the sort order is not alphabetic
 
 To Configure the Child Apps of the Suite App add the child tag in the suite tag to the parent tag(s) feild of the relevant app(s).
 
@@ -182,16 +194,14 @@ You will still need to plan out your tagging system even if you are creating a T
  
  {% include image.html url="\assets\img\dashboard-guide-5.png" height="900" width="900" description="Dashboard Guide 5" %}
 
-```
-App Type: Display
-Parent Tag(s): leave blank
-Style Choice: showcase
-Theme: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
-Include: leave blank unless requested otherwise
-Icon: pick the same icon as seen in the demo suite app in the assets account 
-Facts to Display: None 
-Form to Display: pick Touchfree Feedback Form v2.6 
-```
+* `App Type`: Display
+* `Parent Tag(s)`: leave blank
+* `Style Choice`: showcase
+* `Theme`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css)
+* `Include`: leave blank unless requested otherwise
+* `Icon`: pick the same icon as seen in the demo suite app in the assets account 
+* `Facts to Display`: None 
+* `Form to Display`: pick Touchfree Feedback Form v2.6 
 
 ### Required Facts:
 * the user facing title of the Touchfree Feedback App

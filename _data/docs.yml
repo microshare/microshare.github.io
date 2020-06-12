@@ -76,3 +76,7 @@
     - title: LoRaWan Technology
     - title: LoRaWan Gateways
     - title: LoRaWan Sensors
+  - title: Extra Information
+    pages:
+    - title: Microshare Security
+    - title: Azure Event Hub Integration
