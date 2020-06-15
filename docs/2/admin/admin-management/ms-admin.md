@@ -40,7 +40,7 @@ To do this please follow the Technical tutorial on how device clusters work and 
 
 Once the cluster devices are created, you will receive data on the ms_admin account. This data can be used to create applications or robots. But first of all you will be able to share it. 
 
-To do this you will create shares rules. Notament has the identity who must use this data. So you will share the data of a cluster device only to the group of people registered to the selected identity. They will be able to use the data with the applications of the identity.
+To do this you will create shares rules. Particularly to the identity who will use this data. So you will share the data of a cluster device only to the group of people registered to the selected identity. They will be able to use the data with the applications of the identity.
 <br>
 
 ##### The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/).
