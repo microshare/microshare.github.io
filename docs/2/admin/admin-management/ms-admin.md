@@ -5,7 +5,6 @@ title: First Step as an Admin
 toc: true
 ---
 
-[Microshare.io](https://microshare.io)
 
 ---------------------------------------
 
@@ -21,24 +20,24 @@ toc: true
 ## 1. Quick Start
 ---------------------------------------
 
-Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page](../overview) of the Admin part explains this very well. Because indeed you are administrator of the ms_admin account but this includes being administrator of the corresponding identities.
+Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page](../overview) of the Admin part explains this very well. Being the administrator is the ms_admin account entails the the responsibility of administrating and managing the corresponding identities. 
 
-##### As administrator your first role will be to create the device clusters on Microshare.
+##### As administrator, your first role will be to create the device clusters on Microshare.
 
 {% include image.html url="/assets/img/cards/dc-card.png" description="Banner" width="200" %} 
 
-In order add the sensors using your computer. Or for your installer to use the Deploy-M application to install all the sensors very quickly. 
+You can add sensors using your computer or your Installer can quickly add devices via the Deploy-M app. 
 
 To do this please follow the Technical tutorial on how device clusters work and follow the best practices.
 
 ###### > [Device Clusters](/docs/2/technical/microshare-platform/device-cluster-guide/)
 <br>
 
-##### The administrator controls also a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
+##### The administrator also controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
 
 {% include image.html url="/assets/img/cards/rule-card.png" description="Banner" width="200" %} 
 
-Once the cluster devices are created, you will receive data on the ms_admin account. This data can be used to create applications or robots. But first of all you will be able to share it. 
+Once the cluster devices are created, you will receive data on the ms_admin account. This data can be used to create applications or robots. But first, you will be able to share it. 
 
 To do this you will create shares rules. Notament has the identity who must use this data. So you will share the data of a cluster device only to the group of people registered to the selected identity. They will be able to use the data with the applications of the identity.
 <br>
@@ -47,8 +46,7 @@ To do this you will create shares rules. Notament has the identity who must use 
 
 {% include image.html url="/assets/img/cards/robot-card.png" description="Banner" width="200" %} 
 
-Robots are used on Microshare to automate tasks. For example to trigger an action when a particular event occurs. 
-For example send an email alert when a temperature in a room is exceeded.
+Robots are used on Microshare to automate tasks. For example: to trigger an action when a particular event occurs or send an email alert when a temperature in a room is exceeded.
 
 To do this, you just need to link a robot to a data stream from a cluster device. 
 People accessing the identity according to the rights you have given them with the sharing rules will be able to create their own robots on the data streams you share with them if they wish.

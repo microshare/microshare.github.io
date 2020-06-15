@@ -32,7 +32,7 @@ While reading this documentation if you encounter any issues or have any feedbac
 ## 2. Quick Links
 ---------------------------------------
 
-Within Microshare there are several profiles, but they all share one thing in common. They all have a Microshare account. 
+Within Microshare there are several profiles, but they all share one thing in common: They all have a Microshare account. 
 This part of the documentation is intended to guide you through the very first steps within Microshare, and to explain the main features of our platform. 
 
 #####  > [First steps in Microshare](../quick-start/create-an-account)

@@ -39,9 +39,12 @@ Firstly, a device cluster represents a grouping of sensors. This is first of all
 
 Let's take an example, we have for example temperature sensors that we want to install in our WeWork building.
 
-We know as follows: 
+**We know:**
+
 the type of sensor: Tabs Environment TBHV100
+
 the global location: Europe,UK,London,Paddington,5 Merchant Square
+
 the use case: temperature management
 
 We can now create the cluster device. As previously recalled the cluster device are normally on the main administrator account. And this one is usually created by the administrator. You will simply make a request to the administrator of your entity to create the necessary device cluster.

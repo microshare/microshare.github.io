@@ -5,8 +5,6 @@ description: How to do a great installation and be sure it works ?
 toc: true
 ---
 
-[Microshare.io](https://microshare.io)
-
 ---------------------------------------
 
 
@@ -31,7 +29,7 @@ It is of course necessary to have followed all the steps requested in the instal
 ---------------------------------------
 
 To validate the functioning of the installation of the sensors on Microshare it is necessary to have created everything properly:
-Installation of the gateway and the sensors, creation of these entities on the LoraWan network used, activation of the data bridge between the Lorawan network and the Microshare cluster device. 
+Installation of the gateway and the sensors, creation of these entities on the LoRaWAN network used, activation of the data bridge between the Lorawan network and the Microshare cluster device. 
 
 Once this is done when you scan the sensor with Deploy-M it will be registered on Microshare. So when you activate the sensor it will send data. At this moment the sensor will switch from this state to Microshare:
 

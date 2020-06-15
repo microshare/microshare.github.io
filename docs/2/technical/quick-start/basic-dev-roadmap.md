@@ -18,7 +18,7 @@ toc: true
 ---------------------------------------
 
 ### 1. Where do I start?
-There may seem like a lot of resources for the developer, and this page serves to outline the steps you should follow to learn how to interact with the Microshare Platform. 
+There may seem like a lot of resources for the develope so this page serves to outline the steps you should follow to learn how to interact with the Microshare Platform. 
 
 After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
 
@@ -61,12 +61,12 @@ Once you have set yourself up in the developer environment, follow the next step
 
 ##### Rules 
 
-[A Rule](/docs/2/technical/microshare-platform/rules-guide/) is a concrete expression of a sharing policy. It allows a data Owner to set the conditions in which a requested Operation will be Granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
+[A Rule](/docs/2/technical/microshare-platform/rules-guide/) is a concrete expression of a sharing policy. It allows a data owner to set the conditions in which a requested operation will be granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
 
 ---------------------------------------
 ### 5. How to create an App
 
-Firstly, head over to [dapp.microshare/io](http://dapp.microshare.io) and login. Secondly, naviagate over to the apps tab marked in green and click on the wrench icon to create a new app. From here, you should be able to see:
+First, head over to [dapp.microshare/io](http://dapp.microshare.io) and login. Second, naviagate over to the apps tab marked in green and click on the wrench icon to create a new app. From here, you should be able to see:
 
 {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  

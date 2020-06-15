@@ -5,8 +5,6 @@ title: Microshare Super Admin
 toc: true
 ---
 
-[Microshare.io](https://microshare.io)
-
 ---------------------------------------
 
 ##### SUMMARY : 

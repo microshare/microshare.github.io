@@ -1,13 +1,13 @@
 ---
 layout: docs
 title: Demo
-description: Our demo dashboards are not using real data and are provided solely for demo purposes.
+description: Our demo dashboards do not use real data and are provided solely for demo purposes.
 toc: true
 ---
 
 ## Demo Dashboards 
 
-You want to see how Microshare's dashboards looks like ? 
+You want to see what Microshare's dashboards looks like? 
 
 Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), you will have access to few of our dashboards. As seen in the graphic below, you have access to many apps. <br>
 

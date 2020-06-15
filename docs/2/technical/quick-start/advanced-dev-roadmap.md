@@ -4,8 +4,6 @@ title: The Advanced Developer's Roadmap to Microshare
 toc: true
 ---
 
- [microshare](https://microshare.io) 
-
 ---------------------------------------
 
 ##### What else can a developer do?

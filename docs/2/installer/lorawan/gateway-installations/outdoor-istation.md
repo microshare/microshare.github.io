@@ -51,13 +51,10 @@ For optimal radio performance, the gateway should be installed on a pole for whi
 
 Pick the end of the cable which will be connected to the gateway outside and prepare the connector with the following steps:
 
-1. slide the provided cable gland on the cable with the screws towards the end where the RJ45 connector will be
+1. slide the provided cable gland on the cable with the screws towards the end where the RJ45 connector will be.
 
 2. strip the cable to expose the twisted pairs and align the wires in the correct order. We recommend using the T-568A standard as shown below:
-
 {% include image.html width=400 url="/assets/img/outdoor-station/T-568A-standard-wiring.png" description="LoRaWan Technology" %}
-
-
 3. Use the crimp tool to secure the wires into the RJ45 connector
 
 ## Feed the cable through to internal power supply
