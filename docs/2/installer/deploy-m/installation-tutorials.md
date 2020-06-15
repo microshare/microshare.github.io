@@ -24,32 +24,32 @@ toc: true
 
 {% include youtube_video.html url="https://www.youtube.com/embed/dzLzJE11Efk?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
-Using the Microshare Deploy-M App available for iPhone and Android you can install and configure an environment monitor sensor in minutes.
+Using the Microshare® Deploy-M App available for iPhone and Android you can install and configure an environment monitor sensor in minutes.
 
 ## 2. Installation of a Desk Occupancy Sensor
 ---------------------------------------
 
 {% include youtube_video.html url="https://www.youtube.com/embed/CGOepEvJ6Lo?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
-Using the Microshare Deploy-M App available for iPhone and Android you can install and configure a desk occupancy sensor in minutes.
+Using the Microshare® Deploy-M App available for iPhone and Android you can install and configure a desk occupancy sensor in minutes.
 
 ## 3. Installation of an Office Availability Sensor
 ---------------------------------------
 
 {% include youtube_video.html url="https://www.youtube.com/embed/pfPXUxo7360?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
-Using the Microshare Deploy-M App available for iPhone and Android you can install and configure an office occupation sensor in minutes.
+Using the Microshare® Deploy-M App available for iPhone and Android you can install and configure an office occupation sensor in minutes.
 
 ## 4. Installation of a water temperature sensor, for assisting in the prevention of legionella
 ---------------------------------------
 
 {% include youtube_video.html url="https://www.youtube.com/embed/Jvxx7kxU-Y4?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
-Available in the Microshare Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a water temperature sensor, for assisting in the prevention of legionella.
+Available in the Microshare® Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a water temperature sensor, for assisting in the prevention of legionella.
 
 ## 5. Step-by-step installation of an IoT leak detecting sensor from Microshare
 ---------------------------------------
 
 {% include youtube_video.html url="https://www.youtube.com/embed/Zy_vIfF3T7o?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
-Available in the Microshare Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a leak detection sensor.
+Available in the Microshare® Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a leak detection sensor.

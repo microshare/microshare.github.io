@@ -25,9 +25,9 @@ So we will see how to write a piece of data, but also how to read data.
 
 For this there are endpoints, similar to addresses where data is stored. 
 
-In the examples below we will create your own specific endpoints. But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page](). 
+In the examples below we will create your own specific endpoints. But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page](/docs/2/technical/microshare-platform-advanced/data-ingestion/). 
 
-If you then want to read more conventional data, you can try the [demo APIs]() now that you have mastered the main tools.
+If you then want to read more conventional data, you can try the [demo APIs](/docs/2/technical/api/quick-start/#4-demo-api) now that you have mastered the main tools.
 
 
 
@@ -36,7 +36,7 @@ If you then want to read more conventional data, you can try the [demo APIs]() n
 
 * From the Postman collection, open the request `Shares -> Create one Share`.
 
-* Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in microshare. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
+* Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
 {% include image.html url="/assets/img/api/create_one_share_1.png" description="create one share" %}
 
@@ -50,7 +50,7 @@ If you then want to read more conventional data, you can try the [demo APIs]() n
 
 {% include image.html url="/assets/img/api/create_one_share_3.png" description="create one share" %}
 
-* A confirmation message will be sent, indicating that the data was successfully written to Microshare. It returns metadata usable with other API calls.
+* A confirmation message will be sent, indicating that the data was successfully written to Microshare®. It returns metadata usable with other API calls.
 
 
 
@@ -67,7 +67,7 @@ Ther response of the request is a view of all the data stored under the specifie
 
 {% include image.html url="/assets/img/api/read_share_2.png" description="read share" %}
 
-* If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+* If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
 **Note**: The `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other users will only see their data, unless you have created Rules to share your data.
 

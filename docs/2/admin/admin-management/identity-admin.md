@@ -8,12 +8,12 @@ toc: true
 ---------------------------------------
 
 
-### Providing Client Access via Microshare to the identity
+### Providing Client Access via Microshare® to the identity
 ---------------------------------------
 
 If you are the administrator of an identity you will be able to add people to it. To better understand the identities you can read our [identity guide](../../../technical/microshare-platform-advanced/identity-guide/).
 
-1. To determine user access, first log into Microshare. 
+1. To determine user access, first log into Microshare®. 
 2. Head over to the Manage tab. From there click on the Keys tab.
 {% include image.html url="/assets/img/admin/identity_0.png" description="Banner" %}
 3. Then go under the Organization tab. 

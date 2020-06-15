@@ -41,7 +41,7 @@ Continue this tutorial to understand how to switch from one identity to another.
 ## 2. Select My Identity
 ---------------------------------------
 
-Identities make it easy to navigate on Microshare from one dashboard/data set to another without changing accounts. 
+Identities make it easy to navigate on Microshare® from one dashboard/data set to another without changing accounts. 
 
 Here we will simply look at the general information about the identities. For more information on identities an in-depth tutorial can be found here: 
 
@@ -50,9 +50,9 @@ Here we will simply look at the general information about the identities. For mo
 When you log in, the identity will be the your most recently active one. 
 When creating an account, you were simply added to the `Microshare Default` identity. This one is unique to your organization. 
 
-If you are a Microshare customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare technology. 
+If you are a Microshare® customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare® technology. 
 
-For example, if you have four sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
+For example, if you have four sites where you have integrated Microshare® technology, you will be invited to four identities, each with several dashboards and their own data.
 
 Clicking on the profile icon in the top right hand corner will allow you to quickly switch identities.  
 
@@ -64,7 +64,7 @@ Here, for example, we can simply navigate between two identities.
 ## 3. Navigate on my Account
 ---------------------------------------
 
-Once you have logged in and chosen the identity that corresponds to what you are looking for you will be able to use the different Microshare tools. 
+Once you have logged in and chosen the identity that corresponds to what you are looking for you will be able to use the different Microshare® tools. 
 
 To get started your homepage is full of applications. Just click on one of them to launch it and you will be able to see and use your data easily.
 
@@ -74,7 +74,7 @@ Then by going to `Manage` you will have access to more advanced tools.
 
 {% include image.html url="/assets/img/access-my-apps/microshare-manage.png" description="microshare homepage" %}
 
-If you want to better understand all of Microshare's tools continue on the technical documentation:
+If you want to better understand all of Microshare®'s tools continue on the technical documentation:
 
 ##### > [Technical](../../../technical/quick-start/overview)
 

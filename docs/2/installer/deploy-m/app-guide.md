@@ -24,13 +24,13 @@ Get your Internet of Things data workflow started with the following steps:
 ## 1. Requirements
 
 To be able to use the Deploy-M application some prerequisites are necessary. 
-To start, a Microshare account is required, either from our Production or Development platform. 
+To start, a Microshare® account is required, either from our Production or Development platform. 
 To create an account, [follow this guide](/docs/2/general-user/quick-start/create-an-account/).
 
 Then this account will need to contain a device cluster that will be ready to host the devices that we will register with the application. 
 You can create a device cluster by following [this guide](/docs/2/technical/microshare-platform/dashboard-guide/).
 
-Finally you need to have the devices you want to add to the Microshare platform. It is recommended to have devices with Microshare QR code to really save a maximum of time with the Deploy-M application.
+Finally you need to have the devices you want to add to the Microshare® platform. It is recommended to have devices with Microshare® QR code to really save a maximum of time with the Deploy-M application.
 
 ## 2. Sign In
 

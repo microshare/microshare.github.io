@@ -8,12 +8,12 @@ toc: true
 ## Setting up the Kerlink iFemtocell
 ---------------------------------------
 
-The Kerlink iFemtocell receives radio transmissions from the Microshare IoT devices in and around your building and uses an integrated Ethernet or cellular/mobile connection to send data securely to the Microshare Smart Network.
-Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
+The Kerlink iFemtocell receives radio transmissions from the Microshare® IoT devices in and around your building and uses an integrated Ethernet or cellular/mobile connection to send data securely to the Microshare® Smart Network.
+Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare® if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
 
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step1-800x800.jpg" description="LoRaWan Technology" %}
 
-Microshare delivers Kerlink iFemtocells pre-configured and if required with a 4G USB dongle already activated.
+Microshare® delivers Kerlink iFemtocells pre-configured and if required with a 4G USB dongle already activated.
 All you need to do to have your LoRaWAN network up and running is to :
 Re-assemble the parts
 Plug into a mains power source and wait for the connection to be established

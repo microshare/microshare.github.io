@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Overview
-description: What it means to be a company adminsistrator through Microshare
+description: What it means to be a company adminsistrator through Microshare®
 toc: true
 ---
 
@@ -46,6 +46,6 @@ The [identity administrator](../identity-admin) which is accessible to any user,
 
 The [MS administrator](../ms-admin) who is the `ms_admin@*customer.org*` account has a more important feature management.
 
-The [Super Admin at Microshare](../super-admin) is a member of Microshare and is therefore able to create ms_admin accounts and identities. 
+The [Super Admin at Microshare®](../super-admin) is a member of Microshare® and is therefore able to create ms_admin accounts and identities. 
 
 

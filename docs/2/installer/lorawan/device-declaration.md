@@ -21,9 +21,9 @@ toc: true
 
 In the management of devices to install sensors there are two solutions. 
 
-The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
+The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare®. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
 
-The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
+The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare®. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
 
 For both methods you need to create the cluster device first and then add the sensors. 
 

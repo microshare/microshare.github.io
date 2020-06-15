@@ -22,7 +22,7 @@ toc: true
 
 Before starting to use the ms_admin account it is necessary to know what is shared within an identity and what belongs to the ms_admin account completely. The [overview page](../overview) of the Admin part explains this very well. Being the administrator is the ms_admin account entails the the responsibility of administrating and managing the corresponding identities. 
 
-##### As administrator, your first role will be to create the device clusters on Microshare.
+##### As administrator, your first role will be to create the device clusters on Microshare®.
 
 {% include image.html url="/assets/img/cards/dc-card.png" description="Banner" width="200" %} 
 
@@ -46,7 +46,7 @@ To do this you will create shares rules. Particularly to the identity who will u
 
 {% include image.html url="/assets/img/cards/robot-card.png" description="Banner" width="200" %} 
 
-Robots are used on Microshare to automate tasks. For example: to trigger an action when a particular event occurs or send an email alert when a temperature in a room is exceeded.
+Robots are used on Microshare® to automate tasks. For example: to trigger an action when a particular event occurs or send an email alert when a temperature in a room is exceeded.
 
 To do this, you just need to link a robot to a data stream from a cluster device. 
 People accessing the identity according to the rights you have given them with the sharing rules will be able to create their own robots on the data streams you share with them if they wish.
@@ -57,7 +57,7 @@ But it is still advisable to have the general robots on the ms_admin account. Th
 
 {% include image.html url="/assets/img/cards/app-card.png" description="Banner" width="200" %} 
 
-For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare Default identity which is particular. 
+For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare® Default identity which is particular. 
 
 On the other hand, seeing the applications does not mean that they will work because it is necessary to have shared the data correctly with the users of the identity, for these applications to be able to use the data.
 
