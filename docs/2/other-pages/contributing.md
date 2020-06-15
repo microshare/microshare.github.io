@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: title
-description: description
+title: Contributing
+description: 
 toc: true
 ---
 
