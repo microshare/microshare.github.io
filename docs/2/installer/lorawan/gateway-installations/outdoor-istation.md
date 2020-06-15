@@ -8,14 +8,14 @@ toc: true
 ## Setting up the Kerlink iStation
 ---------------------------------------
 
-The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives radio transmissions from the Microshare IoT devices in and around your building or campus. It uses an integrated cellular/mobile connection to send data securely to the Microshare Smart Network. It is fully weatherproof and designed to be installed outdoors but can in some cases be installed internally.
-Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
+The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives radio transmissions from the Microshare® IoT devices in and around your building or campus. It uses an integrated cellular/mobile connection to send data securely to the Microshare® Smart Network. It is fully weatherproof and designed to be installed outdoors but can in some cases be installed internally.
+Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare® if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
 
 ### What is included
 
 {% include image.html width=400 url="/assets/img/outdoor-station/iStation-included.png" description="LoRaWan Technology" %}
 
-Microshare delivers Kerlink iStations pre-configured, including an indoor PoE injector, external antenna and a 4G SIM card within the station.
+Microshare® delivers Kerlink iStations pre-configured, including an indoor PoE injector, external antenna and a 4G SIM card within the station.
 
 The PoE supplied to you may differ from the picture and if you have a PoE network, you can also power the gateway directly from your own network without the need to use the PoE injector provided.
 
@@ -51,13 +51,10 @@ For optimal radio performance, the gateway should be installed on a pole for whi
 
 Pick the end of the cable which will be connected to the gateway outside and prepare the connector with the following steps:
 
-1. slide the provided cable gland on the cable with the screws towards the end where the RJ45 connector will be
+1. slide the provided cable gland on the cable with the screws towards the end where the RJ45 connector will be.
 
 2. strip the cable to expose the twisted pairs and align the wires in the correct order. We recommend using the T-568A standard as shown below:
-
 {% include image.html width=400 url="/assets/img/outdoor-station/T-568A-standard-wiring.png" description="LoRaWan Technology" %}
-
-
 3. Use the crimp tool to secure the wires into the RJ45 connector
 
 ## Feed the cable through to internal power supply
@@ -124,6 +121,6 @@ screw the external antenna either directly or via a coaxial N-type cable at the 
 Installed Kerlink iStation on a pole
 Make sure to secure the pole using the appropriate fixing, .e.g. lashing kit, brackets, etc.
 
-Once all secure, turn on the power of the PoE injector. You can now start deploying Microshare sensors in your building or campus.
+Once all secure, turn on the power of the PoE injector. You can now start deploying Microshare® sensors in your building or campus.
 
 You’re all done! Please send an email to support@microshare.io to indicate the Gateway is up and running so we can confirm at our end.

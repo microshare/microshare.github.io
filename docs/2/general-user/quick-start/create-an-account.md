@@ -22,7 +22,7 @@ toc: true
 
 ### A. Development or Production
 
-Microshare consists of two environments, the development environment and the production environment; each has its own characterisitics and fufill different needs. 
+Microshare® consists of two environments, the development environment and the production environment; each has its own characterisitics and fufill different needs. 
 
 Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
@@ -39,7 +39,7 @@ Here is the table of the different reasons to create an account on the dev or pr
 | Dashboards Creation   |                           |
 
 
-To summarize, if Microshare invites you to create an account to access your dashboard you will need to create an account on prod. While if you just want to try something go to dev.
+To summarize, if Microshare® invites you to create an account to access your dashboard you will need to create an account on prod. While if you just want to try something go to dev.
 
 
 ### B. Registration

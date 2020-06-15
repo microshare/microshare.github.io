@@ -8,7 +8,7 @@ toc: true
 ## Introduction
 ---------------------------------------
 
-Here you can find the answers to the most frequently asked questions about the installation process. Our documentation is here to clarify the process of using the Microshare platform. 
+Here you can find the answers to the most frequently asked questions about the installation process. Our documentation is here to clarify the process of using the Microshare® platform. 
 
 Have a question not answered here? Do not hesitate to contact us at `docs@microshare.io`!
 
@@ -16,7 +16,7 @@ Have a question not answered here? Do not hesitate to contact us at `docs@micros
 
 ### Q. How should I start as an admin? 
 <br>
-A. All the information concerning the administration of an entity is available in this part of the documentation: [Admin Management](../../../admin/admin-management/overview)
+A. All the information concerning the administration of an entity is available in this part of the documentation: [Admin Management](../../../admin/admin-management/overview).
 <br>
 
 ---------------------------------------

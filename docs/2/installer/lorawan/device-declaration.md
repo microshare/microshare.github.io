@@ -21,9 +21,9 @@ toc: true
 
 In the management of devices to install sensors there are two solutions. 
 
-The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
+The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare®. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
 
-The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
+The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare®. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
 
 For both methods you need to create the cluster device first and then add the sensors. 
 
@@ -39,9 +39,12 @@ Firstly, a device cluster represents a grouping of sensors. This is first of all
 
 Let's take an example, we have for example temperature sensors that we want to install in our WeWork building.
 
-We know as follows: 
+**We know:**
+
 the type of sensor: Tabs Environment TBHV100
+
 the global location: Europe,UK,London,Paddington,5 Merchant Square
+
 the use case: temperature management
 
 We can now create the cluster device. As previously recalled the cluster device are normally on the main administrator account. And this one is usually created by the administrator. You will simply make a request to the administrator of your entity to create the necessary device cluster.

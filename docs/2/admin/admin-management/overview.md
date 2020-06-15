@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Overview
-description: What it means to be a company adminsistrator through Microshare
+description: What it means to be a company adminsistrator through Microshare®
 toc: true
 ---
 
@@ -20,7 +20,7 @@ toc: true
 ---------------------------------------
 
 As an administrator you are in charge of ensuring that best practices are respected in your actions and those of your employees. 
-Depending on the degree of administration you have powerful tools in your hands, you must use them following the main guidelines.
+Depending on the degree of administration, you have powerful tools in your hands. You must use them following the main guidelines.
 
 While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`. 
 
@@ -46,6 +46,6 @@ The [identity administrator](../identity-admin) which is accessible to any user,
 
 The [MS administrator](../ms-admin) who is the `ms_admin@*customer.org*` account has a more important feature management.
 
-The [Super Admin at Microshare](../super-admin) is a member of Microshare and is therefore able to create ms_admin accounts and identities. 
+The [Super Admin at Microshare®](../super-admin) is a member of Microshare® and is therefore able to create ms_admin accounts and identities. 
 
 

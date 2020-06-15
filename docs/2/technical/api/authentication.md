@@ -13,11 +13,11 @@ toc: true
 
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
 
-**Note** You could run the `Authentication -> Request Pipe token` request to generate a token valid for an unlimited time BUT that can only be used to post data to the microshare platform (no read). Such a token is convenient to setup a routed stream of IoT data from another platform.
+**Note** You could run the `Authentication -> Request Pipe token` request to generate a token valid for an unlimited time BUT that can only be used to post data to the Microshare® platform (no read). Such a token is convenient to setup a routed stream of IoT data from another platform.
 
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
-**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
+**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in Microshare®. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
  

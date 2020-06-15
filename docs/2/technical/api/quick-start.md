@@ -19,21 +19,21 @@ toc: true
 ---------------------------------------
 ## 1. Introduction
 
-You will us the Microshare API to set up your interactions with the Microshare Platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communivate with the Microshare Platform. This guide will walk you through setting up the Postman Software to interact with the API and start operating with the Microshare Platform.
+You will us the Microshare® API to set up your interactions with the Microshare® Platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communivate with the Microshare® Platform. This guide will walk you through setting up the Postman Software to interact with the API and start operating with the Microshare® Platform.
 
 
 ## 2. Get an API key
 ---------------------------------------
 
 Request an API key for authentication with the services.
-You can then use Microshare Share API to read data from, as well as write data to the platform. 
+You can then use Microshare® Share API to read data from, as well as write data to the platform. 
 
-* Log in your [microshare account](https://app.microshare.io)
+* Log in your [Microshare® account](https://app.microshare.io)
 * Go to `Manage -> Keys.`  
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
 * Click `CREATE NEW APP` and give a friendly name to your APIkey (why not "My first IoT App"?).  
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
-* Once the key is created, copy it somewhere handy, you will need it to execute microshare API calls.
+* Once the key is created, copy it somewhere handy, you will need it to execute Microshare® API calls.
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
 ## 3. Setup Postman
@@ -51,14 +51,14 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 * Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
 
-* To see the Microshare Postman **collection**, click on `Collections` on the left hand pane.
-* To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.  
+* To see the Microshare® Postman **collection**, click on `Collections` on the left hand pane.
+* To configure your Microshare® **environment**, select the cog icon situated at the top right of the screen.  
 Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
 
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 
-That's it! You now have access to the microshare API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
+That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
 
 ###### > [Authentication](../authentication)
 ###### > [Simple Request](../simple-requests)
@@ -68,7 +68,7 @@ That's it! You now have access to the microshare API collection, and are setup t
 
 To let you try out our API system, we have created demo APIs. 
 
-To try them out, you will need a Microshare account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you don't have one. 
+To try them out, you will need a Microshare® account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you don't have one. 
 
 Then you will need to create your API key and Postman setup as described above.
 1. [Get an API key](./#1-get-an-api-key)
