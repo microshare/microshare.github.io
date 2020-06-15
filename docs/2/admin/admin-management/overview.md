@@ -30,7 +30,7 @@ While reading this documentation if you encounter any issues or have any feedbac
 
 By default the data from a device is NOT SHARED. Only the device cluster's owner can see it (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that record type to be created in order to allow other parties to view the data. The cluster device is managed by the MS admin.
 
-Apps, however, by default are shared at the organizational level. They do not require share rules to be created. They can't be restricted in access although they can be filtered out of the default user view using favorites. Ainsi l’accessibilité d’une entité est géré par toute personne étant accrédité comme un administrateur d’identité.
+Apps, however, by default are shared at the organizational level. They do not require share rules to be created. They can't be restricted in access although they can be filtered out of the default user view using favorites. Thus the accessibility of an entity is managed by any person who is accredited as an identity administrator.
 
 Robots are visible to only the creator. There is not currently a mechanism to share robots. 
 
