@@ -9,7 +9,7 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Qucik Start](./#1-quick-start)
+1. [Quick Start](./#1-quick-start)
 2. [From Somewhere to Microshare](./#2-from-somewhere-to-microshare)
 3. [From Microshare to Somewhere](./#3-from-microshare-to-somewhere)
     - A) [API](./#a-api)
