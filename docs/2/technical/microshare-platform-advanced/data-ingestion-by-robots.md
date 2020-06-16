@@ -19,7 +19,7 @@ toc: true
 ##  To aggregate your data from different sources
 ---------------------------------------
 
-Microshare.io is here to help you aggregate and use your data from several sources, especially IoT platforms.  
+Microshare® is here to help you aggregate and use your data from several sources, especially IoT platforms.  
 Below are several ways to move your data as microshares™ in the data lake.  
 
 ## 1. Upload data manually
@@ -34,7 +34,7 @@ It will then be available to use from the data lake with [GET /share calls](/ass
 
 Some IoT platforms act as [websocket servers](https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live.  
 [Orange Live Objects](https://liveobjects.orange-business.com/), [The Things Network](https://console.thethingsnetwork.org/), or a Sagemcom private gateway support it.  
-In Microshare.io, you can setup a websocket client Robot that takes care of writing your data as a microshare as soon as it is available.  
+In Microshare.io®, you can setup a websocket client Robot that takes care of writing your data as a microshare as soon as it is available.  
 There is no UI to configure your own yet, but here is the WS client configuration we've gone with:
 {% highlight java %}
 {
@@ -60,7 +60,7 @@ There is no UI to configure your own yet, but here is the WS client configuratio
 Alternatively, some platforms offer RESTful APIs to request for the data they store, such as [Orange Live Objects](https://liveobjects.orange-business.com/), [Bouygues Telecom Objenious](https://spot.objenious.com/login), [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
 In that case you can setup a [scheduled Robot](../robot-guide/#triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
 You are at liberty to setup your Robot script the way you want, to decide when and what to store as a microshare from that data.  
-Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the microshare data lake:
+Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the Microshare® data lake:
 
 {% highlight js %}
   var lib = require('./libs/helpers');

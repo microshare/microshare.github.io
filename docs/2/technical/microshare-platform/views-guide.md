@@ -37,7 +37,7 @@ Use the "Static JSON" option to create data samples for testing or reference dat
 
 ## 3. How do I use them?
 
-You'll need to create and save a View into the "VIEWS" section from the "MANAGE" menu of the Microshare portal.
+You'll need to create and save a View into the "VIEWS" section from the "MANAGE" menu of the Microshare® portal.
  
 #### - A. Creating a View
 
@@ -57,7 +57,7 @@ Click the "Create" button on the top to create your new View.
 
 #### - C. A Pipeline Query View
 
-Views can be configured to aggregate or obfuscate data from the Microshare datalake using MongoDB aggregation query language. This will allow you to do the following searches, sorts, projections, and groups:
+Views can be configured to aggregate or obfuscate data from the Microshare® datalake using MongoDB aggregation query language. This will allow you to do the following searches, sorts, projections, and groups:
 
 {% include image.html url="/assets/img/composer-fact-create-query1.jpg" description="View Create Query" %}
 
@@ -252,11 +252,11 @@ To test the response of this fact in the api call, scroll down to the "View Prev
 
 ### Use-case: Tracking Record Count
 
-The intent of the solution is to provide a simple programmatic way to check that the count of received records at the Microshare layer is consistent with the expected count. 
+The intent of the solution is to provide a simple programmatic way to check that the count of received records at the Microshare® layer is consistent with the expected count. 
 
-An API call can be used to invoke a View within Microshare whose job is to request a count between a given datetime range that corresponds with the sample duration. The response from the API can be compared against the actual recorded records to determine if they are in agreement.
+An API call can be used to invoke a View within Microshare® whose job is to request a count between a given datetime range that corresponds with the sample duration. The response from the API can be compared against the actual recorded records to determine if they are in agreement.
 
-To start, create a new View in Composer under the account that owns the data records in Microshare. That view should look something like:
+To start, create a new View in Composer under the account that owns the data records in Microshare®. That view should look something like:
 
 ##### Query
 {% highlight JSON %}

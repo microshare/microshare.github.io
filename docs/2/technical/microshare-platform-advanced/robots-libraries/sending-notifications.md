@@ -6,7 +6,7 @@ group: advanced
 toc: true
 ---
 
-### Logging a message in microshare
+### Logging a message in Microshare®
 
 {% highlight js %}
 var lib = require('./libs/helpers');

@@ -10,7 +10,7 @@ toc: true
 
 1. [Introduction](./#1-introduction)
 2. [Types of Sensors](./#2-types of sensors)
-3. [Sensors Microshare Uses](./#3-sensors-microshare-uses)
+3. [Sensors Microshare® Uses](./#3-sensors-microshare-uses)
 - A. [Browan Sensors](./#a-browan-sensors)
 - B. [Kerlink Wave](./#b-kerlink-wave)
 - C. [Skiply Smilio Action Feedback Sensor](./#c-skiply-smilio-action-feedback-sensor)
@@ -23,11 +23,11 @@ toc: true
 
 ## 1. Introduction
 ---------------------------------------
-Microshare's Smart Facilities solutions are powered by devices that quickly and effectively deliver data to your dashboard. From Predictive Cleaning to Environment Monitoring, Microshare provides boundless opportunities to syncronize you and your data. 
+Microshare®'s Smart Facilities solutions are powered by devices that quickly and effectively deliver data to your dashboard. From Predictive Cleaning to Environment Monitoring, Microshare® provides boundless opportunities to syncronize you and your data. 
 
 LoRaWAN devices offer a more effiecient solution to communicate data than cellular or WiFi. Sending information via Lora, the range of communication increases to hundreds of square kilometers. The power efficiency of LoRa Devices far exceed their WiFi or Cellular counterparts, giving a battery life of your devices up to six years. 
 
-Microshare sets up your solution before it even arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare. Have more questions on Microshare's solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/).
+Microshare® sets up your solution before it even arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare®. Have more questions on Microshare®'s solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/).
 
 ## 2. Types of Sensors
 ---------------------------------------
@@ -38,7 +38,7 @@ Motion sensors have a variety of applications throughout you environment. Motion
 
 ### B. Temperature and Humidity Devices
 
-Microshare works with both indoor and outdoor specific sensors which monitor environmental changes to various locations. Temperature and Humidity Sensors are applied in Indoor Air Quality monitoring, environment monitoring, fridge monitoring and Legionella Prevention solutions. 
+Microshare® works with both indoor and outdoor specific sensors which monitor environmental changes to various locations. Temperature and Humidity Sensors are applied in Indoor Air Quality monitoring, environment monitoring, fridge monitoring and Legionella Prevention solutions. 
 
 ### C. Feedback Sensors
 
@@ -56,14 +56,14 @@ The Ambient Light Sensor allows you to moniter light intensity throughout variou
 
 The Waste Management sensor detects and predicts an overflowing trash bin, improving cleaniness of facilities and improving predictibility of collection routes. 
 
-## 3. Sensors Microshare Uses
+## 3. Sensors Microshare® Uses
 ---------------------------------------
 
-Microshare works with various models of LoRaWAN sensors to deliver a versitile platform of data collection and management. 
+Microshare® works with various models of LoRaWAN sensors to deliver a versitile platform of data collection and management. 
 
 ### A. Browan Sensors
 
-Microshare employs Browan Sensors for indoor monitoring solutions.
+Microshare® employs Browan Sensors for indoor monitoring solutions.
 
 #### Tabs Motion Sensor 
 
@@ -121,7 +121,7 @@ For more information on the specifications on the Ambient Light Sensor and sampl
 
 ### B. Kerlink 
 
-Although Kerlink products are mostly used as [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways) for your devices to communicate with Microshare platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
+Although Kerlink products are mostly used as [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways) for your devices to communicate with Microshare® platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Kerlink_Wave.png" height="250" width="250" description="Kerlink" %}
 
@@ -129,12 +129,12 @@ picture from the [Kerlink Website](https://www.kerlink.com/product/wanesy-wave/)
 
 
 
-### C. Skiply Smilio Action Microshare 5 Button Feedback Sensor
+### C. Skiply Smilio Action Microshare® 5 Button Feedback Sensor
 
 US Model Number: SKPF000185
 EU Model Number: SKPF000184
 
-The Microshare version of the Smilio A Feedback Sensor gives give options to record feedback from your intended audience. The sensor sends data through to the Microshare Platfrom where it is represented on your dashboard.
+The Microshare® version of the Smilio A Feedback Sensor gives give options to record feedback from your intended audience. The sensor sends data through to the Microshare® Platfrom where it is represented on your dashboard.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Smilio.png" height="250" width="250" description="Smilio Feedback Sensor" %}
 
@@ -173,8 +173,8 @@ For more information on the specifications on the SmartEnds Brighterbin and samp
 * [ST B-L072Z-LRWAN1 LoRa Discovery kit](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/st-b-1072z-lrwan1-discovery-kit)
 
 ### Platform Tutorials
-* [Stream IoT packets from Senet to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/senet-tutorial)
-* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/ttn_tutorial)
-* [Configure Routing from Kerlink Gateway's SPN to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/kerlink-tutorial)
+* [Stream IoT packets from Senet to Microshare®](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/senet-tutorial)
+* [Stream IoT packets from The Things Network (TTN) to Microshare®](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/ttn_tutorial)
+* [Configure Routing from Kerlink Gateway's SPN to Microshare®](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/kerlink-tutorial)
 
 

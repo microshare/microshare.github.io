@@ -1,20 +1,20 @@
 ---
 layout: docs
-title: The Things Network (TTN) & Microshare integration
+title: The Things Network (TTN) & Microshare™ integration
 description:
 group: advanced
 toc: true
 ---
 
-# How to: stream IoT packets from The Things Network (TTN) to Microshare
+# How to: stream IoT packets from The Things Network (TTN) to Microshare®
 
 This tutorial assumes that you already registered for and have [a TTN account](https://console.thethingsnetwork.org/){:target="_blank"}. It also assumes that you have provisioned at least one device sending uplink packages to TTN.
 
-This tutorial will show you how to configure your TTN applications to forward IoT data to the microshare.io data lake. It will take you through creating a microshare account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the microshare platform to share your data securely, build data workflows, Apps, etc.
+This tutorial will show you how to configure your TTN applications to forward IoT data to the Microshare® data lake. It will take you through creating a Microshare® account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the Microshare® platform to share your data securely, build data workflows, Apps, etc.
 
 ### Register for a Microshare.io account
 
-The microshare registration process is simple. 
+The Microshare® registration process is simple. 
 1. Browse to [https://app.microshare.io](https://app.microshare.io){:target="_blank"}.
 2. Click [Sign Up](https://auth.microshare.io/portal/signup){:target="_blank"}.
 
@@ -28,9 +28,9 @@ Your experience should be similar to the screenshots below.
 {% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}
 {% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
-### How to send data to microshare
+### How to send data to Microshare®
 
-Now that you have created your account, you own a little piece of the microshare data lake. You will now use TTN's automated redirection of packets, aka a device's notification target, to pass that data through to [microshare's RESTful API](../../generic-rest-api){:target="_blank"}.
+Now that you have created your account, you own a little piece of the Microshare® data lake. You will now use TTN's automated redirection of packets, aka a device's notification target, to pass that data through to [Microshare®'s RESTful API](../../generic-rest-api){:target="_blank"}.
 
 The API needs to know two things when receiving data from an external service:
 
@@ -39,13 +39,13 @@ The API needs to know two things when receiving data from an external service:
 
 These two pieces of information are configured in TTN's Application Integrations sections.
 
-To identify yourself as the owner of the streamed data, you must generate a token for your microshare account. Generating this token will be covered in the next section.
+To identify yourself as the owner of the streamed data, you must generate a token for your Microshare® account. Generating this token will be covered in the next section.
 
-The category under which every one of your data packets get stored in microshare is called a `recType` (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later
+The category under which every one of your data packets get stored in Microshare® is called a `recType` (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later
 
-### Generate a Microshare Pipe Token
+### Generate a Microshare® Pipe Token
 
-Now you'll generate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use [Postman](https://www.getpostman.com/){:target="_blank"}
+Now you'll generate a Pipe Token using Microshare®'s API. The easiest way to interact with the Microshare® API is to use [Postman](https://www.getpostman.com/){:target="_blank"}
 
 **To install Postman on your computer:**
 
@@ -54,12 +54,12 @@ Now you'll generate a Pipe Token using microshare's API. The easiest way to inte
 2. Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
 **If that fails**, go to [the Postman website](https://www.getpostman.com/){:target="_blank"} to install Postman manually, then download and import the collection and environment from our [API documentation page](../../generic-rest-api){:target="_blank"}.
 
-3. Open Postman on your computer to see the microshare collection. You can select and manage environment from the top right of your Postman app.  
+3. Open Postman on your computer to see the Microshare® collection. You can select and manage environment from the top right of your Postman app.  
 To use the token generation calls, you need to identify yourself with your username, password and an APIkey.  
 
-**To get a microshare APIkey:**
+**To get a Microshare® APIkey:**
 
-4. Log in your [microshare account](https://app.microshare.io){:target="_blank"}
+4. Log in your [Microshare® account](https://app.microshare.io){:target="_blank"}
 5. Go to `Manage -> Keys.`  
 6. Click `CREATE NEW APP` and give a friendly name to your APIkey (why not "HackIoT"?).
 5. Once the key is created, , click on the value in the API KEY (CLIENT ID) section to copy it to your clipboard. (See the screenshots below)
@@ -68,19 +68,19 @@ To use the token generation calls, you need to identify yourself with your usern
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
 
-**To finally generate the microshare Pipe Token:**
+**To finally generate the Microshare® Pipe Token:**
 6. Go back to Postman and edit your environment.
 7. Copy the APIkey and enter your username and password.
 
-8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the microshare platform.
+8. This allows you to run the request `Authentication -> Request pipe token`.   The generated token is returned under the `access token` key in the result set and is valid for an unlimited time.  The Pipe token can only be used to post data to the Microshare® platform.
 
-Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
+Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other Microshare® APIs.
 
 {% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
-**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
+**Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in Microshare®. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
@@ -110,13 +110,13 @@ Below is an example of an `Integrations` form.
 
 {% include image.html url="/assets/img/ttn_integ_http_form.png" description="TTN HTTP Integration Form" %}
 
-Next you should see your newly created microshare HTTP integration running in the Integrations Overview section
+Next you should see your newly created Microshare® HTTP integration running in the Integrations Overview section
 
 {% include image.html url="/assets/img/ttn_integ_http_running.png" description="TTN HTTP Integration Running" %}
 
-### Verify the data streaming to microshare
+### Verify the data streaming to Microshare®
 
-Your TTN device data should now be streaming to your microshare account. You can verify that with the microshare API.
+Your TTN device data should now be streaming to your Microshare® account. You can verify that with the Microshare® API.
 
 You are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
 
@@ -134,7 +134,7 @@ The response of the request is a view of all the data **THAT YOU ONLY HAVE ACCES
 The TTN data is under the `objs -> data` keys. The `payload_fields` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
 Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
 
-If you execute the request again, the number of records will increase as the data is streamed. The microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+If you execute the request again, the number of records will increase as the data is streamed. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
 **Beware** the `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other user will only see their data, unless you have created Rules to share your data.
 

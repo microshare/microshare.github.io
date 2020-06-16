@@ -11,7 +11,7 @@ toc: true
 
 Here you can find the answers to the most frequently asked questions. Our documentation is here to clarify the process of using the Microshare® platform. 
 
-Have a question not answered here? Do not hesitate to contact us at `docs@microshare.io`!
+Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 
 ---------------------------------------
 

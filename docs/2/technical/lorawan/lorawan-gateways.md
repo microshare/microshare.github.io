@@ -9,7 +9,7 @@ toc: true
 ##### SUMMARY : 
 
 1. [Introduction](./#1-introduction)
-2. [What Gateways do Microshare work with?](#2-what-gateways-do-microshare-work-with)
+2. [What Gateways do Microshare® work with?](#2-what-gateways-do-microshare-work-with)
 
 
 ---------------------------------------
@@ -26,7 +26,7 @@ For more information on gateways please visit [The Things Network Website](https
 
 ---------------------------------------
 
-### 2. What Gateways do Microshare work with?
+### 2. What Gateways do Microshare® work with?
 <!--Need to complete this list-->
 #### Kerlink Indoor iFemtocell and Indoor iFemtocell Evo
 
@@ -34,7 +34,7 @@ For more information on gateways please visit [The Things Network Website](https
 
 image from [Kerlink](https://www.kerlink.com/product/wirnet-ifemtocell-evolution/)
 
-The Kerlink iFemtocell and Kerlink iFemtocell Evolution receives radio transmissions from the Microshare IoT devices in and around your building and uses an integrated cellular/mobile connection to send data securely to the Microshare Smart Network. The Kerlink iFemtocell is most often paired with devices that monitor indoor activity for solutions such as :
+The Kerlink iFemtocell and Kerlink iFemtocell Evolution receives radio transmissions from the Microshare® IoT devices in and around your building and uses an integrated cellular/mobile connection to send data securely to the Microshare® Smart Network. The Kerlink iFemtocell is most often paired with devices that monitor indoor activity for solutions such as :
 
 - Contact Tracing
 - Predictive Cleaning
@@ -60,7 +60,7 @@ Our installation page has a great tutorial for both the [iFemtocell](/docs/2/ins
 
 image from [Kerlink](https://www.kerlink.com/product/wirnet-istation/)
 
-The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives radio transmissions from the Microshare IoT devices in and around your building or campus. It uses an integrated cellular/mobile connection to send data securely to the Microshare Smart Network. It is fully weatherproof and designed to be installed outdoors but can in some cases be installed internally. The Kerlink iStation is most often paired with devices that monitor outdoor activity for solutions such as:
+The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives radio transmissions from the Microshare® IoT devices in and around your building or campus. It uses an integrated cellular/mobile connection to send data securely to the Microshare® Smart Network. It is fully weatherproof and designed to be installed outdoors but can in some cases be installed internally. The Kerlink iStation is most often paired with devices that monitor outdoor activity for solutions such as:
 
 - Outdoor Temperature Monitoring
 - Leak detection
@@ -75,7 +75,7 @@ Our [installation page](/docs/2/installer/lorawan/gateway-installations/outdoor-
 
 ### 3. More information on gateways
 
-The LoRaWAN® gateways used by Microshare fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
+The LoRaWAN® gateways used by Microshare® fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
 
 
 

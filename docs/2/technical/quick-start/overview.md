@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Technical Overview
-description: A guide to interacting with Microshare Technology
+description: A guide to interacting with Microshare™ Technology
 toc: true
 ---
 
@@ -15,25 +15,25 @@ toc: true
 ## 1. Introduction: The Architecture
 
 
-The Microshare Platform is built as a set of microservices to communicate data from your devices to you. The platform operates through JSON based RESTful API calls which makes it very applicable to other systems. The data can be stored either in the Microshare Data Lake, any other on-storage premise or the cloud. 
+The Microshare® Platform is built as a set of microservices to communicate data from your devices to you. The platform operates through JSON based RESTful API calls which makes it very applicable to other systems. The data can be stored either in the Microshare® Data Lake, any other on-storage premise or the cloud. 
  
-The Microshare service is very versatile in that Microshare can run on directly on all devices through our secure cloud or your Data Center. 
+The Microshare® service is very versatile in that Microshare® can run on directly on all devices through our secure cloud or your Data Center. 
 
 ---------------------------------------
 ## 2. What can you expect to work with?
 
 
-As a developer, you will mostly be working with the Microshare platform and the API. You can get started with understanding how to work with these tools in the [Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/).  After walking through the Basic Developer Roadmap, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more complicated interactions with the Microshare platform and API. Additionally, the [Technical Struture Page](/docs/2/technical/quick-start/microshare-technical-structure/) guides you through the framework on how the components interact with each other to a greater extent. 
+As a developer, you will mostly be working with the Microshare® platform and the API. You can get started with understanding how to work with these tools in the [Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/).  After walking through the Basic Developer Roadmap, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more complicated interactions with the Microshare® platform and API. Additionally, the [Technical Struture Page](/docs/2/technical/quick-start/microshare-technical-structure/) guides you through the framework on how the components interact with each other to a greater extent. 
 
-#### The Microshare Platform
-
-
-The [Microshare Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare Platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administrate who can see your devices’ data. 
-
-#### The Microshare API
+#### The Microshare® Platform
 
 
-You will first interact with the [Microshare API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare Platform. You will learn basic calls to receive information from Microshare to implement into your Microshare Dashboard. The Microshare Structure takes many cryptic precautions to ensure the privacy of the user, and interactions with the Microshare API will help you navigate these characteristics. 
+The [Microshare® Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare® Platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administrate who can see your devices’ data. 
+
+#### The Microshare® API
+
+
+You will first interact with the [Microshare® API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare® Platform. You will learn basic calls to receive information from Microshare® to implement into your Microshare® Dashboard. The Microshare® Structure takes many cryptic precautions to ensure the privacy of the user, and interactions with the Microshare® API will help you navigate these characteristics. 
 
 #### LoRaWAN Technology
 

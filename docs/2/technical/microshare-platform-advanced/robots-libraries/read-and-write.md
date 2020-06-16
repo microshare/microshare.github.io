@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Read and Write records from the microshare datalake
+title: Read and Write records from the Microshare® datalake
 description:
 group: advanced
 toc: true
@@ -16,7 +16,7 @@ Below are code snippets to read data from the data lake.
 Parse the message that triggered the Robot using lib.parseMsg to get the data and metadata: 
 
 {% highlight js %}
-  // Include the helper objects which allows you to read and write to microshare datalake
+  // Include the helper objects which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -116,7 +116,7 @@ This call will always return an array and depending on the read, you may have 0 
 To get records by the recType and id:
 
 {% highlight js %}
-// Include the helper objects which allows you to read and write to Microshare datalake
+// Include the helper objects which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -131,7 +131,7 @@ To get records by the recType and id:
 To get records by the recType and associated tags:
 
 {% highlight js %}
-// Include the helper objects which allows you to read and write to Microshare datalake
+// Include the helper objects which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -149,7 +149,7 @@ Review [Views Guide](../../../getting-started/views-guide/) to perform advanced 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
 {% highlight js %}
-  //Include the helper objects which allows you to read and write to microshare datalake
+  //Include the helper objects which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.

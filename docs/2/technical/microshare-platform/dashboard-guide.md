@@ -241,7 +241,7 @@ Under each 2-character language code, include the followinf REQUIRED subfeild
 * `smilioEvent`: a key used to lookup which backboard event corresponds to a given Smilio event.  This is used in the Smilio robots, not Touchfree App
 
 ### Guest App
-The target use case for the Touchfree app is for a visitor to a location to launch the Touchfree Feedback app by scanning a QR-code with their phone.  The end user will not have a Microshare account.  To enable this to work: 
+The target use case for the Touchfree app is for a visitor to a location to launch the Touchfree Feedback app by scanning a QR-code with their phone.  The end user will not have a Microshare® account.  To enable this to work: 
 
 Follow the instructions “Instructions - Guest Access” to configure the Touchfree App as a guest app.   
 
@@ -251,7 +251,7 @@ You should now have a URL – let's call it the baseURL that can be used to laun
 You can learn more on how to create any type of Guest Access App through our [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/)
 
 ### Backboard Template
-Microshare needs to supply customers with physical backboards that can be printed out and mounted on the wall.  End users can use their smart phone to scan a QR code on this physical backboard to bring up the Touchfree app on their phone.  To produce these physical backboards, follow the steps below: 
+Microshare® needs to supply customers with physical backboards that can be printed out and mounted on the wall.  End users can use their smart phone to scan a QR code on this physical backboard to bring up the Touchfree app on their phone.  To produce these physical backboards, follow the steps below: 
 1. Open the Location Schema
 2. Create a new column BaseURL
 * paste the guest app URL you create above down through all the rows in the column

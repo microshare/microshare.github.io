@@ -23,16 +23,16 @@ toc: true
 ---------------------------------------
 
 ## 1. What's a Robot?
-A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into microshare to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
+A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into Microshare® to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
 1) easy to maintain, 
 2) fast and efficient with higher volumes, and 
 3) reusable in multiple projects.
  
-Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [Data Workflow](../data-workflow). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robottic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
+Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [Data Workflow](../data-workflow). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robottic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io®. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
 
-Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the microshare data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
+Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
 
-All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a microshare record, acting on it in some way, and writing a new record back into microshare.
+All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a Microshare® record, acting on it in some way, and writing a new record back into Microshare®.
 
 {% include image.html url="/assets/img/Robot_interacting_with_the_data_lake.jpg" description="Your fleet of Robots" %}
 
@@ -70,7 +70,7 @@ First of all, this part is compulsory:
 
 {% highlight js %}
   // Include the helper objects 
-  // which allows you to read and write to microshare datalake
+  // which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, 
@@ -117,7 +117,7 @@ Robots are automated workflow elements allowing you to transform, analyze and re
 
 We are going to create and chain two Robots to detect an abnormal temperature level, and send email notifications.
 
-* Navigate to [microshare platform](https://app.microshare.io)
+* Navigate to [Microshare® platform](https://app.microshare.io)
 * Click the `Manage` button in the top toolbar
 * Click the `Robots` button in the left toolbar and click `CREATE`
 
@@ -235,4 +235,4 @@ The Java libraries accessed by the Robots point to the adequate Service to read 
 
 For additional details on available Robot methods, visit [Robot library](../../advanced/robots-libraries)
 
-For help on how to route your IoT stream from your favorite platform or gateway to Microshare, check our [IoT integration documentation](../../advanced/lorawan-devices).
+For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [IoT integration documentation](../../advanced/lorawan-devices).

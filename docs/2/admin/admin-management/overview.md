@@ -22,7 +22,7 @@ toc: true
 As an administrator you are in charge of ensuring that best practices are respected in your actions and those of your employees. 
 Depending on the degree of administration, you have powerful tools in your hands. You must use them following the main guidelines.
 
-While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `docs@microshare.io`. 
+While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `support@microshare.io`. 
 
 
 ## 2. What Data or Apps are normally shared?

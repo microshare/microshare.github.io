@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: The Novice Developer's Roadmap to Microshare
+title: The Novice Developer's Roadmap to Microshare™
 toc: true
 ---
 
@@ -9,43 +9,43 @@ toc: true
 ##### SUMMARY : 
 
 1. [Where do I start?](./#1-where-do-i-start)
-2. [Creating your Microshare Developer Account](./#2-creating-your-microshare-developer-account)
+2. [Creating your Microshare® Developer Account](./#2-creating-your-microshare-developer-account)
 3. [Working with the API](./#3-becoming-familiar-with-the-microshare-api)
-4. [Getting started with the Microshare platform](./#4-getting-started-with-the-microshare-platform)
+4. [Getting started with the Microshare® platform](./#4-getting-started-with-the-microshare-platform)
 5. [How to create an App](./#5-how-to-create-an-app)
 6. [Ready for more](./#6-ready-for-more)
 
 ---------------------------------------
 
 ### 1. Where do I start?
-There may seem like a lot of resources for the develope so this page serves to outline the steps you should follow to learn how to interact with the Microshare Platform. 
+There may seem like a lot of resources for the develope so this page serves to outline the steps you should follow to learn how to interact with the Microshare® Platform. 
 
-After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
+After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare®](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare® account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
 
 ---------------------------------------
 
-### 2. Creating your Microshare Developer account
+### 2. Creating your Microshare® Developer account
 
 Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating Device Clusters, Dashboards, editing Views, creating Rules and Robots. 
 
 ---------------------------------------
 
-### 3. Becoming familiar with the Microshare API
+### 3. Becoming familiar with the Microshare® API
 
 ##### Authentication
 
-First, Head over to the [API Quick Start](/docs/2/technical/api/quick-start/) to install the Postman application, and learn the terminology of Microshare's API. Next
-use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare's API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
+First, Head over to the [API Quick Start](/docs/2/technical/api/quick-start/) to install the Postman application, and learn the terminology of Microshare®'s API. Next
+use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare®'s API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
 
 ##### Simple Requests
 
-Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare's API. Understanding these concepts are the fundamental behind working with Robots and Device Clusters moving forward. 
+Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare®'s API. Understanding these concepts are the fundamental behind working with Robots and Device Clusters moving forward. 
 
 ---------------------------------------
 
-### 4. Getting Started with the Microshare Platform
+### 4. Getting Started with the Microshare® Platform
 
-Once you have set yourself up in the developer environment, follow the next steps to interact with the Microshare environment.
+Once you have set yourself up in the developer environment, follow the next steps to interact with the Microshare® environment.
 
 ##### Device Clusters
 
@@ -104,7 +104,7 @@ After completing all the necessary facts above and from [the Dashboard Guide](/d
 
 ### 6. Ready for more?
 
-Head on over to the [Advanced Developer's Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) to take a deeper dive into incteracting with the Microshare platform.
+Head on over to the [Advanced Developer's Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) to take a deeper dive into incteracting with the Microshare® platform.
 
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
 

@@ -20,14 +20,14 @@ toc: true
 
 ---------------------------------------
 
-Data Ingestion is the process by which Microshare can help you migrate data from various other sources and store them in the Microshare Data Lake. This is most applicable to take the data from your sensors and display them on your dashboard/ App. 
+Data Ingestion is the process by which Microshare® can help you migrate data from various other sources and store them in the Microshare Data Lake. This is most applicable to take the data from your sensors and display them on your dashboard/ App. 
 
 
 ## 2. New Process
 
 ---------------------------------------
 
-Microshare used to automate this process through the use of Robots but have sense developed programs to gather and unpack data more efficiently through the Device Clusters. You can learn a lot more about how Microshare used to ingest and format data in the [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/) and the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/) pages.
+Microshare® used to automate this process through the use of Robots but have sense developed programs to gather and unpack data more efficiently through the Device Clusters. You can learn a lot more about how Microshare® used to ingest and format data in the [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/) and the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/) pages.
 
 
 
@@ -35,7 +35,7 @@ Microshare used to automate this process through the use of Robots but have sens
 
 ---------------------------------------
 
-You can also upload data to the Microshare data lake without the Device Cluster or Robots. Manual upload is the most basic way of loading data from your own database, or from an open data project. To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share).
+You can also upload data to the Microshare® data lake without the Device Cluster or Robots. Manual upload is the most basic way of loading data from your own database, or from an open data project. To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share).
 
 
 ## 4. How do I set up my Device Cluster to ingest my data automatically into the Data Lake?
@@ -57,7 +57,7 @@ The part of the device cluster involved in data ingestion is collecting the data
 {% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
 
 
-Marked in teal is the network provider category. This field is required as each network has their own format to deliver information to the Microshare Network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your Dashboard. 
+Marked in teal is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® Network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your Dashboard. 
 
 
 ## What's Next?
