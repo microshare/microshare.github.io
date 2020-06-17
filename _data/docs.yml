@@ -46,6 +46,7 @@
     pages:
     - title: Overview
     - title: Microshare Technical Structure
+    - title: Data Integration
     - title: Basic Dev Roadmap
     - title: Advanced Dev Roadmap
   - title: Microshare Platform
@@ -79,3 +80,4 @@
   - title: Extra Information
     pages:
     - title: Azure Event Hub Integration
+    - title: AWS Kinesis Data Stream Integration
