@@ -46,8 +46,11 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 5.	Underlined in orange is the device manufacturer box. Click the drop down and select the type of device your device cluster has. Selecting the model will automatically fill in the box labeled Device Payload Unpacker.
 6.	Underlined in purple is the location metadata category. Enter tags detailing the location of the device cluster so it is easier to identify the devices later-on, it's a general location for all the devices of the device cluster. Here is an example of what it should be : 
 * *Europe,United Kingdom,London,5 Merchant Square,desk*
+
 So as you can understand the structure is as follows:
+
 `continent` **/** `country` **/** `city` **/** `address` **/** `usecase`
+
 {% include image.html url="\assets\img\device-cluster-image-3.png" height="900" width="900" description="Device Cluster 3" %}
 7.	Underlined in yellow is where your cluster performance will be graphed when you add your devices to the cluster in the next step.
 8.	To add devices to the device cluster, click the add button underlined in red. 
