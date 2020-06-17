@@ -916,7 +916,7 @@ And finally the "version" is the unpacker's version.
             "owner": {
                 "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
                 "meta": {},
-                "org": "com.serco.jcuh",
+                "org": "io.microshare",
                 "owners": [],
                 "user": "jbardin@microshare.io"
             },

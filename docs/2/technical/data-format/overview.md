@@ -216,6 +216,7 @@ The additional information in the `appid' corresponds to the app-key that is use
 Thus has the creation of a token or pip token to create data, these are made from an app-key, which will be found here.
 
 ## 3. Go further
+---------------------------------------
 
 
 To go further, we will use the principle of data ingestion by device clusters, and different pushes. 
