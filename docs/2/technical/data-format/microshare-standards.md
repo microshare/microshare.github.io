@@ -247,7 +247,7 @@ All these values are explained with their units in the following table:
 
 ##### > [Standards Data Table](./#3-standards-data-table)
 
-Information about the device itself that provided the data is sometimes given, including the device id and the battery of this sensor if it sends it in the payload. Comme par exemple : 
+Information about the device itself that provided the data is sometimes given, including the device id and the battery of this sensor if it sends it in the payload. For Example: 
 
 ```
 "device": {
@@ -380,7 +380,54 @@ And finally the "version" is the unpacker's version.
 ## 3. Standards Data Table
 ---------------------------------------
 
-Comming Soon
+| Name                     | Unit | Meaning                                                  |
+| ------------------------ | ---- | -------------------------------------------------------- |
+| temperature              | °C   | Temperature of area in degrees celcius                   |
+| humidity                 | %    | Percentage of water vapor mass in dry air of area        |
+| pressure                 | hpa  | Pressure of the area                                     |
+| illuminance              | lx   | Amount of light in the area                              |
+| voc                      | ppb  | How much Volatile Organic Compound in ppb is in the area |
+| co2                      | ppm  | Carbon Dioxide Concentration in ppm in area              |
+| iaq                      | n/a  | Indoor Air Quality Index (0-500)                         |
+| loudness                 | dba  | Level of Volume of area                                  |
+| haziness                 | %    | level of impared vision from environment                 |
+| smokiness                | %dbm | level of smoke in the environment                        |
+| gas                      | n/a  | level of gas in the environment                          |
+| voltage                  | V    | battery voltage                                          |
+| current                  | A    | electrical current                                       |
+| multiplier               | n/a  | electrical current value multiplier                      |
+| presence                 | n/a  | true= presebce detected                                  |
+| motions\_since\_reset    | n/a  | motion since reset                                       |
+| motions\_since\_transmit | n/a  | motion since last transmit                               |
+| acceleration             | m/s2 | Acceleration of motion detected                          |
+| velocity                 | m/s  | velocity of motion detected                              |
+| x                        | n/a  | position on the x- plane                                 |
+| y                        | n/a  | position on the y- plane                                 |
+| z                        | n/a  | position on the z- plane                                 |
+| leak                     | n/a  | true= leak detected                                      |
+| lighter                  | n/a  | true= lighter                                            |
+| darker                   | n/a  | true= darker                                             |
+| dismantle                | n/a  | true= dismantled                                         |
+| charge                   | %    | Battery Charge                                           |
+| period                   | s    | Time in between measurements                             |
+| rssi                     | dbm  | Recieved Signal Strength Indication                      |
+| snr                      | db   | Signal to Noise Ratio, quality of signal                 |
+| reports\_since\_reset    | n/a  | number of reports since last reset                       |
+| closed                   | n/a  | true= closed                                             |
+| fill                     | %    | Fill Level frame/Uplink frame                            |
+| distance                 | cm   | distance from monitor to device                          |
+| gps                      | °    | GPS Coordinates                                          |
+| lat                      | °    | Latitude                                                 |
+| lon                      | °    | Longitude                                                |
+| push                     | n/a  | true= button pushed                                      |
+| swipe                    | n/a  | true= swiped                                             |
+| pushes\_since\_reset     | n/a  | button pushes since reset                                |
+| alarm                    | n/a  | true = there is an alarm                                 |
+| time                     | s    | seconds since 1/1/1970                                   |
+| iso\_time                | s    | ISO 8601 datetime                                        |
+| seconds\_since\_change   | s    | seconds since last transmit                              |
+| msg\_type                | n/a  | Type of message recieved                                 |
+| fault                    | n/a  | number of faults detected in payload   
 
 ## 4. Example
 ---------------------------------------
