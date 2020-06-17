@@ -72,6 +72,10 @@
     - title: Simple Requests
     - title: Complex Requests
     - title: API Collection
+  - title: Data Format
+    pages:
+    - title: Overview
+    - title: Microshare Standards
   - title: LoRaWan
     pages:
     - title: LoRaWan Technology

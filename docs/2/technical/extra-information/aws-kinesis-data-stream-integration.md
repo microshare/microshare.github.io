@@ -160,9 +160,9 @@ The final step will ask for review. Click create to proceed to resource provisio
 ## 8. Setup References
 ---------------------------------------
 
-https://docs.aws.amazon.com/streams/latest/dev/introduction.html
+[https://docs.aws.amazon.com/streams/latest/dev/introduction.html](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)
 
-https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html
+[https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)
 
  
 
@@ -174,6 +174,7 @@ As with most AWS facilities, Kinesis supports authentication and authorization u
  
 
 #### Security References
-https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html
 
-https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html
+[https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html](https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html)
+
+[https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html)
