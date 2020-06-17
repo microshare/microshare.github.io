@@ -29,6 +29,14 @@ Microshare® makes it easy for you to work with shareable data. Once your data i
 
 While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `support@microshare.io`.  
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+#### For updates on the Microshare® Platform's Release dates, please refer to the [Management Consule Access Page](https://www.microshare.io/management-console-access/).
+
+
 ## 2. Quick Links
 ---------------------------------------
 

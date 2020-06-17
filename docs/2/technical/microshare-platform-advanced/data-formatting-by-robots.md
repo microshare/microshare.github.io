@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Data Formatting
+title: Data Formatting by Robots
 description: Robot examples to build a Data Workflow
 toc: true
 ---
