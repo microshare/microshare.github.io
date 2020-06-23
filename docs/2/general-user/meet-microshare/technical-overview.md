@@ -47,9 +47,9 @@ Microshare® brings data of your environment to your fingertips, but how? Undern
 
 In order to view data on your environment, you will be interacting with the Microshare® Platform online. After setting up a [Microshare® Account](/docs/2/general-user/quick-start/create-an-account/) and your company's Microshare® Admin shares the data with you, viewing data is as easy as heading over to the [https://app.microshare.io/](https://app.microshare.io/) page and following the [Access my Apps Guide](/docs/2/general-user/quick-start/access-my-apps/).
 
-Alternatively, if your Microshar®e Admin creates a guest app, no Microshare® account is necessary! Just follow the link sent to your email inbox. 
+Alternatively, if your Microshare® Admin creates a guest app, no Microshare® account is necessary! Just follow the link sent to your email inbox. 
 
-## 4. How it works ?
+## 4. How does it work?
 ---------------------------------------
 
 Microshare®’s plug-n-play IoT modules.
@@ -57,7 +57,7 @@ Our modular, scalable solutions power data insights in small installations or me
 
 #### No technology training required
 
-Your pre-registered sensors install in minutes with average battery life of 5 years. Mount to walls and tables with standard screws, tape and silicone. Activate a local LoRaWAN gateway with our “Installation Guide.” And all of your sensors are managed centrally so data populates your Microshare® smart facility application in minutes.
+Your pre-registered sensors install in minutes with average battery life of 5 years. Mount to walls and tables with standard screws, tape and silicone. Activate a local LoRaWAN gateway with our [Installation Guide](/docs/2/installer/lorawan/gateway-installation/). And all of your sensors are managed centrally so data populates your Microshare® smart facility application in minutes.
 
 #### The technology behind the curtain
 

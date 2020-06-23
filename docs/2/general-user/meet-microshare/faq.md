@@ -9,7 +9,7 @@ toc: true
 ## Introduction
 ---------------------------------------
 
-Here you can find the answers to the most frequently asked questions. Our documentation is here to clarify the process of using the Microshare® platform. 
+Here you can find the answers to the most frequently asked questions. Our documentation is here to clarify the process of using the Microshare® Platform. 
 
 Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 
@@ -18,14 +18,6 @@ Have a question not answered here? Do not hesitate to contact us at `support@mic
 ### Q. I did not set up my password within the 15-minute window, What do I do?
 <br>
 A. If you do not set up your password within the 15-minute expiration window, navigate to [https://app.microshare.io](https://app.microshare.io) and click on the “Forgot Password?” link to reset your password.  You will need to set up your password within 15 minutes of clicking on the link or generate a new email.
-<br>
-
----------------------------------------
-
-
-### Q. I can see the Dashboards, but I am having trouble seeing any data 
-<br>
-A.  If you can see the Dashboards but are having trouble seeing any data, log out and then log back into the app.
 <br>
 
 ---------------------------------------
@@ -41,4 +33,15 @@ A.  If you cannot see any Dashboards, you are using the improper identity and yo
 
 4. View the apps under your identity
 <br>
+
+---------------------------------------
+
+### Q.  I can see the Dashboards, but I am having trouble seeing any data.
+<br>
+A.  If you can see the Dashboards but are having trouble seeing any data, log out and then log back into the app.
+<br>
+
+---------------------------------------
+
+
 

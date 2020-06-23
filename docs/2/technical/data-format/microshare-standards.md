@@ -32,8 +32,8 @@ toc: true
 
 As you have seen in data integration, unpacked data is data that is developed using Microshare unpackers. 
 
-This will allow from a payload of raw data, and thus incomprehensible to the eye, to obtain a simple data of use. 
-But these data are from IoT sensors that have been inserted into Microshare cluster devices. 
+This will allow a payload of raw data, incomprehensible to the eye, to become a simple and usable data. 
+But this data is from IoT sensors that have been inserted into Microshare cluster devices. 
 
 This will provide additional data on the IoT elements that made it possible to obtain this signal. This information varies from one network server to another. We will take an example of data here, but understand that sometimes you may have a slightly different data in the IoT part depending on the network server.
 

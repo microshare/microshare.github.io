@@ -25,7 +25,7 @@ The purpose of an installation is to allow the customer to use the data from the
 
 But for this, it is necessary to quickly understand what to install and why. 
 
-To start our sensors use LoRaWan technology. To better understand this technology you can read more information here: 
+To start our sensors use LoRaWan technology and you can learn more about it here: 
 
 ###### > [LoRaWan Technology](../../../technical/lorawan/lorawan-technology)
 
@@ -64,14 +64,14 @@ Before installation you should...
 ## 3. Steps
 ---------------------------------------
 
-To do this we will follow the following steps: 
+To set up your system, you will: 
 
-###### > First install the [Gateways](../../lorawan/gateway-installation).
+###### > 1. First install the [Gateways](../../lorawan/gateway-installation).
 
-###### > Install the [Devices](../../lorawan/device-declaration).
+###### > 2. Install the [Devices](../../lorawan/device-declaration).
 
-###### > Use [Deploy-M](../../deploy-m/app-guide) for a more efficient installation.
+###### > 3. Use [Deploy-M](../../deploy-m/app-guide) for a more efficient installation.
 
-###### > Finally, [Validate](../../quick-start/validation-of-a-successfull-installation) that the installation was successful.
+###### > 4. Finally, [Validate](../../quick-start/validation-of-a-successfull-installation) that the installation was successful.
 
 If you have more question, you can have a look at our [FAQ about installations](../faq-about-installations) page.

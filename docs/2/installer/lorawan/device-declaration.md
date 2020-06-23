@@ -19,11 +19,11 @@ toc: true
 ## 1. Possibilities
 ---------------------------------------
 
-In the management of devices to install sensors there are two solutions. 
+There are two solutions to install your sensors. 
 
-The first one is the old method which consists in creating a device cluster and then adding the devices on Microshare®. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it wastes a lot of time. 
+The first is the old method wwhere you create a device cluster and then add the devices on Microshare®. This involves knowing the exact location of the sensors before installation and then having to install the pre-selected sensor in exactly the right place. This method is not recommended because it is very time intenstive compared to the second method. 
 
-The second method is the method you must use to achieve an uncomplicated installation. Just create the device cluster on Microshare®. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
+The second method is much more simple than the first. Just create the device cluster on Microshare®. Then you just use Deploy-M to scan your sensors and indicate where you install them in real time. 
 
 For both methods you need to create the cluster device first and then add the sensors. 
 
@@ -33,9 +33,9 @@ PS: Device Clusters are often managed by the admin, please anticipate the needs 
 ## 2. Device Cluster Creation
 ---------------------------------------
 
-To create a device cluster we will take the basic information here. If you need, you will find more information [here](../../../technical/microshare-platform/device-cluster-guide/).
+This is a quick reference of the device cluster. A in- depth description of the device cluster and its applications can be found [here](../../../technical/microshare-platform/device-cluster-guide/).
 
-Firstly, a device cluster represents a grouping of sensors. This is first of all done by sensor type. A cluster device cannot contain two types of sensors. Then cluster devices are often cross-referenced by global location (site or building) and finally by usecase.
+A device cluster represents a grouping of sensors organized by sensor type. A cluster device cannot contain two types of sensors. Then cluster devices are often cross-referenced by global location (site or building) and finally by usecase.
 
 Let's take an example, we have for example temperature sensors that we want to install in our WeWork building.
 

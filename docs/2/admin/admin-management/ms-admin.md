@@ -57,7 +57,7 @@ But it is still advisable to have the general robots on the ms_admin account. Th
 
 {% include image.html url="/assets/img/cards/app-card.png" description="Banner" width="200" %} 
 
-For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare® Default identity which is particular. 
+For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare® default identity which is particular. 
 
 On the other hand, seeing the applications does not mean that they will work because it is necessary to have shared the data correctly with the users of the identity, for these applications to be able to use the data.
 
@@ -81,7 +81,7 @@ Once you have completed the apps, use postman to create a /share with recType io
   } 
 {% endhighlight %}
 
-Then create a share rule to share the user preferences with the rest of the organization so all organisation members can see the apps
+Then create a share rule to share the user preferences with the rest of the organization so all organisation members can see the apps:
 
 {% include image.html url="/assets/img/Setting_favorites_rules_screenshot.png" description="Setting Favorites" %}
 

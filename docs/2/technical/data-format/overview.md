@@ -1,23 +1,23 @@
 ---
 layout: docs
 title: Overview
-description: Let's take a look at the Microshare data structure.
+description: Let's take a look at the MicroshareMicroshare® data structure.
 toc: true
 ---
 
 ## 1. Intro
 ---------------------------------------
 
-To make the best use of Microshare data it is necessary to understand how the data is structured. 
+To make the best use of Microshare Microshare®data it is necessary to understand how the data is structured. 
 This is especially important in the use of Views / Robots, but also for the creation of Applications.
 
 Finally, this is essential for the use of APIs.
 
-As described in the Microshare Platform Advanced section, there is data formatting after data ingest if the data is configured in this way. 
+As described in the Microshare® Platform Advanced section, data formatting follows data ingestion if the data is configured in this way. 
 
 What does this mean in terms of data? 
 
-This means that when the raw data is ingested in Microshare it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked rectype in a more complete form that takes the simple form but contains much more data according to the Microshare formalism.
+This means that when the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked rectype in a more complete form that takes the simple form but contains much more data according to the Microshare® formalism.
 
 There is a lot of data and this part is intended to make you understand a large part of it.
 
@@ -25,7 +25,7 @@ There is a lot of data and this part is intended to make you understand a large 
 ## 2. First Example
 ---------------------------------------
 
-To start with something simple we'll take the piece of data we generated with the API tutorial: [API Simple Requests](/docs/2/technical/api/simple-requests/#2-write-data)
+To start with something simple we'll take the piece of data we generated with the API tutorial: [API Simple Requests](/docs/2/technical/api/simple-requests/#2-write-data).
 
 
 ```
@@ -80,7 +80,7 @@ To start with something simple we'll take the piece of data we generated with th
 
 #### A) Meta
 
-First of all there is the `meta' part which gives information about the API request itself.
+First of all there is the `meta` part which gives information about the API request itself.
 
 Indeed in the parameters of my request I had simply asked to have the details without indicating the number of pages of data and data per page. 
 Automatically the number of pages (`totalPage`) is set to its default value of 1 and the number of data `perPage` defaults to 999.
@@ -116,11 +116,11 @@ Here we will see one by one the different components, starting with the unique v
 
 * `"_id"`
 
-The Id of the data is its unique identifier, it allows to find a particular data in the datalake directly by a Microshare Technician.
+The Id of the data is its unique identifier, it allows to find a particular data in the datalake directly by a Microshare® Technician.
 
 * `"checksum"`
 
-The checksum is another identifier also for other needs for Microshare.
+The checksum is another identifier also for other needs for Microshare®.
 
 * `"createDate"`
 
@@ -144,7 +144,7 @@ This value is usually empty, so you can ignore it when it is empty.
 
 * `"recType"`
 
-If you are on this page it's because you have started to manipulate the Microshare APIs and in this case you are familiar with the notion of recType, as a quick reminder the recType is the endpoint of a data flow in the data lake.
+If you are on this page it's because you have started to manipulate the Microshare® APIs and in this case you are familiar with the notion of recType, as a quick reminder the recType is the endpoint of a data flow in the data lake.
 
 * `"tstamp"`
 
@@ -172,7 +172,7 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
 },
 ```
 
-Now let's take the data, here the information is simply what we have just created, this is where you will find all the data that you integrate into Microshare, we will see that later.
+Now let's take the data, here the information is simply what we have just created, this is where you will find all the data that you integrate into Microshare®, we will see that later.
 
 ##### B.3 Origin
 
@@ -212,7 +212,7 @@ The origin can be interesting when the data is shared with you to understand whe
 
 The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). So in case of doubt for the creation of a share rule these data are essential to share from the right place the right data. 
 
-The additional information in the `appid' corresponds to the app-key that is used to create the data. 
+The additional information in the `appid` corresponds to the app-key that is used to create the data. 
 Thus has the creation of a token or pip token to create data, these are made from an app-key, which will be found here.
 
 ## 3. Go further
@@ -221,6 +221,6 @@ Thus has the creation of a token or pip token to create data, these are made fro
 
 To go further, we will use the principle of data ingestion by device clusters, and different pushes. 
 
-This will allow us to see much more complete data using the [Microshare Standards](/docs/2/technical/data-format/microshare-standards).
+This will allow us to see much more complete data using the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards).
 
-And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is that you can also find when you go through the Microshare Devices Clusters. Or some [Ipso data](/docs/2/technical/data-format/microshare-standards) too.
+And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is that you can also find when you go through the Microshare® Devices Clusters. Or some [Ipso data](/docs/2/technical/data-format/microshare-standards) too.

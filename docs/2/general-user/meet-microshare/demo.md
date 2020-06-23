@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Demo
-description: Our demo dashboards do not use real data and are provided solely for demo purposes.
+description: Our demo dashboards do not use real data and are provided solely for demo purposes
 toc: true
 ---
 
@@ -17,7 +17,7 @@ Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443
 
 ## Demo API 
 
-You want to go further and try our APIs ? 
+You want to go further and try our APIs? 
 
 For this we have developed demo APIs that you will be able to use. But for this you will have to follow the technical tutorial that explains the use of our API.
 #### > [Microshare® APIs](../../../technical/api/quick-start)

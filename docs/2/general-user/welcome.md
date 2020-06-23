@@ -55,7 +55,7 @@ Then there are profiles more advanced than the user, there are the following pro
 ## 3. Platform
 ---------------------------------------
 
-The Microshare™ platform is comprised of two cooperating clusters of microservices: **Microshare® core** and **Microshare® stream**.
+The Microshare™ platform is comprised of two cooperating clusters of microservices: **Microshare® Core** and **Microshare® Stream**.
 
 Microshare® Core combines a data lake architecture, a simple RESTful API to allow programmatic interaction with data objects, and a contextual security, rules engine to make policy decisions. 
 The API allows storage (via POST) and retrievals (via GET). The [data lake](https://en.wikipedia.org/wiki/Data_lake) will store any type of data that can be serialized to JSON. Your data is stored in an annotated but unmodified form inside of the data lake. Retrieval operations consider the policy established by a data owner before granting or rejecting any requested operation.

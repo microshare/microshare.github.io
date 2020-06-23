@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Registration
-description: Comprehensive guide to install some sensors with Deploy-M
+description: A comprehensive guide to install some sensors with Deploy-M
 group: deploy-m
 toc: true
 ---
@@ -30,7 +30,7 @@ To create an account, [follow this guide](/docs/2/general-user/quick-start/creat
 Then this account will need to contain a device cluster that will be ready to host the devices that we will register with the application. 
 You can create a device cluster by following [this guide](/docs/2/technical/microshare-platform/dashboard-guide/).
 
-Finally you need to have the devices you want to add to the Microshare® platform. It is recommended to have devices with Microshare® QR code to really save a maximum of time with the Deploy-M application.
+Finally you need to add your devices to the Microshare® platform. It is recommended to have devices with Microshare® QR codes to save time with the Deploy-M application.
 
 ## 2. Sign In
 
@@ -44,7 +44,7 @@ At the first launch you will be able to connect to the production server. Simply
 
 You will arrive on the device cluster management page, where you will find the previously created device cluster.
 
-However, if you want to use the development server you have to login as we did, go to the following page: 
+However, if you want to use the development server, you have to login as we did. Go to the following page: 
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M02.PNG" description="Deploy-M App" %}
 
@@ -52,11 +52,11 @@ And then you change the "Development Server" switch, and then log out, so you ca
 
 ## 3. Access to device cluster
 
-As said before, you are now on the device cluster management page, so you can see all the device clusters in your account. 
+As mentioned before, you are now on the device cluster management page, so you can see all the device clusters in your account. 
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M03.PNG" description="Deploy-M App" %}
 
-You can select one of them, to see all your devices on it. And so we can now use the power of the Deploy-M application.
+You can select one of them and see all your devices within the cluster. Now we can use the power of the Deploy-M application.
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M04.PNG" description="Deploy-M App" %}
 
@@ -68,7 +68,7 @@ We will now add a device. To do so, just click on the add button at the bottom o
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M04B.PNG" description="Deploy-M App" %}
 
-Once this is done, you can watch a tutorial, or add the device manually, or just scan it.  
+Once this is done, you can watch a tutorial, or add the device manually or just scan it.  
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M05.PNG" description="Deploy-M App" %}
 
@@ -80,7 +80,7 @@ This will open a scan page, we will just have to bring the Qr code of the device
 
 And so the application will recognize all its key parameters to be able to declare the device on the network directly and will also tell the type of the sensor. 
 
-So you will be redirected to the page to fill in the information, which is the same page as the modification page. 
+You will be redirected to a page to fill in the information, which is the same page as the modification page. 
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M07.PNG" description="Deploy-M App" %}
 
