@@ -25,9 +25,12 @@ toc: true
 ---------------------------------------
 Microshare®'s Smart Facilities solutions are powered by devices that quickly and effectively deliver data to your dashboard. From Predictive Cleaning to Environment Monitoring, Microshare® provides boundless opportunities to syncronize you and your data. 
 
-LoRaWAN devices offer a more effiecient solution to communicate data than cellular or WiFi. Sending information via Lora, the range of communication increases to hundreds of square kilometers. The power efficiency of LoRa Devices far exceed their WiFi or Cellular counterparts, giving a battery life of your devices up to six years. 
+LoRaWAN devices offer a more effiecient solution to communicate data than cellular or WiFi. Sending information via Lora, the range of communication increases to hundreds of square kilometers. The power efficiency of LoRa Devices far exceed their WiFi or cellular counterparts, giving a battery life of your devices up to six years. 
 
-Microshare® sets up your solution before it even arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare®. Have more questions on Microshare®'s solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/).
+Microshare® sets up your solution before it arrives to your door, giving you a plug and play' experience. The following are the types of sensors that you will become familiar with working with Microshare®. 
+
+
+Have more questions on Microshare®'s solutions? Please refer to our [main page](https://www.microshare.io/smart-facilities-dashboards-and-solutions/).
 
 ## 2. Types of Sensors
 ---------------------------------------

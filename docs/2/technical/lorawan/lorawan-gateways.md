@@ -68,8 +68,8 @@ The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives
 - Smart Parking Monitoring
 - Smart Legionella Prevention
 
-### How do I install a Kerlink iFemtocell?
-Our [installation page](/docs/2/installer/lorawan/gateway-installations/outdoor-istation/) has a great tutorial!
+### How do I install my Kerlink iFemtocell?
+Our installation page has a great tutorial for both the [iFemtocell](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell) and the [iFemtocell EVO](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell-evo/)!
 
 ---------------------------------------
 

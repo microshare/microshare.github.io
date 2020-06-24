@@ -8,7 +8,7 @@ toc: true
 
 ##### What else can a developer do?
 
-Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the "Microshare® Platform Advanced" section and follow the following steps:
+Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the <em> Microshare® Platform Advanced </em> section and follow the following steps:
 
 #### 1. Creating Robots
 

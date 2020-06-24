@@ -1,14 +1,14 @@
 ---
 layout: docs
 title: Overview
-description: Let's take a look at the MicroshareMicroshare® data structure.
+description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
 ## 1. Intro
 ---------------------------------------
 
-To make the best use of Microshare Microshare®data it is necessary to understand how the data is structured. 
+To best use Microshare® data, it is necessary to understand how the data is structured. 
 This is especially important in the use of Views / Robots, but also for the creation of Applications.
 
 Finally, this is essential for the use of APIs.
@@ -223,4 +223,4 @@ To go further, we will use the principle of data ingestion by device clusters, a
 
 This will allow us to see much more complete data using the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards).
 
-And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is that you can also find when you go through the Microshare® Devices Clusters. Or some [Ipso data](/docs/2/technical/data-format/microshare-standards) too.
+And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is that you can also find when you go through the Microshare® devices clusters. Or some [Ipso data](/docs/2/technical/data-format/microshare-standards) too.

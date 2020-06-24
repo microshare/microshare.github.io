@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Integrating Microshare® into Senet
+title: Integrating Microshare™ into Senet
 description:
 group: advanced
 toc: true

@@ -23,14 +23,14 @@ toc: true
 ## 1. Quick Start
 ---------------------------------------
 
-Data integration is the process of combining data from different sources into a unified view: from importing to cleansing to mapping and transforming into a target repository, ultimately making the data more usable and useful to the users who view it.
+Data integration is the process of combining data from different sources into a unified view. The data is first imported, then cleaned to mapping and finally transformed into a target repository. This process ultimately makes the data more usable and useful to the users who view it.
 
 This way, Microshare® allows you to integrate all your IoT data in an organized and accessible manner. This guide will walk you through how to integrate your data into Microshare®.
 
 Once you have linked all your data to Microshare®, the data can be enhanced or filtered with our big data tools and robots can be created to act on certain events.
 Although our dashboards are very powerful, you may need to integrate the improved data into your own platform for your own solutions. There are several ways to integrate data from Microshare® into your platform.
 
-If you are a Microshare® reseller, you can send the data to Microshare® and then once it has been processed you can retrieve the useful information to create something directly for your customers. All this can be performed without reveiling the Microshare® process which allows you to easily master this chain.
+If you are a Microshare® reseller, you can send the data to Microshare®and once it has been processed, you can retrieve the useful information to create something directly for your customers. All this can be performed without reveiling the Microshare® process, which allows you to easily master this chain.
 
 <br>
 

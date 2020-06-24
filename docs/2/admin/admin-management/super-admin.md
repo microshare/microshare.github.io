@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Microshare Super Admin
+title: Microshare™ Super Admin
 
 toc: true
 ---

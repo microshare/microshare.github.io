@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Overview
-description: What it means to be a company adminsistrator through Microshare®
+description: What it means to be a company adminsistrator through Microshare™
 toc: true
 ---
 

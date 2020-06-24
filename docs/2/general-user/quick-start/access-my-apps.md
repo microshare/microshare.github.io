@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Access My App
-description: How to use Microshare Apps
+description: How to use Microshare™ Apps
 toc: true
 ---
 

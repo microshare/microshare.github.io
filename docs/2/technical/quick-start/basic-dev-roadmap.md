@@ -18,8 +18,8 @@ toc: true
 ---------------------------------------
 
 ### 1. Where do I start?
-There may seem like a lot of resources for the develope so this page serves to outline the steps you should follow to learn how to interact with the Microshare® Platform. 
 
+The amount of information dedicated to the developer may seem overwhelming, so this guide serves to navigate you through how to get started and the path you should follow to better understand Microshare®. 
 After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare®](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare® account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
 
 ---------------------------------------

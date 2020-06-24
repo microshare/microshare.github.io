@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Route packets from Kerlink SPN to Microshare®
+title: Route packets from Kerlink SPN to Microshare™
 description:
 group: advanced
 toc: true

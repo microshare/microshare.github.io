@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Microshare Standards
-description: Let's take a look at the Microshare data structure.
+title: Microshare™ Standards
+description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
@@ -9,8 +9,8 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Microshare unpacked format](./#1-microshare-unpacked-format)
-2. [Microshare Standards Data](./#2-microshare-standards-data)
+1. [Microshare® unpacked format](./#1-microshare-unpacked-format)
+2. [Microshare® Standards Data](./#2-microshare-standards-data)
     - A. [General Structure](./#a-general-structure)
     - B. [{Data}](./#b-data)
     - C. [Ipso](./#c-ipso)
@@ -26,14 +26,14 @@ toc: true
 ---------------------------------------
 
 
-## 1. Microshare unpacked format
+## 1. Microshare® unpacked format
 ---------------------------------------
 
 
-As you have seen in data integration, unpacked data is data that is developed using Microshare unpackers. 
+As you have seen in data integration, unpacked data is data that is developed using Microshare® unpackers. 
 
 This will allow a payload of raw data, incomprehensible to the eye, to become a simple and usable data. 
-But this data is from IoT sensors that have been inserted into Microshare cluster devices. 
+But this data is from IoT sensors that have been inserted into Microshare® cluster devices. 
 
 This will provide additional data on the IoT elements that made it possible to obtain this signal. This information varies from one network server to another. We will take an example of data here, but understand that sometimes you may have a slightly different data in the IoT part depending on the network server.
 
@@ -45,7 +45,7 @@ This takes the tags of the device cluster as a concatenation of the global and i
 
 
 
-## 2. Microshare Standards Data
+## 2. Microshare® Standards Data
 ---------------------------------------
 
 Example : 
@@ -264,7 +264,7 @@ Information about the device itself that provided the data is sometimes given, i
 #### C. Ipso
 
 
-The IPSO values represent an IoT standard that Microshare has decided to integrate to enable better integration with global partners using this standard. 
+The IPSO values represent an IoT standard that Microshare® has decided to integrate to enable better integration with global partners using this standard. 
 
 You can find what the IPSOs values mean on this web page : 
 
@@ -368,9 +368,9 @@ This may simply change if you unpacked the data to a different account than the 
 
 Now let's talk about the last block in the `{Data}` part, it is related to the cluster device since it describes which cluster device allows to unpack the data. 
 
-As explained in the data formatting Microshare has a large bank of unpackers to decode the data. 
+As explained in the data formatting Microshare® has a large bank of unpackers to decode the data. 
 
-The information provided by this part of the data simply explains where the unpacker for this device is located in the Microshare unpacker library. That's why the package: `class`.
+The information provided by this part of the data simply explains where the unpacker for this device is located in the Microshare® unpacker library. That's why the package: `class`.
 
 The `library` is simply the name of the complete library.
 

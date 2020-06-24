@@ -28,14 +28,14 @@ As a developer, you will mostly be working with the Microshare® platform and th
 #### The Microshare® Platform
 
 
-The [Microshare® Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare® Platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administrate who can see your devices’ data. 
+The [Microshare® Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare® platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administrate who can see your devices’ data. 
 
 #### The Microshare® API
 
 
-You will first interact with the [Microshare® API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare® Platform. You will learn basic calls to receive information from Microshare® to implement into your Microshare® Dashboard. The Microshare® Structure takes many cryptic precautions to ensure the privacy of the user, and interactions with the Microshare® API will help you navigate these characteristics. 
+You will first interact with the [Microshare® API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare® platform. You will learn basic calls to receive information from Microshare® to implement into your Microshare® dashboard. The Microshare® structure takes many cryptic precautions to ensure the privacy of the user and interactions with the Microshare® API will help you navigate these characteristics. 
 
 #### LoRaWAN Technology
 
 
-LoRaWAN devices are the sensors that you will use to collect data on your environment. They use a signal called Lora rather than Wi-Fi or a cellular signal to communicate with LoRaWAN gateways. Lora provides a significantly larger area of communication and extends the battery life of the devices. LoRaWAN gateways take the information from the sensors and send them to the Micoshare Network, where the data is represented on your dashboard. The [LoRaWAN Technology](/docs/2/technical/lorawan/lorawan-technology/) page describes the relationship and technology in greater detail, while the [LoRaWAN Sensors](/docs/2/technical/lorawan/lorawan-sensors/) and [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways/) pages explore the specific models of devices that you will work with. 
+LoRaWAN devices are the sensors that you will use to collect data on your environment. They use a signal called Lora rather than Wi-Fi or a cellular signal to communicate with LoRaWAN gateways. Lora provides a significantly larger area of communication and extends the battery life of the devices. LoRaWAN gateways take the information from the sensors and send them to the Microshare® network, where the data is represented on your dashboard. The [LoRaWAN Technology](/docs/2/technical/lorawan/lorawan-technology/) page describes the relationship and technology in greater detail, while the [LoRaWAN Sensors](/docs/2/technical/lorawan/lorawan-sensors/) and [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways/) pages explore the specific models of devices that you will work with. 
