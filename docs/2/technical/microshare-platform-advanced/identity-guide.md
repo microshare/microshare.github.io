@@ -13,7 +13,7 @@ toc: true
 ---------------------------------------
 ## 1. What are Identities?
 
-Your identity determines not only what data you can view, but what apps and forms you have jurisdiction over. Often when you cannot see the same data that you should be able to, you are logged into the wrong identity.
+Your identity determines not only what data you can view, but what apps and forms you have jurisdiction over. Often, when you cannot see the same data that you should be able to, you are logged into the wrong identity.
 
 
 **An identity shares with its users:** its applications, and the sharing rights assigned to it.
@@ -24,7 +24,7 @@ Once on your identity, you will see in your dashboard the applications that belo
 
 **There is a difference between accessing applications and running applications with their data.**
 
-Data used by an application that is shared with the global identity will only be accessible when logged into that identity. You have the ablility to share  your identity without the data being shared as well. In this case you will be able to open applications but unfortunately the applications will remain empty of data.
+Data used by an application that is shared with the global identity will only be accessible when logged into that identity. You have the ability to share  your identity without the data being shared as well. In this case, you will be able to open applications, but unfortunately, the applications will remain empty of data.
 
 And here's the difference, applications will follow the identity, but the data is shared with the identity only if the right global sharing rule has been created.
 
@@ -67,7 +67,7 @@ So you can log in to the identity directly.
 As for the Microshare® platform, the principle by API is the same. If we want to access data that is shared with the identity, our connection token must come from the right identity. 
 
 For this, there are two possibilities: 
-To be connected on Microshare® web on the right identity, and when you will ask for a token this one will come automatically from the right identity. You can check in the JSON received the corresponding identity here : 
+To be connected on Microshare® web on the right identity, and when you will ask for a token this one will come automatically from the right identity. You can check in the JSON received the corresponding identity here: 
 
 {% include image.html url="/assets/img/identity-on-api.png" description="identity code" %}
 

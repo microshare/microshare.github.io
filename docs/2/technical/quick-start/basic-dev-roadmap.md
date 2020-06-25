@@ -39,7 +39,7 @@ use the [Authentication Guide](/docs/2/technical/api/authentication/) where you 
 
 ##### Simple Requests
 
-Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare®'s API. Understanding these concepts are the fundamental behind working with Robots and Device Clusters moving forward. 
+Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare®'s API. These concepts are the fundamental components behind working with robots and device clusters moving forward. 
 
 ---------------------------------------
 
@@ -57,7 +57,7 @@ Once you have set yourself up in the developer environment, follow the next step
 
 ##### Dashboard
 
-[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organise apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. It is important to note that a lot of the material under the Dashboard Guide fall under the Advanced Developer catagory. 
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. It is important to note that a lot of the material under the Dashboard Guide fall under the Advanced Developer category. 
 
 ##### Rules 
 
@@ -104,7 +104,7 @@ After completing all the necessary facts above and from [the Dashboard Guide](/d
 
 ### 6. Ready for more?
 
-Head on over to the [Advanced Developer's Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) to take a deeper dive into incteracting with the Microshare® platform.
+Head on over to the [Advanced Developer's Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) to take a deeper dive into interacting with the Microshare® platform.
 
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
 

@@ -20,14 +20,14 @@ toc: true
 
 ---------------------------------------
 
-Data Ingestion is the process by which Microshare® can help you migrate data from various other sources and store them in the Microshare Data Lake. This is most applicable to take the data from your sensors and display them on your dashboard/ App. 
+Data Ingestion is the process by which Microshare® can help you migrate data from various other sources and store them in the Microshare data lake. This is most applicable to take the data from your sensors and display them on your dashboard/ App. 
 
 
 ## 2. New Process
 
 ---------------------------------------
 
-Microshare® used to automate this process through the use of Robots but have sense developed programs to gather and unpack data more efficiently through the Device Clusters. You can learn a lot more about how Microshare® used to ingest and format data in the [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/) and the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/) pages.
+Microshare® used to automate this process through the use of Robots but have sense developed programs to gather and unpack data more efficiently through the device clusters. You can learn a lot more about how Microshare® used to ingest and format data in the [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/) and the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/) pages.
 
 
 
@@ -35,14 +35,14 @@ Microshare® used to automate this process through the use of Robots but have se
 
 ---------------------------------------
 
-You can also upload data to the Microshare® data lake without the Device Cluster or Robots. Manual upload is the most basic way of loading data from your own database, or from an open data project. To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share).
+You can also upload data to the Microshare® data lake without the device cluster or Robots. Manual upload is the most basic way of loading data from your own database, or from an open data project. To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share).
 
 
 ## 4. How do I set up my Device Cluster to ingest my data automatically into the Data Lake?
 
 ---------------------------------------
 
-[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the Device Cluster. In this guide, there will be a more in depth description regarding the numerous parameters for the Device Cluster. 
+[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the device cluster. In this guide, there will be a more in depth description regarding the numerous parameters for the device cluster. 
 
 
 
@@ -52,7 +52,7 @@ You can also upload data to the Microshare® data lake without the Device Cluste
 
 {% include image.html url="/assets/img/data-ingestion-1.png" description="DI1" %}
 
-The part of the device cluster involved in data ingestion is collecting the data from the devices and depositing them into the lake. When creating the Device Cluster, the **source** recType, marked in green, denotes the name under which the encrypted information is coming from, and the **target** recType, marked in blue, is where it will be stored. In the unpacker code, the program will read the data stream from the source recType and store under the target recType. The target recType will be useful later when you want to pull the data from the data lake. The unpacked directory of the target recType is very important as it signifies that the data has been decoded. 
+The part of the device cluster involved in data ingestion is collecting the data from the devices and depositing them into the lake. When creating the device cluster, the **source** recType, marked in green, denotes the name under which the encrypted information is coming from, and the **target** recType, marked in blue, is where it will be stored. In the unpacker code, the program will read the data stream from the source recType and store under the target recType. The target recType will be useful later when you want to pull the data from the data lake. The unpacked directory of the target recType is very important as it signifies that the data has been decoded. 
 
 {% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
 

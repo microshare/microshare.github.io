@@ -20,17 +20,17 @@ toc: true
 ## 1. What is Data Formatting?
 ---------------------------------------
 
-Data Processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your Dashboard.  
+Data formatting or processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your Dashboard.  
 
 ## 2. New Process
 ---------------------------------------
 
-Microshare® used to perform data formatting with a series of robots, but have hence engineered a new solution for representing your data through Device Clusters. You can learn a lot more about how Microshare® used to format data in  the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots) page.
+Microshare® used to perform data formatting with a series of robots, but have hence engineered a new solution for representing your data through device clusters. You can learn a lot more about how Microshare® used to format data in the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots) page.
 
 ## 3. Setting up the Device Cluster for Data Ingestion
 ---------------------------------------
 
-[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the Device Cluster. The Data Formatting Page will be a more in depth description regarding the numerous parameters for the Device Cluster. 
+[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the device cluster. The data formatting page will be a more in depth description regarding the numerous parameters for the device cluster. 
 
 ## 4. How does the Data Formatting Process Work?
 ---------------------------------------
@@ -49,7 +49,7 @@ Finally, the data is written to the data lake under the target recType.unpacked 
 
 #### The entire process looks like this:
 
-Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The Device Cluster program takes the data from the source recType, and pushes it into the Microshare® Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your Dashboard or App.  
+Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your Dashboard or App.  
 
 
 ## 5. Set up your platform to post the data

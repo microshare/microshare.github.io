@@ -19,7 +19,7 @@ toc: true
 ---------------------------------------
 ## 1. Introduction
 
-You will us the Microshare® API to set up your interactions with the Microshare® Platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communivate with the Microshare® Platform. This guide will walk you through setting up the Postman Software to interact with the API and start operating with the Microshare® Platform.
+You will us the Microshare® API to set up your interactions with the Microshare® platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communicate with the Microshare® platform. This guide will walk you through setting up the Postman software to interact with the API and start operating with the Microshare® platform.
 
 
 ## 2. Get an API key
@@ -39,9 +39,9 @@ You can then use Microshare® Share API to read data from, as well as write data
 ## 3. Setup Postman
 ---------------------------------------
 
-This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](./api-collection) for a list of API call and move to the next section.
+This step is optional if you already have another way of invoking the API. In which case, visit [Microshare® API doc](./api-collection) for a list of API call and move to the next section.
 
-Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare API collection.
+Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare® API collection.
 
 * Visit our [API documentation page](../../../advanced/api-reference)
 

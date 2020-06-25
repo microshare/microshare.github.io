@@ -30,7 +30,7 @@ This way, Microshare® allows you to integrate all your IoT data in an organized
 Once you have linked all your data to Microshare®, the data can be enhanced or filtered with our big data tools and robots can be created to act on certain events.
 Although our dashboards are very powerful, you may need to integrate the improved data into your own platform for your own solutions. There are several ways to integrate data from Microshare® into your platform.
 
-If you are a Microshare® reseller, you can send the data to Microshare®and once it has been processed, you can retrieve the useful information to create something directly for your customers. All this can be performed without reveiling the Microshare® process, which allows you to easily master this chain.
+If you are a Microshare® reseller, you can send the data to Microshare® and once it has been processed, you can retrieve the useful information to create something directly for your customers. All this can be performed without revealing the Microshare® process, which allows you to easily master this chain.
 
 <br>
 
@@ -74,8 +74,8 @@ To do this is very simple, just follow the steps in the Microshare® APIs tutori
 
 ### B) Azure Event Hub Integration
 
-Event Hubs is a fully managed, simple, secure and scalable real-time data ingest service. Broadcast millions of events per second from any source to create dynamic data pipelines and instantly address business challenges.
-With Microshare® you can simply inject your data into the Event Hub and integrate it with other tools you may already have in place.
+Event Hubs is a fully managed, simple, secure and scalable real-time data ingestion service. Broadcast millions of events per second from any source to create dynamic data pipelines and instantly address business challenges.
+With Microshare®, you can simply inject your data into the Event Hub and integrate it with other tools you may already have in place.
 ##### > [Azure Event Hub Integration](/docs/2/technical/extra-information/azure-event-hub-integration/)
 
 <br>
@@ -83,5 +83,5 @@ With Microshare® you can simply inject your data into the Event Hub and integra
 ### C) AWS Kinesis Data Stream Integration
 
 Amazon Kinesis facilitates real-time streaming data collection, processing, and analysis to quickly obtain strategic information and respond quickly. Amazon Kinesis offers critical capabilities to cost-effectively process streaming data at any scale, as well as the ability to choose the tools best suited to the needs of your application.
-With Microshare® you can simply inject your data into the AWS Kinesis Data Stream and integrate it with other tools you may already have in place.
+With Microshare®, you can simply inject your data into the AWS Kinesis Data Stream and integrate it with other tools you may already have in place.
 ##### > [AWS Kinesis Data Stream Integration](/docs/2/technical/extra-information/aws-kinesis-data-stream-integration/)

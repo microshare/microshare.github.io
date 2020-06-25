@@ -27,9 +27,9 @@ toc: true
 ## 1. Introduction
 ---------------------------------------
 
-The Microshare® Platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. 
+The Microshare® platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. 
 
-There is a difference in what a general user and developer have the ability to do. The general user only has access to the data and tools administered by their Admin. Meanwhile, the Developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user can only view what data has been mandated to them. 
+There is a difference in what a general user and developer have the ability to do. The general user only has access to the data and tools administered by their Admin. Meanwhile, the developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user can only view what data has been mandated to them. 
 
 
 
@@ -44,7 +44,7 @@ Below is the list of the various tools and abilities you can expect to work with
 
 ### A. Device Cluster
 
-Device Clusters give you the ability to group data from sensors together. This is most useful for sensors in the same area. You can add Devices to the cluster either through the Deploy M app or via the Microshare® Platform (refer to the [Device Clusters Page](/docs/2/technical/microshare-platform/device-cluster-guide/)). You can view the cluster data in the Dashboard. 
+Device Clusters give you the ability to group data from sensors together. This is most useful for sensors in the same area. You can add devices to the cluster either through the Deploy M app or via the Microshare® platform (refer to the [Device Clusters Page](/docs/2/technical/microshare-platform/device-cluster-guide/)). You can view the cluster data in the Dashboard. 
 
 ### B. Views
 
@@ -72,5 +72,5 @@ Robots give the ability to automate certain tasks for your data. For example, yo
 
 ### F. Data Formatting
 
-You can set up automated multistep processes to route and transform your data so it’s ready to be consumed by an App or a Dashboard using [The Data Formatting Guide](/docs/2/technical/microshare-platform-advanced/data-formatting/) and automate this task using the [The Data Formatting with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/).
+You can set up automated multi- step processes to route and transform your data so it’s ready to be consumed by an App or a Dashboard using [The Data Formatting Guide](/docs/2/technical/microshare-platform-advanced/data-formatting/) and automate this task using the [The Data Formatting with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/).
 

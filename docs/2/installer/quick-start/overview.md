@@ -32,7 +32,7 @@ To start our sensors use LoRaWan technology and you can learn more about it here
 This technology works like this: 
 The sensor sends data via "Lora" to the gateway or to a public network. This way, the gateway or the public network LoRaWan are connected to the Internet via WIFI, Ethernet or 3G/4G/5G. 
 
-Then the data will be processed and used once in the cloud.
+Then the data will be processed and used once it is in the cloud.
 
 Here is a summary diagram: 
 

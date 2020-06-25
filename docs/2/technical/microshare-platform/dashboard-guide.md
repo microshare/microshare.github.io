@@ -46,7 +46,7 @@ Trending Apps will graphically represent your data over any period you wish, whi
  ---------------------------------------
 
 
- The views used by the generic applications are generic views created by Microshare and hosted on the account **asset@microshare.io**. 
+ The views used by the generic applications are generic views created by Microshare® and hosted on the account **asset@microshare.io**. 
 
 These views are normally already shared with all accounts and you can find more information about this in the [view guide](../view-guide).
 
@@ -188,7 +188,7 @@ The Touchfree app creates business events tied to specific locations just like t
 
 ### Create a Location Schema (or a Device template)
 
-You will still need to plan out your tagging system even if you are creating a Touchfree app which is not tied to physical devices. If you already have a device template (ie a file already in the proprietary format used to create a device cluster in the Microshare platform), you can start with that.  Create a spreadsheet with a header row that includes Location1, Location2, Location3, as well as a new DataContext column that describes your tagging system.  Note that you CAN use your existing device templates that can now me imported to create the device cluster in the Microshare platform.  Let’s call this file, the location schema. 
+You will still need to plan out your tagging system even if you are creating a Touchfree app which is not tied to physical devices. If you already have a device template (ie a file already in the proprietary format used to create a device cluster in the Microshare® platform), you can start with that.  Create a spreadsheet with a header row that includes Location1, Location2, Location3, as well as a new DataContext column that describes your tagging system.  Note that you CAN use your existing device templates that can now me imported to create the device cluster in the Microshare® platform.  Let’s call this file, the location schema. 
 
  **Create a new App with the configurations:**
  

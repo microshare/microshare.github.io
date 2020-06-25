@@ -68,7 +68,7 @@ $match allows you to put in search criteria to find records, this will get you a
     {"$match": {"recType": "io.microshare.demo.sensor.temprature"}}
   ]
 {% endhighlight %}  
-For more criteria of search, just add them in the $match elements
+For more criteria of search, just add them in the $match elements.
 {% highlight JSON %}  
 [
   {
@@ -81,7 +81,7 @@ For more criteria of search, just add them in the $match elements
 
 
 ##### * Sort when multiple records returns;
-This sample shows what happens when you sort by timestamp on the record, but you can sort by any data element in your data or meta-data
+This sample shows what happens when you sort by timestamp on the record, but you can sort by any data element in your data or meta-data.
 {% highlight JSON %}  
 [
   {
@@ -96,7 +96,7 @@ This sample shows what happens when you sort by timestamp on the record, but you
   }
 ]
 {% endhighlight %}  
-The sort can also be any data elements in the records
+The sort can also be any data elements in the records.
 {% highlight JSON %}
 "$sort": {
     "data.region": 1
@@ -158,7 +158,7 @@ Be aware of the data return as above will be 4 elements with new names defined, 
 
 
 For more details of query syntax, please refer to the MongoDB doc site 
-[Aggregation Pipeline Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/)
+[Aggregation Pipeline Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/).
 
 
 ## 4. Default View query size

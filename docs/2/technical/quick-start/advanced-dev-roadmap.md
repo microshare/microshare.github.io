@@ -12,12 +12,12 @@ Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick
 
 #### 1. Creating Robots
 
-A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Use the [Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) to learn how you can create robots to automate tasks within your system. Additionally, the Robots Guide will go over the alerts setting, allowing you to create notifications for when an event occurs. Upon Completion, the [Robots Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great resource to find examples of robots in action.
+A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Use the [Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) to learn how you can create robots to automate tasks within your system. Additionally, the Robots Guide will go over the alerts setting, allowing you to create notifications for when an event occurs. Upon completion, the [Robots Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great resource to find examples of robots in action.
 
 
 #### 2. Creating Complex Requests with Microshare®'s API
 
-Now that you have become familar with creating [Simple Requests](/docs/2/technical/api/simple-requests/) with Microshare®'s API, its now time to communicate with the API to draw more information using [Complex Requests](/docs/2/technical/api/complex-requests/)
+Now that you have become familar with creating [simple requests](/docs/2/technical/api/simple-requests/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests](/docs/2/technical/api/complex-requests/)
 
 #### 3. Working with Identities
 
@@ -25,11 +25,11 @@ Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/iden
 
 #### 4. Creating Dashboards
 
-[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organise apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. Although the Dashboards Guide is not under the advanced section, but the guide dives heavily into advanced material. 
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. Although the Dashboards Guide is not under the advanced section, the guide dives heavily into advanced material. 
 
 #### 5. Data Management/ Workflow
 
-Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses Robots for Data Ingestion and Formatting, but the guides will be a great resource to understanding what the new method is doing and how powerfult he applications of Robots can be. The path of Data management is:
+Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses Robots for Data Ingestion and Formatting, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of Robots can be. The path of Data management is:
 
 1. [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
 2. [Data Formatting](/docs/2/technical/microshare-platform-advanced/data-formatting/)
