@@ -20,7 +20,7 @@ toc: true
 ## 1. What is Data Formatting?
 ---------------------------------------
 
-Data formatting or processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your Dashboard.  
+Data formatting or processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your dashboard.  
 
 ## 2. New Process
 ---------------------------------------
@@ -49,7 +49,7 @@ Finally, the data is written to the data lake under the target recType.unpacked 
 
 #### The entire process looks like this:
 
-Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® Data Lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your Dashboard or App.  
+Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your dashboard or app.  
 
 
 ## 5. Set up your platform to post the data
@@ -62,4 +62,4 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
 ## 6. What's next?
 ---------------------------------------
 
-Once your data is loaded in the data lake, you'll want to get it ready to be used in Dashboards and Applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  

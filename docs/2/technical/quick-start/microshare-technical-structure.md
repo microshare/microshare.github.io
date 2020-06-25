@@ -25,8 +25,8 @@ The API, or Application Programming Interface, has Microshare®’s specific pro
 
 #### The Microshare® Platform
 
-The Microshare® platform grants you control over the visualization of the data collected by the devices. Creating a device cluster, you can group data from multiple devices to be represented together. Creating an App allows you to customize how that data is represented. Implementing Rules and Views allow you to control who has access to certain data, and Robots allow you to automate certain tasks within the platform. Identities give certain clearance to view data, further regulating who has access to certain tools and information. All tools are key components to the platform, and allow you to have complete control over your data. 
-
+The Microshare® platform grants you control over the visualization of the data collected by the devices. Creating a device cluster, you can group data from multiple devices to be represented together. Creating an App allows you to customize how that data is represented. Implementing rules and views allow you to control who has access to certain data, and robots allow you to automate certain tasks within the platform. Identities give certain clearance to view data, further regulating who has access to certain tools and information. All tools are key components to the platform, and allow you to have complete control over your data. 
+    
 #### Where do I start? 
 
 As a developer, you will explore the features and applications of these components in greater detail. [The Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/) walks you through, step- by- step, how you can best become familiar with what Microshare® has to offer behind the scenes. Furthermore, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more difficult concepts of the Microshare® platform and API. 

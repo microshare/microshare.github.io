@@ -29,7 +29,7 @@ There are two types of dashboards:
 * Dashboards for your realtime apps. 
 
 
-Trending Apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
+Trending apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
 
 
 
@@ -37,7 +37,7 @@ Trending Apps will graphically represent your data over any period you wish, whi
 ---------------------------------------
 
  1. Configure the client accounts and identities and differentiate between which accounts will have the ability to own the apps or own the data. 
- 2. Create a Push on the Network.
+ 2. Create a Push on the network.
  3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
 
 
@@ -87,7 +87,7 @@ If a new view is created for the dashboards it is necessary to follow the follow
 
 ### Tips 
 
-In order to make the best use of the Facts, it is possible to modify their presentation in json code form. To do so, simply click on the tree button and choose code.
+In order to make the best use of the facts, it is possible to modify their presentation in JSON code form. To do so, simply click on the tree button and choose code.
 
 {% include image.html url="\assets\img\app-facts-tree.png" width="800" description="Factes Tree" %}
 

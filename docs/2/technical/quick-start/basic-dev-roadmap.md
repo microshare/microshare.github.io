@@ -19,14 +19,14 @@ toc: true
 
 ### 1. Where do I start?
 
-The amount of information dedicated to the developer may seem overwhelming, so this guide serves to navigate you through how to get started and the path you should follow to better understand Microshare®. 
-After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare®](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare® account, which will give you the ability to create Robots, Rules, Views, Apps, and Device Clusters.
+The amount of information dedicated to the developer may seem overwhelming, so this guide serves to navigate you through how to get started and outlines the path you should follow to better understand Microshare®. 
+After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare®](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare® account, which will give you the ability to create robots, rules, views, apps, and device clusters.
 
 ---------------------------------------
 
 ### 2. Creating your Microshare® Developer account
 
-Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating Device Clusters, Dashboards, editing Views, creating Rules and Robots. 
+Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating device clusters, dashboards, editing views, creating rules and robots. 
 
 ---------------------------------------
 
@@ -35,21 +35,21 @@ Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-
 ##### Authentication
 
 First, Head over to the [API Quick Start](/docs/2/technical/api/quick-start/) to install the Postman application, and learn the terminology of Microshare®'s API. Next
-use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare®'s API by requesting your own token. It is crucial that you complete the Authentication Guide before you move on to the Simple Request tutorial, as you will not be able to make the requests without the authentication.
+use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare®'s API by requesting your own token. It is crucial that you complete the authentication guide before you move on to the simple request tutorial, as you will not be able to make the requests without the authentication.
 
 ##### Simple Requests
 
-Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/) you will learn how to send and request information to Microshare®'s API. These concepts are the fundamental components behind working with robots and device clusters moving forward. 
+Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/), you will learn how to send and request information to Microshare®'s API. These concepts are the fundamental components behind working with robots and device clusters moving forward. 
 
 ---------------------------------------
 
 ### 4. Getting Started with the Microshare® Platform
 
-Once you have set yourself up in the developer environment, follow the next steps to interact with the Microshare® environment.
+Once you have set yourself up in the developer environment, follow the next steps to interact with the Microshare® environment:
 
 ##### Device Clusters
 
-[Device Clusters](/docs/2/technical/microshare-platform/device-cluster-guide/) allow you to group your devices that are in similar locations, combining the individual devices' data together. From here, you can create apps to display an analyse the cluster's information, and use rules to what extent others may view that information. 
+[Device Clusters](/docs/2/technical/microshare-platform/device-cluster-guide/) allow you to group your devices that are in similar locations, combining the individual devices' data together. From here, you can create apps to display an analyse the cluster's information, and use rules to control how others may view that information. 
 
 ##### Views
 
@@ -57,7 +57,7 @@ Once you have set yourself up in the developer environment, follow the next step
 
 ##### Dashboard
 
-[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. It is important to note that a lot of the material under the Dashboard Guide fall under the Advanced Developer category. 
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially useful for grouping a client's apps together. It is important to note that a lot of the material under the dashboard guide fall under the advanced developer category. 
 
 ##### Rules 
 
@@ -66,7 +66,7 @@ Once you have set yourself up in the developer environment, follow the next step
 ---------------------------------------
 ### 5. How to create an App
 
-First, head over to [dapp.microshare/io](http://dapp.microshare.io) and login. Second, naviagate over to the apps tab marked in green and click on the wrench icon to create a new app. From here, you should be able to see:
+First, head over to [dapp.microshare.io](http://dapp.microshare.io) and login. Second, naviagate over to the apps tab marked in green and click on the wrench icon to create a new app. From here, you should be able to see:
 
 {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  

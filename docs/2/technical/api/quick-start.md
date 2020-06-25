@@ -28,7 +28,7 @@ You will us the Microshare® API to set up your interactions with the Microshare
 Request an API key for authentication with the services.
 You can then use Microshare® Share API to read data from, as well as write data to the platform. 
 
-* Log in your [Microshare® account](https://app.microshare.io)
+* Log into your [Microshare® account](https://app.microshare.io)
 * Go to `Manage -> Keys.`  
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
 * Click `CREATE NEW APP` and give a friendly name to your APIkey (why not "My first IoT App"?).  
@@ -76,7 +76,7 @@ Then you will need to create your API key and Postman setup as described above.
 
 Once this is done you will need to follow the [authentication tutorials](../authentication). 
 
-It is necessary to understand how these requests work as we will add an extra parameter. 
+It is imprortant that you understand how these requests work as we will add an extra parameter. 
 
 Indeed when you will make the request request token you will add at the end of it 
 `&identity=External_ID`
@@ -86,13 +86,13 @@ In order to have
 
 This will allow you at runtime to join Demo's identity.
 
-Once this has been achieved it is now possible to use simple and then complex data reading queries.
+Once this has been achieved, it is now possible to use simple and then complex data reading queries.
 
 ### A. Simple request
 
-We will now see how to read the demo data. For this it is necessary that you follow the tutorial on how to use [the simple queries](../simple-requests), which are available in the APi collection you have downloaded.
+We will now see how to read the demo data. For this it is necessary that you follow the tutorial on how to use [the simple queries](../simple-requests), which are available in the API collection you have downloaded.
 
-Once the reading principle is well understood we will now simply list a number of Endpoints that you will be able to use once authenticated under the demo identity. 
+Once the reading principle is well understood, we will now list a number of endpoints that you will be able to use once authenticated under the demo identity. 
 
 {% include image.html url="/assets/img/simple_request_demo.png" description="simple request demo" %}
 

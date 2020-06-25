@@ -21,9 +21,9 @@ toc: true
 
 Now that you have passed authentication, you can now make your first requests.
 
-So we will see how to write a piece of data, but also how to read data. 
+This guide will walk you through how to write data and request information from the API. 
 
-For this there are endpoints, similar to addresses where data is stored. 
+For this there are endpoints, similar to addresses, where data is stored. 
 
 In the examples below we will create your own specific endpoints. But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page](/docs/2/technical/microshare-platform-advanced/data-ingestion/). 
 
@@ -82,7 +82,7 @@ Rules are an advanced feature of the platform, and are described in the ADVANCED
 ## 4. From a postman call to a piece of code
 ---------------------------------------
 
-So we have a list of 7 fairly simple API requests available in this Postman Collection. You can find the information and parameters of each of them in the API Collection file.
+We have a list of 7 fairly simple API requests available in this Postman Collection. You can find the information and parameters of each of them in the API Collection file.
 
 ##### > [API Collection](../api-collection)
 
@@ -97,4 +97,4 @@ Once you have found the query you need on Postman, you can very quickly extract 
 {% include image.html url="/assets/img/api/get_code_postman_1.png" description="read share" %}
 
 
-<!> Be careful the token is valid only for a duration of 48 hours, it is generally necessary to have beforehand a request of authentification and then the use of this token through your request. <!>
+<!> Be careful the token is valid for only 48 hours, it is generally necessary to have a request of authentification beforehand and then use this token through your request. <!>

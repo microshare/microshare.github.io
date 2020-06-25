@@ -32,14 +32,14 @@ toc: true
 
 As you have seen in data integration, unpacked data is data that is developed using Microshare® unpackers. 
 
-This will allow a payload of raw data, incomprehensible to the eye, to become a simple and usable data. 
+This will allow a payload of raw data, incomprehensible to the eye, to become simple and usable data. 
 But this data is from IoT sensors that have been inserted into Microshare® cluster devices. 
 
 This will provide additional data on the IoT elements that made it possible to obtain this signal. This information varies from one network server to another. We will take an example of data here, but understand that sometimes you may have a slightly different data in the IoT part depending on the network server.
 
-The unpacked data will therefore be the base data as seen above plus a much larger `{data}` part. 
+The unpacked data will therefore be the base data, as seen above, plus a much larger `{data}` part. 
 
-We will simply find in addition of the basic part the `tags` part.
+We will also explore the uses of `tags`.
 
 This takes the tags of the device cluster as a concatenation of the global and individual tags. You will find more information on the tags below.
 
@@ -223,9 +223,9 @@ Example :
 
 #### A. General Structure
 
-A large part of this data is simply derived from the settings of our cluster device, the others represent the data produced by the sensor.
+A large part of this data is simply derived from the settings of our device cluster, the others represent the data produced by the sensor.
 
-Here is the set-up of this cluster device: 
+Here is the set-up of this device cluster   : 
 
 {% include image.html url="\assets\img\dc-data-format.png" width="800" description="dc" %}
 
@@ -247,7 +247,7 @@ All these values are explained with their units in the following table:
 
 ##### > [Standards Data Table](./#3-standards-data-table)
 
-Information about the device itself that provided the data is sometimes given, including the device id and the battery of this sensor if it sends it in the payload. For Example: 
+Information about the device itself that provided the data is sometimes given, including the device id and the battery of this sensor if it sends it in the payload. For example: 
 
 ```
 "device": {

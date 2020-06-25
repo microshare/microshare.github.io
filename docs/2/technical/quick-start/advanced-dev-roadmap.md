@@ -17,7 +17,7 @@ A Robot is an actor that automates the routine, but sometimes complex tasks, ass
 
 #### 2. Creating Complex Requests with Microshare®'s API
 
-Now that you have become familar with creating [simple requests](/docs/2/technical/api/simple-requests/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests](/docs/2/technical/api/complex-requests/)
+Now that you have become familar with creating [simple requests](/docs/2/technical/api/simple-requests/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests].(/docs/2/technical/api/complex-requests/)
 
 #### 3. Working with Identities
 
@@ -25,11 +25,11 @@ Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/iden
 
 #### 4. Creating Dashboards
 
-[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially be useful for grouping a client's apps together. Although the Dashboards Guide is not under the advanced section, the guide dives heavily into advanced material. 
+[Dashboards](/docs/2/technical/microshare-platform/dashboard-guide/) will allow you to organize apps together and eliminate clutter on you manage page. This will be especially useful for grouping a client's apps together. Although the Dashboards Guide is not under the advanced section, the guide dives heavily into advanced material. 
 
 #### 5. Data Management/ Workflow
 
-Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses Robots for Data Ingestion and Formatting, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of Robots can be. The path of Data management is:
+Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses robots for data ingestion and formatting, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of robots can be. The path of data management is:
 
 1. [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
 2. [Data Formatting](/docs/2/technical/microshare-platform-advanced/data-formatting/)

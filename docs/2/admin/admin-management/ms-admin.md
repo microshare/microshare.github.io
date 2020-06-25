@@ -20,7 +20,7 @@ toc: true
 ## 1. Quick Start
 ---------------------------------------
 
-Before starting to use the ms_admin account, you must understand whar is shared with an indentity and what belongs to the ms_admin account. The [overview page](../overview) tackles these concepts in great detail. As the administrator with the ms_admin account, you hav the responsibility of administrating and managing the corresponding identities. 
+Before starting to use the ms_admin account, you must understand what is shared with an indentity and what belongs to the ms_admin account. The [overview page](../overview) tackles these concepts in great detail. As the administrator with the ms_admin account, you have the responsibility of administrating and managing the corresponding identities. 
 
 ##### As administrator, your first action will be to create the device clusters on Microshare®.
 

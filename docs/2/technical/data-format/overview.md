@@ -9,7 +9,7 @@ toc: true
 ---------------------------------------
 
 To best use Microshare® data, it is necessary to understand how the data is structured. 
-This is especially important in the use of Views / Robots, but also for the creation of Applications.
+This is especially important in the use of views / robots, but also for the creation of Applications.
 
 Finally, this is essential for the use of APIs.
 
@@ -17,9 +17,9 @@ As described in the Microshare® Platform Advanced section, data formatting foll
 
 What does this mean in terms of data? 
 
-This means that when the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked rectype in a more complete form that takes the simple form but contains much more data according to the Microshare® formalism.
+This means that when the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
 
-There is a lot of data and this part is intended to make you understand a large part of it.
+There is a lot of data and this part is intended to help you understand.
 
 
 ## 2. First Example
@@ -82,19 +82,19 @@ To start with something simple we'll take the piece of data we generated with th
 
 First of all there is the `meta` part which gives information about the API request itself.
 
-Indeed in the parameters of my request I had simply asked to have the details without indicating the number of pages of data and data per page. 
+Indeed, in the parameters of my request, I had simply asked to have the details without indicating the number of pages of data and data per page. 
 Automatically the number of pages (`totalPage`) is set to its default value of 1 and the number of data `perPage` defaults to 999.
 Out here I only have one piece of data, so I only have `one count and one page`. 
 
 Finally the `source` is the database, hence the value `db`.
 
-So this is a quick summary of the data in `objs`. It's possible that you sometimes have the meta information without having access to all the data in `objs`. This may be due to sharing rules that don't give you access or that you use the wrong identity... so be careful.
+This is a quick summary of the data in `objs`. It's possible that you sometimes have the meta information without having access to all the data in `objs`. This may be due to sharing rules that don't give you access or that you use the wrong identity... so be careful.
 
 #### B) Objs
 
 Now let's look at the data, this one is very simple to start with.
 
-Here we will see one by one the different components, starting with the unique values and then we will take a closer look at the Data, Origin, Owner blocks.
+Here we will see one by one the different components, starting with the unique values and then we will take a closer look at the data, origin and owner blocks.
 
 ##### B.1 Simple values
 
@@ -116,7 +116,7 @@ Here we will see one by one the different components, starting with the unique v
 
 * `"_id"`
 
-The Id of the data is its unique identifier, it allows to find a particular data in the datalake directly by a Microshare® Technician.
+The Id of the data is its unique identifier. It is used by a Microshare® Technician to find a particular piece of data in the datalake.
 
 * `"checksum"`
 
@@ -172,7 +172,7 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
 },
 ```
 
-Now let's take the data, here the information is simply what we have just created, this is where you will find all the data that you integrate into Microshare®, we will see that later.
+ The information here is simply what we have just created. This is where you will find all the data that you integrate into Microshare® but we will see that later.
 
 ##### B.3 Origin
 
@@ -223,4 +223,4 @@ To go further, we will use the principle of data ingestion by device clusters, a
 
 This will allow us to see much more complete data using the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards).
 
-And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is that you can also find when you go through the Microshare® devices clusters. Or some [Ipso data](/docs/2/technical/data-format/microshare-standards) too.
+And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is when you go through the Microshare® devices clusters as well as [Ipso data](/docs/2/technical/data-format/microshare-standards).

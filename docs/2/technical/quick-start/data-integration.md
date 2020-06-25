@@ -42,7 +42,7 @@ To integrate the data into Microshare® there are three methods.
 First, you push the data to Microshare®. 
 For an IoT Server network you push the data on a rectype as shown on this page: 
 ##### > [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
-Each time a new data is created it is sent to Microshare® and if the Data Formatting tools are in place the data will be automatically processed and improved.
+Each time a new data is created it is sent to Microshare® and if the data formatting tools are in place the data will be automatically processed and improved.
 
 The second method is to use robots which are further elaborated on this page:
 ##### > [Data Ingestion By Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
