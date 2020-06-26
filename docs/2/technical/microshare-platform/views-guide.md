@@ -242,7 +242,7 @@ The View will then run its query and retrieve only the records created in the la
 
 You can edit your Views by selecting and clicking on the pen icon to open the View editor view. 
 
-{% include image.html url="/assets/img/composer-fact-edit-edit1.jpg" description="View Index - Card View" %}
+{% include image.html url="/assets/img/composer-fact-edit-edit1-1.jpg" description="View Index - Card View" %}
 
 To test the response of this fact in the api call, scroll down to the "View Preview" section, click on the "SAVE & TEST" button to see the test results. This also works great when you want to see the query results.
 

@@ -33,10 +33,10 @@ Installation of the gateway and the sensors, creation of these entities on the L
 
 Once this is done, when you scan the sensor with Deploy-M, it will be registered on Microshare®. So when you activate the sensor it will send data. At this moment the sensor will switch from this state in Microshare®:
 
-{% include image.html url="/assets/img/installation/installation-no.png" description="Banner" %}
+{% include image.html url="/assets/img/installation/installation-no-1.png" description="Banner" %}
 
 To this one: 
 
-{% include image.html url="/assets/img/installation/installation-yes.png" description="Banner" %}
+{% include image.html url="/assets/img/installation/installation-yes-1.png" description="Banner" %}
 
 It will thus be green and validated. 

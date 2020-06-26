@@ -63,7 +63,7 @@ The Rule will allow select users to execute the Operations chosen here.
 
 The image below displays where the user will determine who owns the Rule.
 
-{% include image.html url="/assets/img/composer-rule-rulesection4.jpg" description="Rule Section - Owner Context" %}
+{% include image.html url="/assets/img/composer-rule-rulesection4-1.jpg" description="Rule Section - Owner Context" %}
 
 The rule can be owned by a specific users or to an organization. There are three dropdowns here:
 
@@ -120,7 +120,7 @@ To start fill-in the first row with the details for a simulated requestor includ
 
 To add more rows to your simulation, click the "ADD" button. To remove a row, click the "X" button next to the row that you wish to remove.
 
-{% include image.html url="/assets/img/composer-rule-rulesimulation2.jpg" description="Rule Simulation Panel" %}
+{% include image.html url="/assets/img/composer-rule-rulesimulation2-1.jpg" description="Rule Simulation Panel" %}
 
 Click on the "TEST" button at any time to see a simulation of what your Rule would grant for each of the requestors in your list.
 
