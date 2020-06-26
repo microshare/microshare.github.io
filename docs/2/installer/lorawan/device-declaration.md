@@ -27,7 +27,7 @@ The second method is much more simple than the first. Just create the device clu
 
 For both methods you need to create the cluster device first and then add the sensors. 
 
-PS: Device Clusters are often managed by the admin, please anticipate the needs with the admin to understand how devices are distributed by device clusters. 
+PS: Device clusters are often managed by the admin, please anticipate the needs with the admin to understand how devices are distributed by device clusters. 
 
 
 ## 2. Device Cluster Creation
