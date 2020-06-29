@@ -126,13 +126,13 @@ Click on the "TEST" button at any time to see a simulation of what your Rule wou
 
 Once you have used the tool, your entries will be saved in your user preferences record. If you want to retrieve the last set of entries, click the link labeled "Load data from your previous test". You can always edit the entries.
 
-{% include image.html url="/assets/img/composer-rule-rulesimulation3.jpg" description="Rule Simulation Panel" %}
+{% include image.html url="/assets/img/composer-rule-rulesimulation3-1.jpg" description="Rule Simulation Panel" %}
 
 The result of the test will be a truth table showing the owner (you) and requestor (from your list) and the results for each operation governed by the Rule. The truth table only shows the results of the current Rule and does not take into account other Rules that may be active in the system.
 
 You can change the terms of your Rule and rerun your simulation at any time. The tool will highlight difference between each subsequent simulation to help you track the impact of changes you are making to the Rule terms. Changed outcomes will be in Red text.
 
-{% include image.html url="/assets/img/composer-rule-rulesimulation4.jpg" description="Rule Simulation Panel" %}
+{% include image.html url="/assets/img/composer-rule-rulesimulation4-1.jpg" description="Rule Simulation Panel" %}
 
 ## 4. Best Practices for Sharing Rules
 

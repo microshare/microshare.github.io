@@ -38,17 +38,17 @@ If you then want to read more conventional data, you can try the [demo APIs](/do
 
 * Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
-{% include image.html url="/assets/img/api/create_one_share_1.png" description="create one share" %}
+{% include image.html url="/assets/img/api/create_one_share_1new.png" description="create one share" %}
 
 * Enter you own recType there, by using your `firstName.lastName` combination.
 
 * Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
 
-{% include image.html url="/assets/img/api/create_one_share_2.png" description="create one share" %}
+{% include image.html url="/assets/img/api/create_one_share_2new.png" description="create one share" %}
 
 * Click `Send`
 
-{% include image.html url="/assets/img/api/create_one_share_3.png" description="create one share" %}
+{% include image.html url="/assets/img/api/create_one_share_3new.png" description="create one share" %}
 
 * A confirmation message will be sent, indicating that the data was successfully written to Microshare®. It returns metadata usable with other API calls.
 
@@ -60,12 +60,12 @@ If you then want to read more conventional data, you can try the [demo APIs](/do
 * From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
 * Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
 
-{% include image.html url="/assets/img/api/read_share_1.png" description="read share" %}
+{% include image.html url="/assets/img/api/read_share_1new.png" description="read share" %}
 
 * Click `Send`. 
 Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
 
-{% include image.html url="/assets/img/api/read_share_2.png" description="read share" %}
+{% include image.html url="/assets/img/api/read_share_2mew.png" description="read share" %}
 
 * If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
@@ -90,11 +90,11 @@ Once you have found the query you need on Postman, you can very quickly extract 
 
 - Simply click on the code button once your query is good. 
 
-{% include image.html url="/assets/img/api/get_code_postman_0.png" description="read share" %}
+{% include image.html url="/assets/img/api/get_code_postman_0new.png" description="read share" %}
 
 - Choose your programming language and you will get your code. 
 
-{% include image.html url="/assets/img/api/get_code_postman_1.png" description="read share" %}
+{% include image.html url="/assets/img/api/get_code_postman_1new.png" description="read share" %}
 
 
 <!> Be careful the token is valid for only 48 hours, it is generally necessary to have a request of authentification beforehand and then use this token through your request. <!>
