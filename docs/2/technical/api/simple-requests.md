@@ -65,7 +65,7 @@ If you then want to read more conventional data, you can try the [demo APIs](/do
 * Click `Send`. 
 Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
 
-{% include image.html url="/assets/img/api/read_share_2mew.png" description="read share" %}
+{% include image.html url="/assets/img/api/read_share_2new.png" description="read share" %}
 
 * If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 

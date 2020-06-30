@@ -127,7 +127,7 @@ Example :
             "United Kingdom",
             "London",
             "5 Merchant Square",
-            "environment"
+            "your environment"
           ],
           "iot": {
             "device_id": "58-A0-CB-00-00-40-??-??",
@@ -185,9 +185,9 @@ Example :
         "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
         "createDate": "2020-06-17T09:48:08.980Z",
         "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.environment.unpacked",
+        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
         "id": "5ed1123046e0fb0028b703ac",
-        "name": "io.microshare.environment.unpacked",
+        "name": "io.microshare.yourenvironment.unpacked",
         "remoteAddress": "176.159.244.215",
         "tokendata": {
           "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
@@ -201,13 +201,13 @@ Example :
         "owners": [],
         "user": "yourname@microshare.io"
       },
-      "recType": "io.microshare.environment.unpacked",
+      "recType": "io.microshare.yourenvironment.unpacked",
       "tags": [
         "Europe",
         "United Kingdom",
         "London",
         "5 Merchant Square",
-        "environment",
+        "your environment",
         "London Office",
         "1st Floor",
         "Office 3"
@@ -284,7 +284,7 @@ You can find what the IPSOs values mean on this web page :
     "United Kingdom",
     "London",
     "5 Merchant Square",
-    "environment"
+    "your environment"
   ],
   "iot": {
     "device_id": "58-A0-CB-00-00-40-??-??",
@@ -341,9 +341,9 @@ This field contains the port of the application or service to which the packet i
   "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
   "createDate": "2020-06-17T09:48:08.980Z",
   "creatorId": "yourname@microshare.io",
-  "desc": "Record of Type io.microshare.environment.unpacked",
+  "desc": "Record of Type io.microshare.yourenvironment.unpacked",
   "id": "5ed1123046e0fb0028b703ac",
-  "name": "io.microshare.environment.unpacked",
+  "name": "io.microshare.yourenvironment.unpacked",
   "remoteAddress": "176.159.244.215",
   "tokendata": {
     "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
@@ -672,7 +672,7 @@ And finally the "version" is the unpacker's version.
             "United Kingdom",
             "London",
             "5 Merchant Square",
-            "environment"
+            "your environment"
           ],
           "iot": {
             "device_id": "58-A0-CB-00-00-40-??-??",
@@ -730,9 +730,9 @@ And finally the "version" is the unpacker's version.
         "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
         "createDate": "2020-06-17T09:48:08.980Z",
         "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.environment.unpacked",
+        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
         "id": "5ed1123046e0fb0028b703ac",
-        "name": "io.microshare.environment.unpacked",
+        "name": "io.microshare.yourenvironment.unpacked",
         "remoteAddress": "176.159.244.215",
         "tokendata": {
           "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
@@ -746,13 +746,13 @@ And finally the "version" is the unpacker's version.
         "owners": [],
         "user": "yourname@microshare.io"
       },
-      "recType": "io.microshare.environment.unpacked",
+      "recType": "io.microshare.your environment.unpacked",
       "tags": [
         "Europe",
         "United Kingdom",
         "London",
         "5 Merchant Square",
-        "environment",
+        "your environment",
         "London",
         "1st Floor",
         "Office 3"

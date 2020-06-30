@@ -139,33 +139,33 @@ Here is a table of unpackers with the fields they generate and the domains they 
  
 | Unpacker                          | Fields                                                             | Domain(s)               |
 | --------------------------------- | ------------------------------------------------------------------ | ----------------------- |
-| ch.parametric.counter.PCR1LR      | motions\_since\_transmit,                                          | motion                  |
-| cn.winext.smoke.AN102C            | alarm, smokiness, temperature, humidity, haziness,                 | alarm, environment      |
-| cn.winext.gas.AN302               | alarm, gas,                                                        | alarm, environment      |
-| cn.winext.sos.AN301               | alarm,                                                             | alarm                   |
-| com.adeunis.motion.ARF8276A       | motions\_since\_reset,                                             | motion                  |
-| com.adeunis.temperature.ARF8180   | temperature,                                                       | environment             |
-| com.bosch.parking.TPS110          | presence,                                                          | motion                  |
-| com.brighterbins.level.V00001     | distance, temperature,                                             | distance, environment   |
-| com.brighterbins.level.V00001     | fill, temperature,                                                 | environment, ??         |
-| com.gemteks.tracker.WSMS116       | presence, gps,                                                     | motion, gps             |
+| ch.parametric.counter.PCR1LR      | motions\_since\_transmit                                           | motion                  |
+| cn.winext.smoke.AN102C            | alarm, smokiness, temperature, humidity, haziness                  | alarm  environment      |
+| cn.winext.gas.AN302               | alarm, gas                                                         | alarm  environment      |
+| cn.winext.sos.AN301               | alarm                                                              | alarm                   |
+| com.adeunis.motion.ARF8276A       | motions\_since\_reset                                              | motion                  |
+| com.adeunis.temperature.ARF8180   | temperature                                                        | environment             |
+| com.bosch.parking.TPS110          | presence                                                           | motion                  |
+| com.brighterbins.level.V00001     | distance, temperature                                              | distance  environment   |
+| com.brighterbins.level.V00001     | fill, temperature                                                  | environment, ??         |
+| com.gemteks.tracker.WSMS116       | presence, gps                                                      | motion, gps             |
 | com.mcf88.environment.LW12VOC     | iso\_time, temperature, humidity, pressure, illuminance, voc       | environment             |
-| com.netvox.environment.R711       | temperature, humidity,                                             | environment             |
+| com.netvox.environment.R711       | temperature, humidity                                              | environment             |
 | com.netvox.leak.R311W             | alarm                                                              | alarm                   |
-| com.netvox.motion.RB11E           | temperature, illuminance, presence,                                | environment             |
-| com.netvox.panic.RB02I            | alarm,                                                             | alarm                   |
-| com.netvox.security.R311A         | closed,                                                            | ??                      |
+| com.netvox.motion.RB11E           | temperature, illuminance, presence                                 | environment             |
+| com.netvox.panic.RB02I            | alarm                                                              | alarm                   |
+| com.netvox.security.R311A         | closed                                                             | ??                      |
 | com.netvox.smoke.RA02A            | alarm                                                              | alarm                   |
-| com.risinghf.environment.RHF1S001 | temperature, humidity,                                             | environment             |
+| com.risinghf.environment.RHF1S001 | temperature, humidity                                              | environment             |
 | eu.skiply.button.SmilioAction     | swipe, pushes\_since\_reset                                        | feedback                |
-| io.tracknet.healthy.TBHV100       | temperature, humidity, co2, voc,                                   | environment             |
-| io.tracknet.leak.TBWT100          | leak, temperature, humidity,                                       | environment, ??         |
-| io.tracknet.light.TBAM100         | temperature, illuminance,                                          | environment             |
-| io.tracknet.motion.TMBS100        | presence, temperature, motions\_since\_reset,                      | motion, environment,    |
-| io.tracknet.security.TBDW100      | closed, temperature, motions\_since\_reset,                        | environment, motion, ?? |
-| io.tracknet.sound.TBSL100         | temperature, loudness,                                             | environment, ??         |
-| se.elsys.environment.ERSCO2       | temperature, humidity, illuminance, motions\_since\_transmit, co2, | environment, motion     |
-| se.elsys.motion.ERSEye            | temperature, humidity, illuminance,                                | environment             |
+| io.tracknet.healthy.TBHV100       | temperature, humidity, co2, voc                                    | environment             |
+| io.tracknet.leak.TBWT100          | leak, temperature, humidity                                        | environment, ??         |
+| io.tracknet.light.TBAM100         | temperature, illuminance                                           | environment             |
+| io.tracknet.motion.TMBS100        | presence, temperature, motions\_since\_reset                       | motion  environment,    |
+| io.tracknet.security.TBDW100      | closed, temperature, motions\_since\_reset                         | environment  motion, ?? |
+| io.tracknet.sound.TBSL100         | temperature, loudness                                              | environment, ??         |
+| se.elsys.environment.ERSCO2       | temperature, humidity, illuminance, motions\_since\_transmit, co2  | environment  motion     |
+| se.elsys.motion.ERSEye            | temperature, humidity, illuminance                                 | environment             |
 
 Here is a list of our product apps along with the domain data they require: 
 

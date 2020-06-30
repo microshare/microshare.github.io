@@ -62,10 +62,10 @@ Views can be configured to aggregate or obfuscate data from the Microshare® dat
 {% include image.html url="/assets/img/composer-fact-create-query1.jpg" description="View Create Query" %}
 
 ##### * Search via $match;
-$match allows you to put in search criteria to find records, this will get you all records of the "recType" with a value of "io.microshare.demo.sensor.temprature".
+$match allows you to put in search criteria to find records, this will get you all records of the "recType" with a value of "io.microshare.demo.sensor.temperature".
 {% highlight JSON %}  
   [
-    {"$match": {"recType": "io.microshare.demo.sensor.temprature"}}
+    {"$match": {"recType": "io.microshare.demo.sensor.temperature"}}
   ]
 {% endhighlight %}  
 For more criteria of search, just add them in the $match elements.
@@ -73,7 +73,7 @@ For more criteria of search, just add them in the $match elements.
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temprature",
+      "recType": "io.microshare.demo.sensor.temperature",
       "data.FCntUp": 168
     }
   }
@@ -86,7 +86,7 @@ This sample shows what happens when you sort by timestamp on the record, but you
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temprature"
+      "recType": "io.microshare.demo.sensor.temperature"
     }
   },
   {
@@ -109,7 +109,7 @@ Group by is used when you have multiple returns and need to group the results fo
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temprature"
+      "recType": "io.microshare.demo.sensor.temperature"
     }
   },
   {
@@ -136,7 +136,7 @@ You can selectively return only data elements you want to expose and change the 
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temprature"
+      "recType": "io.microshare.demo.sensor.temperature"
     }
   },
   {

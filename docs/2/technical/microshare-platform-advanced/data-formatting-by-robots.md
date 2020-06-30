@@ -318,7 +318,7 @@ At Microshare® we usually represent data workflows with [draw.io](https://www.d
  4 The View query would be:  
 {% highlight JSON %}
   [
-    {"$match" : {"recType" : "uk.london.tabs.healthyhomesensor.highco2"}},
+    {"$match" : {"recType" : "london.tabs.healthyhomesensor.highco2"}},
     {"$limit" : 10}
   ] 
 {% endhighlight %}

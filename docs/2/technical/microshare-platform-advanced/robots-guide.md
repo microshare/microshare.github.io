@@ -129,7 +129,7 @@ We will do the minimum to unlock all the Robot options for now.
 * Enter the Record Type you used in the calls in the previous section.
 * Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination.
 
-{% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
+{% include image.html url="/assets/img/hackiot-create-a-robot-2new.png" description="Minimal Robot configuration" %}
 
 You'll be back in the Robot cards list and your Robot should now be displayed.
 If you don't see your new Robot card listed:

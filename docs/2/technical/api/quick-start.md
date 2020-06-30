@@ -53,10 +53,10 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 
 * To see the Microshare® Postman **collection**, click on `Collections` on the left hand pane.
 * To configure your Microshare® **environment**, select the cog icon situated at the top right of the screen.  
-Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
+Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2new.png" description="Collection adn Environment config" %}
 
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
-{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
 That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
 
@@ -82,7 +82,7 @@ Indeed when you will make the request request token you will add at the end of i
 `&identity=External_ID`
 
 In order to have 
-{% include image.html url="/assets/img/authentification_demo.png" description="authentification demo" %}
+{% include image.html url="/assets/img/authentification_demonew.png" description="authentification demo" %}
 
 This will allow you at runtime to join Demo's identity.
 
