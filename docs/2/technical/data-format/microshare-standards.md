@@ -65,7 +65,7 @@ Example :
       "_id": "5ed1123046e0fb0028b703ac",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
       "createDate": "2020-06-17T09:48:08.980Z",
-      "creatorId": "jbardin@microshare.io",
+      "creatorId": "yourname@microshare.io",
       "data": {
         "co2": 65535,
         "co2_label": "65535ppm",
@@ -77,7 +77,7 @@ Example :
             "voltage": 3.6,
             "voltage_label": "3.6V"
           },
-          "id": "58-A0-CB-00-00-40-9F-C2"
+          "id": "58-A0-CB-00-00-40-??-??"
         },
         "humidity": 64,
         "humidity_label": "64%",
@@ -118,7 +118,7 @@ Example :
         },
         "meta": {
           "device": [
-            "WeWork",
+            "London Office",
             "1st Floor",
             "Office 3"
           ],
@@ -130,7 +130,7 @@ Example :
             "environment"
           ],
           "iot": {
-            "device_id": "58-A0-CB-00-00-40-9F-C2",
+            "device_id": "58-A0-CB-00-00-40-??-??",
             "fcnt_dwn": 749,
             "fcnt_up": 4510,
             "fport": 103,
@@ -155,7 +155,7 @@ Example :
                   "id": 66
               },
               "devAddr": "E0412347E",
-              "devEui": "58A0CB0000409FC2"
+              "devEui": "58A0CB000040????"
           },
           "fCntDown": 749,
           "fCntUp": 4510,
@@ -184,22 +184,22 @@ Example :
       "origin": {
         "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
         "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "jbardin@microshare.io",
+        "creatorId": "yourname@microshare.io",
         "desc": "Record of Type io.microshare.environment.unpacked",
         "id": "5ed1123046e0fb0028b703ac",
         "name": "io.microshare.environment.unpacked",
         "remoteAddress": "176.159.244.215",
         "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
           "ip": "172.31.31.67"
         }
       },
       "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
         "meta": {},
         "org": "io.microshare",
         "owners": [],
-        "user": "jbardin@microshare.io"
+        "user": "yourname@microshare.io"
       },
       "recType": "io.microshare.environment.unpacked",
       "tags": [
@@ -208,13 +208,13 @@ Example :
         "London",
         "5 Merchant Square",
         "environment",
-        "WeWork",
+        "London Office",
         "1st Floor",
         "Office 3"
       ],
       "tstamp": 1592387288980,
       "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "jbardin@microshare.io"
+      "updaterId": "yourname@microshare.io"
     },
 
 .......
@@ -227,7 +227,7 @@ A large part of this data is simply derived from the settings of our device clus
 
 Here is the set-up of this device cluster   : 
 
-{% include image.html url="\assets\img\dc-data-format.png" width="800" description="dc" %}
+{% include image.html url="\assets\img\dc-data-formatnew.png" width="800" description="dc" %}
 
 <br>
 
@@ -257,7 +257,7 @@ Information about the device itself that provided the data is sometimes given, i
     "voltage": 3.6,
     "voltage_label": "3.6V"
   },
-  "id": "58-A0-CB-00-00-40-9F-C2"
+  "id": "58-A0-CB-00-00-40-??-??"
 },
 ```
 
@@ -275,7 +275,7 @@ You can find what the IPSOs values mean on this web page :
 ```
 "meta": {
   "device": [
-    "WeWork",
+    "London",
     "1st Floor",
     "Office 3"
   ],
@@ -287,7 +287,7 @@ You can find what the IPSOs values mean on this web page :
     "environment"
   ],
   "iot": {
-    "device_id": "58-A0-CB-00-00-40-9F-C2",
+    "device_id": "58-A0-CB-00-00-40-??-??",
     "fcnt_dwn": 749,
     "fcnt_up": 4510,
     "fport": 103,
@@ -340,13 +340,13 @@ This field contains the port of the application or service to which the packet i
 "origin": {
   "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
   "createDate": "2020-06-17T09:48:08.980Z",
-  "creatorId": "jbardin@microshare.io",
+  "creatorId": "yourname@microshare.io",
   "desc": "Record of Type io.microshare.environment.unpacked",
   "id": "5ed1123046e0fb0028b703ac",
   "name": "io.microshare.environment.unpacked",
   "remoteAddress": "176.159.244.215",
   "tokendata": {
-    "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+    "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
     "ip": "172.31.31.67"
   }
 },
@@ -449,7 +449,7 @@ And finally the "version" is the unpacker's version.
             "_id": "5eea1d8d46e0fb0028a0b45e",
             "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9EZE34CAC3671A7D3AF90C89CEC5DAABC2L1425",
             "createDate": "2020-06-17T13:41:33.425Z",
-            "creatorId": "jbardin@microshare.io",
+            "creatorId": "yourname@microshare.io",
             "data": {
                 "device": {
                     "battery": {
@@ -459,7 +459,7 @@ And finally the "version" is the unpacker's version.
                         "voltage_label": "3.6V"
                     },
                     "count": 2997,
-                    "id": "58-A0-CB-00-00-22-04-E2"
+                    "id": "58-A0-CB-00-00-22-??-??"
                 },
                 "ipso": {
                     "3000": {
@@ -492,7 +492,7 @@ And finally the "version" is the unpacker's version.
                 },
                 "meta": {
                     "device": [
-                        "WeWork",
+                        "London Office",
                         "Ground Floor",
                         "Office 2"
                     ],
@@ -504,7 +504,7 @@ And finally the "version" is the unpacker's version.
                         "door"
                     ],
                     "iot": {
-                        "device_id": "58-A0-CB-00-00-22-04-E2",
+                        "device_id": "58-A0-CB-00-00-22-??-??",
                         "fcnt_dwn": 761,
                         "fcnt_up": 5551,
                         "fport": 102,
@@ -529,7 +529,7 @@ And finally the "version" is the unpacker's version.
                             "id": 84
                         },
                         "devAddr": "00000750",
-                        "devEui": "58A0CB00002204E2"
+                        "devEui": "58A0CB000022????"
                     },
                     "fCntDown": 761,
                     "fCntUp": 5551,
@@ -559,22 +559,22 @@ And finally the "version" is the unpacker's version.
             "origin": {
                 "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9C2BF56CAC3671A7D3AF90C89CEC5DAABC2L1425",
                 "createDate": "2020-06-17T13:41:33.425Z",
-                "creatorId": "jbardin@microshare.io",
+                "creatorId": "yourname@microshare.io",
                 "desc": "Record of Type io.microshare.motion.unpacked",
                 "id": "5eea1d8d46e0fb0028a0b63c",
                 "name": "io.microshare.motion.unpacked",
                 "remoteAddress": "176.159.244.215",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
                   "ip": "172.31.31.67"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
                 "meta": {},
                 "org": "io.microshare",
                 "owners": [],
-                "user": "jbardin@microshare.io"
+                "user": "yourname@microshare.io"
             },
             "recType": "io.microshare.motion.unpacked",
             "tags": [
@@ -583,13 +583,13 @@ And finally the "version" is the unpacker's version.
                 "London",
                 "5 Merchant Square",
                 "door",
-                "WeWork",
+                "London Office",
                 "Ground Floor",
                 "Office 2"
             ],
             "tstamp": 1592401293425,
             "updateDate": "2020-06-17T13:41:33.425Z",
-            "updaterId": "jbardin@microshare.io"
+            "updaterId": "yourname@microshare.io"
         },
 ```
 
@@ -610,7 +610,7 @@ And finally the "version" is the unpacker's version.
       "_id": "5ed1123046e0fb0028b703ac",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
       "createDate": "2020-06-17T09:48:08.980Z",
-      "creatorId": "jbardin@microshare.io",
+      "creatorId": "yourname@microshare.io",
       "data": {
         "co2": 65535,
         "co2_label": "65535ppm",
@@ -622,7 +622,7 @@ And finally the "version" is the unpacker's version.
             "voltage": 3.6,
             "voltage_label": "3.6V"
           },
-          "id": "58-A0-CB-00-00-40-9F-C2"
+          "id": "58-A0-CB-00-00-40-??-??"
         },
         "humidity": 64,
         "humidity_label": "64%",
@@ -663,7 +663,7 @@ And finally the "version" is the unpacker's version.
         },
         "meta": {
           "device": [
-            "WeWork",
+            "London",
             "1st Floor",
             "Office 3"
           ],
@@ -675,7 +675,7 @@ And finally the "version" is the unpacker's version.
             "environment"
           ],
           "iot": {
-            "device_id": "58-A0-CB-00-00-40-9F-C2",
+            "device_id": "58-A0-CB-00-00-40-??-??",
             "fcnt_dwn": 749,
             "fcnt_up": 4510,
             "fport": 103,
@@ -700,7 +700,7 @@ And finally the "version" is the unpacker's version.
                   "id": 66
               },
               "devAddr": "E0412347E",
-              "devEui": "58A0CB0000409FC2"
+              "devEui": "58A0CB000040????"
           },
           "fCntDown": 749,
           "fCntUp": 4510,
@@ -729,22 +729,22 @@ And finally the "version" is the unpacker's version.
       "origin": {
         "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
         "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "jbardin@microshare.io",
+        "creatorId": "yourname@microshare.io",
         "desc": "Record of Type io.microshare.environment.unpacked",
         "id": "5ed1123046e0fb0028b703ac",
         "name": "io.microshare.environment.unpacked",
         "remoteAddress": "176.159.244.215",
         "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
           "ip": "172.31.31.67"
         }
       },
       "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
         "meta": {},
         "org": "io.microshare",
         "owners": [],
-        "user": "jbardin@microshare.io"
+        "user": "yourname@microshare.io"
       },
       "recType": "io.microshare.environment.unpacked",
       "tags": [
@@ -753,13 +753,13 @@ And finally the "version" is the unpacker's version.
         "London",
         "5 Merchant Square",
         "environment",
-        "WeWork",
+        "London",
         "1st Floor",
         "Office 3"
       ],
       "tstamp": 1592387288980,
       "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "jbardin@microshare.io"
+      "updaterId": "yourname@microshare.io"
     },
 
 .......
@@ -783,7 +783,7 @@ And finally the "version" is the unpacker's version.
             "_id": "5eea1e1346e0fb0022355684",
             "checksum": "C6E1072EB86D537C2E7E9B8D3A3244BA4FC5BEDD44718F32532ZZER5E6A56E28F9L1818",
             "createDate": "2020-06-17T13:43:47.365Z",
-            "creatorId": "jbardin@microshare.io",
+            "creatorId": "yourname@microshare.io",
             "data": {
                 "count_1": 75,
                 "count_2": 610,
@@ -791,7 +791,7 @@ And finally the "version" is the unpacker's version.
                 "count_4": 246,
                 "count_5": 882,
                 "device": {
-                    "id": "70-B3-D5-32-60-00-C0-01"
+                    "id": "70-B3-D5-32-60-00-??-??"
                 },
                 "ipso": {
                     "10241": {
@@ -843,7 +843,7 @@ And finally the "version" is the unpacker's version.
                 },
                 "meta": {
                     "device": [
-                        "Wework",
+                        "London Office",
                         "1st Floor",
                         "Kitchen"
                     ],
@@ -855,7 +855,7 @@ And finally the "version" is the unpacker's version.
                         "5b_feedback"
                     ],
                     "iot": {
-                        "device_id": "70-B3-D5-32-60-00-C0-01",
+                        "device_id": "70-B3-D5-32-60-00-??-??",
                         "fcnt_dwn": 28,
                         "fcnt_up": 1778,
                         "fport": 2,
@@ -903,22 +903,22 @@ And finally the "version" is the unpacker's version.
             "origin": {
                 "checksum": "C6E1072EB86D537C2E7E9B8D3ACREZERT3BEDD44718F9898C234352A56E28F9L1818",
                 "createDate": "2020-06-17T13:43:47.365Z",
-                "creatorId": "jbardin@microshare.io",
+                "creatorId": "yourname@microshare.io",
                 "desc": "Record of Type io.microshare.feedback.unpacked",
                 "id": "5eea1e1346e0fb0028915684",
                 "name": "io.microshare.feedback.unpacked",
                 "remoteAddress": "176.159.244.215",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
                   "ip": "172.31.31.67"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
                 "meta": {},
                 "org": "io.microshare",
                 "owners": [],
-                "user": "jbardin@microshare.io"
+                "user": "yourname@microshare.io"
             },
             "recType": "io.microshare.feedback.unpacked",
             "tags": [
@@ -927,12 +927,12 @@ And finally the "version" is the unpacker's version.
                 "London",
                 "5 Merchant Square",
                 "5b_feedback",
-                "Wework",
+                "London Office",
                 "1st Floor",
                 "Kitchen"
             ],
             "tstamp": 1592401427365,
             "updateDate": "2020-06-17T13:43:47.365Z",
-            "updaterId": "jbardin@microshare.io"
+            "updaterId": "yourname@microshare.io"
         },
 ```

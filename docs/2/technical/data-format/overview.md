@@ -43,7 +43,7 @@ To start with something simple we'll take the piece of data we generated with th
             "_id": "5ed1123046e0fb0028b702bf",
             "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
             "createDate": "2020-05-29T13:46:24.779Z",
-            "creatorId": "jbardin@microshare.io",
+            "creatorId": "yourname@microshare.io",
             "data": {
                 "Test": "Data"
             },
@@ -53,26 +53,26 @@ To start with something simple we'll take the piece of data we generated with th
             "origin": {
                 "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
                 "createDate": "2020-05-29T13:46:24.779Z",
-                "creatorId": "jbardin@microshare.io",
-                "desc": "Record of Type julien.bardin",
+                "creatorId": "yourname@microshare.io",
+                "desc": "Record of Type your.name",
                 "id": "5ed1123046e0fb0028b702bf",
-                "name": "julien.bardin",
+                "name": "your name",
                 "remoteAddress": "176.159.244.215",
                 "tokendata": {
-                    "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+                    "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
                     "ip": "172.31.31.67"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
                 "org": "io.microshare",
                 "owners": [],
-                "user": "jbardin@microshare.io"
+                "user": "yourname@microshare.io"
             },
-            "recType": "julien.bardin",
+            "recType": "your.name",
             "tstamp": 1590759984779,
             "updateDate": "2020-05-29T13:46:24.779Z",
-            "updaterId": "jbardin@microshare.io"
+            "updaterId": "yourname@microshare.io"
         }
     ]
 }
@@ -102,16 +102,16 @@ Here we will see one by one the different components, starting with the unique v
 "_id": "5ed1123046e0fb0028b702bf",
 "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
 "createDate": "2020-05-29T13:46:24.779Z",
-"creatorId": "jbardin@microshare.io",
+"creatorId": "yourname@microshare.io",
 
 "desc": "",
 "id": "5ed1123046e0fb0028b702bf",
 "name": "",
 
-"recType": "julien.bardin",
+"recType": "your.name",
 "tstamp": 1590759984779,
 "updateDate": "2020-05-29T13:46:24.779Z",
-"updaterId": "jbardin@microshare.io"
+"updaterId": "yourname@microshare.io"
 ```
 
 * `"_id"`
@@ -180,13 +180,13 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
 "origin": {
     "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
     "createDate": "2020-05-29T13:46:24.779Z",
-    "creatorId": "jbardin@microshare.io",
-    "desc": "Record of Type julien.bardin",
+    "creatorId": "yourname@microshare.io",
+    "desc": "Record of Type your.name",
     "id": "5ed1123046e0fb0028b702bf",
-    "name": "julien.bardin",
+    "name": "your name",
     "remoteAddress": "176.159.244.215",
     "tokendata": {
-        "id": "006f6b5f-171e-46cf-8f70-c4fa15b6e679",
+        "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
         "ip": "172.31.31.67"
     }
 },
@@ -203,17 +203,17 @@ The origin can be interesting when the data is shared with you to understand whe
 
 ```
 "owner": {
-    "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F256EE",
+    "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
     "org": "io.microshare",
     "owners": [],
-    "user": "jbardin@microshare.io"
+    "user": "yourname@microshare.io"
 },
 ```
 
 The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). So in case of doubt for the creation of a share rule these data are essential to share from the right place the right data. 
 
 The additional information in the `appid` corresponds to the app-key that is used to create the data. 
-Thus has the creation of a token or pip token to create data, these are made from an app-key, which will be found here.
+Thus has the creation of a token or pipe token to create data, these are made from an app-key, which will be found here.
 
 ## 3. Go further
 ---------------------------------------
