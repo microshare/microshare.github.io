@@ -291,14 +291,14 @@ The time values might also come from a data-level datetime stamp such as data.me
 ##### Test Parameter Example
 {% highlight JSON %}
 {
-    "recType":"com.myco.sensor.unpacked",
+    "recType":"com.mycompany.sensor.unpacked",
     "from":"2019-04-03T00:00:00-0400",
     "to":"2019-04-04T00:00:00-0400"
 }
 {% endhighlight %}
 
 ##### API Call
-{{hostname}}/share/com.myco.count?id=5cd9809446e0fb002312cebe&from=2019-04-03T00:00:00-0400&to=2019-04-04T00:00:00-0400&recType=com.myco.sensor.unpacked
+{{hostname}}/share/com.mycompany.count?id=5cd9809446e0fb002312cebe&from=2019-04-03T00:00:00-0400&to=2019-04-04T00:00:00-0400&recType=com.mycompany.sensor.unpacked
 
 Notice that the recType included in the path is the recType assigned to the View. It is arbitrary but must agree with the recType used to create the View in Composer. The ?id= query string parameter is the id of the View.
 
@@ -316,9 +316,9 @@ The other query parameter values align with the text inserts in the query (eg. &
   },
   "objs": [
     {
-      "desc": "Derived from com.myco.count",
+      "desc": "Derived from com.mycompany.count",
       "name": "Derived Data",
-      "url": "/share/com.myco.count",
+      "url": "/share/com.mycompany.count",
       "_id": "5cd9809446e0fb002312cebe",
       "tags": [],
       "data": {
@@ -326,7 +326,7 @@ The other query parameter values align with the text inserts in the query (eg. &
       },
       "id": "5cd9809446e0fb002312cebe",
       "tstamp": "05/13/2019 02:40:38:311 PM",
-      "recType": "com.myco.count"
+      "recType": "com.mycompany.count"
     }
   ]
 }
