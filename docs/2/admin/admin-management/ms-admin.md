@@ -24,7 +24,7 @@ Before starting to use the ms_admin account, you must understand what is shared 
 
 ##### As administrator, your first action will be to create the device clusters on Microshare®.
 
-{% include image.html url="/assets/img/cards/dc-card-1.png" description="Banner" width="200" %} 
+{% include image.html url="/assets/img/cards/dc-card.png" description="Banner" width="200" %} 
 
 You can add sensors using your computer or your Installer can quickly add devices via the Deploy-M app. 
 
@@ -35,7 +35,7 @@ To learn how to create a device cluster, what they do and the best practices you
 
 ##### The administrator also controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
 
-{% include image.html url="/assets/img/cards/rule-card-1.png" description="Banner" width="200" %} 
+{% include image.html url="/assets/img/cards/rule-card.png" description="Banner" width="200" %} 
 
 Once the device clusters are created, you will receive data on the ms_admin account. Once the data is shared, Tthe data can be used to create applications or robots. 
 
@@ -44,7 +44,7 @@ To do share data you will create shares rules. Particularly to the identity who 
 
 ##### The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/).
 
-{% include image.html url="/assets/img/cards/robot-card-1.png" description="Banner" width="200" %} 
+{% include image.html url="/assets/img/cards/robot-card.png" description="Banner" width="200" %} 
 
 Robots are used on Microshare® to automate tasks. For example: to trigger an action when a particular event occurs or send an email alert when a temperature in a room is exceeded.
 
@@ -55,7 +55,7 @@ But it is still advisable to have the general robots on the ms_admin account. Th
 
 ##### The administrator also has the ability to own [Apps](/docs/2/technical/microshare-platform/dashboard-guide/).
 
-{% include image.html url="/assets/img/cards/app-card-1.png" description="Banner" width="200" %} 
+{% include image.html url="/assets/img/cards/app-card.png" description="Banner" width="200" %} 
 
 For applications, these are shared within the identity. So each application that you create on the different identities will be visible to all users of the same identity. Except on the Microshare® default identity which is particular. 
 
@@ -72,10 +72,10 @@ Once you have completed the apps, use postman to create a /share with recType io
     "favs" : { 
       "apps" : 
         [ 
-          "5d35d61f1e00000343f7204d", 
-          "5d35c68b1e00006a3ef72041", 
-          "5d825c8c1e00009151f7810f", 
-          "5d6e8d451d0000d1b8c0b6c3" 
+          "5a1p2p3sf1e00000343f7204d", 
+          "5a1p2p3sb1e00006a3ef72041", 
+          "5a1p2p3sc1e00009151f7810f", 
+          "5a1p2p3s51d0000d1b8c0b6c3" 
         ] 
     }
   } 

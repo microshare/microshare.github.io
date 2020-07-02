@@ -37,7 +37,7 @@ This is a quick reference of the device cluster. A in- depth description of the 
 
 A device cluster represents a grouping of sensors organized by sensor type. A device cluster cannot contain two types of sensors. The device cluster are often cross-referenced by global location (site or building) and finally by usecase.
 
-Let's take an example, we have for example temperature sensors that we want to install in our WeWork building.
+Let's take an example, we have for example temperature sensors that we want to install in our building.
 
 **We know:**
 
