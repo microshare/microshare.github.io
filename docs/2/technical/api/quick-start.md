@@ -39,14 +39,14 @@ You can then use Microshare® Share API to read data from, as well as write data
 ## 3. Setup Postman
 ---------------------------------------
 
-This step is optional if you already have another way of invoking the API. In which case, visit [Microshare® API doc](./api-collection) for a list of API call and move to the next section.
+This step is optional if you already have another way of invoking the API. In which case, visit [Microshare® API doc](../api-collection) for a list of API call and move to the next section.
 
 Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare® API collection.
 
-* Visit our [API documentation page](../../../advanced/api-reference)
+* Visit our [API documentation page](../api-collection/)
 
 * Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
-**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../../../advanced/api-reference).
+**If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../api-collection/).
 
 * Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
