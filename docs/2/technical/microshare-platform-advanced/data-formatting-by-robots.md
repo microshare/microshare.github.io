@@ -70,14 +70,14 @@ And the returned data model is
     },
     "objs": [
         {
-            "updaterId": "guest@point.io",
+            "updaterId": "your@email.com",
             "desc": "",
             "name": "",
             "createDate": {
                 "$date": 1507824651492
             },
             "_id": {
-                "$oid": "59df940b46e0fb0028fbb54c"
+                "$oid": "59df940b46esfdf028fbb54c"
             },
             "tags": [
                 "tempID1234",
@@ -101,7 +101,7 @@ And the returned data model is
                 "FRMPayload": "00EB05050046E90F",
                 "FPort": 102
             },
-            "creatorId": "guest@point.io",
+            "creatorId": "your@email.com",
             "id": "59df940b46e0fb0028fb????",
             "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266",
             "tstamp": {
@@ -111,20 +111,20 @@ And the returned data model is
                 "tokendata": {
                     "id": "3766b4fc-4fae-49ab-afc4-cb0d741d????"
                 },
-                "desc": "Object of Type io.Microshare.demo.sensor.temprature",
-                "name": "io.Microshare.demo.sensor.temprature",
+                "desc": "Object of Type io.microshare.demo.sensor.temprature",
+                "name": "io.microshare.demo.sensor.temprature",
                 "createDate": {
                     "$numberLong": "1507824651492"
                 },
-                "creatorId": "guest@point.io",
+                "creatorId": "your@email.com",
                 "id": "59df940b46e0fb0028fb????",
                 "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266"
             },
-            "recType": "io.Microshare.demo.sensor.temprature",
+            "recType": "io.microshare.demo.sensor.temprature",
             "owner": {
-                "appid": "51C54CDB-D278-4CFD-B8378EF13462????",
-                "org": "io.point",
-                "user": "guest@point.io"
+                "appid": "51C54CDB-D278-FFFF-B8378EF13462????",
+                "org": "com.email",
+                "user": "your@email.com"
             }
         }
       ]  
