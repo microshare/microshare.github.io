@@ -40,7 +40,7 @@ To start with something simple we'll take the piece of data we generated with th
     },
     "objs": [
         {
-            "_id": "5ed1123046e0fb0028b702bf",
+            "_id": "5ed1123046e0fb0028b70???",
             "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
             "createDate": "2020-05-29T13:46:24.779Z",
             "creatorId": "yourname@microshare.io",
@@ -48,14 +48,14 @@ To start with something simple we'll take the piece of data we generated with th
                 "Test": "Data"
             },
             "desc": "",
-            "id": "5ed1123046e0fb0028b702bf",
+            "id": "5ed1123046e0fb0028b70???",
             "name": "",
             "origin": {
                 "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
                 "createDate": "2020-05-29T13:46:24.779Z",
                 "creatorId": "yourname@microshare.io",
                 "desc": "Record of Type your.name",
-                "id": "5ed1123046e0fb0028b702bf",
+                "id": "5ed1123046e0fb0028b70???",
                 "name": "your name",
                 "remoteAddress": "176.159.244.215",
                 "tokendata": {
@@ -99,13 +99,13 @@ Here we will see one by one the different components, starting with the unique v
 ##### B.1 Simple values
 
 ```
-"_id": "5ed1123046e0fb0028b702bf",
+"_id": "5ed1123046e0fb0028b70???",
 "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
 "createDate": "2020-05-29T13:46:24.779Z",
 "creatorId": "yourname@microshare.io",
 
 "desc": "",
-"id": "5ed1123046e0fb0028b702bf",
+"id": "5ed1123046e0fb0028b70???",
 "name": "",
 
 "recType": "your.name",
@@ -182,7 +182,7 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
     "createDate": "2020-05-29T13:46:24.779Z",
     "creatorId": "yourname@microshare.io",
     "desc": "Record of Type your.name",
-    "id": "5ed1123046e0fb0028b702bf",
+    "id": "5ed1123046e0fb0028b70???",
     "name": "your name",
     "remoteAddress": "176.159.244.215",
     "tokendata": {
