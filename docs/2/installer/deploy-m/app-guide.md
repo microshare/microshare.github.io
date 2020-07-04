@@ -90,7 +90,7 @@ Now the location fields 1, 2, 3 and 4 must be filled in. They generally correspo
 
 Once filled, simply save the sensor and it is added to the cluster device.
 
-{% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M09.PNG" description="Deploy-M App" %}
+{% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M10.PNG" description="Deploy-M App" %}
 
 ## 5. Change a device
 

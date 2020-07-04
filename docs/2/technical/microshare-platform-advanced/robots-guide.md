@@ -129,7 +129,7 @@ We will do the minimum to unlock all the Robot options for now.
 * Enter the Record Type you used in the calls in the previous section.
 * Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination.
 
-{% include image.html url="/assets/img/hackiot-create-a-robot-2new.png" description="Minimal Robot configuration" %}
+{% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
 
 You'll be back in the Robot cards list and your Robot should now be displayed.
 If you don't see your new Robot card listed:
@@ -147,14 +147,14 @@ To edit an existing Robot, find your Robot in the list:
 * Click on it 
 * Click on the `pencil` icon at the top of the page
 
-{% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-2new.png" description="Open Robot edition mode" %}
 
 While in edit mode you can:
 * Turn your Robot on and off
 * Write the Robot script
 * Test the script
 
-{% include image.html url="/assets/img/hackiot-configure-robot-3new.png" description="Full Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
 
 We don't have real data to use here, so we going to transform it with our own fake data.
 We are going to add a fake temperature value, and the current date/time to the record, then save that transformed record.
