@@ -132,7 +132,7 @@ The result of the test will be a truth table showing the owner (you) and request
 
 You can change the terms of your Rule and rerun your simulation at any time. The tool will highlight difference between each subsequent simulation to help you track the impact of changes you are making to the Rule terms. Changed outcomes will be in Red text.
 
-{% include image.html url="/assets/img/composer-rule-rulesimulation4.jpg" description="Rule Simulation Panel" %}
+{% include image.html url="/assets/img/composer-rule-rulesimulation4-1.jpg" description="Rule Simulation Panel" %}
 
 ## 4. Best Practices for Sharing Rules
 
