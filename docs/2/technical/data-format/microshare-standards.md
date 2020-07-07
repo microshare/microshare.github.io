@@ -154,7 +154,7 @@ Example :
               "cluster": {
                   "id": 66
               },
-              "devAddr": "E0412347E",
+              "devAddr": "E04123???",
               "devEui": "58A0CB000040????"
           },
           "fCntDown": 749,
@@ -188,10 +188,10 @@ Example :
         "desc": "Record of Type io.microshare.yourenvironment.unpacked",
         "id": "5ed1123046e0fb0028b70???",
         "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "176.159.244.215",
+        "remoteAddress": "your remote address",
         "tokendata": {
           "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "172.31.31.67"
+          "ip": "your ip address"
         }
       },
       "owner": {
@@ -344,10 +344,10 @@ This field contains the port of the application or service to which the packet i
   "desc": "Record of Type io.microshare.yourenvironment.unpacked",
   "id": "5ed1123046e0fb0028b70???",
   "name": "io.microshare.yourenvironment.unpacked",
-  "remoteAddress": "176.159.244.215",
+  "remoteAddress": "your ip address",
   "tokendata": {
     "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-    "ip": "172.31.31.67"
+    "ip": "your ip address"
   }
 },
 ```
@@ -528,7 +528,7 @@ And finally the "version" is the unpacker's version.
                         "cluster": {
                             "id": 84
                         },
-                        "devAddr": "00000750",
+                        "devAddr": "00000???",
                         "devEui": "58A0CB000022????"
                     },
                     "fCntDown": 761,
@@ -563,10 +563,10 @@ And finally the "version" is the unpacker's version.
                 "desc": "Record of Type io.microshare.motion.unpacked",
                 "id": "5eea1d8d46e0fb0028a0b???",
                 "name": "io.microshare.motion.unpacked",
-                "remoteAddress": "176.159.244.215",
+                "remoteAddress": "your remote address",
                 "tokendata": {
                   "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "172.31.31.67"
+                  "ip": "your ip address"
                 }
             },
             "owner": {
@@ -699,7 +699,7 @@ And finally the "version" is the unpacker's version.
               "cluster": {
                   "id": 66
               },
-              "devAddr": "E0412347E",
+              "devAddr": "E04123???",
               "devEui": "58A0CB000040????"
           },
           "fCntDown": 749,
@@ -733,10 +733,10 @@ And finally the "version" is the unpacker's version.
         "desc": "Record of Type io.microshare.yourenvironment.unpacked",
         "id": "5ed1123046e0fb0028b70???",
         "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "176.159.244.215",
+        "remoteAddress": "your remote address",
         "tokendata": {
           "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "172.31.31.67"
+          "ip": "your ip address"
         }
       },
       "owner": {
@@ -879,8 +879,8 @@ And finally the "version" is the unpacker's version.
                         "cluster": {
                             "id": 2
                         },
-                        "devAddr": "E0423AA1",
-                        "devEui": "70B3D5326000C001"
+                        "devAddr": "E0423???",
+                        "devEui": "70B3D5326000C???"
                     },
                     "fCntDown": 28,
                     "fCntUp": 1778,
@@ -907,10 +907,10 @@ And finally the "version" is the unpacker's version.
                 "desc": "Record of Type io.microshare.feedback.unpacked",
                 "id": "5eea1e1346e0fb0028915???",
                 "name": "io.microshare.feedback.unpacked",
-                "remoteAddress": "176.159.244.215",
+                "remoteAddress": "your remote address",
                 "tokendata": {
                   "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "172.31.31.67"
+                  "ip": "your ip address"
                 }
             },
             "owner": {

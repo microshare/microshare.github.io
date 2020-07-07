@@ -57,10 +57,10 @@ To start with something simple we'll take the piece of data we generated with th
                 "desc": "Record of Type your.name",
                 "id": "5ed1123046e0fb0028b70???",
                 "name": "your name",
-                "remoteAddress": "176.159.244.215",
+                "remoteAddress": "your remote address",
                 "tokendata": {
                     "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                    "ip": "172.31.31.67"
+                    "ip": "your ip address"
                 }
             },
             "owner": {
@@ -184,10 +184,10 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
     "desc": "Record of Type your.name",
     "id": "5ed1123046e0fb0028b70???",
     "name": "your name",
-    "remoteAddress": "176.159.244.215",
+    "remoteAddress": "your remote address",
     "tokendata": {
         "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-        "ip": "172.31.31.67"
+        "ip": "your ip address"
     }
 },
 ```

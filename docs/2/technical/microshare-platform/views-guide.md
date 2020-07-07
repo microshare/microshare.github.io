@@ -152,7 +152,7 @@ You can selectively return only data elements you want to expose and change the 
 Be aware of the data return as above will be 4 elements with new names defined, plus a system record of object id in the data lake, which is added by the system as default.
 {% highlight JSON %}
         "_id": {
-          "$oid": "59dfa6a646e0fb0022dd17d3"
+          "$oid": "59dfa6a646e0fb0022dd1???"
         },
 {% endhighlight %}  
 
@@ -319,12 +319,12 @@ The other query parameter values align with the text inserts in the query (eg. &
       "desc": "Derived from com.mycompany.count",
       "name": "Derived Data",
       "url": "/share/com.mycompany.count",
-      "_id": "5cd9809446e0fb002312cebe",
+      "_id": "5cd9809446e0fb002312c???",
       "tags": [],
       "data": {
         "count": 18688
       },
-      "id": "5cd9809446e0fb002312cebe",
+      "id": "5cd9809446e0fb002312c???",
       "tstamp": "05/13/2019 02:40:38:311 PM",
       "recType": "com.mycompany.count"
     }
