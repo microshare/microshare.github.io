@@ -72,10 +72,10 @@ Once you have completed the apps, use postman to create a /share with recType io
     "favs" : { 
       "apps" : 
         [ 
-          "5a1p2p3sf1e00000343f7204d", 
-          "5a1p2p3sb1e00006a3ef72041", 
-          "5a1p2p3sc1e00009151f7810f", 
-          "5a1p2p3s51d0000d1b8c0b6c3" 
+          "5a1p2p3sf1e00000343f72???", 
+          "5a1p2p3sb1e00006a3ef72???", 
+          "5a1p2p3sc1e00009151f78???", 
+          "5a1p2p3s51d0000d1b8c0b???" 
         ] 
     }
   } 

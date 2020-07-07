@@ -147,7 +147,7 @@ To edit an existing Robot, find your Robot in the list:
 * Click on it 
 * Click on the `pencil` icon at the top of the page
 
-{% include image.html url="/assets/img/hackiot-configure-robot-2new.png" description="Open Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-2.png" description="Open Robot edition mode" %}
 
 While in edit mode you can:
 * Turn your Robot on and off
