@@ -38,7 +38,7 @@ Trending apps will graphically represent your data over any period you wish, whi
 
  1. Configure the client accounts and identities and differentiate between which accounts will have the ability to own the apps or own the data. 
  2. Create a Push on the network.
- 3. Create a [device clustor](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
+ 3. Create a [device cluster](./#2-dashboard-configuration) with all the necessary devices with the appropriate recType (e.g.  `io.microshare.motion.unpacked` ).
 
 
  **Create Rule If Needed**

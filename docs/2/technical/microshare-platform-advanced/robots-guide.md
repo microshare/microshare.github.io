@@ -154,7 +154,7 @@ While in edit mode you can:
 * Write the Robot script
 * Test the script
 
-{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-3new.png" description="Full Robot edition mode" %}
 
 We don't have real data to use here, so we going to transform it with our own fake data.
 We are going to add a fake temperature value, and the current date/time to the record, then save that transformed record.

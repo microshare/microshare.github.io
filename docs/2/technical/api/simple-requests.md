@@ -63,7 +63,7 @@ If you then want to read more conventional data, you can try the [demo APIs](/do
 {% include image.html url="/assets/img/api/read_share_1new.png" description="read share" %}
 
 * Click `Send`. 
-Ther response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
+There response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
 
 {% include image.html url="/assets/img/api/read_share_2new.png" description="read share" %}
 
