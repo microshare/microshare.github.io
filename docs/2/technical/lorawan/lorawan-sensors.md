@@ -165,7 +165,7 @@ image from [Smart Ends](https://www.smartends.com/single-post/2019/05/09/A-new-I
 
 For more information on the specifications on the SmartEnds Brighterbin and sample decoding code for the device, refer to the [Brighterbins document](/assets/pdf/brighterbins.pdf).
 
-## 4. External Resources
+## 4. Additional Resources
 ---------------------------------------
 
 ### Interactive Development Environment

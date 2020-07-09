@@ -76,8 +76,8 @@ To use the token generation calls, you need to identify yourself with your usern
 
 Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other microshare APIs.
 
-{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
-{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
 **Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in microshare. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
@@ -121,7 +121,7 @@ You are going to use the `Share -> Get Shares by recType` call, for which you ne
 Ther response of the request is a view of all the data **THAT YOU ONLY HAVE ACCESS TO** stored under the specidifed recType:
             
 {% include image.html url="/assets/img/get-share-call-1.png" description="Successful password token call" %}
-{% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
+{% include image.html url="/assets/img/get-share-call-2new.png" description="Successful share call" %}
 {% include image.html url="/assets/img/get-share-call-3.png" description="Senet data in microshare example" %}
 
 The Senet data is under the `objs -> data` keys. The `pdu` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.

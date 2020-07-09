@@ -76,8 +76,8 @@ To use the token generation calls, you need to identify yourself with your usern
 
 Later we'll use the `Request Token` call that returns an access token which is only valid for 48 hours and can be used with the other Microshare® APIs.
 
-{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}
-{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-3.png" description="Successful pipe token call" %}
 
 **Note** All generated tokens can be found, copied or revoked from the `Manage -> Key -> Tokens` screen in Microshare®. If you didn't copy the pipe token just after the call, go on that screen, find the Pipe typed token and copy it.
@@ -102,7 +102,7 @@ Later we'll use the `Request Token` call that returns an access token which is o
     <br>**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in TTN, physically located in Reading in the UK, so the recType can be: `uk.reading.ttn.sodaq` an example url & recType is `https://api.microshare.io/share/uk.reading.ttn.sodaq`
     - **Method:** Select the `POST` option
     - **Authorization:** Enter the word `Bearer` then paste your pipe token that you previously generated. The value should look similar to this example:<br>
-    `Bearer eedbb46fd94XXXXXDDDDD537e0d1c8fd411bb8bf3556a3987`
+    `Bearer eedbb46fd94XXXXXDDDDD537e0d1c8fd411bb8bf3556a39??`
     - Click the `Add Integration` button
 
 All the other fields are not required for this tutorial.<br>
