@@ -49,14 +49,14 @@ And the returned data model is
     },
     "objs": [
         {
-            "updaterId": "jwang@point.io",
+            "updaterId": "your@email.com",
             "desc": "",
             "name": "",
             "createDate": {
                 "$date": 1507824651492
             },
             "_id": {
-                "$oid": "59df940b46e0fb0028fbb54c"
+                "$oid": "59df940b46e0fb0028fbb???"
             },
             "tags": [
                 "tempID1234",
@@ -70,7 +70,7 @@ And the returned data model is
                 },
                 "DR": 5,
                 "msgtype": "updf",
-                "DevEui": "58-A0-CB-FF-FF-FE-BB-15",
+                "DevEui": "58-A0-CB-FF-FF-FE-??-??",
                 "SessID": 3,
                 "FCntUp": 165,
                 "ArrTime": 1506622798.0322363,
@@ -80,30 +80,30 @@ And the returned data model is
                 "FRMPayload": "00EB05050046E90F",
                 "FPort": 102
             },
-            "creatorId": "jwang@point.io",
-            "id": "59df940b46e0fb0028fbb54c",
+            "creatorId": "your@email.com",
+            "id": "59df940b46e0fb0028fbb???",
             "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266",
             "tstamp": {
                 "$numberLong": "1507824651492"
             },
             "origin": {
                 "tokendata": {
-                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d89dc"
+                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d8???"
                 },
                 "desc": "Object of Type io.Microshare.demo.sensor.temprature",
                 "name": "io.Microshare.demo.sensor.temprature",
                 "createDate": {
                     "$numberLong": "1507824651492"
                 },
-                "creatorId": "jwang@point.io",
-                "id": "59df940b46e0fb0028fbb54c",
+                "creatorId": "your@email.com",
+                "id": "59df940b46e0fb0028fbb???",
                 "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266"
             },
             "recType": "io.Microshare.demo.sensor.temprature",
             "owner": {
-                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
-                "org": "io.point",
-                "user": "jwang@point.io"
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E???",
+                "org": "your company",
+                "user": "your@email.com"
             }
         }
       ]  
@@ -172,13 +172,13 @@ Another strategy would be to use one Robot per devEUI, that can be turned on and
     var m = rec.objs[0].data;
     var recType = rec.objs[0].recType;
 
-    if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-15") {
+    if (m.DevEui == "58-A0-CB-FF-FF-FE-??-??") {
         
         //Motion Sensor
         //Write a new record with the Motion Sensor payload and the Time included in the network info
         lib.writeShare(auth, recType + '.motionsensor', {"payload": m.FRMPayload, "timestamp": m.ArrTime}, ['payload', 'timestamp']);
         
-    } else if (m.DevEui == "58-A0-CB-FF-FF-FE-BB-36") {
+    } else if (m.DevEui == "58-A0-CB-FF-FF-FE-??-??") {
         
         //Healthy Home Sensor
         //Write a new record with the Healthy Home Sensor payload and the Time included in the network info

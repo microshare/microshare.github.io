@@ -59,7 +59,7 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2.png" description="Collection adn Environment config" %}
 
 * In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fiels. 
-{% include image.html url="/assets/img/generate-pipe-token-1.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2.png" description="Filled Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
 That's it! You now have access to the microshare API collection, and are setup to authenticate, write data and read data with the platform. 
 
@@ -159,7 +159,7 @@ While in edit mode you can:
 * Write the Robot script
 * Test the script
 
-{% include image.html url="/assets/img/hackiot-configure-robot-3.png" description="Full Robot edition mode" %}
+{% include image.html url="/assets/img/hackiot-configure-robot-3new.png" description="Full Robot edition mode" %}
 
 We don't have real data to use here, so we going to transform it with our own fake data.
 We are going to add a fake temperature value, and the current date/time to the record, then save that transformed record.
