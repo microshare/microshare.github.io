@@ -1,23 +1,87 @@
-- title: Meet Microshare
+- title: General User
   pages:
   - title: Welcome
   - title: What's new?
-  - title: Technical Overview
-  - title: Why Microshare?
-
-- title: Getting Started
-  pages:
+  subpages:
+  - title: Meet Microshare
+    pages:
+    - title: Why Microshare?
+    - title: Technical Overview
+    - title: Demo
+    - title: FAQ
   - title: Quick Start
-  - title: Data Ingestion
-  - title: Data Workflow
-  - title: Views Guide
-  - title: Rules Guide
-  - title: Robot Guide
+    pages:
+    - title: Create an Account
+    - title: Access my Apps
 
-- title: Advanced
-  pages:
-  - title: API Reference
-  - title: Robots Libraries
-  - title: LoRaWAN Devices
-  - title: Contributing
+- title: Admin
+  subpages:
+  - title: Admin Management
+    pages:
+    - title: Overview
+    - title: Identity Admin
+    - title: MS Admin
+    - title: Super Admin
 
+- title: Installer
+  subpages:
+  - title: Quick Start
+    pages:
+    - title: Overview
+    - title: Validation of a Successfull Installation
+    - title: FAQ About Installations
+  - title: Deploy-M
+    pages:
+    - title: Download the App
+    - title: App Guide
+    - title: Installation Tutorials
+  - title: LoRaWan
+    pages:
+    - title: Gateway Installation
+    - title: Device Declaration
+
+- title: Technical
+  subpages:
+  - title: Quick Start
+    pages:
+    - title: Overview
+    - title: Microshare Technical Structure
+    - title: Data Integration
+    - title: Basic Dev Roadmap
+    - title: Advanced Dev Roadmap
+  - title: Microshare Platform
+    pages:
+    - title: Quick Start
+    - title: Device Cluster Guide
+    - title: Views Guide
+    - title: Dashboard Guide
+    - title: Rules Guide
+  - title: Microshare Platform Advanced
+    pages:
+    - title: Identity Guide
+    - title: Robots Guide
+    - title: Data Ingestion
+    - title: Data Ingestion by Robots
+    - title: Data Formatting
+    - title: Data Formatting by Robots
+    - title: Robots library
+  - title: API
+    pages:
+    - title: Quick Start
+    - title: Authentication
+    - title: Simple Requests
+    - title: Complex Requests
+    - title: API Collection
+  - title: Data Format
+    pages:
+    - title: Overview
+    - title: Microshare Standards
+  - title: LoRaWan
+    pages:
+    - title: LoRaWan Technology
+    - title: LoRaWan Gateways
+    - title: LoRaWan Sensors
+  - title: Extra Information
+    pages:
+    - title: Azure Event Hub Integration
+    - title: AWS Kinesis Data Stream Integration
