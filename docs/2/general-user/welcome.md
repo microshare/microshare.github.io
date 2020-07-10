@@ -34,7 +34,7 @@ While reading this documentation if you encounter any issues or have any feedbac
 &nbsp;
 
 
-#### For updates on the Microshare® Platform's Release dates, please refer to the [Management Consule Access Page](https://www.microshare.io/management-console-access/).
+#### For updates on the Microshare® Platform's Release dates, please refer to the [Management Console Access Page](https://www.microshare.io/management-console-access/).
 
 
 ## 2. Quick Links
