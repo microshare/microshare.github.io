@@ -85,3 +85,5 @@
     pages:
     - title: Azure Event Hub Integration
     - title: AWS Kinesis Data Stream Integration
+    - title: Azure IoT Hub Integration
+    - title: Google Pub/ Sub Integration
