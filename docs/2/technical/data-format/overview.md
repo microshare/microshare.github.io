@@ -88,13 +88,15 @@ Out here I only have one piece of data, so I only have `one count and one page`.
 
 Finally the `source` is the database, hence the value `db`.
 
-This is a quick summary of the data in `objs`. It's possible that you sometimes have the meta information without having access to all the data in `objs`. This may be due to sharing rules that don't give you access or that you use the wrong identity... so be careful.
+This is a quick summary of the data in `objs`. It is possible that you may have the meta information without access to all the data in `objs`. This is most likely because of a sharing rule. Revisit your sharing rules to address this. 
 
 #### B) Objs
 
 Now let's look at the data, this one is very simple to start with.
 
 Here we will see one by one the different components, starting with the unique values and then we will take a closer look at the data, origin and owner blocks.
+
+`Objs` store data as an array, hence using more than one entry may be necessary depending on the call.  
 
 ##### B.1 Simple values
 
@@ -144,7 +146,7 @@ This value is usually empty, so you can ignore it when it is empty.
 
 * `"recType"`
 
-If you are on this page it's because you have started to manipulate the Microshare® APIs and in this case you are familiar with the notion of recType, as a quick reminder the recType is the endpoint of a data flow in the data lake.
+The recType is the endpoint of a data flow in the data lake, the name underwhich your data is stored. [You can learn more about recTypes here.](/docs/2/technical/api/api-collection/)
 
 * `"tstamp"`
 
@@ -223,4 +225,4 @@ To go further, we will use the principle of data ingestion by device clusters, a
 
 This will allow us to see much more complete data using the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards).
 
-And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is when you go through the Microshare® devices clusters as well as [Ipso data](/docs/2/technical/data-format/microshare-standards).
+And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is when you go through the Microshare® devices clusters as well as [IPSO data](/docs/2/technical/data-format/microshare-standards).

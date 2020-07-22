@@ -1,7 +1,7 @@
 ---
 layout: api
 title: API Collection
-description: Microshare HTTP API
+description: Microshare™  HTTP API
 toc: true
 ---
 
