@@ -158,7 +158,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                 "checksum": "8E6E2AD84157FA0E152B0AD419FB5290ED54808139E67A98F76116B8C0CC51EAL825",
                 "createDate": "2020-06-10T19:39:29.798Z",
                 "creatorId": "yourname@microshare.io",
-                "desc": "Record of Type io.microshare.contact.packed.unpacked.event",
+                "desc": "Record of Type io.microshare.contact.unpacked.event",
                 "id": "5ee136f146e0fb00282cb???",
                 "name": "io.microshare.contact.unpacked.event",
                 "remoteAddress": "000.00.00.000",
@@ -288,6 +288,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
     "source":"ShareService"
 }
 {% endhighlight %}
+
 
 ## 6. What's next?
 ---------------------------------------
