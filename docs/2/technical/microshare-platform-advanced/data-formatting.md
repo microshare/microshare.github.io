@@ -158,9 +158,9 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                 "checksum": "8E6E2AD84157FA0E152B0AD419FB5290ED54808139E67A98F76116B8C0CC51EAL825",
                 "createDate": "2020-06-10T19:39:29.798Z",
                 "creatorId": "yourname@microshare.io",
-                "desc": "Record of Type io.microshare.contacttracing.dev.packed.unpacked.event",
+                "desc": "Record of Type io.microshare.contact.packed.unpacked.event",
                 "id": "5ee136f146e0fb00282cb???",
-                "name": "io.microshare.contact.dev.unpacked.event",
+                "name": "io.microshare.contact.unpacked.event",
                 "remoteAddress": "000.00.00.000",
                 "tokendata": {
                     "id": "a1c1541d-3a3d-4255-951a-499311c5e???",
@@ -173,7 +173,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                 "owners": [],
                 "user": "yourname@microshare.io"
             },
-            "recType": "io.microshare.contact.dev.unpacked.event",
+            "recType": "io.microshare.contact.unpacked.event",
             "tags": [
                 "Wokingham",
                 "Ground",
@@ -253,9 +253,9 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             "checksum":"E418D6462C167B01655652EA9F0987D42490DBFABBBDD64EFA324A384A3394C3L1496",
             "createDate":"2020-06-09T16:25:06.298Z",
             "creatorId":"yourname@microshare.io",
-            "desc":"Record of Type io.microshare.test.wave.event",
+            "desc":"Record of Type io.microshare.contact.unpacked.event",
             "id":"5edfb7e246e0fb00297b5???",
-            "name":"io.microshare.test.wave.event",
+            "name":"io.microshare.contact.unpacked.event",
             "remoteAddress":"113.90.8.233",
             "tokendata":{
                 "id":"5d548231-7b91-4040-bff6-ad4a92ee3???",
@@ -273,7 +273,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             ],
             "user":"yourname@microshare.io"
         },
-        "recType":"io.microshare.test.wave.event",
+        "recType":"io.microshare.contact.unpacked.event",
         "tags":[
             "Europe",
             "Ireland",
@@ -284,7 +284,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
         "updaterId":"yourname@microshare.io"
     },
     "obj_type":"objs",
-    "recType":"io.microshare.test.wave.event",
+    "recType":"io.microshare.contact.unpacked.event",
     "source":"ShareService"
 }
 {% endhighlight %}
