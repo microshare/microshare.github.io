@@ -106,15 +106,15 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
     },
     "objs": [
         {
-            "_id": "5ee136f146e0fb00282cb62a",
+            "_id": "5ee136f146e0fb00282cb???",
             "checksum": "8E6E2AD84157FA0E152B0AD419FB5290ED54808139E67A98F76116B8C0CC51EAL825",
             "createDate": "2020-06-10T19:39:29.798Z",
-            "creatorId": "msalomone@microshare.io",
+            "creatorId": "yourname@microshare.io",
             "data": {
                 "averageRSSI": -89,
-                "detectedDevice": "000003BABF00",
+                "detectedDevice": "000003BAB???",
                 "device": {
-                    "id": "AC233F6644AB"
+                    "id": "AC233F664???"
                 },
                 "duration": 3,
                 "endTime": "2020-06-10T19:37:28.331Z",
@@ -122,7 +122,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                 "meta": {
                     "device": {},
                     "iot": {
-                        "device_id": "AC233F6644AB"
+                        "device_id": "AC233F664???"
                     },
                     "source": {
                         "device": [
@@ -133,7 +133,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                         ],
                         "global": [],
                         "iot": {
-                            "device_id": "70-76-FF-00-69-04-00-28",
+                            "device_id": "70-76-FF-00-69-04-??-??",
                             "fcnt_dwn": 5,
                             "fcnt_up": 347,
                             "fport": 95,
@@ -146,34 +146,34 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                         "source": []
                     }
                 },
-                "originatingDevice": "AC233F6644AB",
+                "originatingDevice": "AC233F664???",
                 "originatingDeviceBattery": 2.894,
                 "start": 5,
                 "startTime": "2020-06-10T19:34:28.331Z"
             },
             "desc": "",
-            "id": "5ee136f146e0fb00282cb62a",
+            "id": "5ee136f146e0fb00282cb???",
             "name": "",
             "origin": {
                 "checksum": "8E6E2AD84157FA0E152B0AD419FB5290ED54808139E67A98F76116B8C0CC51EAL825",
                 "createDate": "2020-06-10T19:39:29.798Z",
-                "creatorId": "msalomone@microshare.io",
+                "creatorId": "yourname@microshare.io",
                 "desc": "Record of Type io.microshare.contacttracing.dev.packed.unpacked.event",
-                "id": "5ee136f146e0fb00282cb62a",
-                "name": "io.microshare.contacttracing.dev.packed.unpacked.event",
-                "remoteAddress": "999.99.99.999",
+                "id": "5ee136f146e0fb00282cb???",
+                "name": "io.microshare.contact.dev.unpacked.event",
+                "remoteAddress": "000.00.00.000",
                 "tokendata": {
-                    "id": "a1c1541d-3a3d-4255-951a-499311c5e671",
-                    "ip": "999.99.99.999"
+                    "id": "a1c1541d-3a3d-4255-951a-499311c5e???",
+                    "ip": "000.00.00.000"
                 }
             },
             "owner": {
-                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E???",
                 "org": "io.microshare",
                 "owners": [],
-                "user": "msalomone@microshare.io"
+                "user": "yourname@microshare.io"
             },
-            "recType": "io.microshare.contacttracing.dev.packed.unpacked.event",
+            "recType": "io.microshare.contact.dev.unpacked.event",
             "tags": [
                 "Wokingham",
                 "Ground",
@@ -181,7 +181,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             ],
             "tstamp": 1591817969798,
             "updateDate": "2020-06-10T19:39:29.798Z",
-            "updaterId": "msalomone@microshare.io"
+            "updaterId": "yourname@microshare.io"
         }
     ]
 }
@@ -190,30 +190,30 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
 {% highlight java %}
 {
     "event_type":"create",
-    "id":"5edfb7e246e0fb00297b58ea",
+    "id":"5edfb7e246e0fb00297b5???",
     "obj":{
         "checksum":"E418D6462C167B01655652EA9F0987D42490DBFABBBDD64EFA324A384A3394C3L1496",
         "createDate":1591719906298,
-        "creatorId":"cpaumelle@microshare.io",
+        "creatorId":"yourname@microshare.io",
         "data":{
             "averageRSSI":-6,
-            "detectedDevice":"C96E9E87FD8B",
+            "detectedDevice":"C96E9E87F???",
             "duration":11,
             "endTime":"2020-05-07T14:41:00.000Z",
             "locationBeacon":false,
-            "originatingDevice":"EEA0E0E2DFB9",
+            "originatingDevice":"EEA0E0E2D???",
             "originatingDeviceBattery":"2.658V",
             "start":5,
             "startTime":"2020-05-07T14:35:00.000Z",
             "device":{
-                "id":"EEA0E0E2DFB9"
+                "id":"EEA0E0E2D???"
             },
             "meta":{
                 "device":{
 
                 },
                 "iot":{
-                    "device_id":"EEA0E0E2DFB9"
+                    "device_id":"EEA0E0E2D???"
                 },
                 "source":{
                     "device":[
@@ -229,7 +229,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
                         "GlobalTag4"
                     ],
                     "iot":{
-                        "device_id":"70-76-FF-00-69-04-00-26",
+                        "device_id":"70-76-FF-00-69-04-??-??",
                         "fcnt_dwn":1,
                         "fcnt_up":79,
                         "fport":85,
@@ -247,23 +247,23 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             }
         },
         "desc":"",
-        "id":"5edfb7e246e0fb00297b58ea",
+        "id":"5edfb7e246e0fb00297b5???",
         "name":"",
         "origin":{
             "checksum":"E418D6462C167B01655652EA9F0987D42490DBFABBBDD64EFA324A384A3394C3L1496",
             "createDate":"2020-06-09T16:25:06.298Z",
-            "creatorId":"cpaumelle@microshare.io",
+            "creatorId":"yourname@microshare.io",
             "desc":"Record of Type io.microshare.test.wave.event",
-            "id":"5edfb7e246e0fb00297b58ea",
+            "id":"5edfb7e246e0fb00297b5???",
             "name":"io.microshare.test.wave.event",
-            "remoteAddress":"3.90.1.231",
+            "remoteAddress":"113.90.8.233",
             "tokendata":{
-                "id":"5d548231-7b91-4040-bff6-ad4a92ee308a",
-                "ip":"999.99.99.999"
+                "id":"5d548231-7b91-4040-bff6-ad4a92ee3???",
+                "ip":"000.00.00.000"
             }
         },
         "owner":{
-            "appid":"51C54CDB-D278-4CFD-B8378EF13462E5FB",
+            "appid":"51C54CDB-D278-4CFD-B8378EF13462E???",
             "meta":{
 
             },
@@ -271,7 +271,7 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             "owners":[
 
             ],
-            "user":"cpaumelle@microshare.io"
+            "user":"yourname@microshare.io"
         },
         "recType":"io.microshare.test.wave.event",
         "tags":[
@@ -281,20 +281,13 @@ Some platforms can be configured to POST data. Configure them to do a POST /shar
             "Dublin"
         ],
         "tstamp":1591719906298,
-        "updaterId":"cpaumelle@microshare.io"
+        "updaterId":"yourname@microshare.io"
     },
     "obj_type":"objs",
     "recType":"io.microshare.test.wave.event",
     "source":"ShareService"
 }
 {% endhighlight %}
-
-### Other sample data Device Clusters
-
-- 7076FF00690400BF
-- 7076FF0069040082
-- 7076FF0069040076
-- 7076FF0069040072
 
 ## 6. What's next?
 ---------------------------------------

@@ -49,6 +49,10 @@
     - title: Data Integration
     - title: Basic Dev Roadmap
     - title: Advanced Dev Roadmap
+  - title: Data Format
+    pages:
+    - title: Overview
+    - title: Microshare Standards
   - title: Microshare Platform
     pages:
     - title: Quick Start
@@ -72,10 +76,6 @@
     - title: Simple Requests
     - title: Complex Requests
     - title: API Collection
-  - title: Data Format
-    pages:
-    - title: Overview
-    - title: Microshare Standards
   - title: LoRaWan
     pages:
     - title: LoRaWan Technology
