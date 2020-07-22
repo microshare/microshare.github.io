@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: The Novice Developer's Roadmap to Microshare™
+title: Getting Started with Development
 toc: true
 ---
 
