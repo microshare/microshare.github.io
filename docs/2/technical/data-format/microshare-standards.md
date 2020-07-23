@@ -31,18 +31,12 @@ toc: true
 ---------------------------------------
 
 
-As you have seen in data integration, unpacked data is data that is developed using Microshare® unpackers. 
+Data is sent as a payload from the IoT sensors to the Microshare® unpackers as raw, encrypted data for security purposes. The data is then transformed by the Microshare® unpackers into comprehensible information. This information is referred to as unpacked data and is inserted into the device clusters. 
 
-This will allow a payload of raw data, incomprehensible to the eye, to become simple and usable data. 
-But this data is from IoT sensors that have been inserted into Microshare® cluster devices. 
+This guide will provide details on the processes involved in collecting the raw data and decrypting it into unpacked data. **Please note that the information supplied may differ slightly to that required for your network server, as details differ from server to server.**
 
-This will provide additional data on the IoT elements that made it possible to obtain this signal. This information varies from one network server to another. We will take an example of data here, but understand that sometimes you may have a slightly different data in the IoT part depending on the network server.
+Additionally, this guide will discuss tags. Tags are labels or descriptions attached to your device clusters for ease of identification. 
 
-The unpacked data will therefore be the base data, as seen above, plus a much larger `{data}` part. 
-
-We will also explore the uses of `tags`.
-
-This takes the tags of the device cluster as a concatenation of the global and individual tags. You will find more information on the tags below.
 
 
 
@@ -224,9 +218,10 @@ Example :
 
 #### A. General Structure
 
-A large part of this data is simply derived from the settings of our device cluster, the others represent the data produced by the sensor.
+The majority of the information within the packet of data details the settings of the device cluster. The remaining pieces of information contain the data collected by the sensors. 
 
-Here is the set-up of this device cluster   : 
+This is how the device cluster is set up:
+
 
 {% include image.html url="\assets\img\dc-data-formatnew.png" width="800" description="dc" %}
 
@@ -234,21 +229,21 @@ Here is the set-up of this device cluster   :
 
 #### B. {Data}
 
-Now let's talk about the `{Data}` part, which is the one with the most data.
+Now let's talk about the `{Data}`, which has the majority of the information.
 
-In this one are all the different parts: 
+The various components include: 
   - C. [Ipso](./#c-ipso)
   - D. [Meta/IoT](./#d-metaiot)
   - E. [Origin](./#e-origin)
   - F. [Unpacker](./#f-unpacker)
 
-But above all it includes simple data such as in this example `temperature`, `humidity`, `co2` ...
+`{Data}` includes the data from your devices such as the `temperature`, `humidity`, `co2` and so on. 
 
 All these values are explained with their units in the following table: 
 
 ##### > [Standards Data Table](./#3-standards-data-table)
 
-Information about the device itself that provided the data is sometimes given, including the device id and the battery of this sensor if it sends it in the payload. For example: 
+`{Data}` contains information about the sensor that provided the data payload. This usually includes the sensors device id, battery type, battery type, etc. The code supplied will look like: 
 
 ```
 "device": {
@@ -265,9 +260,7 @@ Information about the device itself that provided the data is sometimes given, i
 #### C. Ipso
 
 
-The IPSO values represent an IoT standard that Microshare® has decided to integrate to enable better integration with global partners using this standard. 
-
-You can find what the IPSOs values mean on this web page : 
+Micoshare® upholds the IPSO values for cohesion with our international partners. You can learn more about the IPSO IoT standards on this web page: 
 
 [http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)
 
@@ -303,36 +296,28 @@ You can find what the IPSOs values mean on this web page :
 },
 ```
 
-##### In the `meta` part we will find some training on the device:
+##### The `meta` will provide:
 
-##### * Its specific location (special to the device) `device`
+- `device` - the device's specific location.
 
-##### * Its `global` location (common for the whole cluster device)
+- `global` - location of the sensor's device cluster.
 
-##### * His IoT data:
+- `device_id` - the sensor's unique identification number.
 
-- Here we're going to find the **`device_id`** which is the unique id of the device.
+- `type` - whether the information is an uplink (data is sent from the device up to the network server) or a downlink (data is sent from the network server down to the device). This will almost always be an uplink.
 
-- Its count up (**`fcnt_up`**) and count down (**`fcnt_down`**). 
+- `fcnt_up` -  the up count; the number of uplink interactions between the sensor and the network server.
 
-But what does it correspond to? 
+- `fcnt_down` - the down count; the number of downlink interactions between the network server and the sensor.
 
-For this it is necessary to understand LoRaWan technology. Once understood you can deduce that the up and down counts are the uplink counts issued by the device and the downlink count received by the device.
+- `fport` - the port where the device’s packet is sent to the network server.
 
-From an end-device point of view, a distinction is made between uplink traffic and downlink traffic.
-called "downlink."
+- `iso_time` or `time`- the time at which the network received the sensor's data.
 
-- There's also the **`fport`**.
+- `ns_version` - the version of the network server.
 
-This field contains the port of the application or service to which the packet is addressed from the device to the network server.
+- `payload` - the data that the sensor sends out to the network server.
 
-- The **`iso_time`** represents the exact time at which the network server received the data.
-
-- The **`ns_version`** simply represents the network server version.
-
-- Then the **`payload`** is the payload and the **`time`** is the same as the iso_time value.
-
-- Finally the **`type`** will be uplink or downlink, it is explained a few lines above what does this mean, but will probably only be uplink.
 
 
 #### E. Origin
@@ -353,9 +338,9 @@ This field contains the port of the application or service to which the packet i
 },
 ```
 
-The origins will be the same as what is explained in the [Overview page](/docs/2/technical/data-format/overview/#b3-origin). 
+A thorough explanation of the origins can be found in the  [Overview page](/docs/2/technical/data-format/overview/#b3-origin). 
 
-This may simply change if you unpacked the data to a different account than the one hosting the packed data received. Even if this one can also unpack it on his side. This is a bit tricky and not very advisable. 
+Some information may differ if you unpack the data in an account that is not the one hosting the packed data. This is unadvised and be cautious to avoid this mistake.
 
 #### F. Unpacker
 
@@ -367,15 +352,8 @@ This may simply change if you unpacked the data to a different account than the 
 },
 ````
 
-Now let's talk about the last block in the `{Data}` part, it is related to the cluster device since it describes which cluster device allows to unpack the data. 
+The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare® has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare® unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
-As explained in the data formatting Microshare® has a large bank of unpackers to decode the data. 
-
-The information provided by this part of the data simply explains where the unpacker for this device is located in the Microshare® unpacker library. That's why the package: `class`.
-
-The `library` is simply the name of the complete library.
-
-And finally the "version" is the unpacker's version.
 
 
 ## 3. Standards Data Table
