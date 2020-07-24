@@ -8,18 +8,16 @@ toc: true
 ## 1. Intro
 ---------------------------------------
 
-To best use Microshare® data, it is necessary to understand how the data is structured. 
-This is especially important in the use of views / robots, but also for the creation of Applications.
+To best use Microshare® data, it is important to understand how the data is structured,
+ particularly for use of views, robots, APIs and the creation of Applications.
 
-Finally, this is essential for the use of APIs.
+As described in the Microshare® Platform Advanced section, data formatting follows data ingestion. But what does this mean in terms of data? 
 
-As described in the Microshare® Platform Advanced section, data formatting follows data ingestion if the data is configured in this way. 
+When the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
 
-What does this mean in terms of data? 
+RecTypes are further explored in the [API Collection page](http://localhost:4000/docs/2/technical/api/api-collection/#api-structures).
 
-This means that when the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
-
-There is a lot of data and this part is intended to help you understand.
+This guide serves to help you discern the different components of a Microshare® data payload. 
 
 
 ## 2. First Example
@@ -80,21 +78,16 @@ To start with something simple we'll take the piece of data we generated with th
 
 #### A) Meta
 
-First of all there is the `meta` part which gives information about the API request itself.
+In the above example, the information was requested without specification of the number of pages or the amount of data per page.  By default, the number of pages (`totalPages`) is set to 1 and the number of data `perPage` is set to 999. Because the example has only one piece of data, it has `one count and one page`. 
 
-Indeed, in the parameters of my request, I had simply asked to have the details without indicating the number of pages of data and data per page. 
-Automatically the number of pages (`totalPage`) is set to its default value of 1 and the number of data `perPage` defaults to 999.
-Out here I only have one piece of data, so I only have `one count and one page`. 
+The `source` object represents where the information came from. In this case, the data payload is from the database or `db`.
 
-Finally the `source` is the database, hence the value `db`.
+Please note that if you have access to the `meta` data but not the `obj` data, this is because you lack the privileges necessary to read it. Your privileges can be adjusted by the creation of a [share Rule](/docs/2/technical/microshare-platform/rules-guide).
 
-This is a quick summary of the data in `objs`. It's possible that you sometimes have the meta information without having access to all the data in `objs`. This may be due to sharing rules that don't give you access or that you use the wrong identity... so be careful.
 
 #### B) Objs
 
-Now let's look at the data, this one is very simple to start with.
-
-Here we will see one by one the different components, starting with the unique values and then we will take a closer look at the data, origin and owner blocks.
+The `Objs` section of the data stores most of the descriptors of the interaction. `Objs` stores data as an array, hence using more than one entry may be necessary depending on the call.   
 
 ##### B.1 Simple values
 
@@ -114,55 +107,49 @@ Here we will see one by one the different components, starting with the unique v
 "updaterId": "yourname@microshare.io"
 ```
 
-* `"_id"`
+* `"_id"` and `"id"`
 
 The Id of the data is its unique identifier. It is used by a Microshare® Technician to find a particular piece of data in the datalake.
 
 * `"checksum"`
 
-The checksum is another identifier also for other needs for Microshare®.
+The checksum is a cryptographic hash of the data portion of the record. Using the sha-256 hashing algorithm to generate a new hash from the contents of the Data element, a comparison can be made to ensure that the data has not be compromised. A checksum is also included in the Origin section of the JSON structure that captures the data contents when the record was first introduced to the system. By comparing these two checksums, you can prove that the data has not be modified inside the Microshare®  system.
 
 * `"createDate"`
 
-CreateDate as its name indicates quite well when this piece of data was created.
+CreateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's introduction to the Microshare®  system.
 
 * `"creatorId"`
 
-CreatorId indicates who created this piece of data, you will find here the email of the account that created this data.
+CreatorId suplies the email address of the creator this piece of data.
 
 * `"desc"`
 
-This value is usually empty, so you can ignore it when it is empty.
-
-* `"id"`
-
-This value is exactly the same as `"_id"`
+This object serves to describe the sensor the information comes from. Usually, this object is empty. 
 
 * `"name"`
 
-This value is usually empty, so you can ignore it when it is empty.
+This object gives the name of the sensor that the information comes from. This field is usually empty. 
 
 * `"recType"`
 
-If you are on this page it's because you have started to manipulate the Microshare® APIs and in this case you are familiar with the notion of recType, as a quick reminder the recType is the endpoint of a data flow in the data lake.
+The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare® system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare® . You will find these canonical formats described here. You can learn more about [recTypes here](.//docs/2/technical/api/api-collection/#api-standards).
 
 * `"tstamp"`
 
-This is the timestamp (in milliseconds), here is more information and a site to test this: 
-
-The Unix epoch (or Unix time or POSIX time or Unix timestamp) is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT), not counting leap seconds (in ISO 8601: 1970-01-01T00:00:00Z). Literally speaking the epoch is Unix time 0 (midnight 1/1/1970), but 'epoch' is often used as a synonym for Unix time. Some systems store epoch dates as a signed 32-bit integer, which might cause problems on January 19, 2038 (known as the Year 2038 problem or Y2038). The converter on this page converts timestamps in seconds (10-digit), milliseconds (13-digit) and microseconds (16-digit) to readable dates.
+This is the timestamp (in milliseconds)in the Unix epoch unit. The Unix epoch (or Unix time or POSIX time or Unix timestamp) is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT), not counting leap seconds (in ISO 8601: 1970-01-01T00:00:00Z). Literally speaking the epoch is Unix time 0 (midnight 1/1/1970), but 'epoch' is often used as a synonym for Unix time. Some systems store epoch dates as a signed 32-bit integer, which might cause problems on January 19, 2038 (known as the Year 2038 problem or Y2038). The converter on this page converts timestamps in seconds (10-digit), milliseconds (13-digit) and microseconds (16-digit) to readable dates.
 
 [https://www.epochconverter.com/](https://www.epochconverter.com/)
 
-Here the value is 1590759984779 so the date is Friday 29 May 2020 13:46:24.779 which is exactly the `createDate` value : "2020-05-29T13:46:24.779Z"
+Here the value is 1590759984779 so the date is Friday 29 May 2020 13:46:24.779 which is exactly the `createDate` value : "2020-05-29T13:46:24.779Z".
 
 * `"updateDate"`
 
-Here the data has not been updated, so the `updateDate` is the same as the `createDate`
+UpdateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's last update in the Microshare®  system. If the data has not been updated, it will be the same as the createDate.
 
 * `"updaterId"`
 
-Here the data has not been updated, so the `updaterId` is the same as the `creatorId`
+The `updaterId`notes which user has last updated the data. If the data has not been updated, the `updaterId` will be the same as the `creatorId`.
 
 ##### B.2 Data
 
@@ -172,7 +159,7 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
 },
 ```
 
- The information here is simply what we have just created. This is where you will find all the data that you integrate into Microshare® but we will see that later.
+This section contains the core information as ingested by the Microshare® Smart Network. The format of the data section will vary based on the recType. If the recType begins with io.microshare, then the cannonical format of this section will be documented in this section.
 
 ##### B.3 Origin
 
@@ -192,11 +179,11 @@ Here the data has not been updated, so the `updaterId` is the same as the `creat
 },
 ```
 
-Here you find the origin of the data, who created it, when, under which recType (`name`).
+Here you find the origin of the data, who created it, when, and under which recType (`name`).
 
 You will also find even more information about the PIs of the systems that created this data.
 
-The origin can be interesting when the data is shared with you to understand where it comes from.
+The origin can be useful when the data is shared with you as you can easily decipher where it comes from.
 
 
 ##### B.4 Owner
@@ -210,17 +197,12 @@ The origin can be interesting when the data is shared with you to understand whe
 },
 ```
 
-The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). So in case of doubt for the creation of a share rule these data are essential to share from the right place the right data. 
+The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). There may be multiple owners for every piece of data. Owners have the ability to create share Rules that grant privileges to other users. 
 
-The additional information in the `appid` corresponds to the app-key that is used to create the data. 
-Thus has the creation of a token or pipe token to create data, these are made from an app-key, which will be found here.
+The additional information in the `appid` corresponds to the app-key that is used to create the data. The app- key creates a token or pipe token to securely create the data. 
 
 ## 3. Go further
 ---------------------------------------
 
 
-To go further, we will use the principle of data ingestion by device clusters, and different pushes. 
-
-This will allow us to see much more complete data using the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards).
-
-And we will also explain what the [IoT data](/docs/2/technical/data-format/microshare-standards) is when you go through the Microshare® devices clusters as well as [Ipso data](/docs/2/technical/data-format/microshare-standards).
+Next, you should follow the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards) to dive further into the data ingestion process by device clusters and how to request information using a push action. This guide will describe the components of IoT data packets and IPSO data. 
