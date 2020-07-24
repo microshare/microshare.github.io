@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include header.html %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173448502-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173448502-1');
+      </script>
+      {% include header.html %}
   </head>
   <body class="bd-docs" data-spy="scroll" data-target=".bd-sidenav-active">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
