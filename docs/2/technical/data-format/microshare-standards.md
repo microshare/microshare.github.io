@@ -31,7 +31,7 @@ toc: true
 ---------------------------------------
 
 
-Data is sent as a payload from the IoT sensors to the Microshare® unpackers as raw, compressed data for efficiency. The data is then transformed and enriched by the Microshare® unpacker into comprehensible information using one of our canonical json formats. This process ensures that the data can be analyzed consistently regardless of device vendor or the network used to transmit. The final format is referred to as unpacked data.
+Data is sent as a payload from the IoT devices to the Microshare® unpackers as raw, compressed data for efficiency. The data is then transformed and enriched by the Microshare® unpacker into comprehensible information using one of our canonical json formats. This process ensures that the data can be analyzed consistently regardless of device vendor or the network used to transmit. The final format is referred to as unpacked data.
 
 This guide will provide details on the processes involved in collecting the raw data and decompressing it into unpacked data. **Please note that the information supplied may differ slightly to that required for your network server, as details differ from server to server.**
 
@@ -218,7 +218,7 @@ Example :
 
 #### A. General Structure
 
-The majority of the information within the packet of data details the settings of the device cluster. The remaining pieces of information contain the data collected by the sensors. 
+The majority of the information within the packet of data details the settings of the device cluster. The remaining pieces of information contain the data collected by the devices. 
 
 This is how the device cluster is set up:
 
@@ -229,7 +229,7 @@ This is how the device cluster is set up:
 
 #### B. {Data}
 
-Now let's talk about the `{Data}`, which has the majority of the information.
+Now let's talk about the `{Data}`, which contains the device information.
 
 The various components include: 
   - C. [Ipso](./#c-ipso)
@@ -237,13 +237,13 @@ The various components include:
   - E. [Origin](./#e-origin)
   - F. [Unpacker](./#f-unpacker)
 
-`{Data}` includes the data from your devices such as the `temperature`, `humidity`, `co2` and so on. 
+Above is the device data within `{Data}`. 
 
 All these values are explained with their units in the following table: 
 
 ##### > [Standards Data Table](./#3-standards-data-table)
 
-`{Data}` contains information about the sensor that provided the data payload. This usually includes the sensors device id, battery type, battery type, etc. The code supplied will look like: 
+`{Data}` contains information about the device that provided the data payload. This usually includes the device id, battery type, battery type, etc. The code supplied will look like: 
 
 ```
 "device": {
@@ -300,23 +300,23 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 - `device` - the device's specific location.
 
-- `global` - location of the sensor's device cluster.
+- `global` - location of the device's device cluster.
 
-- `device_id` - the sensor's unique identification number.
+- `device_id` - the device's unique identification number.
 
 - `type` - whether the information is an uplink (data is sent from the device up to the network server) or a downlink (data is sent from the network server down to the device). This will almost always be an uplink.
 
-- `fcnt_up` -  the up count; the number of uplink interactions between the sensor and the network server.
+- `fcnt_up` -  the up count; the number of uplink interactions between the device and the network server.
 
-- `fcnt_down` - the down count; the number of downlink interactions between the network server and the sensor.
+- `fcnt_down` - the down count. 
 
 - `fport` - the port where the device’s packet is sent to the network server.
 
-- `iso_time` or `time`- the time at which the network received the sensor's data.
+- `iso_time` or `time`- the time at which the network received the device's data.
 
 - `ns_version` - the version of the network server.
 
-- `payload` - the data that the sensor sends out to the network server.
+- `payload` - the data that the device sends out to the network server.
 
 
 

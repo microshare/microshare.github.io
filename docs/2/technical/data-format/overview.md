@@ -9,9 +9,9 @@ toc: true
 ---------------------------------------
 
 To best use Microshare® data, it is important to understand how the data is structured,
- especially in regard to the use of views, robots, APIs and the creation of Applications.
+ particularly for use of views, robots, APIs and the creation of Applications.
 
-As described in the Microshare® Platform Advanced section, data formatting follows data ingestion.B what does this mean in terms of data? 
+As described in the Microshare® Platform Advanced section, data formatting follows data ingestion. But what does this mean in terms of data? 
 
 When the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
 
@@ -82,7 +82,7 @@ In the above example, the information was requested without specification of the
 
 The `source` object represents where the information came from. In this case, the data payload is from the database or `db`.
 
-Please note that if you have access to the `meta` data but not the `obj` data, this is most likely because of a sharing rule. Please revisit your sharing rule to solve this issue. 
+Please note that if you have access to the `meta` data but not the `obj` data, this is because you lack the privileges necessary to read it. Your privileges can be adjusted by the creation of a [share Rule](/docs/2/technical/microshare-platform/rules-guide).
 
 
 #### B) Objs
@@ -113,11 +113,11 @@ The Id of the data is its unique identifier. It is used by a Microshare® Techni
 
 * `"checksum"`
 
-The checksum is another identifier that Microshare® technicians use to find that peice of data in the datalake.
+The checksum is a cryptographic hash of the data portion of the record. Using the sha-256 hashing algorithm to generate a new hash from the contents of the Data element, a comparison can be made to ensure that the data has not be compromised. A checksum is also included in the Origin section of the JSON structure that captures the data contents when the record was first introduced to the system. By comparing these two checksums, you can prove that the data has not be modified inside the Microshare®  system.
 
 * `"createDate"`
 
-CreateDate details the time the peice of data was created.
+CreateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's introduction to the Microshare®  system.
 
 * `"creatorId"`
 
@@ -133,7 +133,7 @@ This object gives the name of the sensor that the information comes from. This f
 
 * `"recType"`
 
-The recType is the endpoint of a data flow in the data lake, the name underwhich your data is stored. [You can learn more about recTypes here.](/docs/2/technical/api/api-collection/#api-standards)
+The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare® system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare® . You will find these canonical formats described here. You can learn more about [recTypes here](.//docs/2/technical/api/api-collection/#api-standards).
 
 * `"tstamp"`
 
@@ -141,15 +141,15 @@ This is the timestamp (in milliseconds)in the Unix epoch unit. The Unix epoch (o
 
 [https://www.epochconverter.com/](https://www.epochconverter.com/)
 
-Here the value is 1590759984779 so the date is Friday 29 May 2020 13:46:24.779 which is exactly the `createDate` value : "2020-05-29T13:46:24.779Z"
+Here the value is 1590759984779 so the date is Friday 29 May 2020 13:46:24.779 which is exactly the `createDate` value : "2020-05-29T13:46:24.779Z".
 
 * `"updateDate"`
 
-The `updateDate` gives the time that the data was updated. Here the data has not been updated, so the `updateDate` is the same as the `createDate`
+UpdateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's last update in the Microshare®  system. If the data has not been updated, it will be the same as the createDate.
 
 * `"updaterId"`
 
-The `updaterId`notes which account updated the data. Here the data has not been updated, so the `updaterId` is the same as the `creatorId`
+The `updaterId`notes which user has last updated the data. If the data has not been updated, the `updaterId` will be the same as the `creatorId`.
 
 ##### B.2 Data
 
@@ -159,7 +159,7 @@ The `updaterId`notes which account updated the data. Here the data has not been 
 },
 ```
 
-This is the most important section of the data as it gives the information on what we have just created. This is where you will find the data that you integrated into Microshare® under that recType. This will be explored later on. 
+This section contains the core information as ingested by the Microshare® Smart Network. The format of the data section will vary based on the recType. If the recType begins with io.microshare, then the cannonical format of this section will be documented in this section.
 
 ##### B.3 Origin
 
@@ -197,7 +197,7 @@ The origin can be useful when the data is shared with you as you can easily deci
 },
 ```
 
-The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). In case there is doubt surrounding the creation of a share rule, this section helps to clarify that the right data is being shared correctly. 
+The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). There may be multiple owners for every piece of data. Owners have the ability to create share Rules that grant privileges to other users. 
 
 The additional information in the `appid` corresponds to the app-key that is used to create the data. The app- key creates a token or pipe token to securely create the data. 
 
