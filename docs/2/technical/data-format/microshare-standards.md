@@ -31,9 +31,9 @@ toc: true
 ---------------------------------------
 
 
-Data is sent as a payload from the IoT sensors to the Microshare® unpackers as raw, encrypted data for security purposes. The data is then transformed by the Microshare® unpackers into comprehensible information. This information is referred to as unpacked data and is inserted into the device clusters. 
+Data is sent as a payload from the IoT sensors to the Microshare® unpackers as raw, compressed data for efficiency. The data is then transformed and enriched by the Microshare® unpacker into comprehensible information using one of our canonical json formats. This process ensures that the data can be analyzed consistently regardless of device vendor or the network used to transmit. The final format is referred to as unpacked data.
 
-This guide will provide details on the processes involved in collecting the raw data and decrypting it into unpacked data. **Please note that the information supplied may differ slightly to that required for your network server, as details differ from server to server.**
+This guide will provide details on the processes involved in collecting the raw data and decompressing it into unpacked data. **Please note that the information supplied may differ slightly to that required for your network server, as details differ from server to server.**
 
 Additionally, this guide will discuss tags. Tags are labels or descriptions attached to your device clusters for ease of identification. 
 
