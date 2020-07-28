@@ -40,14 +40,13 @@ Marked in teal is the network provider category. This field is required as each 
 ---------------------------------------
 
 Manual upload is the most basic way of sending data into the platform.
-To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share).  
-It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share)
+To do so, send your data as the body of a [POST /share call](/assets/html/api-ms.html#request-shares-create-one-share). It will then be available to use from the data lake with [GET /share calls](/assets/html/api-ms.html#request-shares-get-one-share). 
 
 ## 4. Robot Polling to pull data
 ---------------------------------------
 
 Alternatively, some platforms offer RESTful APIs to request for the data they store, such as [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
-In that case you can setup a [scheduled Robot](../robot-guide/#triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
+In that case you can setup a [scheduled Robot](/docs/2/technical/microshare-platform-advanced/robots-guide/#c-triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
 You are at liberty to setup your Robot script the way you want, to decide when and what to store as a object from that data.  
 Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the Microshare® data lake:
 

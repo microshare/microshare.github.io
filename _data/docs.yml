@@ -53,6 +53,7 @@
     pages:
     - title: Overview
     - title: Microshare Standards
+    - title: Contact Tracing
   - title: Microshare Platform
     pages:
     - title: Quick Start
@@ -65,7 +66,6 @@
     - title: Identity Guide
     - title: Robots Guide
     - title: Data Ingestion
-    - title: Data Ingestion by Robots
     - title: Data Formatting
     - title: Data Formatting by Robots
     - title: Robots library
@@ -81,7 +81,7 @@
     - title: LoRaWan Technology
     - title: LoRaWan Gateways
     - title: LoRaWan Sensors
-  - title: Extra Information
+  - title: Streaming Integration
     pages:
     - title: Azure Event Hub Integration
     - title: AWS Kinesis Data Stream Integration

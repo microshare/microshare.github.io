@@ -18,6 +18,8 @@ toc: true
     - D) [AWS SQS Integration](./#d-aws-sqs-integration)
     - E) [Google PubSub Integration](./#e-google-pub-sub-integration)    
 4. [Managing Data with Microshare® REST API](./#4-managing-data-with-microshare)
+
+
 ---------------------------------------
 
 ## 1. Quick Start
@@ -49,7 +51,7 @@ The API supports RESTful POST operations to inject data into the system as JSON 
 
 ### C) Robots polling API endpoints to pull data.
 Robots may run Javascript that can be used to pull in data via APIs at regular time intervals.
-##### > [Data Ingestion By Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
+##### > [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
 
 <br>
 
@@ -57,10 +59,9 @@ Robots may run Javascript that can be used to pull in data via APIs at regular t
 ---------------------------------------
 
 There are several methods to integrate Microshare® data into your own platform.
-
 <br>
-
 ### Microsoft Azure
+<br>
 
 #### A) Azure IoT Hub Integration
 
@@ -80,6 +81,7 @@ With Microshare®, you can simply inject your data into the Event Hub and integr
 
 ### Amazon Web Services (AWS)
 
+<br>
 #### C) AWS Kinesis Data Stream Integration
 
 Amazon Kinesis facilitates real-time streaming data collection, processing, and analysis to quickly obtain strategic information and respond quickly. Amazon Kinesis offers critical capabilities to cost-effectively process streaming data at any scale, as well as the ability to choose the tools best suited to the needs of your application.
@@ -98,6 +100,7 @@ With Microshare®, you can simply inject your data into the AWS SQS service and 
 
 ### Google Cloud Platform (GCP)
 
+<br>
 #### E) Google Pub/Sub
 
  Pub/Sub is an asynchronous messaging service that decouples services that produce events from services that process events.
