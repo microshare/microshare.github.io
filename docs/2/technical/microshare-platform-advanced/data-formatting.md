@@ -50,22 +50,9 @@ Finally, the data is written to the data lake under the target recType.unpacked 
 
 #### The entire process looks like this:
 
-Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your dashboard or app.  
+Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. From there, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your dashboard or app.  
 
-
-## 5. Set up your platform to post the data
----------------------------------------
-
-For [Actility ThingsPark](https://partners.thingpark.com/en/dashboard) or a Kerlink private gateway.
-Some platforms can be configured to POST data. Configure them to do a POST /share/:recType call.
-
-## 6. Contact Tracing
----------------------------------------
-
-**For more information on Contact Tracing, please visit the [Contact Tracing dedicated page](/docs/2/technical/microshare-platform-advanced/contact-tracing).**
-
-
-## 7. What's next?
+## 5. What's next?
 ---------------------------------------
 
 Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  
