@@ -10,15 +10,17 @@ toc: true
 ##### SUMMARY : 
 
 1. [Quick Start](./#1-quick-start)
-2. [From Somewhere to Microshare®](./#2-from-somewhere-to-microshare)
-3. [From Microshare® to Somewhere](./#3-from-microshare-to-somewhere)
-    - A) [API](./#a-api)
+2. [Ingesting Data into Microshare®](./#2-ingesting-data-into-microshare)
+3. [Streaming Data from Microshare®](./#3-stream-data-from-microshare)
+    - A) [AZure IoT Hub](./#a--azure-iot-hub-integration)
     - B) [Azure Event Hub](./#b-azure-event-hub-integration)
     - C) [AWS Kinesis Data Stream Integration](./#c-aws-kinesis-data-stream-integration)
+    - D) [AWS SQS Integration](./#d-aws-sqs-integration)
+    - E) [Google PubSub Integration](./#e-google-pub-sub-integration)    
+4. [Managing Data with Microshare® REST API](./#4-managing-data-with-microshare)
+
 
 ---------------------------------------
-
-
 
 ## 1. Quick Start
 ---------------------------------------
@@ -34,54 +36,92 @@ If you are a Microshare® reseller, you can send the data to Microshare® and on
 
 <br>
 
-## 2. From Somewhere to Microshare
+## 2. Ingesting Data into Microshare®
 ---------------------------------------
 
-To integrate the data into Microshare® there are three methods. 
+To integrate the data into Microshare® there are three methods: 
 
-First, you push the data to Microshare®. 
+### A) Network Server to push data.
 For an IoT Server network you push the data on a rectype as shown on this page: 
 ##### > [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
-Each time a new data is created it is sent to Microshare® and if the data formatting tools are in place the data will be automatically processed and improved.
 
-The second method is to use robots which are further elaborated on this page:
-##### > [Data Ingestion By Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
-With this you will be able to create Websockets or even pull data at regular time intervals.
-
-Finally you can use our simple API request to write into Microshare® with an API.
+### B) HTTP POST to push data.
+The API supports RESTful POST operations to inject data into the system as JSON documents. 
 ##### > [APIs](/docs/2/technical/api/quick-start/)
+
+### C) Robots polling API endpoints to pull data.
+Robots may run Javascript that can be used to pull in data via APIs at regular time intervals.
+##### > [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
 
 <br>
 
-## 3. From Microshare® to Somewhere
+## 3. Streaming Data from Microshare®
 ---------------------------------------
 
 There are several methods to integrate Microshare® data into your own platform.
+<br>
+### Microsoft Azure
+<br>
+
+#### A) Azure IoT Hub Integration
+
+Azure IoT Hub is a fully managed, simple, secure and scalable real-time data ingestion service designed specifically for IoT workloads. Broadcast millions of events per second from any source to create dynamic data pipelines and instantly address business challenges.
+With Microshare®, you can simply inject your data into the IoT Hub and combine it with IoT data streaming from other sources to create a unified data pipeline. 
+##### > [Azure IOT Hub Integration](/docs/2/technical/streaming-integration/azure-iot-hub-integration/)
 
 <br>
 
-### A) API
+#### B) Azure Event Hub Integration
 
-The API can be summarized as an IT solution that allows applications to communicate with each other and exchange services or data with each other. It is actually a set of functions that facilitate, via a programming language, access to the services of an application.
+Azure Event Hub is a fully managed, simple, secure and scalable real-time data ingestion service. Broadcast millions of events per second from any source to create dynamic data pipelines and instantly address business challenges.
+With Microshare®, you can simply inject your data into the Event Hub and integrate it with other tools you may already have in place.
+##### > [Azure Event Hub Integration](/docs/2/technical/streaming-integration/azure-event-hub-integration/)
 
-So here it's all about being able to use APIs to access Microshare® data easily from your own solution. 
-You can even access this data via the Microshare® big data tools. 
+<br>
+
+### Amazon Web Services (AWS)
+
+<br>
+#### C) AWS Kinesis Data Stream Integration
+
+Amazon Kinesis facilitates real-time streaming data collection, processing, and analysis to quickly obtain strategic information and respond quickly. Amazon Kinesis offers critical capabilities to cost-effectively process streaming data at any scale, as well as the ability to choose the tools best suited to the needs of your application.
+With Microshare®, you can simply inject your data into the AWS Kinesis Data Stream and integrate it with downstream tools from the AWS ecosystem.
+##### > [AWS Kinesis Data Stream Integration](/docs/2/technical/streaming-integration/aws-kinesis-data-stream-integration/)
+
+<br>
+
+#### D) AWS SQS Integration
+
+Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating message oriented middleware, and empowers developers to focus on differentiating work. Using SQS, you can send, store, and receive messages between software components at any volume, without losing messages or requiring other services to be available.
+With Microshare®, you can simply inject your data into the AWS SQS service and integrate it with downstream tools from the AWS ecosystem.
+##### > [AWS SQS Integration](/docs/2/technical/streaming-integration/aws-sqs-integration/)
+
+<br>
+
+### Google Cloud Platform (GCP)
+
+<br>
+#### E) Google Pub/Sub
+
+ Pub/Sub is an asynchronous messaging service that decouples services that produce events from services that process events.
+
+You can use Pub/Sub as messaging-oriented middleware or event ingestion and delivery for streaming analytics pipelines.
+
+Google Pub/Sub offers durable message storage and real-time message delivery with high availability and consistent performance at scale. Pub/Sub can be used as messaging-oriented middleware or event ingestion and delivery for streaming analytics pipelines. Pub/Sub offers durable message storage and real-time message delivery with high availability and consistent performance at scale.
+With Microshare®, you can simply inject your data into the Google Pub/Sub service and integrate it with downstream tools from the Google ecosystem.
+##### > [Google PubSub Integration](/docs/2/technical/streaming-integration/google-pub-sub-integration/)
+
+<br>
+
+## 4. Managing Data with Microshare® REST API
+---------------------------------------
+
+An API is an IT solution that allows applications to communicate with each other and exchange services or data with each other. It is a set of functions that facilitate, via a programming language, access to the services of an application.
+
+All of the services offered by the Microshare Platform are available for management via a robust RESTful API. Using the API, you can manage data and configuration using a consistent API which leverages HTTPS transport with JSON payloads.
+The APIs to access Microshare® data easily from your own solution. 
 
 To do this is very simple, just follow the steps in the Microshare® APIs tutorial.
 ##### > [APIs](/docs/2/technical/api/quick-start/)
 
 <br>
-
-### B) Azure Event Hub Integration
-
-Event Hubs is a fully managed, simple, secure and scalable real-time data ingestion service. Broadcast millions of events per second from any source to create dynamic data pipelines and instantly address business challenges.
-With Microshare®, you can simply inject your data into the Event Hub and integrate it with other tools you may already have in place.
-##### > [Azure Event Hub Integration](/docs/2/technical/extra-information/azure-event-hub-integration/)
-
-<br>
-
-### C) AWS Kinesis Data Stream Integration
-
-Amazon Kinesis facilitates real-time streaming data collection, processing, and analysis to quickly obtain strategic information and respond quickly. Amazon Kinesis offers critical capabilities to cost-effectively process streaming data at any scale, as well as the ability to choose the tools best suited to the needs of your application.
-With Microshare®, you can simply inject your data into the AWS Kinesis Data Stream and integrate it with other tools you may already have in place.
-##### > [AWS Kinesis Data Stream Integration](/docs/2/technical/extra-information/aws-kinesis-data-stream-integration/)
