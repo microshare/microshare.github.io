@@ -80,7 +80,7 @@
     pages:
     - title: LoRaWan Technology
     - title: LoRaWan Gateways
-    - title: LoRaWan Sensors
+    - title: LoRaWan Devices
   - title: Streaming Integration
     pages:
     - title: Azure Event Hub Integration
