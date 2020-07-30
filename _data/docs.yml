@@ -8,6 +8,7 @@
     - title: Why Microshare?
     - title: Technical Overview
     - title: Demo
+    - title: Demo Live
     - title: FAQ
   - title: Quick Start
     pages:
@@ -78,13 +79,15 @@
     - title: API Collection
   - title: LoRaWan
     pages:
+    - title: Why LoRaWan ?
     - title: LoRaWan Technology
     - title: LoRaWan Gateways
     - title: LoRaWan Sensors
   - title: Extra Information
     pages:
-    - title: Azure Event Hub Integration
+    - title: Google Pub/ Sub Integration
     - title: AWS Kinesis Data Stream Integration
     - title: AWS SQS Integration
+    - title: Azure Event Hub Integration
     - title: Azure IoT Hub Integration
-    - title: Google Pub/ Sub Integration
+    
