@@ -24,10 +24,11 @@ toc: true
 ---------------------------------------
 
 ## 1. What’s a View?
-
+---------------------------------------
 A View is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules.
 
 ## 2. What can I do with them?
+---------------------------------------
 
 #### - Query Data Lake
 Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
@@ -36,6 +37,7 @@ Use the "Pipeline Query" option to query the data lake. The query format is base
 Use the "Static JSON" option to create data samples for testing or reference data.
 
 ## 3. How do I use them?
+---------------------------------------
 
 You'll need to create and save a View into the "VIEWS" section from the "MANAGE" menu of the Microshare® portal.
  
@@ -162,6 +164,7 @@ For more details of query syntax, please refer to the MongoDB doc site
 
 
 ## 4. Default View query size
+---------------------------------------
 
 To optimize the performance of your View query, it is not run against your whole collection of records, that can reach millions of entries, but run by default against the set of the most recent 999 records matching your match clause.  
 So a View query like this:
@@ -193,6 +196,8 @@ For example in this request:
 the $project clause is run against the most recent 42 records with the recType com.your.recType, making it that much faster.
 
 ## 5. String replacements for Views
+---------------------------------------
+
 Static and Query Views support String replacement of variables with the syntax ```${myVariable}```.  
 The replacement values can be passed via the /share API call, or through the lib.readShareByView functions params parameter of a [Robot](../robot-guide).
 
@@ -249,6 +254,7 @@ To test the response of this fact in the api call, scroll down to the "View Prev
 {% include image.html url="/assets/img/composer-fact-edit-test1.jpg" description="View Index - Card View" %}
 
 ## 6. Putting it together: 
+---------------------------------------
 
 ### Use-case: Tracking Record Count
 

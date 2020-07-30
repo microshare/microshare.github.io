@@ -5,24 +5,25 @@ description:
 toc: true
 ---
 
-
-
-
 {% include image.html url="\assets\img\google-pub-sub\Google_Logo.png" description="google pub/ sub logo" %}
 
-
+#### Summary:
+1. [Overview](./#overview)
+2. [Setup](./#setup)
+    * [Create a Service Account](./#create-a-service-account)
+    * [Generate a Key](./#generate-the-needed-key)
+    
+    
 -----------------------------------------------------------------
-# Overview
-
+## Overview
+-----------------------------------------------------------------
 Google Cloud Pub/Sub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Google Cloud Pub/Sub tenancy in real-time. Data is typically made available to Google Cloud Pub/Sub Topics, on which Subscribment can be set up to ensure that event handling and analytics are fed with the most current state of the measured space. Google Cloud Pub/Sub Integration creates a pathway to advanced storage, visualization, and analytics in the Google Cloud ecosystem from the Microshare® Smart Network.
 
-# Setup
-
+## Setup
+-----------------------------------------------------------------
 {% include image.html url="\assets\img\google-pub-sub\Pub_flowmap.png" description="flowmap" %}
 
------------------------------------------------------------------
-
-## **Client Side**
+### Client Side
 
 **Requirements :**
 
@@ -69,7 +70,7 @@ If at any time you need to change the role, you can change the settings for the 
 
 {% include image.html url="\assets\img\google-pub-sub\Pub_9.png" description="image 9" %}
 
-## Generate the needed key
+### Generate the needed key
 
 Now let&#39;s **click on the created Service Account.**
 

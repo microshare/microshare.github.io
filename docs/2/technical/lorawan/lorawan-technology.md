@@ -14,26 +14,27 @@ All the information on this page is taken from [this document](https://lora-alli
 1. [Introduction](./#1-requirements)
     - A. [What is Lora®](./#2-sign-in)
     - B. [Long Range (Lora®)](./#2-sign-in)
-3. [Where does LPWAN fit ?](./#3-access-to-device-cluster)
+2. [Where does LPWAN fit ?](./#3-access-to-device-cluster)
     - A. [Important factor in LPWAN](./#4-add-a-device)
-4. [What is LoRaWan™](./#4-add-a-device)
+3. [What is LoRaWan™](./#4-add-a-device)
     - A. [Network Architecture](./#5-change-a-device)
     - B. [Battery Lifetime](./#5-change-a-device)
     - C. [Network Capacity](./#5-change-a-device)
     - D. [Device Classes – Not All Nodes Are Created Equal](./#5-change-a-device)
     - E. [Security](./#5-change-a-device)
-5. [LoRaWan™ Regional Summery](./#5-change-a-device)
+4. [LoRaWan™ Regional Summery](./#5-change-a-device)
     - A. [LoRaWAN™ for Europe](./#5-change-a-device)
     - B. [LoRaWAN™ for North America](./#5-change-a-device)
     - C. [LoRaWAN™ Hybrid mode for North America](./#5-change-a-device)
-6. [Comparing LPWAN Technology Options](./#6-delete-a-device)
-7. [LPWAN Cost vs Legacy Systems](./#6-delete-a-device)
+5. [Comparing LPWAN Technology Options](./#6-delete-a-device)
+6. [LPWAN Cost vs Legacy Systems](./#6-delete-a-device)
 
 ---------------------------------------
 
 {% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
 ## 1. Introduction
+---------------------------------------
 
 The purpose of this document is to give an introductory technical overview to
 LoRa® and LoRaWAN™. Low–Power, Wide-Area Networks (LPWAN) are projected
@@ -74,8 +75,8 @@ are the coverage maps from the Proximus network deployed in Belgium. With a
 minimal amount of infrastructure, entire countries can easily be covered. 
 
 
-## 3. Where does LPWAN fit ?
-
+## 2. Where does LPWAN fit ?
+---------------------------------------
 One technology cannot serve all of the projected applications and volumes for IoT.
 WiFi and BTLE are widely adopted standards and serve the applications related to
 communicating personal devices quite well. Cellular technology is a great fit for
@@ -101,7 +102,8 @@ The most critical factors in a LPWAN are:
 {% include image.html url="/assets/img/LoRaWan/LoRaWan04.png" description="LoRaWan Technology" %}
 
 
-## 4. What is LoRaWan™
+## 3. What is LoRaWan™
+---------------------------------------
 
 LoRaWAN™ defines the communication protocol and system architecture for the
 network while the LoRa® physical layer enables the long-range communication link.
@@ -211,7 +213,8 @@ There are trade-offs in every technology choice but the LoRaWAN™ features
 in network architecture, device classes, security, scalability for capacity, and
 optimization for mobility address the widest variety of potential IoT applications. 
 
-## 5. LoRaWan™ Regional Summery
+## 4. LoRaWan™ Regional Summary
+---------------------------------------
 
 The LoRaWAN™ specification varies slightly from region to region based on
 the different regional spectrum allocations and regulatory requirements. The
@@ -265,8 +268,8 @@ There is no requirement for this type of hybrid system to comply with the 500 kH
 minimum bandwidth normally associated with a DTS transmission; and, there is no
 minimum number of hopping channels associated with this type of hybrid system.”
 
-## 6. Comparing LPWAN Technology Options
-
+## 5. Comparing LPWAN Technology Options
+---------------------------------------
 There is a lot of activity in the IoT sector comparing LPWAN options both from a
 technical comparison but also from a business model perspective. LPWAN networks
 are being deployed now because there is a strong business case to support immediate
@@ -285,8 +288,8 @@ interference
 
 {% include image.html url="/assets/img/LoRaWan/LoRaWan10.png" description="LoRaWan Technology" %}
 
-## 7. LPWAN Cost vs Legacy Systems
-
+## 6. LPWAN Cost vs Legacy Systems
+---------------------------------------
 LoRaWAN™ has significant cost savings in the deployment and required
 infrastructure compared to existing systems. The below analysis is done by Talkpool
 who have significant experience in deploying both WMBus and LoRa® based

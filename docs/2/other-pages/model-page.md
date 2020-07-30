@@ -5,17 +5,18 @@ description: Serves as a reference that all other pages should model
 toc: true
 ---
 
----------------------------------------
+
 ## Summary
+---------------------------------------
 
 The page should always open with a outline of what the page entails, no matter the size of the page. This makes navigation much smoother and decreases the time between getting that answer to the user.
 
 1. [The list will be in numbered list format](./#general-formatting)
 2. [Each Point will have a quick link](./#other-standards)
 
----------------------------------------
-## General Formatting
 
+## General Formatting
+---------------------------------------
 Each section should be titled in header 2 (This is ## in markdown). Each section should have a line break before the section header to visually show the end of the previous topic. The line break should appear directly under the last line of the section, no spatial break in between. 
 
 ### Sub Section
@@ -23,8 +24,8 @@ Each section should be titled in header 2 (This is ## in markdown). Each section
 If the section has a sub section, make sure to give the sub section a title in header 3(This is ### in markdown).
 
 
----------------------------------------
 ## Bulleted versus Numbered Lists
+---------------------------------------
 
 A numbered list should be used for:
 <br>
@@ -45,8 +46,9 @@ Both styles of lists should include a period at the end of the sentence.
 
 
 
----------------------------------------
+
 ## Other Standards
+---------------------------------------
 
 <br> Microshare™ should be used in the title of the page only and refer to Microshare® in the body of the documentation.
 

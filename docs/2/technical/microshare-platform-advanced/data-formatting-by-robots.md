@@ -26,6 +26,7 @@ toc: true
 ---------------------------------------
 
 ## 1. Formatting the data with a robot
+---------------------------------------
 
 ### A. What is a data workflow?
 You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
@@ -325,4 +326,6 @@ At Microshare® we usually represent data workflows with [draw.io](https://www.d
  5 The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
 
 ## 2. What's next?
+---------------------------------------
+
 You have now access to decoded IoT data through the Microshare® API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  

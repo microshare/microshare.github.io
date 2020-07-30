@@ -5,7 +5,13 @@ description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
-## 1. Intro
+#### Summary:
+---------------------------------------
+1. [Introduction](./#introduction)
+2. [First Example]
+3. [Go Further](./#3-go-further)
+---------------------------------------
+## 1. Introduction
 ---------------------------------------
 
 To best use Microshare® data, it is important to understand how the data is structured,

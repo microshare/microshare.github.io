@@ -6,9 +6,6 @@ toc: true
 ---
 
 
-{% include image.html url="/assets/img/CleanSafeOverview7.png" description="Microshare.io" %}
-
-
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -18,7 +15,10 @@ toc: true
 3. [Proven embedded](./#3-proven-embedded)
 4. [How it works ?](./#3-how-it-works)
 
+{% include image.html url="/assets/img/CleanSafeOverview7.png" description="Microshare.io" %}
+
 ---------------------------------------
+## Overview
 
 Microshare® brings data of your environment to your fingertips, but how? Underneath Microshare®’s plug-n-play module lies a system of collecting data and communicating the results through our API. Data from your devices are sent to our network, where it is configured for your analysis on your Dashboard. Microshare® operates on three main principles:
 
@@ -52,8 +52,7 @@ Alternatively, if your Microshare® Admin creates a guest app, no Microshare® a
 ## 4. How does it work?
 ---------------------------------------
 
-Microshare®’s plug-n-play IoT modules.
-Our modular, scalable solutions power data insights in small installations or mega facilities.
+Microshare®’s plug-n-play IoT modules are our scalable solutions that power data insights in small installations or mega facilities.
 
 #### No technology training required
 
@@ -67,6 +66,6 @@ Access to multiple entities from our data sharing console and dashboards
 
 {% include image.html url="https://www.microshare.io/wp-content/uploads/2019/08/bridge-the-gap.png" description="Microshare Data" %}
 
-Bridging the Gaps for a Complete Solution.
+Bridging the gaps for a complete solution.
 
 The Microshare® data management platform is the backbone of our IoT solutions. Our Rules Engine, Dynamic Data Modules, Application Accelerators and our proprietary Data Ownership Module ensure your data is collected, analyzed and distributed in a secure and compliant way to the right party and the right time in the right format.

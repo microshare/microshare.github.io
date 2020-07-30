@@ -23,6 +23,7 @@ toc: true
 ---------------------------------------
 
 ## 1. What's a Robot?
+---------------------------------------
 A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into Microshare® to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
 1) easy to maintain, 
 2) fast and efficient with higher volumes, and 
@@ -38,6 +39,7 @@ All Robots run in parallel (at the same time) and react to events as they occur.
 
 
 ## 2. What can I do with them?
+---------------------------------------
 To keep your data workflow clear, we suggest each one of your Robots takes care of only one single action. Below are some typical use cases we identified.  
 [1. Data ingestion](../data-ingestion)  
 For Robots tasked to pull or receive data sent by an external source.  
@@ -58,6 +60,7 @@ Prepare your data to be used in a Dashboard.
 For a Robot used to trigger another service on the web.  
   
 ## 3. How do I use them?
+---------------------------------------
 ### A. Accessing the UI
 From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your Robots here.  
   
@@ -91,7 +94,9 @@ You will use the two other functions 99.9% of the time:
 
 For more code samples, refer to the [Data Workflow page](../data-workflow).  
 
-### C. Triggered vs scheduled  
+### C. Triggered vs scheduled
+---------------------------------------
+
 Your newly created Robot will first do... nothing!  
 To activate it, be sure to check the Active checkbox.  
 
@@ -112,6 +117,7 @@ Important: the lib.write is only simulated in a test, so you are not at risk to 
 
 
 ## 4. Create a Robot to Transform data and Send alerts
+---------------------------------------
 
 Robots are automated workflow elements allowing you to transform, analyze and report on incoming data on the fly.
 
@@ -226,12 +232,15 @@ The two Robots are activated in succession. If the fake temperature created is a
 You are now ready to setup your own IoT data stream, and transform, analyze, alert on data.
 
 ## 5. How do they work?
+---------------------------------------
+
 Behind the scene, each Robot is an Akka Agent loaded with its ECMAScript 6 compatible script.  
 Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
 The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  
 
 
 ## 6. More Information
+---------------------------------------
 
 For additional details on available Robot methods, visit [Robot library](../../advanced/robots-libraries)
 
