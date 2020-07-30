@@ -14,6 +14,7 @@
     pages:
     - title: Create an Account
     - title: Access my Apps
+    - title: Glossary
 
 - title: Admin
   subpages:
@@ -90,4 +91,8 @@
     - title: AWS SQS Integration
     - title: Azure Event Hub Integration
     - title: Azure IoT Hub Integration
+<<<<<<< Updated upstream
+=======
+    - title: Google Pub/ Sub Integration
+>>>>>>> Stashed changes
     

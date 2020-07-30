@@ -186,7 +186,7 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 ---------------------------------------
 The Electronic Attendance Records App allows you to configure an app to retrieve all staff arrivals from a user specified week and download them into a formatted file (either CSV or xlsx). 
 
-** Create the App**
+**Create the App**
 
 * `App Type`: Display.
 * `Name`: Use the name that the user will see.
@@ -199,7 +199,7 @@ The Electronic Attendance Records App allows you to configure an app to retrieve
 * `Facts to Display`: None
 * `Form to Display`: Select <em>Attendance Form SHIP</em>
 
-** Facts for Smart Timecard App**
+**Facts for Smart Timecard App**
 
 The example JSON files are provided in the [App Facts Section](./#4-app-facts). The details include:
 
