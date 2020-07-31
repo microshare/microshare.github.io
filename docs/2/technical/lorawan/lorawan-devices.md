@@ -43,7 +43,7 @@ Motion devices have a variety of applications throughout you environment. Motion
 
 Microshare® works with both indoor and outdoor specific devices which monitor environmental changes to various locations. Temperature and humidity devices are applied in indoor air quality monitoring, environment monitoring, fridge monitoring and legionella prevention solutions. 
 
-### C. Feedback devices
+### C. Feedback Devices
 
 Feedback devices allow you to collect realtime responses from your target audience, and are used in feedback stations and smart timecard solutions.
 
@@ -68,7 +68,7 @@ Microshare® works with various models of LoRaWAN devices to deliver a versitile
 
 Microshare® employs Browan devices for indoor monitoring solutions.
 
-#### Tabs Motion Sensors 
+#### Tabs Motion Devices 
 
 US Model Number: TBMS100-915
 EU Model Number: TBMS100-868
@@ -79,12 +79,12 @@ The Tabs motion sensor uses a Passive Infared Detector and Fresnel lens to detec
 
 For more information on the specifications on the Tabs motion sensor and sample decoding code for the device, refer to the [TBMS100 document](/assets/pdf/TBMS100.pdf).
 
-#### Tabs Temperature and Humidity device
+#### Tabs Temperature and Humidity Devices
 
 US Model Number: TMHV110-915
 EU Model Number: TMHV110-868
 
-The Tabs temperature and humidity sensor device measures the indoor temperature, relative humidity and air quality of your building. 
+The Tabs temperature and humidity sensor measures the indoor temperature, relative humidity and air quality of your building. 
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Tabs_TH.png" height="300" width="300" description="Tabs Temp/Humid" %}
 
