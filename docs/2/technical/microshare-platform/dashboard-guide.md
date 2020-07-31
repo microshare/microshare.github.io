@@ -174,7 +174,9 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 * `fieldName` for Environment: temp and/ or humidity.
 * Note that the MCF88 device uses different views.  See the accompanying example JSON.
 
-#### <em>**You cannot mix and match**</em> You can only display the values from teh recType and one view or set of views(var1, var2 and var3), so you are limited to the charts that go with each other. 
+##### <em>**You cannot mix and match**</em> You can only display the values from teh recType and one view or set of views(var1, var2 and var3), so you are limited to the charts that go with each other. 
+
+
 
 #### Configuring a Custom Trending Chart
 * `fieldName`: unlike the realtime app, the trending apps do require custom views if you add (a) field(s) that is/are not in the examples.  Once you create the views that return the custom fields, then as long as you return the data in the same format as the environment or air_quality views, you will be able to display the custom line graph(s) in your app.  Choose one or more `fieldNames` from your device (cannot be “feedback”, “occupied” or “counter”), return it in your new set of views, and then add charts to your app.json with the new `fieldName(s)`.  
@@ -184,7 +186,7 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 ---------------------------------------
 The Electronic Attendance Records App allows you to configure an app to retrieve all staff arrivals from a user specified week and download them into a formatted file (either CSV or xlsx). 
 
-** Create the App**
+**Create the App**
 
 * `App Type`: Display.
 * `Name`: Use the name that the user will see.
@@ -197,7 +199,7 @@ The Electronic Attendance Records App allows you to configure an app to retrieve
 * `Facts to Display`: None
 * `Form to Display`: Select <em>Attendance Form SHIP</em>
 
-** Facts for Smart Timecard App**
+**Facts for Smart Timecard App**
 
 The example JSON files are provided in the [App Facts Section](./#4-app-facts). The details include:
 

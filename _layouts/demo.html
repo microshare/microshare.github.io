@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173448502-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173448502-1');
+      </script>
+      {% include header.html %}
+  </head>
+  <body class="bd-docs" data-spy="scroll" data-target=".bd-sidenav-active" style="height:100%;">
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+      <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+      </div>
+    </a>
+
+    {% include docs-navbar.html %}
+
+    <div class="container-fluid" style="height:100%;bottom:0;" >
+      <div class="row flex-xl-nowrap"  style="height:100%;bottom:0;">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          {% include docs-sidebar.html %}
+        </div>
+        <main class="col-12 col-md-9 col-xl-10 bd-content" style="padding:0;"role="main">
+          <iframe id="inlineFrameExample"
+              title="Demo Apps"
+              style="position:absolute;height:100%;width:100%;bottom:0;"
+              src="https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null">
+          </iframe>
+        </main>
+      </div>
+    </div>
+
+    {% include scripts.html %}
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#toc').toc({
+            listType: 'ul',
+            noBackToTopLinks: true,
+            title: '',
+            minimumHeaders: 1,
+            headers: 'h2, h3, h4',
+            classes: {
+              list: 'toc-list',
+              item: 'toc-item'
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  @media (max-width: 767px) { 
+    .bd-sidebar{
+      height: 70px;
+    }
+
+    .bd-content{
+      position:absolute;
+      top:70px;
+      bottom:0px
+    }
+   }
+</style>
