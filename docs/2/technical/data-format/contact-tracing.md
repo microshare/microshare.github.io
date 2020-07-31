@@ -37,9 +37,9 @@ The Microshare® Contact Tracing solution functions as follows:
 - originatingDeviceBattery- Voltage level of detecting wearable
 - detectingDevice- ID of device that contact was made with
 - startTime- starting time of contact in UTC
-- start- offset in minutes from recieving time that contact began
+- start- offset in minutes from receiving time that contact began
 - duration- length of contact in minutes 
-- edndTime- ending time of contact in UTC
+- endTime- ending time of contact in UTC
 - locationBeacon- true if contact was with beacon device, false if wearable
 - averageRSSI- average RSSI over the contact period
 
