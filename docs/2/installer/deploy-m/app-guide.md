@@ -6,7 +6,7 @@ group: deploy-m
 toc: true
 ---
 
-Get your Internet of Things data workflow started with the following steps:
+##### Get your Internet of Things data workflow started with the following steps:
 
 ---------------------------------------
 
@@ -22,6 +22,7 @@ Get your Internet of Things data workflow started with the following steps:
 ---------------------------------------
 
 ## 1. Requirements
+---------------------------------------
 
 To be able to use the Deploy-M application some prerequisites are necessary. 
 To start, a Microshare® account is required, either from our Production or Development platform. 
@@ -33,7 +34,7 @@ You can create a device cluster by following [this guide](/docs/2/technical/micr
 Finally you need to add your devices to the Microshare® platform. It is recommended to have devices with Microshare® QR codes to save time with the Deploy-M application.
 
 ## 2. Sign In
-
+---------------------------------------
 Now that all you are ready, let's start!
 
 Launch the application Deploy-M on your smartphone, and you will see this first page : 
@@ -51,6 +52,7 @@ However, if you want to use the development server, you have to login as we did.
 And then you change the "Development Server" switch, and then log out, so you can log in with your development server credentials now. 
 
 ## 3. Access to device cluster
+---------------------------------------
 
 As mentioned before, you are now on the device cluster management page, so you can see all the device clusters in your account. 
 
@@ -63,6 +65,7 @@ You can select one of them and see all your devices within the cluster. Now we c
 
 
 ## 4. Add a device
+---------------------------------------
 
 We will now add a device. To do so, just click on the add button at the bottom of the application.
 
@@ -93,6 +96,7 @@ Once filled, simply save the sensor and it is added to the cluster device.
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M10.PNG" description="Deploy-M App" %}
 
 ## 5. Change a device
+---------------------------------------
 
 To modify a sensor, simply click on the desired sensor: 
 
@@ -101,6 +105,7 @@ To modify a sensor, simply click on the desired sensor:
 Modify the information, or click on "Rescan" to scan a different device instead of this one for this location, and then validate by clicking on "Save".
 
 ## 6. Delete a device
+---------------------------------------
 
 To delete a sensor just swipe left over the sensor concerned, and click on delete :
 

@@ -10,14 +10,14 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Register for a Microshare.io account](./#1-register-for-a-microshareio-account)
-    - A. [Development or Production](./#a-development-or-production)
-    - B. [Registration](./#b-registration)
+- [Register for a Microshare.io account](./#register-for-a-microshareio-account) 
+    * A. [Development or Production](./#a-development-or-production) 
+    * B. [Registration](./#b-registration)
 
 ---------------------------------------
 
 
-## 1. Register for a Microshare.io account
+## Register for a Microshare.io account
 ---------------------------------------
 
 ### A. Development or Production

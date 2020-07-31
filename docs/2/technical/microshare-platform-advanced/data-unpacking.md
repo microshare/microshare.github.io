@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Data Formatting
+title: Data Unpacking
 description: How your data is decrypted and delivered to you
 toc: true
 ---
@@ -8,38 +8,38 @@ toc: true
 ---------------------------------------
 ##### SUMMARY : 
 
-1. [What is Data Formatting?](./#1-what-is-data-formatting)
+1. [What is Data Upacking?](./#1-what-is-data-unpacking)
 2. [New Process](./#2-new-process)
-3. [Setting up Device Cluster for Data Formatting](./#3-setting-up-device-clsuter-for-data-formatting)
-4. [How does the Data Formatting Process Work?](./#4-how-does-the-data-formatting-process-work)
-5. [Set up your platfrom to post the data](./#5-set-up-your-platform-to-post-the-data)
+3. [Setting up Device Cluster for Data Unpacking](./#3-setting-up-device-clsuter-for-data-unpacking)
+4. [How does the Data Unpacking Process Work?](./#4-how-does-the-data-unpacking-process-work)
+5. [Set up your platform to post the data](./#5-set-up-your-platform-to-post-the-data)
 6. [Contact Tracing](./#6-contact-tracing)
 7. [What's next?](./#7-whats-next)
 
 
 
-## 1. What is Data Formatting?
+## 1. What is Data Unpacking?
 ---------------------------------------
 
-Data formatting or processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your dashboard.  
+Data unpacking is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your dashboard.  
 
 ## 2. New Process
 ---------------------------------------
 
-Microshare® used to perform data formatting with a series of robots, but have hence engineered a new solution for representing your data through device clusters. You can learn a lot more about how Microshare® used to format data in the [Data Formatting by Robots](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots) page.
+Microshare® used to perform data unpacking with a series of robots, but have hence engineered a new solution for representing your data through device clusters. You can learn a lot more about how Microshare® used to unpack data in the [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots) page.
 
 ## 3. Setting up the Device Cluster for Data Ingestion
 ---------------------------------------
 
-[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the device cluster. The data formatting page will be a more in depth description regarding the numerous parameters for the device cluster. 
+[The Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/) serves as a great tutorial for walking you through the process of setting up the device cluster. The data unpacking page will be a more in depth description regarding the numerous parameters for the device cluster. 
 
-## 4. How does the Data Formatting Process Work?
+## 4. How does the Data Unpacking Process Work?
 ---------------------------------------
 
 After completing the source and target recTypes, the next set of information that you give relates to the devices themselves. When you give the device model specifications, it automatically fills out the device payload unpacker.
 
 
-{% include image.html url="/assets/img/data-formatting-1.png" description="DF1" %}
+{% include image.html url="/assets/img/data-unpacking-1.png" description="DF1" %}
 
 The device model specifications catagory is marked in green and the device payload unpacker is marked in blue. The device payload unpacker is specific to the format of information that you device sends, and relates to the specific function that  decrypts your information. 
 
@@ -55,4 +55,4 @@ Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gatew
 ## 5. What's next?
 ---------------------------------------
 
-Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and format your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and unpack your data automatically.  

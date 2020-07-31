@@ -6,6 +6,10 @@ toc: true
 ---
 
 ---------------------------------------
+#### Summary:
+1. [Overview](./#overview)
+2. [Unpacking](./#unpacking)
+3. [Contact Tracing Examples](./#contact-tracing-example-data)
 
 
 
@@ -21,6 +25,8 @@ The Microshare® Contact Tracing solution functions as follows:
 - If beacons are detected nearby (within 2 meters for 10 minutes), then an event is recorded
 - Data includes id of nearby device, voltage, average RSSI, contact duration & relative timestamp
 
+## Unpacking
+---------------------------------------
 
 #### Unpacking and Outputting the data
 
@@ -43,7 +49,8 @@ The Microshare® Contact Tracing solution functions as follows:
 - locationBeacon- true if contact was with beacon device, false if wearable
 - averageRSSI- average RSSI over the contact period
 
-### Contact Tracing Example Data
+## Contact Tracing Example Data
+---------------------------------------
 
 {% highlight java %}
   {

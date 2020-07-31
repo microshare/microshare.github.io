@@ -23,10 +23,11 @@ toc: true
 ---------------------------------------
 
 ## 1. What is a Rule? 
-
+---------------------------------------
 A Rule is a concrete expression of a sharing policy. It allows a data owner to set the conditions in which a requested operation will be granted. Rules only allow sharing. Rules do not prevent sharing. Sharing is blocked by default.
 
 ## 2. Creating a Rule
+---------------------------------------
 Rules can be created via our API or through the Rule editor in the Composer Console. To get the the Rule editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left-side of the page. Select the "Rules" panel navigator on the left to see a view of all of your defined Rules. 
 
 {% include image.html url="/assets/img/composer-rule-ruleindex1.jpg" description="Rule Index - Card View" %}
@@ -79,36 +80,53 @@ The image below displays where the user will determine whom the Rule applies to:
 
 The **User** dropdown has three options:
 
-1. All (*) - This will make the Rule apply to all users
-2. Exact Match to Owner (=) - This will make the Rule apply only to the owner of the Rule
-3. Specific Value - This will make the rule apply only to accounts entered here
+**1.** All (*) - This will make the Rule apply to all users
 
+**2.** Exact Match to Owner (=) - This will make the Rule apply only to the owner of the Rule
+
+**3.** Specific Value - This will make the rule apply only to accounts entered here
+
+<br>
 The **Organization** dropdown has four options:
 
-1. All (*) - This will make the Rule apply to all organizations.
-2. Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization.
-3. Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization.
-4. Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule.
-5. Specific Value - This will make the rule apply only to the organization entered here.
+**1.** All (*) - This will make the Rule apply to all organizations.
 
+**2.** Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization.
+
+**3.** Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization.
+
+**4.** Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule.
+
+**5.** Specific Value - This will make the rule apply only to the organization entered here.
+
+
+<br>
 The **APIKey/AppId** dropdown has three options:
 
-1. All (*) - This will make the Rule apply to all APIKeys.
-2. Exact Math to Owner (=) - This will make the Rule only apply in conjunction with an API key belonging to the owner of the Rule.
-3. Specific Value - This will make the rule apply only to an APIKey entered here.
+**1.** All (*) - This will make the Rule apply to all APIKeys.
+
+**2.** Exact Math to Owner (=) - This will make the Rule only apply in conjunction with an API key belonging to the owner of the Rule.
+
+**3.** Specific Value - This will make the rule apply only to an APIKey entered here.
 
 The **Role** dropdown has three options:
 
-1. All (*) - This will make the Rule apply to all Roles.
-2. Exact Match to Owner (=) - This will make the Rule apply to the same Role as the owner.
-3. Specific Value - This will make the Rule apply only to the Role entered here.
+**1.** All (*) - This will make the Rule apply to all Roles.
+
+**2.** Exact Match to Owner (=) - This will make the Rule apply to the same Role as the owner.
+
+**3.** Specific Value - This will make the Rule apply only to the Role entered here.
 
 The **Location** dropdown has two options:
 
-1. All (*) - This will make the Rule apply to all Roles.
-2. Ring-fence Polygon - Here a user can set a geographical area in which a Rule will apply to a user.
+**1.** All (*) - This will make the Rule apply to all Roles.
+
+**2.** Ring-fence Polygon - Here a user can set a geographical area in which a Rule will apply to a user.
+
+<br>
 
 ## 3. Simulating a Rule
+---------------------------------------
 
 Rule Simulation is a good way to explore the impact of different settings on Operation Grant outcomes.
 
@@ -135,6 +153,7 @@ You can change the terms of your Rule and rerun your simulation at any time. The
 {% include image.html url="/assets/img/composer-rule-rulesimulation4-1.jpg" description="Rule Simulation Panel" %}
 
 ## 4. Best Practices for Sharing Rules
+---------------------------------------
 
 <!--Link to Creating a guest app-->
 When deciding to share data, it is always better to share less than share more. Yo can always create another rule that allows more access later on if requested. 

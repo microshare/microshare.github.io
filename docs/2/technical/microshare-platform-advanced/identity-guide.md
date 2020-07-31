@@ -33,15 +33,21 @@ And here's the difference, applications will follow the identity, but the data i
 ---------------------------------------
 
 To switch identities, you must:
-* Navigate and log into the Console screen at [https://app.microshare.io](https://app.microshare.io).
 
-* Click on the person icon in the top right corner of the Console screen.
+<br>
+**1.** Navigate and log into the Console screen at [https://app.microshare.io](https://app.microshare.io).
 
+<br>
+**2.** Click on the person icon in the top right corner of the Console screen.
+
+<br>
 {% include image.html url="/assets/img/access-my-apps/microshare-identity.png" description="Profile Pic" %}
 
-* Select the "Construction" identity.
+<br>
+**3.** Select the "Construction" identity.
 
-* View the apps under your identity.
+<br>
+**4.** View the apps under your identity.
 
 ## 3. Some tips: 
 ---------------------------------------

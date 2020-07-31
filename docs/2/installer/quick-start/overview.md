@@ -9,16 +9,16 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What needs to be installed?](./#1-what-needs-to-be-installed)
-2. [Requirements](./#2-requirements)
-3. [Steps](./#3-steps)
+1. [What needs to be installed?](./#what-needs-to-be-installed)
+2. [Requirements](./#requirements)
+3. [Steps](./#steps)
 
 ---------------------------------------
 
 
 
 
-## 1. What needs to be installed?
+## What needs to be installed?
 ---------------------------------------
 
 The purpose of an installation is to allow the customer to use the data from the installed sensors as quickly as possible. 
@@ -46,7 +46,7 @@ During the process of installation, it is crucial that you confirm that both the
 
 
 
-## 2. Requirements
+## Requirements
 ---------------------------------------
 
 To ensure proper installation it is best to check a few points:
@@ -61,7 +61,7 @@ Before installation you should...
 - Have all the necessary fixations for sensors and gateways (3M Stickers, Tabs Brackets, Velcro stickers ...).
 - Have all the necessary tools for installation.
 
-## 3. Steps
+## Steps
 ---------------------------------------
 
 To set up your system, you will: 

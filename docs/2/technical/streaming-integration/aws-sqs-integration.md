@@ -6,20 +6,32 @@ toc: true
 ---
 
 ---------------------------------------
+#### Summary:
+1. [Overview](./#overview)
+2. [Necessary Information](./#necessary-information)
+3. [Basic Architecture](./#basic-architecture)
+4. [Architecture References](./#architectures-references)
+
+
+---------------------------------------
+
 
 ## Overview
+---------------------------------------
 
 AWS SQS Integration is a streaming data integration that pushes data from the Smart Network into a client's AWS tenancy in real-time. Data is typically made available to an SQS queue with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. AWS SQS Integration creates a pathway to advanced storage, visualization, and analytics in the AWS Cloud ecosystem from the Microshare Smart Network. 
 
 ## Necessary Information 
+---------------------------------------
 
 In order to configure the AWS SQS Integration for you, your support contact will need the dedicated credentials via .csv file as well as the URL value found on the Details tab of your SQS queue. More information is included below. 
 
 ## Basic Architecture
+---------------------------------------
 
 The typical architecture for streaming data within the AWS environment using the AWS SQS Integration will leverage either AWS SNS to create a publish/subscribe infrastructure and/or AWS Lambda functions triggered by the arrival of new queue messages.  
 
-#### Architecture References 
+### Architecture References
 
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-subscribe-queue-sns-topic.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-subscribe-queue-sns-topic.html)
 
@@ -27,14 +39,15 @@ The typical architecture for streaming data within the AWS environment using the
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-lambda-function-trigger.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-lambda-function-trigger.html)
 
 ## Setup
+---------------------------------------
 
-#### Requirements
+### Requirements
 
 A. SQS (1 or more) (for receiving records) 
 
 B. IAM API-Only User – Externally accessible (for injecting records) 
 
-#### A) SQS Setup
+### A) SQS Setup
 
 {% include image.html url="\assets\img\aws-sqs\sqs1.png" description="aws sqs 1 " %}
 
@@ -44,7 +57,7 @@ AWS SQS Integration supports both Standard and Fifo Queue types but Fifo is reco
 
 {% include image.html url="\assets\img\aws-sqs\sqs3.png" description="aws sqs 3 " %}
 
-#### B) IAM User Setup
+### B) IAM User Setup
 
 {% include image.html url="\assets\img\aws-sqs\sqs4.png" description="aws sqs 4 " %}
 
@@ -52,14 +65,14 @@ Name the AWS User descriptively in compliance with your internal standards.
 
 Grant minimum necessary permissions via Group, Custom Policy, or by Attach existing policies as mandated by your internal standards. Suggestions for setting Permissions are provided below for guidance. The absolute minimum policy would allow the new user to perform SendMessage & SendMessageBatch actions on the specific resource (ARN) created above.  
 
-#### Basic Recommendation: Fastest, but less secure.
+### Basic Recommendation: Fastest, but less secure.
 
 {% include image.html url="\assets\img\aws-sqs\sqs5.png" description="aws sqs 5 " %}
 
 
 {% include image.html url="\assets\img\aws-sqs\sqs6.png" description="aws sqs 6" %}
 
-#### Advanced Recommentation: More steps, but mroe secure.
+### Advanced Recommentation: More steps, but mroe secure.
 
 
 {% include image.html url="\assets\img\aws-sqs\sqs7.png" description="aws sqs 7 " %}
@@ -103,17 +116,17 @@ At the success screen, use the “Download .csv” button to capture the unique 
 
 Your Microshare Service or Support contact will need the .csv file. It is recommended that this information be sent securely via GPG encrypted email or through an encrypted chat connection using keybase.io.  
 
-#### Setup References
+### Setup References
 
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-setting-up.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-setting-up.html)
 
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html)
 
 ## Security
-
+---------------------------------------
 As with most AWS facilities, SQS supports authentication and authorization using revocable IAM user credentials and access policies which allow the client full control over the write permissions for the SQS queue and positively identifies the Smart Network access. Data is encrypted on the network by default with SQS and can be configured to encrypt at REST within AWS. Because the Smart Network originates outside of the corporate networks, Network Security restrictions on write operations are not possible on the inbound network endpoint.  
 
-#### Security References
+### Security References
 
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html)
 

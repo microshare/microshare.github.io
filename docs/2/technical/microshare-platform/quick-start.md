@@ -19,7 +19,7 @@ toc: true
     - E. [Identities](./#e-identities)
     - F. [Robots](./#f-robots)
     - G. [Data Ingestion](./#g-data-ingestion)
-    - H. [Data Formatting](./#h-data-formatting) 
+    - H. [Data Unpacking](./#h-data-unpacking) 
 
 ---------------------------------------
 
@@ -48,7 +48,7 @@ Device clusters give you the ability to group data from sensors together. This i
 
 ### B. Views
 
-A view is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats. Views also put controls over data along with sharing rules. You can learn how to create and manage views through the [Views Guide](/docs/2/technical/microshare-platform/views-guide/).
+A view is a component for managing your data access. It lets you send static data, query the data lake, manage content and format data. Views also put controls over data along with sharing rules. You can learn how to create and manage views through the [Views Guide.](/docs/2/technical/microshare-platform/views-guide/)
 
 ### C. Dashboards
 
@@ -68,9 +68,9 @@ Robots give the ability to automate certain tasks for your data. For example, yo
 
 ### F. Data Ingestion
 
-[The Data Ingestion Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-guide/) will walk you through moving your data from several sources to the Microshare® data lake as microshares. Additionally, you can create a robot to automatically perform this task using [The Data Ingestion by Robots Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/).
+[The Data Ingestion Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-guide/) will walk you through moving your data from several sources to the Microshare® data lake as microshares. Additionally, you can create a robot to automatically perform this task using [The Data Ingestion by Robots Guide.](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
 
-### F. Data Formatting
+### F. Data Unpacking
 
-You can set up automated multi- step processes to route and transform your data so it’s ready to be consumed by an app or a dashboard using [The Data Formatting Guide](/docs/2/technical/microshare-platform-advanced/data-formatting/) and automate this task using the [The Data Formatting with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-formatting-by-robots/).
+You can set up automated multi- step processes to route and transform your data so it’s ready to be consumed by an app or a dashboard using [The Data Unpacking Guide](/docs/2/technical/microshare-platform-advanced/data-unpacking/) and automate this task using the [The Data Unpacking with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/).
 

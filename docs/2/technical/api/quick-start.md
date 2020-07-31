@@ -18,6 +18,7 @@ toc: true
 
 ---------------------------------------
 ## 1. Introduction
+---------------------------------------
 
 You will us the Microshare® API to set up your interactions with the Microshare® platform through requests. The API is where the data from your devices is interpreted and configured per your request and where we communicate with the Microshare® platform. This guide will walk you through setting up the Postman software to interact with the API and start operating with the Microshare® platform.
 
@@ -43,21 +44,36 @@ This step is optional if you already have another way of invoking the API. In wh
 
 Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare® API collection.
 
-* Visit our [API documentation page](../api-collection/)
+<br>
+**1.** Visit our [API documentation page](../api-collection/)
 
-* Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
+<br>
+**2.** Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
 **If that fails**, go to [the Postman website](https://www.getpostman.com/) to install Postman manually, then download and import the collection and environment from our [API documentation page](../api-collection/).
 
-* Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
+<br>
+**3.** Open Postman on your computer. It will prompt you with a `Create New` modal, just close it.
+
+<br>
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
 
-* To see the Microshare® Postman **collection**, click on `Collections` on the left hand pane.
-* To configure your Microshare® **environment**, select the cog icon situated at the top right of the screen.  
-Then `Manage Environments`, then click on `microshare`.{% include image.html url="/assets/img/configure-postman-2new.png" description="Collection adn Environment config" %}
+<br>
+**4.**To see the Microshare® Postman **collection**, click on `Collections` on the left hand pane.
 
-* In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
-{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
+<br>
+**5.** To configure your Microshare® **environment**, select the cog icon situated at the top right of the screen.Then `Manage Environments`, then click on `microshare`.
 
+<br>
+{% include image.html url="/assets/img/configure-postman-2new.png" description="Collection and Environment config" %}
+
+<br>
+**6.** In the environment configuration, paste your the API key in the apikey field, and enter your username and password in the corresponding fields. 
+
+<br>
+{% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}
+{% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
+
+<br>
 That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
 
 ###### > [Authentication](../authentication)
@@ -71,8 +87,10 @@ To let you try out our API system, we have created demo APIs.
 To try them out, you will need a Microshare® account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you don't have one. 
 
 Then you will need to create your API key and Postman setup as described above.
-1. [Get an API key](./#1-get-an-api-key)
-2. [Setup Postman](./#2-setup-postman) 
+<br>
+**1.** [Get an API key](./#1-get-an-api-key)
+<br>
+**2.** [Setup Postman](./#2-setup-postman) 
 
 Once this is done you will need to follow the [authentication tutorials](../authentication). 
 

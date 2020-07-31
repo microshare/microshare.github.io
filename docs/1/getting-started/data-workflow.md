@@ -219,9 +219,9 @@ Below is an example of Payload decoding, ending up in writing a new record in th
   }
 {% endhighlight %}
 
-## Data Formatting
+## Data Unpacking
 
-Data formatting in a Robot allows you to identify interesting records, and format the data to be used in your report, App or Dashboard.  
+Data unpacking in a Robot allows you to identify interesting records, and format the data to be used in your report, App or Dashboard.  
 Below is an example of a Robot passing only high CO2 records.
 
 {% highlight js %}
@@ -293,7 +293,7 @@ At Microshare.io we usually represent data workflows with [draw.io](https://www.
 
  Step 1 above would use the snippet from the [Data Parsing](#data-parsing)  
  Step 2 uses the snippet from the [Data Transformation](#data-transformation)  
- Step 3 uses the snippet from the [Data Formatting](#data-formatting)   
+ Step 3 uses the snippet from the [Data Unpacking](#data-unpacking)   
  Step 4 uses the View query:  
 {% highlight JSON %}
   [
