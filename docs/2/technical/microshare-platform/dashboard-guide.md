@@ -101,7 +101,7 @@ It is best to give the facts in JSON code format. To do so, simply click on the 
 ### App Facts
 
 
-##### > [App Facts Page](/docs/2/technical/microshare-platform/example-json-links)
+##### > [App Example](/docs/2/technical/microshare-platform/app-config-examples/trending-air-quality/)
 
 <br>
 

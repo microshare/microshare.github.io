@@ -7,7 +7,7 @@ toc: true
 
 ## What is a Data Workflow?
 You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
-This is called a data workflow. The automated actions are managed by [Robots](docs/2/technical/microshare-platform-advanced/robot-guide), and the access to transformed data is granted with [Rules](docs/2/technical/microshare-platform/rules-guide).  
+This is called a data workflow. The automated actions are managed by [robots](/docs/2/technical/microshare-platform-advanced-robots-guide), and the access to transformed data is granted with [Rules](docs/2/technical/microshare-platform/rules-guide).  
 In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
 For an introduction to robots take a look at the [Robot Guide](docs/2/technical/microshare-platform-advanced/robot-guide)
