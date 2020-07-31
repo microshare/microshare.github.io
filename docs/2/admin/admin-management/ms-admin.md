@@ -22,7 +22,7 @@ toc: true
 
 Before starting to use the ms_admin account, you must understand what is shared with an indentity and what belongs to the ms_admin account. The [overview page](../overview) tackles these concepts in great detail. As the administrator with the ms_admin account, you have the responsibility of administrating and managing the corresponding identities. 
 
-##### As administrator, your first action will be to create the device clusters on Microshare®.
+#### A. As administrator, your first action will be to create the device clusters on Microshare®.
 
 {% include image.html url="/assets/img/cards/dc-card.png" description="Banner" width="200" %} 
 
@@ -30,10 +30,10 @@ You can add sensors using your computer or your Installer can quickly add device
 
 To learn how to create a device cluster, what they do and the best practices you should follow, use the following guide:
 
-###### > [Device Cluster Guide](/docs/2/technical/microshare-platform/device-cluster-guide/)
+###### > [Device Cluster Guide.](/docs/2/technical/microshare-platform/device-cluster-guide/)
 <br>
 
-##### The administrator also controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
+#### B. The administrator also controls a subset of their organization's data and can set [Rules](/docs/2/technical/microshare-platform/rules-guide/) to govern how much of that data their normal users can view. 
 
 {% include image.html url="/assets/img/cards/rule-card.png" description="Banner" width="200" %} 
 
@@ -42,7 +42,7 @@ Once the device clusters are created, you will receive data on the ms_admin acco
 To do share data you will create shares rules. Particularly to the identity who will use this data. So you will share the data of a cluster device only to the group of people registered to the selected identity. They will be able to use the data with the applications of the identity.
 <br>
 
-##### The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/).
+#### C. The administrator also has the ability to own [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/).
 
 {% include image.html url="/assets/img/cards/robot-card.png" description="Banner" width="200" %} 
 
@@ -53,7 +53,7 @@ People accessing the identity according to the rights you have given them with t
 But it is still advisable to have the general robots on the ms_admin account. This way you can simply make the email alerts be received by other users from one and the same robot.
 <br>
 
-##### The administrator also has the ability to own [Apps](/docs/2/technical/microshare-platform/dashboard-guide/).
+#### D. The administrator also has the ability to own [Apps](/docs/2/technical/microshare-platform/dashboard-guide/).
 
 {% include image.html url="/assets/img/cards/app-card.png" description="Banner" width="200" %} 
 

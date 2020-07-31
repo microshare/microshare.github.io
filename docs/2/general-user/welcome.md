@@ -14,15 +14,15 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Introduction](./#1-introduction)
-2. [Quick Links](./#2-quick-links)
-3. [Platform](./#3-platform)
+1. [Introduction](./#introduction)
+2. [Quick Links](./#quick-links)
+3. [Platform](./#platform)
 
 ---------------------------------------
 
 
 
-## 1. Introduction
+## Introduction
 ---------------------------------------
 
 Microshare® makes it easy for you to work with shareable data. Once your data is uploaded on our platform, we provide all the tools you need to transform, visualize and share the data.
@@ -37,7 +37,7 @@ While reading this documentation if you encounter any issues or have any feedbac
 #### For updates on the Microshare® Platform's Release dates, please refer to the [Management Console Access Page](https://www.microshare.io/management-console-access/).
 
 
-## 2. Quick Links
+## Quick Links
 ---------------------------------------
 
 Within Microshare® there are several profiles, but they all share one thing in common: They all have a Microshare® account. 
@@ -52,7 +52,7 @@ Then there are profiles more advanced than the user, there are the following pro
 #####  > [Admin](../../admin/admin-management/overview)
 #####  > [Technical](../../technical/quick-start/overview)
 
-## 3. Platform
+## Platform
 ---------------------------------------
 
 The Microshare® platform is comprised of two cooperating clusters of microservices: **Microshare® Core** and **Microshare® Stream**.

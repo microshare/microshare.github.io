@@ -16,7 +16,8 @@ toc: true
 
 ---------------------------------------
 
-# Overview
+## Overview
+---------------------------------------
 
 Azure IoT Hub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Azure tenancy in real-time. Data is typically made available to an IoT Hub with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. Azure IoT Hub Integration creates a pathway to advanced storage, visualization, and analytics in the Microsoft Azure ecosystem from the Microshare® Smart Network. Use Azure IoT Hub to standardize your IoT data pipelines, integrate with Azure Digital Twins, and take advantage of advanced device health services.
 
@@ -25,26 +26,35 @@ Azure IoT Hub Integration is a streaming data integration that pushes data from 
 In order to configure the Azure IoT Hub Integration for you, your support contact will need the connectivity endpoint and credentials labelled as the &quot;Primary Connection String&quot; for a dedicated IoT Device entry from the Azure Portal or output from ARM/Terraform execution. More information is included below.
 
 ## Basic Architecture
+---------------------------------------
 
 The typical architecture for streaming data within the Azure environment using the Azure IoT Hub Integration will include components for:
 
-1. Cold Path Storage – long-term, low-cost raw data storage in either JSON or Avro formats. Data is typically stored in time-series files with each data stream (recType) segregated into unique files.
-2. Warm Path Processing – mid-term, relational data that will typically be used to feed visualization tools via SQL storage.
-3. Operational Path – Used to trigger downstream business processes in real-time. Typically involves notifications, invocation of human workflows, and the updated of asset records to reflect current state.
+**1.** Cold Path Storage – long-term, low-cost raw data storage in either JSON or Avro formats. Data is typically stored in time-series files with each data stream (recType) segregated into unique files.
 
+<br>
+**2.** Warm Path Processing – mid-term, relational data that will typically be used to feed visualization tools via SQL storage.
+
+<br>
+**3.** Operational Path – Used to trigger downstream business processes in real-time. Typically involves notifications, invocation of human workflows, and the updated of asset records to reflect current state.
+
+<br>
 {% include image.html url="/assets/img/azure-iot-hub/Azure_downstream_architecture.png" description="Azure downstream architecture" %}
 
 Example Azure IoT Hub downstream architecture
 
 ## Setup
+---------------------------------------
 
 If you already use IoT Hub in your organization, an existing IoT Hub may be reused. If so, skip to Creating a Device. If not, continue with the following steps to create a new IoT Hub within your Azure tenancy.
 
 The steps will be:
 
-1. Setup an IoT Hub
-2. Create a device entry
-3. Copy device Primary Connection String
+**1.** Setup an IoT Hub.
+<br>
+**2.** Create a device entry.
+<br>
+**3.** Copy device Primary Connection String.
 
 ### Step 1: Setup an IoT Hub
 
@@ -58,7 +68,7 @@ The default Networking option should be Public endpoint. This is the necessary s
 
 For most installations, the S1: Standard Tier should be sufficient to begin using the Microshare IoT Hub Integration. For installations involving more than 1000 devices, consult Microshare Services contact.
 
-(See [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling) for additional details.)
+(See [the Azure website](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling) for additional details.)
 
 ### Step 2: Create a device entry
 
@@ -89,7 +99,7 @@ This key should remain private. Do not transmit or store the key in an unsecure 
 [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling)
 
 ## Security
-
+---------------------------------------
 As with most Azure facilities, IoT Hub supports authentication and authorization through Share Access Signatures (SAS) which allow the client full control over the write permissions for each configured IoT device. The SAS (aka Primary Connection String) positively identifies the Smart Network access. Data is encrypted on the network and at rest by default with the IoT Hub. Logging and monitoring of both data and management activity is available on the IoT Hub. Because the Smart Network originates outside of the corporate networks, Network Security restrictions on write operations are not possible on the inbound network endpoint. Restriction of internal network access is possible. Consult a Microsoft Certified partner for more information.
 
 ### Security References

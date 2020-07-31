@@ -22,26 +22,26 @@ The following is an example of JSON code for a Touchfree App.
   "getRecType": "io.microshare.fm.master.agg",
   "dataRecType": "io.microshare.feedback.event.meta",
   "dataContext": "toilet",
-  "queryId": "5e74cd8b46e0fb0028a3bd03",  
+  "queryId": "5e74cd8b46e0fb0028a3????",  
   " ": "end optional parameters",
   "backboardRules": [
       {
           "metaTags": [
               "bed"
           ],
-          "backboardId": "5ea048da46e0fb0029a7244e"
+          "backboardId": "5ea048da46e0fb0029a7????"
       },
       {
           "metaTags": [
               "toilet"
           ],
-          "backboardId": "5ea0488146e0fb002a074145"
+          "backboardId": "5ea0488146e0fb002a07????"
       },
       {
           "metaTags": [
               "room"
           ],
-          "backboardId": "5ea0495946e0fb002a0741ae"
+          "backboardId": "5ea0495946e0fb002a07????"
       }
   ]
 }
