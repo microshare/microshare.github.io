@@ -67,8 +67,8 @@
     - title: Identity Guide
     - title: Robots Guide
     - title: Data Ingestion
-    - title: Data Formatting
-    - title: Data Formatting by Robots
+    - title: Data Unpacking
+    - title: Data Unpacking by Robots
     - title: Robots library
   - title: API
     pages:

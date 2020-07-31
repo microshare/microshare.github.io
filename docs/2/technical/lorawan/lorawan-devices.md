@@ -10,7 +10,7 @@ toc: true
 
 1. [Introduction](./#1-introduction)
 2. [Types of Devices](./#2-types of devices)
-3. [DEvices Microshare® Uses](./#3-devices-microshare-uses)
+3. [Devices Microshare® Uses](./#3-devices-microshare-uses)
 - A. [Browan Devices](./#a-browan-devices)
 - B. [Kerlink Wave](./#b-kerlink-wave)
 - C. [Skiply Smilio Action Feedback devices](./#c-skiply-smilio-action-feedback-devices)
@@ -37,7 +37,7 @@ Have more questions on Microshare®'s solutions? Please refer to our [main page]
 
 ### A. Motion Devices
 
-Motion devices have a variety of applications throughout you environment. Motions devices have been used to provide desk occupancy, room occupancy, smart parking, predictive cleaning and activity level monitoring solutions. 
+Motion devices have a variety of applications throughout you environment. Motion devices have been used to provide desk occupancy, room occupancy, smart parking, predictive cleaning and activity level monitoring solutions. 
 
 ### B. Temperature and Humidity Devices
 

@@ -54,7 +54,7 @@ Once you have set yourself up in the developer environment, follow the next step
 
 #### Views
 
-[A View](/docs/2/technical/microshare-platform/views-guide/) is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules. 
+[A View](/docs/2/technical/microshare-platform/views-guide/) is a component for managing your data access. It lets you send static data, query the data lake, manage content and puts controls over data elements along with sharing rules. 
 
 #### Dashboard
 

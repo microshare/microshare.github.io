@@ -5,19 +5,26 @@ description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
+
+---------------------------------------
+
+
 #### Summary:
----------------------------------------
+
 1. [Introduction](./#introduction)
-2. [First Example]
-3. [Go Further](./#3-go-further)
+2. [First Example](./#first-example)
+3. [Go Further](./#go-further)
+
 ---------------------------------------
-## 1. Introduction
+
+
+## Introduction
 ---------------------------------------
 
 To best use Microshare® data, it is important to understand how the data is structured,
  particularly for use of views, robots, APIs and the creation of Applications.
 
-As described in the Microshare® Platform Advanced section, data formatting follows data ingestion. But what does this mean in terms of data? 
+As described in the Microshare® Platform Advanced section, data unpacking follows data ingestion. But what does this mean in terms of data? 
 
 When the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
 
@@ -26,7 +33,7 @@ RecTypes are further explored in the [API Collection page](http://localhost:4000
 This guide serves to help you discern the different components of a Microshare® data payload. 
 
 
-## 2. First Example
+## First Example
 ---------------------------------------
 
 To start with something simple we'll take the piece of data we generated with the API tutorial: [API Simple Requests](/docs/2/technical/api/simple-requests/#2-write-data).
@@ -207,7 +214,7 @@ The ownership of the data is an essential part of the data, here you will find w
 
 The additional information in the `appid` corresponds to the app-key that is used to create the data. The app- key creates a token or pipe token to securely create the data. 
 
-## 3. Go further
+## Go further
 ---------------------------------------
 
 
