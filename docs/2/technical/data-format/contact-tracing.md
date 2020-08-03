@@ -25,11 +25,18 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 - Personal beacons record a contact event while in the proximity of other personal/location beacons if the following conditions are met:
   - Contact is seen at least 4/7 times within the sliding contact window.
   - Contact has an RSSI level equal to or greater than the -70dBm RSSI threshold.
-- Wave devices retrieve contact events from personal beacons via BLE transport. 
-- Upon successful retrieval, the personal beacons memory and clock is reset.
+- Wave device retrieves contact events from personal beacons via BLE transport. 
+  - Upon successful retrieval, the personal beacons memory and clock is reset.
 - Wave transmits data to LoRaWAN gateway via LoRaWAN transport.
 - Microshare® Smart Network receives and processes the raw payload data.
   - Processed event contact data includes id of the beacon, voltage, average RSSI, contact duration & relative timestamp.
+
+## Dataflow
+
+1. Beacon to Beacon via BLE transport, we expect some data loss due to BLE collisions or missing an advertisement due to timing. This is averted by using the contact threshold of 4/7 times within the sliding contact window.
+2. Beacon to Wave via BLE transport, wave only resets the personal beacon upon successful retrieval of contact event data.
+3. Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
+4. Microshare® Smart Network receives and processes the raw payload data. Data has been stored within Microshare® database and therefore can be re-played if required.
 
 ## Unpacking
 ---------------------------------------
@@ -40,20 +47,20 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 
 #### Unpack data from wave devices
 
-- Determine if beacon is a location beacon or wearable.
-- Calculate start/ end time from relative timestamps.
+- Determine if beacon is a location beacon or personal.
+- Calculate start/end time from relative timestamps.
 - Flatten record into individual events.
 
 #### Output event data 
-- originatingDevice- Id of wearable that detected a contact
-- originatingDeviceBattery- Voltage level of detecting wearable
-- detectingDevice- ID of device that contact was made with
-- startTime- starting time of contact in UTC
-- start- offset in minutes from receiving time that contact began
-- duration- length of contact in minutes 
-- endTime- ending time of contact in UTC
-- locationBeacon- true if contact was with beacon device, false if wearable
-- averageRSSI- average RSSI over the contact period
+- originatingDevice- Id of personal beacon that detected a contact event.
+- originatingDeviceBattery- Voltage level of personal beacon.
+- detectingDevice- ID of personal beacon that contact event was made with.
+- startTime- starting time of contact in UTC.
+- start- offset in minutes from receiving time that contact event began.
+- duration- length of contact event in minutes.
+- endTime- ending time of contact in UTC.
+- locationBeacon- true if contact was with location beacon, false if personal beacon.
+- averageRSSI- average RSSI over the contact event duration.
 
 ## Contact Tracing Example Data
 ---------------------------------------
