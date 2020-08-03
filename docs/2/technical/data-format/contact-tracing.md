@@ -38,7 +38,7 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 3. Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
 4. Microshare® Smart Network receives and processes the raw payload data. Data has been stored within Microshare® database .unpacked recType and therefore can be re-played if required.
 5. Microshare® Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
-6. Microshare® Smart Network robot flattens recorded contact events into individual events in .unpacked.event recType and therefore can be re-played if required.
+6. Microshare® Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
 7. Streamed to event hub using a streaming mechanism.......................
 
 ## Unpacking
