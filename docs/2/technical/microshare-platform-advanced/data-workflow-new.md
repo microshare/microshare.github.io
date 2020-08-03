@@ -10,7 +10,7 @@ You can set up automated multistep processes to route and transform your data so
 This is called a data workflow. The automated actions are managed by [robots](/docs/2/technical/microshare-platform-advanced-robots-guide), and the access to transformed data is granted with [Rules](docs/2/technical/microshare-platform/rules-guide).  
 In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
-For an introduction to robots take a look at the [Robot Guide](docs/2/technical/microshare-platform-advanced/robot-guide)
+For an introduction to robots take a look at the [Robot Guide.](docs/2/technical/microshare-platform-advanced/robot-guide)
 
 ## Read Data from the Data Lake
 
@@ -256,7 +256,7 @@ For example, at Microshare.io we like to log on our slack channel, below is an e
   lib.post(webhookURL, headers, body);
 {% endhighlight %}
 
-For more examples, see our [notification methods](/docs/1/advanced/robots-libraries/sending-notifications) and [calling external APIs methods](/docs/1/advanced/robots-libraries/making-restful-calls)
+For more examples, see our [notification methods](/docs/2/technical/microshare-platform-advanced/robots-libraries/sending-notifications-new) and [calling external APIs methods.](/docs/2/technical/microshare-platform-advanced/robots-libraries/making-restful-calls-new)
 
 ## Write Data to the Data Lake
 As shown above, each step of a workflow usually ends with writting a record in the data lake.  

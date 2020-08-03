@@ -39,7 +39,7 @@ Microshare® used to perform data unpacking with a series of robots, but have he
 After completing the source and target recTypes, the next set of information that you give relates to the devices themselves. When you give the device model specifications, it automatically fills out the device payload unpacker.
 
 
-{% include image.html url="/assets/img/data-unpacking-1.png" description="DF1" %}
+{% include image.html url="/assets/img/data-formatting-1.png" description="DF1" %}
 
 The device model specifications catagory is marked in green and the device payload unpacker is marked in blue. The device payload unpacker is specific to the format of information that you device sends, and relates to the specific function that  decrypts your information. 
 

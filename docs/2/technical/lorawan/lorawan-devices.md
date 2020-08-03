@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: LoRaWAN DEvices
+title: LoRaWAN Devices
 
 toc: true
 ---

@@ -14,7 +14,7 @@ var lib = require('./libs/helpers');
 function main(text, auth){
 
     /* Tabs Healthy Home Sensor Device*/
-    var healthyHomeSensorPayload = "00BA343338184A03";
+    var healthyHomeSensorPayload = "00BA34333818????";
 
     var decodedHealthyHomeSensorPayload = lib.decodeTabsHealthyHomeSensor(healthyHomeSensorPayload);
     print(decodedHealthyHomeSensorPayload);
@@ -40,7 +40,7 @@ function main(text, auth){
 
 
     /* Tabs Motion Sensor Device*/
-    var motionSensorPayload = "00BA050500242E10";
+    var motionSensorPayload = "00BA0505002????";
 
     var decodedMotionSensorPayload = lib.decodeTabsMotionSensor(motionSensorPayload);
     print(decodedMotionSensorPayload);
@@ -53,7 +53,7 @@ function main(text, auth){
 
 
     /* Tabs Object Locator Device*/
-    var objectLocatorPayload = "00BA050AA06102331885BB";
+    var objectLocatorPayload = "00BA050AA061023318????";
 
     var decodedObjectLocatorPayload = lib.decodeTabsObjectLocator(objectLocatorPayload);
     print(decodedObjectLocatorPayload);

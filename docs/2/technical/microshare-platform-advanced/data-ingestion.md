@@ -96,5 +96,5 @@ We will need the following information to configure the websocket:
 ## What's Next?
 ---------------------------------------
 
-After the data is injested into the lake, the data is then unpacked. This process is explained in detail in the [Data Formatting page](/docs/2/technical/microshare-platform-advanced/data-formatting/).
+After the data is injested into the lake, the data is then unpacked. This process is explained in detail in the [Data Unpacking page](/docs/2/technical/microshare-platform-advanced/data-unpacking/).
 

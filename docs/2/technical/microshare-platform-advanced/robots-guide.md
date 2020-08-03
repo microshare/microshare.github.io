@@ -25,10 +25,15 @@ toc: true
 ## 1. What's a Robot?
 ---------------------------------------
 A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into Microshare® to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
-1) easy to maintain, 
-2) fast and efficient with higher volumes, and 
-3) reusable in multiple projects.
- 
+
+<br>
+**1.** easy to maintain, 
+<br>
+**2.** fast and efficient with higher volumes, and 
+<br>
+**3.** reusable in multiple projects.
+
+<br>
 Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [data workflow](/docs/2/technical/microshare-platform-advanced/data-workflow-new). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robottic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io®. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
 
 Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
@@ -40,23 +45,24 @@ All Robots run in parallel (at the same time) and react to events as they occur.
 
 ## 2. What can I do with them?
 ---------------------------------------
-To keep your data workflow clear, we suggest each one of your Robots takes care of only one single action. Below are some typical use cases we identified.  
-[1. Data ingestion](docs/2/technical/microshare-platform-advanced/data-ingestion)  
+To keep your data workflow clear, we suggest each one of your Robots takes care of only one single action. Below are some typical use cases we identified.
+
+[1. Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion)
 For Robots tasked to pull or receive data sent by an external source.  
 * CSV files dropped in a target folder
 * active web socket connection to a remote server
 * interacting with an external service via API
 
-[2. Data parsing](docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-parsing)  
+[2. Data parsing](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-parsing)  
 Often managed with a Data Workflow to massage and enrich a bunch of records.  
   
-[3. Data transformation](docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-transformation)  
-Perfect for decoding a formatted IoT payload.  
+[3. Data transformation](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-transformation)  
+Perfect for decoding a packed IoT payload.  
   
-[4. Data unpacking](docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-unpacking)  
+[4. Data unpacking](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-unpacking)  
 Prepare your data to be used in a Dashboard.  
   
-[5. External services triggers](docs/2/technical/microshare-platform-advanced/data-workflow-new/#external-services-triggering)  
+[5. External services triggers](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#external-services-triggering)  
 For a Robot used to trigger another service on the web.  
   
 ## 3. How do I use them?
@@ -92,7 +98,7 @@ You will use the two other functions 99.9% of the time:
 * ```lib.parseMsg(text);``` parses the message that triggered your Robot from the data lake.
 * ```lib.writeShare(auth, newRecType, newRecord, ['tags']);``` writes back a new record with a new recType in the data lake.  
 
-For more code samples, refer to the [Data Workflow page](docs/2/technical/microshare-platform-advanced/data-workflow-new).  
+For more code samples, refer to the [Data Workflow page](/docs/2/technical/microshare-platform-advanced/data-workflow-new).  
 
 ### C. Triggered vs scheduled
 ---------------------------------------
@@ -242,6 +248,6 @@ The Java libraries accessed by the Robots point to the adequate Service to read 
 ## 6. More Information
 ---------------------------------------
 
-For additional details on available Robot methods, visit [Robot library](docs/2/technical/microshare-platform-advanced/robots-libraries)
+For additional details on available Robot methods, visit [Robot library.](/docs/2/technical/microshare-platform-advanced/robots-library/)
 
-For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [IoT integration documentation](docs/2/technical/lorawan/lorawan-devices).
+For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [IoT integration documentation.](/docs/2/technical/lorawan/lorawan-devices)

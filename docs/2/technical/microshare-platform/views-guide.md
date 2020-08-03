@@ -25,15 +25,15 @@ toc: true
 
 ## 1. What’s a View?
 ---------------------------------------
-A View is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules.
+A View is a component for managing data access. It provides advanced ways of querying the data lake. A view can also be used to store and retrieve proprietary static data.
 
 ## 2. What can I do with them?
 ---------------------------------------
 
-#### - Query Data Lake
+#### Query Data Lake
 Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
 
-#### - Create Sample or Reference Data
+#### Create Sample or Reference Data
 Use the "Static JSON" option to create data samples for testing or reference data.
 
 ## 3. How do I use them?
@@ -41,7 +41,7 @@ Use the "Static JSON" option to create data samples for testing or reference dat
 
 You'll need to create and save a View into the "VIEWS" section from the "MANAGE" menu of the Microshare® portal.
  
-#### - A. Creating a View
+#### A. Creating a View
 
 Views can be created via API or through the Rule editor in the Composer Console. To get to the View editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left side of the page. Select the "VIEWS" panel navigator on the left to see a view of all of your saved Views. 
 
@@ -49,7 +49,7 @@ Views can be created via API or through the Rule editor in the Composer Console.
 
 Click the "Create" button to create a new View for your data.
 
-#### - B. A Static View
+#### B. A Static View
 
 Views can be used to create static data, by selecting the tab "Static JSON", it will allow you to input or paste static data into the editor section in JSON format.
 
@@ -57,13 +57,13 @@ Views can be used to create static data, by selecting the tab "Static JSON", it 
 
 Click the "Create" button on the top to create your new View.
 
-#### - C. A Pipeline Query View
+#### C. A Pipeline Query View
 
 Views can be configured to aggregate or obfuscate data from the Microshare® datalake using MongoDB aggregation query language. This will allow you to do the following searches, sorts, projections, and groups:
 
 {% include image.html url="/assets/img/composer-fact-create-query1.jpg" description="View Create Query" %}
 
-##### * Search via $match;
+##### Search via $match;
 $match allows you to put in search criteria to find records, this will get you all records of the "recType" with a value of "io.microshare.demo.sensor.temperature".
 {% highlight JSON %}  
   [
@@ -82,7 +82,7 @@ For more criteria of search, just add them in the $match elements.
 ]{% endhighlight %}  
 
 
-##### * Sort when multiple records returns;
+##### Sort when multiple records returns;
 This sample shows what happens when you sort by timestamp on the record, but you can sort by any data element in your data or meta-data.
 {% highlight JSON %}  
 [
@@ -105,7 +105,7 @@ The sort can also be any data elements in the records.
 }
 {% endhighlight %}  
 
-##### * Group by Defined Data Elements;
+##### Group by Defined Data Elements;
 Group by is used when you have multiple returns and need to group the results for certain operations like sum, count, avg, or as examples show, get only the first record.
 {% highlight JSON %}  
 [
@@ -132,7 +132,7 @@ Or you can do a count of how many records there are for each of the regions:
     }
 {% endhighlight %}  
 
-##### * Returns only data elements you want to share using $project;
+##### Returns only data elements you want to share using $project;
 You can selectively return only data elements you want to expose and change the name of elements in the data returned.
 {% highlight JSON %}
 [
@@ -243,7 +243,7 @@ And trigger it with this Robot call:
 The ```timeLimit``` variable passed along in the ```lib.readShareByView()``` parameters will replace the ```${timeLimit}``` mvel insert in the View's pipeline query.  
 The View will then run its query and retrieve only the records created in the last minute.
 
-### - Edit and Test View
+### Edit and Test View
 
 You can edit your Views by selecting and clicking on the pen icon to open the View editor view. 
 
@@ -304,7 +304,7 @@ The time values might also come from a data-level datetime stamp such as data.me
 {% endhighlight %}
 
 ##### API Call
-{{hostname}}/share/com.mycompany.count?id=5cd9809446e0fb002312cebe&from=2019-04-03T00:00:00-0400&to=2019-04-04T00:00:00-0400&recType=com.mycompany.sensor.unpacked
+`{{hostname}}/share/com.mycompany.count?id=5cd9809446e0fb002312cebe&from=2019-04-03T00:00:00-0400&to=2019-04-04T00:00:00-0400&recType=com.mycompany.sensor.unpacked`
 
 Notice that the recType included in the path is the recType assigned to the View. It is arbitrary but must agree with the recType used to create the View in Composer. The ?id= query string parameter is the id of the View.
 
