@@ -33,25 +33,33 @@ A View is a component for managing data access. It provides advanced ways of que
 #### Query the Data Lake
 Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). Using a view gives you more advanced control over data retrieval than you have using the Microshare RESTful API calls on their own.
 
-Use a view to
+Use a view to:
 
   • Apply search criteria  
+  
   • Group data  
+  
   • Sort data  
+  
   • Flatten or restructure data into a format more easily consumable by your application or use case
+  
   • Configure precise share rules
 
 Note that using search criteria inside a view provides distinct advantages over using vanilla API calls.  For example:
   
   • The record limit is applied AFTER the match is performed so that you can more easily retrieve a predictable number of records from YOUR data  
+  
   • Retrieving historical data is easier using a view since you can include the start and end dates in the match criteria.  With the API, the only way to do this is via pagination.
+  
   • Views allow you fine-grained control over who has access to which parts of your data.  For example, you can write a view to expose a subset of your data and then write share rules to specify who has access to the data returned by the view.  
+  
   • The performance of data retrieval is better with a view since Microshare caches data returned by views.
 
 #### Create Sample Data or Configuration Data
-Use the "Static JSON" option to  
+Use the "Static JSON" option to: 
 
   •  Create fixed data samples for testing  
+  
   •  Store and retrieve your own proprietary configuration data  
 
 ## 3. How do I use Views?
@@ -257,7 +265,7 @@ the $project clause is run against the most recent 42 records with the recType c
 Static and Query Views support String replacement of variables with the syntax ```${myVariable}```.  
 The replacement values can be passed via the /share API call, or through the lib.readShareByView functions params parameter of a [Robot](../robot-guide).
 
-### Example 1: String replacement for Static Views via /share calls
+#### Example 1: String replacement for Static Views via /share calls
 Consider a static View with a recType of ```com.your.recType``` and an id of ```1234```, with the following static entry:
 {% highlight JSON %}
   {"name":"${myName}", "age":${myAge}}
@@ -270,7 +278,7 @@ Is interpreted as
   {"name":"Bob", "age":35}
 {% endhighlight %}
 
-### Example 2: String replacement for Views query from a Robot
+#### Example 2: String replacement for Views query from a Robot
 A very powerful way to customize a View query is to pass it a dynamic variable calculated by a Robot.
 
 For example, if you want to get all records of recType myRecords *created in the last minute*, you can use this View query (View recType ```com.your.recType``` and id ```1234```):
