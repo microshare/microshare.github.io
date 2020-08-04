@@ -46,11 +46,15 @@ Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/iden
 
 Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses robots for data ingestion and unpacking, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of robots can be. The path of data management is:
 
-1. [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
-2. [Data Unpacking](/docs/2/technical/microshare-platform-advanced/data-unpacking/)
-3. [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
-4. [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/)
-
+<br>
+**1.** [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
+<br>
+**2.** [Data Unpacking](/docs/2/technical/microshare-platform-advanced/data-unpacking/)
+<br>
+**3.** [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
+<br>
+**4.** [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/)
+<br>
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
 
 
