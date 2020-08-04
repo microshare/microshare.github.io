@@ -9,122 +9,183 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [What’s a View?](./#1-whats-a-view)
+1. [What is a View?](./#1-whats-a-view)
 2. [What can I do with them?](./#2-what-can-i-do-with-them)
-  - A. [Query Data Lakes](./#--query-data-lake)
-  - A. [Create Sample or Reference Data](./#--create-sample-or-reference-data)
+  - [Query the Data Lake](./#--query-data-lake)
+  - [Create Sample or Reference Data](./#--create-sample-or-reference-data)
 3. [How do I use them?](./#3-how-do-i-use-them)
   - A. [Creating a View](./#--a-creating-a-view)
-  - B. [A Static View](./#--b-a-static-view)
-  - C. [A Pipeline Query View](./#--c-a-pipeline-query-view)
+  - B. [Static Views](./#--b-a-static-view)
+  - C. [Pipeline Query Views](./#--c-a-pipeline-query-view)
 4. [Default View query size](./#4-default-view-query-size)
 5. [String replacements for Views](./#5-string-replacements-for-views)
 6. [Putting it together (Tracking Record Count Use Case)](./#6-putting-it-together)
 
 ---------------------------------------
 
-## 1. What’s a View?
+## 1. What is a View?
 ---------------------------------------
 A View is a component for managing data access. It provides advanced ways of querying the data lake. A view can also be used to store and retrieve proprietary static data.
 
-## 2. What can I do with them?
+## 2. What can I do with a View?
 ---------------------------------------
 
-#### Query Data Lake
-Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
+#### Query the Data Lake
+Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). Using a view gives you more advanced control over data retrieval than you have using the Microshare RESTful API calls on their own.
 
-#### Create Sample or Reference Data
-Use the "Static JSON" option to create data samples for testing or reference data.
+Use a view to
 
-## 3. How do I use them?
----------------------------------------
+  • Apply search criteria  
+  • Group data  
+  • Sort data  
+  • Flatten or restructure data into a format more easily consumable by your application or use case
+  • Configure precise share rules
 
-You'll need to create and save a View into the "VIEWS" section from the "MANAGE" menu of the Microshare® portal.
+Note that using search criteria inside a view provides distinct advantages over using vanilla API calls.  For example:
+  
+  • The record limit is applied AFTER the match is performed so that you can more easily retrieve a predictable number of records from YOUR data  
+  • Retrieving historical data is easier using a view since you can include the start and end dates in the match criteria.  With the API, the only way to do this is via pagination.
+  • Views allow you fine-grained control over who has access to which parts of your data.  For example, you can write a view to expose a subset of your data and then write share rules to specify who has access to the data returned by the view.  
+  • The performance of data retrieval is better with a view since Microshare caches data returned by views.
+
+#### Create Sample Data or Configuration Data
+Use the "Static JSON" option to  
+
+  •  Create fixed data samples for testing  
+  •  Store and retrieve your own proprietary configuration data  
+
+## 3. How do I use Views?
  
-#### A. Creating a View
+#### How to create a View
 
-Views can be created via API or through the Rule editor in the Composer Console. To get to the View editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left side of the page. Select the "VIEWS" panel navigator on the left to see a view of all of your saved Views. 
+Views can be created via the API or through the "View" editor in the Composer Console. To get to the View editor, click "MANAGE" in the upper navigation panel. A horizontal panel will appear on the left side of the page. Select the "VIEWS" panel navigator on the left to see a list of your saved Views. 
 
 {% include image.html url="/assets/img/composer-fact-factindex1.jpg" description="View Index - Card View" %}
 
 Click the "Create" button to create a new View for your data.
 
-#### B. A Static View
+#### Static Views
 
-Views can be used to create static data, by selecting the tab "Static JSON", it will allow you to input or paste static data into the editor section in JSON format.
+To create a view that returns static data, select the tab "Static JSON".  From here you can input or paste static data into the editor section in JSON format.
 
 {% include image.html url="/assets/img/composer-fact-create-static1.jpg" description="View Create Static" %}
 
 Click the "Create" button on the top to create your new View.
 
-#### C. A Pipeline Query View
+#### Pipeline Query Views
 
-Views can be configured to aggregate or obfuscate data from the Microshare® datalake using MongoDB aggregation query language. This will allow you to do the following searches, sorts, projections, and groups:
+To create a view that can retrieve, aggregate or transform data from the Microshare® data lake using the MongoDB aggregation query language, select the tab "Pipeline Query".
 
 {% include image.html url="/assets/img/composer-fact-create-query1.jpg" description="View Create Query" %}
 
-##### Search via $match;
-$match allows you to put in search criteria to find records, this will get you all records of the "recType" with a value of "io.microshare.demo.sensor.temperature".
+##### Search via $match
+$match allows you to specify search criteria to find records.
+
+For example, this will get you all records which have a "recType" of "io.microshare.environment.unpacked.  
 {% highlight JSON %}  
   [
-    {"$match": {"recType": "io.microshare.demo.sensor.temperature"}}
+    {"$match": {"recType": "io.microshare.environment.unpacked"}}
   ]
 {% endhighlight %}  
-For more criteria of search, just add them in the $match elements.
-{% highlight JSON %}  
-[
+
+Additional search criteria can be added to the $match statement by appending them to the $match elements.
+{% highlight JSON %}[
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temperature",
-      "data.FCntUp": 168
+      "recType": "io.microshare.environment.unpacked",
+      "data.meta.device": {
+        "$all": [
+          "London"
+        ]
+      }
     }
   }
 ]{% endhighlight %}  
 
+In this example, the search will return all records with a recType of "io.microshare.environment.unpacked and a location tag of "London" that the user has access to.
 
-##### Sort when multiple records returns;
-This sample shows what happens when you sort by timestamp on the record, but you can sort by any data element in your data or meta-data.
+
+##### Sorting Multiple Records
+This example demonstrates how to return the records in order of their timestamp, but you can sort by any field in your data or meta-data.  
 {% highlight JSON %}  
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temperature"
+      "recType": "io.microshare.environment.unpacked"
     }
   },
   {
     "$sort": {
-      "tstamp": -1
+      "data.meta.iot.time": -1
     }
   }
 ]
 {% endhighlight %}  
-The sort can also be any data elements in the records.
+
+The sort can also be on any other field in the records.  
 {% highlight JSON %}
-"$sort": {
-    "data.region": 1
-}
+  "$sort": {
+    "data.meta.iot.device_id": -1
+  }
 {% endhighlight %}  
 
-##### Group by Defined Data Elements;
-Group by is used when you have multiple returns and need to group the results for certain operations like sum, count, avg, or as examples show, get only the first record.
+##### Group by Defined Data Elements
+You can use the Mongo query language to group the results of the query for certain operations such as sum, count, max, min, first, last or average.  
+
+The following example returns the latest "device" structure and location tags for each unique device id. This can be helpful for determining battery life.
 {% highlight JSON %}  
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temperature"
+      "recType": "io.tracknet.healthy.TBHV100"
     }
   },
   {
+    "$sort": {
+      "data.meta.iot.time": -1
+    }
+  },
+  {
+    "$limit": 1000
+  },
+  {
     "$group": {
-      "_id": "$data.region",
-      "data": {
-        "$first": "$data"
+      "_id": {
+        "devEUI": "$data.device.id"
+      },
+      "loc1": {
+        "$last": {
+          "$arrayElemAt": [
+            "$data.meta.device",
+            0
+          ]
+        }
+      },
+      "loc2": {
+        "$last": {
+          "$arrayElemAt": [
+            "$data.meta.device",
+            1
+          ]
+        }
+      },
+      "loc3": {
+        "$last": {
+          "$arrayElemAt": [
+            "$data.meta.device",
+            2
+          ]
+        }
+      },
+      "device": {
+        "$last": "$data.device"
       }
     }
   }
 ]
 {% endhighlight %}  
-Or you can do a count of how many records there are for each of the regions:
+
+Or you count of how many records there are for each of the regions:
 {% highlight JSON %}
     "$group": {
       "_id": "$data.region",
@@ -132,31 +193,26 @@ Or you can do a count of how many records there are for each of the regions:
     }
 {% endhighlight %}  
 
-##### Returns only data elements you want to share using $project;
-You can selectively return only data elements you want to expose and change the name of elements in the data returned.
+##### Specify which fields to share using $project
+You can selectively return only data fields you want to expose and/or change the name of the fields in the data returned.
+
+In the following example, each record will contain 2 fields with newly defined fieldnames.  The record id from the data lake is also added by the system as default.
 {% highlight JSON %}
 [
   {
     "$match": {
-      "recType": "io.microshare.demo.sensor.temperature"
+      "recType": "io.microshare.environment.unpacked"
     }
   },
   {
     "$project": {
-      "region_Name": "$data.region",
-      "region_ID": "$data.regionid",
-      "sensorData": "$data.FRMPayload",
-      "Session_ID": "$data.SessID"
+      "temp": "$data.temperature.0.value",
+      "humidity": "$data.humidity.0.value"
     }
   }
 ]
 {% endhighlight %}  
-Be aware of the data return as above will be 4 elements with new names defined, plus a system record of object id in the data lake, which is added by the system as default.
-{% highlight JSON %}
-        "_id": {
-          "$oid": "59dfa6a646e0fb0022dd1???"
-        },
-{% endhighlight %}  
+
 
 
 For more details of query syntax, please refer to the MongoDB doc site 
@@ -166,7 +222,7 @@ For more details of query syntax, please refer to the MongoDB doc site
 ## 4. Default View query size
 ---------------------------------------
 
-To optimize the performance of your View query, it is not run against your whole collection of records, that can reach millions of entries, but run by default against the set of the most recent 999 records matching your match clause.  
+To optimize the performance of your View query, it is not run against your whole collection of records - that could encompass millions of entries.  Instead, it is run by default against the most recent 999 records matching your match clause.  
 So a View query like this:
 
 {% highlight JSON %}  
@@ -219,7 +275,16 @@ A very powerful way to customize a View query is to pass it a dynamic variable c
 
 For example, if you want to get all records of recType myRecords *created in the last minute*, you can use this View query (View recType ```com.your.recType``` and id ```1234```):
 {% highlight JSON %}
-  [{"$match": {"recType": "myRecords", "tstamp": {"$gt": ${timeLimit} }}}]
+  [ 
+    {
+      "$match": {
+        "recType": "${recType}",
+          "data.meta.iot.time": {
+            "$gt": "${timeLimit}"
+          }
+        }
+    }
+]
 {% endhighlight %} 
 
 And trigger it with this Robot call:
@@ -228,7 +293,7 @@ And trigger it with this Robot call:
 
   function main(text, auth) {
       
-      var now = new Date();
+      var now = new Date().getTime();
       
       var oneMinuteAgo = new Date(now - 60000).getTime();
 
@@ -240,7 +305,7 @@ And trigger it with this Robot call:
   }
 {% endhighlight %}
 
-The ```timeLimit``` variable passed along in the ```lib.readShareByView()``` parameters will replace the ```${timeLimit}``` mvel insert in the View's pipeline query.  
+The ```timeLimit``` variable passed along in the ```lib.readShareByView()``` parameters will replace the ```${timeLimit}``` value in the View's pipeline query.  
 The View will then run its query and retrieve only the records created in the last minute.
 
 ### Edit and Test View
@@ -298,8 +363,8 @@ The time values might also come from a data-level datetime stamp such as data.me
 {% highlight JSON %}
 {
     "recType":"com.mycompany.sensor.unpacked",
-    "from":"2019-04-03T00:00:00-0400",
-    "to":"2019-04-04T00:00:00-0400"
+    "from":"2020-04-03T00:00:00-0400",
+    "to":"2020-04-04T00:00:00-0400"
 }
 {% endhighlight %}
 
