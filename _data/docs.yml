@@ -72,6 +72,13 @@
     - title: Data Unpacking
     - title: Data Unpacking by Robots
     - title: Robots library
+  - title: Streaming Integration
+    pages:
+    - title: Google Pub/ Sub Integration
+    - title: AWS Kinesis Data Stream Integration
+    - title: AWS SQS Integration
+    - title: Azure Event Hub Integration
+    - title: Azure IoT Hub Integration
   - title: API
     pages:
     - title: Quick Start
@@ -85,13 +92,6 @@
     - title: LoRaWan® Technology
     - title: LoRaWan® Gateways
     - title: LoRaWan® Devices
-  - title: Streaming Integration
-    pages:
-    - title: Google Pub/ Sub Integration
-    - title: AWS Kinesis Data Stream Integration
-    - title: AWS SQS Integration
-    - title: Azure Event Hub Integration
-    - title: Azure IoT Hub Integration
-
+  
    
     

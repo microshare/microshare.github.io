@@ -120,7 +120,7 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 * `title`: include a title for the chart
 * `viewType`: set to "feedbackTable" or "feedbackTimeline".
 * `handleSmilioData`: set to "true" if and only if you are visualizing legacy Smilio data that has not been translated into the feedback event format. 
-* **NOTE** that with the Trending Feedback app, there is an additional step to configure a backboard (or use a standard backboard from the assets account). Please see the section on Touchless Feedback app for more information. If you are converting a legacy feedback app, you may have to convert the ‘buttons’ section from the legacy app facts into a backboard view in the client’s account. 
+* **NOTE** that with the Trending Feedback app, there is an additional step to configure a backboard (or use a standard backboard from the assets account). Please see the section on Touchfree Feedback app for more information. If you are converting a legacy feedback app, you may have to convert the ‘buttons’ section from the legacy app facts into a backboard view in the client’s account. 
 * `backboardRecType`: set to “io.microshare.config.backboard” 
 * `backboardId` include the ID of the backboard view 
 * **NOTE** that the form will use the first backboardRecType and backboardId it finds.  You cannot use a different backboard for the timeline vs table. 
@@ -168,4 +168,4 @@ The following are guides for configuring specific types of apps:
 #### [Suite App](/docs/2/technical/microshare-platform/suite-app-guide)
 
 <br>
-#### [Touchless Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)
+#### [Touchfree Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)

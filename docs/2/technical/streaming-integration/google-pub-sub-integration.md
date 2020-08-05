@@ -8,18 +8,18 @@ toc: true
 {% include image.html url="\assets\img\google-pub-sub\Google_Logo.png" description="google pub/ sub logo" %}
 
 #### Summary:
-1. [Overview](./#overview)
-2. [Setup](./#setup)
-    * [Create a Service Account](./#create-a-service-account)
-    * [Generate a Key](./#generate-the-needed-key)
+1. [Overview](./#1-overview)
+2. [Setup](./#2-setup)
+    * [Create a Service Account](./#a-create-a-service-account)
+    * [Generate a Key](./#b-generate-the-needed-key)
     
     
 -----------------------------------------------------------------
-## Overview
+## 1. Overview
 -----------------------------------------------------------------
 Google Cloud Pub/Sub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Google Cloud Pub/Sub tenancy in real-time. Data is typically made available to Google Cloud Pub/Sub Topics, on which Subscribment can be set up to ensure that event handling and analytics are fed with the most current state of the measured space. Google Cloud Pub/Sub Integration creates a pathway to advanced storage, visualization, and analytics in the Google Cloud ecosystem from the Microshare® Smart Network.
 
-## Setup
+## 2. Setup
 -----------------------------------------------------------------
 {% include image.html url="\assets\img\google-pub-sub\Pub_flowmap.png" description="flowmap" %}
 
@@ -27,10 +27,10 @@ Google Cloud Pub/Sub Integration is a streaming data integration that pushes dat
 
 **Requirements :**
 
- - Create a Service Account 
- - Generate a Key 
+ - **A.** Create a Service Account 
+ - **B.** Generate a Key 
 
-### Create a Service Account
+### A. Create a Service Account
 
 In order to create a Service Account, first log into your Google Cloud Platform (GCP).
 
@@ -64,13 +64,13 @@ You can leave the last page as is and click **Done.**
 
 The Service Account is now set up, and the email is :
 
- - [Service Account Id]@[Project Name].iam.gserviceaccount.com
+ - <em>Service Account Id</em>@<em>Project Name</em>.iam.gserviceaccount.com
 
 If at any time you need to change the role, you can change the settings for the email in the role interface.
 
 {% include image.html url="\assets\img\google-pub-sub\Pub_9.png" description="image 9" %}
 
-### Generate the needed key
+### B. Generate the needed key
 
 Now let&#39;s **click on the created Service Account.**
 

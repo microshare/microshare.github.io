@@ -9,10 +9,10 @@ toc: true
 ##### SUMMARY : 
 
 1. [What is Data Ingestion?](./#1-what-is-data-ingestion)
-2. [LoRaWAN Network Ingestion via Device Cluster](./#2-new-process)
-3. [Upload data via REST API POST](./#3-ingesting-data-manually)
-4. [Robot Polling to pull data](./#4-how-do-i-set-up-my-device-cluster-to-ingest-my-data-automatically-into-the-data-lake)
-5. [Websocket Integration](./#5-how-does-the-data-ingestion-process-work)
+2. [LoRaWAN Network Ingestion via Device Cluster](./#2-lorawan-network-ingestion-via-device-cluster)
+3. [Upload data via REST API POST](./#3-upload-data-via-rest-api-post)
+4. [Robot Polling to pull data](./#4-robot-polling-to-pull-data)
+5. [Websocket Integration](./#5-websocket-integration)
 
 ## 1. What is Data Ingestion? 
 

@@ -10,7 +10,7 @@ toc: true
 ##### SUMMARY : 
 
 1. [Robots Library](./#1-robots-libraries)
-3. [How to manually decode your data](./#3-access-to-device-cluster)
+3. [How to manually decode your data](./#2-how-to-manually-decode-your-data)
 
 ---------------------------------------
 
