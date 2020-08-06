@@ -60,25 +60,25 @@
   - title: Microshare® Platform
     pages:
     - title: Quick Start
-    - title: Device Cluster Guide
-    - title: Views Guide
     - title: Dashboard Guide
+    - title: Device Cluster Guide
     - title: Rules Guide
+    - title: Views Guide
   - title: Microshare® Platform Advanced
     pages:
-    - title: Identity Guide
-    - title: Robots Guide
     - title: Data Ingestion
     - title: Data Unpacking
     - title: Data Unpacking by Robots
-    - title: Robots library
+    - title: Identity Guide
+    - title: Robots Guide
+    - title: Robots Library
   - title: Streaming Integration
     pages:
-    - title: Google Pub/ Sub Integration
     - title: AWS Kinesis Data Stream Integration
     - title: AWS SQS Integration
     - title: Azure Event Hub Integration
     - title: Azure IoT Hub Integration
+    - title: Google Pub/ Sub Integration
   - title: API
     pages:
     - title: Quick Start
