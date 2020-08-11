@@ -31,10 +31,11 @@
       </a>
 
       <ul class="nav bd-sidenav ml-3">
+<!--Assign the value doc as the current page and make its title the slug-->
         {% for doc in group.pages %}
           {% assign doc_slug = doc.title | slugify %}
           {% assign active = nil %}
-
+<!--assign the active page -->
           {% if page_main_group == group_slug and page_slug == doc_slug %}
             {% assign active = 'active bd-sidenav-active' %}
           {% endif %}

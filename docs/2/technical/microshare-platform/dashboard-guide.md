@@ -162,10 +162,11 @@ Create a new fact by pressing the button above the green arrow and hitting apend
 
 The following are guides for configuring specific types of apps:
 
-#### [Electronic Attendance Records App (Smart Timecard)](/docs/2/technical/microshare-platform/smart-timecard-guide)
+<br>
+##### [Electronic Attendance Records App (Smart Timecard)](/docs/2/technical/microshare-platform/smart-timecard-guide)
 
 <br>
-#### [Suite App](/docs/2/technical/microshare-platform/suite-app-guide)
+##### [Suite App](/docs/2/technical/microshare-platform/suite-app-guide)
 
 <br>
-#### [Touchfree Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)
+##### [Touchfree Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)
