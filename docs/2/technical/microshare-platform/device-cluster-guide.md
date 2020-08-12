@@ -42,7 +42,11 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 2.	Give a brief description elaborating on the device cluster.
 3.	Make sure your cluster is turned on. Make sure the box underlined in green is checked.
 4.	The record types are underlined in blue. The source record type is where the device cluster’s data is coming from. The target record type is the name under which your data from the device clusters will be stored. The naming convention works where the the first part of the rectype details who made the naming convention. So for example, if Comcast owned the record type, their source record type would be com.comcast.environment. The unpacked label for the target rectype details that the data has been decrypted, which is very important for when you call on the rectype to be represented in your dashboard. As of right now, Microshare® is the only source of naming the client’s rectypes, but the ability for clients to create their own naming conventions exists. 
+
+
 ##### <!> Please make sure to follow the [RecType best practices](./#3-set-the-right-rectype) ! <!>
+
+
 5.	Underlined in orange is the device manufacturer box. Click the drop down and select the type of device your device cluster has. Selecting the model will automatically fill in the box labeled <em>Device Payload Unpacker</em>.
 6.	Underlined in purple is the location metadata category. Enter tags detailing the location of the device cluster so it is easier to identify the devices later-on, it's a general location for all the devices of the device cluster. Here is an example of what it should be : 
 * *Europe,United Kingdom,London,5 Merchant Square,desk*
@@ -58,7 +62,11 @@ So as you can understand the structure is as follows:
 * 	Add the tags describing the location of the device. For example, include tags for the city, building, room, and what part of the room.
 * 	Repeat these steps for all of your devices that you wish to add to the cluster.
 9.	Underlined in teal is your network provider. Click the drop down and select the appropriate network.
+
+
 ###### <!> These following steps are not often used just take care of them if you are using Lora OTAA <!>
+
+
 10.	Underlined in green is a LoRa OTAA checkbox. OTAA stands for Over the Air Authentication. This is a gateway with extra data security. If you plan on using this service for your device cluster, check this box. Only follow the next few steps if you are using LoRa OTAA.
 {% include image.html url="\assets\img\device-cluster-image-4.png" height="900" width="900" description="Device Cluster 4" %}
 11.	Provide your account token in the box underlined in blue. This can be done through the API, and a tutorial to do so [can be found here](/docs/2/technical/api/quick-start/).
