@@ -15,39 +15,97 @@ toc: true
 
 ## Overview
 ---------------------------------------
-The Microshare® Contact Tracing solution functions as follows:
+#### The Microshare® Contact Tracing solution operates as follows:
 {% include image.html url="\assets\img\Contact_tracing1.png" description="contact tracing image" %}
 
-- Wave devices download from personal beacons & transmit to gateway
-- Event data is pulle from devices holding oldest data first
-- Data is Microshare® Smart Network
-- Personal Beacons constantly scan for other nearby beacons
-- If beacons are detected nearby (within 2 meters for 10 minutes), then an event is recorded
-- Data includes id of nearby device, voltage, average RSSI, contact duration & relative timestamp
+**1.** Wave devices download from personal beacons & transmit to gateway.
+<br>
+**2.** Event data is pulled from devices holding oldest data first.
+<br>
+**3.** Data is Microshare® Smart Network.
+<br>
+**4.** Personal Beacons constantly scan for other nearby beacons.
+<br>
+**5.** If beacons are detected nearby (within 2 meters for 10 minutes), then an event is recorded.
+<br>
+**6.** Data includes id of nearby device, voltage, average RSSI, contact duration & relative timestamp.
 
+<br>
 ## Unpacking
 ---------------------------------------
 
 #### Unpacking and Outputting the data
 
+The unpacked data is outputted into a more readable format:
+
 {% include image.html url="\assets\img\Contact_tracing2.png" description="contact tracing image 2" %}
 
 #### Unpack data from wave devices
 
-- Determine if beacon is a location beacon or wearable 
-- Calculate start/ end time from relative timestamps
-- Flatten record into individual events
+Unpacked data does the following: 
+- Determines if beacon is a location beacon or wearable. 
+- Calculates start/ end time from relative timestamps.
+- Flattens records into individual events.
 
-#### Output event data 
-- originatingDevice- Id of wearable that detected a contact
-- originatingDeviceBattery- Voltage level of detecting wearable
-- detectingDevice- ID of device that contact was made with
-- startTime- starting time of contact in UTC
-- start- offset in minutes from recieving time that contact began
-- duration- length of contact in minutes 
-- edndTime- ending time of contact in UTC
-- locationBeacon- true if contact was with beacon device, false if wearable
-- averageRSSI- average RSSI over the contact period
+<br>
+#### Output event data fields
+
+<br>
+What does each peice of data mean?
+<br>
+- `originatingDevice`- Id of wearable that detected a contact.
+
+<br>
+- `originatingDeviceBattery`- Voltage level of detecting wearable.
+
+<br>
+- `detectingDevice`- ID of device that contact was made with.
+
+<br>
+- `startTime`- starting time of contact in UTC.
+
+<br>
+- `start`- offset in minutes from recieving time that contact began.
+
+<br>
+- `duration`- length of contact in minutes.
+
+<br>
+- `endTime`- ending time of contact in UTC.
+
+<br>
+- `locationBeacon`- true if contact was with beacon device, false if wearable.
+
+<br>
+- `averageRSSI`- average RSSI over the contact period.
+
+<br>
+#### Location versus Global Tags
+
+The output event data will have a section that looks like the following:
+
+{% highlight java %}
+"source":{
+                    "device":[
+                        "Location1",
+                        "Location2",
+                        "Location3",
+                        "Location4"
+                    ],
+                    "global":[
+                        "GlobalTag1",
+                        "GlobalTag2",
+                        "GlobalTag3",
+                        "GlobalTag4"
+                    ],
+
+{% endhighlight %}
+
+The Kerlink Waves, also referred to as 'bluetooth sniffers' and are LoRaWAN devices.Along with the personal and location beacons, the Waves are apart of the [device cluster](/docs/2/technical/microshare-platform/device-cluster-guide/), and their information is grouped together. Within the device cluster's data, the individual location is provided. This gives the "device" section of the code snippet above. Additionally, the device cluster will detail the location for the entire group of data, such as a specific building. This is the purpose for the "global" Metadata. 
+
+In summary, the device locations are the specific locations of each device while the global data details the location of the device cluster (the group of waves and personal beacons).
+
+**Confused on what to name your tags? Check out the [Contact Tracing Installation Page.](/docs/2/installer/deploy-m/contact-tracing-installation-guide/)**
 
 ## Contact Tracing Example Data
 ---------------------------------------
