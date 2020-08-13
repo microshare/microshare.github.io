@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Contct Tracing Installation Guide
+title: Contact Tracing Installation Guide
 description: 
 toc: true
 ---
