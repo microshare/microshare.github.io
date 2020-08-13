@@ -39,7 +39,7 @@ This guide serves to help you discern the different components of a Microshare®
 To start with something simple we'll take the piece of data we generated with the API tutorial: [API Simple Requests](/docs/2/technical/api/simple-requests/#2-write-data).
 
 
-```
+{% highlight javascript %}
 {
     "meta": {
         "currentCount": 1,
@@ -87,7 +87,7 @@ To start with something simple we'll take the piece of data we generated with th
         }
     ]
 }
-```
+{% endhighlight %}
 
 #### A) Meta
 
@@ -104,7 +104,7 @@ The `Objs` section of the data stores most of the descriptors of the interaction
 
 ##### B.1 Simple values
 
-```
+{% highlight javascript %}
 "_id": "5ed1123046e0fb0028b70???",
 "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
 "createDate": "2020-05-29T13:46:24.779Z",
@@ -118,7 +118,7 @@ The `Objs` section of the data stores most of the descriptors of the interaction
 "tstamp": 1590759984779,
 "updateDate": "2020-05-29T13:46:24.779Z",
 "updaterId": "yourname@microshare.io"
-```
+{% endhighlight %}
 
 * `"_id"` and `"id"`
 
@@ -166,17 +166,17 @@ The `updaterId`notes which user has last updated the data. If the data has not b
 
 ##### B.2 Data
 
-```
+{% highlight javascript %}
 "data": {
     "Test": "Data"
 },
-```
+{% endhighlight %}
 
 This section contains the core information as ingested by the Microshare® Smart Network. The format of the data section will vary based on the recType. If the recType begins with io.microshare, then the cannonical format of this section will be documented in this section.
 
 ##### B.3 Origin
 
-```
+{% highlight javascript %}
 "origin": {
     "checksum": "05B21996343E63CDEF5F8DB6F2D20FB96B61FA60B1E35D900F3875E2822AB12EL15",
     "createDate": "2020-05-29T13:46:24.779Z",
@@ -190,7 +190,7 @@ This section contains the core information as ingested by the Microshare® Smart
         "ip": "your ip address"
     }
 },
-```
+{% endhighlight %}
 
 Here you find the origin of the data, who created it, when, and under which recType (`name`).
 
@@ -201,14 +201,14 @@ The origin can be useful when the data is shared with you as you can easily deci
 
 ##### B.4 Owner
 
-```
+{% highlight javascript %}
 "owner": {
     "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
     "org": "io.microshare",
     "owners": [],
     "user": "yourname@microshare.io"
 },
-```
+{% endhighlight %}
 
 The ownership of the data is an essential part of the data, here you will find who owns the data, which account (`user`) and under which identity (`org`). There may be multiple owners for every piece of data. Owners have the ability to create share Rules that grant privileges to other users. 
 

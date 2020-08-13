@@ -23,17 +23,17 @@ The guest will appear to the system (APP & API) as guest@microshare.net. Share r
 ### 2. Creating the Guest App
 
 <!--Details on having the app/ data on hand-->
-1. Authorize (via Dauth api) as the application/view/data owner (or some shared user)
-2. Use the dapp api /links2 to create an entry in the links collection 
-* POST `https://dapp.microshare.io/links2?Authentication=<sessionkey>` Note: THis is different from using the Bearer token in the header authorization
-*   Settings for that POST are () raw and then pick JSON from the text dropdown
-*  Sessionkey is used via the Authentication query string parameter
-*  targetId = app id
-*  Email = guest@microshare.io (or whoever) 
-*  targetType = app 
+1. Authorize (via Dauth api) as the application/view/data owner (or some shared user).
+2. Use the dapp api /links2 to create an entry in the links collection .
+* POST `https://dapp.microshare.io/links2?Authentication=<sessionkey>` Note: This is different from using the Bearer token in the header authorization.
+*   Settings for that POST are () raw and then pick JSON from the text dropdown.
+*  Sessionkey is used via the Authentication query string parameter.
+*  targetId: app id
+*  Email: guest@microshare.io (or whoever).
+*  targetType: app 
 *  Use example body 
 
-```
+{% highlight javascript %}
 {"name":"Feedback App Test", "recType":"pipe", 
 
 "desc":"Link toFeedback App Test",  
@@ -41,19 +41,19 @@ The guest will appear to the system (APP & API) as guest@microshare.net. Share r
 "data":{ "email" : "guest@microshare.net", "targetId" : "5e6ce6b62b0000636ad81a38" , "targetType" : "app"}  
 
 } 
-```
+{% endhighlight %}
 
 Note: make sure to use .net and not .io for the email
 
-3. Get the id back from the link call above
-* Example Product Suite in assests account is `5e73b63d3a00002a934523d4`
-* Example Touchless Feedback app in assets account is 5e77ac483a0000df97452437 
+3. Get the id back from the link call above.
+* Example Product Suite in assests account is `5e73b63d3a00002a934523d4`.
+* Example Touchless Feedback app in assets account is `5e77ac483a0000df97452437`. 
 
-4. Compose a URL `https://dapp.microshare.io/guest/<linkid>?optional-query-string=optional`
-* Example URL for Product Suite in assets account is `https://dapp.microshare.io/guest/5e73b63d3a00002a934523d4`
+4. Compose a URL `https://dapp.microshare.io/guest/<linkid>?optional-query-string=optional`.
+* Example URL for Product Suite in assets account is `https://dapp.microshare.io/guest/5e73b63d3a00002a934523d4`.
 
-5. Grab that link
-6. For any views, create rules that share 'filtered objects"  with guest@microshare.net with Execute rights 
+5. Grab that link.
+6. For any views, create rules that share 'filtered objects"  with guest@microshare.net with Execute rights .
 7. In order to view data that was created by a guest user interacting with a link to the app, you must also create a rule that shares that data back from guest@microshare.net to the organization (an org admin). 
 
 {% include image.html url="/assets/img/creating-guest-app-guide-1.png" description="CGAG1" %}

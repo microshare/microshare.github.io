@@ -13,7 +13,7 @@ A Suite App allows you to encapsulate multiple apps into a single interface that
 
 ## 1. Create a new App:
 
-{% include image.html url="\assets\img\dashboard-guide-4.png" height="900" width="900" description="Dashboard Guide 4" %}
+{% include image.html url="\assets\img\suite-app-1.png" description="Dashboard Guide 4" %}
 
 * `App Type`: Suite
 * `Name`: Enter the user- facing name for the new application.
@@ -29,6 +29,8 @@ A Suite App allows you to encapsulate multiple apps into a single interface that
 * `headerLogo`: [https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/footer](https://s3.amazonaws.com/cdn.point.io/distribution/product/1_01/header.png)
 * `sortedApps`: (optional) a list of the app names. Should only be used if the sort order is not alphabetic.
 
+{% include image.html url="\assets\img\dashboard-guide-3.png" description="Dashboard Guide 4" %}
+{% include image.html url="\assets\img\app-facts-tree.png" description="Dashboard Guide 4" %}
 ## 2. Configuring the Child Apps of the Suite App
 
 Remember that “Child Tag” you configured in the Suite App?  Add that to the “Parent Tag(s)” field of the relevant app(s).

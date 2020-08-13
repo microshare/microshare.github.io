@@ -11,7 +11,7 @@ toc: true
 The Electronic Attendance Records App allows you to configure an app to retrieve all staff arrivals from a user specified week and download them into a formatted file (either CSV or xlsx). 
 
 ## 1. Create the App
-
+ {% include image.html url="\assets\img\smart-timecard-1.png"  description="Dashboard Guide1" %}
 * `App Type`: Display.
 * `Name`: Use the name that the user will see.
 * `Parent Tag(s)`: Allows your suite app to be configured within another suite app.
@@ -25,7 +25,10 @@ The Electronic Attendance Records App allows you to configure an app to retrieve
 
 ## 2. Facts for Smart Timecard App
 
-The example JSON files are provided in the [App Facts Section](./#4-app-facts). The details include:
+{% include image.html url="\assets\img\dashboard-guide-3.png" description="Dashboard Guide 4" %}
+{% include image.html url="\assets\img\app-facts-tree.png" description="Dashboard Guide 4" %}
+
+The example JSON files are provided in the [App Facts Section](/docs/2/technical/microshare-platform/app-config-examples/trending-air-quality/). The details include:
 
 * `appTitle`: Use the user facing title of the Electronics Attendance Records app.
 * `navOptions`: Complete this last. Add the links and names of all apps in the client's account to each app. json so that the client can navigate from one app to another. 
@@ -33,7 +36,12 @@ The example JSON files are provided in the [App Facts Section](./#4-app-facts). 
     - Use the Databoard to generate the correct JSON format.
     - Get a token for the account that owns the device cluster(s)
     - Go to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0)
+    
+{% include image.html url="\assets\img\dashboard-guide-6.png"  description="Dashboard Guide3" %}
     - Choose <em>Edit Workspace</em> from the settings menu, then <em>Add Monitor Widget</em> for the relevant clusters, then <em>Lock Workspace</em>, then click on the device monitor to show the list view, then click <em>Download JSON</em>. 
+    
+{% include image.html url="\assets\img\dashboard-guide-7.png"  description="Dashboard Guide3" %}
+
 * `dataRecType`: Match the target recType of the device cluster.
 * `dataContext`: Use the meta tag you chose in the device cluster. 
 
@@ -48,6 +56,6 @@ The example JSON files are provided in the [App Facts Section](./#4-app-facts). 
 * `date`: preset the selected week (current week is the default) in the YYYY-MM-DD format. If you use a Sunday/ Monday and fail to explicitly set the locale and timezone, then users in different time zones will see the wrong week's worth of data.
 * `selectionOptions`: Use in URL parameters to set a single location1. This can allow you to specify that the attendance data from one location be emailed to one set of users and the attendance from another location be emailed to a different set. 
 * `autoDownload`: Download the file as soon as the page is loaded, the default is false. 
-*`downloadXLSX`: Only relevant when autoDownlaod is true. Whether to autoDownload as an excel sheet (xlsx) or in a csv format.
+* `downloadXLSX`: Only relevant when autoDownlaod is true. Whether to autoDownload as an excel sheet (xlsx) or in a csv format.
 * `excludeSaturday` and `excludeSunday`: whether to exclude Saturday or Sunday data. (default is false)
 * `eventName`: What name to use for each "Hall Effect" in the downloading data. Consider using "staff arrival", "cleaning" or "record". Defaults to "cleaning".
