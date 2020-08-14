@@ -40,3 +40,6 @@ As presented in the pages on data ingest and transformation, for Microshare® co
 #####  [Sagemcom Siconia](/docs/2/technical/microshare-platform-advanced/robots-libraries/sagemcom-siconia/)
 #####  [Adeunis LoRaWAN Demonstrator V1.1](/docs/2/technical/microshare-platform-advanced/robots-libraries/adeunis-demonstrator/)
 #####  [Generic decoding](/docs/2/technical/microshare-platform-advanced/robots-libraries/decoding-payloads-new/)
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

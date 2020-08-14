@@ -6,6 +6,8 @@ toc: true
 ---
 
 ---------------------------------------
+{% include image.html url="\assets\img\aws.jpg"  description="aws" %}
+
 #### Summary:
 1. [Overview](./#1-overview)
 2. [Necessary Information](./#2-necessary-information)
@@ -132,6 +134,7 @@ As with most AWS facilities, SQS supports authentication and authorization using
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html)
 
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 
 
 

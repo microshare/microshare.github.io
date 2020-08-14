@@ -54,3 +54,5 @@ To summarize, if Microshare® invites you to create an account to access your da
 {% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
 * You can then log into your account from [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

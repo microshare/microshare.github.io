@@ -30,3 +30,5 @@ toc: true
 Now that you have passed authentication, you can now make your first requests.
 
 ###### > [Simple Request](../simple-requests)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

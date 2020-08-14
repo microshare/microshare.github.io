@@ -306,5 +306,5 @@ At Microshare.io we usually represent data workflows with [draw.io](https://www.
 You have now access to decoded IoT data through the Microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 

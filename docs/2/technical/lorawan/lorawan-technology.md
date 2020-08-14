@@ -298,3 +298,7 @@ solutions.
 {% include image.html url="/assets/img/LoRaWan/LoRaWan11.png" description="LoRaWan Technology" %}
 
 {% include image.html url="/assets/img/LoRaWan/LoRaWan12.png" description="LoRaWan Technology" %}
+
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

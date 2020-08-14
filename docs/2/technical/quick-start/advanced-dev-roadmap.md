@@ -58,5 +58,6 @@ Finally, you will learn how to manage your data within MicroshareÂ®. MicroshareÂ
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
 
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 
 

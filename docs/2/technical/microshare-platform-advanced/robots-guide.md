@@ -251,3 +251,5 @@ The Java libraries accessed by the Robots point to the adequate Service to read 
 For additional details on available Robot methods, visit [Robot library.](/docs/2/technical/microshare-platform-advanced/robots-library/)
 
 For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [IoT integration documentation.](/docs/2/technical/lorawan/lorawan-devices)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

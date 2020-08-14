@@ -414,3 +414,5 @@ Create the three Smilio Robots and authenticate them with the account / identity
   - Subject line should start with client organization
   - Make sure the label and the event are both as expected and match the backboard that is physically in use at the client site
 - If you make any changes to the Smilio Config View, you must toggle the robots OFF, then ON again. Yes, you should do all three to make sure you are testing exactly what you configured.
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -18,3 +18,5 @@ Gateways form the bridge between devices and internet. Devices use low power net
 ###  > [Indoor iFemtocell Evo](./../gateway-installations/indoor-ifemtocell-evo)
 ###  > [Indoor iFemtocell](./../gateway-installations/indoor-ifemtocell)
 ###  > [Outdoor iStation](./../gateway-installations/outdoor-istation)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

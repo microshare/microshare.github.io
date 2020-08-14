@@ -59,3 +59,5 @@ The example JSON files are provided in the [App Facts Section](/docs/2/technical
 * `downloadXLSX`: Only relevant when autoDownlaod is true. Whether to autoDownload as an excel sheet (xlsx) or in a csv format.
 * `excludeSaturday` and `excludeSunday`: whether to exclude Saturday or Sunday data. (default is false)
 * `eventName`: What name to use for each "Hall Effect" in the downloading data. Consider using "staff arrival", "cleaning" or "record". Defaults to "cleaning".
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

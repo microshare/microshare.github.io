@@ -7,6 +7,7 @@ toc: true
 
 
 ---------------------------------------
+{% include image.html url="\assets\img\aws.jpg"  description="aws" %}
 
 ##### SUMMARY : 
 
@@ -178,3 +179,6 @@ As with most AWS facilities, Kinesis supports authentication and authorization u
 [https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html](https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html)
 
 [https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html)
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

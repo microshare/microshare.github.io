@@ -53,3 +53,5 @@ Available in the Microshare® Deploy-M App, available for iPhone and Android. In
 {% include youtube_video.html url="https://www.youtube.com/embed/Zy_vIfF3T7o?enablejsapi=1&amp;wmode=opaque" description="Frame" %}
 
 Available in the Microshare® Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a leak detection sensor.
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

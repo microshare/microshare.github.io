@@ -114,3 +114,5 @@ To delete a device, swipe left on it, then tap "Delete".
 The device is now deleted.
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M04.PNG" description="Deploy-M App" %}
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -125,3 +125,6 @@ Fridge : `io.microshare.demo.fridge.unpacked`
 Desk, Room, Batroom occupancy/activity : `io.microshare.demo.motion.unpacked`
 
 Feedback : `io.microshare.demo.feedback.unpacked`
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

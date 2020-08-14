@@ -148,3 +148,5 @@ If using 4G, simply follow these steps:
 **You’re all done!**  
 
 Please email `Installation@microshare.io` to indicate your gateway is up and running, so that we can confirm at our end. 
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

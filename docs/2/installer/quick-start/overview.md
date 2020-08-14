@@ -75,3 +75,5 @@ To set up your system, you will:
 ###### > 4. Finally, [Validate](../../quick-start/validation-of-a-successfull-installation) that the installation was successful.
 
 If you have more question, you can have a look at our [FAQ about installations](../faq-about-installations) page.
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

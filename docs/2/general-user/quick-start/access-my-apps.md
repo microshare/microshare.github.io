@@ -97,3 +97,5 @@ Apps, however, by default are shared at the organizational level. They do not re
 Robots are visible to only the creator. There is not currently a mechanism to share robots. 
 
 It is possible to share views very simply so that they can be reused by another user, but their use will be shared, they will not be visible on the account of the one who receives the right to use them. 
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -74,3 +74,4 @@ Robots give the ability to automate certain tasks for your data. For example, yo
 
 You can set up automated multi- step processes to route and transform your data so it’s ready to be consumed by an app or a dashboard using [The Data Unpacking Guide](/docs/2/technical/microshare-platform-advanced/data-unpacking/) and automate this task using the [The Data Unpacking with Robots Guide](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/).
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

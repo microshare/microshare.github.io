@@ -57,3 +57,5 @@ Once the device cluster has been created, all that remains to be done is to add 
 Or simply download the [Deploy-M application](../../deploy-m/download-the-app) and follow this tutorial to use it and add all your sensors very quickly directly on site. 
 
 ##### > [Deploy-M Guide](../../deploy-m/app-guide)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

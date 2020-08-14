@@ -79,7 +79,7 @@ Our installation page has a great tutorial for both the [iFemtocell](/docs/2/ins
 The LoRaWAN® gateways used by Microshare® fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
 
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 
 
 

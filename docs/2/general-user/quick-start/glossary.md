@@ -265,4 +265,5 @@ A piece of authentication information that last for a short time period used in 
 To transform the binary data produced by the device into [JSON](./#json) formated data that can be more easily processed by the downstream data consumer.
 
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 

@@ -7,6 +7,7 @@ toc: true
 ---
 
 ---------------------------------------
+{% include image.html url="/assets/img/touchfree-1.png" height="500" width="500" description="microshare logo" %}
 The Touchfree Feedback™ app creates business events tied to specific locations just like the Smilio Feedback solutions.
 
 #### Summary:
@@ -149,3 +150,6 @@ You MUST prepend the pound sign to the name of the column AND You MUST prepend U
 [Data Merge Tutorial](https://redokun.com/blog/data-merge-indesign)
 and 
 [Adding QR codes with Data Merge.](https://www.tech4pub.com/2015/02/03/indesign-cc-tip-adding-qr-codes-with-data-merge/ )
+
+
+{% include image.html url="/assets/img/microshare-logo.png" description="microshare logo" %}

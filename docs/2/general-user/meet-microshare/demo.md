@@ -21,3 +21,5 @@ You want to go further and try our APIs?
 
 For this we have developed demo APIs that you will be able to use. But for this you will have to follow the technical tutorial that explains the use of our API.
 #### > [Microshare® APIs](../../../technical/api/quick-start)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

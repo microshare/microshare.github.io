@@ -55,3 +55,5 @@ A. To differentiate your devices, look at the information on the back. The air q
 <br>
 
 {% include image.html url="/assets/img/Install_FAQ_3.png" width="550" height="550" description="Motion Sensor" %}
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

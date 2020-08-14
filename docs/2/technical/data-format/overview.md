@@ -219,3 +219,6 @@ The additional information in the `appid` corresponds to the app-key that is use
 
 
 Next, you should follow the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards) to dive further into the data ingestion process by device clusters and how to request information using a push action. This guide will describe the components of IoT data packets and IPSO data. 
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -36,3 +36,5 @@ A Suite App allows you to encapsulate multiple apps into a single interface that
 Remember that “Child Tag” you configured in the Suite App?  Add that to the “Parent Tag(s)” field of the relevant app(s).
 
 Remember to test your Suite App, the child apps should appear as tiles within the Suite App.
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

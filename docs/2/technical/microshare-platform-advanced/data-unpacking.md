@@ -56,3 +56,5 @@ Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gatew
 ---------------------------------------
 
 Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and unpack your data automatically.  
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

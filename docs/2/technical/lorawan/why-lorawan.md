@@ -55,3 +55,6 @@ Simply by activating a sensor it will work for years and send you your essential
 #### Security
 
 By passing through LoRaWan and not through your wifi for example, this ensures the continued security of your network. Indeed even if the sensors and technology LoRaWan embeds a strong security, we do not want there to be any possible entry into your network through a WiFi sensor for example.
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

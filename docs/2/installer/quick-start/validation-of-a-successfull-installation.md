@@ -43,3 +43,5 @@ To this one:
 {% include image.html url="/assets/img/installation/installation-yes-1.png" description="Banner" %}
 
 It will thus be green and validated. 
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

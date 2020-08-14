@@ -188,3 +188,5 @@ The following is JSON example code for a Trending Air Quality App.
 }
 
 {% endhighlight %}
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

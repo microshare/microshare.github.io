@@ -125,3 +125,5 @@ To do this is very simple, just follow the steps in the Microshare® APIs tutori
 ##### > [APIs](/docs/2/technical/api/quick-start/)
 
 <br>
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

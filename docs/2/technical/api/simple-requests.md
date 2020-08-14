@@ -98,3 +98,5 @@ Once you have found the query you need on Postman, you can very quickly extract 
 
 
 <!> Be careful the token is valid for only 48 hours, it is generally necessary to have a request of authentification beforehand and then use this token through your request. <!>
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

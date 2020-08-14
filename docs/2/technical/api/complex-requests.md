@@ -22,3 +22,6 @@ Here is a more complete collection of queries : [![Run in Postman](https://run.p
 **You may simply notice that the Microshare® APIs are REST APIs and therefore have a similar structure.**
 
 Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -110,3 +110,4 @@ Have any questions? please don't hesitate to contact `support@microshare.io` wit
 
 
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

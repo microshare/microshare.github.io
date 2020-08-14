@@ -60,5 +60,5 @@ Have a question not answered here? Do not hesitate to contact us at `support@mic
 
 ---------------------------------------
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 

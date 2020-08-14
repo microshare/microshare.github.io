@@ -12,6 +12,8 @@ toc: true
 
 ---------------------------------------
 
+{% include image.html url="\assets\img\microshare-logo-2.jpg"  description="ms logo" %}
+
 ##### SUMMARY : 
 
 1. [Introduction](./#introduction)
@@ -34,7 +36,7 @@ While reading this documentation if you encounter any issues or have any feedbac
 &nbsp;
 
 
-#### For updates on the Microshare® Platform's Release dates, please refer to the [Management Console Access Page](https://www.microshare.io/management-console-access/).
+**For updates on the Microshare® Platform's Release dates, please refer to the [Management Console Access Page](https://www.microshare.io/management-console-access/).**
 
 
 ## Quick Links
@@ -54,6 +56,7 @@ Then there are profiles more advanced than the user, there are the following pro
 
 ## Platform
 ---------------------------------------
+{% include image.html url="\assets\img\banner.jpg"  description="ms logo" %}
 
 The Microshare® platform is comprised of two cooperating clusters of microservices: **Microshare® Core** and **Microshare® Stream**.
 
@@ -72,4 +75,6 @@ You can access the Microshare® platform right here :
 #####  > [Production](https://app.microshare.io/composer).
 #####  > [Development](https://dapp.microshare.io/composer).
 
-{% include image.html url="/assets/img/banner.jpg" description="Banner" %}
+<!--{% include image.html url="\assets\img\banner.jpg" description="Banner" %}-->
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

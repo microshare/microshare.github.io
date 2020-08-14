@@ -98,3 +98,6 @@ You can open it to check that it&#39;s all right like that :
 Be careful to store and transmit the resulting file in a secure fashion. These access credentials are stored in plain text and are vulnerable to security leaks.
 
 Your Microshare® Service or Support contact will need the **.json file**. It is recommended that this information be sent securely via GPG encrypted email or through an encrypted chat connection using keybase.io.
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

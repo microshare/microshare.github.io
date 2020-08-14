@@ -173,3 +173,5 @@ The following are guides for configuring specific types of apps:
 
 <br>
 ##### [Touchfree Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)
+
+ {% include image.html url="\assets\img\microshare-logo.png" description="logo" %}

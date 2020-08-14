@@ -51,3 +51,5 @@ Security References
 [https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-security-controls](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-security-controls)
 
 [https://docs.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature](https://docs.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -7,7 +7,7 @@ toc: true
 
 
 ---------------------------------------
-{% include image.html url="/assets/img/CleanSafeOverview4.png" width="800" description="demo" %}
+{% include image.html url="/assets/img/uct/uct-1.jpg"  width="800" description="demo" %}
 
 #### Summary
 
@@ -104,6 +104,7 @@ Some things to know while filling out the Device Twinning document(s):
 Ensuring client engagement and involvement throughout the installation process is an utmost priority of Microshare®. Guide the client through each step and be transparent regarding important details such as the specifications of device placements or the management of their accounts. Building a connection with the client is vital for displaying their prioritization. **Ask for the email(s) of the installer(s).**
 
 
+{% include image.html url="/assets/img/CleanSafeOverview4.png" width="800" description="demo" %}
 
 ## More on Tags
 ---------------------------------------
@@ -146,23 +147,23 @@ A complete device tag example:
 
 ## Frequently Asked Questions
 ---------------------------------------
+{% include image.html url="\assets\img\clean-safe.png" description="clean safe" %}
 
+**Question** I am having trouble understanding the JSON data fields, what do they mean?
 
-**Q.** I am having trouble understanding the JSON data fields, what do they mean?
-
-**A.** The [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) has a section that describes how your devices' data is formatted and what each field means. 
-
-<br>
-**Q.** Is it safe to ignore a person-to-location beacon contact? 
-
-**A.** It may seem unnecessary to consider the person-to-location beacon contact as we are more interested in the person-to-person contact, but the person-to-location beacon contact **will be used** to determine what areas need to be cleaned if there is a COVID incident. Both contacts are important for the Contact Tracing solution.
+**Amswer** The [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) has a section that describes how your devices' data is formatted and what each field means. 
 
 <br>
-Have a question not answered here?
+**Question** Is it safe to ignore a person-to-location beacon contact? 
 
-Check out the [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) or contact `support@microshare.io`. 
+**Answer** It may seem unnecessary to consider the person-to-location beacon contact as we are more interested in the person-to-person contact, but the person-to-location beacon contact **will be used** to determine what areas need to be cleaned if there is a COVID incident. Both contacts are important for the Contact Tracing solution.
+
+<br>
+**Have a question not answered here?**
+
+**Check out the [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) or contact `support@microshare.io`.** 
 
 
 
-
+{% include image.html url="/assets/img/microshare-logo.png" description="demo" %}
 

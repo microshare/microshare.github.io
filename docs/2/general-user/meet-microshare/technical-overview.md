@@ -69,3 +69,6 @@ Access to multiple entities from our data sharing console and dashboards
 Bridging the gaps for a complete solution.
 
 The Microshare® data management platform is the backbone of our IoT solutions. Our Rules Engine, Dynamic Data Modules, Application Accelerators and our proprietary Data Ownership Module ensure your data is collected, analyzed and distributed in a secure and compliant way to the right party and the right time in the right format.
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

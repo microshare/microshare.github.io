@@ -1112,3 +1112,5 @@ The last block of data in `{Data}` describes the device cluster that is permitte
     "source":"ShareService"
 }
 {% endhighlight %}
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
