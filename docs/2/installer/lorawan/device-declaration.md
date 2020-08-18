@@ -1,10 +1,14 @@
 ---
 layout: docs
 title: Device Declaration
-description: description
+description: Setting up your devices
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-6.jpg" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 

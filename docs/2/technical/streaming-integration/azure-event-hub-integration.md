@@ -5,6 +5,14 @@ description:
 toc: true
 ---
 
+
+<br>
+
+
+{% include image.html url="/assets/img/azure-2.jpg" description="thumbnail 2" %}
+
+<br>
+
 ---------------------------------------
 ##### SUMMARY : 
 

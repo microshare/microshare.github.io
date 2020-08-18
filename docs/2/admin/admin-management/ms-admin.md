@@ -1,10 +1,15 @@
 ---
 layout: docs
 title: First Step as a Microshare™ Admin
-
+description: A guide to managing client's data access
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-11.jpg" description="thumbnail 2" %}
+
+<br>
 
 ---------------------------------------
 

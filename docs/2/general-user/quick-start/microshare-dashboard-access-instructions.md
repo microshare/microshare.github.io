@@ -5,6 +5,18 @@ description: How to create an account
 toc: true
 ---
 
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
+
+
+
+
+
 ---------------------------------------
 
 ## One- time account set- up(new users):

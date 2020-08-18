@@ -4,8 +4,11 @@ title: FAQ about installation
 description: 
 toc: true
 ---
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
+
 ---------------------------------------
-## Summary
+#### Summary
 
 1. [Introduction](./#introduction)
 2. [How should I start as an admin?](./#q-how-should-i-start-as-an-admin)

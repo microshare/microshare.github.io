@@ -1,10 +1,18 @@
 ---
 layout: docs
 title: Azure IoT Hub Integration
-description: 
+description: Integrating Azure into your Microshare™ Solution
 group: Azure IoT Hub Integration
 toc: true
 ---
+
+<br>
+
+{% include image.html url="/assets/img/azure-2.jpg" description="thumbnail 2" %}
+
+<br>
+
+
 ---------------------------------------
 
 ##### SUMMARY : 

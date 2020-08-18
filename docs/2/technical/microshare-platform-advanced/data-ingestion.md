@@ -5,6 +5,10 @@ description: How your data gets into the Microshare® Data Lake
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-13.jpg" height="900" width="900" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 ##### SUMMARY : 
 
@@ -34,7 +38,7 @@ The part of the device cluster involved in data ingestion is collecting the data
 
 {% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
 
-Marked in teal is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
+Marked in blue is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
 
 ## 3. Upload data via REST API POST
 ---------------------------------------

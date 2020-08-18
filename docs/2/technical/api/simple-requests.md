@@ -1,9 +1,19 @@
 ---
 layout: docs
 title: Simple Requests
-description: 
+description: Get started with the Microshare™  API 
 toc: true
 ---
+
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-7.jpg" height="900" width="900" description="thumbnail 2" %}
+
+
+<br>
 
 ---------------------------------------
 

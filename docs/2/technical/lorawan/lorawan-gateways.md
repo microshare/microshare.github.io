@@ -1,8 +1,17 @@
 ---
 layout: docs
 title: LoRaWAN Gateways
+description: The gateways in Microshare™ solutions
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="LoRaWan Technology" %}
+
+<br>
 
 ---------------------------------------
 
@@ -21,8 +30,7 @@ As seen above, the gateways serve as the bridge between your devices and the net
 
 Gateways run on an operating system such as Kerlink IoT Station which is run behind the scenes interpreting your device's packets. The gateway admin will use this operating system to manage their gateway. 
 
-For more information on gateways please visit [The Things Network Website](https://www.thethingsnetwork.org/docs/gateways/
-).
+For more information on gateways please visit [The Things Network Website](https://www.thethingsnetwork.org/docs/gateways/).
 
 
 

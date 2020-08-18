@@ -5,6 +5,11 @@ description: How your data is decrypted and delivered to you
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 ##### SUMMARY : 
 
@@ -44,7 +49,7 @@ After completing the source and target recTypes, the next set of information tha
 The device model specifications catagory is marked in green and the device payload unpacker is marked in blue. The device payload unpacker is specific to the format of information that you device sends, and relates to the specific function that  decrypts your information. 
 
 
-You then give each of your devices' EUI or Id and the location tags. These specifications are underlined in red and orange. These specifications allow the unpacker code to only decipher information from your devices and differentiate from records coming from multiple devices. After being parsed, the payload is then transformed by the unpacker code. Depending on what you are recording, an event can be triggered and the data  is stored with extra information on the value that was decoded, its unit, the device it came from, the time the recording occurred and so on. 
+You then give each of your devices' EUI or Id and the location tags. These specifications are marked with red and orange arrows. These specifications allow the unpacker code to only decipher information from your devices and differentiate from records coming from multiple devices. After being parsed, the payload is then transformed by the unpacker code. Depending on what you are recording, an event can be triggered and the data  is stored with extra information on the value that was decoded, its unit, the device it came from, the time the recording occurred and so on. 
 
 Finally, the data is written to the data lake under the target recType.unpacked name along with the tags specified while creating the device cluster. The datawrite builds the audit trail of your data and allows the triggering of the next step in the workflow. 
 

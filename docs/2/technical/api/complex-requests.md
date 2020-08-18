@@ -1,9 +1,13 @@
 ---
 layout: docs
 title: Complex API Request
-description: Push your knowledge of the Microshare™ APIs a little more
+description: Push your applications of the Microshare™ APIs 
 toc: true
 ---
+
+
+{% include image.html url="/assets/img/thumbnail-13.jpg" height="900" width="900" description="thumbnail 2" %}
+
 
 <br>
 Dev Server : [dapp.microshare.io](https://dapp.microshare.io/login)<br>

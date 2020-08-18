@@ -1,9 +1,18 @@
 ---
 layout: docs
-title: Why LoRaWan ?
+title: Why LoRaWan?
 description: Why do we think LoRaWan is the best IoT technology?
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+
+<br>
+
 
 ---------------------------------------
 
@@ -13,8 +22,6 @@ toc: true
 2. [LoRaWan Advantages](./#3-access-to-device-cluster)
 
 ---------------------------------------
-
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
 ## 1. Introduction
 

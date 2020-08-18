@@ -5,6 +5,10 @@ description: Comprehensive guide to understand Robots
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-7.jpg" height="900" weight="900" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 

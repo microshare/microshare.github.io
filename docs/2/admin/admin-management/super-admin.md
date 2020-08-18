@@ -1,9 +1,17 @@
 ---
 layout: docs
 title: Microshare™ Super Admin
-
+description: Managing Client Microshare™ Tools
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
+<br>
 
 ---------------------------------------
 

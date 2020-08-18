@@ -5,6 +5,12 @@ description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
+
+
+
+{% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
+
+
 ---------------------------------------
 
 ##### SUMMARY : 

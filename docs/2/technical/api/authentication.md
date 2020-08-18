@@ -1,9 +1,16 @@
 ---
 layout: docs
 title: Authentication
-description: Security is our watchword when it comes to data access.
+description: Security is our watchword when it comes to data access
 toc: true
 ---
+
+
+{% include image.html url="/assets/img/thumbnail-5.jpg" height="900" width="900" description="thumbnail 2" %}
+
+
+<br>
+
 
 ---------------------------------------
 

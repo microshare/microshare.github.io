@@ -6,6 +6,10 @@ group: deploy-m
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
 Deploy-M is a mobile application that streamlines the device configuration process.  Using Deploy-M to configure the devices in your Microshare® account at the same time as you are physically installing them ensures that the digital twinning process is simple and error-free.
 
 ##### Get your Internet of Things data workflow started with the following steps

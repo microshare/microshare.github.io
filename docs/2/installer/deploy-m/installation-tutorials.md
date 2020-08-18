@@ -1,11 +1,15 @@
 ---
 layout: docs
 title: Connect Devices
-description: Comprehensive guide to install some sensors with Deploy-M
+description: Comprehensive guide to install your devices with Deploy-M
 group: deploy-m
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 

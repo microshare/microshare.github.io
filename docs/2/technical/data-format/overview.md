@@ -6,6 +6,11 @@ toc: true
 ---
 
 
+
+
+{% include image.html url="/assets/img/thumbnail-14.jpg" description="thumbnail 2" %}
+
+
 ---------------------------------------
 
 

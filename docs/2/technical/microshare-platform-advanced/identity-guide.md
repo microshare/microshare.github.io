@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: Identity Guide
+description: Becoming familiar with Microshare™ identities
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
+<br>    
 ---------------------------------------
 
 ##### SUMMARY : 

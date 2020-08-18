@@ -1,0 +1,1 @@
+(window.odspNextWebpackJsonp=window.odspNextWebpackJsonp||[]).push([["114"],{1297:function(e,t,n){"use strict";n.r(t);n.d(t,"ShowItemAnalyticsAction",function(){return s});var r=n(138),i=n(1963),s=Object(i.e)(function(e,t){var n=e.consume(r.e);return new(e.injected(n.ShowItemAnalyticsAction))({item:t.item})})}}]);

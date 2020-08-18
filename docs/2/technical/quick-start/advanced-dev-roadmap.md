@@ -4,6 +4,9 @@ title: The Advanced Developer's Roadmap to Microshare™
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-6.jpg" height="1000" width="1000" description="thumbnail 2" %}
+
 ---------------------------------------
 #### Summary:
 1. [Introduction](./#introduction)

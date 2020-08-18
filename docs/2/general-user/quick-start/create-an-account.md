@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: Create an Account
-description: Follow this quick introduction to create your account.
+description: Follow this quick introduction to create your account
 toc: true
 ---
+
+
+
+{% include image.html url="/assets/img/thumbnail-5.jpg" description="thumbnail 3" %}
+
+<br>
 
 
 ---------------------------------------
@@ -14,7 +20,7 @@ toc: true
     * A. [Development or Production](./#a-development-or-production) 
     * B. [Registration](./#b-registration)
 
----------------------------------------
+
 
 
 ## Register for a Microshare.io account
@@ -22,13 +28,13 @@ toc: true
 
 ### A. Development or Production
 
-Microshare® consists of two environments, the development environment and the production environment; each has its own characterisitics and fufill different needs. 
+Microshare® uses two environments, the development environment and the production environment; each has its own characterisitics and fulfill different needs. 
 
 Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
 Prod : [app.microshare.io](https://app.microshare.io/login)
 
-Here is the table of the different reasons to create an account on the dev or production environment.
+The following are the differences between the two:
 
 
 | Dev                   | Prod                      |
@@ -39,20 +45,30 @@ Here is the table of the different reasons to create an account on the dev or pr
 | Dashboards Creation   |                           |
 
 
-To summarize, if Microshare® invites you to create an account to access your dashboard you will need to create an account on prod. While if you just want to try something go to dev.
+In short, if Microshare® invites you to create an account, you will need to create an account on prod to access your dashboards. If you have no formal obligation and merely want to interact with the environment, the development side is better suited for your intentions. 
 
 
 ### B. Registration
 
-* Navigate to [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).  
+<br>
+**1.** Navigate to [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).
+
+<br>
 {% include image.html url="/assets/img/create-microshare-account-1.png" description="Sign In page" %}
 
-* Click Sign Up.  
+**2.** Click Sign Up.  
+
+<br>
 {% include image.html url="/assets/img/create-microshare-account-2.png" description="Provide an email" %}{% include image.html url="/assets/img/create-microshare-account-3.png" description="Sent email modal" %}
 
-* You will receive an email requesting you to confirm your account and set your account password.  
+<br>
+**3.** You will receive an email requesting you to confirm your account and set your account password.  
+
+<br>
 {% include image.html url="/assets/img/create-microshare-account-4.png" description="User account creation email" %}{% include image.html url="/assets/img/create-microshare-account-5.png" description="Choose password" %}
 
-* You can then log into your account from [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).
+<br>
+**4.** You can then log into your account from either [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).
 
+<br>
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

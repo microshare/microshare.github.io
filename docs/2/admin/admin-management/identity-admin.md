@@ -1,9 +1,19 @@
 ---
 layout: docs
 title: Identity Admin
-
+description: Managing access for other accounts
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-13.jpg" description="thumbnail 2" %}
+
+<br>
+
+
 
 
 ### Providing Client Access via Microshare® to the identity

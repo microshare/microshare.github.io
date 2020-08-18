@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: The Microshare™ Technical Structure
+description: How Microshare™ brings your data to you
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-9.jpg" height="1000" width="1000" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 #### Summary:
 1. [Introduction](./#introduction)

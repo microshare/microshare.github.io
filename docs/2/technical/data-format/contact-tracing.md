@@ -98,28 +98,20 @@ Unpacked data does the following:
 What does each peice of data mean?
 <br>
 - `originatingDevice`- Id of wearable that detected a contact.
-
 <br>
 - `originatingDeviceBattery`- Voltage level of detecting wearable.
-
 <br>
 - `detectingDevice`- ID of device that contact was made with.
-
 <br>
 - `startTime`- starting time of contact in UTC.
-
 <br>
 - `start`- offset in minutes from recieving time that contact began.
-
 <br>
 - `duration`- length of contact in minutes.
-
 <br>
 - `endTime`- ending time of contact in UTC.
-
 <br>
 - `locationBeacon`- true if contact was with beacon device, false if wearable.
-
 <br>
 - `averageRSSI`- average RSSI (strength of the signal) over the contact period.
 

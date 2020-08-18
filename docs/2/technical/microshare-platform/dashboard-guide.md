@@ -6,6 +6,8 @@ toc: true
 ---
 
 
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
 
 ##### SUMMARY : 
 
@@ -45,7 +47,7 @@ Trending apps will graphically represent your data over any period you wish, whi
 
  
 #### Create a New App with the configuration:
- 
+ {% include image.html url="\assets\img\dashboard-guide-8.png" height="700" width="900" description="Dashboard Guide 8" %}
  {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
 
@@ -92,7 +94,6 @@ Create a new fact by pressing the button above the green arrow and hitting apend
     - head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0).
 {% include image.html url="\assets\img\dashboard-guide-6.png"  description="Dashboard Guide3" %}
     - Choose <em>Edit Workspace</em> from the settings menu, then <em>Add Monitor Widget</em> for the relevant clusters, then <em>Lock Workspace</em>, then click on the device monitor to show the list view, then click <em>Download JSON</em>. 
-    
 {% include image.html url="\assets\img\dashboard-guide-7.png"  description="Dashboard Guide3" %}
 * `dataRecType`: match the target recType of the device cluster.
 * `dataContext`: Use the meta tag you chose in the device cluster.

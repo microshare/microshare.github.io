@@ -1,11 +1,13 @@
 ---
 layout: docs
 title: Install the gateway
-description: 
+description: Setting up your gateway device
 toc: true
 ---
 
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
 
+<br>
 ## 1. Introduction
 ---------------------------------------
 

@@ -5,6 +5,15 @@ description: A guide to interacting with Microshare™ Technology
 toc: true
 ---
 
+
+
+
+{% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
+
+<br>
+
+
+
 ---------------------------------------
 
 #### Summary:

@@ -5,6 +5,16 @@ description: What it means to be a company adminsistrator through Microshare™
 toc: true
 ---
 
+
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
+
 ---------------------------------------
 
 ##### SUMMARY : 

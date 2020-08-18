@@ -5,11 +5,14 @@ description: Our demo dashboards do not use real data and are provided solely fo
 toc: true
 ---
 
+{% include image.html url="\assets\img\banner.jpg"  description="ms logo" %}
+
+
 ## Demo Dashboards 
 
-You want to see what Microshare®'s dashboards looks like and see our devices in action? 
+Interested in seeing Microshare®'s dashboards in action? 
 
-Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), you will have access to few of our dashboards. As seen in the graphic below, you have access to many apps. <br>
+Check out our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), where you will be able to interact with our dashboards in real time. As seen in the graphic below, you have access to a variety of different apps. <br>
 
 <a href="https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null">
     {% include image.html url="/assets/img/demo-dashboard.jpg" description="Demo Suite App" %}
@@ -17,9 +20,9 @@ Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443
 
 ## Demo API 
 
-You want to go further and try our APIs? 
+Additionally, we provide a demonstration of our API for you to interact with to start communcication with the Microshare® system.
 
-For this we have developed demo APIs that you will be able to use. But for this you will have to follow the technical tutorial that explains the use of our API.
+For this, you will need to follow our technical guides which explain what the API is and how you can begin interacting with it.  
 #### > [Microshare® APIs](../../../technical/api/quick-start)
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -4,7 +4,9 @@ title: Quick Start to the Microshare™ Platform
 toc: true
 ---
 
+{% include image.html url="/assets/img/thumbnail-11.jpg" description="thumbnail 2" %}
 
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 

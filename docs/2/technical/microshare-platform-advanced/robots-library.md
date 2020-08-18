@@ -1,10 +1,15 @@
 ---
 layout: docs
 title: Robot Libraries
-description: snippets of usable lib methods from Robots
+description: snippets of usable methods from Robots
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-5.jpg" height="900" width="900" description="thumbnail 2" %}
+
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 

@@ -5,13 +5,20 @@ description: Confused on any common Microshare™ terms?
 toc: true
 ---
 
----------------------------------------
+-----
+
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
+
+<br>
+
+----------------------------------
 ## Summary
 
 1. [Overview](./#overview)
 2. [Microshare® Terminology](./#microshare-terminology)
 3. [Industry Terminology](./#industry-terminology)
-
 
 ## Overview
 ---------------------------------------

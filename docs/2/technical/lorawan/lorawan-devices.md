@@ -1,9 +1,17 @@
 ---
 layout: docs
 title: LoRaWAN Devices
-
+description: The devices in Microshare™ solutions
 toc: true
 ---
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="LoRaWan Technology" %}
+
+<br>
+
 ---------------------------------------
 
 ##### SUMMARY : 

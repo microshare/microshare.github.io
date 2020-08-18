@@ -5,6 +5,11 @@ description: Installation Overview
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -14,7 +19,6 @@ toc: true
 3. [Steps](./#steps)
 
 ---------------------------------------
-
 
 
 

@@ -5,8 +5,14 @@ description: How do I know if I installed my devices properly?
 toc: true
 ---
 
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-14.jpg" description="thumbnail 2" %}
+
 ---------------------------------------
-## Summary
+#### Summary
 
 1. [Overview](./#1-overview)
 2. [Microshare® Validation](./#2-microshare-validation)

@@ -5,6 +5,11 @@ description : Which pages can help me with data integration?
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
+
+
 ---------------------------------------
 
 ##### SUMMARY : 
