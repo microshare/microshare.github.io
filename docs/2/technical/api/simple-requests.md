@@ -29,63 +29,79 @@ toc: true
 ## 1. Overview
 ---------------------------------------
 
-Now that you have passed authentication, you can now make your first requests.
+Now that you have completed authentication, you can now make your first requests.
 
-This guide will walk you through how to write data and request information from the API. 
+This guide will walk you through how to write data and request information from the APIs. 
 
 For this there are endpoints, similar to addresses, where data is stored. 
 
-In the examples below we will create your own specific endpoints. But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page](/docs/2/technical/microshare-platform-advanced/data-ingestion/). 
+In the examples below we will create your own specific endpoints (recType). But we often use predefined endpoints that correspond to the type of data itself. You can find this information in the [data ingestion page.](/docs/2/technical/microshare-platform-advanced/data-ingestion/)
 
-If you then want to read more conventional data, you can try the [demo APIs](/docs/2/technical/api/quick-start/#4-demo-api) now that you have mastered the main tools.
+If you then want to read more conventional data, you can try the [demo APIs.](/docs/2/technical/api/quick-start/#4-demo-api) 
 
 
 
 ## 2. Write data
 ---------------------------------------
 
-* From the Postman collection, open the request `Shares -> Create one Share`.
+**1.** From the Postman collection, open the request `Shares -> Create one Share`.
 
-* Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
+<br>
+{% include image.html url="/assets/img/api/simple-request-1.png" description="create one share" %}
 
+<br>
+**2.** Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
+
+<br>
+{% include image.html url="/assets/img/api/simple-request-2.png" description="create one share" %}
+<br>
 {% include image.html url="/assets/img/api/create_one_share_1new.png" description="create one share" %}
 
-* Enter you own recType there, by using your `firstName.lastName` combination.
+<br>
+**3.** Enter you own recType there, by using your `firstName.lastName` combination.
 
-* Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
+<br>
+**4.** Click on the `Body` tab, under the Params zone, and write any JSON body there, for example `{"Test":"Data"}`.
 
+<br>
 {% include image.html url="/assets/img/api/create_one_share_2new.png" description="create one share" %}
 
-* Click `Send`
+<br>
+**4.** Click `Send`
 
+<br>
 {% include image.html url="/assets/img/api/create_one_share_3new.png" description="create one share" %}
 
-* A confirmation message will be sent, indicating that the data was successfully written to Microshare®. It returns metadata usable with other API calls.
+<br>
+**5.** A confirmation message will be sent, indicating that the data was successfully written to Microshare®. It returns metadata usable with other API calls.
 
 
 
 ## 3. Read data
 ---------------------------------------
 
-* From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
-* Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
+**1.** From the Postman collection, open the request `Shares -> Get Shares by recType` to configure it.
 
+<br>
+**2.** Click on `Params`, next to the `Send` button, to edit the recType Value. Specify the recType you used in the Write query.
+
+<br>
 {% include image.html url="/assets/img/api/read_share_1new.png" description="read share" %}
 
-* Click `Send`. 
-There response of the request is a view of all the data stored under the specified recType. Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
+<br>
+**3.** Click `Send`. The return response will be all the information stored under that recType(endpoint). Part of the displayed metadata is your login and API key, showing that YOU are the owner of that data:
 
 {% include image.html url="/assets/img/api/read_share_2new.png" description="read share" %}
 
-* If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+**4.** If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
-**Note**: The `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other users will only see their data, unless you have created Rules to share your data.
+**Note:** The `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other users will only be able to see their data, unless you have created Rules to share your data.
 
-Rules are an advanced feature of the platform, and are described in the ADVANCED section at the end of this quick start.
+Rules are an advanced feature of the platform, and are better described in the [Rules Guide.](/docs/2/technical/microshare-platform/rules-guide)
 
-* You can use the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
+**5.** You can use the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
 
-* For more information on how to setup a IoT data stream from a web platform using this API, check our [IoT documentation](../../advanced/lorawan-devices/). 
+**6.** For more information on how to setup a IoT data stream from a web platform using this API, check our [Robots Library.](docs/2/technical/microshare-platform-advanced/robots-library/)
 
 
 
@@ -107,6 +123,6 @@ Once you have found the query you need on Postman, you can very quickly extract 
 {% include image.html url="/assets/img/api/get_code_postman_1new.png" description="read share" %}
 
 
-<!> Be careful the token is valid for only 48 hours, it is generally necessary to have a request of authentification beforehand and then use this token through your request. <!>
+**<!> Be careful the token is valid for only 48 hours, it is generally necessary to have a request of authentification beforehand and then use this token through your request. <!>**
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
