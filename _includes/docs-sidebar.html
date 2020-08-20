@@ -1,3 +1,4 @@
+  
 <form class="bd-search d-flex align-items-center">
   <button class="btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs avigation">
     {% include icons/menu.svg class="" width="30" height="30" %}
@@ -9,6 +10,7 @@
   {% assign url_split = page.url | split: '/' %}
   {% assign page_main_group = url_split[3] | slugify %}
   {% assign page_sub_group = url_split[4] | slugify %}
+  {% assign page_subsub_group = url_split[5] | slugify %}
   {% for group in site.data.docs %}
     {% assign link = group.pages | first %}
     {% assign link_slug = link.title | slugify %}
@@ -18,12 +20,21 @@
       {% assign link_slug = link.title | slugify %}
       {% assign sublink = link.pages | first %}
       {% assign sublink_slug = sublink.title | slugify %}
+      {% if link_slug == nil %}
+        {% assign link = subgroup.subsubpages | first %}
+        {% assign link_slug = link.title | slugify %}
+        {% assign subsublink = link.pages | first %}
+        {% assign subsublink_slug = subsublink.title | slugify %}
     {% endif %}
     {% assign active = nil %}
-
-    {% if page_main_group == group_slug %}
-      {% assign active = 'active' %}
     {% endif %}
+    {% if page_sub_group == subgroup_slug %}
+        {% assign active = 'active' %}
+    {% endif %}
+    {% if page_main_group == group_slug %}
+        {% assign active = 'active' %}
+    {% endif %}
+
 
     <div class="bd-toc-item {{ active }}">
       <a class="bd-toc-link" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}{% if sublink_slug %}{{sublink_slug}}/{% endif %}">
@@ -31,11 +42,10 @@
       </a>
 
       <ul class="nav bd-sidenav ml-3">
-<!--Assign the value doc as the current page and make its title the slug-->
         {% for doc in group.pages %}
           {% assign doc_slug = doc.title | slugify %}
           {% assign active = nil %}
-<!--assign the active page -->
+
           {% if page_main_group == group_slug and page_slug == doc_slug %}
             {% assign active = 'active bd-sidenav-active' %}
           {% endif %}
@@ -108,11 +118,64 @@
                   {% endcomment %}
                 </li>
               {% endfor %}
-            </ul>
-          </div>
-        {% endfor %}
-
-      </ul>
-    </div>
-  {% endfor %}
+                {% for subsubgroup in group.subsubpages %}
+                       {% assign link = subsubgroup.pages | first %}
+                       {% assign link_slug = link.title | slugify %}
+                       {% assign subsubgroup_slug = subsubgroup.title | slugify %}
+                       {% assign active = 'unactive' %}
+<!--Assign the active page-->
+                       {% if page_subsub_group == subsubgroup_slug %}
+                         {% assign active = 'active' %}
+                       {% endif %}
+      
+          <!-- <div class="bd-sub-toc-item {{active}} "> -->
+<!--Create the name of the subpages IN THE SIDE NAV-->
+<!--POTENTIAL ISSUE IS HERE!!-->
+                      <div class="bd-sub-toc-item {{active}} ">
+                        <a class="bd-sub-toc-link" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subsubgroup_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+              {{ subsubgroup.title }}
+                       </a>
+<!--The Pages sub section like MS Platform Advanced, or LoRaWAN-->
+<!--CREATE THE SUBPAGES IN THE SIDENAV BASED OFF OF DOCS.YML-->
+                       <ul class="nav bd-sidenav ml-3">
+                         {% for doc in subsubgroup.pages %}
+<!--Slug stands in for the url and slugify turns the title into a url. Like in the docs.yml you have "Access my Apps" which now becomes access-my-apps-->
+                           {% assign doc_slug = doc.title | slugify %}
+                           {% assign active = nil %}
+      
+                           {% if page_subsub_group == subsubgroup_slug and page_slug == doc_slug %}
+                             {% assign active = 'active bd-sidenav-active' %}
+                           {% endif %}
+      
+                           <li class="{{ active }}">
+                <!-- <li class="active bd-sidenav-active"> -->
+                             <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subsubgroup_slug }}/{{ doc_slug }}/">
+                               {{ doc.title }}
+                            </a>
+<!--Make the link-->
+                           {% comment %}
+                           {% unless doc.sections == nil %}
+                             <ul class="nav">
+                               {% for section in doc.sections %}
+                                 <li>
+                                   <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
+                                    {{ section.title }}
+                                   </a>
+                                 </li>
+                                {% endfor %}
+                               </ul>
+                           {% endunless %}
+                           {% endcomment %}
+                          </li>
+                        {% endfor %}
+<!--                           End of Subsubtails-->
+                       </ul>
+                     </div>
+                   {% endfor %}
+                  </ul>
+                </div>
+            {% endfor %}
+          </ul>
+        </div>
+    {% endfor %}
 </nav>
