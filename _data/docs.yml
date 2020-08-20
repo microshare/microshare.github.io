@@ -73,9 +73,8 @@
     - title: Identity Guide
     - title: Robots Guide
     - title: Robots Library
-    - title: Streaming Integration
-      subsubpages: 
-      - title: Data Streaming from Microshare®
+    subsubpages:
+      - title: Streaming Integration
         pages:
         - title: AWS Kinesis Data Stream Integration
         - title: AWS SQS Integration

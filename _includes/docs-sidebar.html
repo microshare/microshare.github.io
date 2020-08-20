@@ -25,12 +25,12 @@
         {% assign link_slug = link.title | slugify %}
         {% assign subsublink = link.pages | first %}
         {% assign subsublink_slug = subsublink.title | slugify %}
-    {% endif %}
+      {% endif %}
+      {% endif %}
     {% assign active = nil %}
-    {% endif %}
-    {% if page_sub_group == subgroup_slug %}
-        {% assign active = 'active' %}
-    {% endif %}
+   
+    
+    
     {% if page_main_group == group_slug %}
         {% assign active = 'active' %}
     {% endif %}
@@ -118,7 +118,11 @@
                   {% endcomment %}
                 </li>
               {% endfor %}
-                {% for subsubgroup in group.subsubpages %}
+
+
+
+
+                {% for subsubgroup in subgroup.subsubpages %}
                        {% assign link = subsubgroup.pages | first %}
                        {% assign link_slug = link.title | slugify %}
                        {% assign subsubgroup_slug = subsubgroup.title | slugify %}
@@ -172,6 +176,12 @@
                        </ul>
                      </div>
                    {% endfor %}
+
+
+
+
+
+
                   </ul>
                 </div>
             {% endfor %}
