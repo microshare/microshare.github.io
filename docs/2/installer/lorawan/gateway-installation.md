@@ -5,13 +5,13 @@ description: Setting up your gateway device
 toc: true
 ---
 
-{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
 
 <br>
 ## 1. Introduction
 ---------------------------------------
 
-Gateways form the bridge between devices and internet. Devices use low power networks like LoRaWAN to connect to the gateway, while the gateway uses high bandwidth networks like WiFi, ethernet or cellular to connect to the cloud.
+Gateways bridge your devices to the internet. Devices use low power LoRaWan networks to connect to the gateway, while the gateway uses high bandwidth networks like WiFi, ethernet or cellular to connect to the cloud.
 
 
 ## 2. How to install it ?

@@ -9,22 +9,23 @@ toc: true
 ---------------------------------------
 {% include image.html url="/assets/img/uct/uct-1.jpg"  width="800" description="demo" %}
 
-#### Summary
-
+<br>
+#### SUMMARY
+---------------------------------------
 1. [Overview](./#overview)
 2. [Instructions](./#instructions)
 3. [More on Tags](./#more-on-tags)
 4. [Frequently Asked Questions](./#frequently-asked-questions)
 
 
-For more a more technical walkthrough of Contact Tracing device data, check out the [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing). 
+**For more a more technical walkthrough of Contact Tracing device data, check out the [Data Formatting Contact Tracing Page.](/docs/2/technical/data-format/contact-tracing)**
 
 ## Overview
 ---------------------------------------
 
-<br>
 This guide outlines the prerequisites for preparing an environment for a Contact Tracing or Digital Twinning solution. These steps must be followed to ensure that the site is properly organized, as the placement of the devices is crucial for a successful installation.
 
+<br>
 {% include image.html url="/assets/img/digital-twinning-1.png" width="800" description="demo" %}
 
 
@@ -36,7 +37,7 @@ This guide outlines the prerequisites for preparing an environment for a Contact
 <br>
 ##### 1. Confirm the Identity and the Account structure.
 
-Before preparing the environment, double-check that all of the client's associated identities have the necessary permissions. 
+Before preparing the environment, double-check that all of the client's associated identities have the necessary permissions. Permissions are given by the company [Administrator,](/docs/2/admin/admin-management/overview/) contact your administrator to confirm that this step has been completed. 
 
 
 ##### 2. Confirm the address(es) of the installation site(s).
@@ -70,15 +71,15 @@ For the installations of the Waves, primary points of entry or bottlenecks(high 
 
 Rooms to house the gateways should meet the following criteria:
 
-- Have a power source
-- Behind a locked door
-- Ideally located close to the Waves
+- Have a power source.
+- Behind a locked door.
+- Ideally located close to the Waves.
     - Generally in the Digital Twinning solution, the distance between the gateways and the Waves should be minimized. This is opposed to the installation process of the other Microhsare® solutions. 
-- Have decent coverage
+- Have decent coverage.
 - Ideally do not have too much metal within the rooms.
 - Ideally do not have many electronics in the rooms.
 
-Before starting the process of selecting rooms, ask the client what rooms are available. 
+**Before starting the process of selecting rooms, ask the client what rooms are available.** 
 
 ##### 6. Establish the tags used to describe the Waves.
 
@@ -89,13 +90,13 @@ Tags are electronic location identifiers attached to the devices so the device's
 - Tag3: `Room 205`
 - All together: `Main Street Office`,`Floor 2`,`Room 205`
 
-You must decide the naming convention as early as possible. The second option described above is the most common tag convention used. Still confused on the tags? Check out the [More on Tags Section.](./#more-on-tags)
+You must decide the naming convention as early as possible. The second option described above is the most common tag convention used. **Still confused on the tags? Check out the [More on Tags Section.](./#more-on-tags)**
 
 ##### 7. Fill out the Device Twinning document(s) for each device using the aforementioned naming conventions.
 
 Some things to know while filling out the Device Twinning document(s):
 - Each device type should have its tab on the spreadsheet.
-- The documents should be filled out following the meeting with the client.
+- The document(s) should be filled out following the meeting with the client.
 - The document(s) will be used for the installation process. 
 
 ##### 8. Set client expectations by broadly walking them through the installation process. 
@@ -149,19 +150,19 @@ A complete device tag example:
 ---------------------------------------
 {% include image.html url="\assets\img\clean-safe.png" description="clean safe" %}
 
-**Question** I am having trouble understanding the JSON data fields, what do they mean?
+**Question:** I am having trouble understanding the JSON data fields, what do they mean?
 
-**Amswer** The [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) has a section that describes how your devices' data is formatted and what each field means. 
+**Answer:** The [<em>Data Formatting Contact Tracing Page</em>](/docs/2/technical/data-format/contact-tracing) has a section that describes how your devices' data is formatted and what each field means. 
 
 <br>
-**Question** Is it safe to ignore a person-to-location beacon contact? 
+**Question:** Is it safe to ignore a person-to-location beacon contact? 
 
-**Answer** It may seem unnecessary to consider the person-to-location beacon contact as we are more interested in the person-to-person contact, but the person-to-location beacon contact **will be used** to determine what areas need to be cleaned if there is a COVID incident. Both contacts are important for the Contact Tracing solution.
+**Answer:** It may seem unnecessary to consider the person-to-location beacon contact as we are more interested in the person-to-person contact, but the person-to-location beacon contact **will be used** to determine what areas need to be cleaned if there is a COVID incident. Both contacts are important for the Contact Tracing solution.
 
 <br>
 **Have a question not answered here?**
 
-**Check out the [Data Formatting Contact Tracing Page](/docs/2/technical/data-format/contact-tracing) or contact `support@microshare.io`.** 
+**Check out the [<em>Data Formatting Contact Tracing Page</em>](/docs/2/technical/data-format/contact-tracing) or contact `support@microshare.io`.** 
 
 
 

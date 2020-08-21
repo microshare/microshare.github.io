@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Overview
-description: Installation Overview
+description: How to install a Microshare™ Solution
 toc: true
 ---
 
@@ -9,9 +9,7 @@ toc: true
 
 {% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
 
-<br>
 ---------------------------------------
-
 ##### SUMMARY : 
 
 1. [What needs to be installed?](./#what-needs-to-be-installed)
@@ -25,20 +23,13 @@ toc: true
 ## What needs to be installed?
 ---------------------------------------
 
-The purpose of an installation is to allow the customer to use the data from the installed sensors as quickly as possible. 
-
-But for this, it is necessary to quickly understand what to install and why. 
-
-To start our sensors use LoRaWan technology and you can learn more about it here: 
+The main priority of the installation process is to get the client’s devices collecting data as quickly as possible. Before installation, it is crucial that you understand what and why you are installing by reading the following page discussing LoRaWan technology:
 
 ###### > [LoRaWan Technology](../../../technical/lorawan/lorawan-technology)
 
-This technology works like this: 
-The sensor sends data via "Lora" to the gateway or to a public network. This way, the gateway or the public network LoRaWan are connected to the Internet via WIFI, Ethernet or 3G/4G/5G. 
+In brief, LoRaWan devices send data using  <em>Lora</em> signal to the gateway or a public network. The gateway/ public network is connected to the internet through WiFI, ethernet or 3G/4G/5G. The data then makes its way through the internet to the cloud where it is then processed and digested for the intended dashboard. 
 
-Then the data will be processed and used once it is in the cloud.
-
-Here is a summary diagram: 
+Here is a visual representation of the process: 
 
 
 {% include image.html url="/assets/img/lorawan-network.png" description="LoRaWan Network" %}
@@ -53,7 +44,7 @@ During the process of installation, it is crucial that you confirm that both the
 ## Requirements
 ---------------------------------------
 
-To ensure proper installation it is best to check a few points:
+To prepare a successful installation, it is best to check a few points:
 
 Before installation you should...
 
@@ -78,6 +69,6 @@ To set up your system, you will:
 
 ###### > 4. Finally, [Validate](../../quick-start/validation-of-a-successfull-installation) that the installation was successful.
 
-If you have more question, you can have a look at our [FAQ about installations](../faq-about-installations) page.
+If you have any questions, you can have a look at our [FAQ about installations](../faq-about-installations) page.
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

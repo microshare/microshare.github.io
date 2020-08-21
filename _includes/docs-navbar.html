@@ -1,12 +1,14 @@
 <header class="navbar navbar-inverse navbar-expand-md flex-column flex-md-row bd-navbar">
-  <a class="navbar-brand mr-0 mr-md-2" href="{{ site.baseurl }}/" aria-label="Microshare.io">
+  <div class="align-self-xl-center">
+  <a class="navbar-brand mr-0 mr-md-5" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/" aria-label="Microshare.io">
     <img class="" src="{{ site.baseurl }}/assets/brand/microshare-logo-white.png">
   </a>
-
-  <div class="navbar-nav-scroll">
+    </div>
+  <div  class="navbar-nav-scroll align-self-sm-center">
     <ul class="navbar-nav bd-navbar-nav flex-row">
-      <li class="nav-item">
-        <a class="nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/">Documentation</a>
+<!--        nav-item-->
+      <li class="navbar-brand ">
+        <a  class="nav-link {% if page.layout == "docs" %} active{% endif %}" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/">Documentation</a>
       </li>
     </ul>
   </div>
@@ -14,17 +16,18 @@
     
     
 <!--Google Custom Search Default-->
-    
 <script async src="https://cse.google.com/cse.js?cx=005501767810126761962:bnqqnli8vek"></script>
-<div id="cse" style="width: 40%; margin: 0 auto">
+<div class="ml-auto p-2 d-sm-inline-flex flex-row justify-content-sm-end align-self-center" id="cse" style="width: 40%; height: 60%; margin: 0 right-auto">
 <div class="gcse-search"  ></div>
 
     </div> 
     
 <!--    End of GCSE-->
 
-
-<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+<!--Cole changes:    -->
+<!--I made the dropdown into a div, it was a ul. I changed the class to be sm and removed the horiz auto alignment. It used to be:-->
+<!--<ul navbar-nav flex-row ml-md-auto d-none d-md-flex-->
+<div class="navbar-nav flex-row d-none d-sm-flex align-self-center">
 <li class="nav-item dropdown">
     <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         v{{ site.docs_version }}
@@ -33,6 +36,6 @@
     <a class="dropdown-item active" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/">Latest ({{ site.docs_version }})</a>
     </div>
 </li>
-</ul>
+</div>
     
 </header>
