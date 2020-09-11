@@ -29,7 +29,7 @@ The guest will appear to the system (APP & API) as guest@microshare.net. Share r
 *   Settings for that POST are () raw and then pick JSON from the text dropdown.
 *  Sessionkey is used via the Authentication query string parameter.
 *  targetId: app id
-*  Email: guest@microshare.io (or whoever).
+*  Email: guest@microshare.net
 *  targetType: app 
 *  Use example body 
 
