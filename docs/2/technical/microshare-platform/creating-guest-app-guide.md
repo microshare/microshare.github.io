@@ -26,10 +26,10 @@ The guest will appear to the system (APP & API) as guest@microshare.net. Share r
 1. Authorize (via Dauth api) as the application/view/data owner (or some shared user)
 2. Use the dapp api /links2 to create an entry in the links collection 
 * POST `https://dapp.microshare.io/links2?Authentication=<sessionkey>` Note: THis is different from using the Bearer token in the header authorization
-*   Settings for that POST are () raw and then pick JSON from the text dropdown
+*  Settings for that POST are () raw and then pick JSON from the text dropdown
 *  Sessionkey is used via the Authentication query string parameter
 *  targetId = app id
-*  Email = guest@microshare.io (or whoever) 
+*  Email = guest@microshare.net 
 *  targetType = app 
 *  Use example body 
 
