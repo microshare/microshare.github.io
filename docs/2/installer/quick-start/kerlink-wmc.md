@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Kerlink WMC
-description: Pushing Data to Microshare from Kerlink WMC 
+title: Kerlink Wansey Management Centre (WMC)
+description: Pushing Data to the Microshare Smart Network using the Kerlink Wanesy Management Center 
 toc: true
 ---
 
@@ -12,8 +12,13 @@ toc: true
 2. [Create a new Push Configuration for Microshare](./#2-create-a-new-push-configuration-for-microshare)
 3. [Create a new cluster for Microshare Contact Tracing](./#3-create-a-new-cluster-for-microshare-contact-tracing)
 
+Instructions:
 
 ## Prerequisite. Log into your WMC instance 
+Once you have your wearable devices and location markers installed within your facility, you are ready to begin pushing data to the Microshare Smart Network™.
+
+In order to do this, you will first need to log in to your Kerlink Wanesy Management Center [WMC] interface with the login details given to you by Microshare.
+
 ---------------------------------------
 <br>
 
@@ -34,7 +39,7 @@ Create a new Push Configuration for Microshare: Administration > Clusters>  Push
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreatePush.png" description="Banner" %}
 
-```
+````
 Customer: Microshare 
 
 Name: Microshare Contact Tracing Push Config1 
@@ -42,32 +47,27 @@ Name: Microshare Contact Tracing Push Config1
 Type: HTTP 
 
 Message detail level: Payload 
+
+- Click NEXT
 ````
-
-
-##### NEXT 
-
 <br>
 
-URL: Contact  Fulfillment@microshare.io  for the URL endpoint details and enter it there,
->>> e.g. https://api.microshare.io/share/io.microshare.contact.packed /token/1234567890 
+
+**Insert the Connection URL:** Contact Fulfillment@microshare.io for the URL endpoint details and enter it on this screen
+>>> [e.g. https://api.microshare.io/share/io.microshare.contact.packed /token/1234567890]
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreatePush2.png" description="Banner" %}
 
-
-##### NEXT 
+- Click NEXT 
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_SSL.png" description="Banner" %}
 
 
-##### Hit NEXT on this screen without any changes (SSL)  
+**Simply click NEXT on the following screen, no changes needed: (SSL)  
 
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CustomHeaders.png" description="Banner" %}
-
-##### Hit VALIDATE on the final screen (Custom Headers) without any changes 
-
-
+**Click VALIDATE on the following screen, not changes needed: Custom Headers 
 
 
 
@@ -76,38 +76,29 @@ URL: Contact  Fulfillment@microshare.io  for the URL endpoint details and enter 
 ## 3. Create a new cluster for Microshare Contact Tracing
 ---------------------------------------
 
-Create a new cluster for Microshare Contact Tracing: Administration > Clusters> + 
-
-{% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateCluster.png" description="Banner" %}
-
+Create a new cluster for Microshare Contact Tracing: Administration > Clusters > +
 
 ```
 Customer: Microshare  
 
 Name: Microshare Contact Tracing 
 
-Push ENABLE 
+Push: ENABLE 
 
 Push Configuration: select “Microshare Contact Tracing Push 1” 
+
+- Click VALIDATE
 ```
+{% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateCluster.png" description="Banner" %}
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateCluster2.png" description="Banner" %}
 
-##### VALIDATE 
 
+## 4. Declare the Wave Devices  
 
+Declare the Wave Devices: Administration > End Devices > + 
 
-Declare the Wave Devices  
-
-Administration > End Devices > + 
-
-
-
-{% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice.png" description="Banner" %}
-
-
-
-Choose the Cluster you just created 
+Select the Cluster you just created 
 
 ```
 Profile: Static 
@@ -118,40 +109,35 @@ Region: choose the regional parameters for your region
 
 LoRaWAN MAC version: 1.0.2 
 
-Regional parameters revision: B 
-```
+Regional parameters revision: B
 
+- Click NEXT
+```
+{% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice.png" description="Banner" %}
+
+**Insert the relevant Device ID
+
+Device EUI, Application EUI and Application keys are available from Kerlink or Microshare
+
+- Click NEXT
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice2.png" description="Banner" %} 
 
-
-
-DevEUI, AppEUI and AppKeys are available either from Kerlink or Microshare 
-
-
-
-##### Hit NEXT 
-
-
+**Click NEXT on the following screen, no changes needed (unless specifically instructed otherwise): LoRaWAN RF Parameters
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice3.png" description="Banner" %}
 
-##### Hit NEXT without any changes on the following screen (LoRaWAN RF Parameters) unless specifically instructed otherwise 
 
+**Select “Inherited” on the following screen: Geolocation
 
-
+```
+- Click VALIDATE
+Repeat this process for all the Wave devices or use the csv upload to carry out a mass device declaration
+``` 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice4.png" description="Banner" %}
 
-Choose Inherited on the Geolocation screen and hit VALIDATE 
 
-
-
-Repeat the process for all the Waves or use the csv upload to do a mass device declaration 
-
-
-
-Now plug the Wave(s) in an area covered by a Kerlink gateway connected to the same Kerlink WMC instance (the gateway needs to either be assigned to the “Microshare” customer, OR be set to “PUBLIC”). 
-
+**5. Now plug the Wave(s) in an area covered by a Kerlink gateway connected to the same Kerlink WMC instance (the gateway needs to either be assigned to the “Microshare” customer, OR be set to “PUBLIC”). 
 
 
 Check that the Wave is joining correctly and sending uplinks 
