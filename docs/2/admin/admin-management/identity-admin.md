@@ -36,7 +36,7 @@ If you are the administrator of an identity you will be able to add people to th
 {% include image.html url="/assets/img/admin/identity_1.png" description="Banner" %}
 
 <br>
-**4.** If you are the administrator of an identity the users button will appear next to it. As you can see here the account is administrator of the `External Identity` but no `Microshare Default`. Here you can click on specific users next to the identity that you want to add them too. 
+**4.** If you are the administrator of an identity the users button will appear next to it. As you can see here the account is administrator of the `External Identity` and not `Microshare Default`. Here you can click on specific users next to the identity that you want to add them too. 
 
 <br>
 {% include image.html url="/assets/img/admin/identity_2.png" description="Banner" %}
@@ -48,7 +48,7 @@ If you are the administrator of an identity you will be able to add people to th
 {% include image.html url="/assets/img/admin/identity_3.png" description="Banner" %}
 
 <br>
-**6.** Choose whether or not the person you are adding is admin. If you choose yes, this person will have the same rights as you for this identity.You can also add roles for information purposes.
+**6.** Choose whether or not the person you are adding is admin. If you choose yes, this person will have the same rights as you for this identity. You can also add roles for information purposes.
 
 <br>
 **7.** Click the add button.
