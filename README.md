@@ -2,10 +2,30 @@
 
 Get started with Microshare, the world's only prebuilt, scalable data management and sharing solution for IoT.
 
-## Contribute to this documentation
+# Contribute to this documentation
+
+There is many ways to contribute to this documentation. 
+
+>>> Branch Name : 
+>>> if personal edits : yourname-topic
+>>> if related to a JIRA ticket : #ticketNumber-topic
+
+## 1. Add your own changes on github.
+---------------------------------------
+Follow this tutorial [https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository]
+Please make sure to create a Pull Request aka PR with the maximum information about the changes you did. 
+Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
+
+## 2. Run it locally and add your changes.
+--------------------------------------- 
+You may need [https://desktop.github.com/] for a faster way to manage branches. 
+Please create your branch to push the changes and then do a PR with your changes. 
+All the information to run the app simply on your desktop are under there.
+
+### Running environment
 This documentation is built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at https://microshare.github.io.
 
-## Writing new articles
+### Writing new articles - create new pages
 The documentation articles are written in [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder. Documents are arranged according to version. You will usually wish to contribute to the highest numbered version. 
 
 A Markdown editor is recommended for easiest contribution. Many Markdown editors will provide a WYSIWYG representation so you can ignore the details of Markdown notation.
@@ -13,7 +33,7 @@ A Markdown editor is recommended for easiest contribution. Many Markdown editors
 To add a new article, head to [_data/docs.yml](_data/docs.yml) and add the title of the article.
 Then create a file with the same title in the desired folder in the [docs](docs) folder.
 
-### Add Images
+#### Add Images
 Use the `_includes/image.html` helper to add images to your content, simply add in your `.md` file:
 
 `{% include image.html url="/assets/img/banner.jpg" description="Banner" %}`
@@ -24,7 +44,7 @@ If needed, you can set the width of your image with the `width` parameter, for e
 
 `{% include image.html url="/assets/img/banner.jpg" description="Banner" width="250px" %}`
 
-### Add Code Snippets
+#### Add Code Snippets
 Syntax highlighting of code snippets is supported using [Rouge](http://rouge.jneen.net/).
 To include a code snippet, just use the dedicated tag as below:
 
@@ -42,13 +62,13 @@ To include a code snippet, just use the dedicated tag as below:
 
 A list of tags and supported languages is available at [List of supported languages and lexers](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers)
 
-## Running the site locally
+### Running the site locally
 It is not necessary to run the site locally in order to contribute updates to the documents, but it may be useful for larger contributions.
 
 Clone this repo to your local disk. Open a terminal and cd into the repo directory.
 
 
-## Prerequisites
+### Prerequisites
 
 [Ruby](https://www.ruby-lang.org/en/) and [Rubygems](https://rubygems.org/) are needed in order to build the web site.
 
@@ -56,7 +76,7 @@ Install [bundler](https://bundler.io/)
 
     gem install bundler
 
-## Build
+### Build
 
 In order to build and serve the web site locally, run :
 
