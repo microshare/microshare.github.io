@@ -22,7 +22,14 @@ Please make sure to create a Pull Request aka PR with the maximum information ab
 
 Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
 
-## 2. Run it locally and add your changes.
+## 2. Create an Issue
+--------------------------------------- 
+
+If you think something needs to be changed, but you don't have the knowledge, or you think someone is in a better position to make those changes. Simply create an issue in GitHub, and contact jbardin@microshare.io.
+https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue
+
+
+## 3. Run it locally and add your changes.
 --------------------------------------- 
 You may need https://desktop.github.com/ for a faster way to manage branches. 
 
