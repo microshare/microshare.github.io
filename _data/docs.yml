@@ -73,14 +73,14 @@
     - title: Identity Guide
     - title: Robots Guide
     - title: Robots Library
-    subsubpages:
-      - title: Streaming Integration
-        pages:
-        - title: AWS Kinesis Data Stream Integration
-        - title: AWS SQS Integration
-        - title: Azure Event Hub Integration
-        - title: Azure IoT Hub Integration
-        - title: Google Pub/ Sub Integration
+    subsubpages: 
+        - title: Streaming Integration
+          pages:
+          - title: AWS Kinesis Data Stream Integration
+          - title: AWS SQS Integration
+          - title: Azure Event Hub Integration
+          - title: Azure IoT Hub Integration
+          - title: Google Pub/ Sub Integration
   - title: API
     pages:
     - title: Data Streaming From Microshare®
