@@ -23,15 +23,19 @@ toc: true
 ---------------------------------------
 
 ## 1. What's a Robot?
+---------------------------------------
+
 A Robot is an actor that automates the tasks associated with transforming, enriching, and annotating your data. Robots can interact with services to feed and pull data from external systems. A single Robot typically automates a single task. Keeping each Robot simple ensures that it will be: easy to maintain, fast and efficient with higher throughput, and reusable in multiple scenarios.
  
 Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run at preset intervals, or react to external events such as the arrival of a data file or connection of a web socket. Robots run in parallel and react to events as they occur. In most cases, a Robot will react to an event by reading a Microshare® record, acting on it in some way, and writing a new record back into Microshare®.
 
 
 ## 2. What can I do with them?
+---------------------------------------
 To keep your data workflow simple, each Robots should only take a single action. Below are some typical use cases:
 
 [1. Data ingestion](../data-ingestion)  
+
 For Robots tasked to pull or receive data sent by an external source.  
 * CSV files dropped in a target folder
 * active web socket connection to a remote server
@@ -47,9 +51,11 @@ Perfect for decoding a formatted IoT payload.
 Prepare your data to be used by an external system or in a dashboard.  
   
 [5. External services triggers](../data-formatting-by-robots/#i-external-services-triggering)  
+
 For a Robot used to trigger another service on the web.  
   
 ## 3. How do I use them?
+---------------------------------------
 ### A. Accessing the UI
 From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your Robots here.  
   
@@ -70,11 +76,14 @@ The ```require``` method loads the library of functions your Robot will be able 
 * ```text``` is the metadata about the event that triggered the Robot.  
 * ```auth``` is your auth token to allow this Robot to access the data lake on your behalf.  
 
+
 For more code samples, refer to the [Robots Library](../robots-library/).  
 
 ### C. Triggered vs scheduled  
- 
+---------------------------------------
+
 Triggered is the default state for a robot which means that it will be activated __each time__ a record with its record type is added to the data lake (provided it has access to the record). The record type of the robot must match the triggering record type.  
+
 
 Optionally, your Robot can run on a schedule, without waiting for a new record to be created.  
 **Delay time** will run your Robot once after the specified amount of time, the countdown starts when you activate the Robot.  
@@ -89,6 +98,7 @@ Important: the lib.write does not write a new record when used in a test, so you
 
 
 ## 4. Create a Robot to Transform data and Send alerts
+---------------------------------------
 
 Robots can be chained together to meet many use cases, here we will configure two Robots to detect an abnormal temperature level, and send email notifications.
 
@@ -191,13 +201,17 @@ The two Robots are activated in succession. If the mock temperature created is a
 You are now ready to setup your own IoT data stream, and transform, analyze, and get alerts on data.
 
 ## 5. How do they work?
+---------------------------------------
+
 Behind the scene, each Robot is an Akka Agent loaded with its ECMAScript 6 compatible script.  
 Our Java Stream-Service is able to set up, start, and stop Agents; and leverages the Oracle Nashorn JavaScript engine to compile the ES6 scripts.  
 The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  
 
 
 ## 6. More Information
+---------------------------------------
 
 For additional details on available Robot methods, visit [Robot library](../robots-library)
 
 For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [Data ingestion documentation](../../microshare-platform-advanced//data-ingestion/).
+

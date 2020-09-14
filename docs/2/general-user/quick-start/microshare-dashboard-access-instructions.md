@@ -10,7 +10,6 @@ toc: true
 ## One- time account set- up(new users):
 
 1. Receive an email from notification@microshare.io indicating that you have been invited to create a Microshare account. 
-{% include image.html url="/assets/img/create-microshare-account-4.png" height="900" width="900" description="Image 1" %}
 2. Click on the link within the email and follow the prompts to set up your account.
 3. You will receive an email that will allow you to set a personal password.  Follow the instructions and set your password
     - You will have 15 minutes to create your password from the time you receive this email.  If you do not set up your password within the 15-minute expiration window, see instructions in <em>Key Notes</em> to set up your password.

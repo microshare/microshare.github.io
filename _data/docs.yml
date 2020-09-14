@@ -3,16 +3,19 @@
   - title: Welcome
   - title: What's new?
   subpages:
-  - title: Meet Microshare
+  - title: Meet Microshare®
     pages:
-    - title: Why Microshare?
+    - title: Why Microshare®?
     - title: Technical Overview
     - title: Demo
+    - title: Demo Live
     - title: FAQ
   - title: Quick Start
     pages:
     - title: Create an Account
+    - title: Dashboard Access Instructions
     - title: Access my Apps
+    - title: Glossary
 
 - title: Admin
   subpages:
@@ -29,6 +32,7 @@
     pages:
     - title: Overview
     - title: Validation of a Successfull Installation
+    - title: Kerlink WMC
     - title: FAQ About Installations
   - title: Deploy-M
     pages:
@@ -45,29 +49,29 @@
   - title: Quick Start
     pages:
     - title: Overview
-    - title: Microshare Technical Structure
+    - title: Microshare® Technical Structure
     - title: Data Integration
     - title: Basic Dev Roadmap
     - title: Advanced Dev Roadmap
   - title: Data Format
     pages:
     - title: Overview
-    - title: Microshare Standards
+    - title: Microshare® Standards
     - title: Contact Tracing
-  - title: Microshare Platform
+  - title: Microshare® Platform
     pages:
     - title: Quick Start
     - title: Device Cluster Guide
     - title: Views Guide
     - title: Dashboard Guide
     - title: Rules Guide
-  - title: Microshare Platform Advanced
+  - title: Microshare® Platform Advanced
     pages:
     - title: Identity Guide
     - title: Robots Guide
     - title: Data Ingestion
-    - title: Data Formatting
-    - title: Data Formatting by Robots
+    - title: Data Unpacking
+    - title: Data Unpacking by Robots
     - title: Robots library
   - title: API
     pages:
@@ -76,15 +80,19 @@
     - title: Simple Requests
     - title: Complex Requests
     - title: API Collection
-  - title: LoRaWan
+  - title: LoRaWan®
     pages:
-    - title: LoRaWan Technology
-    - title: LoRaWan Gateways
-    - title: LoRaWan Sensors
+    - title: Why LoRaWan®?
+    - title: LoRaWan® Technology
+    - title: LoRaWan® Gateways
+    - title: LoRaWan® Devices
   - title: Streaming Integration
     pages:
-    - title: Azure Event Hub Integration
+    - title: Google Pub/ Sub Integration
     - title: AWS Kinesis Data Stream Integration
     - title: AWS SQS Integration
+    - title: Azure Event Hub Integration
     - title: Azure IoT Hub Integration
-    - title: Google Pub/ Sub Integration
+
+   
+    

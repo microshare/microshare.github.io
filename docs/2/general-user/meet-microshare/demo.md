@@ -7,7 +7,7 @@ toc: true
 
 ## Demo Dashboards 
 
-You want to see what Microshare®'s dashboards looks like? 
+You want to see what Microshare®'s dashboards looks like and see our devices in action? 
 
 Please take a look to our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), you will have access to few of our dashboards. As seen in the graphic below, you have access to many apps. <br>
 

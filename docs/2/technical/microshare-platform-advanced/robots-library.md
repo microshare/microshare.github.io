@@ -15,6 +15,7 @@ toc: true
 ---------------------------------------
 
 ## 1. Robots libraries
+---------------------------------------
 
 The Robot library is accessible from Robot scripts via  
 {% highlight js %} var lib = require('./libs/helpers'); {% endhighlight %}
@@ -30,6 +31,7 @@ Below are categories and code snippets to guide you how to use these lib methods
 
 
 ## 2. How to manually decode your data 
+---------------------------------------
 
 As presented in the pages on data ingest and transformation, for Microshare® compatible sensors the decoders are linked to the device clusters, so this step is not necessary. 
 
