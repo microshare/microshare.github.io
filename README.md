@@ -14,13 +14,13 @@ if related to a JIRA ticket : #ticketNumber-topic
 
 ## 1. Add your own changes on github.
 ---------------------------------------
-Follow this tutorial [https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository]
+Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository
 Please make sure to create a Pull Request aka PR with the maximum information about the changes you did. 
 Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
 
 ## 2. Run it locally and add your changes.
 --------------------------------------- 
-You may need [https://desktop.github.com/] for a faster way to manage branches. 
+You may need https://desktop.github.com/ for a faster way to manage branches. 
 Please create your branch to push the changes and then do a PR with your changes. 
 All the information to run the app simply on your desktop are under there.
 
