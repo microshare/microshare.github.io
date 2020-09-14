@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Kerlink Wansey Management Centre (WMC)
+title: Kerlink Wanesy Management Centre (WMC)
 description: Pushing Data to the Microshare Smart Network using the Kerlink Wanesy Management Center 
 toc: true
 ---
@@ -56,7 +56,8 @@ Message detail level: Payload
 <br>
 
 
-**Insert the Connection URL:** Contact Fulfillment@microshare.io for the URL endpoint details and enter it on this screen
+**Insert the Connection URL:**
+**Contact Fulfillment@microshare.io for the URL endpoint details and enter it on this screen**
 >>> [e.g. https://api.microshare.io/share/io.microshare.contact.packed /token/1234567890]
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreatePush2.png" description="Banner" %}
@@ -66,11 +67,11 @@ Message detail level: Payload
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_SSL.png" description="Banner" %}
 
 
-**Simply click NEXT on the following screen, no changes needed: (SSL)  
+**Simply click NEXT on the following screen, no changes needed: (SSL)**
 
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CustomHeaders.png" description="Banner" %}
-**Click VALIDATE on the following screen, not changes needed: Custom Headers 
+**Click VALIDATE on the following screen, not changes needed: Custom Headers**
 
 
 
@@ -118,7 +119,7 @@ Regional parameters revision: B
 ```
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice.png" description="Banner" %}
 
-**Insert the relevant Device ID
+**Insert the relevant Device ID**
 
 Device EUI, Application EUI and Application keys are available from Kerlink or Microshare
 
@@ -126,12 +127,12 @@ Device EUI, Application EUI and Application keys are available from Kerlink or M
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice2.png" description="Banner" %} 
 
-**Click NEXT on the following screen, no changes needed (unless specifically instructed otherwise): LoRaWAN RF Parameters
+**Click NEXT on the following screen, no changes needed (unless specifically instructed otherwise): LoRaWAN RF Parameters**
 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice3.png" description="Banner" %}
 
 
-**Select “Inherited” on the following screen: Geolocation
+**Select “Inherited” on the following screen: Geolocation**
 
 ```
 - Click VALIDATE
@@ -140,7 +141,7 @@ Repeat this process for all the Wave devices or use the csv upload to carry out 
 {% include image.html url="/assets/img/wanesy/WanesyAdmin_CreateEndDevice4.png" description="Banner" %}
 
 
-**5. Now plug the Wave(s) in an area covered by a Kerlink gateway connected to the same Kerlink WMC instance (the gateway needs to either be assigned to the “Microshare” customer, OR be set to “PUBLIC”). 
+**5. Now plug the Wave(s) in an area covered by a Kerlink gateway connected to the same Kerlink WMC instance (the gateway needs to either be assigned to the “Microshare” customer, OR be set to “PUBLIC”).**
 
 
 Check that the Wave is joining correctly and sending uplinks 
@@ -149,32 +150,4 @@ Check that the Wave is joining correctly and sending uplinks
 
 ---------------------------------------
 ##### Contact Microshare Fulfillment team (Fulfillment@microshare.io) to confirm  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
