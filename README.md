@@ -7,7 +7,9 @@ Get started with Microshare, the world's only prebuilt, scalable data management
 There is many ways to contribute to this documentation. 
 
 >>> Branch Name : 
+
 >>> if personal edits : yourname-topic
+
 >>> if related to a JIRA ticket : #ticketNumber-topic
 
 ## 1. Add your own changes on github.
