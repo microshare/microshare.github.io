@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Views Guide
-description: Comprehensive guide to understand Views
+description: Comprehensive guide to Views
 toc: true
 ---
 
@@ -29,10 +29,14 @@ toc: true
 
 ## 1. What is a View?
 ---------------------------------------
-A View is a component for managing data access. It provides advanced ways of querying the data lake. A view can also be used to store and retrieve proprietary static data.
+
+A View is a component for looking at your data in different ways. It can be static data or dynamicly retrieved data and they let you control the content and formats of the data. Combining views with share rules a
+
+
 
 ## 2. What can I do with a View?
 ---------------------------------------
+
 
 #### Query the Data Lake
 Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). Using a view gives you more advanced control over data retrieval than you have using the Microshare RESTful API calls on their own.
@@ -67,6 +71,7 @@ Use the "Static JSON" option to:
   •  Store and retrieve your own proprietary configuration data  
 
 ## 3. How do I use Views?
+
  
 #### How to create a View
 

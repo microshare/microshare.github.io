@@ -53,11 +53,29 @@ toc: true
 
 {% include image.html url="\assets\img\uct\uct-3.png" description="uct-3" %}
 
-<br>
-**1.** Beacon to Beacon via BLE transport, we expect some data loss due to BLE collisions or missing an advertisement due to timing. This is averted by using the contact threshold of 4/7 times within the sliding contact window.
+Using the recommended default settings from Kerlink, the following behaviour is expected.
 
-<br>
-**2.** Beacon to Wave via BLE transport, wave only resets the personal beacon upon successful retrieval of contact event data.
+- Personal beacons scan for 220ms duration at an interval period of 40,000ms.
+- Personal beacons advertise at an interval period of 200ms.
+- Personal beacons record a contact event while in the proximity of other personal/location beacons if the following conditions are met:
+  - Contact is seen at least 4/7 times within the sliding contact window.
+  - Contact has an RSSI level equal to or greater than the -70dBm RSSI threshold.
+- Wave device retrieves contact events from personal beacons via BLE transport. 
+  - Upon successful retrieval, the personal beacons memory and clock is reset.
+- Wave transmits data to LoRaWAN gateway via LoRaWAN transport.
+- Microshare® Smart Network receives and processes the raw payload data.
+  - Processed event contact data includes id of the beacon, voltage, average RSSI, contact duration & relative timestamp.
+
+## Dataflow
+
+1. Beacon to Beacon via BLE transport, we expect some data loss due to BLE collisions or missing an advertisement due to timing. This is averted by using the contact threshold of 4/7 times within the sliding contact window.
+2. Beacon to Wave via BLE transport, wave only resets the personal beacon upon successful retrieval of contact event data.
+3. Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
+4. Microshare® Smart Network receives and processes the raw payload data. Data has been stored within Microshare® database .unpacked recType and therefore can be re-played if required.
+5. Microshare® Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
+6. Microshare® Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
+7. Streamed to event hub using a streaming mechanism.......................
+
 
 <br>
 **3.** Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
@@ -87,38 +105,23 @@ The unpacked data is outputted into a more readable format:
 #### Unpack data from wave devices
 
 Unpacked data does the following: 
-- Determines if beacon is a location beacon or personal. 
-- Calculates start/ end time from relative timestamps.
-- Flattens records into individual events.
+- Determine if beacon is a location beacon or personal.
+- Calculate start/end time from relative timestamps.
+- Flatten record into individual events.
 
-<br>
-#### Output event data fields
+#### Output event data 
+- `originatingDevice` - Id of personal beacon that detected a contact event.
+- `originatingDeviceBattery` - Voltage level of personal beacon.
+- `detectingDevice` - ID of personal beacon that contact event was made with.
+- `startTime` - starting time of contact in UTC.
+- `start` - offset in minutes from receiving time that contact event began.
+- `duration` - length of contact event in minutes.
+- `endTime` - ending time of contact in UTC.
+- `locationBeacon` - true if contact was with location beacon, false if personal beacon.
+- `averageRSSI` - average RSSI over the contact event duration.
 
-<br>
-What does each peice of data mean?
-<br>
-- `originatingDevice`- Id of wearable that detected a contact.
-<br>
-- `originatingDeviceBattery`- Voltage level of detecting wearable.
-<br>
-- `detectingDevice`- ID of device that contact was made with.
-<br>
-- `startTime`- starting time of contact in UTC.
-<br>
-- `start`- offset in minutes from recieving time that contact began.
-<br>
-- `duration`- length of contact in minutes.
-<br>
-- `endTime`- ending time of contact in UTC.
-<br>
-- `locationBeacon`- true if contact was with beacon device, false if wearable.
-<br>
-- `averageRSSI`- average RSSI (strength of the signal) over the contact period.
-
-<br>
-#### Location versus Global Tags
-
-The output event data will have a section that looks like the following:
+## Contact Tracing Example Data
+---------------------------------------
 
 {% highlight java %}
 "source":{

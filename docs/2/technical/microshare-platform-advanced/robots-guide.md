@@ -28,45 +28,35 @@ toc: true
 
 ## 1. What's a Robot?
 ---------------------------------------
-A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Robots can transform and improve data from your microshares™. Robots can interact with external services to feed external systems and to pull new data into Microshare® to further enrich your data. A single Robot usually automates a single such task. Keeping each Robot simple ensures that it will be:
 
-<br>
-**1.** easy to maintain, 
-<br>
-**2.** fast and efficient with higher volumes, and 
-<br>
-**3.** reusable in multiple projects.
-
-<br>
-Robots can be chained together to cooperate in fulfilment of more complicated needs. Such a chain is called a [data workflow](/docs/2/technical/microshare-platform-advanced/data-workflow-new). Data Workflows are capable of preparing your data to be easily consumed in Dashboards and multiple Applications. Each Robottic 'step' of your Data Workflow should create new data in the lake. Embrace it, there is no such thing as too much data with Microshare.io®. These intermediary records preserve the transaction history, allow for fast error recovery, and keeps the stream processing fast and efficient. 
-
-Robots are typically configured through the management console by creating or editing a Robo card. Robo cards allow you to specify the behavior of your Robots. Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run a preset intervals, or react to external events like the arrival of a data file or connection of a web socket. Except for some specialized Robots, most are supplied with a simple piece of JavaScript code that defines it's desired behavior.
-
-All Robots run in parallel (at the same time) and react to events as they occur. In many cases, a Robot will react to an event by reading a Microshare® record, acting on it in some way, and writing a new record back into Microshare®.
-
-{% include image.html url="/assets/img/Robot_interacting_with_the_data_lake.jpg" description="Your fleet of Robots" %}
+A Robot is an actor that automates the tasks associated with transforming, enriching, and annotating your data. Robots can interact with services to feed and pull data from external systems. A single Robot typically automates a single task. Keeping each Robot simple ensures that it will be: easy to maintain, fast and efficient with higher throughput, and reusable in multiple scenarios.
+ 
+Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run at preset intervals, or react to external events such as the arrival of a data file or connection of a web socket. Robots run in parallel and react to events as they occur. In most cases, a Robot will react to an event by reading a Microshare® record, acting on it in some way, and writing a new record back into Microshare®.
 
 
 ## 2. What can I do with them?
 ---------------------------------------
-To keep your data workflow clear, we suggest each one of your Robots takes care of only one single action. Below are some typical use cases we identified.
 
-[1. Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion)
+To keep your data workflow simple, each Robots should only take a single action. Below are some typical use cases:
+
+[1. Data ingestion](../data-ingestion)  
+
 For Robots tasked to pull or receive data sent by an external source.  
 * CSV files dropped in a target folder
 * active web socket connection to a remote server
 * interacting with an external service via API
 
-[2. Data parsing](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-parsing)  
-Often managed with a Data Workflow to massage and enrich a bunch of records.  
+[2. Data parsing](../data-formatting-by-robots/#f-data-parsing)  
+Often managed within a data workflow to enrich records as they stream through.  
   
-[3. Data transformation](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-transformation)  
-Perfect for decoding a packed IoT payload.  
+[3. Data transformation](../data-formatting-by-robots/#g-data-transformation)  
+Perfect for decoding a formatted IoT payload.  
   
-[4. Data unpacking](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#data-unpacking)  
-Prepare your data to be used in a Dashboard.  
+[4. Data formatting](../data-formatting-by-robots/#h-data-formatting)  
+Prepare your data to be used by an external system or in a dashboard.  
   
-[5. External services triggers](/docs/2/technical/microshare-platform-advanced/data-workflow-new/#external-services-triggering)  
+[5. External services triggers](../data-formatting-by-robots/#i-external-services-triggering)  
+
 For a Robot used to trigger another service on the web.  
   
 ## 3. How do I use them?
@@ -75,46 +65,31 @@ For a Robot used to trigger another service on the web.
 From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your Robots here.  
   
 ### B. Basic code  
-The guts of a Robot is its JavaScript script. Below is the most common template you will use.  
+Inside of a Robot, it runs a JavaScript script. When you create a robot, there will be some auto-generated example code present.
 
-{% include image.html url="/assets/img/Basic_robot_script.png" description="Minimal script" %}
-
-First of all, this part is compulsory:
+It will include the basics required to run a robot:
 
 {% highlight js %}
-  // Include the helper objects 
-  // which allows you to read and write to Microshare® datalake
   var lib = require('./libs/helpers');
-
-  // Always need a main function, 
-  // but can have other functions to keep your code modular.
   function main(text, auth) {
   }
 {% endhighlight %}
 
-The ```require``` method loads the library of function your Robot will be able to use,  
-and the ```main``` function is what's actually run, so it **must** encapsulate all of Robot's actions.
-Its two parameters are
-* ```text``` that is the metadata about the event that triggered the Robot.  
+The ```require``` method loads the library of functions your Robot will be able to use, and the ```main``` function is what is run when the robor is triggered, so it should encapsulate all of Robot's actions. Other functions can be used, but this is is the primary function called.
+
+```main```  has two parameters:
+* ```text``` is the metadata about the event that triggered the Robot.  
 * ```auth``` is your auth token to allow this Robot to access the data lake on your behalf.  
 
-You will use the two other functions 99.9% of the time:
-* ```lib.parseMsg(text);``` parses the message that triggered your Robot from the data lake.
-* ```lib.writeShare(auth, newRecType, newRecord, ['tags']);``` writes back a new record with a new recType in the data lake.  
+For more code samples, refer to the [Robots Library](../robots-library/).  
 
-For more code samples, refer to the [Data Workflow page](/docs/2/technical/microshare-platform-advanced/data-workflow-new).  
-
-### C. Triggered vs scheduled
+### C. Triggered vs scheduled  
 ---------------------------------------
 
-Your newly created Robot will first do... nothing!  
-To activate it, be sure to check the Active checkbox.  
+Triggered is the default state for a robot which means that it will be activated __each time__ a record with its record type is added to the data lake (provided it has access to the record). The record type of the robot must match the triggering record type.  
 
-{% include image.html url="/assets/img/Activate_a_robot.png" description="Activating a Robot" %}
 
-Once that is done, your Robot will trigger __each time a new record with its RECORD TYPE is added to the data lake__. So set that RECORD TYPE in your Robot accordingly.  
-
-Optionally, your Robot can also run on a schedule, without waiting for a new record to be created.  
+Optionally, your Robot can run on a schedule, without waiting for a new record to be created.  
 **Delay time** will run your Robot once after the specified amount of time, the countdown starts when you activate the Robot.  
 **Interval time** triggers your Robot periodically every interval, forever.  
 Set the Delay and/or Interval times, activate the checkbox (ticked means on), sit back and relax.
@@ -122,16 +97,14 @@ Set the Delay and/or Interval times, activate the checkbox (ticked means on), si
 {% include image.html url="/assets/img/Schedule_a_robot.png" description="Schedule a Robot" %}
 
 ### D. Testing  
-If you edit an existing Robot, you will see that a testing panel is present. Follow the instruction to simulate a run of the Robot with sample data.  
-Important: the lib.write is only simulated in a test, so you are not at risk to pollute your data.  
+If you edit an existing Robot, you will see that a testing panel is present. Follow the instructions to simulate a run of the Robot with sample data. It will provide an output for your test run. 
+Important: the lib.write does not write a new record when used in a test, so you are not at risk to pollute your data.  
 
 
 ## 4. Create a Robot to Transform data and Send alerts
 ---------------------------------------
 
-Robots are automated workflow elements allowing you to transform, analyze and report on incoming data on the fly.
-
-We are going to create and chain two Robots to detect an abnormal temperature level, and send email notifications.
+Robots can be chained together to meet many use cases, here we will configure two Robots to detect an abnormal temperature level, and send email notifications.
 
 * Navigate to [Microshare® platform](https://app.microshare.io)
 * Click the `Manage` button in the top toolbar
@@ -148,15 +121,6 @@ We will do the minimum to unlock all the Robot options for now.
 {% include image.html url="/assets/img/hackiot-create-a-robot-2.png" description="Minimal Robot configuration" %}
 
 You'll be back in the Robot cards list and your Robot should now be displayed.
-If you don't see your new Robot card listed:
-
-* Open the option menu
-* Increase the `Cards per Page` to 999 
-* Click Apply
-
-The new Robot card should now be visible.
-
-{% include image.html url="/assets/img/hackiot-configure-robot.png" description="Increase Cards per Page" %}
 
 To edit an existing Robot, find your Robot in the list:
 
@@ -172,8 +136,8 @@ While in edit mode you can:
 
 {% include image.html url="/assets/img/hackiot-configure-robot-3new.png" description="Full Robot edition mode" %}
 
-We don't have real data to use here, so we going to transform it with our own fake data.
-We are going to add a fake temperature value, and the current date/time to the record, then save that transformed record.
+We don't have real data to use here, so we going to transform it with our own mock data.
+We are going to add a mock temperature value, and the current date/time to the record, then save that transformed record.
 
 * Replace the code in your Robot script with:
 {% highlight js %}
@@ -194,17 +158,16 @@ We are going to add a fake temperature value, and the current date/time to the r
   }
 {% endhighlight %}
 
-Activate and Update your Robot when done. It will now be triggered automatically to read, anhance, then write back a record to the data lake, with the added `.withTemperature` suffix to the recType.
+Activate and update your Robot when done. It will now be triggered automatically to read, enhance, then write back a record to the data lake, with the added `.withTemperature` suffix to the recType field.
 
-You can test that your Robot triggers by Writing a new piece of data with your initial recType, and Read the `recType.withTemperature` with the API.
+You can test that your Robot triggers by writing a new piece of data with your initial recType, and read the `recType.withTemperature` with the API.
 
 You can use that second recType as the trigger to another Robot for data transformation, etc.
-This is exactly what we are going to do now!
 
 * Create a new Robot
-* Give your Robot a name.
-* Enter the Record Type with the `.withTemperature` suffix.
-* Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination.
+* Give your Robot a name
+* Enter the Record Type with the `.withTemperature` suffix
+* Complete the creation by clicking the `CREATE` button, and entering your login, password and API key combination
 * Now edit that Robot, and replace the script with:
 {% highlight js %}
 
@@ -235,11 +198,11 @@ function main(text, auth){
 
 * Within the code pasted into the "Script" section change the variable "TO" to your email
 * Activate and update your Robot
-* Write a few record for your recType.
+* Write a few records for your recType
 
-The two Robots are activated in succession. If the fake temperature created is above 30, you receive an email alert.
+The two Robots are activated in succession. If the mock temperature created is above 30, you will receive an email alert.
 
-You are now ready to setup your own IoT data stream, and transform, analyze, alert on data.
+You are now ready to setup your own IoT data stream, and transform, analyze, and get alerts on data.
 
 ## 5. How do they work?
 ---------------------------------------
@@ -252,8 +215,7 @@ The Java libraries accessed by the Robots point to the adequate Service to read 
 ## 6. More Information
 ---------------------------------------
 
-For additional details on available Robot methods, visit [Robot library.](/docs/2/technical/microshare-platform-advanced/robots-library/)
+For additional details on available Robot methods, visit [Robot library](../robots-library)
 
-For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [IoT integration documentation.](/docs/2/technical/lorawan/lorawan-devices)
+For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [Data ingestion documentation](../../microshare-platform-advanced//data-ingestion/).
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

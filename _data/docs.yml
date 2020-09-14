@@ -32,6 +32,7 @@
     pages:
     - title: Overview
     - title: Validation of a Successfull Installation
+    - title: Kerlink WMC
     - title: FAQ About Installations
   - title: Deploy-M
     pages:
