@@ -17,7 +17,7 @@ Prod Server : [app.microshare.io](https://app.microshare.io/login)
 
 Before tackling the concepts on this page, please follow the [Simple Requests](/docs/2/technical/api/complex-requests) guide first!
 
-These requests allow you to externalisate actions made on the Microshare® dialer. Before exercising this ability, you must understand how an item works on Microshare® before using the corresponding APIs.
+These requests allow you to externalisate actions made on the Microshare® Composer. Before exercising this ability, you must understand how an item works on Microshare® before using the corresponding APIs.
 
 For this part we will assume that you are comfortable with interacting wth the Microshare® APIs, and the Microshare® platform..
 
