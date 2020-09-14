@@ -6,11 +6,14 @@ toc: true
 ---
 
 ---------------------------------------
+In this page we explain how to configure your Kerlink instance to work with Microshare for the contact tracing use case. But this works for all Microshare use cases. 
+
 ## Summary
 
 1. [Create a new Customer](./#1-create-a-new-customer)
 2. [Create a new Push Configuration for Microshare](./#2-create-a-new-push-configuration-for-microshare)
-3. [Create a new cluster for Microshare Contact Tracing](./#3-create-a-new-cluster-for-microshare-contact-tracing)
+3. [Create a new cluster (for Microshare Contact Tracing)](./#3-create-a-new-cluster-for-microshare-contact-tracing)
+4. [Declare the (Wave) Devices](./#4-declare-the-wave-devices)
 
 Instructions:
 
