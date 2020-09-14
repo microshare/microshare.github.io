@@ -1,4 +1,4 @@
-
+  
 <form class="bd-search d-flex align-items-center">
   <button class="btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs avigation">
     {% include icons/menu.svg class="" width="30" height="30" %}
@@ -25,12 +25,12 @@
         {% assign link_slug = link.title | slugify %}
         {% assign subsublink = link.pages | first %}
         {% assign subsublink_slug = subsublink.title | slugify %}
-      {% endif %}
-      {% endif %}
+    {% endif %}
     {% assign active = nil %}
-   
-    
-    
+    {% endif %}
+    {% if page_sub_group == subgroup_slug %}
+        {% assign active = 'active' %}
+    {% endif %}
     {% if page_main_group == group_slug %}
         {% assign active = 'active' %}
     {% endif %}
@@ -118,11 +118,7 @@
                   {% endcomment %}
                 </li>
               {% endfor %}
-
-
-
-
-                {% for subsubgroup in subgroup.subsubpages %}
+                {% for subsubgroup in group.subsubpages %}
                        {% assign link = subsubgroup.pages | first %}
                        {% assign link_slug = link.title | slugify %}
                        {% assign subsubgroup_slug = subsubgroup.title | slugify %}
@@ -176,12 +172,6 @@
                        </ul>
                      </div>
                    {% endfor %}
-
-
-
-
-
-
                   </ul>
                 </div>
             {% endfor %}
