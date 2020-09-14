@@ -12,7 +12,7 @@ Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick
 
 #### 1. Creating Robots
 
-A Robot is an actor that automates the routine, but sometimes complex tasks, associated with managing your data workflow. Use the [Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) to learn how you can create robots to automate tasks within your system. Additionally, the Robots Guide will go over the alerts setting, allowing you to create notifications for when an event occurs. Upon completion, the [Robots Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great resource to find examples of robots in action.
+A Robot is an actor that automates the tasks associated with transforming, enriching, and annotating your data. Use the [Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) to learn how you can create robots to automate tasks within your system. Additionally, the Robots Guide will go over the alerts setting, allowing you to create notifications for when an event occurs. Upon completion, the [Robots Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great resource to find examples of robots in action.
 
 
 #### 2. Creating Complex Requests with Microshare®'s API

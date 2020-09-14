@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Views Guide
-description: Comprehensive guide to understand Views
+description: Comprehensive guide to Views
 toc: true
 ---
 
@@ -25,12 +25,12 @@ toc: true
 
 ## 1. What’s a View?
 
-A View is a component for managing your data access. It lets you send static data, query the data lake, manage content and data formats and also puts controls over data elements along with sharing rules.
+A View is a component for looking at your data in different ways. It can be static data or dynamicly retrieved data and they let you control the content and formats of the data. Combining views with share rules a
 
 ## 2. What can I do with them?
 
 #### - Query Data Lake
-Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.4/aggregation/). It can apply search criteria, group data elements, sort and project necessary data elements as results.
+Use the "Pipeline Query" option to query the data lake. The query format is based on [MongoDB Aggregation Query](https://docs.mongodb.com/v3.6/core/aggregation-pipeline/). It can apply search criteria, group data elements, sort, and project data elements as results.
 
 #### - Create Sample or Reference Data
 Use the "Static JSON" option to create data samples for testing or reference data.
