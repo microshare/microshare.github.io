@@ -5,6 +5,11 @@ description: Robot examples to build a Data Workflow
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-11.jpg" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -30,10 +35,10 @@ toc: true
 
 ### A. What is a data workflow?
 You can set up automated multistep processes to route and transform your data so it's ready to be consumed by an App or a Dashboard.  
-This is called a data workflow. The automated actions are managed by [Robots](../robot-guide), and the access to transformed data is granted with [Rules](../rules-guide).  
+This is called a data workflow. The automated actions are managed by [Robots](/docs/2/technical/microshare-platform-advanced/robots-guide/), and the access to transformed data is granted with [Rules](/docs/2/technical/microshare-platform/rules-guide/).  
 In this article we will describe the usual actions you can perform with Robots to get your data workflow ready.  
 
-For an introduction to robots take a look at the [Robot Guide](../robot-guide)
+For an introduction to robots, take a look at the [Robot Guide.](/docs/2/technical/microshare-platform-advanced/robots-guide/)
 
 ### B. Read data from the data lake
 
@@ -152,7 +157,7 @@ To get records by the recType and associated tags:
 {% endhighlight %}
 
 ### E. Data lake advanced queries
-You can use [VIEWS](https://microshare.github.io/docs/0.1/getting-started/views-guide/) to do advanced queries to the data lake.
+You can use [VIEWS](/docs/2/technical/microshare-platform/views-guide/) to do advanced queries to the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
@@ -214,7 +219,7 @@ Another strategy would be to use one Robot per devEUI, that can be turned on and
 ### G. Data Transformation
 
 Robots are running JS scripts, so any data transformation logic can be added to your workflow.  
-A usual transformation step of your workflow is the decoding of your IoT Payload. See our list of decoding methods [here](/docs/1/advanced/robots-libraries/decoding-payloads).
+A usual transformation step of your workflow is the decoding of your IoT Payload. See our list of decoding methods [here](/docs/2/technical/microshare-platform-advanced/robots-libraries/decoding-payloads-new).
 
 IMPORTANT: The Robot scripts use ES6 only, so you can't rely on your usual browser APIs for data transformation
 
@@ -279,7 +284,7 @@ For example, at Microshare® we like to log on our slack channel, below is an ex
   lib.post(webhookURL, headers, body);
 {% endhighlight %}
 
-For more examples, see our [notification methods](/docs/1/advanced/robots-libraries/sending-notifications) and [calling external APIs methods](/docs/1/advanced/robots-libraries/making-restful-calls)
+For more examples, see our [notification methods](/docs/2/technical/microshare-platform-advanced/robots-libraries/sending-notifications-new) and [calling external APIs methods.](/docs/2/technical/microshare-platform-advanced/robots-libraries/making-restful-calls-new)
 
 ### J. Write data to the data lake
 As shown above, each step of a workflow usually ends with writting a record in the data lake.  
@@ -289,7 +294,6 @@ A data write use is twofold: it builds the audit trail of your data, and allows 
 As shown below, you can specify the recType and tags of your new data entry.
 {% highlight js %}
   var lib = require('./libs/helpers');
-
   function main(text, auth) {
     print('################################# VIEW READ START ###########################');
     var tags = ['some', 'list', 'tags'];
@@ -305,27 +309,37 @@ In this example we are receiving data from two Tabs sensor in a building in Lond
 We want to display the latest high CO2 alerts in an App, available to all Microshare® employees.  
 
 Our data workflow is the following:
-1. Parse the incoming data stream to single out the Healthy Home Sensor
-2. Decode the Payload from the Healthy Home Sensor
-3. Single out cases where the CO2 level is high, and pass only those to the next step
-4. Aggregate the latest 10 records with [a View](../views-guide)
-5. Setup [a Rule](../rules-guide) so that all Microshare® employees can run the aggregation View
+<br>
+**1.** Parse the incoming data stream to single out the Healthy Home Sensor.
+<br>
+**2.** Decode the Payload from the Healthy Home Sensor.
+<br>
+**3.** Single out cases where the CO2 level is high, and pass only those to the next step.
+<br>
+**4.** Aggregate the latest 10 records with [a View.](/docs/2/technical/microshare-platform/views-guide/)
+<br>
+**5.** Setup [a Rule](/docs/2/technical/microshare-platform/rules-guide) so that all Microshare® employees can run the aggregation View.
 
+<br>
 At Microshare® we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
 
- 1 would use the snippet from the [Data Parsing](#data-parsing) above  
- 2 would use the snippet from the [Data Transformation](#data-transformation) above  
- 3 would use the snippet from the [Data Unpacking](#data-unpacking) above  
- 4 The View query would be:  
+<br>
+ **1.** would use the snippet from the [Data Parsing](#data-parsing) above. 
+ <br>
+ **2.** would use the snippet from the [Data Transformation](#data-transformation) above.  
+ **3.** would use the snippet from the [Data Unpacking](#data-unpacking) above.  
+ **4.** The View query would be:
 {% highlight JSON %}
   [
     {"$match" : {"recType" : "london.tabs.healthyhomesensor.highco2"}},
     {"$limit" : 10}
   ] 
 {% endhighlight %}
- 5 The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to &
+ **5.** The Rule would point to the View's recType, allow Execute operation, with the Requestor Organization set to `&`.
 
 ## 2. What's next?
 ---------------------------------------
 
 You have now access to decoded IoT data through the Microshare® API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

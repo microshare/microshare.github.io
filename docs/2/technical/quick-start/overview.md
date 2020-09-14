@@ -5,37 +5,62 @@ description: A guide to interacting with Microshare™ Technology
 toc: true
 ---
 
-##### SUMMARY : 
 
-1. [Introduction](./#1-introduction-the-architecture)
-2. [What can you expect to work with](./#2-what-can-you-expect-to-work-with)
+
+
+{% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
+
+<br>
+
+
+
+---------------------------------------
+
+#### Summary:
+
+1. [What does Microshare® do?](./#1-what-does-microshare-do)
+2. [What can I do?](./#2-what-can-i-do)
+3. [What's going on in the technical side of Microshare®?](./#3-whats-going-on-in-the-technical-side-of-microshare)
+
+## 1. What does Microshare® do?
+---------------------------------------
+
+<br>
+Microshare® connects you to your buildings, assets, associates, and devices through a range of ready-to-deploy IoT solutions connected to the Microshare® Smart Network™. From any of our dozens of solutions, Plug in your device and become connected to your surroundings.
+
+{% include image.html url="/assets/img/microshareex1.png" width="800" description="demo" %}
+
+
+Most recently, Microshare® has made it possible for large enterprises to safely reopen their facilities and to rethink their physical footprint in the context of COVID-19. Our turnkey Sensing-as-a-Service model for Smart Facilities uses real-time data to detect building hotspots and mitigate the risk of exposure to the virus. With Universal Contact Tracing, we enable our clients globally to get back to business as quickly, safely, and cost-efficiently as possible without the privacy burdens of smartphone apps. Visit our [main website](https://www.microshare.io/smart-facilities-dashboards-and-solutions/) to learn more about Microshare® solutions!
+
+**Confused on any terminology? Head over to the [glossary page.](/docs/2/general-user/quick-start/glossary/)**
+
+**Got any questions? Don’t be afraid to ask for assistance at `support@microshare.io`.**
+
+
+
+
+## 2. What can I do?
+---------------------------------------
+
+<br>
+Take a look at our [demo dashboard](/docs/2/general-user/meet-microshare/demo-live/) to see what all the technical documentation is working towards. Interact with the apps and view the data of the Microshare® locations collected in real time!
+
+{% include image.html url="/assets/img/demo-dashboard.jpg" width="800" description="dashboard demo" %}
+
+Microshare® connects the general user to their environment’s data on the dashboard while the technical side makes this happen through interactions with the Microshare® developer console and the Microshare® API. [The basic developer roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/) navigates you through the initiation process of working with the Microshare® developer console and the Microshare® API. 
+
+
+## 3. What's going on in the technical side of Microshare®?
 
 ---------------------------------------
 
-## 1. Introduction: The Architecture
+<br>
+
+{% include image.html url="/assets/img/microshare-lora-governance-gap.png" width="800" description="process diagram" %}
 
 
-The Microshare® platform is built as a set of microservices to communicate data from your devices to you. The platform operates through JSON based RESTful API calls which makes it very applicable to other systems. The data can be stored either in the Microshare® data lake, any other on-storage premise or the cloud. 
- 
-The Microshare® service is very versatile as it runs as a Cloud Service. 
-
----------------------------------------
-## 2. What can you expect to work with?
+Microshare®'s main technical objective is to get information about your environment and represent it on your dashboard. To do this, LoRaWAN devices first collect data of your environment and send it via Lora signal to your LoRaWAN gateway. The gateway sends the device’s information through WiFi or cellular to the Microshare® Smart Network™ where it is stored as raw data. The device sends the data in an undigested form for security purposes. The raw data is digested into a readable form and represented onto your Dashboard similar to the [live demo]. As a developer, your responsibility is to manage how the data is represented on the dashboard, how it is formatted, and who gets to view the data. Additionally, you will need to learn how to interact with Microshare®’s API to send and request information about the device’s data. Finally, your data is not stored locally, but on the cloud via a Data Integration solution such as Microsoft's Azure, Google Pub/Sub or Amazon Web Services. 
 
 
-As a developer, you will mostly be working with the Microshare® platform and the API. You can get started with understanding how to work with these tools in the [Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/).  After walking through the Basic Developer Roadmap, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more complicated interactions with the Microshare® platform and API. Additionally, the [Technical Structure Page](/docs/2/technical/quick-start/microshare-technical-structure/) guides you through the framework on how the components interact with each other to a greater extent. 
-
-#### The Microshare® Platform
-
-
-The [Microshare® Platform](/docs/2/technical/microshare-platform/quick-start/) is the hub of interacting with devices and their data. In the Microshare® platform, you will be able to create device clusters to group your devices’ data together, create robots to automate tasks, create dashboards to view your data and administrate who can see your devices’ data. 
-
-#### The Microshare® API
-
-
-You will first interact with the [Microshare® API](/docs/2/technical/api/quick-start/) to jumpstart your data representation with the Microshare® platform. You will learn basic calls to receive information from Microshare® to implement into your Microshare® dashboard. The Microshare® structure takes many cryptic precautions to ensure the privacy of the user and interactions with the Microshare® API will help you navigate these characteristics. 
-
-#### LoRaWAN Technology
-
-
-LoRaWAN devices are the sensors that you will use to collect data on your environment. They use a signal called Lora rather than Wi-Fi or a cellular signal to communicate with LoRaWAN gateways. Lora provides a significantly larger area of communication and extends the battery life of the devices. LoRaWAN gateways take the information from the sensors and send them to the Microshare® network, where the data is represented on your dashboard. The [LoRaWAN Technology](/docs/2/technical/lorawan/lorawan-technology/) page describes the relationship and technology in greater detail, while the [LoRaWAN Sensors](/docs/2/technical/lorawan/lorawan-sensors/) and [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways/) pages explore the specific models of devices that you will work with. 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

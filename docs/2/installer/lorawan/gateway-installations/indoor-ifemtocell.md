@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Kerlink iFemtocell
-description: How to set it up?
+description: How do I set it up?
 toc: true
 ---
 
@@ -14,9 +14,11 @@ Please make sure your selected physical install location will allow for a good c
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step1-800x800.jpg" description="LoRaWan Technology" %}
 
 Microshare® delivers Kerlink iFemtocells pre-configured and if required with a 4G USB dongle already activated.
-All you need to do to have your LoRaWAN network up and running is to :
-Re-assemble the parts
-Plug into a mains power source and wait for the connection to be established
+All you need to do to have your LoRaWAN network up and running is to:
+<br>
+**1.** Re-assemble the parts
+<br>
+**2.** Plug into a mains power source and wait for the connection to be established
 
 
 ### Box contents:
@@ -24,7 +26,6 @@ Plug into a mains power source and wait for the connection to be established
 
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step2-800x800.jpg" description="LoRaWan Technology" %}
 
-Unpack
 <br> 1x Kerlink iFemtocell carrier-grade LoRaWAN™ gateway
 <br> 1x Kerlink high-gain antenna
 <br> 1x Power adapter (region-specific)
@@ -37,24 +38,25 @@ Unpack
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step3-800x800.jpg" description="LoRaWan Technology" %}
 
 
-1.1
+###### Step 1
+
 Screw the antenna to the gold connector on the right-hand side of the iFemtocell
 
 ---------------------------------------
 
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step4-800x800.jpg" description="LoRaWan Technology" %}
 
+###### Step 2
 
-1.2
-<br> [If using an external 4G dongle] Insert the 4G dongle to the USB port on the other side of the iFemtocell. You may need to gently force the dongle to go all the way in.
-<br> [If using Ethernet] Insert a standard Ethernet cable with a RJ45 connector into the appropriate port on the side of the iFemtocell.
+<br> **If using an external 4G dongle,** Insert the 4G dongle to the USB port on the other side of the iFemtocell. You may need to gently force the dongle to go all the way in.
+<br> **If using Ethernet,** Insert a standard Ethernet cable with a RJ45 connector into the appropriate port on the side of the iFemtocell.
 
 ---------------------------------------
 
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step5-800x800.jpg" description="LoRaWan Technology" %}
 
 
-1.3
+###### Step 3
 Plug the power adapter into the iFemtocell
 
 
@@ -64,9 +66,11 @@ Plug the power adapter into the iFemtocell
 {% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step6-800x800.jpg" description="LoRaWan Technology" %}
 
 
-2.0
-Plug the power adapter into a mains power socket
-After approximately 2-3 minutes, the first two lights on the iFemtocell should turn solid green.
+###### Step 4
+* Plug the power adapter into a mains power socket.
+* After approximately 2-3 minutes, the first two lights on the iFemtocell should turn solid green.
 
 
-You’re all done! Please send an email to support@microshare.io to indicate the Gateway is up and running so we can confirm at our end.
+You’re all done! Please send an email to `support@microshare.io` to indicate the Gateway is up and running so we can confirm at our end.
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

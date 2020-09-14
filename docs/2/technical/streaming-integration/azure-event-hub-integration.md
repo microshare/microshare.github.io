@@ -6,6 +6,22 @@ toc: true
 ---
 
 
+<br>
+
+
+{% include image.html url="/assets/img/azure-2.jpg" description="thumbnail 2" %}
+
+<br>
+
+---------------------------------------
+##### SUMMARY : 
+
+1. [Overview](./#1-overview)
+2. [Setup](./#2-setup)
+3. [Security](./#security)
+
+
+
 ## 1. Overview
 ---------------------------------------
 
@@ -17,10 +33,13 @@ Event Hub integration is a streaming data integration that pushes data from the 
 
 To be suitable for real-time integration, the Event Hub Namespace must be configured with the following options:
 
->> 1) Kafka API enabled - this option cannot be changed once the Event Hub Namespace is created
+<br>
+ **1.** Kafka API enabled - this option cannot be changed once the Event Hub Namespace is created
 
->> 2) Shared Access Policy (SAS) that grants the "Manage" policy as with the "Ingest" SAP in the screenshot below. 
+<br>
+ **2** Shared Access Policy (SAS) that grants the "Manage" policy as with the "Ingest" SAP in the screenshot below. 
 
+<br>
 Setup this way, the integration will automatically create new Event Hub queues within your Event Hub Namespace so that new data types can be transmitted without further configuration. Each Microshare® recType will be exported into its own unique queue so that even with multiple sensors and data streams, the data remains segmented for easy analysis. 
 
 {% include image.html url="\assets\img\azure-hub.png" width="900" description="azure event hub" %}
@@ -43,3 +62,5 @@ Security References
 [https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-security-controls](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-security-controls)
 
 [https://docs.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature](https://docs.microsoft.com/en-us/azure/event-hubs/authorize-access-shared-access-signature)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

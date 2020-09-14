@@ -5,6 +5,10 @@ description: Comprehensive guide to understand Robots
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-7.jpg" height="900" weight="900" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -32,6 +36,7 @@ Robots can be triggered by the arrival of new data into the Microshare® data la
 
 ## 2. What can I do with them?
 ---------------------------------------
+
 To keep your data workflow simple, each Robots should only take a single action. Below are some typical use cases:
 
 [1. Data ingestion](../data-ingestion)  
@@ -75,7 +80,6 @@ The ```require``` method loads the library of functions your Robot will be able 
 ```main```  has two parameters:
 * ```text``` is the metadata about the event that triggered the Robot.  
 * ```auth``` is your auth token to allow this Robot to access the data lake on your behalf.  
-
 
 For more code samples, refer to the [Robots Library](../robots-library/).  
 

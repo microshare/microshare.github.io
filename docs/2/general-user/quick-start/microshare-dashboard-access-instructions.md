@@ -5,6 +5,18 @@ description: How to create an account
 toc: true
 ---
 
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
+
+
+
+
+
 ---------------------------------------
 
 ## One- time account set- up(new users):
@@ -41,4 +53,4 @@ Use the instructions below to switch identities.
 4. View the dashboard under your identity. 
 
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -1,9 +1,18 @@
 ---
 layout: docs
-title: Why LoRaWan ?
+title: Why LoRaWan?
 description: Why do we think LoRaWan is the best IoT technology?
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+
+<br>
+
 
 ---------------------------------------
 
@@ -14,44 +23,37 @@ toc: true
 
 ---------------------------------------
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
-
 ## 1. Introduction
+---------------------------------------
+This portion of the documentation will familiarize you with LoRaWan technology and the networks, devices and gateways that make it all happen. But why does Microshare® choose to employ LoRaWan technology in their solutions? This guide will address that frequently asked question. 
 
-In this block of documentation you will be able to learn more about LoRaWan technology, understand in detail how the network, sensors and gateways work. 
-
-But first of all we would like to briefly remind you why we have chosen this technology for some of our sensors. 
-
-
-If you want more technical information on these points, do not hesitate to visit the [LoRaWan Technology page](/docs/2/technical/lorawan/lorawan-technology/).
+If are interested in more technical information on these points, make sure to visit the [LoRaWan Technology page.](/docs/2/technical/lorawan/lorawan-technology/).
 
 
 ## 2. LoRaWan Advantages
-
+---------------------------------------
 <br>
 
 #### Long Range
 
-First of all the LoRaWan technology is a long range technology, so in your building you will not have any problem of connection with your sensors as you could have with wifi or bluetooth. Indeed you will be able to simply cover a large building with a single gateway, without disturbing your network. 
-
-To give you an idea of what you can do outdoors, we have captured a message between a device and a gateway more than 15 km away, and it works just as well indoors.
+LoRaWan is a long range form of communication allowing your devices to operate within sections of buildings without the connection issues that accompany Wifi or Bluetooth. A single LoRaWan gateway will allow you to cover your entire building without disturbing your network. LoRaWan coverage allows our indoor devices to communicate with a gateway that is 15km (9.3mi) away.
 
 
 
 #### Long Battery Life
 
-The LoRaWan technology is a godsend for the sensors, although it sets a certain regulation and emission rules, it allows the sensors to consume very little at emission, the sensors can thus remain functional on their original battery up to 5 or 7 years.
+LoRaWan technology is remarkable more energy efficient, giving your device’s original battery a life of 5 to 7 years. 
 
 
 
-#### Plug and Play
+#### Plug-n-Play
 
-What could be easier than an easy-to-install technology?
-
-Simply by activating a sensor it will work for years and send you your essential data, we call it the lick and stick technology, just like a stamp. This technology coupled with our Deploy-M installation application and device management on our platform ensures success in the management of your devices.
-
+Our devices have an effortless installation process using our Deploy—M application. Stick your devices to the wall and plug them in to get started. All of the device management is performed through our easy to use Microshare® platform. 
 
 
 #### Security
 
-By passing through LoRaWan and not through your wifi for example, this ensures the continued security of your network. Indeed even if the sensors and technology LoRaWan embeds a strong security, we do not want there to be any possible entry into your network through a WiFi sensor for example.
+LoRaWan communication is significantly more secure than the WiFi alternative, applying complex encryptions and a different secure signal. With WiFi devices there is a concern of a possible entry into your network, which is not a risk forLoRaWan device. 
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

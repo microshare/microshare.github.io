@@ -1,22 +1,31 @@
 ---
 layout: docs
 title: Azure IoT Hub Integration
-description: 
+description: Integrating Azure into your Microshare™ Solution
 group: Azure IoT Hub Integration
 toc: true
 ---
+
+<br>
+
+{% include image.html url="/assets/img/azure-2.jpg" description="thumbnail 2" %}
+
+<br>
+
+
 ---------------------------------------
 
 ##### SUMMARY : 
 
-1. [Overview](./#overview)
-2. [Basic Architecture](./#basic-architecture)
-3. [Setup](./#setup)
-4. [Security](./#security)
+1. [Overview](./#1-overview)
+2. [Basic Architecture](./#2-basic-architecture)
+3. [Setup](./#3-setup)
+4. [Security](./#4-security)
 
 ---------------------------------------
 
-## Overview
+
+## 1. Overview
 ---------------------------------------
 
 Azure IoT Hub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Azure tenancy in real-time. Data is typically made available to an IoT Hub with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. Azure IoT Hub Integration creates a pathway to advanced storage, visualization, and analytics in the Microsoft Azure ecosystem from the Microshare® Smart Network. Use Azure IoT Hub to standardize your IoT data pipelines, integrate with Azure Digital Twins, and take advantage of advanced device health services.
@@ -25,7 +34,7 @@ Azure IoT Hub Integration is a streaming data integration that pushes data from 
 
 In order to configure the Azure IoT Hub Integration for you, your support contact will need the connectivity endpoint and credentials labelled as the &quot;Primary Connection String&quot; for a dedicated IoT Device entry from the Azure Portal or output from ARM/Terraform execution. More information is included below.
 
-## Basic Architecture
+## 2. Basic Architecture
 ---------------------------------------
 
 The typical architecture for streaming data within the Azure environment using the Azure IoT Hub Integration will include components for:
@@ -43,7 +52,7 @@ The typical architecture for streaming data within the Azure environment using t
 
 Example Azure IoT Hub downstream architecture
 
-## Setup
+## 3. Setup
 ---------------------------------------
 
 If you already use IoT Hub in your organization, an existing IoT Hub may be reused. If so, skip to Creating a Device. If not, continue with the following steps to create a new IoT Hub within your Azure tenancy.
@@ -98,7 +107,7 @@ This key should remain private. Do not transmit or store the key in an unsecure 
 
 [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-scaling)
 
-## Security
+## 4. Security
 ---------------------------------------
 As with most Azure facilities, IoT Hub supports authentication and authorization through Share Access Signatures (SAS) which allow the client full control over the write permissions for each configured IoT device. The SAS (aka Primary Connection String) positively identifies the Smart Network access. Data is encrypted on the network and at rest by default with the IoT Hub. Logging and monitoring of both data and management activity is available on the IoT Hub. Because the Smart Network originates outside of the corporate networks, Network Security restrictions on write operations are not possible on the inbound network endpoint. Restriction of internal network access is possible. Consult a Microsoft Certified partner for more information.
 
@@ -107,3 +116,5 @@ As with most Azure facilities, IoT Hub supports authentication and authorization
 [https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-tls-support](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-tls-support)
 
 [https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc](https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

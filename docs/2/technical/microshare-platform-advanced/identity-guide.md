@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: Identity Guide
+description: Becoming familiar with Microshare™ identities
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
+<br>    
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -81,4 +87,4 @@ Otherwise you can like when you connect with the identity parameter as seen abov
 
 `&identity=YourIdentityID`
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

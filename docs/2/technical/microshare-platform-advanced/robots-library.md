@@ -1,16 +1,21 @@
 ---
 layout: docs
 title: Robot Libraries
-description: snippets of usable lib methods from Robots
+description: snippets of usable methods from Robots
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-5.jpg" height="900" width="900" description="thumbnail 2" %}
+
+
+<br>
 ---------------------------------------
 
 ##### SUMMARY : 
 
 1. [Robots Library](./#1-robots-libraries)
-3. [How to manually decode your data](./#3-access-to-device-cluster)
+3. [How to manually decode your data](./#2-how-to-manually-decode-your-data)
 
 ---------------------------------------
 
@@ -24,9 +29,9 @@ It gives access to handy methods to ease your life.
 
 Below are categories and code snippets to guide you how to use these lib methods :
 
-#####  [Reading and Writing records](read-and-write)
-#####  [Making RESTful calls](making-restful-calls)
-#####  [Sending notifications](sending-notifications)
+#####  [Reading and Writing records](/docs/2/technical/microshare-platform-advanced//robots-libraries/read-and-write/)
+#####  [Making RESTful calls](/docs/2/technical/microshare-platform-advanced/robots-libraries/making-restful-calls-new/)
+#####  [Sending notifications](/docs/2/technical/microshare-platform-advanced/robots-libraries/sending-notifications-new/)
 
 
 
@@ -35,8 +40,11 @@ Below are categories and code snippets to guide you how to use these lib methods
 
 As presented in the pages on data ingest and transformation, for Microshare® compatible sensors the decoders are linked to the device clusters, so this step is not necessary. 
 
-#####  [TrackNet Tabs devices V1.1](tracknet-tabs)
-#####  [Globalsat LT-100 LoRaWAN GPS Tracker](globalsat-lt-100)
-#####  [Sagemcom Siconia](sagemcom-siconia)
-#####  [Adeunis LoRaWAN Demonstrator V1.1](adeunis-demonstrator)
-#####  [Generic decoding](decoding-payloads)
+#####  [TrackNet Tabs devices V1.1](/docs/2/technical/microshare-platform-advanced/robots-libraries/tracknet-tabs/)
+#####  [Globalsat LT-100 LoRaWAN GPS Tracker](/docs/2/technical/microshare-platform-advanced/robots-libraries/globalsat-lt-100/)
+#####  [Sagemcom Siconia](/docs/2/technical/microshare-platform-advanced/robots-libraries/sagemcom-siconia/)
+#####  [Adeunis LoRaWAN Demonstrator V1.1](/docs/2/technical/microshare-platform-advanced/robots-libraries/adeunis-demonstrator/)
+#####  [Generic decoding](/docs/2/technical/microshare-platform-advanced/robots-libraries/decoding-payloads-new/)
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

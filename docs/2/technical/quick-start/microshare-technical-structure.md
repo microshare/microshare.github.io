@@ -1,9 +1,15 @@
 ---
 layout: docs
 title: The Microshare™ Technical Structure
+description: How Microshare™ brings your data to you
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-9.jpg" height="1000" width="1000" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 #### Summary:
 1. [Introduction](./#introduction)
@@ -41,3 +47,5 @@ The Microshare® platform grants you control over the visualization of the data 
 ---------------------------------------
 
 As a developer, you will explore the features and applications of these components in greater detail. [The Basic Developer Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/) walks you through, step- by- step, how you can best become familiar with what Microshare® has to offer behind the scenes. Furthermore, the [Advanced Developer Roadmap](/docs/2/technical/quick-start/advanced-dev-roadmap/) guides you through the more difficult concepts of the Microshare® platform and API. 
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -35,7 +35,13 @@ Allow access to only the parties you want.
 
 ## Digital Twinning
 ---------------------------------------
+{% include image.html url="/assets/img/CleanSafeOverview4.png" height="700" width="700" description="Microshare.io" %}
 
-{% include image.html url="/assets/img/CleanSafeOverview3.png" description="Microshare.io" %}
-{% include image.html url="/assets/img/CleanSafeOverview4.png" description="Microshare.io" %}
+
+**Digital Twin:** a virtual representation or model of a physical space.
+
+Microshare uses digital twinning to connect you to your environment in a variety of our solution. 
+
+{% include image.html url="/assets/img/thumbnail-19.png" description="Microshare.io" %}
+
 

@@ -2,14 +2,7 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41580291-4"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-41580291-4');
-      </script>
+      
       {% include header.html %}
   </head>
   <body class="bd-docs" data-spy="scroll" data-target=".bd-sidenav-active">
@@ -20,11 +13,12 @@
     </a>
 
     {% include docs-navbar.html %}
-
+     
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
         <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
           {% include docs-sidebar.html %}
+         
         </div>
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
           <h1 class="bd-title" id="content">{{ page.title }}</h1>

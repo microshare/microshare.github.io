@@ -1,8 +1,17 @@
 ---
 layout: docs
 title: LoRaWAN Gateways
+description: The gateways in Microshare™ solutions
 toc: true
 ---
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="LoRaWan Technology" %}
+
+<br>
 
 ---------------------------------------
 
@@ -21,8 +30,7 @@ As seen above, the gateways serve as the bridge between your devices and the net
 
 Gateways run on an operating system such as Kerlink IoT Station which is run behind the scenes interpreting your device's packets. The gateway admin will use this operating system to manage their gateway. 
 
-For more information on gateways please visit [The Things Network Website](https://www.thethingsnetwork.org/docs/gateways/
-).
+For more information on gateways please visit [The Things Network Website](https://www.thethingsnetwork.org/docs/gateways/).
 
 
 
@@ -79,7 +87,7 @@ Our installation page has a great tutorial for both the [iFemtocell](/docs/2/ins
 The LoRaWAN® gateways used by Microshare® fall under the class A gateway, where the gateway cannot initiate communication with your device. The gateway can only communicate for a brief window of time with your device if it is prompted to do so by your device. This enforces security and power efficiency for your devices. 
 
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
 
 
 

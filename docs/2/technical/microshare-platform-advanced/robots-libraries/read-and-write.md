@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Read and Write records from the Microshare® datalake
+title: Read and Write records from the microshare datalake
 description:
 group: advanced
 toc: true
@@ -16,7 +16,7 @@ Below are code snippets to read data from the data lake.
 Parse the message that triggered the Robot using lib.parseMsg to get the data and metadata: 
 
 {% highlight js %}
-  // Include the helper objects which allows you to read and write to Microshare® datalake
+  // Include the helper objects which allows you to read and write to microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -48,14 +48,14 @@ And the returned data model is
     },
     "objs": [
         {
-            "updaterId": "jwang@point.io",
+            "updaterId": "youremail@microshare.io",
             "desc": "",
             "name": "",
             "createDate": {
                 "$date": 1507824651492
             },
             "_id": {
-                "$oid": "59df940b46e0fb0028fbb54c"
+                "$oid": "59df940b46e0fb0028fb????"
             },
             "tags": [
                 "tempID1234",
@@ -65,44 +65,44 @@ And the returned data model is
             "data": {
                 "Freq": 868300000,
                 "upid": {
-                    "$numberLong": "23393998034011604"
+                    "$numberLong": "23393998034011????"
                 },
                 "DR": 5,
                 "msgtype": "updf",
-                "DevEui": "58-A0-CB-FF-FF-FE-BB-15",
+                "DevEui": "58-A0-CB-FF-FF-FE-??-??",
                 "SessID": 3,
                 "FCntUp": 165,
                 "ArrTime": 1506622798.0322363,
                 "confirm": false,
                 "region": "EU863",
                 "regionid": 1000,
-                "FRMPayload": "00EB05050046E90F",
-                "FPort": 102
+                "FRMPayload": "00EB05050046E???",
+                "FPort": 000
             },
-            "creatorId": "jwang@point.io",
-            "id": "59df940b46e0fb0028fbb54c",
-            "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266",
+            "creatorId": "youremail@microshare.io",
+            "id": "59df940b46e0fb0028fb????",
+            "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98????",
             "tstamp": {
-                "$numberLong": "1507824651492"
+                "$numberLong": "1507824651???"
             },
             "origin": {
                 "tokendata": {
-                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d89dc"
+                    "id": "3766b4fc-4fae-49ab-afc4-cb0d741d????"
                 },
-                "desc": "Object of Type io.microshare.demo.sensor.temprature",
-                "name": "io.microshare.demo.sensor.temprature",
+                "desc": "Object of Type io.microshare.demo.sensor.temperature",
+                "name": "io.microshare.demo.sensor.temperature",
                 "createDate": {
-                    "$numberLong": "1507824651492"
+                    "$numberLong": "150782465????"
                 },
-                "creatorId": "jwang@point.io",
-                "id": "59df940b46e0fb0028fbb54c",
-                "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98L266"
+                "creatorId": "youremail@microshare.io",
+                "id": "59df940b46e0fb0028fb????",
+                "checksum": "F1F3C807902AA03C4BCF2FAEE986B460C1E0434451682A6BE7799D0D07B28B98????"
             },
-            "recType": "io.microshare.demo.sensor.temprature",
+            "recType": "io.microshare.demo.sensor.temperature",
             "owner": {
-                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
-                "org": "io.point",
-                "user": "jwang@point.io"
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462????",
+                "org": "io.microshare",
+                "user": "youremail@microshare.io"
             }
         }
       ]  
@@ -116,7 +116,7 @@ This call will always return an array and depending on the read, you may have 0 
 To get records by the recType and id:
 
 {% highlight js %}
-// Include the helper objects which allows you to read and write to Microshare® datalake
+// Include the helper objects which allows you to read and write to Microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -131,7 +131,7 @@ To get records by the recType and id:
 To get records by the recType and associated tags:
 
 {% highlight js %}
-// Include the helper objects which allows you to read and write to Microshare® datalake
+// Include the helper objects which allows you to read and write to Microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -144,12 +144,12 @@ To get records by the recType and associated tags:
 {% endhighlight %}
 
 ### Data lake advanced queries
-Review [Views Guide](../../../getting-started/views-guide/) to perform advanced queries against the data lake.
+Review [Views Guide](/docs/2/technical/microshare-platform/views-guide/) to perform advanced queries against the data lake.
 
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
 {% highlight js %}
-  //Include the helper objects which allows you to read and write to Microshare® datalake
+  //Include the helper objects which allows you to read and write to microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.

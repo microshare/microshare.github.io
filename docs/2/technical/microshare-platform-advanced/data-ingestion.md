@@ -5,14 +5,18 @@ description: How your data gets into the Microshare® Data Lake
 toc: true
 ---
 
+
+{% include image.html url="/assets/img/thumbnail-13.jpg" height="900" width="900" description="thumbnail 2" %}
+
+<br>
 ---------------------------------------
 ##### SUMMARY : 
 
 1. [What is Data Ingestion?](./#1-what-is-data-ingestion)
-2. [LoRaWAN Network Ingestion via Device Cluster](./#2-new-process)
-3. [Upload data via REST API POST](./#3-ingesting-data-manually)
-4. [Robot Polling to pull data](./#4-how-do-i-set-up-my-device-cluster-to-ingest-my-data-automatically-into-the-data-lake)
-5. [Websocket Integration](./#5-how-does-the-data-ingestion-process-work)
+2. [LoRaWAN Network Ingestion via Device Cluster](./#2-lorawan-network-ingestion-via-device-cluster)
+3. [Upload data via REST API POST](./#3-upload-data-via-rest-api-post)
+4. [Robot Polling to pull data](./#4-robot-polling-to-pull-data)
+5. [Websocket Integration](./#5-websocket-integration)
 
 ## 1. What is Data Ingestion? 
 
@@ -34,7 +38,7 @@ The part of the device cluster involved in data ingestion is collecting the data
 
 {% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
 
-Marked in teal is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
+Marked in blue is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
 
 ## 3. Upload data via REST API POST
 ---------------------------------------
@@ -96,5 +100,8 @@ We will need the following information to configure the websocket:
 ## What's Next?
 ---------------------------------------
 
-After the data is injested into the lake, the data is then unpacked. This process is explained in detail in the [Data Formatting page](/docs/2/technical/microshare-platform-advanced/data-formatting/).
+After the data is injested into the lake, the data is then unpacked. This process is explained in detail in the [Data Unpacking page](/docs/2/technical/microshare-platform-advanced/data-unpacking/).
 
+As well, you can check out the [Scheduled Robot Guide.](/docs/2/technical/microshare-platform-advanced/scheduled-robot)
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

@@ -5,6 +5,14 @@ description: How to use Microshare™ Apps
 toc: true
 ---
 
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-11.jpg" description="thumbnail 2" %}
+
+<br>
+
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -22,7 +30,7 @@ toc: true
 
 Now that you have [created an account](../create-an-account) you will be able to log in.
 
-To do this simply go to the following pages: 
+To log in, head to your preferred environment: 
 
 Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
@@ -30,20 +38,20 @@ Prod : [app.microshare.io](https://app.microshare.io/login)
 
 {% include image.html url="/assets/img/access-my-apps/log-in.png" description="Log in" %}
 
-You will go directly to the main page of your account which looks like this: 
+You will be sent to the main page which looks like: 
 
 {% include image.html url="/assets/img/access-my-apps/microshare-homepage.png" description="microshare homepage" %}
 
-This is the dashboard of the identity you're on. 
+This is the dashboard of the identity you are on. 
 
-Continue this tutorial to understand how to switch from one identity to another. 
+Next, you will learn how to interchange your identity to alternate your view of dashboards. 
 
 ## 2. Select My Identity
 ---------------------------------------
 
-Identities make it easy to navigate on Microshare® from one dashboard/data set to another without changing accounts. 
+Identities make it easy to navigate from one dashboard/data set to another without changing accounts. 
 
-Here we will simply look at the general information about the identities. For more information on identities an in-depth tutorial can be found here: 
+This guide will only give a basic explanation of identities. For an in- depth explanation:
 
 ##### > [Identity guide](../../../technical/microshare-platform-advanced/identity-guide)
 
@@ -58,31 +66,31 @@ Clicking on the profile icon in the top right hand corner will allow you to quic
 
 {% include image.html url="/assets/img/access-my-apps/microshare-identity.png" description="microshare identity" %}
 
-Here, for example, we can simply navigate between two identities.
+Here, for example, we can interchange between two identities.
 
 
 ## 3. Navigate on my Account
 ---------------------------------------
 
-Once you have logged in and chosen the identity that corresponds to what you are looking for you will be able to use the different Microshare® tools. 
+Once you have logged in and chosen the identity that corresponds to what you are looking for, you will mow be able to use the selection of Microshare® tools. 
 
-To get started your homepage is full of applications. Just click on one of them to launch it and you will be able to see and use your data easily.
+Your homepage is full of applications. Click on one to view that device cluster's data.
 
 {% include image.html url="/assets/img/access-my-apps/demo-dashboard.png" description="microshare demo" %}
 
-Then by going to `Manage` you will have access to more advanced tools.  
+By going to the `Manage` tab, you will have access to more advanced tools.  
 
 {% include image.html url="/assets/img/access-my-apps/microshare-manage.png" description="microshare homepage" %}
 
-If you want to better understand all of Microshare®'s tools continue on the technical documentation:
+For an in- depth explanation and application of these tools, use the technical side of the documentation site:
 
 ##### > [Technical](../../../technical/quick-start/overview)
 
-If you are an administrator of your identity, specific documentation is available for you: 
+If you are an administrator of your company's data, use the administrators documentation for greater instruction: 
 
 ##### > [Admin](/docs/2/admin/admin-management/overview/)
 
-Finally, if you have created your account and want to use the installation tools, please continue here: 
+For more information on the installation tools, please continue with the installer side of the documentation: 
 
 ##### > [Installer](/docs/2/installer/quick-start/overview/)
 
@@ -92,8 +100,10 @@ Finally, if you have created your account and want to use the installation tools
 
 By default the data from a device is NOT SHARED. Only the device cluster's owner can see the cluster's data (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that record type to be created in order to allow other parties to view the data. The cluster device is managed by the MS admin.
 
-Apps, however, by default are shared at the organizational level. They do not require share rules to be created. They can't be restricted in access although they can be filtered out of the default user view using favorites. Thus the accessibility of an entity is managed by any person who is accredited as an identity administrator.
+However apps, by default, are shared at the organizational level. They do not require share rules to be created. They can't be restricted in access (although they can be filtered out of the default user view using favorites). Thus the accessibility of an entity is managed by any person who is accredited as an identity administrator.
 
 Robots are visible to only the creator. There is not currently a mechanism to share robots. 
 
-It is possible to share views very simply so that they can be reused by another user, but their use will be shared, they will not be visible on the account of the one who receives the right to use them. 
+Views can be shared so that they can be reused by another user. Views will not be visable on the account that received the rights to use the views, they will only be visable to the creator. 
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

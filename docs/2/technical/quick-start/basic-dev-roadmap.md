@@ -4,6 +4,11 @@ title: Getting Started with Development
 toc: true
 ---
 
+
+
+
+{% include image.html url="/assets/img/thumbnail-12.jpg" description="thumbnail 2" %}
+
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -69,35 +74,48 @@ Once you have set yourself up in the developer environment, follow the next step
 
 First, head over to [dapp.microshare.io](http://dapp.microshare.io) and login. Second, naviagate over to the apps tab marked in green and click on the wrench icon to create a new app. From here, you should be able to see:
 
-{% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
+{% include image.html url="\assets\img\dashboard-guide-8.png" height="900" width="900" description="Dashboard Guide 8" %}
  
  Configure your app with following options:
- ```
+{% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
- App Type: Display
- Parent Tag(s): Leave Blank
- Style Choice: Showcase
- Theme: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
- Include: Leave Blank unless requested otherwise
- Facts to display: None 
- Form to display: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
+ <br>
+ `App Type`: Display
+ <br>
+ `Parent Tag(s)`: Leave Blank
+ <br>
+ `Style Choice`: Showcase
+ <br>
+ `Theme`: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
+ <br>
+ `Include`: Leave Blank unless requested otherwise
+ <br>
+ `Facts to display`: None 
+ <br>
+ `Form to display`: For realtime apps, pick Realtime Form v2.5 and pick Trending Form v2.6 for trending apps 
  
-```
+
 Now configure your app with facts.  Create a new fact by pressing the button above the green arrow and hitting apend. 
 
 {% include image.html url="\assets\img\dashboard-guide-3.png" height="900" width="900" description="Dashboard Guide3" %}
 
 Here are some details on facts that all apps require. For more specific facts per type of device, visit [the Dashboard Guide](/docs/2/technical/microshare-platform/dashboard-guide/).
-```
-appTitle: Should match the name you provided as the app’s Name (above)
-navOptions: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another
-selectionOptions: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
-dataRecType: math the target recType of the device cluster
-dataContext: Use the meta tag you chose in the device cluster
-queryId, queryId1, queryId2, queryId3: it is recommended to leave the query settings the same as they are in the example json
-footerLogo, headerLogo, header SecondaryLogo and get RecType: leave untouched unless requested otherwise
-```
-After completing all the necessary facts above and from [the Dashboard Guide](/docs/2/technical/microshare-platform/dashboard-guide/), you can finish by clicking the create button indicated by the gree arrow below.
+
+<br>
+`appTitle`: Should match the name you provided as the app’s Name (above).
+<br>
+`navOptions`: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another.
+<br>
+`selectionOptions`: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s) and head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0). Choose Edit Workspace from the settings menu, then Add Monitor Widget for the relevant clusters, then Lock Workspace, then click on the device monitor to show the list view, then click Download JSON. 
+<br>
+`dataRecType`: match the target recType of the device cluster.
+<br>
+`dataContext`: Use the meta tag you chose in the device cluster.
+<br>
+`queryId`, `queryId1`, `queryId2`, `queryId3`: it is recommended to leave the query settings the same as they are in the example json
+footerLogo, headerLogo, header SecondaryLogo and get RecType: leave untouched unless requested otherwise.
+<br>
+After completing all the necessary facts above and from [the Dashboard Guide](/docs/2/technical/microshare-platform/dashboard-guide/), you can finish by clicking the create button indicated by the green arrow below.
 
 {% include image.html url="\assets\img\basic-dev-roadmap-image-1.png" height="900" width="900" description="BDRM1" %}
 
@@ -110,3 +128,4 @@ Have any questions? please don't hesitate to contact `support@microshare.io` wit
 
 
 
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

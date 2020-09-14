@@ -5,6 +5,12 @@ description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
 
+
+
+
+{% include image.html url="/assets/img/banner-2.jpg" description="thumbnail 2" %}
+
+
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -45,7 +51,7 @@ Additionally, this guide will discuss tags. Tags are labels or descriptions atta
 
 Example : 
 
-```
+{% highlight javascript %}
 {
   "meta": {
     "currentCount": 337,
@@ -214,7 +220,7 @@ Example :
 
 .......
 
-```
+{% endhighlight %}
 
 #### A. General Structure
 
@@ -245,7 +251,7 @@ All these values are explained with their units in the following table:
 
 `{Data}` contains information about the device that provided the data payload. This usually includes the device id, battery type, battery type, etc. The code supplied will look like: 
 
-```
+{% highlight javascript %}
 "device": {
   "battery": {
     "power": 80,
@@ -255,7 +261,7 @@ All these values are explained with their units in the following table:
   },
   "id": "58-A0-CB-00-00-40-??-??"
 },
-```
+{% endhighlight %}
 
 #### C. Ipso
 
@@ -266,7 +272,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 #### D. Meta/IoT
 
-```
+{% highlight javascript %}
 "meta": {
   "device": [
     "London",
@@ -294,7 +300,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
   },
   "source": []
 },
-```
+{% endhighlight %}
 
 ##### The `meta` will provide:
 
@@ -322,7 +328,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 #### E. Origin
 
-```
+{% highlight javascript %}
 "origin": {
   "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
   "createDate": "2020-06-17T09:48:08.980Z",
@@ -336,7 +342,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
     "ip": "your ip address"
   }
 },
-```
+{% endhighlight %}
 
 A thorough explanation of the origins can be found in the  [Overview page](/docs/2/technical/data-format/overview/#b3-origin). 
 
@@ -344,13 +350,13 @@ Some information may differ if you unpack the data in an account that is not the
 
 #### F. Unpacker
 
-````
+{% highlight javascript %}
 "unpacker": {
   "class": "io.tracknet.healthy.TBHV100.Decoder",
   "library": "lorawan_device_unpack",
   "version": "0.5.5"
 },
-````
+{% endhighlight %}
 
 The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare® has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare® unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
@@ -413,7 +419,7 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 
 #### A. Motion Data
 
-```
+{% highlight javascript %}
 {
     "meta": {
         "currentCount": 355,
@@ -570,11 +576,11 @@ The last block of data in `{Data}` describes the device cluster that is permitte
             "updateDate": "2020-06-17T13:41:33.425Z",
             "updaterId": "yourname@microshare.io"
         },
-```
+{% endhighlight %}
 
 #### B. Temperature Data
 
-```
+{% highlight javascript %}
 {
   "meta": {
     "currentCount": 337,
@@ -743,11 +749,11 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 
 .......
 
-```
+{% endhighlight %}
 
 #### C. Feedback Data
 
-```
+{% highlight javascript %}
 {
     "meta": {
         "currentCount": 261,
@@ -914,7 +920,7 @@ The last block of data in `{Data}` describes the device cluster that is permitte
             "updateDate": "2020-06-17T13:43:47.365Z",
             "updaterId": "yourname@microshare.io"
         },
-```
+{% endhighlight %}
 
 #### D. Contact Tracing
 
@@ -1112,3 +1118,5 @@ The last block of data in `{Data}` describes the device cluster that is permitte
     "source":"ShareService"
 }
 {% endhighlight %}
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

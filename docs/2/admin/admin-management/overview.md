@@ -5,6 +5,16 @@ description: What it means to be a company adminsistrator through Microshare™
 toc: true
 ---
 
+
+
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
+
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -23,13 +33,13 @@ As an administrator, you are in charge of ensuring that the best practices are a
 
 Depending on the degree of administration, you have powerful tools in your hands. You must use them following the main guidelines.
 
-While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `support@microshare.io`. 
+**While reading this documentation if you encounter any issues or have any feedback please do not hesitate to contact us at `support@microshare.io`.**
 
 
 ## What Data or Apps are normally shared?
 ---------------------------------------
 
-By default the data from a device is NOT SHARED. Only the device cluster's owner can see it (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that record type to be created in order to allow other parties to view the data. The device cluster is managed by the MS admin.
+By default the data from a device is NOT SHARED. Only the device cluster's owner can see the data (assuming they use their own authorization for the device cluster). In most cases, this will require a share rule for that recType to be created in order to allow other parties to view the data. The device cluster is managed by the MS admin.
 
 However, Apps are shared at the organizational level by default. They do not require share rules to be created. They can't be restricted in access, although, they can be filtered out of the default user view using favorites. Thus the accessibility of an entity is managed by any person who is accredited as an identity administrator.
 

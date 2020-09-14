@@ -5,6 +5,11 @@ description : Which pages can help me with data integration?
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
+
+
 ---------------------------------------
 
 ##### SUMMARY : 
@@ -12,7 +17,7 @@ toc: true
 1. [Quick Start](./#1-quick-start)
 2. [Ingesting Data into Microshare®](./#2-ingesting-data-into-microshare)
 3. [Streaming Data from Microshare®](./#3-stream-data-from-microshare)
-    - A) [AZure IoT Hub](./#a--azure-iot-hub-integration)
+    - A) [AZure IoT Hub](./#a-azure-iot-hub-integration)
     - B) [Azure Event Hub](./#b-azure-event-hub-integration)
     - C) [AWS Kinesis Data Stream Integration](./#c-aws-kinesis-data-stream-integration)
     - D) [AWS SQS Integration](./#d-aws-sqs-integration)
@@ -125,3 +130,5 @@ To do this is very simple, just follow the steps in the Microshare® APIs tutori
 ##### > [APIs](/docs/2/technical/api/quick-start/)
 
 <br>
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

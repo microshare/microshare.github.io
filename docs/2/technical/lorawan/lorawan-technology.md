@@ -5,6 +5,11 @@ description: What is LoRaWan?
 toc: true
 ---
 
+
+
+{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+
+<br>
 All the information on this page is taken from [this document](https://lora-alliance.org/sites/default/files/2018-04/what-is-lorawan.pdf) hosted on the [LoRa Alliance website](https://lora-alliance.org).
 
 ---------------------------------------
@@ -29,9 +34,7 @@ All the information on this page is taken from [this document](https://lora-alli
 5. [Comparing LPWAN Technology Options](./#6-delete-a-device)
 6. [LPWAN Cost vs Legacy Systems](./#6-delete-a-device)
 
----------------------------------------
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
 
 ## 1. Introduction
 ---------------------------------------
@@ -298,3 +301,7 @@ solutions.
 {% include image.html url="/assets/img/LoRaWan/LoRaWan11.png" description="LoRaWan Technology" %}
 
 {% include image.html url="/assets/img/LoRaWan/LoRaWan12.png" description="LoRaWan Technology" %}
+
+
+
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

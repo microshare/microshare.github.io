@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(2132)https://microsharerootoutlook.sharepoint.com/_forms/spfxsinglesignon.aspx#access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imh1Tjk1SXZQZmVocTM0R3pCRFoxR1hHaXJuTSIsImtpZCI6Imh1Tjk1SXZQZmVocTM0R3pCRFoxR1hHaXJuTSJ9.eyJhdWQiOiJodHRwczovL21pY3Jvc2hhcmVyb290b3V0bG9vay5zaGFyZXBvaW50LmNvbSIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2Q2N2EwNzgxLTAzZWQtNDYwYy05ZWNkLTkwZGFhNGFmYzlkNS8iLCJpYXQiOjE1OTc2ODA1MTYsIm5iZiI6MTU5NzY4MDUxNiwiZXhwIjoxNTk3Njg0NDE2LCJhY3IiOiIxIiwiYWlvIjoiQVVRQXUvOFFBQUFBYjNDZWRzNG1NUFVsVHRuZzYzSm5YQUM0ZGMydDV3UFhzSGM0RklwaHJ1TGc4SGd3R3A3MDJTQ1ZmbEp2d0pka2pHRDB3RDArWEF5cnU1ay9JRUV0Qnc9PSIsImFtciI6WyJwd2QiLCJtZmEiXSwiYXBwX2Rpc3BsYXluYW1lIjoiU2hhcmVQb2ludCBPbmxpbmUgV2ViIENsaWVudCBFeHRlbnNpYmlsaXR5IiwiYXBwaWQiOiIwOGUxODg3Ni02MTc3LTQ4N2UtYjhiNS1jZjk1MGMxZTU5OGMiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IkZlZWx5IiwiZ2l2ZW5fbmFtZSI6IkNvbGUiLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI2Ni4zMS43Mi40OCIsIm5hbWUiOiJDb2xlIEZlZWx5Iiwib2lkIjoiYTI4ZThjZGMtNDViYS00ODJiLTliZGItY2U1YTY3YmQwZDUwIiwicHVpZCI6IjEwMDMyMDAwQzBGN0U0M0UiLCJyaCI6IjAuQVNnQWdRZDYxdTBEREVhZXpaRGFwS19KMVhhSTRRaDNZWDVJdUxYUGxRd2VXWXdvQUFzLiIsInNjcCI6IkZpbGVzLlJlYWRXcml0ZS5BbGwgU2l0ZXMuRnVsbENvbnRyb2wuQWxsIFNpdGVzLlJlYWRXcml0ZS5BbGwgVGVybVN0b3JlLlJlYWRXcml0ZS5BbGwiLCJzaWQiOiIyYzMyODZjMS04ODQxLTQ5NTctOGY4MC1kMjNiMzkzZGY5M2MiLCJzaWduaW5fc3RhdGUiOlsia21zaSJdLCJzdWIiOiJBcGpTajFGVlB3T1NrV29XRlA2bkh1NDdIUXBlRHZRRDJ5bjBfOXNubkh3IiwidGlkIjoiZDY3YTA3ODEtMDNlZC00NjBjLTllY2QtOTBkYWE0YWZjOWQ1IiwidW5pcXVlX25hbWUiOiJjZmVlbHlAbWljcm9zaGFyZS5pbyIsInVwbiI6ImNmZWVseUBtaWNyb3NoYXJlLmlvIiwidXRpIjoiazhpR1RwdElaa1MxZDQ2VTZFNXRBQSIsInZlciI6IjEuMCJ9.qTy-aSWJ_91-mtmZYzF-NObxJcMi1jN-li-rtHnDZCTnHXaoRCwGBDiV7elsniEEwwcmD-ML8iUqrSHaVJzj34Jt0CpzPjKAmkzSbKoP3s1YbcJ6BWv3BNoWuGaKrOeyh3ZNXltaemgCJtfAKZg9aoCKc-fKEtMmHCYt-DLoIEs8MgV7j3BcrWfvv-o_u962vMARqnBr098zk2AvU6ybFcFqQSo9FAmrOueGdOm-8UZ_TNEgZKKAFP_sy687oaVUVVDaNEQyva-QqcXj9xFcZh9volw_42fEiuxwHM-YVUX9Oh_lO8E9ZkdehM9Z02ybh8LJbViwotj8OeS7UWubVA&token_type=Bearer&expires_in=3599&state=69c76a7c-978a-42b7-ac9c-8338fee56bef%7chttps%3a%2f%2fmicrosharerootoutlook.sharepoint.com&session_state=2c3286c1-8841-4957-8f80-d23b393df93c -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <title>SPFx Single Sign On Redirect Page</title>
+                <script type="text/javascript" src="./adal.min.js.download"></script><style></style>
+                <script type="text/javascript">
+                    var authContext;
+                    var config = {
+                        clientId: 'c58637bb-e2e1-4312-8a00-04b5ffcd3403',
+                        navigateToLoginRequestUrl: true
+                    };
+                    function parseTokenFromUrl()
+                    {
+                        try
+                        {
+                            if (window.opener && window.opener.acquireTokenPopupFixEnabled)
+                            {
+                                return;
+                            }
+                        }
+                        catch (ex)
+                        {
+                        }
+                        try
+                        {
+                            authContext = new AuthenticationContext(config);
+                            var hashValue = window.location.hash;
+                            if (!hashValue)
+                            {
+                                console.error('window.location.hash is null!');
+                            }
+
+                            authContext.handleWindowCallback();
+                        }
+                        catch (err)
+                        {
+                            console.error(err.message);
+                        }
+                        finally
+                        {
+                            // Attempt to navigate to original page if something fails. This code will only execute on a full page redirect.
+                            if (window.parent === window)
+                            {
+                                if (!authContext)
+                                {
+                                    window.location.href = window.location.origin;
+                                }
+                                else
+                                {
+                                    window.location.href = authContext._getItem(authContext.CONSTANTS.STORAGE.LOGIN_REQUEST) || window.location.origin;
+                                }
+                            }
+                        }
+                    }
+                </script>
+              </head>
+              <body onload="parseTokenFromUrl()">
+              
+            
+        </body></html>

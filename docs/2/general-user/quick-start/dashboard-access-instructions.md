@@ -5,6 +5,14 @@ description: How to create an account for new users
 toc: true
 ---
 
+
+
+
+
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="thumbnail 2" %}
+
+<br>
+
 ---------------------------------------
 #### Summary
 
@@ -27,10 +35,10 @@ toc: true
 **2.** Click on the link within the email and follow the prompts to set up your account.
 
 <br>
-**3.** You will receive an email that will allow you to set a personal password.  Follow the instructions and set your password
+**3.** You will receive an email that will allow you to set a personal password.  Follow the instructions and set your password.
 
 <br>
-* You will have 15 minutes to create your password from the time you receive this email.  If you do not set up your password within the 15-minute expiration window, see instructions in <em>Key Notes</em> to set up your password.
+* You will have 15 minutes to create your password from the time you receive this email.  If you do not set up your password within the 15-minute expiration window, see instructions in [<em>Key Notes</em>](./#key-troubleshooting-notes) to set up your password.
 
 <br>
 {% include image.html url="/assets/img/create-microshare-account-5.png" height="900" width="900" description="Image 2" %}
@@ -83,4 +91,4 @@ Use the instructions below to switch identities:
 **4.** View the dashboard under your identity. 
 
 
-
+{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
