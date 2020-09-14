@@ -12,7 +12,7 @@ if personal edits : yourname-topic
 if related to a JIRA ticket : #ticketNumber-topic
 ````
 
-**/!\ Only one topic of modification per Branch (per Pull Request)/!\**
+#### /!\ Only one topic of modification per Branch (per Pull Request)/!\
 
 
 ## 1. Add your own changes on github.
