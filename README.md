@@ -12,6 +12,9 @@ if personal edits : yourname-topic
 if related to a JIRA ticket : #ticketNumber-topic
 ````
 
+**/!\ Only one topic of modification per Branch (per Pull Request)/!\**
+
+
 ## 1. Add your own changes on github.
 ---------------------------------------
 Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository.
