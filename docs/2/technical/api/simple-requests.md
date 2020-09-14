@@ -47,13 +47,8 @@ If you then want to read more conventional data, you can try the [demo APIs.](/d
 **1.** From the Postman collection, open the request `Shares -> Create one Share`.
 
 <br>
-{% include image.html url="/assets/img/api/simple-request-1.png" description="create one share" %}
-
-<br>
 **2.** Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
-<br>
-{% include image.html url="/assets/img/api/simple-request-2.png" description="create one share" %}
 <br>
 {% include image.html url="/assets/img/api/create_one_share_1new.png" description="create one share" %}
 
