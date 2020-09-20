@@ -20,10 +20,6 @@ toc: true
 1. [Introduction](./#1-introduction)
 2. [Get an API key](./#2-get-an-api-key)
 3. [Setup Postman](./#3-setup-postman)
-4. [Demo API](./#4-demo-api)
-    - A. [Authentification](./#a-authentification)
-    - B. [Simple Request](./#b-simple-request)
-    - C. [Complex Request](./#c-complex-request)
 
 ---------------------------------------
 ## 1. Introduction
@@ -103,52 +99,4 @@ That's it! You now have access to the Microshare® API collection, and are setup
 
 ###### > [Authentication](../authentication)
 ###### > [Simple Request](../simple-requests)
-
-## 4. Demo API
----------------------------------------
-We have created APIs specifically for demonstration to show you how Microshare® works.  
-
-To try them out, you will need a Microshare® account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you do not already have one. 
-
-Afterword,  you will need to create your API key and set up Postman as guided in the sections above.
-<br>
-**1.** [Get an API key](./#1-get-an-api-key)
-<br>
-**2.** [Setup Postman](./#2-setup-postman) 
-
-Once completed, you will need to follow the [authentication tutorials](../authentication). 
-
-It is imprortant that you understand how these requests work as we will add an extra parameter. 
-
-When you make a request, a request token is required at the end of the call:
-
-`&identity=External_ID`
-
-Once you have created and specified your request token, by pressing the `Send` button, you should see something similar to the following if all your specifications are correct:
-
-{% include image.html url="/assets/img/authentification_demonew.png" description="authentification demo" %}
-
-This will allow you to join the Demo's identity at runtime .
-
-Once completed, you can now make simple requests and make complex data reading queries! 
-
-
-### A. Simple request
-
-The next objective is to make simple queries to read the demo data by following [this tutorial](../simple-requests). On this demo API, you can use the following recTypes (or endpoints) to request information! You will add these recTypes to the field circled in yellow below.
-
-<br>
-###### WARNING : This data is not real data and is provided solely for demo purposes.
-
-Temperature : `io.microshare.demo.environment.unpacked`
-
-Fridge : `io.microshare.demo.fridge.unpacked`
-
-Desk, Room, Batroom occupancy/activity : `io.microshare.demo.motion.unpacked`
-
-Feedback : `io.microshare.demo.feedback.unpacked`
-
-{% include image.html url="/assets/img/simple_request_demo.png" description="simple request demo" %}
-
-<br>
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+###### > [Demo API](../demo-api)
