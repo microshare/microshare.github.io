@@ -83,6 +83,7 @@
   - title: API
     pages:
     - title: Quick Start
+    - title: Demo API
     - title: Authentication
     - title: Simple Requests
     - title: Complex Requests
