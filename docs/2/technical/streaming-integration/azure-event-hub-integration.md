@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Microsoft Azure Hub Integration
+title: Microsoft Azure Event Hub Integration
 description: 
 toc: true
 ---
