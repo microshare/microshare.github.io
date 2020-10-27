@@ -1,0 +1,33 @@
+<!-- Header -->
+<header class="duik-header">
+    <nav class="navbar navbar-expand-md fixed-top bg-microshare text-dark py-2">
+      <a class="link-dark mr-lg-7 mr-0 mr-md-5" href="{{ site.baseurl }}/docs/{{ site.docs_version }}">
+        <!-- <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a> -->
+        <img src="{{ site.baseurl }}/assets/img/microshare_io.png" style="width:220px">
+      </a>
+
+      <button id="toggle-sidebar" class="navbar-toggler btn-link px-0" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/>
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- Download Button -->
+        <ul class="navbar-nav align-items-md-center ml-md-auto">
+          <span class="small">
+            <span class="badge badge-light text-space-1">v{{ site.docs_version }}.0.0</span>
+          </span>
+          <li class="nav-item ml-md-5 my-2 my-md-0">
+            <a class="btn btn-sm bg-white" href="https://github.com/microshare/microshare.github.io">
+              <i class="fab fa-github mr-1"></i> 
+              Edit on Github
+            </a>
+          </li>
+        </ul>
+        <!-- End Download Button -->
+      </div>
+    </nav>
+  </header>
+  <!-- End Header -->

@@ -1,7 +1,8 @@
 ---
-layout: demo
-title: API Collection
-description: Microshare™  HTTP API
+layout: iframe
+title: Demo Dashboards
+description: Demo Dashboards
+src: https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null
 toc: true
 ---
 

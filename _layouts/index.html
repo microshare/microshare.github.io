@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include index-header.html %}
+
+<body>
+  {% include index-navbar.html %}
+
+  <!-- Promo Section -->
+  <section class="duik-promo bg-index text-center">
+    <div class="container duik-promo-container">
+      <div class="d-flex justify-content-center position-relative mh-35rem py-11">
+        <div class="align-self-center w-md-75">
+          <h1 class="text-white mb-5">Hello, how can we help you?</h1>
+
+          <form id="searchForm" class="input-group input-group-lg mb-3">
+            <input autocomplete="off" id="search" class="form-control border-0" type="search" placeholder="Search">
+            <span class="input-group-append p-0">
+              <button class="btn text-muted" disabled><i class="fas fa-search"></i></button>
+            </span>
+            <div id="searchDropdown" class="dropdown-menu bg-microshare dropdown-menu-right" style="z-index: 10000; width:100%;">
+            </div>
+          </form>
+
+          <p class="font-weight-light small text-left"><span class="mr-2">
+            Get started with Microshare®, the world's only prebuilt, scalable data management and sharing solution for IoT. 
+            <br>
+            Popular Topics:</span> 
+            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/technical/data-format/contact-tracing/">Contact Tracing Data</a>, 
+            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/general-user/meet-microshare/demo-live/">Demo</a>, 
+            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/technical/api/demo-api/">API Demo</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG BG -->
+    <svg class="position-absolute bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 323" enable-background="new 0 0 1920 323" xml:space="preserve">
+      <polygon fill="#ffffff" style="fill-opacity: .05;" points="-0.5,322.5 -0.5,121.5 658.3,212.3 "></polygon>
+      <polygon fill="#ffffff" style="fill-opacity: .1;" points="-2,323 1920,323 1920,-1 "></polygon>
+    </svg>
+    <!-- End SVG BG -->
+  </section>
+  <!-- End Promo Section -->
+
+  <!-- Icon Blocks -->
+  <div class="container position-relative">
+    <section class="duik-icon-block duik-icon-block--pull2top rounded">
+      <div class="row no-gutters">
+        <div class="col-md border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/general-user/welcome/"' style="cursor:pointer;">
+          <div class="duik-icon-block__item">
+            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-check-circle fa-3x text-microshare-light"></i>
+            <h4 class="h5 mb-2">
+              <a class="link-dark">General User</a>
+            </h4>
+            <span>Simply understand how to use Microshare® for the first time, and discover our technology.</span>
+          </div>
+        </div>
+        <div class="col-md border-md-left border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/admin/admin-management/overview/"' style="cursor:pointer;">
+          <div class="duik-icon-block__item">
+            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-id-card fa-3x text-microshare-light"></i>
+
+            <h4 class="h5 mb-2">
+              <a class="link-dark" href="#">Admin</a>
+            </h4>
+            <span>As an admin, some knowledge is necessary to use Microshare® at its best for your company</span>
+          </div>
+        </div>
+        <div class="col-md border-md-left border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/installer/quick-start/overview/"' style="cursor:pointer;">
+          <div class="duik-icon-block__item">
+
+            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-edit fa-3x text-microshare-light"></i>
+
+            <h4 class="h5 mb-2">
+              <a class="link-dark">Installer</a>
+            </h4>
+            <span>For all the installations, here is the information necessary for there implementations</span>
+          </div>
+        </div>
+        <div class="col-md border-md-left" onclick='location.href="{{ site.baseurl }}/docs/2/technical/quick-start/overview/"' style="cursor:pointer;">
+          <div class="duik-icon-block__item">
+            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-chart-bar fa-3x text-microshare-light"></i>
+            <h4 class="h5 mb-2">
+              <a class="link-dark">Technical</a>
+            </h4>
+            <span>For a more in-depth understanding of our technology, here are the informations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End Icon Blocks -->
+
+
+
+
+  <main>
+    <section class="py-11 pt-5 pb-11">
+    {% for group in site.data.docs %}
+      {% assign link = group.pages | first %}
+      {% assign link_slug = link.title | slugify %}
+      {% assign group_slug = group.title | slugify %}
+      <div class="row pt-4">
+        <div class="container">
+          <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
+            <h2 class="h3 text-center">{{ group.title }}</h2>
+            <p>{{ group.desc }}</p>
+          </div>
+
+          <div class="row">
+          {% for doc in group.pages %}
+            {% assign doc_slug = doc.title | slugify %}
+
+            <div class="col-md-6 mb-5 bg-hover-light">
+              <div class="media h-100 shadow rounded p-4">
+                <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                <div class="media-body">
+                  <h5 class="mb-1">
+                    <a class="link-dark" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/">
+                      {{ doc.title }}
+                    </a>
+                  </h5>
+                  <p class="mb-0">Microshare® Documentation</p>
+                </div>
+              </div>
+            </div>
+
+          {% endfor %}
+          {% for doc in group.subpages %}
+            {% assign link = doc.pages | first %}
+            {% assign link_slug = link.title | slugify %}
+            {% assign doc_slug = doc.title | slugify %}
+
+            <div class="col-md-6 mb-5 bg-hover-light">
+              <div class="media h-100 shadow rounded p-4">
+                <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                <div class="media-body">
+                  <h5 class="mb-1">
+                    <a class="link-dark" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/{{link_slug}}">
+                      {{ doc.title }}
+                    </a>
+                  </h5>
+                  <p class="mb-0">Microshare® Documentation</p>
+                </div>
+              </div>
+            </div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </section>
+
+
+    <section>
+      <div class="container">
+        <hr class="pb-3">
+      </div>
+    </section>
+    
+    <!-- Section -->
+    <section class="pb-11">
+      <div class="container">
+        <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
+          <h2 class="h3 text-center">Most Helpful Pages</h2>
+          <p>Find here the most researched pages.</p>
+        </div>
+
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
+        href="{{ site.baseurl }}/docs/2/technical/data-format/contact-tracing/">
+          <div class="col-sm">
+            Contact Tracing Data
+          </div>
+
+          <div class="col-sm-2 text-sm-right text-muted small">
+            Technical
+          </div>
+        </a>
+
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
+        href="{{ site.baseurl }}/docs/2/installer/deploy-m/download-the-app/">
+          <div class="col-sm">
+            Download Deploy-M
+          </div>
+
+          <div class="col-sm-2 text-sm-right text-muted small">
+            Installer
+          </div>
+        </a>
+
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
+        href="{{ site.baseurl }}/docs/2/technical/api/quick-start/">
+          <div class="col-sm">
+            Microshare API and Demo API
+          </div>
+
+          <div class="col-sm-2 text-sm-right text-muted small">
+            Technical
+          </div>
+        </a>
+
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
+        href="{{ site.baseurl }}/docs/2/technical/data-format/microshare-standards/">
+          <div class="col-sm">
+            Microshare Data Standards
+          </div>
+
+          <div class="col-sm-2 text-sm-right text-muted small">
+            Technical
+          </div>
+        </a>
+
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
+        href="{{ site.baseurl }}/docs/2/general-user/meet-microshare/demo-live/">
+          <div class="col-sm">
+            Demo Dashboards
+          </div>
+
+          <div class="col-sm-2 text-sm-right text-muted small">
+            General User
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- End Section -->
+
+     <!-- Call To Action -->
+     <div class="container pb-8">
+      <div class="card bg-primary text-white shadow-sm">
+        <div class="card-body p-5">
+          <div class="d-md-flex align-items-center">
+            <div class="w-100 mb-3 mb-md-0 pr-md-5">
+              <h2 class="h4 font-weight-light text-white mb-0">Can't find what you're looking for?</h2>
+              <p class="font-weight-light  mb-0">Let us help you right now!</p>
+            </div>
+
+            <div class="text-md-right w-100">
+              <a class="btn btn-light" href="mailto:support@microshare.io">Submit a Request</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Call To Action -->
+
+    <section class="pb-10 pt-7 text-center">
+      <div class="container">
+        <i class="fas fa-tools fa-4x text-microshare-dark mb-4"></i>
+        <h2 class="h3 mb-3">When is the next release or maintenance?</h2>
+        <div class="lead mb-5">Go on the linked page to see all the details for production and development!</div>
+        <a class="btn px-5 btn-microshare-dark" href="https://www.microshare.io/management-console-access/">Release or Maintenance Schedule</a>
+      </div>
+    </section>
+
+    <section class="bg-light py-3">
+      <div class="container">
+        <hr class="my-8">
+
+        <!-- Images -->
+        <div class="row">
+          <div class="col-lg-5 align-self-center pr-lg-5 mb-5 mb-lg-0">
+            <h3 class="mb-3">More Business Informations ?</h3>
+            <p>If you are lookinf for more business informations and usecases explanations, go to the <strong class="text-primary">Microshare.io</strong> website.</p>
+            <p>You will find there all the information about the <strong>Clean = Safe</strong> solutions.</p>
+            <a class="btn btn-outline-primary" target="_blank" href="https://microshare.io">
+              <i class="fas fa-link mr-2"></i> Microshare®
+            </a>
+          </div>
+
+          <div class="col-lg-7 order-first order-lg-last mb-4 mb-lg-0">
+            <!-- Mockup Browser -->
+            <figure>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 857 40" style="enable-background:new 0 0 857 40;" xml:space="preserve">
+                <g>
+                  <path style="fill: #fff;" d="M856.8,40.2H0.8V19c0-10.5,8.5-19,19-19h818c10.5,0,19,8.5,19,19V40.2z"/>
+                </g>
+                <g>
+                  <ellipse style="fill: #fb4143;" cx="28.5" cy="20.1" rx="6" ry="6"/>
+                  <ellipse style="fill: #fab633;" cx="48.4" cy="20.1" rx="6" ry="6"/>
+                  <ellipse style="fill: #0dd157;" cx="68.4" cy="20.1" rx="6" ry="6"/>
+                </g>
+              </svg>
+            </figure>
+            <!-- End Mockup Browser -->
+
+            <a target="_blank" href="https://microshare.io/">
+              <img class="img-fluid w-100 duik-browser-img shadow" src="{{ site.baseurl }}/assets/img/microshare-website.png">
+            </a>
+          </div>
+        </div>
+        <!-- End Images -->
+
+        <hr class="my-8">
+      </div>
+    </section>
+
+    <!-- Community Help -->
+    <section class="py-11">
+      <div class="container">
+        <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
+          <h2 class="h3">Community Help</h2>
+          <p>Microshare Team will always be there to answer your questions and complete your needs.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <div class="media h-100 shadow rounded p-4">
+              <i class="fas fa-envelope fa-3x text-primary mr-4 mt-1"></i>
+
+              <div class="media-body">
+                <h5 class="mb-1"><a class="link-dark" href="mailto:support@microshare.io">Email Us</a></h5>
+                <p class="mb-0">Email our support team to answer your questions!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="media h-100 shadow rounded p-4">
+              <i class="fab fa-github fa-3x text-primary mr-4 mt-1"></i>
+
+              <div class="media-body">
+                <h5 class="mb-1"><a class="link-dark" href="https://github.com/microshare/microshare.github.io/issues">Github Issues</a></h5>
+                <p class="mb-0">Add you request here to be directly in touch with the documentation team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- End Community Help -->
+  </main>
+
+  {% include index-footer.html %}
+
+  <!-- Go to Top -->
+  <a class="js-go-to duik-go-to" href="javascript:;">
+    <span class="fa fa-arrow-up duik-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  {% include index-scripts.html %}
+
+  {% include search-engine.html %}
+
+  
+</body>
+</html>

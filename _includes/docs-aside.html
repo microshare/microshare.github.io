@@ -1,0 +1,23 @@
+<aside class="col-md-3 d-none d-md-block border-left">
+    <div  style="position:fixed;">
+      <div class="widget widget-support-forum p-md-3 p-sm-2"> <span class="icon icon-forum"></span>
+          <h6>You have a question for our Support Team ?</h6> 
+          <a href="mailto:support@microshare.io" class="btn btn-light">Contact Support</a> </div>
+      <hr class="my-2">
+
+      {% assign url_split = page.url | split: '/' %}
+      {% assign url_join = url_split | join: '/' %}
+
+        <a class="btn btn-sm bg-white text-microshare-light" href="https://github.com/microshare/microshare.github.io/blob/master{{ url_join }}.md"> <b>
+          <i class="fab fa-github mr-1"></i> 
+          Edit this page on Github
+        </b></a>
+      <hr class="my-2 mb-4">
+      {% if page.toc %}
+      <a>Summary of the page : <a>
+      <div class="my-2">
+          <div id="toc"></div>
+      </div>
+      {% endif %}
+    </div>
+  </aside>

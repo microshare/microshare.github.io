@@ -1,4 +1,7 @@
 - title: General User
+  desc: Simply understand how to use Microshare® for the first time, and discover our technology.
+  color : text-microshare-light
+  logo : check-circle
   pages:
   - title: Welcome
   - title: What's new?
@@ -18,6 +21,9 @@
     - title: Glossary
 
 - title: Admin
+  desc : As an admin, some knowledge is necessary to use Microshare® at its best for your company
+  color : text-danger
+  logo : id-card
   subpages:
   - title: Admin Management
     pages:
@@ -27,6 +33,9 @@
     - title: Super Admin
 
 - title: Installer
+  desc : For all the installations, here is the information necessary for there implementations
+  color : text-secondary
+  logo : edit
   subpages:
   - title: Quick Start
     pages:
@@ -45,6 +54,9 @@
     - title: Device Declaration
 
 - title: Technical
+  desc : For a more in-depth understanding of our technology, here are the informations
+  color : text-microshare-dark
+  logo : chart-bar
   subpages:
   - title: Quick Start
     pages:

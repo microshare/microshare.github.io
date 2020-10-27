@@ -1,0 +1,86 @@
+{% capture products_list %}
+  {% for group in site.data.docs %}
+    {% assign group_slug = group.title | slugify %}
+    {% for page in group.pages %}
+        {% assign page_slug = page.title | slugify %}
+        "{{page.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}",
+    {% endfor %}
+    {% for subgroup in group.subpages %}
+      {% assign subgroup_slug = subgroup.title | slugify %}
+      {% assign link = subgroup.pages | first %}
+      {% assign link_slug = link.title | slugify %}
+      "{{subgroup.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ link_slug }}",
+      {% for subpage in subgroup.pages %}
+        {% assign subpage_slug = subpage.title | slugify %}
+        "{{subpage.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}",
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+  {% endcapture %}
+  {% assign products_array = products_list%}
+
+  <script>
+
+    var json = {
+      {{ products_array }}
+      "Home" : "#"
+    };
+
+    var searchResults = {};
+  
+    $("#search").keyup(function(event) {
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+          if (Object.keys(searchResults).length > 0){
+            window.location = searchResults[Object.keys(searchResults)[0]];
+          }
+        }
+        searchResults = {};
+      var searchWords = ($(this).val()).split(" ");
+      $("#searchDropdown").html("")
+      $("#searchDropdown").removeClass('show');
+                
+      
+      searchWords.forEach(word => {
+        // json.forEach(element => {
+        for (const [key, value] of Object.entries(json)) {
+          if(word.length > 2){
+            if (key.toLowerCase().includes(word.toLowerCase())){
+              searchResults[key] = value
+            }
+          }
+        }
+        // });
+      });
+
+      if (Object.keys(searchResults).length > 0){
+        for (const [key, value] of Object.entries(searchResults)) {
+          $("#searchDropdown").append(`<a class="dropdown-item text-white bg-hover-microshare-light" href="${value}">${key}</a>`)
+        }
+        $("#searchDropdown").addClass('show');
+
+        console.log(JSON.stringify(searchResults))
+      } else {
+        console.log("nothing")
+      }
+    });
+
+    $( "#searchForm" ).focus(function() {
+      if (Object.keys(searchResults).length > 0){
+        $("#searchDropdown").addClass('show');
+      }
+    });
+
+    $( "#search" ).focus(function() {
+      if (Object.keys(searchResults).length > 0){
+        $("#searchDropdown").addClass('show');
+      }
+    });
+
+    $("#search, #searchDropdown").blur(function() {
+        if ($("#search:focus, #searchDropdown:hover").length == 0) {
+          console.log("hideeee")
+          $("#searchDropdown").removeClass('show');
+        }
+    });
+  </script>

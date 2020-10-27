@@ -1,0 +1,74 @@
+
+{% for group in site.data.docs %}
+    
+    {% assign group_slug = group.title | slugify %}
+
+
+    {% assign url_split = page.url | split: '/' %}
+    <script>
+        console.log("{{page.url}}")
+    </script>
+    {% assign page_main_group = url_split[3] | slugify %}
+    {% assign page_sub_group = url_split[4] | slugify %}
+    {% assign page_sub_sub_group = url_split[5] | slugify %}
+
+    
+
+    {% if page_main_group == group_slug %}
+
+        <div class=" sidebar-item sidebar-menu">
+            <ul>
+                <li class="header-menu"> <span>{{ group.title }}</span> </li>
+
+        {% for page in group.pages %}
+                {% assign page_slug = page.title | slugify %}
+
+                {% assign active = nil %}
+
+                {% if page_slug == page_sub_group %}
+                    {% assign active = 'active' %}
+                {% endif %}
+
+                <li class="{{active}}">
+                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ page.title }}</span> </a>
+                </li>
+
+        {% endfor %}
+
+        {% for subgroup in group.subpages %}
+
+                {% assign subgroup_slug = subgroup.title | slugify %}
+
+                {% assign active = nil %}
+
+                {% if subgroup_slug == page_sub_group %}
+                    {% assign active = 'active' %}
+                {% endif %}
+
+                <li class="sidebar-dropdown {{active}}">
+                    <a href="#"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ subgroup.title }}</span> <span class="badge badge-pill badge-primary">{{ subgroup.pages.size }}</span> </a>
+                    <div class="sidebar-submenu" {% if active %}style="display: block;"{% endif %}>
+                        <ul>
+
+                            {% for subpage in subgroup.pages %}
+
+                                {% assign subpage_slug = subpage.title | slugify %}
+
+                                {% assign active = nil %}
+
+                                {% if subgroup_slug == page_sub_group and subpage_slug ==  page_sub_sub_group %}
+                                    {% assign active = 'active' %}
+                                {% endif %}
+
+                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}">{{ subpage.title }}</a> </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </li>
+
+        {% endfor %}
+
+    {% endif %}
+{% endfor %}
+   
