@@ -205,7 +205,11 @@ Once all the testing is complete you are ready to move to a live installation. F
 Congratulations! You should now be live with your Contact Tracing Solution from Microshare. If you have any issues or questions, please feel free to contact us on `installation@microshare.io`
 
 <style>
-    td {
-        width:50%;
+    tr td:first-child {
+        width:70%;
+    }
+
+    tr td:nth-child(2) {
+        width:30%;
     }
 </style>
