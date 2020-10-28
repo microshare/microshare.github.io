@@ -43,6 +43,9 @@
     pages:
     - title: Gateway Installation
     - title: Device Declaration
+  - title: Specific Installations
+    pages:
+    - title: Contact Tracing Installation
 
 - title: Technical
   subpages:
