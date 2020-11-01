@@ -3,16 +3,16 @@
     {% assign group_slug = group.title | slugify %}
     {% for page in group.pages %}
         {% assign page_slug = page.title | slugify %}
-        "{{page.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}",
+        "{{group.title}} - {{page.title}}":{ link : "{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}", keywords : ["{{page.keywords | join: '","' }}}}"]},
     {% endfor %}
     {% for subgroup in group.subpages %}
       {% assign subgroup_slug = subgroup.title | slugify %}
       {% assign link = subgroup.pages | first %}
       {% assign link_slug = link.title | slugify %}
-      "{{subgroup.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ link_slug }}",
+      "{{group.title}} - {{subgroup.title}}":{ link : "{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ link_slug }}", keywords : ["{{subgroup.keywords | join: '","' }}}}"]},
       {% for subpage in subgroup.pages %}
         {% assign subpage_slug = subpage.title | slugify %}
-        "{{subpage.title}}":"{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}",
+        "{{group.title}} - {{subgroup.title}} - {{subpage.title}}":{ link : "{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}", keywords : ["{{subpage.keywords | join: '","' }}}}"]},
       {% endfor %}
     {% endfor %}
   {% endfor %}
@@ -23,7 +23,10 @@
 
     var json = {
       {{ products_array }}
-      "Home" : "#"
+      "Home" : {
+        keywords : ["welcome","start"],
+        link : "#"
+        }
     };
 
     var searchResults = {};
@@ -48,6 +51,14 @@
             if (key.toLowerCase().includes(word.toLowerCase())){
               searchResults[key] = value
             }
+
+            if (value.keywords.length){
+              value.keywords.forEach(keyword => {
+                if (keyword.toLowerCase().includes(word.toLowerCase())){
+                  searchResults[key] = value
+                }
+              });
+            }
           }
         }
         // });
@@ -55,7 +66,7 @@
 
       if (Object.keys(searchResults).length > 0){
         for (const [key, value] of Object.entries(searchResults)) {
-          $("#searchDropdown").append(`<a class="dropdown-item text-white bg-hover-microshare-light" href="${value}">${key}</a>`)
+          $("#searchDropdown").append(`<a class="dropdown-item text-white bg-hover-microshare-light" href="${value.link}">${key}</a>`)
         }
         $("#searchDropdown").addClass('show');
 

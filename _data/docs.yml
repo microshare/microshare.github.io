@@ -4,21 +4,29 @@
   logo : check-circle
   pages:
   - title: Welcome
+    keywords : ["start","first"]
   - title: What's new?
+    keywords : ["updates"]
   subpages:
   - title: Meet Microshare®
     pages:
     - title: Why Microshare®?
+      keywords : ["digital twin"]
     - title: Technical Overview
+      keywords : ["architecture","work"]
     - title: Demo
+      keywords : ["try"]
     - title: Demo Live
     - title: FAQ
   - title: Quick Start
     pages:
     - title: Create an Account
+      keywords : ["start","register","signup"]
     - title: Dashboard Access Instructions
     - title: Access my Apps
+      keywords : ["switch identites","access","signin","login"]
     - title: Glossary
+      keywords : ["dictionnary"]
 
 - title: Admin
   desc : As an admin, some knowledge is necessary to use Microshare® at its best for your company
@@ -28,8 +36,11 @@
   - title: Admin Management
     pages:
     - title: Overview
+      keywords : ["responsabilities","administrators"]
     - title: Identity Admin
+      keywords : ["roles"]
     - title: MS Admin
+      keywords : ["ms_admin","share"]
     - title: Super Admin
 
 - title: Installer
@@ -40,12 +51,15 @@
   - title: Quick Start
     pages:
     - title: Overview
+      keywords : ["requirements"]
     - title: Validation of a Successfull Installation
     - title: Kerlink WMC
+      keywords : ["push","wanesy","network"]
     - title: FAQ About Installations
   - title: Deploy-M
     pages:
     - title: Download the App
+      keywords : ["apple","play","store"]
     - title: App Guide
     - title: Installation Tutorials
   - title: LoRaWan

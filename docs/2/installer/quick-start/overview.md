@@ -3,6 +3,8 @@ layout: docs
 title: Overview
 description: How to install a Microshare™ Solution
 toc: true
+redirect_from:
+  - /docs/2/installer/
 ---
 
 
