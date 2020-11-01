@@ -15,7 +15,7 @@ toc: true
 2. [Prerequisites](./#2-prerequisites)
 3. [Dashboard Configuration](./#3-dashboard-configuration)
 4. [App Facts](./#4-app-facts)
-5. [Advanced App Configurations](./#advanced-app-configurations)
+5. [How the app is displaying](./#5-how-the-app-is-displaying)
 
 
 
@@ -23,17 +23,36 @@ toc: true
 ## 1. Types of Dashboards
 ---------------------------------------
 
-The two most common types of dashboards are:
-* Dashboards for your trending apps.
-* Dashboards for your realtime apps. 
+Under the Microshare App (Dashboards) creator there is 4 different types of apps. In this page we are gonna explain how a Display App works.
+
+* Workflow
+
+Not really ue anymore, provide the possibility to create real workflow from data trigger, and assign works to user following the current step of the workflow.
+
+* Display
+
+The most type currently use. Using a [form]() and the [App Facts](./#4-app-facts) it generates a realtime or tranding application depending on your code and settings. 
+**Microshare provides with sensors and data some Standards Dashboards. In our Product line we can fin some Trending and Realtime application to perfecltoy vizualize the data.**
+
+* Suite
+
+The suite app is used to create a landing page for the app that belongs to the same group. So it's easier to use the selected Display App in a single app.
+<br> >> [Suite App](/docs/2/technical/microshare-platform/suite-app-guide)
+
+* Dashboard
+
+The Dashboard app used to be helpful for the "Dashboard" tab (you can fintd it in the microshare topbar, near "Manage") to have the ability to display main metrics in the "resume" app (small rectangles). And then when you click on it it works like a Display app.
 
 
-Trending apps will graphically represent your data over any period you wish, while realtime apps display the data currently being collected. 
+##### Guest App
 
-
+When you create an app on Microshare there is a posibility for you to set this app as a public app by making it a guestapp :
+[Guest App](/docs/2/technical/microshare-platform/creating-guest-app-guide)
 
 ## 2. Prerequisites
 ---------------------------------------
+
+_Microshare is using Ember.js for it's composer, so you should learn how Ember.js is working to use it well in the apps._
 
  1. Configure the client accounts and identities. Differentiate between which accounts will have the ability to own the apps or own the data. 
  2. Create a Push on the network.
@@ -51,13 +70,13 @@ Trending apps will graphically represent your data over any period you wish, whi
  {% include image.html url="\assets\img\dashboard-guide-2.png" height="900" width="900" description="Dashboard Guide 2" %}
  
 
- * `App Type`: Display
- * `Parent Tag(s)`: Leave Blank
- * `Style Choice`: Showcase
- * `Theme`: https://s3.amazonaws.com/cdn.point.io/distribution/product/1_00/stylesheet.common.css 
- * `Include`: Leave Blank unless requested otherwise
+ * `App Type`: Display _// Most common type of app_
+ * `Parent Tag(s)`: Leave Blank _// Used by Suite apps_
+ * `Style Choice`: Showcase _// The microshare app template_
+ * `Theme`: https://wwwyourdomain.com/assets/css/style.css _// Use this to upload your custom style files_
+ * `Include`: Leave Blank unless requested otherwise _// This is used to load an other "form" that can containt (JS / CSS ....)_
  * `Facts to display`: None 
- * `Form to display`: For realtime apps pick <em>Realtime Form SHIP</em>. For Trending Feedback Apps select <em>Trending Feedback Form SHIP</em>. For other Trending apps, choose <em>Trending Form SHIP</em>
+ * `Form to display`: Your_Form _// Select the form you want to use_
  * `Facts`: See next section for specific details
  
  
@@ -77,108 +96,17 @@ It is best to give the facts in JSON code format. To do so, simply click on the 
 
 ### App Facts
 
-
-##### > [App Example](/docs/2/technical/microshare-platform/app-config-examples/trending-air-quality/)
-
-<br>
-
-### For all apps
-
-Create a new fact by pressing the button above the green arrow and hitting apend. 
-
-{% include image.html url="\assets\img\dashboard-guide-3.png" height="900" width="900" description="Dashboard Guide3" %}
-
-* `appTitle`: Should match the name you provided as the app’s Name (above).
-* `navOptions`: This credential should be completed last. Add the links and names of all apps in the client’s account to each app.json so that the client can navigate from one app to another.
-* `selectionOptions`: All apps require you to provide the client specific location options in the navOptions field. Use the databoard to generate the JSON in the correct format. Get a token for the account that owns the device cluster(s).
-    - head over to [https://databoard.azurewebsites.net/dashboard/0](https://databoard.azurewebsites.net/dashboard/0).
-{% include image.html url="\assets\img\dashboard-guide-6.png"  description="Dashboard Guide3" %}
-    - Choose <em>Edit Workspace</em> from the settings menu, then <em>Add Monitor Widget</em> for the relevant clusters, then <em>Lock Workspace</em>, then click on the device monitor to show the list view, then click <em>Download JSON</em>. 
-{% include image.html url="\assets\img\dashboard-guide-7.png"  description="Dashboard Guide3" %}
-* `dataRecType`: match the target recType of the device cluster.
-* `dataContext`: Use the meta tag you chose in the device cluster.
-* `queryId`, `queryId1`, `queryId2`, `queryId3`: it is recommended to leave the query settings the same as they are in the example json.
-* `footerLogo`, `headerLogo`, `header SecondaryLogo` and `get RecType`: leave untouched unless requested otherwise.
-
-### Realtime Apps
-* `viewType`: Use the "desk","room" or "field" option for Realtime Desk Availability app, Realtime Room Availability app and Realtime Value app respectively.  
-* For Realtime Value app only, the `fieldName` fact must match the field name from the unpacker and the `fieldUnit` fact is appended to the value as part of the user display. Additionally, if you supplied a `minIdeal` fact, the values BELOW this value will be displayed in red, while if a `maxIdeal` fact is given, the values above will be displayed in red.
-* `covertTempToFarenheit`: set to true to convert the data from Celsius to Fahrenheit.
+The app facts are the parameters that can be send to your application. The goal is to have scalable application that use the same form, maybe some different CSS/JS form or file that are includes for all the apps. And finally the only few parameters that needs to change are contain in the app facts.
 
 
-### Trending Apps
-
-#### 1. Optional Parameters:
-* `location1`: title of location1 dropdown.
-* `location2`: title of location2 dropdown. 
-* `location3`: title of location3 dropdown.
-* `startOfWorkDay` and `endOfWorkDay`: used to filter out data from outside the workday  <em>OR</em> to shade data from outside the workday.  It is not used in Trending Feedback.
-* `debug`: set to true to output debug messages to the consule.
-* `useWeekendColorBand`: shade the weekend on charts.
-* `colorOfThresholdBand`: shade the ideal range on charts.
-* `colorOfOffHoursBand`: shade the off-hours on chart.
-
-#### 2. Feedback Charts: 
-* The optional parameter `charts`  an array of the charts to display.
-* The `fieldName` determines what kind of chart will be displayed, must be set to "event".
-* `title`: include a title for the chart
-* `viewType`: set to "feedbackTable" or "feedbackTimeline".
-* `handleSmilioData`: set to "true" if and only if you are visualizing legacy Smilio data that has not been translated into the feedback event format. 
-* **NOTE** that with the Trending Feedback app, there is an additional step to configure a backboard (or use a standard backboard from the assets account). Please see the section on Touchfree Feedback app for more information. If you are converting a legacy feedback app, you may have to convert the ‘buttons’ section from the legacy app facts into a backboard view in the client’s account. 
-* `backboardRecType`: set to “io.microshare.config.backboard” 
-* `backboardId` include the ID of the backboard view 
-* **NOTE** that the form will use the first backboardRecType and backboardId it finds.  You cannot use a different backboard for the timeline vs table. 
-
-
-#### 3. Trending Usage and Trending Access Usage (include only one chart):
-* `fieldName`: must be "counter".
-* `title`: Give a name for the chart.
-* `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available.
-
-#### 4. Trending Desk Availability (Use only one chart):
-* `fieldName`: must be "occupied".
-* `title`: Give a name for the chart.
-* `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available.
-* `columns`: can include any or all of the following: “Active Desks”, “Configured Desks”, “Reporting Desks”, “Average Reporting Desks”.
-* If “columns” parameter is NOT included, default columns are “Active Desks” and “Configured Desks” .
-* If unrecognized column name is included, this is plotted as if it were “Active Desks” - this allows the fulfillment to customize the name of this line.
-
-#### 5. Trending Refrigerator (can include up to two charts):
-* `fieldName`: "internal temp" and/or "external temp".
-* `convertTempToFahrenheit`: set to true to convert the data from Celsius to Fahrenheit. The default is false.
-* `maxMin` and `minMax`: optional parameters which allow you to configure the min and max of the chart when no data is available.
-
-#### 6. Air Quality (up to six charts) and Environment (up to two charts):
-* `fieldName` for Air Quality: temp, humidity, co2, voc, pressure and/or illuminance.
-* `fieldName` for Environment: temp and/ or humidity.
-* Note that the MCF88 device uses different views.  See the accompanying example JSON.
-
-##### <em>**You cannot mix and match**</em> You can only display the values from teh recType and one view or set of views(var1, var2 and var3), so you are limited to the charts that go with each other. 
-
-
-
-#### Configuring a Custom Trending Chart
-* `fieldName`: unlike the realtime app, the trending apps do require custom views if you add (a) field(s) that is/are not in the examples.  Once you create the views that return the custom fields, then as long as you return the data in the same format as the environment or air_quality views, you will be able to display the custom line graph(s) in your app.  Choose one or more `fieldNames` from your device (cannot be “feedback”, “occupied” or “counter”), return it in your new set of views, and then add charts to your app.json with the new `fieldName(s)`.  
-* `title`: include a title for the chart
-
-# Advanced App Configurations
+## 5. How the app is displaying
 ---------------------------------------
 
-The following are guides for configuring specific types of apps:
+Once everything is set up, when you will launch your app, it will display an app generated from the different composants (app facts, form, included form, theme) in this order : 
 
-<br>
-##### [Suite App](/docs/2/technical/microshare-platform/suite-app-guide)
-
-<br>
-##### [Touchfree Feedback™ App](/docs/2/technical/microshare-platform/touchfree-feedback-guide)
-
-<br>
-##### [Electronic Attendance Records App (Smart Timecard)](/docs/2/technical/microshare-platform/smart-timecard-guide)
-<br>
-You can also define an app as a guest app to make it a public app.
-<br>
-##### [Guest App](/docs/2/technical/microshare-platform/creating-guest-app-guide)
-
-
+* Theme
+* App Facts
+* Included Form
+* Form
 
  {% include image.html url="\assets\img\microshare-logo.png" description="logo" %}
