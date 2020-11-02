@@ -61,11 +61,15 @@
     - title: Download the App
       keywords : ["apple","play","store"]
     - title: App Guide
+      keywords : ["scan","qrcode"]
     - title: Installation Tutorials
+      keywords : ["youtube"]
   - title: LoRaWan
     pages:
     - title: Gateway Installation
+      keywords : ["indoor","outdoor","iFemtocell"]
     - title: Device Declaration
+      keywords : ["add","cluster"]
 
 - title: Technical
   desc : For a more in-depth understanding of our technology, here are the informations
@@ -82,25 +86,36 @@
   - title: Data Format
     pages:
     - title: Overview
+      keywords : ["meta","objs","recType","creatorId","tstamp","origin","owner"]
     - title: Microshare® Standards
+      keywords : ["meta","Ipso","meta.iot","origin","unpacker","motion","environment","temperature","feedback"]
     - title: Contact Tracing
   - title: Microshare® Platform
     pages:
     - title: Quick Start
     - title: Dashboard Guide
+      keywords : ["app","display","fact","parent","theme","showcase"]
     - title: Device Cluster Guide
+      keywords : ["rectype","meta","global","location","fields","unpacker"]
     - title: Rules Guide
+      keywords : ["share","owner","organization","simulate"]
     - title: Views Guide
+      keywords : ["queries","query","organization","static","json","mongodb","pipeline","match","group"]
   - title: Microshare® Platform Advanced
     pages:
     - title: Data Ingestion
+      keywords : ["network","kerlink","post","websocket"]
     - title: Data Unpacking
+      keywords : ["unpacker","rectype"]
     - title: Data Unpacking by Robots
     - title: Identity Guide
+      keywords : ["switch","rectype"]
     - title: Robots Guide
+      keyword : ["triggered","scheduled","alerts","notifications"]
     - title: Robots Library
   - title: Streaming Integration
     pages:
+    - title: Overview
     - title: AWS Kinesis Data Stream Integration
     - title: AWS SQS Integration
     - title: Azure Event Hub Integration
