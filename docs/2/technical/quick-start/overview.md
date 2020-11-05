@@ -3,6 +3,8 @@ layout: docs
 title: Technical Overview
 description: A guide to interacting with Microshare™ Technology
 toc: true
+redirect_from:
+  - /docs/2/technical/
 ---
 
 

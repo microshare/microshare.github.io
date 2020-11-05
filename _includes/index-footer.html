@@ -1,0 +1,67 @@
+<!-- Footer -->
+<footer class="bg-dark font-weight-light text-white-55 pt-11 pb-5">
+    <div class="container">
+      <div class="row justify-content-md-between">
+        <div class="order-4 order-lg-1 col-md-12 col-lg-4 mb-4 mr-lg-auto">
+          <img class="mb-3" src="{{ site.baseurl }}/assets/img/microshare_io.png" style="width: 190px;">
+          <p class="small font-weight-light mb-3">Microshare brings things to life. We connect buildings, assets, people and devices so that you can make smarter decisions. </p>
+        </div>
+
+        {% assign order = 1 %}
+        {% for group in site.data.docs %}
+          {% capture order %}{{ order | plus:1 }}{% endcapture %}
+          {% assign link = group.pages | first %}
+          {% assign link_slug = link.title | slugify %}
+          {% assign group_slug = group.title | slugify %}
+          
+          <div class="col-sm-4 col-lg-2 mb-4 order-lg-{{ order }}">
+            <h4 class="h6 text-white mb-3">{{ group.title }}</h4>
+            <ul class="list-unstyled"></ul>
+          {% for doc in group.pages %}
+            {% assign doc_slug = doc.title | slugify %}
+            <li class="mb-3"><a class="link-white-55" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/">{{ doc.title }}</a></li>
+          {% endfor %}
+          {% for doc in group.subpages %}
+            {% assign link = doc.pages | first %}
+            {% assign link_slug = link.title | slugify %}
+            {% assign doc_slug = doc.title | slugify %}
+            <li class="mb-3"><a class="link-white-55" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/{{link_slug}}">{{ doc.title }}</a></li>
+          {% endfor %}
+            </ul>
+            <!-- End Links -->
+          </div>
+        {% endfor %}
+      </div>
+
+        
+
+      <hr class="my-5 opacity-10">
+
+      <div class="row">
+        <div class="col-md-7">
+          <p class="small font-weight-light mb-0">&copy; 2020 <a class="text-white" href="https://www.microshare.io/">Microshare®</a>.</p>
+        </div>
+
+        <div class="col-md-5 text-md-right">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-1 mr-xl-2">
+              <a class="link-white-55" target="_blank" href="https://github.com/microshare">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mx-1 mx-xl-2">
+              <a class="link-white-55" target="_blank" href="https://www.linkedin.com/company/microshare.io">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mx-1 mx-xl-2">
+              <a class="link-white-55" target="_blank" href="https://twitter.com/microshareio?lang=fr">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->

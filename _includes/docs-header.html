@@ -1,0 +1,34 @@
+<head>
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% else %}
+      {{ site.title }} &middot; {{ site.description }}
+    {% endif %}
+  </title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41580291-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-41580291-4');
+  </script>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
+  <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
+
+  <meta charset="utf-8">
+  
+  <!-- using online links -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+  <!-- using local links -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pages_main.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/index_theme.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pages_sidebar-themes.css">
+  <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png" /> 
+</head>

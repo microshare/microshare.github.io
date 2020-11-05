@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include docs-header.html %}
+<body>
+  
+
+  {% include docs-navbar.html %}
+
+
+    <div class="page-wrapper toggled light-theme"  style="padding-top: 40px;">
+        {% include docs-sidebar.html %}
+        <!-- page-content  -->
+        <main class="page-content" style="height:100%;" >
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid" style="height:100%;margin: 0px;padding: 0px;" >
+                <div class="row p-lg-4" style="height:100%;margin: 0px;padding: 1.4rem 0px 0px 0px !important;" >
+                    
+                    <div class="col-md-12 border-left" style="height:100%;margin: 0px;padding: 0px;" >
+                      <iframe id="inlineFrameExample"
+                      title="Demo Apps"
+                      style="position:absolute;height:100%;width:100%;bottom:0;border:0px;"
+                      src="{{ page.src }}">
+                  </iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+  </body>
+  {% include docs-scripts.html %}
+  {% include search-engine.html %}
+  </html>
