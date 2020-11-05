@@ -70,6 +70,9 @@
       keywords : ["indoor","outdoor","iFemtocell"]
     - title: Device Declaration
       keywords : ["add","cluster"]
+  - title: Specific Installations
+    pages:
+    - title: Contact Tracing Installation
 
 - title: Technical
   desc : For a more in-depth understanding of our technology, here are the informations
