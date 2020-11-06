@@ -214,12 +214,13 @@ This section gives the data from the device that created the record. The device 
                         "source": []
                     }
                 },
-                
-{% highlight javascript %}
+
+{% endhighlight %}
+            
 
 This section details the device cluster that the source device is apart of. The device cluster id is given along with the payload, the time that the payload was recieved and the number of communications between the device cluster and the gateway (`fcnt_dwn` and `fcnt_up`).
 
-{% endhighlight %}
+{% highlight javascript %}
                 "originatingDevice": "AC233F664???",
                 "originatingDeviceBattery": 2.894,
                 "start": 5,
