@@ -118,13 +118,18 @@ Please make sure your selected physical install location will allow for a good c
 Inside the box you will find the Indoor Gateway, the device antenna and the power supply unit or Power over Ethernet (POE) adaptor. Installation enables IoT device connectivity and access to data through the Microshare Smart Network.
 
 | --- | --- |
-| **1.** **Unboxing the Gateway** -Unbox your indoor gateway and all you need to have your LoRaWAN network up and running is to:1. Connect the antenna2. Plug into a mains power source or power over ethernet (POE) port3. Wait 1-2 minutes for the connection to be established | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayBox.png" description="Banner" %}|
+| **1.** **Unboxing the Gateway** -Unbox your indoor gateway and all you need to have your LoRaWAN network up and running is to:
+1. Connect the antenna
+2. Plug into a mains power source or power over ethernet (POE) port
+3. Wait 1-2 minutes for the connection to be established | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayBox.png" description="Banner" %}|
 | **2.** **Connecting the Antenna** <br><br>-Screw the antenna to the gold connector in the right-hand side of the gateway | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayAntenna2.png" description="Banner" %}|
 | |{% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayAntenna.png" description="Banner" %}|
 | **3.** **Power the Gateway** <br><br>-Plug the power adaptor into the power socket on the gateway | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayPower.png" description="Banner" %} |
 | -Plug the power adaptor into an electricity outlet [the LED&#39;s on the device will be red, showing that power is on] | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayPower2.png" description="Banner" %}  |
 | -Alternatively use the Power Over Ethernet (POE) adaptor as shown in the image | {% include image.html url="/assets/img/UCT_Install_Images/POE_Adaptor1.jpg" description="Banner" %}  |
-| **4.** **Wait 1-2 minutes** <br><br> -After 1-2 minutes, the two LEDs on the front will turn solid green, your LoRaWAN gateway is up and running and your sensors can be deployed in your building.** You&#39;re all done!**Please email [`installation@microshare.io`](mailto:installation@microshare.io) to indicate your gateway is up and running, so that we can confirm at our end. | {% include image.html url="/assets/img/UCT_Install_Images/POE_Adaptor2.jpg" description="Banner" %} |
+| **4.** **Wait 1-2 minutes** <br><br> -After 1-2 minutes, the two LEDs on the front will turn solid green, your LoRaWAN gateway is up and running and your sensors can be deployed in your building.
+
+** You&#39;re all done!**Please email [`installation@microshare.io`](mailto:installation@microshare.io) to indicate your gateway is up and running, so that we can confirm at our end. | {% include image.html url="/assets/img/UCT_Install_Images/POE_Adaptor2.jpg" description="Banner" %} |
 
 **If you are installing an outdoor gateway, see [https://docs.microshare.io/docs/2/installer/lorawan/gateway-installations/outdoor-istation/](https://docs.microshare.io/docs/2/installer/lorawan/gateway-installations/outdoor-istation/) for the Outdoor Gateway Installation Instructions**
 
@@ -136,14 +141,20 @@ The Wave device is the bridge between your wearable devices and the Microshare S
 | **1.** **Unbox the Kerlink Wave** <br><br>-Take the Kerlink Wave out of the packaging | {% include image.html url="/assets/img/UCT_Install_Images/AssetZoning_WaveScanner.png" description="Banner" %} |
 | **2.** **Deploying the Kerlink Wave (without screws - if using screws skip this part)** <br><br>-If you are not using screws, stick the adhesive tape pads onto the back of the device as shown in the picture. | {% include image.html url="/assets/img/UCT_Install_Images/DeployingKerlink.png" description="Banner" %}  |
 | **3.** **Registering the Kerlink Wave** <br><br>-Using the scanning device, scan the QR code on the back of the Wave into the &quot;Digital Twinning&quot; excel spreadsheet provided-We typically use three tags to annotate where a device is located - an example would be &quot;Building A, Floor 2, Room 5&quot; | {% include image.html url="/assets/img/UCT_Install_Images/RegisteringKerlink.png" description="Banner" %}  |
-| **4.** **Powering on the Kerlink Wave** <br><br> -Plug the mains cable into the plug socket-Plug the other end into the Kerlink wave <br>-A green light will show once the device has power | {% include image.html url="/assets/img/UCT_Install_Images/PoweringKerlink.png" description="Banner" %}  |
+| **4.** **Powering on the Kerlink Wave** <br><br> -Plug the mains cable into the plug socket<br>
+-Plug the other end into the Kerlink wave <br>
+-A green light will show once the device has power <br> 
+| {% include image.html url="/assets/img/UCT_Install_Images/PoweringKerlink.png" description="Banner" %}  |
 | **5.** **Installing the Kerlink Wave** <br><br>-Use the adhesive pads to stick the Wave onto the predesignated location, ensuring the cable is still connected properly | {% include image.html url="/assets/img/UCT_Install_Images/InstallingKerlink.png" description="Banner" %}  |
-| **6.** **If you are using screws to attach the Kerlink Wave** <br><br> -Open the covers on the Kerlink Wave, exposing the screw holes -Mark out and drill suitable holes and use raw plugs in the wall as required.<br>-Attach the Wave to the wall with suitably sized screws. | {% include image.html url="/assets/img/UCT_Install_Images/ScrewingKerlink3.png" description="Banner" %}|
+| **6.** **If you are using screws to attach the Kerlink Wave** <br><br> -Open the covers on the Kerlink Wave, exposing the screw holes 
+-Mark out and drill suitable holes and use raw plugs in the wall as required.<br>
+-Attach the Wave to the wall with suitably sized screws. 
+| {% include image.html url="/assets/img/UCT_Install_Images/ScrewingKerlink3.png" description="Banner" %}|
 
 
 ## Section 4 - Set up the Location Markers:
 
-The Location Markers come in a variety of form factors and can be installed in various ways. The instructions below are for our devices that are in the most widespread use. If you have a marker that is not displayed below, contact [`installation@microshare.io`](mailto:installation@microshare.io) if you have any questions with the installation instructions.
+The Location Markers come in a variety of form factors and can be installed in various ways. The instructions below are for our devices that are in the most widespread use. If you have a marker that is not displayed below, or if you have any questions regarding your installation contact [`installation@microshare.io`](mailto:installation@microshare.io).
 
 | --- | --- |
 | **1.** **Unboxing the Devices** <br><br>-Open the packaging and take out the Microshare Location Markers | {% include image.html url="/assets/img/UCT_Install_Images/LocationMarkerBoxed.jpg" description="Banner" %} |
@@ -153,7 +164,8 @@ The Location Markers come in a variety of form factors and can be installed in v
 | -For the Microshare B7 location markers, simply unscrew the top to expose the battery case and remove the plastic battery tag used for transporting the devices. | {% include image.html url="/assets/img/UCT_Install_Images/B7_LocationMarker.jpg" description="Banner" %} |
 | **4.** **Attaching the adhesive tape** <br><br>-Stick the adhesive tape to the side of the device with the power symbol as shown | {% include image.html url="/assets/img/UCT_Install_Images/LocationWith3M.png" description="Banner" %} |
 | **5.** **Attaching the Location markers to the Wall** <br><br>-Stick the device on to the preassigned location using the provided adhesive tape on the device.<br>-Ensure that the QR code is still visible – as shown in the picture. | {% include image.html url="/assets/img/UCT_Install_Images/LocationFixOnWall.png" description="Banner" %} |
-| **6.** **Registering the Location Tag** <br><br>-Using your scanning device, scan the QR code into an Excel spreadsheet that will denote where the Location Marker is physically installed-Provide this spreadsheet to your data analysis team so that they can identify when users have been in contact with specific locations | {% include image.html url="/assets/img/UCT_Install_Images/RegisteringLocationTags.png" description="Banner" %} |
+| **6.** **Registering the Location Tag** <br><br>-Using your scanning device, scan the QR code into an Excel spreadsheet that will denote where the Location Marker is physically installed
+-Provide this spreadsheet to your data analysis team so that they can identify when users have been in contact with specific locations | {% include image.html url="/assets/img/UCT_Install_Images/RegisteringLocationTags.png" description="Banner" %} |
 
 
 ## Section 5 – Activate the Wearable Devices
@@ -167,15 +179,17 @@ The Location Markers come in a variety of form factors and can be installed in v
 *   Now you can view your test streaming data and trial the system using the two activated wearable devices
 
 | --- | --- |
-| **1.** **Unbox and activate the Microshare wearable badges** <br><br>-Open the packaging and take out the wearable badges.<br>-To activate these wearables, press the button on the front of the device twice quickly, then wait for the red indicator light to stop flashing. <br>Then press 3 times again and hold the third press. The indicator light will flash blue to indicate that the device is active. | {% include image.html url="/assets/img/UCT_Install_Images/allWearablesUnbox.png" description="Banner" %} |
+| **1.** **Unbox and activate the Microshare wearable badges** <br><br>- Open the packaging and take out the wearable badges.<br>- To activate these wearables, press the button on the front of the device twice quickly, then wait for the red indicator light to stop flashing. <br>- Then press 3 times again and hold the third press. The indicator light will flash blue to indicate that the device is active. | {% include image.html url="/assets/img/UCT_Install_Images/allWearablesUnbox.png" description="Banner" %} |
 | See [https://www.youtube.com/watch?v=li0iHHcYhV8](https://www.youtube.com/watch?v=li0iHHcYhV8) for a demonstration of how to activate | {% include image.html url="/assets/img/UCT_Install_Images/wearableUnbox.png" description="Banner" %}|
-| **2.** **Registering the Microshare Wearable** <br><br>-Using the scanning device, scan the QR code and add to your spreadsheet or tracking system <br>-Check that the Device ID entry matches the ID on the wearable and register the next device | {% include image.html url="/assets/img/UCT_Install_Images/RegisteringWearables.png" description="Banner" %} |
-| **3.** **Attaching the key chain to the wearable badge** <br><br>-Remove the straps from the device by pulling the strap through from the wider end <br>-Attach the keychain provided to the device-Leave the recipient with the bands in case they wish to use it as a wristband | {% include image.html url="/assets/img/UCT_Install_Images/AttachingWearableKeychain.png" description="Banner" %} |
+| **2.** **Registering the Microshare Wearable** <br><br>- Using the scanning device, scan the QR code and add to your spreadsheet or tracking system <br>-Check that the Device ID entry matches the ID on the wearable and register the next device | {% include image.html url="/assets/img/UCT_Install_Images/RegisteringWearables.png" description="Banner" %} |
+| **3.** **Attaching the key chain to the wearable badge** <br><br>- Remove the straps from the device by pulling the strap through from the wider end <br>- Attach the keychain provided to the device
+- Leave the recipient with the bands in case they wish to use it as a wristband | {% include image.html url="/assets/img/UCT_Install_Images/AttachingWearableKeychain.png" description="Banner" %} |
 | | {% include image.html url="/assets/img/UCT_Install_Images/AttachingWearableKeychain2.png" description="Banner" %} |
 | | {% include image.html url="/assets/img/UCT_Install_Images/AttachingWearableKeychain3.png" description="Banner" %} |
-| **4.** **Changing the batteries in your wearable badge** <br><br>-Removing the back cover: Turn the device upside down, so that the side with the QR code is facing away from you <br>-Place a coin or similar shaped object in the grove in the back of the device and turn until the back cover is removed from the device to reveal the battery | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable.png" description="Banner" %} |
-| -Take out the old battery and replace it with a new CR2032 3V battery-Make sure the battery is installed the correct way around (+ sign facing up towards you) | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable2.png" description="Banner" %} |
-| -Using a coin or similar shaped object, screw the back cover onto the device | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable.png" description="Banner" %} |
+| **4.** **Changing the batteries in your wearable badge** <br><br>- Removing the back cover: Turn the device upside down, so that the side with the QR code is facing away from you <br>- Place a coin or similar shaped object in the grove in the back of the device and turn until the back cover is removed from the device to reveal the battery | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable.png" description="Banner" %} |
+| - Take out the old battery and replace it with a new CR2032 3V battery
+- Make sure the battery is installed the correct way around (+ sign facing up towards you) | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable2.png" description="Banner" %} |
+| - Using a coin or similar shaped object, screw the back cover onto the device | {% include image.html url="/assets/img/UCT_Install_Images/ChgBatteriesWearable.png" description="Banner" %} |
 
 
 Once all the devices are installed and logged please inform the Microshare team at [`installation@microshare.io`](mailto:installation@microshare.io)
