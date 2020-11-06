@@ -118,7 +118,7 @@ Please make sure your selected physical install location will allow for a good c
 Inside the box you will find the Indoor Gateway, the device antenna and the power supply unit or Power over Ethernet (POE) adaptor. Installation enables IoT device connectivity and access to data through the Microshare Smart Network.
 
 | --- | --- |
-| **1.** **Unboxing the Gateway** -Unbox your indoor gateway and all you need to have your LoRaWAN network up and running is to:1. Connect the antenna2. Plug into a mains power source or power over ethernet (POE) port3. Wait 1-2 minutes for the connection to be established | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayBox.png" description="Banner" %}|
+| **1.** **Unboxing the Gateway** <br>Unbox your indoor gateway and all you need to have your LoRaWAN network up and running is to:<br>1. Connect the antenna<br>2. Plug into a mains power source or power over ethernet (POE) port<br>3. Wait 1-2 minutes for the connection to be established | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayBox.png" description="Banner" %}|
 | **2.** **Connecting the Antenna** <br><br>-Screw the antenna to the gold connector in the right-hand side of the gateway | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayAntenna2.png" description="Banner" %}|
 | |{% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayAntenna.png" description="Banner" %}|
 | **3.** **Power the Gateway** <br><br>-Plug the power adaptor into the power socket on the gateway | {% include image.html url="/assets/img/UCT_Install_Images/IndoorGatewayPower.png" description="Banner" %} |
