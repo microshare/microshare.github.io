@@ -39,7 +39,7 @@ To start, a Microshare® account is required, either from our Production or Deve
 To create an account, [follow this guide.](/docs/2/general-user/quick-start/create-an-account/)
 
 This account should have one or more "device clusters" to host the devices we will register with the application. 
-To create a device cluster, [follow this guide.](/docs/2/technical/microshare-platform/dashboard-guide/)
+To create a device cluster, [follow this guide.](/docs/2/technical/microshare-platform/device-cluster-guide/)
 
 You are now ready to add devices to the Microshare® platform. Devices obtained through Microshare® will be labeled with Microshare® QR codes, which will make configuration with the Deploy-M application easier, faster, and less error-prone.
 
