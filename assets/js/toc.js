@@ -96,3 +96,7 @@
     render[settings.showEffect]();
   };
 })(jQuery);
+
+window.addEventListener("hashchange", function () {
+  window.scrollTo(window.scrollX, window.scrollY - 70);
+});
