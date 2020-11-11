@@ -109,12 +109,12 @@ Plug the power adaptor into an electricity outlet (the LED’s on the device wil
 Plug a standard Ethernet cable with Internet access into your gateway. 
 
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new1.png" description="LoRaWan Technology" %}
+
 {% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new2.png" description="LoRaWan Technology" %}
 <br>
 After 1-2 minutes, the two LEDs on the front will turn solid green, your LoRaWAN gateway is now up and running and your sensors can be deployed in your building.
-
 <br>
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new1.png" description="LoRaWan Technology" %}
 {% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-5.png" description="LoRaWan Technology" %}
 
 <br>

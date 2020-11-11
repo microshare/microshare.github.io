@@ -9048,6 +9048,42 @@ button.bg-black-soft:focus {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.zi-1{
+  z-index:1;
+}
+
+.zi-2{
+  z-index:2;
+}
+
+.zi-3{
+  z-index:3;
+}
+
+.zi-4{
+  z-index:4;
+}
+
+.zi-5{
+  z-index:5;
+}
+
+.zi-10{
+  z-index:10;
+}
+
+.zi-20{
+  z-index:20;
+}
+
+.zi-50{
+  z-index:50;
+}
+
+.zi-100{
+  z-index:100;
+}
+
 .m-0 {
   margin: 0 !important;
 }
