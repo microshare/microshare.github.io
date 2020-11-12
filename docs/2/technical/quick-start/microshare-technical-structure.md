@@ -36,7 +36,7 @@ Firstly, Microshare® uses hardware set around the client’s environment to com
 ## Microshare®'s API
 ---------------------------------------
 
-The API, or Application Programming Interface, has Microshare®’s specific protocols and tools to communicate the devices' data. Microshare®’s API takes many security precautions to ensure the protection of client data and understanding [Authentication](/docs/2/technical/api/authentication/) will be crucial for learning the interface. Learning simple requests will allow you to create and manage your data within Microshare®’s data lake. You can get started with the Microshare® API [with the Quick Start page](/docs/2/technical/api/quick-start/).
+The API, or Application Programming Interface, has Microshare®’s specific protocols and tools to communicate the devices' data. Microshare®’s API takes many security precautions to ensure the protection of client data and understanding [Authentication](/docs/2/technical/api/authentication/) will be crucial for learning the interface. Learning share API will allow you to create and manage your data within Microshare®’s data lake. You can get started with the Microshare® API [with the Quick Start page](/docs/2/technical/api/quick-start/).
 
 ## The Microshare® Platform
 ---------------------------------------

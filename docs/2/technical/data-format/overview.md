@@ -41,7 +41,7 @@ This guide serves to help you discern the different components of a Microshare®
 ## First Example
 ---------------------------------------
 
-To start with something simple we'll take the piece of data we generated with the API tutorial: [API Simple Requests](/docs/2/technical/api/simple-requests/#2-write-data).
+To start with something simple we'll take the piece of data we generated with the API tutorial: [API Share API](/docs/2/technical/api/share-api/#2-write-data).
 
 
 {% highlight javascript %}
