@@ -57,6 +57,6 @@ This guide will walk you through getting an authentication token to work with th
 
 Now that you have completed authentication, you can now make your first requests.
 
-###### > [Simple Request](../simple-requests)
+###### > [Share API](../share-api)
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

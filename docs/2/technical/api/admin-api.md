@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Admin API
+title: Admin API Request
 description: Push your applications of the Microshare™ APIs 
 toc: true
 ---
@@ -21,7 +21,15 @@ These requests allow you to externalisate actions made on the Microshare® Compo
 
 For this part we will assume that you are comfortable with interacting wth the Microshare® APIs, and the Microshare® platform..
 
-Here is a more complete collection of queries : [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/800c4698e3342072364c)
+
+
+## Here is a more complete collection of queries : 
+
+## [ >> ADMIN API Documentation](https://documenter.getpostman.com/view/13441262/TVeneTuD#2df2406e-3e39-4b69-955b-eab6153b920e)
+
+---------------------------------------
+
+If you don't need the API documentation just run it on Postman : [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/173275d2ae95eff27da2)
 
 **You may simply notice that the Microshare® APIs are REST APIs and have a similar structure.**
 

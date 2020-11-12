@@ -44,9 +44,9 @@ Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-
 First, Head over to the [API Quick Start](/docs/2/technical/api/quick-start/) to install the Postman application, and learn the terminology of Microshare®'s API. Next
 use the [Authentication Guide](/docs/2/technical/api/authentication/) where you will learn how to navigate the security features of Microshare®'s API by requesting your own token. It is crucial that you complete the authentication guide before you move on to the simple request tutorial, as you will not be able to make the requests without the authentication.
 
-#### Simple Requests
+#### Share API
 
-Following the [Simple Requests tutorial](/docs/2/technical/api/simple-requests/), you will learn how to send and request information to Microshare®'s API. These concepts are the fundamental components behind working with robots and device clusters moving forward. 
+Following the [Share API tutorial](/docs/2/technical/api/share-api/), you will learn how to send and request information to Microshare®'s API. These concepts are the fundamental components behind working with robots and device clusters moving forward. 
 
 
 ## 4. Getting Started with the Microshare® Platform

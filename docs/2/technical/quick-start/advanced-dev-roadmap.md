@@ -11,7 +11,7 @@ toc: true
 #### Summary:
 1. [Introduction](./#introduction)
 2. [Creating Robots](./#1-creating-robots)
-3. [Creating Complex Requests with Microshare®'s API](./#2-creating-complex-requests-with-microshares-api)
+3. [Creating Admin API with Microshare®'s API](./#2-creating-admin-api-with-microshares-api)
 4. [Working with Identities](./#3-working-with-identities)
 5. [Creating Dashboards](./#4-creating-dashboards)
 6. [Data Management](./#5-data-management-workflow)
@@ -31,10 +31,10 @@ A Robot is an actor that automates the tasks associated with transforming, enric
 
 
 
-## 2. Creating Complex Requests with Microshare®'s API
+## 2. Creating Admin API with Microshare®'s API
 ---------------------------------------
 
-Now that you have become familar with creating [simple requests](/docs/2/technical/api/simple-requests/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests.](/docs/2/technical/api/complex-requests/)
+Now that you have become familar with creating [share API](/docs/2/technical/api/share-api/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests.](/docs/2/technical/api/admin-api/)
 
 ## 3. Working with Identities
 ---------------------------------------

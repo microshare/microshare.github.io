@@ -42,12 +42,12 @@ Once you have created and specified your request token, by pressing the `Send` b
 
 This will allow you to join the Demo's identity at runtime .
 
-Once completed, you can now make simple requests and make complex data reading queries! 
+Once completed, you can now make share API and make complex data reading queries! 
 
 
 ### A. Simple request
 
-The next objective is to make simple queries to read the demo data by following [this tutorial](../simple-requests). On this demo API, you can use the following recTypes (or endpoints) to request information! You will add these recTypes to the field circled in yellow below.
+The next objective is to make simple queries to read the demo data by following [this tutorial](../share-api). On this demo API, you can use the following recTypes (or endpoints) to request information! You will add these recTypes to the field circled in yellow below.
 
 <br>
 ###### WARNING : This data is not real data and is provided solely for demo purposes.

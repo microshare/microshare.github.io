@@ -129,8 +129,10 @@
     - title: Quick Start
     - title: Demo API
     - title: Authentication
-    - title: Simple Requests
-    - title: Complex Requests
+    - title: Share API
+      keyword : ["request"]
+    - title: Admin API
+      keyword : ["request"]
     - title: API Collection
   - title: LoRaWan®
     pages:

@@ -410,7 +410,7 @@ This final section details the location of the device cluster and reiterates the
 **Question:** Where can the information containing all the wristbands in a contact be found?
 
 <br>
-**Answer:** This can be found under the .unpacked.event which also includes the MetaData (The location of the device cluster and link). If you are looking for data on a specific wristband, you can query the data using [Microshare big tools](/docs/2/technical/api/simple-requests/#3-read-data).
+**Answer:** This can be found under the .unpacked.event which also includes the MetaData (The location of the device cluster and link). If you are looking for data on a specific wristband, you can query the data using [Microshare big tools](/docs/2/technical/api/share-api/#3-read-data).
 
 <br>
 

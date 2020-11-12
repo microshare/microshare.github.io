@@ -95,8 +95,8 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 {% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
 <br>
-That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../simple-requests) data with the platform. 
+That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../share-api) data with the platform. 
 
 ###### > [Authentication](../authentication)
-###### > [Simple Request](../simple-requests)
+###### > [Share API](../share-api)
 ###### > [Demo API](../demo-api)

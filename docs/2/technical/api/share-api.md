@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Simple Requests
+title: Share API
 description: Get started with the Microshare™  API 
 toc: true
 ---
