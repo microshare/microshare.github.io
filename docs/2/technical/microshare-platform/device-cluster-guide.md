@@ -15,9 +15,10 @@ toc: true
 
 1. [Introduction](./#1-introduction-what-is-a-device-cluster)
 2. [Creating a Device Cluster](./#2-creating-a-device-cluster)
-3. [Set the right RecType](./#3-set-the-right-rectype)
-4. [Updating a Device Cluster](./#4-updating-a-device-cluster)
-5. [Reauthorizing a Device Cluster](./#5-reauthorizing-a-device-cluster)
+3. [Creating a Device Cluster by uploading a CSV](./#3-creating-a-device-cluster-by-uploading-a-csv)
+4. [Set the right RecType](./#3-set-the-right-rectype)
+5. [Updating a Device Cluster](./#4-updating-a-device-cluster)
+6. [Reauthorizing a Device Cluster](./#5-reauthorizing-a-device-cluster)
 
 ---------------------------------------
 
@@ -105,8 +106,44 @@ Once you have created your device cluster, You can now create a dashboard to vie
 
 You can also learn to create rules and views to manage who can see the data from your device cluster through following the guides in the Microshare® platform documentation. 
 
+## 3. Creating a Device Cluster by Uploading a CSV
+---------------------------------------
 
-## 3. Set the right RecType
+First read the previous section to understand all the settings you will need to set up to create a DC. Once you understand all the settings you will be able to use the CSV upload to save your time. 
+
+So first download the XLSX table template [here](/assets/xlsx/DC_Upload_Template.xlsx). 
+
+Then open it. 
+
+You should have a table like this one : 
+
+{% include image.html url="\assets\img\upload_dc/upload_dc_0.png" height="900" width="900" description="Upload DC" %}
+
+For the following steps you will only need to fill the "DevEUI" column, and the "location 1","location 2" and "location 3" columns. The column "location 4" is an extra column.
+
+The DEV EUI is a 16 caracters long hexa string, you can keep the dashes or not.
+
+The Location 1 is generally the building.
+The Location 2 is generally the floor.
+The Location 3 is generally the room.
+
+So then fill your table with your devices : 
+
+{% include image.html url="\assets\img\upload_dc/upload_dc_1.png" height="900" width="900" description="Upload DC" %}
+
+##### Once this is done save your file as a **CSV File** using the "**;**" separator.
+
+{% include image.html url="\assets\img\upload_dc/upload_dc_2.png" height="300" width="300" description="Upload DC" %}
+
+Once you have your file simply drag and drop it on the "UPLOAD" button on the Cluster page.
+
+{% include image.html url="\assets\img\upload_dc/upload_dc_3.png" height="900" width="900" description="Upload DC" %}
+
+And your devices are immedialty added to your DC, you just have to complete the settings and your DC is ready !
+
+{% include image.html url="\assets\img\upload_dc/upload_dc_4.png" height="900" width="900" description="Upload DC" %}
+
+## 4. Set the right RecType
 ---------------------------------------
 
 To make sure you have a working system it is important to follow the instructions for using the correct recType. 
@@ -220,7 +257,7 @@ Here is a list of our product apps along with the domain data they require:
 
 
 
-## 4. Updating a Device Cluster
+## 5. Updating a Device Cluster
 ---------------------------------------
 
 To update your device cluster, simply go to the device cluster page, then click update. You will be able to modify the information of your device cluster and your devices. 
@@ -233,7 +270,7 @@ You can simply upgrade your device cluster and it will work.
 
 If you feel that your changes have not been taken into account, please click on re-authorize on the update page.
 
-## 5. Reauthorizing a Device Cluster
+## 6. Reauthorizing a Device Cluster
 ---------------------------------------
 
 With Microshare® you have the possibility to reauthorize a device cluster, you can do the same thing with a robot as well. 
