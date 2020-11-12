@@ -144,7 +144,7 @@ The Kerlink Waves, also referred to as 'bluetooth sniffers' and are LoRaWAN devi
 
 In summary, the device locations are the specific locations of each device while the global data details the location of the device cluster (the group of waves and personal beacons).
 
-**Confused on what to name your tags? Check out the [Contact Tracing Installation Page.](/docs/2/installer/deploy-m/contact-tracing-installation-guide/)**
+**Confused on what to name your tags? Check out the [Contact Tracing Installation Page.](/docs/2/installer/specific-installations/contact-tracing-installation/#registerWave)**
 
 ## 4. Contact Tracing Example Data
 ---------------------------------------
