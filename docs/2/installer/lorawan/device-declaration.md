@@ -25,7 +25,7 @@ toc: true
 
 There are two installation methods for your devices. 
 
-The second, simpler method requires you to first create the device cluster on Microshare®, then use the Deploy-M mobile app to scan your devices and indicate the device locations in real time. Both methods warrant the creation of the device cluster before adding the devices. 
+The second, simpler method requires you to first create the device cluster on Microshare, then use the Deploy-M mobile app to scan your devices and indicate the device locations in real time. Both methods warrant the creation of the device cluster before adding the devices. 
 
 **Note:** Device clusters are managed by the admin hence coordination and communication with your admin on the placement of the devices are essential for a successful installation. 
 

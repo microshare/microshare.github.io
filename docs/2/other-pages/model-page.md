@@ -50,7 +50,7 @@ Both styles of lists should include a period at the end of the sentence.
 ## Other Standards
 ---------------------------------------
 
-<br> Microshare™ should be used in the title of the page only and refer to Microshare® in the body of the documentation.
+<br> Microshare™ should be used in the title of the page only and refer to Microshare in the body of the documentation.
 
 <br>
 `emails` or `objects` should be given in this form.

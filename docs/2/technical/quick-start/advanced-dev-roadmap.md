@@ -11,7 +11,7 @@ toc: true
 #### Summary:
 1. [Introduction](./#introduction)
 2. [Creating Robots](./#1-creating-robots)
-3. [Creating Admin API with Microshare®'s API](./#2-creating-admin-api-with-microshares-api)
+3. [Creating Admin API with Microshare's API](./#2-creating-admin-api-with-microshares-api)
 4. [Working with Identities](./#3-working-with-identities)
 5. [Creating Dashboards](./#4-creating-dashboards)
 6. [Data Management](./#5-data-management-workflow)
@@ -22,7 +22,7 @@ toc: true
 ---------------------------------------
 ##### What else can a developer do?
 
-Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the <em> Microshare® Platform Advanced </em> section and follow the following steps:
+Once you have completed the [Novice Developer's Roadmap](/docs/2/technical/quick-start/basic-dev-roadmap/), the advanced developer is prepared to use the materials under the <em> Microshare Platform Advanced </em> section and follow the following steps:
 
 ## 1. Creating Robots
 ---------------------------------------
@@ -31,15 +31,15 @@ A Robot is an actor that automates the tasks associated with transforming, enric
 
 
 
-## 2. Creating Admin API with Microshare®'s API
+## 2. Creating Admin API with Microshare's API
 ---------------------------------------
 
-Now that you have become familar with creating [share API](/docs/2/technical/api/share-api/) with Microshare®'s API, its now time to communicate with the API to draw more information using [complex requests.](/docs/2/technical/api/admin-api/)
+Now that you have become familar with creating [share API](/docs/2/technical/api/share-api/) with Microshare's API, its now time to communicate with the API to draw more information using [complex requests.](/docs/2/technical/api/admin-api/)
 
 ## 3. Working with Identities
 ---------------------------------------
 
-Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/identity-guide/), you will find that different identities have different access to viewing, creating, and owning information. Understanding the applications of different identities will better allow you to determine who gets to see certain information and have access to certain robots, devices, clusters and rules when working for different clients of Microshare®.  
+Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/identity-guide/), you will find that different identities have different access to viewing, creating, and owning information. Understanding the applications of different identities will better allow you to determine who gets to see certain information and have access to certain robots, devices, clusters and rules when working for different clients of Microshare.  
 
 ## 4. Creating Dashboards
 ---------------------------------------
@@ -49,7 +49,7 @@ Through the [Identity Guide](/docs/2/technical/microshare-platform-advanced/iden
 ## 5. Data Management/ Workflow
 ---------------------------------------
 
-Finally, you will learn how to manage your data within Microshare®. Microshare® no longer uses robots for data ingestion and unpacking, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of robots can be. The path of data management is:
+Finally, you will learn how to manage your data within Microshare. Microshare no longer uses robots for data ingestion and unpacking, but the guides will be a great resource to understanding what the new method is doing and how powerful the applications of robots can be. The path of data management is:
 
 <br>
 **1.** [Data Ingestion](/docs/2/technical/microshare-platform-advanced/data-ingestion/)

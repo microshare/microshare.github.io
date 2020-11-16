@@ -8,7 +8,7 @@ toc: true
 
 ---------------------------------------
 
- The views used by the generic applications are generic views created by Microshare® and hosted on the account **asset@microshare.io**. 
+ The views used by the generic applications are generic views created by Microshare and hosted on the account **asset@microshare.io**. 
 
 These views are already shared with all accounts. You can find more information about this in the [views guide.](/docs/2/technical/microshare-platform/views-guide)
 

@@ -6,9 +6,9 @@ toc: true
 ---
 
 
-You can find the repository here: [Microshare® Documentation]({{ site.repo }}).
+You can find the repository here: [Microshare Documentation]({{ site.repo }}).
 
-The documentation is built using [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at [Microshare® github](https://microshare.github.io/) 
+The documentation is built using [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at [Microshare github](https://microshare.github.io/) 
 
 It can be run locally by following the [Jekyll installation](https://jekyllrb.com/docs/installation/) instructions.
 Run with

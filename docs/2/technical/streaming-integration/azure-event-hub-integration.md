@@ -40,11 +40,11 @@ To be suitable for real-time integration, the Event Hub Namespace must be config
  **2** Shared Access Policy (SAS) that grants the "Manage" policy as with the "Ingest" SAP in the screenshot below. 
 
 <br>
-Setup this way, the integration will automatically create new Event Hub queues within your Event Hub Namespace so that new data types can be transmitted without further configuration. Each Microshare® recType will be exported into its own unique queue so that even with multiple sensors and data streams, the data remains segmented for easy analysis. 
+Setup this way, the integration will automatically create new Event Hub queues within your Event Hub Namespace so that new data types can be transmitted without further configuration. Each Microshare recType will be exported into its own unique queue so that even with multiple sensors and data streams, the data remains segmented for easy analysis. 
 
 {% include image.html url="\assets\img\azure-hub.png" width="900" description="azure event hub" %}
 
-Your Microshare® Service or Support contact will need the "Connection string-primary key" it should look something like this: 
+Your Microshare Service or Support contact will need the "Connection string-primary key" it should look something like this: 
 
 `Endpoint=sb://yourchoice.servicebus.windows.net/;SharedAccessKeyName=microshareintegration;SharedAccessKey=mkeyQB/MuK/hfHwSomeOtherChars2qyqroAJsS92vt0=;EntityPath=yourchoice`
  

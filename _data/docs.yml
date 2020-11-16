@@ -1,5 +1,5 @@
 - title: General User
-  desc: Simply understand how to use Microshare® for the first time, and discover our technology.
+  desc: An introduction to Microshare, the technology and the platform
   color : text-microshare-light
   logo : check-circle
   pages:
@@ -8,9 +8,9 @@
   - title: What's new?
     keywords : ["updates"]
   subpages:
-  - title: Meet Microshare®
+  - title: Meet Microshare
     pages:
-    - title: Why Microshare®?
+    - title: Why Microshare?
       keywords : ["digital twin"]
     - title: Technical Overview
       keywords : ["architecture","work"]
@@ -29,7 +29,7 @@
       keywords : ["dictionnary"]
 
 - title: Admin
-  desc : As an admin, some knowledge is necessary to use Microshare® at its best for your company
+  desc : An administrators guide to accessing and using the platform
   color : text-danger
   logo : id-card
   subpages:
@@ -44,7 +44,7 @@
     - title: Super Admin
 
 - title: Installer
-  desc : For all the installations, here is the information necessary for there implementations
+  desc : A guide to implementing your Microshare solution
   color : text-secondary
   logo : edit
   subpages:
@@ -75,14 +75,14 @@
     - title: Contact Tracing Installation
 
 - title: Technical
-  desc : For a more in-depth understanding of our technology, here are the informations
+  desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
   logo : chart-bar
   subpages:
   - title: Quick Start
     pages:
     - title: Overview
-    - title: Microshare® Technical Structure
+    - title: Microshare Technical Structure
     - title: Data Integration
     - title: Basic Dev Roadmap
     - title: Advanced Dev Roadmap
@@ -90,10 +90,10 @@
     pages:
     - title: Overview
       keywords : ["meta","objs","recType","creatorId","tstamp","origin","owner"]
-    - title: Microshare® Standards
+    - title: Microshare Standards
       keywords : ["meta","Ipso","meta.iot","origin","unpacker","motion","environment","temperature","feedback"]
     - title: Contact Tracing
-  - title: Microshare® Platform
+  - title: Microshare Platform
     pages:
     - title: Quick Start
     - title: Dashboard Guide
@@ -104,7 +104,7 @@
       keywords : ["share","owner","organization","simulate"]
     - title: Views Guide
       keywords : ["queries","query","organization","static","json","mongodb","pipeline","match","group"]
-  - title: Microshare® Platform Advanced
+  - title: Microshare Platform Advanced
     pages:
     - title: Data Ingestion
       keywords : ["network","kerlink","post","websocket"]

@@ -6,15 +6,15 @@ group: advanced
 toc: true
 ---
 
-# How to: stream IoT packets from Senet to Microshare®
+# How to: stream IoT packets from Senet to Microshare
 
 This tutorial assumes that you already registered for and have [a Senet Developer account](http://www.senetco.com/developer-portal/). It also assumes that you have provisioned at least one device sending uplink packages to Senet.
 
-This tutorial will show you how to configure your Senet devices to forward IoT data to the Microshare® data lake. It will take you through creating a Microshare® account, generating a streaming token, and using it in a Senet notification target. After this you'll be able to use the functionality of the Microshare® platform to share your data securely, build data workflows, Apps, etc.
+This tutorial will show you how to configure your Senet devices to forward IoT data to the Microshare data lake. It will take you through creating a Microshare account, generating a streaming token, and using it in a Senet notification target. After this you'll be able to use the functionality of the Microshare platform to share your data securely, build data workflows, Apps, etc.
 
-### Register for a Microshare® account
+### Register for a Microshare account
 
-The Microshare® registration process is simple. 
+The Microshare registration process is simple. 
 1. Browse to [https://app.microshare.io](https://app.microshare.io).
 2. Click [Sign Up](https://auth.microshare.io/portal/signup).
 
@@ -43,7 +43,7 @@ To identify yourself as the owner of the streamed data, you must generate a toke
 
 The category under which every one of your data packets get stored in microshare is called a recType (as in the Type of your Record). There are no preset categories, you can use whatever you want, and even reuse a recType for two separate devices. We will give you some tips on how to determine recTypes later
 
-### Generate a Microshare® Pipe Token
+### Generate a Microshare Pipe Token
 
 Now you'll generate a Pipe Token using microshare's API. The easiest way to interact with the microshare api is to use Postman.
 

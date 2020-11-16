@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Data Ingestion
-description: How your data gets into the Microshare® Data Lake
+description: How your data gets into the Microshare Data Lake
 toc: true
 ---
 
@@ -22,7 +22,7 @@ toc: true
 
 ---------------------------------------
 
-Data ingestion is the process by which Microshare® consumes data from various sources for distribution through the Smart Network and/or for storage in the Microshare® data lake. Data that is ingested will become available in real-time for visibility in dashboard apps, complex event processing for notifications and triggers, and for injection into your streaming architecture.
+Data ingestion is the process by which Microshare consumes data from various sources for distribution through the Smart Network and/or for storage in the Microshare data lake. Data that is ingested will become available in real-time for visibility in dashboard apps, complex event processing for notifications and triggers, and for injection into your streaming architecture.
 
 
 ## 2. LoRaWAN Network Ingestion via Device Cluster
@@ -38,7 +38,7 @@ The part of the device cluster involved in data ingestion is collecting the data
 
 {% include image.html url="/assets/img/data-ingestion-2.png" description="DI2" %}
 
-Marked in blue is the network provider category. This field is required as each network has their own format to deliver information to the Microshare® network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
+Marked in blue is the network provider category. This field is required as each network has their own format to deliver information to the Microshare network. Filling out the wrong network provider will prohibit your devices' data from properly being represented on your dashboard. 
 
 ## 3. Upload data via REST API POST
 ---------------------------------------
@@ -52,7 +52,7 @@ To do so, send your data as the body of a [POST /share call](/assets/html/api-ms
 Alternatively, some platforms offer RESTful APIs to request for the data they store, such as [Sierra AirVantage](https://airvantage.net/#offers), or [Cumulocity](https://www.cumulocity.com/).  
 In that case you can setup a [scheduled Robot](/docs/2/technical/microshare-platform-advanced/robots-guide/#c-triggered-vs-scheduled) to perform GET calls to your IoT platform periodically.  
 You are at liberty to setup your Robot script the way you want, to decide when and what to store as a object from that data.  
-Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the Microshare® data lake:
+Below is a sample Robot script that performs a data pull from Orange LiveObjects, storing all pulled IoT packets to the Microshare data lake:
 
 {% highlight js %}
   var lib = require('./libs/helpers');
@@ -85,7 +85,7 @@ Below is a sample Robot script that performs a data pull from Orange LiveObjects
 ---------------------------------------
 
 Some IoT platforms act as [websocket servers](https://en.wikipedia.org/wiki/WebSocket) and allow websocket clients to listen and pull data live. Due to the complexities of the integration, websocket connection cannot be self-managed.
-Your Microshare® services liason, can setup a websocket client that takes care of websocket connection management to make your data available in real-time.  
+Your Microshare services liason, can setup a websocket client that takes care of websocket connection management to make your data available in real-time.  
 We will need the following information to configure the websocket:
 {% highlight java %}
 {
