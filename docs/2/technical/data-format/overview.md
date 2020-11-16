@@ -33,7 +33,7 @@ As described in the Microshare Platform Advanced section, data unpacking follows
 
 When the raw data is ingested in Microshare it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare formalism.
 
-RecTypes are further explored in the [API Collection page](http://localhost:4000/docs/2/technical/api/api-collection/#api-structures).
+RecTypes are further explored in the [API Collection page](/docs/2/technical/api/api-collection/#api-structures).
 
 This guide serves to help you discern the different components of a Microshare data payload. 
 
