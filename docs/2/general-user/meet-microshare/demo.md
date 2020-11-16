@@ -10,7 +10,7 @@ toc: true
 
 ## Demo Dashboards 
 
-Interested in seeing Microshare®'s dashboards in action? 
+Interested in seeing Microshare's dashboards in action? 
 
 Check out our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), where you will be able to interact with our dashboards in real time. As seen in the graphic below, you have access to a variety of different apps. <br>
 
@@ -20,9 +20,9 @@ Check out our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39
 
 ## Demo API 
 
-Additionally, we provide a demonstration of our API for you to interact with to start communcication with the Microshare® system.
+Additionally, we provide a demonstration of our API for you to interact with to start communcication with the Microshare system.
 
 For this, you will need to follow our technical guides which explain what the API is and how you can begin interacting with it.  
-#### > [Microshare® APIs](../../../technical/api/quick-start)
+#### > [Microshare APIs](../../../technical/api/quick-start)
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

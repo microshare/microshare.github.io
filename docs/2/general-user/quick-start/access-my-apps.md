@@ -58,9 +58,9 @@ This guide will only give a basic explanation of identities. For an in- depth ex
 When you log in, the identity will be the your most recently active one. 
 When creating an account, you were simply added to the `Microshare Default` identity. This one is unique to your organization. 
 
-If you are a Microshare® customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare® technology. 
+If you are a Microshare customer you will be invited to other identities, these may be different for each of the sites where you have integrated Microshare technology. 
 
-For example, if you have four sites where you have integrated Microshare® technology, you will be invited to four identities, each with several dashboards and their own data.
+For example, if you have four sites where you have integrated Microshare technology, you will be invited to four identities, each with several dashboards and their own data.
 
 Clicking on the profile icon in the top right hand corner will allow you to quickly switch identities.  
 
@@ -72,7 +72,7 @@ Here, for example, we can interchange between two identities.
 ## 3. Navigate on my Account
 ---------------------------------------
 
-Once you have logged in and chosen the identity that corresponds to what you are looking for, you will mow be able to use the selection of Microshare® tools. 
+Once you have logged in and chosen the identity that corresponds to what you are looking for, you will mow be able to use the selection of Microshare tools. 
 
 Your homepage is full of applications. Click on one to view that device cluster's data.
 

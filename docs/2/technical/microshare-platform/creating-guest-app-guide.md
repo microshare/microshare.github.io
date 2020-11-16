@@ -13,7 +13,7 @@ toc: true
 
 ### 1. What is a Guest Access App?
 
-Microshare® makes it possible to provide controlled access to Apps/Dashboards for anonymous (unauthenticated) users. This is desirable in situations where the general public is invited to interact with the data. It should only be used for data that is intended to be for general public release (green data).  
+Microshare makes it possible to provide controlled access to Apps/Dashboards for anonymous (unauthenticated) users. This is desirable in situations where the general public is invited to interact with the data. It should only be used for data that is intended to be for general public release (green data).  
 
 To make this work, a "Link To" object is created by the application owner which provides a pointer to an asset that can be accessed through an unauthenticated URL /guest. The guest URL takes the Link To object id to determine the intended behavior.  
 

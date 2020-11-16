@@ -17,7 +17,7 @@ toc: true
 -----------------------------------------------------------------
 ## 1. Overview
 -----------------------------------------------------------------
-Google Cloud Pub/Sub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Google Cloud Pub/Sub tenancy in real-time. Data is typically made available to Google Cloud Pub/Sub Topics, on which Subscribment can be set up to ensure that event handling and analytics are fed with the most current state of the measured space. Google Cloud Pub/Sub Integration creates a pathway to advanced storage, visualization, and analytics in the Google Cloud ecosystem from the Microshare® Smart Network.
+Google Cloud Pub/Sub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Google Cloud Pub/Sub tenancy in real-time. Data is typically made available to Google Cloud Pub/Sub Topics, on which Subscribment can be set up to ensure that event handling and analytics are fed with the most current state of the measured space. Google Cloud Pub/Sub Integration creates a pathway to advanced storage, visualization, and analytics in the Google Cloud ecosystem from the Microshare Smart Network.
 
 ## 2. Setup
 -----------------------------------------------------------------
@@ -97,7 +97,7 @@ You can open it to check that it&#39;s all right like that :
 
 Be careful to store and transmit the resulting file in a secure fashion. These access credentials are stored in plain text and are vulnerable to security leaks.
 
-Your Microshare® Service or Support contact will need the **.json file**. It is recommended that this information be sent securely via GPG encrypted email or through an encrypted chat connection using keybase.io.
+Your Microshare Service or Support contact will need the **.json file**. It is recommended that this information be sent securely via GPG encrypted email or through an encrypted chat connection using keybase.io.
 
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

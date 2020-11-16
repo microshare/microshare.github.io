@@ -20,7 +20,7 @@ toc: true
 ## Introduction
 ---------------------------------------
     
-The following are the most frequently asked questions regarding Microshare® solutions accross the board. 
+The following are the most frequently asked questions regarding Microshare solutions accross the board. 
 
 Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 

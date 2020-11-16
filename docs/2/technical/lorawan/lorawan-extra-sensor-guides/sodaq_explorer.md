@@ -190,6 +190,6 @@ Log into the TTN Portal and navigate to your TTN application and find your regis
 
 Your device is now programmed to read and transmit it's sensor data to the TTN platform for processing.
 
-## Stream IoT packets from Senet to Microshare®
+## Stream IoT packets from Senet to Microshare
 
-Follow [this The Things Network (TTN) tutorial](../ttn_tutorial) to set up a redirection of IoT packets to the Microshare® platform.
+Follow [this The Things Network (TTN) tutorial](../ttn_tutorial) to set up a redirection of IoT packets to the Microshare platform.

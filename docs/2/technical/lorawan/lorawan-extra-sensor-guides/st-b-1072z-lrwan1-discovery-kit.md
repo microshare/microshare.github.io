@@ -154,6 +154,6 @@ If you're not seeing any data after a few minutes then:
 - Copy the `.bin` file to the device again using steps in `Programming the Device` section
 - Ensure that you are withing range of a Senet LoRaWAN Gateway or in an area within Senet Outdoor coverage check the [coverage map here](http://www.senetco.com/coverage/){:target="_blank"}
 
-## Stream IoT packets from Senet to Microshare®
+## Stream IoT packets from Senet to Microshare
 
-Follow [this Senet tutorial](../senet-tutorial) to set up a redirection of IoT packets to the Microshare® platform.
+Follow [this Senet tutorial](../senet-tutorial) to set up a redirection of IoT packets to the Microshare platform.

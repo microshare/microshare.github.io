@@ -164,6 +164,6 @@ When deciding to share data, it is always better to share less than share more. 
 
 Outline which parts of your data are essential and which are strictly for your eyes only. Share the bare essentials of the data that others need to learn from your sensors and refrain from sharing the sensitive data. The data in the grey area is up to you wether you grant others access to it. It may be best to withold the grey area data, and release it if multiple requests follow for access.
 
-If you want to create an share an app that allows someone without a Microshare® account to view your data, follow the [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/).
+If you want to create an share an app that allows someone without a Microshare account to view your data, follow the [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/).
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

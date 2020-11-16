@@ -28,7 +28,7 @@ toc: true
 
 ### A. Development or Production
 
-Microshare® uses two environments, the development environment and the production environment; each has its own characterisitics and fulfill different needs. 
+Microshare uses two environments, the development environment and the production environment; each has its own characterisitics and fulfill different needs. 
 
 Dev : [dapp.microshare.io](https://dapp.microshare.io/login)
 
@@ -37,15 +37,15 @@ Prod : [app.microshare.io](https://app.microshare.io/login)
 The following are the differences between the two:
 
 
-| Dev                   | Prod                      |
-| -----------------     |:---------------------    :|
-| Demo Dashboards       | General customer account  |
-| Demo APIs             | Long term data backup     |
-| Tests                 |                           |
-| Dashboards Creation   |                           |
+| Dev                       | Prod                      |
+| ------------------------- |:---------------------    :|
+| Demo Dashboards           | General customer account  |
+| Demo APIs                 | Long term data backup     |
+| Tests                     |                           |
+| New Dashboards Creation   |                           |
 
 
-In short, if Microshare® invites you to create an account, you will need to create an account on prod to access your dashboards. If you have no formal obligation and merely want to interact with the environment, the development side is better suited for your intentions. 
+In short, if Microshare invites you to create an account, you will need to create an account on prod to access your dashboards. If you have no formal obligation and merely want to interact with the environment, the development side is better suited for your intentions. 
 
 
 ### B. Registration

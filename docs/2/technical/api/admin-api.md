@@ -17,9 +17,9 @@ Prod Server : [app.microshare.io](https://app.microshare.io/login)
 
 Before tackling the concepts on this page, please follow the [Share API](/docs/2/technical/api/admin-api) guide first!
 
-These requests allow you to externalisate actions made on the Microshare® Composer. Before exercising this ability, you must understand how an item works on Microshare® before using the corresponding APIs.
+These requests allow you to externalisate actions made on the Microshare Composer. Before exercising this ability, you must understand how an item works on Microshare before using the corresponding APIs.
 
-For this part we will assume that you are comfortable with interacting wth the Microshare® APIs, and the Microshare® platform..
+For this part we will assume that you are comfortable with interacting wth the Microshare APIs, and the Microshare platform..
 
 
 
@@ -31,7 +31,7 @@ For this part we will assume that you are comfortable with interacting wth the M
 
 If you don't need the API documentation just run it on Postman : [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/173275d2ae95eff27da2)
 
-**You may simply notice that the Microshare® APIs are REST APIs and have a similar structure.**
+**You may simply notice that the Microshare APIs are REST APIs and have a similar structure.**
 
 Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 

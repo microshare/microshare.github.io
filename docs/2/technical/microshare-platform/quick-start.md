@@ -29,7 +29,7 @@ toc: true
 ## 1. Introduction
 ---------------------------------------
 
-The Microshare® platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. 
+The Microshare platform is the epicenter of your data; the place where you will not only be able to view your data, but also mandate others’ restrictions, automate tasks and much more. 
 
 There is a difference in what a general user and developer have the ability to do. The general user only has access to the data and tools administered by their admin. Meanwhile, the developer can access and view all of the tools. For instance, the developer can create device clusters, robots, rules, forms, change identities and access views while the general user can only view what data has been mandated to them. 
 
@@ -42,11 +42,11 @@ If you do not already have a developer account, follow the [Create an Account Tu
 
 ## 3. Tools and Abilities
 ---------------------------------------
-Below is the list of the various tools and abilities you can expect to work with as a developer using the Microshare® platform:
+Below is the list of the various tools and abilities you can expect to work with as a developer using the Microshare platform:
 
 ### A. Device Cluster
 
-Device clusters give you the ability to group data from sensors together. This is most useful for sensors in the same area. You can add devices to the cluster either through the Deploy M app or via the Microshare® platform (refer to the [Device Clusters Page](/docs/2/technical/microshare-platform/device-cluster-guide/)). You can view the cluster data in the dashboard. 
+Device clusters give you the ability to group data from sensors together. This is most useful for sensors in the same area. You can add devices to the cluster either through the Deploy M app or via the Microshare platform (refer to the [Device Clusters Page](/docs/2/technical/microshare-platform/device-cluster-guide/)). You can view the cluster data in the dashboard. 
 
 ### B. Views
 
@@ -66,11 +66,11 @@ Your identity determines what data you can view, and what tools you are able to 
 
 ### F. Robots
 
-Robots give the ability to automate certain tasks for your data. For example, you could program a robot to alert you if your sensor detects a significant temperature drop or if your meeting room is vacant. [The Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) will navigate you through the process of automating tasks according to your sensors, and [The Robot Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great source to refer to examples of task automation in Microshare®.
+Robots give the ability to automate certain tasks for your data. For example, you could program a robot to alert you if your sensor detects a significant temperature drop or if your meeting room is vacant. [The Robots Guide](/docs/2/technical/microshare-platform-advanced/robots-guide/) will navigate you through the process of automating tasks according to your sensors, and [The Robot Library](/docs/2/technical/microshare-platform-advanced/robots-library/) is a great source to refer to examples of task automation in Microshare.
 
 ### F. Data Ingestion
 
-[The Data Ingestion Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-guide/) will walk you through moving your data from several sources to the Microshare® data lake as microshares. Additionally, you can create a robot to automatically perform this task using [The Data Ingestion by Robots Guide.](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
+[The Data Ingestion Guide](/docs/2/technical/microshare-platform-advanced/data-ingestion-guide/) will walk you through moving your data from several sources to the Microshare data lake as microshares. Additionally, you can create a robot to automatically perform this task using [The Data Ingestion by Robots Guide.](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
 
 ### F. Data Unpacking
 

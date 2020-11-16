@@ -25,7 +25,7 @@ toc: true
 
 ## 1. Introduction
 ---------------------------------------
-This portion of the documentation will familiarize you with LoRaWan technology and the networks, devices and gateways that make it all happen. But why does Microshare® choose to employ LoRaWan technology in their solutions? This guide will address that frequently asked question. 
+This portion of the documentation will familiarize you with LoRaWan technology and the networks, devices and gateways that make it all happen. But why does Microshare choose to employ LoRaWan technology in their solutions? This guide will address that frequently asked question. 
 
 If are interested in more technical information on these points, make sure to visit the [LoRaWan Technology page.](/docs/2/technical/lorawan/lorawan-technology/).
 
@@ -48,7 +48,7 @@ LoRaWan technology is remarkable more energy efficient, giving your device’s o
 
 #### Plug-n-Play
 
-Our devices have an effortless installation process using our Deploy—M application. Stick your devices to the wall and plug them in to get started. All of the device management is performed through our easy to use Microshare® platform. 
+Our devices have an effortless installation process using our Deploy—M application. Stick your devices to the wall and plug them in to get started. All of the device management is performed through our easy to use Microshare platform. 
 
 
 #### Security

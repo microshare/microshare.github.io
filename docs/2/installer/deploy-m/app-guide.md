@@ -25,7 +25,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-Deploy-M is a mobile application that streamlines the device configuration process. Use Deploy-M to configure all your devices to your Microshare® account simultaneously, saving you time and ensuring an error- free installation of your digital twinning solution. 
+Deploy-M is a mobile application that streamlines the device configuration process. Use Deploy-M to configure all your devices to your Microshare account simultaneously, saving you time and ensuring an error- free installation of your digital twinning solution. 
 
 ###### Get your Internet of Things data workflow started with the following steps
 
@@ -35,13 +35,13 @@ Deploy-M is a mobile application that streamlines the device configuration proce
 
 To be able to use the Deploy-M application to configure your devices, make sure you have completed the following prerequisites.  
 
-To start, a Microshare® account is required, either from our Production or Development platform. 
+To start, a Microshare account is required, either from our Production or Development platform. 
 To create an account, [follow this guide.](/docs/2/general-user/quick-start/create-an-account/)
 
 This account should have one or more "device clusters" to host the devices we will register with the application. 
 To create a device cluster, [follow this guide.](/docs/2/technical/microshare-platform/device-cluster-guide/)
 
-You are now ready to add devices to the Microshare® platform. Devices obtained through Microshare® will be labeled with Microshare® QR codes, which will make configuration with the Deploy-M application easier, faster, and less error-prone.
+You are now ready to add devices to the Microshare platform. Devices obtained through Microshare will be labeled with Microshare QR codes, which will make configuration with the Deploy-M application easier, faster, and less error-prone.
 
 ## 3. Sign In
 ---------------------------------------
@@ -54,12 +54,12 @@ Now that all you are ready, let's start!
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M01.PNG" description="Deploy-M App" %}
 
 <br>
-**2.** The first time you launch the application, you will be prompted to log in to the Microshare® production server. Fill in your user credentials to log in. 
+**2.** The first time you launch the application, you will be prompted to log in to the Microshare production server. Fill in your user credentials to log in. 
 
 <br>
 You will arrive on the device cluster management page, where you will see the previously created device cluster(s).
 
-**NOTE:** In order to use Microshare®'s development server, first log in to the production server as above. Then go to the About page. 
+**NOTE:** In order to use Microshare's development server, first log in to the production server as above. Then go to the About page. 
 
 <br>
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M02.PNG" description="Deploy-M App" %}
@@ -89,7 +89,7 @@ Toggle the **<em>Development Server</em>** switch then log out.  Now you will be
 <br>
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M04B.PNG" description="Deploy-M App" %}
 
-You can add a device manually or by scanning the Microshare® QR code.  
+You can add a device manually or by scanning the Microshare QR code.  
 
 <br>
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M05.PNG" description="Deploy-M App" %}
@@ -112,7 +112,7 @@ Deploy-M reads the device ID and the device type from the QR code and opens the 
 
 Make sure you fill in the correct location tags as this is critically important for the digital twinning process. Find more information on location tags [here](/docs/2/installer/deploy-m/contact-tracing-installation-guide/#more-on-tags).
 
-**4.** Once you've finished filling in the fields, tap the **<em>Save</em>** button to add the device to the device cluster and save the change to your Microshare® account.
+**4.** Once you've finished filling in the fields, tap the **<em>Save</em>** button to add the device to the device cluster and save the change to your Microshare account.
 
 {% include image.html width="250rem" url="/assets/img/Deploy-M-app/Deploy-M10.PNG" description="Deploy-M App" %}
 

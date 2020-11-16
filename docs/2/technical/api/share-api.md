@@ -47,7 +47,7 @@ If you then want to read more conventional data, you can try the [demo APIs.](/d
 **1.** From the Postman collection, open the request `Shares -> Create one Share`.
 
 <br>
-**2.** Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare®. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
+**2.** Click on `Params`, next to the `Send` button, to edit the recType Value. The recType is the category, or id, under which the data is stored in Microshare. You usually have one recType per data stream (per IoT gateway, or IoT device if you can differentiate them).
 
 <br>
 {% include image.html url="/assets/img/api/create_one_share_1new.png" description="create one share" %}
@@ -68,7 +68,7 @@ If you then want to read more conventional data, you can try the [demo APIs.](/d
 {% include image.html url="/assets/img/api/create_one_share_3new.png" description="create one share" %}
 
 <br>
-**5.** A confirmation message will be sent, indicating that the data was successfully written to Microshare®. It returns metadata usable with other API calls.
+**5.** A confirmation message will be sent, indicating that the data was successfully written to Microshare. It returns metadata usable with other API calls.
 
 
 
@@ -88,7 +88,7 @@ If you then want to read more conventional data, you can try the [demo APIs.](/d
 
 {% include image.html url="/assets/img/api/read_share_2new.png" description="read share" %}
 
-**4.** If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare® metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
+**4.** If you execute Write request again, and then the Read, the number of records increases as you have created a new record. The Microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
 
 **Note:** The `totalCount` value can be higher than the total number of records you own.  This is because another user could be storing data under the same recType. Don't worry, you will only see your data, and the other users will only be able to see their data, unless you have created Rules to share your data.
 

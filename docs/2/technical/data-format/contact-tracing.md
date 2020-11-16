@@ -20,7 +20,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-**The Microshare® Contact Tracing solution functions as follows:**
+**The Microshare Contact Tracing solution functions as follows:**
 {% include image.html url="\assets\img\Contact_tracing1.png" width="500" height="500" description="contact tracing image" %}
 
 **Using the recommended default settings from Kerlink, the following behaviour is expected.**
@@ -44,7 +44,7 @@ toc: true
 **5.** Wave transmits data to LoRaWAN gateway via LoRaWAN transport.
 
 <br>
-**6.** Microshare® Smart Network receives and processes the raw payload data.
+**6.** Microshare Smart Network receives and processes the raw payload data.
   - Processed event contact data includes id of the beacon, voltage, average RSSI, contact duration & relative timestamp.
 
 <br>
@@ -63,7 +63,7 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 - Wave device retrieves contact events from personal beacons via BLE transport. 
   - Upon successful retrieval, the personal beacons memory and clock is reset.
 - Wave transmits data to LoRaWAN gateway via LoRaWAN transport.
-- Microshare® Smart Network receives and processes the raw payload data.
+- Microshare Smart Network receives and processes the raw payload data.
   - Processed event contact data includes id of the beacon, voltage, average RSSI, contact duration & relative timestamp.
 
 ## Dataflow
@@ -71,9 +71,9 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 1. Beacon to Beacon via BLE transport, we expect some data loss due to BLE collisions or missing an advertisement due to timing. This is averted by using the contact threshold of 4/7 times within the sliding contact window.
 2. Beacon to Wave via BLE transport, wave only resets the personal beacon upon successful retrieval of contact event data.
 3. Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
-4. Microshare® Smart Network receives and processes the raw payload data. Data has been stored within Microshare® database .unpacked recType and therefore can be re-played if required.
-5. Microshare® Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
-6. Microshare® Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
+4. Microshare Smart Network receives and processes the raw payload data. Data has been stored within Microshare database .unpacked recType and therefore can be re-played if required.
+5. Microshare Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
+6. Microshare Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
 7. Streamed to event hub using a streaming mechanism.......................
 
 
@@ -81,13 +81,13 @@ Using the recommended default settings from Kerlink, the following behaviour is 
 **3.** Wave to LoRaWAN gateway via LoRaWAN transport. Wave only sends data once. If a LoRaWAN gateway isn't listening, data will be lost.
 
 <br>
-**4.** Microshare® Smart Network receives and processes the raw payload data. Data has been stored within Microshare® database .unpacked recType and therefore can be re-played if required.
+**4.** Microshare Smart Network receives and processes the raw payload data. Data has been stored within Microshare database .unpacked recType and therefore can be re-played if required.
 
 <br>
-**5.** Microshare® Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
+**5.** Microshare Smart Network LoRaWAN unpacker Libary unpacks raw data to .packed recType.
 
 <br>
-**6.** Microshare® Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
+**6.** Microshare Smart Network Robot flattens recorded contact events into individual events usually stored in .unpacked.event recType and therefore can be re-played if required.
 
 <br>
 **7.** Streamed to event hub using a streaming mechanism.

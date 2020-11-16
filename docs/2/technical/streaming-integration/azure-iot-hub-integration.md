@@ -28,7 +28,7 @@ toc: true
 ## 1. Overview
 ---------------------------------------
 
-Azure IoT Hub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Azure tenancy in real-time. Data is typically made available to an IoT Hub with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. Azure IoT Hub Integration creates a pathway to advanced storage, visualization, and analytics in the Microsoft Azure ecosystem from the Microshare® Smart Network. Use Azure IoT Hub to standardize your IoT data pipelines, integrate with Azure Digital Twins, and take advantage of advanced device health services.
+Azure IoT Hub Integration is a streaming data integration that pushes data from the Smart Network into a client&#39;s Azure tenancy in real-time. Data is typically made available to an IoT Hub with sub-second latency to ensure that event handling and analytics are feed with the most current state of the measured space. Azure IoT Hub Integration creates a pathway to advanced storage, visualization, and analytics in the Microsoft Azure ecosystem from the Microshare Smart Network. Use Azure IoT Hub to standardize your IoT data pipelines, integrate with Azure Digital Twins, and take advantage of advanced device health services.
 
 ### Necessary Information
 

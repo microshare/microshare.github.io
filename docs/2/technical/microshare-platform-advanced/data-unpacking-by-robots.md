@@ -50,7 +50,7 @@ Below are code snippets to read data from the data lake.
 Parse the message that triggers the Robot using lib.parseMsg to get the data and metadata from the 'text' parameter: 
 
 {% highlight js %}
-  // Include the helper objects which allows you to read and write to Microshare® datalake
+  // Include the helper objects which allows you to read and write to Microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -162,7 +162,7 @@ You can use [VIEWS](/docs/2/technical/microshare-platform/views-guide/) to do ad
 Views run an aggregation query on the data lake entries and can take parameters. The returned format is the same as the read.
 
 {% highlight js %}
-  //Include the helper objects which allows you to read and write to Microshare® datalake
+  //Include the helper objects which allows you to read and write to Microshare datalake
   var lib = require('./libs/helpers');
 
   // Always need a main function, but can have other functions to keep your code modular.
@@ -276,7 +276,7 @@ Below is an example of a Robot passing only high CO2 records.
 
 ### I. External services triggering
 You have access to notifications libraries, and RESTful POST and GET from a Robot script. This allows you to call external services from your data workflow.  
-For example, at Microshare® we like to log on our slack channel, below is an example about how to do just that.
+For example, at Microshare we like to log on our slack channel, below is an example about how to do just that.
 
 {% highlight js %}
   var webhookURL = 'The webhook to a Slack channel: https://api.slack.com/incoming-webhooks';
@@ -306,7 +306,7 @@ As shown below, you can specify the recType and tags of your new data entry.
 ### K. Data workflow example
 
 In this example we are receiving data from two Tabs sensor in a building in London.  
-We want to display the latest high CO2 alerts in an App, available to all Microshare® employees.  
+We want to display the latest high CO2 alerts in an App, available to all Microshare employees.  
 
 Our data workflow is the following:
 <br>
@@ -318,10 +318,10 @@ Our data workflow is the following:
 <br>
 **4.** Aggregate the latest 10 records with [a View.](/docs/2/technical/microshare-platform/views-guide/)
 <br>
-**5.** Setup [a Rule](/docs/2/technical/microshare-platform/rules-guide) so that all Microshare® employees can run the aggregation View.
+**5.** Setup [a Rule](/docs/2/technical/microshare-platform/rules-guide) so that all Microshare employees can run the aggregation View.
 
 <br>
-At Microshare® we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
+At Microshare we usually represent data workflows with [draw.io](https://www.draw.io) diagrams. [Click here to see is a data workflow template](/assets/html/Data Workflow Template.html) that describes this example.  
 
 <br>
  **1.** would use the snippet from the [Data Parsing](#data-parsing) above. 
@@ -340,6 +340,6 @@ At Microshare® we usually represent data workflows with [draw.io](https://www.d
 ## 2. What's next?
 ---------------------------------------
 
-You have now access to decoded IoT data through the Microshare® API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
+You have now access to decoded IoT data through the Microshare API. This allows you to build whatever view you want with your favorite tools: web Apps, mobile Apps, Dashboards, etc. Unleash the data, and let your imagination go wild!  
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
