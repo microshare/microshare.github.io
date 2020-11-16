@@ -1,5 +1,5 @@
 - title: General User
-  desc: Simply understand how to use Microshare for the first time, and discover our technology.
+  desc: An introduction to Microshare, the technology and the platform
   color : text-microshare-light
   logo : check-circle
   pages:
@@ -29,7 +29,7 @@
       keywords : ["dictionnary"]
 
 - title: Admin
-  desc : As an admin, some knowledge is necessary to use Microshare at its best for your company
+  desc : An administrators guide to accessing and using the platform
   color : text-danger
   logo : id-card
   subpages:
@@ -44,7 +44,7 @@
     - title: Super Admin
 
 - title: Installer
-  desc : For all the installations, here is the information necessary for there implementations
+  desc : A guide to implementing your Microshare solution
   color : text-secondary
   logo : edit
   subpages:
@@ -75,7 +75,7 @@
     - title: Contact Tracing Installation
 
 - title: Technical
-  desc : For a more in-depth understanding of our technology, here are the informations
+  desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
   logo : chart-bar
   subpages:

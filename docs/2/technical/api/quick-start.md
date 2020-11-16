@@ -20,6 +20,9 @@ toc: true
 1. [Introduction](./#1-introduction)
 2. [Get an API key](./#2-get-an-api-key)
 3. [Setup Postman](./#3-setup-postman)
+    * [Microshare Environment](./#a-Microshare-Environment)
+    * [Setup](./#b-setup)
+    * [Password in Postman](./#c-password-in-postman)
 
 ---------------------------------------
 ## 1. Introduction
@@ -27,12 +30,20 @@ toc: true
 
 You will use the Microshare API to set up your interactions with the Microshare platform through requests. The API is the destination of your devices’ data and is the main form of communication with the Microshare platform. This guide will walk you through setting up the Postman software to interact with the API and start operating with the Microshare platform.
 
+**<!> Be careful, Microshare gives access to two of its environments (Dev and Production) be sure to use the right environments for all steps according to your needs. <!>**
+
+If you are not sure which environment you should use, this [part](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production)
+
 ## 2. Get an API key
 ---------------------------------------
 
 First and foremost, you will need to request an API key for authentication with the services. Afterword, you can then use the Microshare Share API to read data from, as well as write data to the platform.
 
-* Log into your [Microshare account.](https://app.microshare.io)
+* Log into your 
+
+Production : [Microshare account.](https://app.microshare.io)
+Dev : [Microshare account.](https://app.microshare.io)
+
 * Go to `Manage -> Keys.`  
 
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
@@ -53,6 +64,41 @@ First and foremost, you will need to request an API key for authentication with 
 
 ## 3. Setup Postman
 ---------------------------------------
+
+#### a. Microshare Environment
+
+In the following tutorials about the API, the environment might not be the one you should use depending on your needs. 
+
+Indeed you can use the **Development** or **Production** Environment
+
+If you are not sure which environment you should use, this [part](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production)
+
+We will show you how to set up an environment in the next part, however we need you to understand what's the difference between both environment.
+
+> If you are on **Production**  
+
+The environment on Postman should be like this : 
+
+{% include image.html url="/assets/img/api/prod_environment.png" description="Empty Postman environment" width=500 %}
+
+* authHostname : _https://auth.microshare.io_
+
+* hostname : _https://api.microshare.io_
+
+> If you are on **Dev**  
+
+The environment on Postman should be like this : 
+
+{% include image.html url="/assets/img/api/dev_environment.png" description="Empty Postman environment" width=500 %}
+
+* authHostname : _https://**d**auth.microshare.io_
+
+* hostname : _https://**d**api.microshare.io_
+
+
+
+
+#### b. Setup
 
 This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](../api-collection) for a list of API call and move to the next section.
 
@@ -94,6 +140,25 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 {% include image.html url="/assets/img/generate-pipe-token-1new.png" description="Empty Postman environment" %}
 {% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
+
+#### b. Password in Postman
+
+If your password is using simple characters you shouldn't get any error and your token request should work fine. 
+
+However if your password contain any special character like "#","?","!","(",")"....
+
+You will simply need if your request send you an error to **right click on the "password"** value on the url and then **select  "EncodeURIComponent"**.
+
+{% include image.html url="/assets/img/api/encodeURI0.png" description="Empty Postman environment" width=500 %}
+{% include image.html url="/assets/img/api/encodeURI1.png" description="Empty Postman environment" width=500 %}
+{% include image.html url="/assets/img/api/encodeURI2.png" description="Empty Postman environment" width=500 %}
+{% include image.html url="/assets/img/api/encodeURI3.png" description="Empty Postman environment" width=500 %}
+
+Then if you retry your request it should work.
+
+
+
+---------------------------------------
 <br>
 That's it! You now have access to the Microshare API collection, and are setup to [authenticate](../authentication), [write data and read](../share-api) data with the platform. 
 

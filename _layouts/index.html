@@ -22,7 +22,7 @@
           </form>
 
           <p class="font-weight-light small text-left"><span class="mr-2">
-            Get started with Microshare, the world's only prebuilt, scalable data management and sharing solution for IoT. 
+            Get started with Microshare ®, the world's only prebuilt, scalable data management and sharing solution for IoT. 
             <br>
             Popular Topics:</span> 
             <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/technical/data-format/contact-tracing/">Contact Tracing Data</a>, 
@@ -111,11 +111,11 @@
             {% assign doc_slug = doc.title | slugify %}
 
             <div class="col-md-6 mb-5 bg-hover-light">
-              <div class="media h-100 shadow rounded p-4">
+              <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/"' style="cursor:pointer;">
                 <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                 <div class="media-body">
                   <h5 class="mb-1">
-                    <a class="link-dark" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/">
+                    <a class="link-dark">
                       {{ doc.title }}
                     </a>
                   </h5>
@@ -131,11 +131,11 @@
             {% assign doc_slug = doc.title | slugify %}
 
             <div class="col-md-6 mb-5 bg-hover-light">
-              <div class="media h-100 shadow rounded p-4">
+              <div class="media h-100 shadow rounded p-4"  onclick='location.href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/{{link_slug}}"' style="cursor:pointer;">
                 <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                 <div class="media-body">
                   <h5 class="mb-1">
-                    <a class="link-dark" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/{{link_slug}}">
+                    <a class="link-dark">
                       {{ doc.title }}
                     </a>
                   </h5>
