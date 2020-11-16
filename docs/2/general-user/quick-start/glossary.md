@@ -17,48 +17,48 @@ toc: true
 ## Summary
 
 1. [Overview](./#overview)
-2. [Microshare® Terminology](./#microshare-terminology)
+2. [Microshare Terminology](./#microshare-terminology)
 3. [Industry Terminology](./#industry-terminology)
 
 ## Overview
 ---------------------------------------
-With a lot of documentation comes a variety of phrases and words which may not be familiar to the average reader. This page stands as a reference for any unfamiliar word you may come across. The glossary is seperated into two parts, one for Microshare® specfic terms and another for terms frequently used in the IoT industry.  
+With a lot of documentation comes a variety of phrases and words which may not be familiar to the average reader. This page stands as a reference for any unfamiliar word you may come across. The glossary is seperated into two parts, one for Microshare specfic terms and another for terms frequently used in the IoT industry.  
 
 Having trouble with a word or phrase that you can't find here? Do not hesitate to ask for help at `support@microshare.io`
 
 ---------------------------------------
-## Microshare® Terminology
+## Microshare Terminology
 
 <br>
 
 ##### App
 
- a Microshare® app is a  web application that is configured, managed, and accessed via the Microshare® portal.  Such apps are often used to visualize data in a dashboard.
+ a Microshare app is a  web application that is configured, managed, and accessed via the Microshare portal.  Such apps are often used to visualize data in a dashboard.
  
 <br>
 
 <!--Data Formatting may be removed from phrasing in the documentation-->
 ##### Data Formatting
 
-Data formatting or processing is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your dashboard.
+Data formatting or processing is the process by which Microshare takes encrypted data from your device(s) and represents them onto your dashboard.
 
 <br>
 
 ##### Data Ingestion
 
-Data ingestion is the process by which Microshare® consumes data from various sources for distribution through the Smart Network and/or for storage in the Microshare® [data lake.](./#data-lake)
+Data ingestion is the process by which Microshare consumes data from various sources for distribution through the Smart Network and/or for storage in the Microshare [data lake.](./#data-lake)
 
 <br>
 
 ##### Deploy- M
 
-The Microshare® mobile application that provides an easy way to configure your devices on location from your Android or IOS devices.
+The Microshare mobile application that provides an easy way to configure your devices on location from your Android or IOS devices.
 
 <br>
 
 ##### Device
 
-Microshare® uses the term 'device’ to designate an individual hardware component which encompasses one or more [sensors](./#sensor) used to collect data from your environment.
+Microshare uses the term 'device’ to designate an individual hardware component which encompasses one or more [sensors](./#sensor) used to collect data from your environment.
 
 <br>
 
@@ -70,13 +70,13 @@ A device cluster is a group of devices of like type – usually physically locat
 
 ##### Event
 
-Data that has been [unpacked](./#packed) but not stored on the Microshare® [data lake.](./#data-lake)
+Data that has been [unpacked](./#packed) but not stored on the Microshare [data lake.](./#data-lake)
 
 <br>
 
 ##### Facts
 
-Microshare® apps store app specific configuration information as JSON fomatted [facts.](./#facts)  When an app is launched, the facts are passed to the JavaScript in the underlying form file like arguments passed to a function.
+Microshare apps store app specific configuration information as JSON fomatted [facts.](./#facts)  When an app is launched, the facts are passed to the JavaScript in the underlying form file like arguments passed to a function.
 
 <br>
 
@@ -92,13 +92,13 @@ The account you are under which not only what data you can view, but what apps a
 
 <br>
 
-##### Microshare® Core
+##### Microshare Core
 
 combines a [data lake](./#data-lake) architecture, a simple [RESTful API](./#api) to allow programmatic interaction with data objects, and a contextual security, rules engine to make policy decisions.
 
 <br>
 
-##### Microshare® Stream
+##### Microshare Stream
 
 provides a scalable architecture for intelligent data enrichment and complex event processing.
 
@@ -106,13 +106,13 @@ provides a scalable architecture for intelligent data enrichment and complex eve
 
 ##### Policy Fabric™
 
-Microshare® uses a patented policy fabric to allow its clients to have fine-grained control over who can access their data.  Also see [share rules](./#share-rule).
+Microshare uses a patented policy fabric to allow its clients to have fine-grained control over who can access their data.  Also see [share rules](./#share-rule).
 
 <br>
 
 ##### Record
 
-Each unit of data stored in the Microshare® [data lake](./#data-lake) is called a record or a share record. 
+Each unit of data stored in the Microshare [data lake](./#data-lake) is called a record or a share record. 
 
 <br>
 
@@ -142,7 +142,7 @@ When one [identity](./#identity) distributes the ability to see access their dat
 
 ##### Share Record
 
-Each unit of data stored in the Microshare® [data lake](./#data-lake) is called a record or a [share record](./#share-record).
+Each unit of data stored in the Microshare [data lake](./#data-lake) is called a record or a [share record](./#share-record).
 
 <br>
 
@@ -172,7 +172,7 @@ A View is a component for managing data access. It provides advanced ways of que
 
 ##### API
 
-The Microshare® RESTful API (Application Programming Interface) is a set of functions that give developers programmatic access to the Microshare® system.
+The Microshare RESTful API (Application Programming Interface) is a set of functions that give developers programmatic access to the Microshare system.
 
 <br>
 
@@ -190,19 +190,19 @@ Data integration is the process of combining data from different sources into a 
 
 ##### Data Lake
 
-Microshare® stores its data in a [data lake](./#data-lake), which is a single repository of differing types of data – both raw and transformed.  Data producers differentiate the data by designating a “record type” aka [recType](./#rectype) when storing records. This same recType must be invoked at data retrieval time.
+Microshare stores its data in a [data lake](./#data-lake), which is a single repository of differing types of data – both raw and transformed.  Data producers differentiate the data by designating a “record type” aka [recType](./#rectype) when storing records. This same recType must be invoked at data retrieval time.
 
 <br>
 
 ##### Digital Twin
 
-A virtual representation or model of a physical space. Microshare® uses a hierarchical tagging system for digitial twinning.
+A virtual representation or model of a physical space. Microshare uses a hierarchical tagging system for digitial twinning.
 
 <br>
 
 ##### Gateway
 
-The "middleman" between the Microshare® Network and your [device](./#device). The device will send data it collects to the Gateway which will then send it onto the Microshare® Network.
+The "middleman" between the Microshare Network and your [device](./#device). The device will send data it collects to the Gateway which will then send it onto the Microshare Network.
 
 <br>
 
@@ -250,7 +250,7 @@ The place where the information is coming from.
 
 ##### Standard
 
-The formal model by which Microshare® upholds in our process of managing data. 
+The formal model by which Microshare upholds in our process of managing data. 
 
 <br>
 

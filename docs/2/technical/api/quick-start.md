@@ -25,14 +25,14 @@ toc: true
 ## 1. Introduction
 ---------------------------------------
 
-You will use the Microshare® API to set up your interactions with the Microshare® platform through requests. The API is the destination of your devices’ data and is the main form of communication with the Microshare® platform. This guide will walk you through setting up the Postman software to interact with the API and start operating with the Microshare® platform.
+You will use the Microshare API to set up your interactions with the Microshare platform through requests. The API is the destination of your devices’ data and is the main form of communication with the Microshare platform. This guide will walk you through setting up the Postman software to interact with the API and start operating with the Microshare platform.
 
 ## 2. Get an API key
 ---------------------------------------
 
-First and foremost, you will need to request an API key for authentication with the services. Afterword, you can then use the Microshare® Share API to read data from, as well as write data to the platform.
+First and foremost, you will need to request an API key for authentication with the services. Afterword, you can then use the Microshare Share API to read data from, as well as write data to the platform.
 
-* Log into your [Microshare® account.](https://app.microshare.io)
+* Log into your [Microshare account.](https://app.microshare.io)
 * Go to `Manage -> Keys.`  
 
 {% include image.html url="/assets/img/create-apikey-1.png" description="Manage -> Keys page" %}
@@ -46,7 +46,7 @@ First and foremost, you will need to request an API key for authentication with 
 {% include image.html url="/assets/img/create-apikey-2.png" description="Add an App" %}
 
 <br>
-* Once the key is created, copy it somewhere handy, you will need it to execute Microshare® API calls.
+* Once the key is created, copy it somewhere handy, you will need it to execute Microshare API calls.
 
 <br>
 {% include image.html url="/assets/img/create-apikey-3.png" description="APIkey generated" %}
@@ -54,9 +54,9 @@ First and foremost, you will need to request an API key for authentication with 
 ## 3. Setup Postman
 ---------------------------------------
 
-This step is optional if you already have another way of invoking the API. In which case, visit [Microshare® API doc](../api-collection) for a list of API call and move to the next section.
+This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](../api-collection) for a list of API call and move to the next section.
 
-Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare® API collection.
+Otherwise, you can setup the API manager with Postman on your computer for a quick start access to Microshare API collection.
 
 
 <br>
@@ -76,13 +76,13 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 {% include image.html url="/assets/img/configure-postman.png" description="Close Create New modal" %}
 
 <br>
-**4.**To see the Microshare® Postman **collection**, click on `Collections` on the left hand pane.
+**4.**To see the Microshare Postman **collection**, click on `Collections` on the left hand pane.
 
 <br>
 {% include image.html url="/assets/img/configure-postman-2new.png" description="Collection and Environment config" %}
 
 <br>
-**5.** To configure your Microshare® **environment**, select the cog icon situated at the top right of the screen.Then `Manage Environments`, then click on `microshare`.
+**5.** To configure your Microshare **environment**, select the cog icon situated at the top right of the screen.Then `Manage Environments`, then click on `microshare`.
 
 <br>
 {% include image.html url="/assets/img/create-apikey-5.png" description="Empty Postman environment" %}
@@ -95,7 +95,7 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 {% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
 <br>
-That's it! You now have access to the Microshare® API collection, and are setup to [authenticate](../authentication), [write data and read](../share-api) data with the platform. 
+That's it! You now have access to the Microshare API collection, and are setup to [authenticate](../authentication), [write data and read](../share-api) data with the platform. 
 
 ###### > [Authentication](../authentication)
 ###### > [Share API](../share-api)

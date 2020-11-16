@@ -31,7 +31,7 @@ toc: true
 
 A Robot is an actor that automates the tasks associated with transforming, enriching, and annotating your data. Robots can interact with services to feed and pull data from external systems. A single Robot typically automates a single task. Keeping each Robot simple ensures that it will be: easy to maintain, fast and efficient with higher throughput, and reusable in multiple scenarios.
  
-Robots can be triggered by the arrival of new data into the Microshare® data lake, timed to run at preset intervals, or react to external events such as the arrival of a data file or connection of a web socket. Robots run in parallel and react to events as they occur. In most cases, a Robot will react to an event by reading a Microshare® record, acting on it in some way, and writing a new record back into Microshare®.
+Robots can be triggered by the arrival of new data into the Microshare data lake, timed to run at preset intervals, or react to external events such as the arrival of a data file or connection of a web socket. Robots run in parallel and react to events as they occur. In most cases, a Robot will react to an event by reading a Microshare record, acting on it in some way, and writing a new record back into Microshare.
 
 
 ## 2. What can I do with them?
@@ -106,7 +106,7 @@ Important: the lib.write does not write a new record when used in a test, so you
 
 Robots can be chained together to meet many use cases, here we will configure two Robots to detect an abnormal temperature level, and send email notifications.
 
-* Navigate to [Microshare® platform](https://app.microshare.io)
+* Navigate to [Microshare platform](https://app.microshare.io)
 * Click the `Manage` button in the top toolbar
 * Click the `Robots` button in the left toolbar and click `CREATE`
 
@@ -217,5 +217,5 @@ The Java libraries accessed by the Robots point to the adequate Service to read 
 
 For additional details on available Robot methods, visit [Robot library](../robots-library)
 
-For help on how to route your IoT stream from your favorite platform or gateway to Microshare®, check our [Data ingestion documentation](../../microshare-platform-advanced//data-ingestion/).
+For help on how to route your IoT stream from your favorite platform or gateway to Microshare, check our [Data ingestion documentation](../../microshare-platform-advanced//data-ingestion/).
 

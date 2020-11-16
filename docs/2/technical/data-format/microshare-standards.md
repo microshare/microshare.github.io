@@ -15,8 +15,8 @@ toc: true
 
 ##### SUMMARY : 
 
-1. [Microshare® unpacked format](./#1-microshare-unpacked-format)
-2. [Microshare® Standards Data](./#2-microshare-standards-data)
+1. [Microshare unpacked format](./#1-microshare-unpacked-format)
+2. [Microshare Standards Data](./#2-microshare-standards-data)
     - A. [General Structure](./#a-general-structure)
     - B. [{Data}](./#b-data)
     - C. [Ipso](./#c-ipso)
@@ -33,11 +33,11 @@ toc: true
 ---------------------------------------
 
 
-## 1. Microshare® unpacked format
+## 1. Microshare unpacked format
 ---------------------------------------
 
 
-Data is sent as a payload from the IoT devices to the Microshare® unpackers as raw, compressed data for efficiency. The data is then transformed and enriched by the Microshare® unpacker into comprehensible information using one of our canonical json formats. This process ensures that the data can be analyzed consistently regardless of device vendor or the network used to transmit. The final format is referred to as unpacked data.
+Data is sent as a payload from the IoT devices to the Microshare unpackers as raw, compressed data for efficiency. The data is then transformed and enriched by the Microshare unpacker into comprehensible information using one of our canonical json formats. This process ensures that the data can be analyzed consistently regardless of device vendor or the network used to transmit. The final format is referred to as unpacked data.
 
 This guide will provide details on the processes involved in collecting the raw data and decompressing it into unpacked data. **Please note that the information supplied may differ slightly to that required for your network server, as details differ from server to server.**
 
@@ -46,7 +46,7 @@ Additionally, this guide will discuss tags. Tags are labels or descriptions atta
 
 
 
-## 2. Microshare® Standards Data
+## 2. Microshare Standards Data
 ---------------------------------------
 
 Example : 
@@ -358,7 +358,7 @@ Some information may differ if you unpack the data in an account that is not the
 },
 {% endhighlight %}
 
-The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare® has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare® unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
+The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
 
 

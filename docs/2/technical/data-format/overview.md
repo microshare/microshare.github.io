@@ -26,16 +26,16 @@ toc: true
 ## Introduction
 ---------------------------------------
 
-To best use Microshare® data, it is important to understand how the data is structured,
+To best use Microshare data, it is important to understand how the data is structured,
  particularly for use of views, robots, APIs and the creation of Applications.
 
-As described in the Microshare® Platform Advanced section, data unpacking follows data ingestion. But what does this mean in terms of data? 
+As described in the Microshare Platform Advanced section, data unpacking follows data ingestion. But what does this mean in terms of data? 
 
-When the raw data is ingested in Microshare® it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare® formalism.
+When the raw data is ingested in Microshare it is stored in a simple form, while at the same time the unpacked data is stored in the unpacked recType. The new unpacked recType contains much more data according to the Microshare formalism.
 
 RecTypes are further explored in the [API Collection page](http://localhost:4000/docs/2/technical/api/api-collection/#api-structures).
 
-This guide serves to help you discern the different components of a Microshare® data payload. 
+This guide serves to help you discern the different components of a Microshare data payload. 
 
 
 ## First Example
@@ -127,15 +127,15 @@ The `Objs` section of the data stores most of the descriptors of the interaction
 
 * `"_id"` and `"id"`
 
-The Id of the data is its unique identifier. It is used by a Microshare® Technician to find a particular piece of data in the datalake.
+The Id of the data is its unique identifier. It is used by a Microshare Technician to find a particular piece of data in the datalake.
 
 * `"checksum"`
 
-The checksum is a cryptographic hash of the data portion of the record. Using the sha-256 hashing algorithm to generate a new hash from the contents of the Data element, a comparison can be made to ensure that the data has not be compromised. A checksum is also included in the Origin section of the JSON structure that captures the data contents when the record was first introduced to the system. By comparing these two checksums, you can prove that the data has not be modified inside the Microshare®  system.
+The checksum is a cryptographic hash of the data portion of the record. Using the sha-256 hashing algorithm to generate a new hash from the contents of the Data element, a comparison can be made to ensure that the data has not be compromised. A checksum is also included in the Origin section of the JSON structure that captures the data contents when the record was first introduced to the system. By comparing these two checksums, you can prove that the data has not be modified inside the Microshare  system.
 
 * `"createDate"`
 
-CreateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's introduction to the Microshare®  system.
+CreateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's introduction to the Microshare  system.
 
 * `"creatorId"`
 
@@ -151,7 +151,7 @@ This object gives the name of the sensor that the information comes from. This f
 
 * `"recType"`
 
-The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare® system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare® . You will find these canonical formats described here. You can learn more about [recTypes here](.//docs/2/technical/api/api-collection/#api-standards).
+The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare . You will find these canonical formats described here. You can learn more about [recTypes here](.//docs/2/technical/api/api-collection/#api-standards).
 
 * `"tstamp"`
 
@@ -163,7 +163,7 @@ Here the value is 1590759984779 so the date is Friday 29 May 2020 13:46:24.779 w
 
 * `"updateDate"`
 
-UpdateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's last update in the Microshare®  system. If the data has not been updated, it will be the same as the createDate.
+UpdateDate is an ISO 8601 date/time stamp in the YYYY-MM-DDThh:mm:ss.sTZD pattern that represents the date/time of the data's last update in the Microshare  system. If the data has not been updated, it will be the same as the createDate.
 
 * `"updaterId"`
 
@@ -177,7 +177,7 @@ The `updaterId`notes which user has last updated the data. If the data has not b
 },
 {% endhighlight %}
 
-This section contains the core information as ingested by the Microshare® Smart Network. The format of the data section will vary based on the recType. If the recType begins with io.microshare, then the cannonical format of this section will be documented in this section.
+This section contains the core information as ingested by the Microshare Smart Network. The format of the data section will vary based on the recType. If the recType begins with io.microshare, then the cannonical format of this section will be documented in this section.
 
 ##### B.3 Origin
 
@@ -223,7 +223,7 @@ The additional information in the `appid` corresponds to the app-key that is use
 ---------------------------------------
 
 
-Next, you should follow the [Microshare® Standards](/docs/2/technical/data-format/microshare-standards) to dive further into the data ingestion process by device clusters and how to request information using a push action. This guide will describe the components of IoT data packets and IPSO data. 
+Next, you should follow the [Microshare Standards](/docs/2/technical/data-format/microshare-standards) to dive further into the data ingestion process by device clusters and how to request information using a push action. This guide will describe the components of IoT data packets and IPSO data. 
 
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}

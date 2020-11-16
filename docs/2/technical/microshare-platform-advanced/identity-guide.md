@@ -76,10 +76,10 @@ So you can log in to the identity directly.
 
 ####  Access identity data via the API.
 
-As for the Microshare® platform, the principle by API is the same. If we want to access data that is shared with the identity, our connection token must come from the right identity. 
+As for the Microshare platform, the principle by API is the same. If we want to access data that is shared with the identity, our connection token must come from the right identity. 
 
 For this, there are two possibilities: 
-To be connected on Microshare® web on the right identity, and when you will ask for a token this one will come automatically from the right identity. You can check in the JSON received the corresponding identity here: 
+To be connected on Microshare web on the right identity, and when you will ask for a token this one will come automatically from the right identity. You can check in the JSON received the corresponding identity here: 
 
 {% include image.html url="/assets/img/identity-on-api.png" description="identity code" %}
 

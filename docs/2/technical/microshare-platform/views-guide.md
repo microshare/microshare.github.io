@@ -91,7 +91,7 @@ Click the "Create" button on the top to create your new View.
 
 #### Pipeline Query Views
 
-To create a view that can retrieve, aggregate or transform data from the Microshare® data lake using the MongoDB aggregation query language, select the tab "Pipeline Query".
+To create a view that can retrieve, aggregate or transform data from the Microshare data lake using the MongoDB aggregation query language, select the tab "Pipeline Query".
 
 {% include image.html url="/assets/img/composer-fact-create-query1.jpg" description="View Create Query" %}
 
@@ -340,11 +340,11 @@ To test the response of this fact in the api call, scroll down to the "View Prev
 
 ### Use-case: Tracking Record Count
 
-The intent of the solution is to provide a simple programmatic way to check that the count of received records at the Microshare® layer is consistent with the expected count. 
+The intent of the solution is to provide a simple programmatic way to check that the count of received records at the Microshare layer is consistent with the expected count. 
 
-An API call can be used to invoke a View within Microshare® whose job is to request a count between a given datetime range that corresponds with the sample duration. The response from the API can be compared against the actual recorded records to determine if they are in agreement.
+An API call can be used to invoke a View within Microshare whose job is to request a count between a given datetime range that corresponds with the sample duration. The response from the API can be compared against the actual recorded records to determine if they are in agreement.
 
-To start, create a new View in Composer under the account that owns the data records in Microshare®. That view should look something like:
+To start, create a new View in Composer under the account that owns the data records in Microshare. That view should look something like:
 
 ##### Query
 {% highlight JSON %}

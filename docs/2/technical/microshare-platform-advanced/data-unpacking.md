@@ -26,12 +26,12 @@ toc: true
 ## 1. What is Data Unpacking?
 ---------------------------------------
 
-Data unpacking is the process by which Microshare® takes encrypted data from your device(s) and represents them onto your dashboard.  
+Data unpacking is the process by which Microshare takes encrypted data from your device(s) and represents them onto your dashboard.  
 
 ## 2. New Process
 ---------------------------------------
 
-Microshare® used to perform data unpacking with a series of robots, but have hence engineered a new solution for representing your data through device clusters. You can learn a lot more about how Microshare® used to unpack data in the [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots) page.
+Microshare used to perform data unpacking with a series of robots, but have hence engineered a new solution for representing your data through device clusters. You can learn a lot more about how Microshare used to unpack data in the [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots) page.
 
 ## 3. Setting up the Device Cluster for Data Ingestion
 ---------------------------------------
@@ -55,7 +55,7 @@ Finally, the data is written to the data lake under the target recType.unpacked 
 
 #### The entire process looks like this:
 
-Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network and then to the Microshare® network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare® data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. Then, the program POSTs your data in a digestible format to the Microshare® API so that it can be represented on your dashboard or app.  
+Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network and then to the Microshare network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. Then, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your dashboard or app.  
 
 ## 5. What's next?
 ---------------------------------------

@@ -23,7 +23,7 @@ toc: true
 
 ---------------------------------------
 
-This page is addressed to the directors who are part of the Microshare® company. 
+This page is addressed to the directors who are part of the Microshare company. 
 To use these tools you must have a microshare.io account that has been granted special rights to use the tools.
 
 ### 1. Create the Organization
@@ -39,7 +39,7 @@ In order to create the organization, you must login with an Admin account, which
 <br>
 **1.** Org Name is for the Organization & Identity Combined. 
 
-* This is user facing text which is visible on the Microshare® platform in the User dropdown under 'Switch Identities'. 
+* This is user facing text which is visible on the Microshare platform in the User dropdown under 'Switch Identities'. 
 
 <br>
 **2.** Org Domain should be the official domain of the organization (typically where the corporate webpage is located). eg. Comcast.com. 
