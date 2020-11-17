@@ -32,7 +32,7 @@ After reading the [Overview](/docs/2/technical/quick-start/overview/) of the rol
 ## 2. Creating your Microshare Developer account
 ---------------------------------------
 
-Follow the steps outlined in the [Create an Account](/docs/2/general-user/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating device clusters, dashboards, editing views, creating rules and robots. 
+Follow the steps outlined in the [Create an Account](/docs/2/general/quick-start/create-an-account/) page, but make sure to use the [http://dapp.microshare.io](http://dapp.microshare.io) environment. In the developer environment, you will be able to test out creating device clusters, dashboards, editing views, creating rules and robots. 
 
 
 

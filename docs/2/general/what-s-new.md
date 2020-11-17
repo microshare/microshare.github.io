@@ -13,7 +13,7 @@ Version 2 has a fresh new look, aiming to streamline your access to references y
 
 Additionally, the update brings new guides to cover more areas of what Microshare does. Guides have been updated as Microshare improves their process behind the scenes.   
 
-Ready to start? See what Microshare is all about in the [Meet Microshare Page](/docs/2/general-user/meet-microshare/why-microshare/).
+Ready to start? See what Microshare is all about in the [Meet Microshare Page](/docs/2/general/meet-microshare/why-microshare/).
 
 
 For anything that you'd like to see in that documentation, please contact us via email at `support@microshare.io` or on LinkedIn, Twitter or Facebook.

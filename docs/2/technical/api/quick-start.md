@@ -32,7 +32,7 @@ You will use the Microshare API to set up your interactions with the Microshare 
 
 **<!> Be careful, Microshare gives access to two of its environments (Dev and Production) be sure to use the right environments for all steps according to your needs. <!>**
 
-If you are not sure which environment you should use, this [part](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production)
+If you are not sure which environment you should use, this [part](/docs/2/general/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general/quick-start/create-an-account/#a-development-or-production)
 
 ## 2. Get an API key
 ---------------------------------------
@@ -71,7 +71,7 @@ In the following tutorials about the API, the environment might not be the one y
 
 Indeed you can use the **Development** or **Production** Environment
 
-If you are not sure which environment you should use, this [part](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general-user/quick-start/create-an-account/#a-development-or-production)
+If you are not sure which environment you should use, this [part](/docs/2/general/quick-start/create-an-account/#a-development-or-production) of the "Create an account" page explains why you should use Dev or Production. [Development or Production](/docs/2/general/quick-start/create-an-account/#a-development-or-production)
 
 We will show you how to set up an environment in the next part, however we need you to understand what's the difference between both environment.
 

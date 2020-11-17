@@ -20,7 +20,7 @@ toc: true
 
 We have created APIs specifically for demonstration to show you how Microshare works.  
 
-To try them out, you will need a Microshare account on the dev platform. Please follow [this tutorial](../../../general-user/quick-start/create-an-account) if you do not already have one. 
+To try them out, you will need a Microshare account on the dev platform. Please follow [this tutorial](../../../general/quick-start/create-an-account) if you do not already have one. 
 
 Afterword,  you will need to create your API key and set up Postman as guided in the [Quick Start](../quick-start).
 <br>

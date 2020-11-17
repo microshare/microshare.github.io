@@ -35,7 +35,7 @@
       var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
           if (Object.keys(searchResults).length > 0){
-            window.location = searchResults[Object.keys(searchResults)[0]];
+            window.location = searchResults[Object.keys(searchResults)[0]].link;
           }
         }
         searchResults = {};

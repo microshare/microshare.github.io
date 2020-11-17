@@ -36,7 +36,7 @@ Deploy-M is a mobile application that streamlines the device configuration proce
 To be able to use the Deploy-M application to configure your devices, make sure you have completed the following prerequisites.  
 
 To start, a Microshare account is required, either from our Production or Development platform. 
-To create an account, [follow this guide.](/docs/2/general-user/quick-start/create-an-account/)
+To create an account, [follow this guide.](/docs/2/general/quick-start/create-an-account/)
 
 This account should have one or more "device clusters" to host the devices we will register with the application. 
 To create a device cluster, [follow this guide.](/docs/2/technical/microshare-platform/device-cluster-guide/)
