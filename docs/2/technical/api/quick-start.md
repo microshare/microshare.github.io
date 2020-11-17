@@ -20,7 +20,7 @@ toc: true
 1. [Introduction](./#1-introduction)
 2. [Get an API key](./#2-get-an-api-key)
 3. [Setup Postman](./#3-setup-postman)
-    * [Microshare Environment](./#a-Microshare-Environment)
+    * [Microshare Environment](./#a-microshare-environment)
     * [Setup](./#b-setup)
     * [Password in Postman](./#c-password-in-postman)
 
@@ -65,7 +65,7 @@ Dev : [Microshare account.](https://app.microshare.io)
 ## 3. Setup Postman
 ---------------------------------------
 
-#### a. Microshare Environment
+### a. Microshare Environment
 
 In the following tutorials about the API, the environment might not be the one you should use depending on your needs. 
 
@@ -98,7 +98,7 @@ The environment on Postman should be like this :
 
 
 
-#### b. Setup
+### b. Setup
 
 This step is optional if you already have another way of invoking the API. In which case, visit [Microshare API doc](../api-collection) for a list of API call and move to the next section.
 
@@ -141,18 +141,45 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 {% include image.html url="/assets/img/generate-pipe-token-2new.png" description="Filled Postman environment" %}
 
 
-#### b. Password in Postman
+### c. Password in Postman
 
-If your password is using simple characters you shouldn't get any error and your token request should work fine. 
+If your password contains simple characters, your token request should work correctly.
 
-However if your password contain any special character like "#","?","!","(",")"....
+However, if your password contains any special characters (#,?,!,^,$,&,@ ...) please follow this quick fix to prevent errors.
 
-You will simply need if your request send you an error to **right click on the "password"** value on the url and then **select  "EncodeURIComponent"**.
+* [On Postman Desktop](./#--on-postman-desktop)
+* [On Postman Web](./#--on-postman-web)
 
-{% include image.html url="/assets/img/api/encodeURI0.png" description="Empty Postman environment" width=500 %}
-{% include image.html url="/assets/img/api/encodeURI1.png" description="Empty Postman environment" width=500 %}
-{% include image.html url="/assets/img/api/encodeURI2.png" description="Empty Postman environment" width=500 %}
-{% include image.html url="/assets/img/api/encodeURI3.png" description="Empty Postman environment" width=500 %}
+#### - On Postman Desktop
+
+Simply **right click on the "password"** value on the url and then **select  "EncodeURIComponent"**.
+
+{% include image.html url="/assets/img/api/encodeURI0.png" description="Empty Postman environment" width=600 %}
+
+---------------------------------------
+
+{% include image.html url="/assets/img/api/encodeURI1.png" description="Empty Postman environment" width=600 %}
+
+---------------------------------------
+
+{% include image.html url="/assets/img/api/encodeURI2.png" description="Empty Postman environment" width=600 %}
+
+---------------------------------------
+
+{% include image.html url="/assets/img/api/encodeURI3.png" description="Empty Postman environment" width=600 %}
+
+
+Then if you retry your request it should work.
+
+#### - On Postman Web
+
+Simply **click on the "password"** value on the url, then **click on the tree dots** and finally **select  "EncodeURIComponent"**.
+
+{% include image.html url="/assets/img/api/encodeURIweb0.png" description="Empty Postman environment" width=600 %}
+
+---------------------------------------
+
+{% include image.html url="/assets/img/api/encodeURIweb1.png" description="Empty Postman environment" width=600 %}
 
 Then if you retry your request it should work.
 
