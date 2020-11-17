@@ -173,7 +173,7 @@ Then if you retry your request it should work.
 
 #### - On Postman Web
 
-Simply **click on the "password"** value on the url, then **click on the tree dots** and finally **select  "EncodeURIComponent"**.
+Simply **click on the "password"** value on the url, then **click on the three dots** and finally **select  "EncodeURIComponent"**.
 
 {% include image.html url="/assets/img/api/encodeURIweb0.png" description="Empty Postman environment" width=600 %}
 
