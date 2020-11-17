@@ -1,4 +1,4 @@
-- title: General User
+- title: General
   desc: An introduction to Microshare, the technology and the platform
   color : text-microshare-light
   logo : check-circle
@@ -17,7 +17,6 @@
     - title: Demo
       keywords : ["try"]
     - title: Demo Live
-    - title: FAQ
   - title: Quick Start
     pages:
     - title: Create an Account
@@ -27,6 +26,11 @@
       keywords : ["switch identites","access","signin","login"]
     - title: Glossary
       keywords : ["dictionnary"]
+  - title: FAQ
+    pages:
+    - title: General
+    - title: Universal Contact Tracing - Employee FAQ's
+      keywords : ["tracking","wearable","wristband"]
 
 - title: Admin
   desc : An administrators guide to accessing and using the platform
@@ -73,6 +77,7 @@
   - title: Specific Installations
     pages:
     - title: Contact Tracing Installation
+      keywords : ["wearable","wristband"]
 
 - title: Technical
   desc : A more in-depth look at Microshare technology

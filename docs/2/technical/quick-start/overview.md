@@ -35,7 +35,7 @@ Microshare connects you to your buildings, assets, associates, and devices throu
 
 Most recently, Microshare has made it possible for large enterprises to safely reopen their facilities and to rethink their physical footprint in the context of COVID-19. Our turnkey Sensing-as-a-Service model for Smart Facilities uses real-time data to detect building hotspots and mitigate the risk of exposure to the virus. With Universal Contact Tracing, we enable our clients globally to get back to business as quickly, safely, and cost-efficiently as possible without the privacy burdens of smartphone apps. Visit our [main website](https://www.microshare.io/smart-facilities-dashboards-and-solutions/) to learn more about Microshare solutions!
 
-**Confused on any terminology? Head over to the [glossary page.](/docs/2/general-user/quick-start/glossary/)**
+**Confused on any terminology? Head over to the [glossary page.](/docs/2/general/quick-start/glossary/)**
 
 **Got any questions? Don’t be afraid to ask for assistance at `support@microshare.io`.**
 
@@ -46,7 +46,7 @@ Most recently, Microshare has made it possible for large enterprises to safely r
 ---------------------------------------
 
 <br>
-Take a look at our [demo dashboard](/docs/2/general-user/meet-microshare/demo-live/) to see what all the technical documentation is working towards. Interact with the apps and view the data of the Microshare locations collected in real time!
+Take a look at our [demo dashboard](/docs/2/general/meet-microshare/demo-live/) to see what all the technical documentation is working towards. Interact with the apps and view the data of the Microshare locations collected in real time!
 
 {% include image.html url="/assets/img/demo-dashboard.jpg" width="800" description="dashboard demo" %}
 

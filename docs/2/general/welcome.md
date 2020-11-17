@@ -3,7 +3,7 @@ layout: docs
 title: Welcome
 description: Get started with Microshare™, the world's only prebuilt, scalable data management and sharing solution for IoT.
 redirect_from:
-  - /docs/2/general-user/
+  - /docs/2/general/
 toc: true
 ---
 
@@ -39,10 +39,10 @@ Want to learn more about Microshare solutions, check out our website at [microsh
 ## What can I do?
 ---------------------------------------
 
-As an everyday user, you will be viewing your data through a Microshare solution. To get started, first [create an account](/docs/2/general-user/quick-start/create-an-account/) and follow the [access my apps guide](/docs/2/general-user/quick-start/access-my-apps/). 
-Want to see what Microshare is all about, **check out our [live demo page](/docs/2/general-user/meet-microshare/demo-live/) to see our solutions in action!**
+As an everyday user, you will be viewing your data through a Microshare solution. To get started, first [create an account](/docs/2/general/quick-start/create-an-account/) and follow the [access my apps guide](/docs/2/general/quick-start/access-my-apps/). 
+Want to see what Microshare is all about, **check out our [live demo page](/docs/2/general/meet-microshare/demo-live/) to see our solutions in action!**
 
-Want to learn more about Microshare? The [Why Microshare page](/docs/2/general-user/meet-microshare/why-microshare/) will walk you through the applications of Microshare solutions. 
+Want to learn more about Microshare? The [Why Microshare page](/docs/2/general/meet-microshare/why-microshare/) will walk you through the applications of Microshare solutions. 
 
 ## What if I'm not a General User?
 ---------------------------------------

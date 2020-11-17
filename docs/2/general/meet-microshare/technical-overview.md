@@ -49,7 +49,7 @@ Microshare brings data of your environment to your fingertips, but how? Undernea
 ## What will I be working with?
 ---------------------------------------
 
-In order to view your environment’s data, you will need to interact with the Microshare Platform by first setting up a [Microshare Account](/docs/2/general-user/quick-start/create-an-account/) and receiving access from your Admin. Afterword, head over to the [Microshare Platform Consule](https://app.microshare.io/) and follow the [Access my Apps Guide.](/docs/2/general-user/quick-start/access-my-apps/)
+In order to view your environment’s data, you will need to interact with the Microshare Platform by first setting up a [Microshare Account](/docs/2/general/quick-start/create-an-account/) and receiving access from your Admin. Afterword, head over to the [Microshare Platform Consule](https://app.microshare.io/) and follow the [Access my Apps Guide.](/docs/2/general/quick-start/access-my-apps/)
 
 Alternatively, if your Microshare Admin creates a guest app, no Microshare account is necessary! Just follow the link sent to your email inbox. 
 

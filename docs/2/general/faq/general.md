@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: FAQ
+title: General FAQ
 description: Have a question?
 toc: true
 ---

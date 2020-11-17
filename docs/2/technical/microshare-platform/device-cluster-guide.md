@@ -35,7 +35,7 @@ Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The ga
 ---------------------------------------
 A device cluster can be either created by using [The Deploy- M App](/docs/2/installer/deploy-m/download-the-app/), or on the computer by following this tutorial. 
 
-Head over to the [dapp.microshare.io](https://dapp.microshare.io/) developer page and login. If you do not already have a login in, [you can create one here](/docs/2/general-user/quick-start/create-an-account/). Navigate over to the Manage tab in top right-hand corner. Then, click the devices tab on the left-hand side.
+Head over to the [dapp.microshare.io](https://dapp.microshare.io/) developer page and login. If you do not already have a login in, [you can create one here](/docs/2/general/quick-start/create-an-account/). Navigate over to the Manage tab in top right-hand corner. Then, click the devices tab on the left-hand side.
 
 {% include image.html url="\assets\img\device-cluster-image-1.png" height="900" width="900" description="Device CLuster 1" %}
 
