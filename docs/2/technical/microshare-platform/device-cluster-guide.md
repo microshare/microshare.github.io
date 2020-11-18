@@ -16,24 +16,24 @@ toc: true
 1. [Introduction](./#1-introduction-what-is-a-device-cluster)
 2. [Creating a Device Cluster](./#2-creating-a-device-cluster)
 3. [Creating a Device Cluster by uploading a CSV](./#3-creating-a-device-cluster-by-uploading-a-csv)
-4. [Set the right RecType](./#3-set-the-right-rectype)
-5. [Updating a Device Cluster](./#4-updating-a-device-cluster)
-6. [Reauthorizing a Device Cluster](./#5-reauthorizing-a-device-cluster)
+4. [Set the right RecType](./#4-set-the-right-rectype)
+5. [Updating a Device Cluster](./#5-updating-a-device-cluster)
+6. [Reauthorizing a Device Cluster](./#6-reauthorizing-a-device-cluster)
 
 ---------------------------------------
 
 ## 1. Introduction: What is a Device Cluster?
 ---------------------------------------
 
-A device cluster is a group of sensors, most applicable to sensors in the same area, where their data is combined and displayed together when configured in your dashboard. This is most practical when looking to observe the area, and not just data from a single sensor. For example, Observing occupancy of all the desks in the office over the course of the workday, rather than just a single desk. It is important to note that all the devices within a cluster must be the same model of sensor. 
+A device cluster is a group of sensors, most applicable to sensors in the same area, where their data is combined and displayed together when configured in your dashboard. This is most practical when looking to observe the area, and not just data from a single sensor. For example, observing occupancy of all the desks in the office over the course of the workday, rather than just a single desk. It is important to note that all the devices within a cluster must be the same model of sensor. 
 
 #### What does the Device Cluster process look like?
 
-Data from your sensors is sent via "Lora" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. After, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your dashboard or app.  
+Data from your sensors is sent via "LoRa" signal to your LoRaWAN gateway. The gateways sends the data via WiFi or cellular signal to its corresponding network then to the Microshare network under the source recType name. The device cluster program takes the data from the source recType, and pushes it into the Microshare data lake under the target recType name. From there, the data goes through the decoding function corresponding to the type of your device. After, the program POSTs your data in a digestible format to the Microshare API so that it can be represented on your dashboard or app.  
 
 ## 2. Creating a Device Cluster
 ---------------------------------------
-A device cluster can be either created by using [The Deploy- M App](/docs/2/installer/deploy-m/download-the-app/), or on the computer by following this tutorial. 
+A device cluster can be either created by using [The Deploy- M App](/docs/2/installer/deploy-m/download-the-app/), or on a computer by following this tutorial. 
 
 Head over to the [dapp.microshare.io](https://dapp.microshare.io/) developer page and login. If you do not already have a login in, [you can create one here](/docs/2/general/quick-start/create-an-account/). Navigate over to the Manage tab in top right-hand corner. Then, click the devices tab on the left-hand side.
 
@@ -43,7 +43,7 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 
 {% include image.html url="\assets\img\device-cluster-image-2.png" height="900" width="900" description="Device CLuster 2" %}
 
-**1.** Give a name to your device cluster according to your company, the type of sensors, the area they are in and so on.
+**1.** Give a name to help identify your device cluster according to your company, the type of sensors, the area they are in and so on.
 
 <br>
 **2.** Give a brief description elaborating on the device cluster.
@@ -51,7 +51,7 @@ Click the Create Button with the wrench tool icon. It will take you to the follo
 <br>
 **3.** Make sure your cluster is turned on. Make sure the box indicated with a green arrow is checked.
 
-br>
+<br>
 **4.** The record types are marked with the blue arrows. The source record type is where the device cluster’s data is coming from. The target record type is the name under which your data from the device clusters will be stored. The naming convention works where the the first part of the rectype details who made the naming convention. So for example, if Comcast owned the record type, their source record type would be com.comcast.environment. The unpacked label for the target rectype details that the data has been decrypted, which is very important for when you call on the rectype to be represented in your dashboard. As of right now, Microshare is the only source of naming the client’s rectypes, but the ability for clients to create their own naming conventions exists. 
 
 
@@ -83,7 +83,7 @@ So as you can understand the structure is as follows:
 **9.** Underlined in teal is your network provider. Click the drop down and select the appropriate network.
 
 
-###### <!> These following steps are not often used just take care of them if you are using Lora OTAA <!>
+###### <!> These following steps are not often used, just take care of them if you are using LoRa OTAA <!>
 
 <br>
 **10.**	Underlined in green is a LoRa OTAA checkbox. OTAA stands for Over the Air Authentication. This is a gateway with extra data security. If you plan on using this service for your device cluster, check this box. Only follow the next few steps if you are using LoRa OTAA.
@@ -92,7 +92,7 @@ So as you can understand the structure is as follows:
 **11.**	Provide your account token in the box underlined in blue. This can be done through the API, and a tutorial to do so [can be found here](/docs/2/technical/api/quick-start/).
 
 <br>
-**12.**	Click the dropdown underlined in purple for the Lora frequency plan of your region. If you do not know your region’s frequency plan, you can use [this page](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) to help.
+**12.**	Click the dropdown underlined in purple for the LoRa frequency plan of your region. If you do not know your region’s frequency plan, you can use [this page](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) to help.
 
 <br>
 **13.**	Select your LoRaWAN version underlined in orange.
@@ -139,7 +139,7 @@ Once you have your file simply drag and drop it on the "UPLOAD" button on the Cl
 
 {% include image.html url="\assets\img\upload_dc/upload_dc_3.png" height="900" width="900" description="Upload DC" %}
 
-And your devices are immedialty added to your DC, you just have to complete the settings and your DC is ready !
+And your devices are immediatly added to your DC, you just have to complete the settings and your DC is ready !
 
 {% include image.html url="\assets\img\upload_dc/upload_dc_4.png" height="900" width="900" description="Upload DC" %}
 
@@ -194,7 +194,7 @@ The rules engine automatically filters out records with the same recType that ar
 
  
 
-Tags should be used to distinguish the contextual information used to filter the data from data with similar tags. Good tagging practices is important to allow consistent recTypes to function.  
+Tags should be used to distinguish the contextual information used to filter the data from data with similar tags. Good tagging practice is important to allow consistent recTypes to function.  
 
  
 
@@ -277,9 +277,9 @@ With Microshare you have the possibility to reauthorize a device cluster, you ca
 
 What does reauthorize mean?
 
-To understand this it is necessary to understand the principle of [identity](../../microshare-platform-advanced/identity-guide). And ownership linked to share rules. 
+To understand this, it is necessary to understand the principle of [identity](../../microshare-platform-advanced/identity-guide). And ownership linked to share rules. 
 
-The reauthorization will allow to reassociate the ownership of a device cluster. When you click on this button, Microshare will take the account under which you are logged in, as well as the identity you are currently on, and will reauthorize the ownership and identity of the device cluster. 
+The reauthorization will allow you to reassociate the ownership of a device cluster. When you click on this button, Microshare will take the account under which you are logged in, as well as the identity you are currently on, and will reauthorize the ownership and identity of the device cluster. 
 
 This is especially useful when the device cluster has been created under the wrong identity. Because usually we recommend to create it under the Microshare default identity.
 
