@@ -32,6 +32,6 @@ Microshare wearable devices **do not include GPS or cellular connectivity** and 
 To preserve battery life, the wearable **device goes to sleep after a period of inactivity**, the default setting is for the device to go to sleep after 2 hours of inactivity.
 
 ---------------------------------------
-### * What if I live with someone I work with and have concerns about recording proximity events being constantly recorded?
+### * What if I live with someone I work with and have concerns about proximity events being constantly recorded?
 
 For instances where employees live together, or are spending extended periods of time together, and do not wish to have devices constantly recording proximity events over longer periods, we recommend placing wearables apart, over 2m. Devices will go to sleep after a period of inactivity, typically 2 hours. 
