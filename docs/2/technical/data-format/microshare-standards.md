@@ -29,6 +29,7 @@ toc: true
     - B. [Temperature Data](./#b-temperature-data)
     - C. [Feedback Data](./#c-feedback-data)
     - D. [Contact tracing](./#d-contact-tracing)
+    - E. [Asset Zoning](./#e-asset-zoning)
 
 ---------------------------------------
 
@@ -1118,5 +1119,117 @@ The last block of data in `{Data}` describes the device cluster that is permitte
     "source":"ShareService"
 }
 {% endhighlight %}
+
+
+#### E. Asset Zoning
+
+Under the code there more details on the meaning of the different fields.
+
+{% highlight java %}
+  {
+        "_id": "5fb54be9a401e8001d80c7fb",
+        "checksum": "AC23F16DDC3330223DEC3AE9B60DF4FC03BC9CD633A07294BF1BE2B97D9E5BA7L633",
+        "createDate": "2020-10-17T16:29:29.769Z",
+        "creatorId": "admin@microshare.io",
+        "data": {
+          "device": {
+            "id": "AC754B6636BC"
+          },
+          "event": "confirm",
+          "external_id": "",
+          "meta": {
+            "device": [
+              "Machine",
+              "Xray",
+              "Xray1"
+            ],
+            "iot": {
+              "device_id": "AC754B6636BC"
+            },
+            "source": {
+              "device": [
+                "Main Building",
+                "First Floor",
+                "Entrance",
+                ""
+              ],
+              "global": [
+                "UK",
+                "London",
+                "West Hill",
+                "Asset Zoning"
+              ],
+              "iot": {
+                "device_id": "78-70-EE-00-69-04-02-50",
+                "fcnt_dwn": 12694,
+                "fcnt_up": 12841,
+                "fport": 85,
+                "ns_version": "v3.0",
+                "payload": "a1616381831ab76eda4f3600",
+                "payload_fmt": 1,
+                "time": "2020-10-17T16:29:29.172Z",
+                "type": "uplink"
+              },
+              "source": []
+            }
+          },
+          "movement": false,
+          "signal": {
+            "unit": "rssi",
+            "value": -93
+          },
+          "time": "2020-10-17T16:29:29.172Z"
+        },
+        "desc": "",
+        "id": "5fb54be9a401e8001d80c7fb",
+        "name": "",
+        "origin": {
+          "checksum": "AC23F16DDC3330223DEC3AE9B60DF4FC03BC9CD633A07294BF1BE2B97D9E5BA7L633",
+          "createDate": "2020-10-17T16:29:29.769Z",
+          "creatorId": "admin@microshare.io",
+          "desc": "Record of Type io.microshare.zoning.unpacked.mock.event",
+          "id": "5fb54be9a401e8001d80c7fb",
+          "name": "io.microshare.zoning.unpacked.mock.event",
+          "remoteAddress": "",
+          "tokendata": {
+            "id": "",
+            "ip": ""
+          }
+        },
+        "owner": {
+          "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+          "org": "io.microshare",
+          "owners": [],
+          "user": "admin@microshare.io"
+        },
+        "recType": "io.microshare.zoning.unpacked.mock.event",
+        "tags": [
+          "Machine",
+          "Xray",
+          "Xray1"
+          "UK",
+          "London",
+          "West Hill",
+          "Main Building",
+          "First Floor",
+          "Entrance"
+        ],
+        "tstamp": 1605716969769,
+        "updateDate": "2020-10-17T16:29:29.769Z",
+        "updaterId": "admin@microshare.io"
+      }
+{% endhighlight %}
+
+* data.event - this has 3 values:
+* "new" - the device has entered the range of the wave scanner
+* "remove" - the device was previously in range and has left the range of the wave scanner. RSSI will be 0
+* "confirm" - the device was previously in range and is still in range of the scanner
+* data.meta.device are the details of the detected asset
+* data.meta.source.device and .global are the details of the wave scanner that detected the device
+* data.movement  - ( True – Asset is moving/False – Asset is not moving)
+* data.device.id - Tag ID (BLE Tag) 
+* data.signal - Signal Strength 
+* data.time - Event Time (Last Seen) 
+
 
 {% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
