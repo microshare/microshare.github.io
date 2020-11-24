@@ -1123,7 +1123,7 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 
 #### E. Asset Zoning
 
-Under the code there more details on the meaning of the different fields.
+See below the code for more detail on the meaning of the different fields.
 
 {% highlight java %}
   {
