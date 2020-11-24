@@ -78,6 +78,8 @@
     pages:
     - title: Contact Tracing Installation
       keywords : ["wearable","wristband"]
+    - title: Adjusting the B7 wearable battery - UCT
+      keywords : ["wristband"]
 
 - title: Technical
   desc : A more in-depth look at Microshare technology
