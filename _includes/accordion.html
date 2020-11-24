@@ -1,0 +1,9 @@
+<div class="card border-bottom mb-3">
+    <div class="card-header accordion-header d-flex align-items-center collapsed" id="heading{{ include.key }}" data-toggle="collapse" data-target="#collapse{{ include.key }}" aria-expanded="false" aria-controls="collapse{{ include.key }}" role="region">
+      <h6 class="mb-0">{{ include.title }}</h6>
+      <i class="fas fa-angle-down accordion-control ml-auto text-primary"></i>
+    </div>
+    <div id="collapse{{ include.key }}" class="collapse" aria-labelledby="heading{{ include.key }}" data-parent="#heading{{ include.key }}">
+      <div class="card-body">{{ include.content }}</div>
+    </div>
+  </div>
