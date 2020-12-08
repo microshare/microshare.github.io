@@ -2,56 +2,123 @@
 
 Get started with Microshare, the world's only prebuilt, scalable data management and sharing solution for IoT.
 
-# Contribute to this documentation
 
-There is many ways to contribute to this documentation. 
-
-````
-Branch Name : 
-if personal edits : yourname-topic
-if related to a JIRA ticket : #ticketNumber-topic
-````
-
-#### /!\ Only one topic of modification per Branch (per Pull Request)/!\
-
-
-## 1. Add your own changes on github.
 ---------------------------------------
-Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository.
 
-/!\ The pages are using the [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) format. Please take a look before you change anything.
+##### SUMMARY : 
 
-Please make sure to create a Pull Request aka PR with the maximum information about the changes you did. 
+1. [Introduction](./#introduction)
+3. [Contribute to this documentation](./#quick-links)
+4. [Visit Microshare](www.microshare.io)
 
-Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
-
-## 2. Create an Issue
---------------------------------------- 
-
-If you think something needs to be changed, but you don't have the knowledge, or you think someone is in a better position to make those changes. Simply create an issue in GitHub, and contact jbardin@microshare.io.
-https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue
+---------------------------------------
 
 
-## 3. Run it locally and add your changes.
---------------------------------------- 
-You may need https://desktop.github.com/ for a faster way to manage branches. 
+# Introduction
+---------------------------------------
 
-Please create your branch to push the changes and then do a PR with your changes.
-
-All the information to run the app simply on your desktop are under there.
-
-### Running environment
 This documentation is built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at https://microshare.github.io.
 
-### Writing new articles - create new pages
-The documentation articles are written in [Markdown](https://daringfireball.net/projects/markdown/), and you can find the files in the `docs` folder. Documents are arranged according to version. You will usually wish to contribute to the highest numbered version. 
+The goal of this documentation is to offer some useful details on our tech and how to make it work to our customers, partners, resselers ...
 
-A Markdown editor is recommended for easiest contribution. Many Markdown editors will provide a WYSIWYG representation so you can ignore the details of Markdown notation.
+If you want more informations on any topic please contact `support@microshare.io` with the object "DOCUMENTATION". 
 
-To add a new article, head to [_data/docs.yml](_data/docs.yml) and add the title of the article.
-Then create a file with the same title in the desired folder in the [docs](docs) folder.
+# How it works
+---------------------------------------
 
-#### Add Images
+Before any contribution you need to understand how the documentation works.
+
+### Documentation Structure
+
+So as you may see on this page the documentation website contains some files and folders. 
+
+Here they are with there content : 
+
+├─ _data/
+    ├─── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`
+├─ _includes/   -- `Contain par of the pages used in /_layout/`
+├─ _layout/  -- `Contain the different pages layout`
+├─ assets/ 
+    ├── brand/  -- `All the Microshare logos used in the doc`
+    ├── css/  -- `The styling files`
+    ├── img/  -- `All the images used in the doc`
+    ├── js/  -- `Javascript files`
+    ├── pdf/
+    ├── vendor/-- `External libraries that we use`
+    ├── xlsx/
+├─ docs/ -- `The content of the documentation website`
+    ├── 2/ -- `Version of the documentation`
+        ├── general/ ...  -- `General Part of the documentation`
+        ├── admin/ ...  -- `Admin Part of the documentation`
+        ├── installer/ ...  -- `Installer Part of the documentation`
+        ├── technical/ ...  -- `Technical Part of the documentation`
+        ├── index.md  -- `Home Page`
+    ├── 404.md  -- `404 Page`
+├─ .DS_Store -- Not to be considered
+├─ .gitignore  -- Not to be considered
+├─ CNAME  -- Not to be considered
+├─ Gemfile  -- Not to be considered
+├─ README.md -- `The current file you are reading`
+├─ _config.yml -- `Part of the Jekyll configuration`
+├─ favicon.ico -- `The website favicon`
+├─ index.html -- `Redirection to /docs/2/index.md`
+├─ microshare.github.io.iml  -- Not to be considered
+
+
+As you can see in this tree structure, the content of our pages is in the `docs/2/` folder, the design of the pages is in the `_layout/` folder and it's using the `_includes` folder. The sidebar of and the tree structure of the pages is in the `_data/docs.yml` file. This is basically all we will have to use. And also the `asset/img` folder if we need to add some images. 
+
+### How a page is build ?
+
+To create a doc page we will need two things : 
+
+* a template (already existing : /layout/docs.html)
+* the content (an .md file in the /docs/2/ folder)
+
+##### Where is the page : /docs/2/ folder
+
+If you go on the Microshare documentation website, on any page the `url` will be the path to the content file.
+
+For example the Microshare Welcome page under the general menu have this url : 
+https://docs.microshare.io/docs/2/general/welcome/
+
+So if you follow the path */docs* + */2* + */general* on github you will see the *welcome.md* content file. 
+
+This is important to understand how the content files are organised, and will be helpful if you need to add a new page.
+
+So if you need to add a page you simply have to create the content, and the template will automatically use the template, we will explain how later.
+
+Of course it isn't easy to navigate in GitHub to find the right .md file so we added at the right of every pages an `Edit on Github` button to help you find the right github file. 
+
+##### How the page works. 
+
+As we said all the content pages are some *.md* files. Indeed documentation articles are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). If you aren't at your ease with markdown please take a look at how it works it's quite simple. 
+
+So basically every article page is split in two : 
+* at the top you will find this : 
+
+```
+---
+layout: docs
+title: What's new?
+description: Take a look at our latest updates
+toc: true
+---
+```
+
+As we said we use the "docs" layout and this is how we make the link with the layout file. Then the title and description need to be clear and small. 
+Finally the toc value needs to stay true.
+
+* then you have the content of your file in markdown.
+
+
+### Page content
+
+If you want to refresh your memory about Markdown here are some details : [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+To write some articles quicker we created some bits of code to accelerate your development.
+
+
+##### Add Images
 Use the `_includes/image.html` helper to add images to your content, simply add in your `.md` file:
 
 `{% include image.html url="/assets/img/banner.jpg" description="Banner" %}`
@@ -62,7 +129,29 @@ If needed, you can set the width of your image with the `width` parameter, for e
 
 `{% include image.html url="/assets/img/banner.jpg" description="Banner" width="250px" %}`
 
-#### Add Code Snippets
+##### Add an Accordion (Mainly for FAQ)
+Use the `_includes/accordion.html` helper to add accordion to your content, simply add in your `.md` file:
+
+```
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+Are my employers tracking my movements at work?
+{% endcapture %}
+
+{% capture content %}
+<b>No,</b> the Microshare wearable devices are only recording material proximity events, i.e. 2m or within for 5 minutes or more. The badges do not know where employees are within the facility. The wearable devices are the only sensors picking up/recording data.
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="wearable_tracking" %}
+```
+
+And replace the title content by your question and the content block by the answer.
+Finally the *key value needs to be unique*.
+
+##### Add Code Snippets
 Syntax highlighting of code snippets is supported using [Rouge](http://rouge.jneen.net/).
 To include a code snippet, just use the dedicated tag as below:
 
@@ -80,11 +169,80 @@ To include a code snippet, just use the dedicated tag as below:
 
 A list of tags and supported languages is available at [List of supported languages and lexers](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers)
 
-### Running the site locally
+
+### Writing new articles - create new pages
+
+We will now see how to write a new article from scratch.
+
+A Markdown editor is recommended for easiest contribution. Many Markdown editors will provide a WYSIWYG representation so you can ignore the details of Markdown notation.
+
+To add a new article create a file with the top structure as shown just before in the desired folder in the [docs/2](docs/2) folder.
+
+### Add a page to the left sidebar menu
+
+To add a new article to the left sidebar menu head to [_data/docs.yml](_data/docs.yml) and add the title of the article following the structure of the path where the .md file is.
+
+
+# Contribute
+---------------------------------------
+
+There is many ways to contribute to this documentation. 
+
+The following steps will explains for a non tech how to contribute to this documentation, we will consider that some of the contributor have probably never been on Github before. It's just a little bit of tech but quite simple. 
+
+### 1. Before all
+
+We will the three different ways to contribute to this documentation. 
+If at any moment you are contributing to the github you have to follow these rules : 
+
+##### Microshare Staff
+
+Always branch off of master; never commit directly to master.
+Name your branch : 
+- if personal edits : yourname-topic
+- if related to a JIRA ticket : #ticketNumber-topic 
+When you are ready to commit, create a new pull request to master from your branch.
+Please make sure to create a Pull Request aka PR with the maximum information about the changes you did. 
+Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
+
+##### Outside Contributors
+Fork the master branch.
+When you are ready to finalize your changes, commit them, and then make a pull request back to master.
+Name your PR : yourname-topic
+
+`/!\ Only one topic of modification per Branch (per Pull Request)/!\`
+
+If you dan't want at all to touch the files the first way to contribute is to create an issue. Otherwise we will see how to contribute below. 
+
+
+### 2. Create an Issue - not technical
+--------------------------------------- 
+
+If you think something needs to be changed, but you don't have the knowledge, or you think someone is in a better position to make those changes. Simply create an issue in GitHub, and contact jbardin@microshare.io.
+https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue
+
+
+### 2. Add your own changes on github. - a bit technical
+--------------------------------------- 
+
+Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository.
+
+/!\ Make sure you understood how our documentation website is working.
+
+Please make sure to create a Pull Request aka PR with the maximum information about the changes you did.
+
+Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process.
+
+
+## 3. Run it locally and add your changes. - strongly technical
+--------------------------------------- 
+You may need https://desktop.github.com/ for a faster way to manage branches. 
+
+Please create your branch to push the changes and then do a PR with your changes.
+
 It is not necessary to run the site locally in order to contribute updates to the documents, but it may be useful for larger contributions.
 
 Clone this repo to your local disk. Open a terminal and cd into the repo directory.
-
 
 ### Prerequisites
 
