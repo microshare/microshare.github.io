@@ -52,35 +52,35 @@ So as you may see on this page the documentation website contains some files and
 
 Here they are with there content : 
 
-├─ _data/
-    ├─── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`
-├─ _includes/   -- `Contain par of the pages used in /_layout/`
-├─ _layout/  -- `Contain the different pages layout`
-├─ assets/ 
-    ├── brand/  -- `All the Microshare logos used in the doc`
-    ├── css/  -- `The styling files`
-    ├── img/  -- `All the images used in the doc`
-    ├── js/  -- `Javascript files`
-    ├── pdf/
-    ├── vendor/-- `External libraries that we use`
-    ├── xlsx/
-├─ docs/ -- `The content of the documentation website`
-    ├── 2/ -- `Version of the documentation`
-        ├── general/ ...  -- `General Part of the documentation`
-        ├── admin/ ...  -- `Admin Part of the documentation`
-        ├── installer/ ...  -- `Installer Part of the documentation`
-        ├── technical/ ...  -- `Technical Part of the documentation`
-        ├── index.md  -- `Home Page`
-    ├── 404.md  -- `404 Page`
-├─ .DS_Store -- Not to be considered
-├─ .gitignore  -- Not to be considered
-├─ CNAME  -- Not to be considered
-├─ Gemfile  -- Not to be considered
-├─ README.md -- `The current file you are reading`
-├─ _config.yml -- `Part of the Jekyll configuration`
-├─ favicon.ico -- `The website favicon`
-├─ index.html -- `Redirection to /docs/2/index.md`
-├─ microshare.github.io.iml  -- Not to be considered
+├─ _data/<br>
+    ├─── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`<br>
+├─ _includes/   -- `Contain par of the pages used in /_layout/`<br>
+├─ _layout/  -- `Contain the different pages layout`<br>
+├─ assets/ <br>
+    ├── brand/  -- `All the Microshare logos used in the doc`<br>
+    ├── css/  -- `The styling files`<br>
+    ├── img/  -- `All the images used in the doc`<br>
+    ├── js/  -- `Javascript files`<br>
+    ├── pdf/<br>
+    ├── vendor/-- `External libraries that we use`<br>
+    ├── xlsx/<br>
+├─ docs/ -- `The content of the documentation website`<br>
+    ├── 2/ -- `Version of the documentation`<br>
+        ├── general/ ...  -- `General Part of the documentation`<br>
+        ├── admin/ ...  -- `Admin Part of the documentation`<br>
+        ├── installer/ ...  -- `Installer Part of the documentation`<br>
+        ├── technical/ ...  -- `Technical Part of the documentation`<br>
+        ├── index.md  -- `Home Page`<br>
+    ├── 404.md  -- `404 Page`<br>
+├─ .DS_Store -- Not to be considered<br>
+├─ .gitignore  -- Not to be considered<br>
+├─ CNAME  -- Not to be considered<br>
+├─ Gemfile  -- Not to be considered<br>
+├─ README.md -- `The current file you are reading`<br>
+├─ _config.yml -- `Part of the Jekyll configuration`<br>
+├─ favicon.ico -- `The website favicon`<br>
+├─ index.html -- `Redirection to /docs/2/index.md`<br>
+├─ microshare.github.io.iml  -- Not to be considered<br>
 
 
 As you can see in this tree structure, the content of our pages is in the `docs/2/` folder, the design of the pages is in the `_layout/` folder and it's using the `_includes` folder. The sidebar of and the tree structure of the pages is in the `_data/docs.yml` file. This is basically all we will have to use. And also the `asset/img` folder if we need to add some images. 
