@@ -53,25 +53,25 @@ So as you may see on this page the documentation website contains some files and
 Here they are with there content : 
 
 ├─ _data/<br>
-    ├─── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`<br>
+├───────── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`<br>
 ├─ _includes/   -- `Contain par of the pages used in /_layout/`<br>
 ├─ _layout/  -- `Contain the different pages layout`<br>
 ├─ assets/ <br>
-    ├── brand/  -- `All the Microshare logos used in the doc`<br>
-    ├── css/  -- `The styling files`<br>
-    ├── img/  -- `All the images used in the doc`<br>
-    ├── js/  -- `Javascript files`<br>
-    ├── pdf/<br>
-    ├── vendor/-- `External libraries that we use`<br>
-    ├── xlsx/<br>
+├───────── brand/  -- `All the Microshare logos used in the doc`<br>
+├───────── css/  -- `The styling files`<br>
+├───────── img/  -- `All the images used in the doc`<br>
+├───────── js/  -- `Javascript files`<br>
+├───────── pdf/<br>
+├───────── vendor/-- `External libraries that we use`<br>
+├───────── xlsx/<br>
 ├─ docs/ -- `The content of the documentation website`<br>
-    ├── 2/ -- `Version of the documentation`<br>
-        ├── general/ ...  -- `General Part of the documentation`<br>
-        ├── admin/ ...  -- `Admin Part of the documentation`<br>
-        ├── installer/ ...  -- `Installer Part of the documentation`<br>
-        ├── technical/ ...  -- `Technical Part of the documentation`<br>
-        ├── index.md  -- `Home Page`<br>
-    ├── 404.md  -- `404 Page`<br>
+├───────── 2/ -- `Version of the documentation`<br>
+├────────────────── general/ ...  -- `General Part of the documentation`<br>
+├────────────────── admin/ ...  -- `Admin Part of the documentation`<br>
+├────────────────── installer/ ...  -- `Installer Part of the documentation`<br>
+├────────────────── technical/ ...  -- `Technical Part of the documentation`<br>
+├───────── index.md  -- `Home Page`<br>
+├───────── 404.md  -- `404 Page`<br>
 ├─ .DS_Store -- Not to be considered<br>
 ├─ .gitignore  -- Not to be considered<br>
 ├─ CNAME  -- Not to be considered<br>
