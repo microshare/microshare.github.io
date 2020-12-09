@@ -11,7 +11,7 @@ This folder is relative to the [Microshare documentation website](httms://docs.m
 1. [Introduction](./#1-introduction)
 2. [How it works](./#2-how-it-works)
     - A. [Documentation Structure](./#a-documentation-structure)
-    - B. [How a page is build ?](./#b-how-a-page-is-build-)
+    - B. [How is a page built ?](./#b-how-a-page-is-built-)
         - [Where is the page : /docs/2/ folder](./#where-is-the-page--docs2-folder)
         - [How the page works](./#how-the-page-works)
     - C. [Page content](./#c-page-content)
@@ -37,25 +37,25 @@ This folder is relative to the [Microshare documentation website](httms://docs.m
 
 This documentation is built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages at https://microshare.github.io.
 
-The goal of this documentation is to offer some useful details on our tech and how to make it work to our customers, partners, resselers ...
+The goal of this documentation is to offer some useful details on our technology and how to make it work, for our customers, partners, resellers ...
 
-If you want more informations on any topic please contact `support@microshare.io` with the object "DOCUMENTATION". 
+If you want more information on any topic please contact `support@microshare.io` with the subject "DOCUMENTATION". 
 
 # 2. How it works
 
 
-Before any contribution you need to understand how the documentation works.
+Before making a contribution you need to understand how the documentation works.
 
 ## A. Documentation Structure
 
-So as you may see on this page the documentation website contains some files and folders. 
+So as you may see on this page the documentation website contains a number of files and folders. 
 
-Here they are with there content : 
+Here they are shown along with the content associated with each : 
 
 ├─ _data/<br>
 ├───────── docs.yml  -- `Organisation of the sidebar menu and keywords for the search bar`<br>
-├─ _includes/   -- `Contain par of the pages used in /_layout/`<br>
-├─ _layout/  -- `Contain the different pages layout`<br>
+├─ _includes/   -- `Contains specific elements of the pages used in /_layout/`<br>
+├─ _layout/  -- `Contains the different page layouts`<br>
 ├─ assets/ <br>
 ├───────── brand/  -- `All the Microshare logos used in the doc`<br>
 ├───────── css/  -- `The styling files`<br>
@@ -83,25 +83,25 @@ Here they are with there content :
 ├─ microshare.github.io.iml  -- Not to be considered<br>
 
 
-As you can see in this tree structure, the content of our pages is in the `docs/2/` folder, the design of the pages is in the `_layout/` folder and it's using the `_includes` folder. The sidebar of and the tree structure of the pages is in the `_data/docs.yml` file. This is basically all we will have to use. And also the `asset/img` folder if we need to add some images. 
+As you can see in this tree structure, the content of our pages is in the `docs/2/` folder, the design of the pages is in the `_layout/` folder and this uses the `_includes` folder. The sidebar for and the tree structure of the pages is in the `_data/docs.yml` file. This is basically all we will have to use. And also the `asset/img` folder when we need to add some images. 
 
-## B. How a page is build ?
+## B. How is a page built ?
 
 To create a doc page we will need two things : 
 
 * a template (already existing : /layout/docs.html)
 * the content (an .md file in the /docs/2/ folder)
 
-### Where is the page : /docs/2/ folder
+### Where is the page ? : /docs/2/ folder
 
 If you go on the Microshare documentation website, on any page the `url` will be the path to the content file.
 
-For example the Microshare Welcome page under the general menu have this url : 
+For example the Microshare Welcome page under the general menu has this url : 
 https://docs.microshare.io/docs/2/general/welcome/
 
 So if you follow the path */docs* + */2* + */general* on github you will see the *welcome.md* content file. 
 
-This is important to understand how the content files are organised, and will be helpful if you need to add a new page.
+This is important for understanding how the content files are organised, and will be helpful if you need to add a new page.
 
 So if you need to add a page you simply have to create the content, and the template will automatically use the template, we will explain how later.
 
@@ -109,7 +109,7 @@ Of course it isn't easy to navigate in GitHub to find the right .md file so we a
 
 ### How the page works. 
 
-As we said all the content pages are some *.md* files. Indeed documentation articles are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). If you aren't at your ease with markdown please take a look at how it works it's quite simple. 
+As we said all the content pages are *.md* files. Indeed documentation articles are written in [Markdown](https://en.wikipedia.org/wiki/Markdown). If you aren't at your ease with markdown please take a look at how it works, it's quite simple. 
 
 So basically every article page is split in two : 
 * at the top you will find this : 
@@ -166,7 +166,7 @@ Are my employers tracking my movements at work?
 {% include accordion.html title=title content=content key="wearable_tracking" %}
 ```
 
-And replace the title content by your question and the content block by the answer.
+And replace the title content with your question and the content block with the answer.
 Finally the *key value needs to be unique*.
 
 ### Add Code Snippets
@@ -204,26 +204,26 @@ To add a new article to the left sidebar menu head to [_data/docs.yml](_data/doc
 # 3. Contribute
 
 
-There is many ways to contribute to this documentation. 
+There are many ways to contribute to this documentation. 
 
-The following steps will explains for a non tech how to contribute to this documentation, we will consider that some of the contributor have probably never been on Github before. It's just a little bit of tech but quite simple. 
+The following steps will explain, in a non-technical way, how to contribute to this documentation. We will assume that some of the contributors have probably never been on Github before. It's just a little bit of tech but hopefully quite simple. 
 
 ## A. Before all
 
-We will the three different ways to contribute to this documentation. 
+We will outline the three different ways to contribute to this documentation. 
 If at any moment you are contributing to the github you have to follow these rules : 
 
 <!> \[ACTION\] <!> should be \[CREATE\], \[UPDATE\] or \[DELETE\] depending on the changes you made.
 
 #### Microshare Staff
 
-Always branch off of master; never commit directly to master.
+Always branch off master; never commit directly to master.
 Name your branch : 
 - if personal edits : \[ACTION\]yourname-topic
 - if related to a JIRA ticket : #ticketNumber-topic 
 When you are ready to commit, create a new pull request to master from your branch.
-Please make sure to create a Pull Request aka PR with the maximum information about the changes you did. 
-Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
+Please make sure you create a Pull Request aka PR with detailed information about the changes you made. 
+Then the PR will be checked and validated by one of the members of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
 
 #### Outside Contributors
 Fork the master branch.
@@ -232,10 +232,10 @@ Name your PR : \[ACTION\]yourname-topic
 
 `/!\ Only one topic of modification per Branch (per Pull Request)/!\`
 
-If you dan't want at all to touch the files the first way to contribute is to create an issue. Otherwise we will see how to contribute below. 
+If you prefer not to touch the files at all, the first way to contribute is to create an issue. Otherwise we will show how to contribute below. 
 
 
-## B. Create an Issue - not technical
+## B. Create an Issue - non-technical
 
 
 If you think something needs to be changed, but you don't have the knowledge, or you think someone is in a better position to make those changes. Simply create an issue in GitHub, and contact jbardin@microshare.io.
@@ -247,11 +247,11 @@ https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue
 
 Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository.
 
-/!\ Make sure you understood how our documentation website is working.
+/!\ Make sure you understood how our documentation website works.
 
-Please make sure to create a Pull Request aka PR with the maximum information about the changes you did.
+Please make sure to create a Pull Request aka PR with detailed information about the changes you made.
 
-Then the PR will be check and validate by one of the member of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process.
+Then the PR will be checked and validated by one of the members of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process.
 
 
 ## D. Run it locally and add your changes. - strongly technical
