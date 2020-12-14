@@ -91,4 +91,4 @@ Use the instructions below to switch identities:
 **4.** View the dashboard under your identity. 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

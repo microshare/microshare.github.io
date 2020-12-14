@@ -25,4 +25,4 @@ Additionally, we provide a demonstration of our API for you to interact with to 
 For this, you will need to follow our technical guides which explain what the API is and how you can begin interacting with it.  
 #### > [Microshare APIs](../../../technical/api/quick-start)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

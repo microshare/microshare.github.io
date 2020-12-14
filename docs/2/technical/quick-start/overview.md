@@ -65,4 +65,4 @@ Microshare connects the general user to their environment’s data on the dashbo
 Microshare's main technical objective is to get information about your environment and represent it on your dashboard. To do this, LoRaWAN devices first collect data of your environment and send it via Lora signal to your LoRaWAN gateway. The gateway sends the device’s information through WiFi or cellular to the Microshare Smart Network™ where it is stored as raw data. The device sends the data in an undigested form for security purposes. The raw data is digested into a readable form and represented onto your Dashboard similar to the [live demo]. As a developer, your responsibility is to manage how the data is represented on the dashboard, how it is formatted, and who gets to view the data. Additionally, you will need to learn how to interact with Microshare’s API to send and request information about the device’s data. Finally, your data is not stored locally, but on the cloud via a Data Integration solution such as Microsoft's Azure, Google Pub/Sub or Amazon Web Services. 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

@@ -84,4 +84,4 @@ With Microshare, you can simply inject your data into the Google Pub/Sub service
 
 <br>
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

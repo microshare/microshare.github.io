@@ -18,5 +18,5 @@ Ready to start? See what Microshare is all about in the [Meet Microshare Page](/
 
 For anything that you'd like to see in that documentation, please contact us via email at `support@microshare.io` or on LinkedIn, Twitter or Facebook.
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 
 

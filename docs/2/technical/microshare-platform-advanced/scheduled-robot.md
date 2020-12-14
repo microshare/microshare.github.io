@@ -43,4 +43,4 @@ Below is a sample Robot script that performs a data pull from Orange LiveObjects
 {% endhighlight %}
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

@@ -63,4 +63,4 @@ To this one:
 
 It will thus be green and validated. 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

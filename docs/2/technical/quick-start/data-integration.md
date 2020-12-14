@@ -131,4 +131,4 @@ To do this is very simple, just follow the steps in the Microshare APIs tutorial
 
 <br>
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

@@ -166,4 +166,4 @@ Outline which parts of your data are essential and which are strictly for your e
 
 If you want to create an share an app that allows someone without a Microshare account to view your data, follow the [Creating a Guest App Guide](/docs/2/technical/microshare-platform/creating-guest-app-guide/).
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

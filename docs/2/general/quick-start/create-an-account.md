@@ -71,4 +71,4 @@ In short, if Microshare invites you to create an account, you will need to creat
 **4.** You can then log into your account from either [https://app.microshare.io](https://app.microshare.io) or [http://dapp.microshare.io](https://dapp.microshare.io/login).
 
 <br>
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

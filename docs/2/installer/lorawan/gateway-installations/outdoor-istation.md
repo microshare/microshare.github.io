@@ -125,4 +125,4 @@ Once all secure, turn on the power of the PoE injector. You can now start deploy
 
 You’re all done! Please send an email to support@microshare.io to indicate the Gateway is up and running so we can confirm at our end.
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

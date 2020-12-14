@@ -21,4 +21,4 @@ Gateways bridge your devices to the internet. Devices use low power LoRaWan netw
 ###  > [Indoor iFemtocell](./../gateway-installations/indoor-ifemtocell)
 ###  > [Outdoor iStation](./../gateway-installations/outdoor-istation)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

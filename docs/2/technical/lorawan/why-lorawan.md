@@ -56,4 +56,4 @@ Our devices have an effortless installation process using our Deploy—M applica
 LoRaWan communication is significantly more secure than the WiFi alternative, applying complex encryptions and a different secure signal. With WiFi devices there is a concern of a possible entry into your network, which is not a risk forLoRaWan device. 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

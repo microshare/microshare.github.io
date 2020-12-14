@@ -56,4 +56,4 @@ Alternatively, download the [Deploy-M application](../../deploy-m/download-the-a
 
 ##### > [Deploy-M Guide](../../deploy-m/app-guide)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

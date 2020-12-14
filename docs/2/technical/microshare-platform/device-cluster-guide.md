@@ -286,4 +286,4 @@ This is especially useful when the device cluster has been created under the wro
 Be careful, changing the ownership of the data means that it can also impact the sharing of the data, if the share rules do not match anymore.
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

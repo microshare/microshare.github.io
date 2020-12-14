@@ -181,4 +181,4 @@ As with most AWS facilities, Kinesis supports authentication and authorization u
 [https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html)
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

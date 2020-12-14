@@ -63,4 +63,4 @@ Feedback : `io.microshare.demo.feedback.unpacked`
 {% include image.html url="/assets/img/simple_request_demo.png" description="simple request demo" %}
 
 <br>
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

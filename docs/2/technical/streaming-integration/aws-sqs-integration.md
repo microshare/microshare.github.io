@@ -134,7 +134,7 @@ As with most AWS facilities, SQS supports authentication and authorization using
 [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security.html)
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 
 
 
 
