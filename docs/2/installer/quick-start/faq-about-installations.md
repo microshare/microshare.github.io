@@ -77,4 +77,4 @@ To differentiate your devices, look at the information on the back. The air qual
 
 ---------------------------------------
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

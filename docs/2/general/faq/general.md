@@ -64,5 +64,5 @@ If you can see the Dashboards but are having trouble seeing any data, log out an
 
 ---------------------------------------
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 
 

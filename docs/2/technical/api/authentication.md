@@ -59,4 +59,4 @@ Now that you have completed authentication, you can now make your first requests
 
 ###### > [Share API](../share-api)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

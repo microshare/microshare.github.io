@@ -117,4 +117,4 @@ As with most Azure facilities, IoT Hub supports authentication and authorization
 
 [https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc](https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

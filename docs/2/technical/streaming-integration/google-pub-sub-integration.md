@@ -100,4 +100,4 @@ Be careful to store and transmit the resulting file in a secure fashion. These a
 Your Microshare Service or Support contact will need the **.json file**. It is recommended that this information be sent securely via GPG encrypted email or through an encrypted chat connection using keybase.io.
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

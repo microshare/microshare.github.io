@@ -1232,4 +1232,4 @@ See below the code for more detail on the meaning of the different fields.
 * data.time - Event Time (Last Seen) 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

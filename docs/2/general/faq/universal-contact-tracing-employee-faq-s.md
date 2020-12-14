@@ -84,4 +84,4 @@ For instances where employees live together, or are spending extended periods of
 ---------------------------------------
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

@@ -58,4 +58,4 @@ Available in the Microshare Deploy-M App, available for iPhone and Android. Inst
 
 Available in the Microshare Deploy-M App, available for iPhone and Android. Install and configure, in minutes, a leak detection device.
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

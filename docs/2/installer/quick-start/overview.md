@@ -73,4 +73,4 @@ To set up your system, you will:
 
 If you have any questions, you can have a look at our [FAQ about installations](../faq-about-installations) page.
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

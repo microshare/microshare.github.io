@@ -104,4 +104,4 @@ After the data is injested into the lake, the data is then unpacked. This proces
 
 As well, you can check out the [Scheduled Robot Guide.](/docs/2/technical/microshare-platform-advanced/scheduled-robot)
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

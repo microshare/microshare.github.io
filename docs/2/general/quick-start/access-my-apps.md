@@ -106,4 +106,4 @@ Robots are visible to only the creator. There is not currently a mechanism to sh
 
 Views can be shared so that they can be reused by another user. Views will not be visable on the account that received the rights to use the views, they will only be visable to the creator. 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

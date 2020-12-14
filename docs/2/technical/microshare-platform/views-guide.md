@@ -424,4 +424,4 @@ The other query parameter values align with the text inserts in the query (eg. &
 The API may authenticate as the owner of the View OR the API may leverage a separate authentication entity. In the event that a different credential is used, a Rule must be created to share the View with the API's user. To do so, select "Shares: filtered objects (via View)" from the Resource Type drop-down of the Rule and allow Read/Query/Execute operations. See documentation on [Rules](../rules-guide) for more information.
 
 {% include image.html url="/assets/img/rule-share-view-with-select.png" description="Rule Setup for Use Case 1" %}
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

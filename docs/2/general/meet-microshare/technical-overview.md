@@ -72,4 +72,4 @@ Your device collects data and sends it to the Microshare data management platfor
 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

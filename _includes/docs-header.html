@@ -18,6 +18,13 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-41580291-4');
+
+    function ratePage(result) {
+      gtag('event', "Rate the page", { 
+        'event_category': document.title,
+        'event_label': result
+      });
+    }
   </script>
 
   <!-- Favicons -->

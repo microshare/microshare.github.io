@@ -47,4 +47,4 @@ As presented in the pages on data ingest and transformation, for Microshare comp
 #####  [Generic decoding](/docs/2/technical/microshare-platform-advanced/robots-libraries/decoding-payloads-new/)
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

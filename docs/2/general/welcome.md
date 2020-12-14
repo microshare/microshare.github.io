@@ -78,4 +78,4 @@ You can access the Microshare platform right here :
 
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

@@ -36,4 +36,4 @@ If you don't need the API documentation just run it on Postman : [![Run in Postm
 Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 

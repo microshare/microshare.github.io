@@ -62,4 +62,4 @@ toc: true
 #### For further questions or support, please contact us at support@microshare.io
 
 
-{% include image.html url="\assets\img\microshare-logo.png"  description="ms logo" %}
+ 
