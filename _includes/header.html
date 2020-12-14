@@ -19,7 +19,7 @@
 
   function ratePage(result) {
     gtag('event', "Rate the page", { 
-      'event_category': {% page.title %},
+      'event_category': document.title,
       'event_label': result
     });
   }
