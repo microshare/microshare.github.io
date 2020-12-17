@@ -55,11 +55,11 @@ We recommend that the hardware is installed/activated in the following order. Af
 
 [Section 4 – Set up the Location Markers](./#section-4---set-up-the-location-markers)
 
-[Section 5 – Activate the Wearable Devices](./#section-5--activate-the-wearable-devices)
+[Section 5 – Activate and Deactivate the Wearable Devices](./#section-5--activate-the-wearable-devices)
 
    A. [Activate my wearable device (B7)](./#a--activate-my-wearable-device-b7)
 
-   B. [Activate my Card-type wearable device (C10)](./#b--activate-my-card-type-wearable-device-c10)
+   B. [Activate and deactivate my Card-type wearable device (C10)](./#b--activate-my-card-type-wearable-device-c10)
 
 [Section 6 – Move to a live installation](./#section-6--move-to-a-live-installation)
 
@@ -188,14 +188,14 @@ The Location Markers come in a variety of form factors and can be installed in v
 Once all the devices are installed and logged please inform the Microshare team at [`installation@microshare.io`](mailto:installation@microshare.io)
 
 
-###   B.  Activate my Card-type wearable device (C10)
+###   B.  Activate and deactivate my Card-type wearable device (C10)
 
 
-The C10 Card-type wearable devices from Microshare are simple to activate following the steps below:
+The C10 Card-type wearable devices from Microshare are simple to activate and deactivate following the steps below:
 
 | --- | --- |
 | **1.** **Checking the status of the device:** <br><br>-Press the Status button (Microshare circular logo) once to show the status of the device on the LED (shown in the image)<br>-*Flashing Red* indicates the device is *inactive*<br>-*Flashing Blue* indicates the device is *active*| {% include image.html url="/assets/img/UCT_Install_Images/C10-card-1.png" description="Banner" %} |
-| **2.** **Activating and deactivating the device:** <br><br>-Press the Status Button 3 times in quick succesion, holding the third press (“dot-dot-dash”) until the LED stops flashing<br>-Flashing Blue to indicate the device is now active<br>-Flashing Red indicates the device is now inactive<br>-*Deactivation can be disabled* upon customer request to Microshare| {% include image.html url="/assets/img/UCT_Install_Images/C10-card-2.png" description="Banner" %} |
+| **2.** **Activating and deactivating the device:** <br><br>-Press the Status Button 3 times in quick succesion, holding the third press (“dot-dot-dash”) until the LED stops flashing<br>-Flashing Blue to indicate the device is now active<br>-Flashing Red indicates the device is now inactive<br>*Note - Deactivation can be disabled upon customer request to Microshare*| {% include image.html url="/assets/img/UCT_Install_Images/C10-card-2.png" description="Banner" %} |
 
 Once all the devices are installed and logged please inform the Microshare team at [`installation@microshare.io`](mailto:installation@microshare.io)
 
