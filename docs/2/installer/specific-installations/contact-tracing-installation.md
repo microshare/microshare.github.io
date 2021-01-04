@@ -59,7 +59,7 @@ We recommend that the hardware is installed/activated in the following order. Af
 
    A. [Activate my wearable device (B7)](./#a--activate-my-wearable-device-b7)
 
-   B. [Activate and deactivate my Card-type wearable device (C10)](./#b--activate-my-card-type-wearable-device-c10)
+   B. [Activate and deactivate my Card-type wearable device (C10)](./#b--activate-and-deactivate-my-card-type-wearable-device-c10)
 
 [Section 6 – Move to a live installation](./#section-6--move-to-a-live-installation)
 
@@ -167,7 +167,11 @@ The Location Markers come in a variety of form factors and can be installed in v
 
 ###   A.  Activate my wearable device (B7)
 
-*   See [https://www.youtube.com/watch?v=li0iHHcYhV8](https://www.youtube.com/watch?v=li0iHHcYhV8) for a demonstration of how to activate a typical wearable device
+<iframe width="560" height="315" src="https://www.youtube.com/embed/li0iHHcYhV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+
+*   See [https://www.youtube.com/watch?v=li0iHHcYhV8](https://www.youtube.com/watch?v=li0iHHcYhV8) (just above) for a demonstration of how to activate a typical wearable device
 
 *   Once these steps are complete, notify Microshare on [`installation@microshare.io`](mailto:installation@microshare.io) to enable us to verify that the data is now flowing and once confirmed, we will begin a data stream to you test environment
 
@@ -190,6 +194,10 @@ Once all the devices are installed and logged please inform the Microshare team 
 
 ###   B.  Activate and deactivate my Card-type wearable device (C10)
 
+
+<iframe src="https://player.vimeo.com/video/497030974" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<br>
 
 The C10 Card-type wearable devices from Microshare are simple to activate and deactivate following the steps below:
 
