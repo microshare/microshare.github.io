@@ -5,11 +5,8 @@ description: A page dedicated to breaking down how you receive data
 toc: true
 ---
 
----------------------------------------
 
-{% include image.html url="\assets\img\uct\uct-4.png" width="500" height="200" description="uct-2" %}
 
----------------------------------------
 #### Summary:
 1. [Overview](./#1-overview)
 2. [Dataflow](./#2-dataflow)
