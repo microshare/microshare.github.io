@@ -26,7 +26,7 @@ toc: true
 ---------------------------------------
 
 The amount of information dedicated to the developer may seem overwhelming, so this guide serves to navigate you through how to get started and outlines the path you should follow to better understand Microshare. 
-After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start-microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create robots, rules, views, apps, and device clusters.
+After reading the [Overview](/docs/2/technical/quick-start/overview/) of the role of the developer and understanding the [Technical Structure of Microshare](/docs/2/technical/quick-start/microshare-technical-structure), you should get started creating your developer Microshare account, which will give you the ability to create robots, rules, views, apps, and device clusters.
 
 
 ## 2. Creating your Microshare Developer account

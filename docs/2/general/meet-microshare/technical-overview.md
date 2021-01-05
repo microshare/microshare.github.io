@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Technical Overview
+title: Microshare Technical Overview
 description: Designed for embedded systems
 toc: true
 ---

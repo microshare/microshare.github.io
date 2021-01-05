@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Overview
+title: Data Format Overview
 description: Let's take a look at the Microshare™ data structure.
 toc: true
 ---
@@ -151,7 +151,7 @@ This object gives the name of the sensor that the information comes from. This f
 
 * `"recType"`
 
-The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare . You will find these canonical formats described here. You can learn more about [recTypes here](.//docs/2/technical/api/api-collection/#api-standards).
+The recType is a notation that describes the format of the data. It is used to direct the flow of processing throughout the Smart Network. It is the most important tag used in the storage and retrieval of information in the Microshare system. recTypes that begin with io.microshare are using a canonical JSON format that is managed by Microshare . You will find these canonical formats described here. You can learn more about [recTypes here](/docs/2/technical/microshare-platform-advanced/data-ingestion/#2-lorawan-network-ingestion-via-device-cluster).
 
 * `"tstamp"`
 

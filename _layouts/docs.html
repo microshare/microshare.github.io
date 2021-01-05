@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <meta name="description" content="{{page.description}}">
+  <meta name="keyword" content=documentation,microshare,{{ page.title | split : ","}}>
   {% include docs-header.html %}
 <body>
   {% include docs-navbar.html %}
@@ -12,7 +13,7 @@
             <div class="container-fluid">
                 <div class="row p-lg-4">
                     <article class="main-content col-md-9 pr-lg-5">
-                      <h2 class="text-microshare-dark mt-2">{{ page.title }}</h2>
+                      <h1 class="text-microshare-dark mt-2">{{ page.title }}</h1>
                       <h6 class="text-microshare-light">{{ page.description }}</h6>
                         <hr class="text-microshare-light" class="p-1 my-2">
                       {{ content }}
