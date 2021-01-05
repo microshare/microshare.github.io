@@ -194,7 +194,7 @@ We will now see how to write a new article from scratch.
 
 A Markdown editor is recommended for easiest contribution. Many Markdown editors will provide a WYSIWYG representation so you can ignore the details of Markdown notation.
 
-To add a new article create a file with the top structure as shown just before in the desired folder in the [docs/2](docs/2) folder.
+To add a new article create a file with the top structure as shown just before in the desired folder in the [docs/2](/docs/2) folder.
 
 ## E. Add a page to the left sidebar menu
 

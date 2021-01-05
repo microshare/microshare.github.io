@@ -56,9 +56,7 @@ Finally, you will learn how to manage your data within Microshare. Microshare no
 <br>
 **2.** [Data Unpacking](/docs/2/technical/microshare-platform-advanced/data-unpacking/)
 <br>
-**3.** [Data Ingestion by Robots](/docs/2/technical/microshare-platform-advanced/data-ingestion-by-robots/)
-<br>
-**4.** [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/)
+**3.** [Data Unpacking by Robots](/docs/2/technical/microshare-platform-advanced/data-unpacking-by-robots/)
 <br>
 Have any questions? please don't hesitate to contact `support@microshare.io` with any issues. 
 

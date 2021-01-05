@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Technical Overview
+title: Technical Quick Start
 description: A guide to interacting with Microshare™ Technology
 toc: true
 redirect_from:

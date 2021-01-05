@@ -96,7 +96,7 @@ Rules are an advanced feature of the platform, and are better described in the [
 
 **5.** You can use the request `Shares -> Get Latest Shares by recType`, that returns only the very last record created under this recType.
 
-**6.** For more information on how to setup a IoT data stream from a web platform using this API, check our [Robots Library.](docs/2/technical/microshare-platform-advanced/robots-library/)
+**6.** For more information on how to setup a IoT data stream from a web platform using this API, check our [Robots Guide.](/docs/2/technical/microshare-platform-advanced/robots-guide/)
 
 
 

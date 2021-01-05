@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Overview
+title: Admin Overview
 description: What it means to be a company adminsistrator through Microshare™
 toc: true
 redirect_from:

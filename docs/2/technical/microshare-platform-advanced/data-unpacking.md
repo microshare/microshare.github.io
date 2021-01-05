@@ -17,9 +17,7 @@ toc: true
 2. [New Process](./#2-new-process)
 3. [Setting up Device Cluster for Data Unpacking](./#3-setting-up-device-clsuter-for-data-unpacking)
 4. [How does the Data Unpacking Process Work?](./#4-how-does-the-data-unpacking-process-work)
-5. [Set up your platform to post the data](./#5-set-up-your-platform-to-post-the-data)
-6. [Contact Tracing](./#6-contact-tracing)
-7. [What's next?](./#7-whats-next)
+5. [What's next?](./#5-whats-next)
 
 
 
@@ -60,6 +58,6 @@ Data from your sensors is sent via wireless LoRaWAN signal to your LoRaWAN gatew
 ## 5. What's next?
 ---------------------------------------
 
-Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Data Workflow](../data-workflow) to parse, transform and unpack your data automatically.  
+Once your data is loaded in the data lake, you'll want to get it ready to be used in dashboards and applications. Build your multisteps worflow with a [Robot](/docs/2/technical/microshare-platform-advanced/robots-guide/) to parse, transform and unpack your data automatically.  
 
  
