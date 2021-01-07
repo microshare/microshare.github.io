@@ -29,7 +29,7 @@ For this part we will assume that you are comfortable with interacting wth the M
 
 ---------------------------------------
 
-If you don't need the API documentation just run it on Postman : [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/173275d2ae95eff27da2)
+If you don't need the API documentation just run it on Postman : [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/e11340cbd534edc83e57)
 
 **You may simply notice that the Microshare APIs are REST APIs and have a similar structure.**
 
