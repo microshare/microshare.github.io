@@ -30,7 +30,7 @@ toc: true
 ## 1. What is a View?
 ---------------------------------------
 
-A View is a component for looking at your data in different ways. It can be static data or dynamicly retrieved data and they let you control the content and formats of the data. Combining views with share rules a
+A View is a component for looking at your data in different ways. It can be static data or dynamicly retrieved data and they let you control the content and formats of the data. Combining views with share rules allow you to control who has access and what data they can see. 
 
 
 

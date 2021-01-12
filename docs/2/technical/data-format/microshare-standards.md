@@ -30,6 +30,7 @@ toc: true
     - C. [Feedback Data](./#c-feedback-data)
     - D. [Contact tracing](./#d-contact-tracing)
     - E. [Asset Zoning](./#e-asset-zoning)
+    - F. [Heartbeat Data](./f-heartbeat-data)
 
 ---------------------------------------
 
@@ -1232,4 +1233,47 @@ See below the code for more detail on the meaning of the different fields.
 * data.time - Event Time (Last Seen) 
 
 
- 
+#### F. Heartbeat Data
+
+Used in contact tracing and asset zoning solutions, a heartbeat record indicates a communication between Microshare and a wearable device to ensure that the device is operating properly. Heartbeat records are used for devices in storage mode and active devices with no previous contact records (which would otherwise not be detailed in the event data in contact tracing solutions). 
+
+**Parameters:**
+
+- `id`: The identification number of your device in communication.
+- `deviceBattery`: The battery level of your device.
+- `messageType`: This feild will be "contact" for a contact tracing solution and "asset" for a asset zoning solution. 
+- `mode`: This field will read "storage" if the device in contact is in storage and inactive. If "nominal", the device in contact is active but has no previous contact records. 
+
+{% highlight javascript %}
+
+{
+  "device": {
+    "id": "ACD340663???"
+  },
+  "deviceBattery": 2.673,
+  "messageType": "contact",
+  "meta": {
+    "device": [],
+    "iot": {
+      "device_id": "ACD340663???"
+    },
+    "source": {
+      "device": [
+        "HQ",
+        "Main Floor",
+        "Break Room",
+        ""
+      ],
+      "global": [],
+      "iot": {
+        "device_id": "AA-BB-CC-DD-00-??-??-??"
+      },
+      "source": {}
+    }
+  },
+  "mode": "nominal",
+  "time": "2020-10-05T17:19:02.855Z"
+}
+
+{% endhighlight %}
+
