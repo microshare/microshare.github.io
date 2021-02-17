@@ -80,6 +80,12 @@
       keywords : ["wearable","wristband"]
     - title: Adjusting the B7 wearable battery - UCT
       keywords : ["wristband"]
+    - title: Activity Level Indicator Installation
+      keywords : ["tabs","motion","brackets"]
+    - title: Room Occupancy Installation
+      keywords : ["tabs","motion","brackets"]
+    - title: Desk Occupancy Installation
+      keywords : ["tabs","motion"]
 
 - title: Technical
   desc : A more in-depth look at Microshare technology
@@ -93,6 +99,7 @@
     - title: Data Integration
     - title: Basic Dev Roadmap
     - title: Advanced Dev Roadmap
+    - title: Share secured data with GPG
   - title: Data Format
     pages:
     - title: Overview
