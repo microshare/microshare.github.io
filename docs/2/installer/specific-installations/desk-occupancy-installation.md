@@ -1,33 +1,22 @@
 ---
 layout: docs
 title: Desk Occupancy Installation Guide
-description: How to install a desk occupancy monitoring sensor ?
+description: How to install a Microshare Desk Occupancy Monitoring solution
 toc: true
 ---
 
 ---------------------------------------
 
-Desk Occupancy Monitoring Solution Installation Guide | Q2 2020
+Desk Occupancy Monitoring Solution Installation Guide
 
 This document includes important details on the correct, safe and efficient methods of installation for Microshare Smart FM Solutions.
 
-We have delivered and installed thousands of sensors to clients all over the world across a wide range of range of applications, so please get in contact with us if you need any assistance. Our expert team are on hand and ready to support you.
+_We have delivered and installed thousands of sensors to clients all over the world across a wide range of range of applications, so please get in contact with us if you need any assistance. Our expert team are on hand and ready to support you._
 
 Contact [installation@microshare.io](mailto:installation@microshare.io) should you require any assistance
 
-Microshare Unleash the Data logo
 
-**Disclaimer**
-
-Information in this document is provided in connection with Microshare solutions. Nothing on or in the Publication shall be construed as conferring any license under any intellectual property right, including any right in the nature of trademark or copyright, of Microshare. Microshare expressly forbids the unauthorized use of its logos, trademarks or other graphics, whether registered or not, including, without limitation, Microshare, and &quot;Unleash the Data&quot;. All registered trademarks are registered in the United States of America (and/or other applicable jurisdictions).
-
-Except as provided in Microshare Terms of Service and other sales conditions for Microshare solutions, Microshare assumes no liability whatsoever. The following paragraph does not apply to any country where such provisions are inconsistent with local law: Microshare provides this publication &quot;as is&quot; without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of non-infringement, merchantability or fitness for a particular purpose. Some states do not allow disclaimer of express or implied warranties in certain transactions; therefore, this statement may not apply to you.
-
-Solutions from Microshare must be used only for their intended applications as recommended by Microshare, or their third-party manufacturer, and are not designed, intended or authorized for use for critical applications, including, but not limited to, life support, health and safety, aviation, nuclear, and security applications or for any other application in which the failure of the Microshare product could create a situation where personal injury or death may occur.
-
-If you are installing Products at a property owned, operated or managed by a third party or where other individuals live, work or are otherwise present (collectively, &quot;Other Parties&quot;), you represent and warrant to Microshare that you have notified those Other Parties, to the extent required by law, and obtained all approvals, permissions, consents and authorizations, if and as required from such Other Parties, for installation and operation of the Product at the installation location, use of the Product to facilitate individuals, including delivery drivers, to have unaccompanied access to the location for deliveries to you and others, and removal of the Product. You further represent and warrant to Microshare that the location where the Product is installed is safe for individuals who access the property.
-
-Using your Microshare solutions safely
+**Note** Using your Microshare solutions safely
 
 - Follow the stated battery requirements before installing any batteries. 
 - Never force a connector into a port. If the connector and port don&#39;t join with reasonable ease, they probably don&#39;t match. Make sure that the connector matches the port and that you have positioned the connector correctly in relation to the port.
@@ -42,11 +31,11 @@ WARNING: Do not attempt to open or disassemble any Microshare solutions. You run
 
 This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. Microshare may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice.
 
-**SC02 – Desk Occupancy Monitoring**
+### SC02 – Desk Occupancy Monitoring 
 
 The Desk Occupancy Monitoring solution from Microshare is a complete sensing service for facilities managers looking to better manage their desk space availability.  
 
-What’s in the box? In terms of deploying quickly, the Desk Occupancy Monitoring solution from Microshare includes long-life battery-operated wireless sensors, which can be easily and discreetly installed under desks, device connectivity, access to data and alerts via Microshare for Business dashboards or direct API access to data through Microshare Smart Network.
+What’s in the box? In terms of deploying quickly, the Desk Occupancy Monitoring solution from Microshare includes long-life battery-operated wireless sensors, which can be easily and discreetly installed under desks, device connectivity, access to data and alerts via Microshare Business Tools dashboards or direct API access to data through Microshare Smart Network.
 
 {% include image.html url="/assets/img/installation_tabs/tabs_motion_pir.png" description="Banner" %}
 
