@@ -1,32 +1,21 @@
 ---
 layout: docs
-title: Room Occupancy Installation Guide
-description: How to install a room occupancy monitoring sensor ?
+title: Room Occupancy Monitoring Installation Guide
+description: How to install a Microshare Room Occupancy Monitoring solution
 toc: true
 ---
 
 ---------------------------------------
 
-Room Occupancy Monitoring Solution Installation Guide | Q2 2020
+Room Occupancy Monitoring Solution Installation Guide
 
 This document includes important details on the correct, safe and efficient methods of installation for Microshare Smart FM Solutions.
 
-We have delivered and installed thousands of sensors to clients all over the world across a wide range of range of applications, so please get in contact with us if you need any assistance. Our expert team are on hand and ready to support you.
+_We have delivered and installed thousands of sensors to clients all over the world across a wide range of range of applications, so please get in contact with us if you need any assistance. Our expert team are on hand and ready to support you._
 
 Contact [installation@microshare.io](mailto:installation@microshare.io) should you require any assistance
 
-Microshare Unleash the Data logo
-
-**Disclaimer**
-
-Information in this document is provided in connection with Microshare solutions. Nothing on or in the Publication shall be construed as conferring any license under any intellectual property right, including any right in the nature of trademark or copyright, of Microshare. Microshare expressly forbids the unauthorized use of its logos, trademarks or other graphics, whether registered or not, including, without limitation, Microshare, and &quot;Unleash the Data&quot;. All registered trademarks are registered in the United States of America (and/or other applicable jurisdictions).
-
-Except as provided in Microshare Terms of Service and other sales conditions for Microshare solutions, Microshare assumes no liability whatsoever. The following paragraph does not apply to any country where such provisions are inconsistent with local law: Microshare provides this publication &quot;as is&quot; without warranty of any kind, either express or implied, including, but not limited to, the implied warranties of non-infringement, merchantability or fitness for a particular purpose. Some states do not allow disclaimer of express or implied warranties in certain transactions; therefore, this statement may not apply to you.
-
-Solutions from Microshare must be used only for their intended applications as recommended by Microshare, or their third-party manufacturer, and are not designed, intended or authorized for use for critical applications, including, but not limited to, life support, health and safety, aviation, nuclear, and security applications or for any other application in which the failure of the Microshare product could create a situation where personal injury or death may occur.
-
-If you are installing Products at a property owned, operated or managed by a third party or where other individuals live, work or are otherwise present (collectively, &quot;Other Parties&quot;), you represent and warrant to Microshare that you have notified those Other Parties, to the extent required by law, and obtained all approvals, permissions, consents and authorizations, if and as required from such Other Parties, for installation and operation of the Product at the installation location, use of the Product to facilitate individuals, including delivery drivers, to have unaccompanied access to the location for deliveries to you and others, and removal of the Product. You further represent and warrant to Microshare that the location where the Product is installed is safe for individuals who access the property.
-
+**Note**
 Using your Microshare solutions safely
 
 - Follow the stated battery requirements before installing any batteries. 
@@ -42,7 +31,7 @@ WARNING: Do not attempt to open or disassemble any Microshare solutions. You run
 
 This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. Microshare may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice.
 
-**SC03 – Room Occupancy Monitoring**
+### SC03 – Room Occupancy Monitoring
 
 The Room Occupancy Monitoring solution from Microshare is a complete sensing service for better managing meeting room and others shared space availability and utilisation.
 
@@ -65,7 +54,7 @@ Sensing range without cap
 | - Scan the QR code located on the Sensor | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_6.png" description="Banner" %}|
 | - Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen. | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_7.png" description="Banner" %}|
 | **4.** **Fixing the sensor bracket** <br><br>- Peel the sticker on the back of the provided bracket and attach it to the ceiling or other surface in a good vantage point for the room.<br>- Using the field of vision image shown above, install the device at a position and angle that best places the space within range of the sensing element. Typically, these devices are installed in the middle of the room where the wall meets the ceiling. | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_8.png" description="Banner" %}|
-| **5.** **Fixing the sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place. <br> - Using the &#39;3M&#39; sticky pad on the sensor, attach to the bracket with the QR code still visible, at approximately a 45-degree angle with the PIR sensor and LED facing into the room | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_9.png" description="Banner" %}|
+| **5.** **Fixing the sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place. <br> - Using the adhesive pad on the sensor, attach to the bracket with the QR code still visible, at approximately a 45-degree angle with the PIR sensor and LED facing into the room | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_9.png" description="Banner" %}|
 
 
 
