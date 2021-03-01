@@ -36,7 +36,7 @@ toc: true
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_2.png" height="500" width="500" %}
 
-6) Choose the default install location or click Browse… to look for an alternative destination folder. After selecting the appropriate folder click Next >. The Install Options screen displays. 
+6) Choose the default install location or click Browse… to look for an alternative destination folder. After selecting the appropriate folder click Install. 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_3.png" height="500" width="500" %}
 
@@ -59,7 +59,7 @@ toc: true
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_7.png" height="500" width="500" %}
 
-3) Enter your desired name in the Name field and enter your desired email address in the EMail: field. Then click Create. 
+3) Enter your desired name in the Name: field and enter your desired email address in the EMail: field. Then click Create. 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_8.png" height="500" width="500" %}
 
@@ -102,11 +102,11 @@ toc: true
  
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_15.png" height="500" width="500" %}
 
-3) Select one or more files to Sign/encrypt and click Open.  (IMPORTANT: See additional notes below for details on proper file types) 
+3) Select one or more files to sign/encrypt and click Open.  (IMPORTANT: See additional notes below for details on proper file type selection) 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_16.png" height="500" width="500" %}
 
-4) Ensure the “Sign as:” and “Encrypt for me:” boxes are checked and that your email address is selected in the respective fields. Select the “Encrypt for others” box. Begin typing services@microshare.io, and select the option labeled “Timothy Panagos (For Exchange of Secure Creds) services@microshare.io”.  In the Output section of the dialog box, select where you would like to save the file when it had been encrypted, then press Sign/Encrypt.  
+4) Ensure the “Sign as:” and “Encrypt for me:” boxes are checked and that your email address is selected in the respective fields. Select the “Encrypt for others” box. Begin typing services@microshare.io, and select the option labeled “Timothy Panagos (For Exchange of Secure Creds) services@microshare.io”.  In the Output section of the dialog box, select where you would like to save the file when it has been encrypted, then press Sign/Encrypt.  
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_17.png" height="500" width="500" %}
 
@@ -114,7 +114,7 @@ toc: true
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_18.png" height="500" width="500" %}
 
-6) The encrypted version of the file is now available in the selected location. This encrypted file can now be sent with an email as a secure attachment.  (IMPORTANT: See additional notes below for details on proper file types) 
+6) The encrypted version of the file is now available in the selected location. This encrypted file can now be sent with an email as a secure attachment.  (IMPORTANT: See additional notes below for details on proper file type selection) 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_19.png" height="500" width="500" %}
  
