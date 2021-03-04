@@ -80,7 +80,7 @@ Your homepage is full of applications. Click on one to view that device cluster'
 
 By going to the `Manage` tab, you will have access to more advanced tools.  
 
-{% include image.html url="/assets/img/access-my-apps/microshare-manage.png" description="microshare homepage" %}
+{% include image.html url="/assets/img/access-my-apps/microshare-manage-new.png" description="microshare homepage" %}
 
 For an in- depth explanation and application of these tools, use the technical side of the documentation site:
 
