@@ -20,7 +20,7 @@ toc: true
 ---------------------------------------
 ## Important
 
-Wondering if the Microshare Consule is active? Check its status at the [Consule Access page](https://www.microshare.io/management-console-access/) for update release dates.
+Wondering if the Microshare Console is active? Check its status at the [Console Access page](https://www.microshare.io/management-console-access/) for update release dates.
 
 
 If you have any questions that are unanswered in this documentation, contact `support@microshare.io`.
