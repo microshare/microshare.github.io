@@ -16,7 +16,7 @@ toc: true
 ## Installing GPG4Win (GPG tool) 
 ---------------------------------------
 
-1) Navigate to the GPG4Win download site and download the full version of the application. As of this writing, the full version is Gpg4win v3.1.15 
+1) Navigate to the GPG4Win download site and download the full version of the application. As of 03/05/2021, the full version is Gpg4win v3.1.15 
 
  
 
@@ -44,14 +44,16 @@ toc: true
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_4.png" height="500" width="500" %}
 
-8) Select “Reboot now” and click Finish. 
+8) If prompted to restart your computer, select “Reboot now” and click Finish. If not prompted to restart your computer, select "Run Kleoplatra" and click Finish.  
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_5.png" height="500" width="500" %}
+
+{% include image.html url="/assets/img/gpg_encrypton/Installing_GPG_step_8b.png" height="500" width="500" %}
 
 ## Creating New Key Pair 
 ---------------------------------------
 
-1) Click File, in the drop-down menu click New Key Pair. 
+1) Open the Kleopatra app just installed. Click File, in the drop-down menu click New Key Pair. 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_6.png" height="500" width="500" %}
 
@@ -74,20 +76,29 @@ toc: true
 ## Importing Microshare’s Public Key  
 ---------------------------------------
  
-1) Open the Kleopatra component. Click Lookup on Server.  A Certificate Import Result dialog box displays. 
+1) Click Lookup on Server.  A Certificate Import Result dialog box displays. 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_11.png" height="500" width="500" %}
 
-2) Type services@microshare.io in the “Find:” section, then press Search. 
+2) Type services@microshare.io in the “Find:” section, then click Search. 
  
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_12.png" height="500" width="500" %}
 
-3) Select the name Timothy Panagos (For Exchange of Secure Creds), then press Import and click OK in the Certificate Import Results dialog box. 
+3) Select the name Timothy Panagos (For Exchange of Secure Creds), then click Import. 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_13.png" height="500" width="500" %}
 
+4) If the Certificate Import Results dialog box appears, click OK.
 
-4) The certificate now appears in the Imported Certificates and My Certificates tabs 
+{% include image.html url="/assets/img/gpg_encrypton/Importing_Public_Key_step_3a.png" height="500" width="500" %}
+
+4b) If a dialog box titled "You have imported a new certificate (public key) - Kleopatra" appears, click Yes. A new diaolog box appears, select your created key pair in the drop down menu and click Certify. 
+
+{% include image.html url="/assets/img/gpg_encrypton/Importing_Public_Key_step_3b.png" height="500" width="500" %}
+
+{% include image.html url="/assets/img/gpg_encrypton/Importing_Public_Key_step_3c.png" height="500" width="500" %}
+
+5) The certificate now appears in the Imported Certificates and All Certificates tabs 
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_14.png" height="500" width="500" %}
 
@@ -102,11 +113,11 @@ toc: true
  
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_15.png" height="500" width="500" %}
 
-3) Select one or more files to Sign/encrypt and click Open.  (IMPORTANT: See additional notes below for details on proper file types) 
+3) Select one or more files to Sign/encrypt and click Open.
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_16.png" height="500" width="500" %}
 
-4) Ensure the “Sign as:” and “Encrypt for me:” boxes are checked and that your email address is selected in the respective fields. Select the “Encrypt for others” box. Begin typing services@microshare.io, and select the option labeled “Timothy Panagos (For Exchange of Secure Creds) services@microshare.io”.  In the Output section of the dialog box, select where you would like to save the file when it had been encrypted, then press Sign/Encrypt.  
+4) Ensure the “Sign as:” and “Encrypt for me:” boxes are checked and that your email address is selected in the respective fields. Select the “Encrypt for others” box. Begin typing services@microshare.io, and select the option labeled “Timothy Panagos (For Exchange of Secure Creds) services@microshare.io”.  In the Output section of the dialog box, select where you would like to save the file when it had been encrypted, then click Sign/Encrypt.  
 
 {% include image.html url="/assets/img/gpg_encrypton/gpg_encryption_17.png" height="500" width="500" %}
 
@@ -122,6 +133,5 @@ toc: true
 
 **Additional Important Notes:** 
 
-Files being sent as an attachment cannot be processed with certain file extensions.  For example, a file with the extension “Documentation.txt.gpg” will not properly execute.  Files with extensions of “Documentation.gpg” or “Documentation.docx.gpg” can be executed.   
-
+Files being sent as an attachment cannot be processed with certain file extensions.  Ensure the file extension has been changed to ".gpg" when being sent as an email attachment. Please include in the email the original file extension so it can be changed back to the original extension after being received.    
  
