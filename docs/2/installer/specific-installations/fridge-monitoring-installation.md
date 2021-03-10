@@ -55,8 +55,8 @@ In order to install the solution, you will also need zip ties and a magnet, not 
 | - Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen. | {% include image.html url="/assets/img/installation_tabs/room_occupancy/room_occupancy_7.png" description="Banner" %}|
 | **4.** **Fixing the fridge Monitoring sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place.<br>-	Peel the adhesive sticker on the back of the device and stick the device to the outside of the fridge in the pre-assigned location. | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorFitted.png" description="Banner" %}|
 | -	Once the sensor housing is secure, stick the adhesive pads to the cable roughly an inch [2.5cm] from the probe (which is at the end of the cable) as shown | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbe.png" description="Banner" %}|
-| -	Secure the probe inside of the fridge using the adhesive strips which you attached. We recommend installing the probe in the top of the fridge | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbeFitted.png" description="Banner" %}|
-**You are now ready to start receiving data from your fridge.**
+| -	Secure the probe inside of the fridge using the adhesive strips which you attached. We recommend installing the probe in the top of the fridge **You are now ready to start receiving data from your fridge.** | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbeFitted.png" description="Banner" %}|
+
 
 
 
