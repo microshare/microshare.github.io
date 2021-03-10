@@ -86,9 +86,11 @@
       keywords : ["tabs","motion","brackets"]
     - title: Desk Occupancy Installation
       keywords : ["tabs","motion"]
+    - title: Fridge Monitoring Installation
+      keywords : ["fridge monitoring","fridge"]
     - title: Leak Detector Installation Guide
       keywords : ["leak","water"]
-      
+
 - title: Technical
   desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
