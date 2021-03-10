@@ -57,9 +57,9 @@ In order to install the solution, you will also need zip ties and a magnet, not 
 | -	Once the sensor housing is secure, stick the adhesive pads to the cable roughly an inch [2.5cm] from the probe (which is at the end of the cable) as shown | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbe.png" description="Banner" %} |
 | -	Secure the probe inside of the fridge using the adhesive strips which you attached. We recommend installing the probe in the top of the fridge 
 
-<br><br>**You are now ready to start receiving data from your fridge.** | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbeFitted.png" description="Banner" %} |
+ | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbeFitted.png" description="Banner" %} |
 
-
+<br><br>**You are now ready to start receiving data from your fridge.**
 
 
 <style>
