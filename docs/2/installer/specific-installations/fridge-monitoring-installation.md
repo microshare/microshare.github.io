@@ -61,6 +61,7 @@ In order to install the solution, you will also need zip ties and a magnet, not 
 <style>
     tr td:first-child {
         width:60%;
+        vertical-align:top;
     }
 
     tr td:nth-child(2) {
