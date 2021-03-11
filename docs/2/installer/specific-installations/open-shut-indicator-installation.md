@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Desk Occupancy Installation Guide
-description: How to install a Microshare Desk Occupancy Monitoring solution
+title: Open/Shut Indicator Installation Guide
+description: How to install a Microshare Open/Shut Indicator solution
 toc: true
 ---
 
 ---------------------------------------
 
-Desk Occupancy Monitoring Solution Installation Guide
+Open/Shut Indicator Solution Installation Guide
 
 This document includes important details on the correct, safe and efficient methods of installation for Microshare Smart FM Solutions.
 
@@ -31,35 +31,32 @@ WARNING: Do not attempt to open or disassemble any Microshare solutions. You run
 
 This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. Microshare may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice.
 
-### SC02 – Desk Occupancy Monitoring 
+**SM04 – Open/Shut Indicator** 
 
-The Desk Occupancy Monitoring solution from Microshare is a complete sensing service for facilities managers looking to better manage their desk space availability.  
+The Open/Shut Indicator solution from Microshare is a complete sensing service for facilities managers looking to better understand how their facilities are utilized. 
 
-What’s in the box? In terms of deploying quickly, the Desk Occupancy Monitoring solution from Microshare includes long-life battery-operated wireless sensors, which can be easily and discreetly installed under desks, device connectivity, access to data and alerts via Microshare Business Tools dashboards or direct API access to data through Microshare Smart Network.
+What’s in the box?  In terms of deploying quickly, the Open/Shut Indicator solution from Microshare includes long-life battery-operated wireless sensor and separate magnetic unit, which can be easily and discreetly installed around facilities, device connectivity, access to data and alerts via Microshare for Business dashboards or direct API access to data through Microshare Smart Network.
 
-{% include image.html url="/assets/img/installation_tabs/tabs_motion_pir.png" description="Banner" %}
-
-Sensing range without cap
 
 **Installation instructions:**
 
 | --- | --- |
-| **1.** **Activating the wireless sensor** <br>- Our wireless sensors are pre-installed with batteries. To activate pull the shipping isolating battery tab from the sensor.<br>- After around a minute, the LED on the sensor should begin to flash intermittently. | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_0.png" description="Banner" %}|
-| **2.** **Preparing the sensor for fixing** <br><br>- If you are fixing the sensor using suitable adhesive tape, ensure that you place the tape on the opposite side of the QR code. | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_1.png" description="Banner" %}|
-| **3.** **Registering the sensor using the Deploy-M app [iOS &amp; Android]** <br><br>- You should already have the Deploy-M app and login details as part of your project set-up with Microshare<br>- Login using your credentials, if you are unsure or require assistance, please contact [installation@microshare.io](mailto:installation@microshare.io) | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_2.png" description="Banner" %} |
-| - Select the correct device cluster for the devices you are installing. <br> Note – a &quot;Device Cluster&quot; is simply grouping of sensors, usually in one space, that helps identify and annotate the data you receive from your Microshare solution.| {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_3.png" description="Banner" %}  |
-| - Select the correct location where the device will be installed.<br>
-- Click Add | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_4.png" description="Banner" %}  |
-| - Once the sensor has been added to the correct location on the app, click &#39;RESCAN&#39; to open the devices camera | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_5.png" description="Banner" %}|
-| - Scan the QR code located on the Sensor | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_6.png" description="Banner" %}|
-| - Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen. | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_7.png" description="Banner" %}|
-| **4.** **Fixing the wireless sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place. <br>- Peel the sticker on the back of the device and stick the device in one of the rear corners underneath the desk with the lens at an approximately 45-degree angle facing the opening of the desk. This image shows a birds eye view of where it should be placed. <br>- **Remember to Install underneath the desk** [as shown in the second photo]  | {% include image.html url="/assets/img/installation_tabs/desk_occupancy/desk_occupancy_8.png" description="Banner" %}|
+| **1.** **Activating the wireless sensor** <br> - Our wireless sensors are pre-installed with batteries. To activate pull the shipping isolating battery tab from the sensor.<br>- After around a minute, the LED on the sensor should begin to flash intermittently. | {% include image.html url="/assets/img/Open Shut indicator/openshut_1.jpg" description="Banner" %}|
+| **2.** **Preparing the sensor for fixing** <br> -	Attach the red side of the '3M' sticky pad on the opposite side of the QR code <br> - Also place an adhesive pad on the magnet piece | {% include image.html url="/assets/img/Open Shut indicator/openshut_2.jpg" description="Banner" %}|
+| **3.** **Registering the sensor using the Deploy-M app [iOS and Android]** <br><br>- You should already have the Deploy-M app and login details as part of your project set-up with Microshare<br>- Login using your credentials you were sent during setup | {% include image.html url="/assets/img/Open Shut indicator/openshut_3.jpg" description="Banner" %}| 
+| - Select the device cluster for the devices you are installing | {% include image.html url="/assets/img/Open Shut indicator/openshut_4.jpg" description="Banner" %}|
+| - Select the correct location where the device will be installed. <br> - Click Add | | {% include image.html url="/assets/img/Open Shut indicator/openshut_5.jpg" description="Banner" %}| |
+| - Once the sensor has been added to the correct location on the app, click &#39;RESCAN&#39; to open the devices camera || {% include image.html url="/assets/img/Open Shut indicator/openshut_6.jpg" description="Banner" %}||
+| - Scan the QR code located on the Sensor | {% include image.html url="/assets/img/Open Shut indicator/openshut_7.jpg" description="Banner" %}|
+| - Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen. |{% include image.html url="/assets/img/Open Shut indicator/openshut_8.jpg" description="Banner" %}|
+| **4.** **Fixing the wireless sensor** <br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place. <br> - Peel the sticker on the back of the device and stick the device to the wall next to the opening you wish to monitor. <br> - Then stick the magnet to the door or window close to the sensor, ensuring these align. See image for reference.|{% include image.html url="/assets/img/Open Shut indicator/openshut_9.jpg" description="Banner" %}|
 
 
 
 <style>
     tr td:first-child {
         width:60%;
+        vertical-align:top;
     }
 
     tr td:nth-child(2) {
