@@ -79,8 +79,6 @@
       keywords : ["tabs","motion","brackets"]
     - title: Adjusting the B7 wearable battery - UCT
       keywords : ["wristband"] 
-    - title: Universal Contact Tracing Installation Guide
-      keywords : ["wearable","wristband"]
     - title: Desk Occupancy Installation Guide
       keywords : ["tabs","motion"]  
     - title: Feedback Station Installation Guide
@@ -91,6 +89,8 @@
       keywords : ["leak","water"]
     - title: Room Occupancy Monitoring Installation Guide
       keywords : ["tabs","motion","brackets"]
+    - title: Universal Contact Tracing Installation Guide
+      keywords : ["wearable","wristband"]
    
 - title: Technical
   desc : A more in-depth look at Microshare technology
