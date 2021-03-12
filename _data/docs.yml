@@ -45,7 +45,6 @@
       keywords : ["roles"]
     - title: MS Admin
       keywords : ["ms_admin","share"]
-    - title: Super Admin
 
 - title: Installer
   desc : A guide to implementing your Microshare solution
