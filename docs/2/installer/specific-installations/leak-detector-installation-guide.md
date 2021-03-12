@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Leak Detector Installation
+title: Leak Detector Installation Guide
 description: How to install a Microshare Leak Detector solution
 toc: true
 ---
