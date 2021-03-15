@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Fridge Monitoring Installation Guide
-description: How to install a Microshare Fridge Monitoring solution
+title: Environment Monitoring Installation Guide
+description: How to install a Microshare Environment Monitoring solution
 toc: true
 ---
 
 ---------------------------------------
 
-Fridge Monitoring Solution Installation Guide
+Environment Monitoring Solution Installation Guide
 
 This document includes important details on the correct, safe and efficient methods of installation for Microshare Smart FM Solutions.
 
@@ -32,31 +32,25 @@ WARNING: Do not attempt to open or disassemble any Microshare solutions. You run
 
 This information could include technical inaccuracies or typographical errors. Changes are periodically made to the information herein; these changes will be incorporated in new editions of the publication. Microshare may make improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without notice.
 
-### SM02 – Fridge Monitoring
+### SE01 – Environment Monitoring
 
-The Fridge Monitoring solution from Microshare is a complete sensing service for facilities managers looking to monitor the temperature in fridges and other cold storage areas. 
+The Environment Monitoring solution from Microshare is a complete sensing service for facilities managers looking to monitor the indoor air and environment quality around their buildings. 
 
-What’s in the box? In terms of deploying quickly, the Fridge Monitoring solution from Microshare includes long-life battery-operated wireless sensor with temperature sensing probes, device connectivity, access to data and alerts via Microshare for Business dashboards or direct API access to data through Microshare Smart Network.
-
-In order to install the solution, you will also need zip ties and a magnet, not provided.
-
+What’s in the box? In terms of deploying quickly, the Environment Monitoring solution from Microshare includes long-life battery-operated wireless sensors, which can be easily and discreetly installed around buildings, device connectivity, access to data and alerts via Microshare Business Tools dashboards or direct API access to data through the Microshare Smart Network.
 
 **Installation instructions:**
 
 | --- | --- |
-| **1.** **Activating the sensor** <br>- Our wireless sensors are pre-installed with batteries. To activate simply hold a magnet against the raised circle highlighted in the picture. You will know the device is activated as the device LED's will flash through the plastic in the bottom of the device<br><br>See example in this video: [Watch this step in video](https://www.youtube.com/embed/Jvxx7kxU-Y4?enablejsapi=1&amp;wmode=opaque;start=126) | {% include image.html url="/assets/img/Installation_fridge/FridgeSensor1.png" description="Fridge Sensor" %} |
-| **2.** **Preparing the sensor for fixing** <br><br>- If you are fixing the sensor using suitable adhesive tape, ensure that you place the tape on the opposite side of the QR code. | {% include image.html url="/assets/img/Installation_fridge/FridgeSensor2.png" description="Fridge Sensor" %}|
+| **1.** **Activating the sensor** <br>- Our wireless sensors are pre-installed with batteries. To activate pull the shipping isolating battery tab from the sensor.<br>-	The LED on the sensor should begin to flash intermittently.<br> | {% include image.html url="/assets/img/install_environment/EnvironmentSensor.jpg" description="Environment Sensor" %} |
+| **2.** **Preparing the sensor for fixing** <br><br>- Using a suitable adhesive tape, **ensure that you place the tape on the opposite side of the QR code, covering the QR code will prevent you from using the Deploy-M app to add your device to the system.** | {% include image.html url="/assets/img/install_environment/tabs_side_adhesive.png" description="Sensor with adhesive tape" %}|
 | **3.** **Registering the sensor using the Deploy-M app [iOS & Android]** <br><br>- You should already have the Deploy-M app and login details as part of your project set-up with Microshare<br>- Login using your credentials, if you are unsure or require assistance, please contact [installation@microshare.io](mailto:installation@microshare.io) | {% include image.html url="/assets/img/leak-installation/Image12.png" description="Banner" %} |
 | - Select the correct device cluster for the devices you are installing. <br> Note – a "Device Cluster" is simply grouping of sensors, usually in one space, that helps identify and annotate the data you receive from your Microshare solution. | {% include image.html url="/assets/img/leak-installation/Image13.png" description="Banner" %} |
 | - Select the correct location where the device will be installed.<br>
 - Click Add | {% include image.html url="/assets/img/leak-installation/Image14.png" description="Banner" %}  |
 | - Once the sensor has been added to the correct location on the app, click & RESCAN to open the devices camera | {% include image.html url="/assets/img/leak-installation/Image15.png" description="Banner" %} |
-| - Scan the QR code located on the Sensor | {% include image.html url="/assets/img/Installation_fridge/FridgeSensor_QR_DM.png" description="Banner" %} |
+| - Scan the QR code located on the Sensor | {% include image.html url="/assets/img/install_environment/EnvironmentSensor_DMScan.jpg" description="QR Code Scan on Deploy-M app" %} |
 | - Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen. | {% include image.html url="/assets/img/leak-installation/Image17.png" description="Banner" %} |
-| **4.** **Fixing the fridge Monitoring sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place.<br>-	Peel the adhesive sticker on the back of the device and stick the device to the outside of the fridge in the pre-assigned location. | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorFitted.png" description="Banner" %} |
-| -	Once the sensor housing is secure, stick the adhesive pads to the cable roughly an inch [2.5cm] from the probe (which is at the end of the cable) as shown | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbe.png" description="Banner" %} |
-| -	Secure the probe inside of the fridge using the adhesive strips which you attached. We recommend installing the probe in the top of the fridge | {% include image.html url="/assets/img/Installation_fridge/FridgeSensorProbeFitted.png" description="Banner" %} |
-
+| **4.** **Fixing the Environment Monitoring sensor** <br><br>- Once you have completed the registration of the sensor on the Deploy-M app, you are ready to fix the sensor in place.<br>-	Peel the adhesive sticker on the back of the device and attach in the pre-assigned location. We recommend attaching the sensor out of reach. | {% include image.html url="/assets/img/install_environment/EnvironmentSensor_attached.png" description="Banner" %} |
 
 <style>
     tr td:first-child {
@@ -68,5 +62,3 @@ In order to install the solution, you will also need zip ties and a magnet, not 
         width:40%;
     }
 </style>
-
-<br>**You are now ready to start receiving data from your fridge.**
