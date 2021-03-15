@@ -77,6 +77,8 @@
     pages:
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
+    - title: Environment Monitoring Installation Guide
+      keywords : ["environment","environment monitoring","install"]
     - title: Adjusting the B7 wearable battery - UCT
       keywords : ["wristband"] 
     - title: Desk Occupancy Installation Guide
@@ -87,6 +89,8 @@
       keywords : ["fridge monitoring","fridge"]
     - title: Leak Detection Installation Guide
       keywords : ["leak","water"]
+    - title: Open/Shut Indicator Installation 
+      keywords : ["open","shut","sensor"]
     - title: Room Occupancy Monitoring Installation Guide
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
