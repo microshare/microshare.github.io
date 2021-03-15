@@ -54,7 +54,7 @@ changes will be incorporated in new editions of the publication.
 Microshare may make improvements and/or changes in the product(s) and/or
 the program(s) described in this publication at any time without notice.
 
-### SC01 -- Activity Level Indicator (Motion Based) Installation Guide
+### SC01 -- Activity Level Indicator (Motion Based)
 
 The Activity Level Indicator solution from Microshare is a complete
 sensing service for facilities manager looking to gain better insights,
