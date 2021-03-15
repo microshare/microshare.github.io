@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Contact Tracing Installation
+title: Universal Contact Tracing Installation Guide
 description: How to install a Microshare™ Contact Tracing Solution
 toc: true
 ---
