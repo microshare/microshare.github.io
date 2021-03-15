@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Feedback Station Installation Guide
+title: Feedback Station Installation
 description: How to install a Feedback Station solution
 toc: true
 ---
