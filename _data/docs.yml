@@ -45,7 +45,6 @@
       keywords : ["roles"]
     - title: MS Admin
       keywords : ["ms_admin","share"]
-    - title: Super Admin
 
 - title: Installer
   desc : A guide to implementing your Microshare solution
@@ -82,16 +81,18 @@
       keywords : ["wristband"]
     - title: Activity Level Indicator Installation
       keywords : ["tabs","motion","brackets"]
-    - title: Room Occupancy Installation
-      keywords : ["tabs","motion","brackets"]
     - title: Desk Occupancy Installation
       keywords : ["tabs","motion"]
+    - title: Environment Monitoring Installation
+      keywords : ["environment","environment monitoring","install"
+    - title: Feedback Station Installation
+      keywords : ["feedback station","facilities"]
     - title: Fridge Monitoring Installation
       keywords : ["fridge monitoring","fridge"]
     - title: Leak Detector Installation Guide
       keywords : ["leak","water"]
-    - title: Environment Monitoring Installation
-      keywords : ["environment","environment monitoring","install"
+    - title: Room Occupancy Installation
+      keywords : ["tabs","motion","brackets"]
 
 - title: Technical
   desc : A more in-depth look at Microshare technology
