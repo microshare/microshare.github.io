@@ -46,8 +46,13 @@ What’s in the box?  In terms of deploying quickly, the Feedback Stations sol
 | **3.** **Attach Feedback Stations to backboards** <br> -	Using the 4 screws, attach the feedback station to the backboard  |{% include image.html url="/assets/img/feedback-station/feedbackstation_3.png" description="Banner" %} |
 | **4.** **Attach adhesive strips to reverse of backboards** <br> -	Place the supplied double-sided adhesive strips to the reverse of the backboard|{% include image.html url="/assets/img/feedback-station/feedbackstation_4.png" description="Banner" %}|
 | **5.** **Note the code on the label next to the station’s location in the spreadsheet provided to you** | {% include image.html url="/assets/img/feedback-station/feedbackstation_5.png" description="Banner" %}|
-| **6.** **Attach the completed Feedback Station ** <br> -	Once complete, peel the adhesive from the back and attach the backboard to the wall in the predesignated location |{% include image.html url="/assets/img/feedback-station/feedbackstation_6.png" description="Banner" %}|
-
+| **6.** **Attach the completed Feedback Station** <br> -	Once complete, peel the adhesive from the back and attach the backboard to the wall in the predesignated location |{% include image.html url="/assets/img/feedback-station/feedbackstation_6.png" description="Banner" %}|
+| **7.** **Registering the sensor using the Deploy-M app [iOS & Android]** <br> -	You should already have the Deploy-M app and login details as part of your project set-up with Microshare <br> - Login using the credentials you were sent during set-up. | {% include image.html url="/assets/img/leak-installation/Image12.png" description="Banner" %} |
+| -	Select the device cluster for the devices you are installing. | {% include image.html url="/assets/img/leak-installation/Image13.png" description="Banner" %} |
+| -	Select the correct location where the device will be installed. <br> - Click Add | {% include image.html url="/assets/img/leak-installation/Image14.png" description="Banner" %} |
+| -	Once the sensor has been added to the correct location on the app, click ‘RESCAN’ to open the devices camera | {% include image.html url="/assets/img/leak-installation/Image15.png" description="Banner" %} |
+| -	Scan the QR code located on the Sensor  | {% include image.html url="/assets/img/leak-installation/Image16.jpg" description="Banner" %} |
+| -	Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen.  | {% include image.html url="/assets/img/leak-installation/Image17.png" description="Banner" %} |
 
 <style>
     tr td:first-child {
