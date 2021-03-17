@@ -73,7 +73,7 @@
       keywords : ["indoor","outdoor","iFemtocell"]
     - title: Device Declaration
       keywords : ["add","cluster"]
-  - title: Specific Installations
+  - title: Specific Instructions
     pages:
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
@@ -91,7 +91,7 @@
       keywords : ["fridge monitoring","fridge"]
     - title: Leak Detection Installation Guide
       keywords : ["leak","water"]
-    - title: Open/Shut Indicator Installation 
+    - title: Open/Shut Indicator Installation Guide
       keywords : ["open","shut","sensor"]
     - title: Room Occupancy Monitoring Installation Guide
       keywords : ["tabs","motion","brackets"]
