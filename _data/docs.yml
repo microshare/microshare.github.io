@@ -77,10 +77,12 @@
     pages:
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
+    - title: Adjusting the B7 wearable battery - UCT
+      keywords : ["wristband"]
+    - title: Asset Zoning Installation Guide
+      keywords : ["asset","tracking","zoning"]
     - title: Environment Monitoring Installation Guide
       keywords : ["environment","environment monitoring","install"]
-    - title: Adjusting the B7 wearable battery - UCT
-      keywords : ["wristband"] 
     - title: Desk Occupancy Installation Guide
       keywords : ["tabs","motion"]  
     - title: Feedback Station Installation Guide
