@@ -51,7 +51,7 @@ What’s in the box?  In terms of deploying quickly, the Feedback Stations sol
 | -	Select the device cluster for the devices you are installing. | {% include image.html url="/assets/img/leak-installation/Image13.png" description="Banner" %} |
 | -	Select the correct location where the device will be installed. <br> - Click Add | {% include image.html url="/assets/img/leak-installation/Image14.png" description="Banner" %} |
 | -	Once the Feedback Station has been added to the correct location on the app, click ‘RESCAN’ to open the devices camera | {% include image.html url="/assets/img/leak-installation/Image15.png" description="Banner" %} |
-| -	Scan the QR code located on the Feedback Station  | {% include image.html url="/assets/img/leak-installation/Image16.jpg" description="Banner" %} |
+| -	Scan the QR code located on the Feedback Station |{% include image.html url="/assets/img/feedback-station/feedbackstation_7.png" description="Banner" %}|
 | -	Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen.  | {% include image.html url="/assets/img/leak-installation/Image17.png" description="Banner" %} |
 
 <style>
