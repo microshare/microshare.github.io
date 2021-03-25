@@ -60,6 +60,8 @@ Desk, Room, Batroom occupancy/activity : `io.microshare.demo.motion.unpacked`
 
 Feedback : `io.microshare.demo.feedback.unpacked`
 
+UCT : `io.microshare.demo.contact.unpacked.event`
+
 {% include image.html url="/assets/img/simple_request_demo.png" description="simple request demo" %}
 
 <br>
