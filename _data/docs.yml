@@ -73,7 +73,7 @@
       keywords : ["indoor","outdoor","iFemtocell"]
     - title: Device Declaration
       keywords : ["add","cluster"]
-  - title: Specific Instructions
+  - title: Specific Installations
     pages:
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
