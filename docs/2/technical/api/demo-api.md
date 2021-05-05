@@ -50,15 +50,35 @@ Once completed, you can now make share API and make complex data reading queries
 The next objective is to make simple queries to read the demo data by following [this tutorial](../share-api). On this demo API, you can use the following recTypes (or endpoints) to request information! You will add these recTypes to the field circled in yellow below.
 
 <br>
-###### WARNING : This data is not real data and is provided solely for demo purposes.
+#### WARNING : This data is not real data and is provided solely for demo purposes.
+
+##### We give you the opportunity to see how the data will flow through the API, so you can see the essence of the data structure. If you want to focus on the meaning of the data, and the temporal or geographical correlations, we advise you to install some of our sensors to get a real data flow.
 
 Temperature : `io.microshare.demo.environment.unpacked`
 
 Fridge : `io.microshare.demo.fridge.unpacked`
 
-Desk, Room, Batroom occupancy/activity : `io.microshare.demo.motion.unpacked`
+Water Temperature : `io.microshare.demo.water.pipe.unpacked`
 
-Feedback : `io.microshare.demo.feedback.unpacked`
+AirQuality : `io.microshare.demo.airquality.unpacked`
+
+Decibels Monitoring : `io.microshare.demo.sound.unpacked`
+
+Brightness Monitoring : `io.microshare.demo.light.unpacked`
+
+Open-Close Monitoring : `io.microshare.demo.motion.unpacked` 
+
+Leak Detection : `io.microshare.demo.feedback.unpacked`
+
+Leak : `io.microshare.demo.leak.unpacked`
+
+Asset Zoning : `io.microshare.demo.assetzoning.unpacked.event`
+
+Contact Tracing : `io.microshare.demo.contact.unpacked.event`
+
+Desk, Room, Bathroom, Hospital Beds (occupancy/activity)  : `io.microshare.demo.motion.unpacked`
+
+Feedback : `io.microshare.demo.feedback.unpacked.event.meta`
 
 UCT : `io.microshare.demo.contact.unpacked.event`
 
