@@ -66,7 +66,7 @@ Decibels Monitoring : `io.microshare.demo.sound.unpacked`
 
 Brightness Monitoring : `io.microshare.demo.light.unpacked`
 
-Open-Close Monitoring : `io.microshare.demo.motion.unpacked` 
+Open-Close Monitoring : `io.microshare.demo.openclose.unpacked` 
 
 Leak Detection : `io.microshare.demo.feedback.unpacked`
 
