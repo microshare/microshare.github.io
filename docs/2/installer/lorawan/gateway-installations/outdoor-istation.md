@@ -8,6 +8,14 @@ toc: true
 ## Setting up the Kerlink iStation
 ---------------------------------------
 
+## Planning your install
+
+{% include image.html width=400 url="/assets/img/LoRaWAN Device pictures/Without text.jpg" description="LoRaWan Technology" %}
+
+Recommended clearance for the antenna is 1 to 1.5 metres above all obstacles to improve the Fresnel Zone radius, therefore enhancing the radio signal.
+
+---------------------------------------
+
 The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives radio transmissions from the Microshare IoT devices in and around your building or campus. It uses an integrated cellular/mobile connection to send data securely to the Microshare Smart Network. It is fully weatherproof and designed to be installed outdoors but can in some cases be installed internally.
 Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
 
@@ -125,4 +133,7 @@ Once all secure, turn on the power of the PoE injector. You can now start deploy
 
 You’re all done! Please send an email to support@microshare.io to indicate the Gateway is up and running so we can confirm at our end.
 
- 
+---------------------------------------
+
+# Reminder: for optimal performances
+{% include image.html width=400 url="/assets/img/LoRaWAN Device pictures/Without text.jpg" description="LoRaWan Technology" %}
