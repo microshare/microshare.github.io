@@ -6,7 +6,7 @@ toc: true
 ---
 ## Planning your install
 
-{% include image.html width=400 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
 
 ### Recommended clearance for the antenna is 1 to 1.5 metres above all obstacles to improve the Fresnel Zone radius, therefore enhancing the radio signal.
 
@@ -135,4 +135,4 @@ You’re all done! Please send an email to support@microshare.io to indicate the
 ---------------------------------------
 
 ### Reminder: for optimal performances
-{% include image.html width=400 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
