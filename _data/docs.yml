@@ -84,7 +84,7 @@
     - title: Environment Monitoring Installation Guide
       keywords : ["environment","environment monitoring","install"]
     - title: Desk Occupancy Installation
-      keywords : ["tabs","motion"]  
+      keywords : ["tabs","motion"]
     - title: Feedback Station Installation Guide
       keywords : ["feedback station","facilities"]
     - title: Fridge Monitoring Installation
@@ -97,7 +97,7 @@
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
       keywords : ["wearable","wristband"]
-   
+
 - title: Technical
   desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
@@ -117,6 +117,8 @@
       keywords : ["meta","objs","recType","creatorId","tstamp","origin","owner"]
     - title: Microshare Standards
       keywords : ["meta","Ipso","meta.iot","origin","unpacker","motion","environment","temperature","feedback"]
+    - title: Event Formats
+      keywords : ["meta","event","meta.iot","feedback"]
     - title: Contact Tracing
   - title: Microshare Platform
     pages:
@@ -165,6 +167,6 @@
     - title: LoRaWan® Technology
     - title: LoRaWan® Gateways
     - title: LoRaWan® Devices
-  
-   
-    
+
+
+

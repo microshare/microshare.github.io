@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Microshare™ Events
+title: Event Formats
 description: Let's take a look at the Microshare™ event data structure.
 toc: true
 ---
