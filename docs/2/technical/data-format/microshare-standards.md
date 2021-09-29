@@ -23,6 +23,7 @@ toc: true
     - D. [Meta/IoT](./#d-metaiot)
     - E. [Origin](./#e-origin)
     - F. [Unpacker](./#f-unpacker)
+    - G. [recTypes](./#g-recTypes)
 3. [Standards Data Table](./#3-standards-data-table)
 4. [Example](./#4-example)
     - A. [Motion Data](./#a-motion-data)
@@ -362,6 +363,25 @@ Some information may differ if you unpack the data in an account that is not the
 
 The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
+#### G. recTypes
+
+| Solutions                     | packed RecType                      | unpacked RecType                                 |
+| ----------------------------- | ----------------------------------- | ------------------------------------------------ |
+| Activity Level Indicator      | io.microshare.motion.packed	      |   io.microshare.motion.unpacked                  |
+| Brightness Monitoring         | io.microshare.light.packed	      |    io.microshare.light.unpacked                  |
+| Decibel Monitoring         	| io.microshare.sound.packed	      |    io.microshare.sound.unpacked                  |
+| Desk Occupancy Monitoring     | io.microshare.occupancy.packed	  |   io.microshare.occupancy.unpacked               |
+| Feedback Stations             | io.microshare.feedback.packed	      |   io.microshare.feedback.unpacked(.event.meta)   |
+| Fridge temperature Monitoring	| io.microshare.environment.packed	  |    io.microshare.environment.unpacked            |
+| Indoor Air Quality Monitoring | io.microshare.environment.packed	  |    io.microshare.environment.unpacked            |
+| Leak Detection                | io.microshare.leak.packed	          |    io.microshare.leak.unpacked                   |
+| Open Shut Indicator	        | io.microshare.openclose.packed	  |   io.microshare.openclose.unpacked               |
+| Room Occupancy Monitoring     | io.microshare.occupancy.packed	  |   io.microshare.occupancy.unpacked               |
+| Smart Activity Timestamping   | io.microshare.feedback.packed	      |    io.microshare.feedback.unpacked(.event.meta)  |
+| Smart Waste Management        | io.microshare.bin.packed	          |    io.microshare.bin.unpacked                    |
+| Touchfree Feedback        	|                                     |  io.microshare.feedback.unpacked.event.meta      |
+| Electricity Usage Monitoring	| io.microshare.current.packed	      |  io.microshare.current.unpacked                  |
+| People Counting	            | io.microshare.peoplecounting.packed |	io.microshare.peoplecounting.unpacked            |
 
 
 ## 3. Standards Data Table
