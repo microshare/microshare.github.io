@@ -183,6 +183,81 @@ To get your data via the API, please follow this link to our technical documenta
 
 {% include accordion.html title=title content=content key="microshare_api" %}
 
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+What are the standard rec types to query?    
+{% endcapture %}
+
+{% capture content %}
+If you are unsure which rec type to query, please follow this link to  – <a href="https://docs.microshare.io/docs/2/technical/data-format/microshare-standards/#f-unpacker">the list of standard rec types</a>. If your solution is not included in this list, please contact our support team at support@microshare.io  
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="rec_types" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+How can I stream data from Microshare?    
+{% endcapture %}
+
+{% capture content %}
+For information on streaming integrations, please see our technical documentation - <a href="https://docs.microshare.io/docs/2/technical/streaming-integration/overview/#b-azure-event-hub-integration">Streaming Integrations</a>
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="data_streaming" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+Why am I not receiving data in my stream?    
+{% endcapture %}
+
+{% capture content %}
+If you have streaming set up, however are unable to see data, please contact our support team at support@microshare.io
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="data_stream" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+What do I do if I am unable to see data on the Microshare platform?    
+{% endcapture %}
+
+{% capture content %}
+If you are unable to see data on the Microshare platform, please check that you are using the correct identity, information on how to do this can be found here  - <a href="https://docs.microshare.io/docs/2/general/quick-start/access-my-apps/">Switching Identities</a>
+<br><br>
+If you do not have access to an identity which you think you should, please contact our Support team at support@microsahare.io 
+<br><br>
+If you are still unable to view any data, please contact our support team at support@microshare.io
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="datastream_identities" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+What do I do if there I am missing data?     
+{% endcapture %}
+
+{% capture content %}
+If you are missing data for a set period of time, please contact support@microshare.io 
+<br><br>
+If you are unable to find the appropriate dashboards, Please click either “Dashboard” in the menu along the top, or the Microshare logo in the top left corner 
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="missing_data" %}
 
 
 
