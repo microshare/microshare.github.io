@@ -70,9 +70,9 @@ How do I access my Microshare account?
 {% endcapture %}
 
 {% capture content %}
-If you have not created a Microshare account, please follow these instructions - <a href="Create a Microshare account">https://auth.microshare.io/portal/signup</a>
+If you have not created a Microshare account, please follow these instructions - <a href="https://auth.microshare.io/portal/signup">Create a Microshare account</a>
 <br><br>
-If you have an account and are unable to login, please try resetting your password here - <a href="Reset your Password">https://auth.microshare.io/portal/forgotpassword</a>
+If you have an account and are unable to login, please try resetting your password here - <a href="https://auth.microshare.io/portal/forgotpassword">Reset your Password</a>
 <br><br>
 If you are still unable to access your account, please contact our  support team at support@microshare.io
 {% endcapture %}
@@ -88,7 +88,7 @@ How do I switch between identities?
 {% endcapture %}
 
 {% capture content %}
-If you have received an email from Microshare informing you that a new identity has been shared with you, or you do not know how to switch between identities. Please follow this link for instructions on switching between identities - <a href="Switching Identities">https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/identity-guide/#1-switching-identities</a> 
+If you have received an email from Microshare informing you that a new identity has been shared with you, or you do not know how to switch between identities. Please follow this link for instructions on switching between identities - <a href="https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/identity-guide/#1-switching-identities">Switching Identities</a> 
 <br><br>
 If you have not received this email (please check your Junk Folder) and believe you should have access to an identity. Please contact the administrator for your account.  
 <br><br>
