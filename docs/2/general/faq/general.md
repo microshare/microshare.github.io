@@ -132,16 +132,56 @@ If you are the Administrator and would like to have users added/removed from an 
 ********************* -->
 
 {% capture title %}
-How do I troubleshoot a disconnected gateway?   
+What do I do if I do not know where a gateway is installed?    
 {% endcapture %}
 
 {% capture content %}
-If you have received a gateway offline notification, please follow the following steps to solve the issue – <a href="GATEWAY OFFLINE Instructions"></a>
+If you do not know where the gateway has been installed, please contact our support team at support@microshare.io
 {% endcapture %}
 
-{% include accordion.html title=title content=content key="delete_user" %}
+{% include accordion.html title=title content=content key="gateway_location" %}
 
+<!-- ********************
+**    New Question     **
+********************* -->
 
+{% capture title %}
+I keep receiving gateway offline notification, what should I do?    
+{% endcapture %}
+
+{% capture content %}
+If you’re frequently receiving gateway offline notifications, please contact our support team about moving the errant gateway to a more reliable location.
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="gateway_notification" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+I am not receiving any notifications/alerts    
+{% endcapture %}
+
+{% capture content %}
+If you are not receiving notification/alerts that have been set up please contact your account administrator.
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="alerts_notification" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
+How do I use Microshare’s API?    
+{% endcapture %}
+
+{% capture content %}
+To get your data via the API, please follow this link to our technical documentation - <a href="https://docs.microshare.io/docs/2/technical/api/quick-start/">Using the Microshare API</a> 
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="microshare_api" %}
 
 
 
