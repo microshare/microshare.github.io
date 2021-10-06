@@ -76,21 +76,21 @@ Plug the power adapter into the iFemtocell
 You’re all done! Please send an email to `support@microshare.io` to indicate the Gateway is up and running so we can confirm at our end.
 
 
-### Gateway offline instruction
+### Gateway appears offline - troubleshooting
 ---------------------------------------
 
 1) Check the device is still installed at the set location 
 
 2) Are there two solid green lights on the gateway?
 * If there are no lights, please check that the gateway is still connected to the mains via the cable provided. 
-* If there is one solid green and another flashing green/ is solid red, then that means the device is not connected to the network.
-     <br> -If using cellular connectivity, check the Simcard is inserted properly (this can be found at the bottom of the device) 
+* If there is one solid green and another flashing green or is solid red, that means the device is not connected to the network.
+     <br> -If using cellular connectivity, check the SIM card is inserted properly (this can be found at the bottom of the device) 
      <br> -If using Ethernet, check the ethernet cable is connected both to the gateway and to the router
 * If there are no lights, please check that the gateway is still connected to the mains via the cable provided. 
 
 3) You will know the issue has been resolved when there are two solid green lights on the device
 
-4) If you are still experiencing issues – please contact our 24hr Support team at support@Microshare.io
+4) If you are still experiencing issues – please contact our 24hr Support team at `support@microshare.io`
 
 
 
