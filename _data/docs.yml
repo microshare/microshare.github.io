@@ -75,6 +75,8 @@
       keywords : ["add","cluster"]
   - title: Specific Installations
     pages:
+    - title: Solutions Battery Information
+      keywords : ["battery","solution","manufacturer"]
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
     - title: Adjusting the B7 wearable battery - UCT
