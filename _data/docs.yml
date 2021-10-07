@@ -75,7 +75,7 @@
       keywords : ["add","cluster"]
   - title: Specific Installations
     pages:
-    -title: Solutions Battery Information
+    - title: Solutions Battery Information
       keywords : ["battery","solution","manufacturer"]
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
