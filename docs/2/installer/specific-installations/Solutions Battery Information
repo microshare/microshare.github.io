@@ -7,7 +7,7 @@ toc: true
 
 ---------------------------------------
 
-***Details of batteries required for sensors used in the Microshare solution range
+Details of batteries required for sensors used in the Microshare solution range
 
 
 | Sensors	                                     | Model Number                              | Batteries	                  | Manufacturer |
@@ -24,7 +24,7 @@ toc: true
 | Brightness Monitoring	                       | TBAM100-XXX	                             | Saft ½ AA 3.6v Lithium Ion 	| Adeunis      |
 | Leak Detection	                             | TBWT100-XXX	                             | Saft ½ AA 3.6v Lithium Ion   | Adeunis      |
 | Smart Parking 		                           |                                           |          	                  | Bosch        |
-| Universal Contact Tracing (Wirstband Beacon) | B7	                                       | Cr2032 	                    | Minew        |
-| Universal Contact Tracing (location Marker)  | E9	                                       | Cr2032 	                    | Minew        |
+| Universal Contact Tracing (Wirstband Beacon) | B7	                                       | CR2032 	                    | Minew        |
+| Universal Contact Tracing (location Marker)  | E9	                                       | CR2032 	                    | Minew        |
 | Energy Usage monitoring		                   |                                           | Saft AA 3.6v Lithium Ion     | Netvox       |                 
-| People Counter		                           |                                           |                              | IMI          |
+| People Counter		                           |                                           |                              | IM Building  |
