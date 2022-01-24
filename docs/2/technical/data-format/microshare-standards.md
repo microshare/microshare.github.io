@@ -600,6 +600,11 @@ The last block of data in `{Data}` describes the device cluster that is permitte
         },
 {% endhighlight %}
 
+The count represents the number of movements triggered, the range is 0 - 16,777,215. It resets at any power-cycle or battery replacement. 
+The time represents the number of minutes since the last movement have been triggerd. The range is 0 – 65,535, it will be reset at the same time as the count. 
+
+
+
 #### B. Temperature Data
 
 {% highlight javascript %}
