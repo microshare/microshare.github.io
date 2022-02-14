@@ -17,7 +17,8 @@ toc: true
 #### Summary:
 
 1. [Introduction](./#introduction)
-2. [First Example](./#first-example)
+2. [Available Metrics](./#available-metrics)
+2. [Data Envelope](./#data-envelope)
 3. [Go Further](./#go-further)
 
 ---------------------------------------
@@ -38,7 +39,138 @@ RecTypes are further explored in the [API Collection page](/docs/2/technical/api
 This guide serves to help you discern the different components of a Microshare data payload. 
 
 
-## First Example
+## Available Metrics
+---------------------------------------
+
+Telematics data is drawn from various Certified Sensing Devices and can capture many physical characteristics of both the device itself and the environment in which the device is situated. A single device may be outfitted with multiple sensors and so may report multiple metrics. The metrics are defined below.
+
+###Device Domain Metrics
+msg_type Vendor-specific support for multipurpose devices.
+
+fault Vendor-specific single that device/sensor is malfunctioning.
+
+voltage measured in V. Electrical potential of battery or power-source.
+
+battery measured in %. Percentage of battery power remaining.
+
+charge measured in %. Percentage of battery charge remaining.
+
+period measured in s. Frequency of device reporting.
+
+rssi measured in dBm. Relative Signal Strength Indicator measuring wireless network signal strength.
+
+snr measured in dB. Signal to Noise Ratio indicator measuring wireless network signal interference.
+
+reports_since_reset Count of reports since device power-up or reset.
+
+temperature measured in °C. Temperature at the printed circuit board.
+
+mode Vendor-specific unit to support configurable operating modes.
+
+###Sensing Domain Metrics
+
+####Environmental
+
+temperature measured in °C. Measure of hotness or coldness expressed in Celsius scale.
+
+humidity measured in %RH. Measure of concentration of water vapour present in the air relative to maximum (aka Relative Humidity).
+
+pressure measured in hPa. Measure of atmospheric pressure in force per unit area exerted by an atmospheric column.
+
+illuminance measured in lx. Measure of the amount of light falling onto and spreading over a given surface area.
+
+voc measured in ppb. Measure of Volatile Organic Compounds present in the air.
+
+co2 measured in ppm. Measure of Carbon Dioxide present in the air.
+
+iaq Vendor-specific measure of Air Quality relative to ideal for human-use.
+
+loudness measured in dBa. Measure of magnitude of the auditory sensation conducted through the air.
+
+haziness measured in %. Percentage of transmission light blocked by particles in the air.
+
+smokiness measured in %. Percentage of transmission light blocked by smoke in the air.
+
+gas measured in %. Percentage of the gas composition of air by mole fraction.
+
+
+####Electrical
+
+current measured in A. Measure of electrical flow or movement of charge carriers through a conductive medium.
+
+voltage measured in V. Measure of electrical potential of battery or power-source.
+
+multiplier Mathematical multiplier to set scale for an electrical measure.
+
+####Motion and Occupancy
+
+presence Binary measure representing the detection of a warm object.
+
+motions_since_reset Count of warm object positional changes (motions) since device power-up or reset.
+
+events_since_reset Count of state changes since device power-up or reset.
+
+motions_since_transmit Count of warm object positional changes (motions) since last report.
+
+acceleration measured in m/s2. Measure of the change in velocity of a solid object.
+
+velocity measured in m/s. Measure of the speed of motion of a solid object.
+
+x Position relative to an arbitrary starting point in horizontal plane.
+
+y Position relative to an arbitrary starting point in vertical plane.
+
+z Position relative to an arbitrary starting point in longitudinal plane.
+
+####Container State (eg. Waste Barrel/Bin)
+
+closed Binary measure representing the proximate relative location (close) of two magnetic objects (Hall Effect).
+
+open Binary measure representing the proximate relative location (far) of two magnetic objects (Hall Effect).
+
+fill measured in %. Percentage measure of the reduction in capacity of a fixed depth container.
+
+distance measured in m. Measure of unobstructed space between two solid objects.
+
+####Location
+
+gps Measure of location relative to the surface of the Earth following the geographic coordinate system.
+
+lat measured in °. Measure of the North/South distance relative to the Earth's equator.
+
+lon measured in °. Measure of the East/West distance relative to the Earth's prime meridian.
+
+accuracy measured in m. Measure of the expected radius of uncertainty for a positional measurement.
+
+####Button and Mechanical
+
+vibration measured in Hz. Measure of oscillation of or in a solid object.
+
+push Binary measure of button or switch mechanical activation.
+
+swipe Binary measure of electro-mechanical activation.
+
+pushes_since_reset Count of mechanical activation (pushes) since device power-up or reset.
+
+count_since_reset Count of generic events since device power-up or reset.
+
+count_since_transmit Count of generic events since last report.
+
+####Alarms and Generic Events
+
+leak Binary presence of electrically detectable liquid.
+
+alarm Binary measure of generic event occurance (see SubTypes).
+
+####Time
+
+time Measure of the thing that keeps on slipping into the future in seconds since Jan 1, 1970.
+
+iso_time Measure of the thing that keeps on slipping into the future in ISO 8601 format.
+
+seconds_since_change measured in s. Count of seconds since last event state change.
+
+## Data Envelope
 ---------------------------------------
 
 To start with something simple we'll take the piece of data we generated with the API tutorial: [API Share API](/docs/2/technical/api/share-api/#2-write-data).
@@ -226,4 +358,3 @@ The additional information in the `appid` corresponds to the app-key that is use
 Next, you should follow the [Microshare Standards](/docs/2/technical/data-format/microshare-standards) to dive further into the data ingestion process by device clusters and how to request information using a push action. This guide will describe the components of IoT data packets and IPSO data. 
 
 
- 
