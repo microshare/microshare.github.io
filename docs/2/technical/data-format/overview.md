@@ -44,7 +44,8 @@ This guide serves to help you discern the different components of a Microshare d
 
 Telematics data is drawn from various Certified Sensing Devices and can capture many physical characteristics of both the device itself and the environment in which the device is situated. A single device may be outfitted with multiple sensors and so may report multiple metrics. The metrics are defined below.
 
-###Device Domain Metrics
+### Device Domain Metrics
+
 msg_type Vendor-specific support for multipurpose devices.
 
 fault Vendor-specific single that device/sensor is malfunctioning.
@@ -67,9 +68,9 @@ temperature measured in °C. Temperature at the printed circuit board.
 
 mode Vendor-specific unit to support configurable operating modes.
 
-###Sensing Domain Metrics
+### Sensing Domain Metrics
 
-####Environmental
+#### Environmental
 
 temperature measured in °C. Measure of hotness or coldness expressed in Celsius scale.
 
@@ -93,8 +94,9 @@ smokiness measured in %. Percentage of transmission light blocked by smoke in th
 
 gas measured in %. Percentage of the gas composition of air by mole fraction.
 
+#### Electrical and Mechanical
 
-####Electrical
+vibration measured in Hz. Measure of oscillation of or in a solid object.
 
 current measured in A. Measure of electrical flow or movement of charge carriers through a conductive medium.
 
@@ -102,7 +104,7 @@ voltage measured in V. Measure of electrical potential of battery or power-sourc
 
 multiplier Mathematical multiplier to set scale for an electrical measure.
 
-####Motion and Occupancy
+#### Motion and Occupancy
 
 presence Binary measure representing the detection of a warm object.
 
@@ -122,7 +124,7 @@ y Position relative to an arbitrary starting point in vertical plane.
 
 z Position relative to an arbitrary starting point in longitudinal plane.
 
-####Container State (eg. Waste Barrel/Bin)
+#### Container State (eg. Waste Barrel/Bin)
 
 closed Binary measure representing the proximate relative location (close) of two magnetic objects (Hall Effect).
 
@@ -132,7 +134,7 @@ fill measured in %. Percentage measure of the reduction in capacity of a fixed d
 
 distance measured in m. Measure of unobstructed space between two solid objects.
 
-####Location
+#### Location
 
 gps Measure of location relative to the surface of the Earth following the geographic coordinate system.
 
@@ -142,9 +144,7 @@ lon measured in °. Measure of the East/West distance relative to the Earth's pr
 
 accuracy measured in m. Measure of the expected radius of uncertainty for a positional measurement.
 
-####Button and Mechanical
-
-vibration measured in Hz. Measure of oscillation of or in a solid object.
+#### Feedback Button
 
 push Binary measure of button or switch mechanical activation.
 
@@ -156,13 +156,13 @@ count_since_reset Count of generic events since device power-up or reset.
 
 count_since_transmit Count of generic events since last report.
 
-####Alarms and Generic Events
+#### Alarms and Generic Events
 
 leak Binary presence of electrically detectable liquid.
 
 alarm Binary measure of generic event occurance (see SubTypes).
 
-####Time
+#### Time
 
 time Measure of the thing that keeps on slipping into the future in seconds since Jan 1, 1970.
 
