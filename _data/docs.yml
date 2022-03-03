@@ -83,10 +83,10 @@
       keywords : ["wristband"]
     - title: Asset Zoning Installation Guide
       keywords : ["asset","tracking","zoning"]
+    - title: Desk Occupancy Installation Guide
+      keywords : ["tabs","motion"]  
     - title: Environment Monitoring Installation Guide
       keywords : ["environment","environment monitoring","install"]
-    - title: Desk Occupancy Installation
-      keywords : ["tabs","motion"]
     - title: Feedback Station Installation Guide
       keywords : ["feedback station","facilities"]
     - title: Fridge Monitoring Installation
