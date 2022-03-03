@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Leak Detector Installation
-description: How to install a Microshare Leak Detector solution
+title: Leak Detection Installation
+description: How to install a Microshare Leak Detection solution
 toc: true
 ---
 
 ---------------------------------------
 
-Leak Detector Solution Installation Guide
+Leak Detection Solution Installation Guide
 
 This document includes important details on the correct, safe and efficient methods of installation for Microshare Smart FM Solutions.
 
@@ -44,8 +44,8 @@ What’s in the box? In terms of deploying quickly, the Leak Detection solution 
 | **1.** **Preparing the sensor** <br>-	The Leak Detection solution is composed of two pieces. The first is the water detection probe, which comes with a 2m long cable, which attaches to the second item, the sensor itself.  | {% include image.html url="/assets/img/leak-installation/leakdetectorImage1.png" description="Banner" %}|
 | **2.** **Uncoil the cable and connect with sensor** <br>-	Insert the Micro-USB into the sensor’s port | {% include image.html url="/assets/img/leak-installation/Image2.png" description="Banner" %}|
 | **3.** **Pull the battery tab from the sensor to activate** <br>-The LED should begin to flash to indicate correct operation | {% include image.html url="/assets/img/leak-installation/Image3.png" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image4.png" description="Banner" %}|
-| **4.** **Preparing the sensor for fixing** <br>-	This is because for the sensor to detect a leak, at least two of the three probes have to detect water. Here is are some examples: | {% include image.html url="/assets/img/leak-installation/Image5.jpg" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image6.png" description="Banner" %} |
-| **5.** **Place the water detection probe, with the 3 probes facing upwards** <br>-	Attach the red side of the '3M' sticky pad on the opposite side of the QR code  | {% include image.html url="/assets/img/leak-installation/Image7.png" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image8.png" description="Banner" %} <br> {% include image.html url="/assets/img/leak-installation/Image9.png" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image10.png" description="Banner" %}|
+| **4.** **Preparing the sensor unit for fixing** <br>-	Attach the red side of the adhesive pad on the opposite side of the QR code | {% include image.html url="/assets/img/leak-installation/Image5.jpg" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image6.png" description="Banner" %} |
+| **5.** **Place the water detection probe, with the 3 probes facing downwards** <br>-	This is because for the sensor to detect a leak, at least two of the three probes have to be connected by water to send an alert. Here are some examples: | {% include image.html url="/assets/img/leak-installation/Image7.png" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image8.png" description="Banner" %} <br> {% include image.html url="/assets/img/leak-installation/Image9.png" description="Banner" %} {% include image.html url="/assets/img/leak-installation/Image10.png" description="Banner" %}|
 | -	The water sensor is supposed to be oriented with the probes facing up in order to detect the leak. | {% include image.html url="/assets/img/leak-installation/Image11.png" description="Banner" %} |
 | **6.** **Registering the sensor using the Deploy-M app [iOS & Android]** <br> -	You should already have the Deploy-M app and login details as part of your project set-up with Microshare <br> - Login using the credentials you were sent during set-up. | {% include image.html url="/assets/img/leak-installation/Image12.png" description="Banner" %} |
 | -	Select the device cluster for the devices you are installing. | {% include image.html url="/assets/img/leak-installation/Image13.png" description="Banner" %} |
@@ -53,11 +53,13 @@ What’s in the box? In terms of deploying quickly, the Leak Detection solution 
 | -	Once the sensor has been added to the correct location on the app, click ‘RESCAN’ to open the devices camera | {% include image.html url="/assets/img/leak-installation/Image15.png" description="Banner" %} |
 | -	Scan the QR code located on the Sensor  | {% include image.html url="/assets/img/leak-installation/Image16.jpg" description="Banner" %} |
 | -	Check that the Dev EUI [usually the second code on the sensor under the QR code] the shown matches the one on your device, then select save from the bottom of the screen.  | {% include image.html url="/assets/img/leak-installation/Image17.png" description="Banner" %} |
+| **Once you have registered the device with Deploy-M and placed it in the location you are looking to monitor for leaks, you are ready to start receiving data!** | {% include image.html url="/assets/img/leak-installation/Image18.png" description="Banner" %} |
 
 
 <style>
     tr td:first-child {
         width:60%;
+        vetical-align:top;
     }
 
     tr td:nth-child(2) {

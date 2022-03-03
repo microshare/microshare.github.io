@@ -4,6 +4,13 @@ title: Kerlink iStation
 description: How to set it up?
 toc: true
 ---
+## Planning your install
+
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
+
+### Recommended clearance for the antenna is 1 to 1.5 metres above all obstacles to improve the Fresnel Zone radius, therefore enhancing the radio signal.
+
+---------------------------------------
 
 ## Setting up the Kerlink iStation
 ---------------------------------------
@@ -125,4 +132,7 @@ Once all secure, turn on the power of the PoE injector. You can now start deploy
 
 You’re all done! Please send an email to support@microshare.io to indicate the Gateway is up and running so we can confirm at our end.
 
- 
+---------------------------------------
+
+### Reminder: for optimal performances
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}

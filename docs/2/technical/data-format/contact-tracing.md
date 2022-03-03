@@ -421,7 +421,7 @@ This final section details the location of the device cluster and reiterates the
 **Question:** When searching for those in contact, do we need to look at both the detection and source categories ?
 
 <br>
-**Answer:** This question assumes that the contact will only be recorded under either the detection or the source category. When a contact is detected, both the wristbands will ‘see’ each other as all wristbands are continuously broadcasting and scanning. Hence, it is safe to search for contacts under one wristband. The only disparity between the contact detections (one recording for each device) would be the time of recording, as their information does not reach the cloud at the exact same time. 
+**Answer:** Yes, you should check both the detecting and originating sources for those devices in contact with each other. 
 
 <br>
 **Have a question not answered here? Contact `support@microshare.io` for more help.**

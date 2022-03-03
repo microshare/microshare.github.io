@@ -91,15 +91,15 @@ The **User** dropdown has three options:
 **3.** Specific Value - This will make the rule apply only to accounts entered here
 
 <br>
-The **Organization** dropdown has four options:
+The **Organization** dropdown has four options: (in the example my Organization domain is "io.myOrg.test")
 
-**1.** All (*) - This will make the Rule apply to all organizations.
+**1.** All (*) - This will make the Rule apply to all organizations. Any Organizations will have access to it.
 
-**2.** Shared Ancestor Organization (&) - This will make the Rule apply to the Shared Ancestor Organization.
+**2.** Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule. So if "io.myOrg.test" is sharing then only the people from "io.myOrg.test" will be able to access the elements.
 
-**3.** Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization.
+**3.** Ancestor Organization (~) - This will make the Rule apply to the Ancestor Organization. If "io.myOrg.test" is sharing then anyone from "io.myOrg.test" can access the elements and also anyone from the upper Organization, so the people from "io.myOrg" can access the data.
 
-**4.** Exact Match to Owner (=) - This will make the Rule only apply to the organization of the owner of the Rule.
+**4.** Shared Ancestor Organization (&) - This rule will extend the previous one to other shared Organizations. It means that if "io.myOrg.test" is sharing then anyone from "io.myOrg.test" can access the elements and also anyone from the related Organization, so the people from "io.myOrg" can access the data but also "io.myOrg.dev" which is an Org that shares the same Ancestor Org.
 
 **5.** Specific Value - This will make the rule apply only to the organization entered here.
 
