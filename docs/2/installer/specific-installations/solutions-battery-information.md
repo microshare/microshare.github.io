@@ -23,8 +23,7 @@ Details of batteries required for sensors used in the Microshare solution range
 | Decibel Monitoring	                            | TBSL100-XXX	                               | Saft ½ AA 3.6v Lithium Ion     | Browan       |
 | Brightness Monitoring	                          | TBAM100-XXX	                               | Saft ½ AA 3.6v Lithium Ion 	  | Browan       |
 | Leak Detection	                                | TBWT100-XXX	                               | Saft ½ AA 3.6v Lithium Ion     | Browan       |
-| Smart Parking 		                              |                                            |          	                    | Bosch        |
 | Universal Contact Tracing (Wristband Beacon)    | B7	                                       | CR2032 	                      | Minew        |
 | Universal Contact Tracing (Location Marker)     | E9	                                       | CR2032 	                      | Minew        |
 | Energy Usage monitoring		                      |                                            | Saft AA 3.6v Lithium Ion       | Netvox       |                 
-| People Counter		                              |                                            |                                | IM Building  |
+| People Counter		                              | IB010                                      | AA 1.5V Lithium Ion            | IM Building  |
