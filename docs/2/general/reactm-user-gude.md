@@ -7,7 +7,7 @@ toc: true
 
 ---------------------------------------
 
-{% include image.html url="\assets\img\banner-2.jpg"  description="ms logo" %}
+{% include image.html url="/assets/img/banner-2.jpg"  description="ms logo" %}
 
 ##### SUMMARY : 
 
