@@ -12,12 +12,24 @@ toc: true
 ##### SUMMARY : 
 
 1. [Introduction](./#introduction)
+
+
 2. [Downloading](./#downloading)
+
+
 3. [Account](./#account)
+
+
 4. [Use](./#use)
+
+
 5. [TODO](./#todo)
-    3. [Motion Driven](./#motion-driven)
-    3. [Feedback Driven](./#feedback-driven)
+
+
+    A. [Motion Driven](./#motion-driven)
+
+
+    B. [Feedback Driven](./#feedback-driven)
 ---------------------------------------
 
 If you have any questions that are unanswered in this documentation, contact `jbardin@microshare.io`.
