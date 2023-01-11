@@ -42,7 +42,7 @@ First and foremost, you will need to request an API key for authentication with 
 * Log into your 
 
 Production : [Microshare account.](https://app.microshare.io)
-Dev : [Microshare account.](https://app.microshare.io)
+Dev : [Microshare account.](https://dapp.microshare.io)
 
 * Go to `Manage -> Keys.`  
 
