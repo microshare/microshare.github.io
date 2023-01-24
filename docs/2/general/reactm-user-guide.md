@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Reac-M User Guide
+title: React-M User Guide
 description: Get started with React-M™, the world's only data-triggered TODO management system.
 toc: true
 ---
