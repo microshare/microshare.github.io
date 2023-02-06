@@ -87,7 +87,8 @@ while you do your authentication you should see in the response the session key.
 }
 ```
 
-These "configReactM" settings are mandatory settings:
+<br><br><br>
+##### These settings are mandatory settings:
 
   listAssignee - (String) list of users who access the task separated by comma.
 
@@ -105,13 +106,16 @@ These "configReactM" settings are mandatory settings:
   
   "location1": "location2": "location3": "location4 - (String) - Each layers of the location.
 
-These "configReactM" settings are mandatory for a good working version or ReactM :
+<br><br><br>
+##### These settings are available for a different workflow path in ReactM :
 
     wf_includeSteps - steps to include, string like : accept,do - to define which steps to keep for a lighter process (if no step to include, then this parameter is skipped)
 
     wf_excludeSteps: "steps to exclude, string like : accept" - to define which steps to skip for a lighter process, would be overwrite by wf_includeSteps (if all steps to exclude, then this parameter is skipped)
 
-These "configReactM" settings are mandatory for better statistics on rectM uses :
+
+<br><br><br>
+##### These settings are mandatory for better statistics on rectM uses :
 
     wf_originType - (String) Origin data type like "feedback", "motion"
 
@@ -125,7 +129,9 @@ These "configReactM" settings are mandatory for better statistics on rectM uses 
 
     task_id - (String) Id of the task in this category
 
-These "configReactM" settings are optionals:
+
+<br><br><br>
+##### These "configReactM" settings are optionals:
 
 // Activity Timer String: https://en.wikipedia.org/wiki/ISO_8601#Durations
 
