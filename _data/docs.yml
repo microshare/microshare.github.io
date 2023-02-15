@@ -123,8 +123,8 @@
       keywords : ["meta","event","meta.iot","feedback"]
     - title: Feedback
       keyword : ["meta","event","clean","staff","skiply","touchfree","leak","toilet","soap"]
-    - title: People Counting
-      keyword : ["count","doorway"]
+    - title: People Counter
+      keyword : ["count","doorway","counting"]
     - title: Contact Tracing
   - title: Microshare Platform
     pages:
