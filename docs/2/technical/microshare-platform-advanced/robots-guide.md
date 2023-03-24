@@ -14,15 +14,16 @@ toc: true
 ##### SUMMARY : 
 
 1. [What's a Robot?](./#1-whats-a-robot)
-2. [What can I do with them?](./#2-what-can-i-do-with-them)
-3. [How do I use them?](./#3-how-do-i-use-them)
+2. [What do Microshare robots do?](./#2-what-do-microshare-robots-do)
+3. [What can I do with them?](./#2-what-can-i-do-with-them)
+4. [How do I use them?](./#3-how-do-i-use-them)
   - A. [Accessing the UI](./#a-accessing-the-ui)
   - B. [Basic code](./#b-basic-code)
   - C. [Triggered vs scheduled](./#c-triggered-vs-scheduled)
   - D. [Testing](./#d-testing)
-4. [Create a Robot to Transform data and Send alerts](./#4-create-a-robot-to-transform-data-and-send-alerts)
-5. [How do they work?](./#5-how-do-they-work)
-6. [More Information](./#6-more-information)
+5. [Create a Robot to Transform data and Send alerts](./#4-create-a-robot-to-transform-data-and-send-alerts)
+6. [How do they work?](./#5-how-do-they-work)
+7. [More Information](./#6-more-information)
 
 ---------------------------------------
 
@@ -34,10 +35,41 @@ A Robot is an actor that automates the tasks associated with transforming, enric
 Robots can be triggered by the arrival of new data into the Microshare data lake, timed to run at preset intervals, or react to external events such as the arrival of a data file or connection of a web socket. Robots run in parallel and react to events as they occur. In most cases, a Robot will react to an event by reading a Microshare record, acting on it in some way, and writing a new record back into Microshare.
 
 
-## 2. What can I do with them?
+## 2. What do Microshare robots do?
 ---------------------------------------
 
-To keep your data workflow simple, each Robots should only take a single action. Below are some typical use cases:
+There are two general types of ready-made robots that Microshare deploys to its client configuration - _notification_ and _pipeline_ robots.  
+
+### Notification Robots
+
+Microshare provides two flavors of _notification_ robots.  
+
+The _Value Monitor_ robot is configured to watch the value of a specified field in new share records created in a recType. If the value is greater than a specified _maxValue_ OR less than a specified _minValue_ OR matches one of a set of values, then a notification can be sent to a list of recipients.
+
+For example, a _Value Monitor_ robot can be installed and configured to send notifications 
+  - when a visitor has pressed a button on a feedback device
+  - when the temperature in a refrigerator exceeds a certain threshhold
+  - if a door is opened during non-business hours
+  - if the carbon dioxide level in a room exceeds a threshhold
+  - etc.
+
+The _Rate Monitor_ robot is configured to monitor changes over time to a specified field in new share records created in a recType. Notifications are send when the value changes by more than a specified threshhold during a specified time interval.
+
+For example, a _Rate Monitor_ robot can be configured to send notifications
+  - when more than rateThreshold motion events have occurred in thresholdDurationInMinutes minutes
+  - etc.
+
+The _Value Monitor_ and the _Rate Monitor_ robots can be configured to ‘throttle’ notifications so they are sent less frequently. It can also be configured to send notifications to different user(s) (or not at all) depending on the time of the day or day of the week or the location or one or more metaTags.
+
+### Pipeline Robots
+
+Microshare employs various _pipeline_ robots to process data and generate a new format that is easier for the next stage in the pipeline to consume.  
+
+
+## 3. What can I do with them?
+---------------------------------------
+
+If you are developing your own robot(s), keep these tips in mind.  To keep your data workflow simple, each Robots should only take a single action. Below are some typical use cases:
 
 [1. Data ingestion](../data-ingestion)  
 
@@ -59,7 +91,7 @@ Prepare your data to be used by an external system or in a dashboard.
 
 For a Robot used to trigger another service on the web.  
   
-## 3. How do I use them?
+## 4. How do I use them?
 ---------------------------------------
 ### A. Accessing the UI
 From the management console available [here](https://app.microshare.io), open the Manage -> Robots panels. Create and edit your Robots here.  
@@ -101,7 +133,7 @@ If you edit an existing Robot, you will see that a testing panel is present. Fol
 Important: the lib.write does not write a new record when used in a test, so you are not at risk to pollute your data.  
 
 
-## 4. Create a Robot to Transform data and Send alerts
+## 5. Create a Robot to Transform data and Send alerts
 ---------------------------------------
 
 Robots can be chained together to meet many use cases, here we will configure two Robots to detect an abnormal temperature level, and send email notifications.
@@ -204,7 +236,7 @@ The two Robots are activated in succession. If the mock temperature created is a
 
 You are now ready to setup your own IoT data stream, and transform, analyze, and get alerts on data.
 
-## 5. How do they work?
+## 6. How do they work?
 ---------------------------------------
 
 Behind the scene, each Robot is an Akka Agent loaded with its ECMAScript 6 compatible script.  
@@ -212,7 +244,7 @@ Our Java Stream-Service is able to set up, start, and stop Agents; and leverages
 The Java libraries accessed by the Robots point to the adequate Service to read and write in the data lake.  
 
 
-## 6. More Information
+## 7. More Information
 ---------------------------------------
 
 For additional details on available Robot methods, visit [Robot library](../robots-library)
