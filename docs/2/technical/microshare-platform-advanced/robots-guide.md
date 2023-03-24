@@ -59,7 +59,7 @@ For example, a _Rate Monitor_ robot can be configured to send notifications
   - when more than rateThreshold motion events have occurred in thresholdDurationInMinutes minutes
   - etc.
 
-The _Value Monitor_ and the _Rate Monitor_ robots can be configured to ‘throttle’ notifications so they are sent less frequently. It can also be configured to send notifications to different user(s) (or not at all) depending on the time of the day or day of the week or the location or one or more metaTags.
+The _Value Monitor_ and the _Rate Monitor_ robots can be configured to ‘throttle’ notifications so they are sent less frequently. It can also be configured to send notifications to different user(s) (or not at all) depending on the time of day, day of the week, location or one or more metaTags.
 
 ### Pipeline Robots
 
