@@ -97,6 +97,9 @@ If you are the administrator of an identity, you will be able to assign roles to
 <br> 
 {% include image.html url=" /assets/img/admin/Managing_Users_Roles1.jpg" description="Banner" %} 
 
+<br> 
+**Note:** Currenlty, the Roles feature is not widley used for Microshare services. In the future, this feature will be more widley utilized. 
+
  
 
  
