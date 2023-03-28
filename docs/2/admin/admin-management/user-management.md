@@ -75,7 +75,7 @@ If you are the administrator of an identity, you will be able to disable or enab
 **2.** Locate the user you would like to disable or enable from the users list displayed. If a user is currently enabled, a Disable button will be present next to their name. If a user is currently disabled, an Enable button will be present next to their name. Depending on the scenario, click either the Disable or Enable button to right of the desired user. 
 
 <br> 
-{% include image.html url=" assets/img/admin/Managing Users 1 Enable-Disable User.jpg" description="Banner" %} 
+{% include image.html url=" assets/img/admin/Managing_Users_Enable_Disable1.jpg" description="Banner" %} 
 
 <br> 
 **3.** Repeat for the other users as necessary. 
