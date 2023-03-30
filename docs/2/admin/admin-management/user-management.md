@@ -95,7 +95,7 @@ If you are the administrator of an identity, you will be able to assign roles to
 **2.** Locate the user you would like to assign a role to. In the Roles column, type the desired role into the text box, next to the desired user. Then, click the update button directly underneath the text box.  
 
 <br> 
-{% include image.html url=" /assets/img/admin/Managing_Users_Roles1.jpg" description="Banner" %} 
+{% include image.html url="/assets/img/admin/Managing_Users_Roles1.jpg" description="Banner" %} 
 
 <br> 
 **Note:** Currenlty, the Roles feature is not widely used for Microshare services. In the future, this feature will be more widley utilized. 
