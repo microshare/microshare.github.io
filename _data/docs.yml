@@ -40,11 +40,13 @@
   - title: Admin Management
     pages:
     - title: Overview
-      keywords : ["responsabilities","administrators"]
+      keywords : ["responsibilities","administrators"]
     - title: Identity Admin
       keywords : ["roles"]
     - title: MS Admin
       keywords : ["ms_admin","share"]
+    - title: User Management
+      keywords : ["user","users","enable","disable","roles"]
 
 - title: Installer
   desc : A guide to implementing your Microshare solution

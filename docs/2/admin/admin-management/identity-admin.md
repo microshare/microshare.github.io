@@ -19,7 +19,7 @@ toc: true
 ### Providing Client Access via Microshare to the identity
 ---------------------------------------
 
-If you are the administrator of an identity you will be able to add people to that identity. To better understand the identities you can read our [identity guide.](../../../technical/microshare-platform-advanced/identity-guide/)
+If you are the administrator of an identity you will be able to add people to that identity. To better understand the identities you can read our [identity guide.](../../../technical/microshare-platform-advanced/identity-guide/) For information on removing, enabling or disabling user accounts, and assigning or unassigning user roles please see our [User Management page.](../../../../../user-management/)
 
 **1.** To determine user access, first log into Microshare. 
 
