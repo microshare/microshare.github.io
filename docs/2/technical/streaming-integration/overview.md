@@ -31,11 +31,17 @@ The JSON data envelope can be thought of as a wrapper around the "obj" data stru
 This JSON data envelope is used for streaming integrations and contains the following JSON elements:
 
 "event_type": This key specifies the type of event that has occurred. In this case, the value is "create", which means that a new object has been created. Valid values include "create", "update", "delete".
+
 "id": This key contains the unique identifier for the object that is being streamed. The value is a string of alphanumeric characters.
+
 "obj": This key contains the data for the object that has been created. The value will be a JSON object containing data.
+
 "obj_type": This key specifies the type of object that has been created. In this case, the value is "objs", which could refer to any type of IOT data object. Valid values include "objs", "devices", "health".
+
 "recType": This key specifies the record type of the object. The value is a string that identifies the type of record.
+
 "source": This key specifies the source of the data. The value is a string that identifies the source of the data, in this case, it is "ShareService".
+
 This JSON data envelope is used to capture data from streaming integrations and is typically used to send data to other systems or applications. The data can be used for various purposes, such as analytics, reporting, or monitoring. The JSON data envelope is a flexible and versatile format that can be used to capture data from different types of sources and can be easily integrated with other systems and applications.
 
 <br><br>
