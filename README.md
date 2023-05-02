@@ -8,6 +8,7 @@ This folder is relative to the [Microshare documentation website](httms://docs.m
 
 ##### SUMMARY : 
 
+[From jira to doc website](./#jira-to-doc)
 1. [Introduction](./#1-introduction)
 2. [How it works](./#2-how-it-works)
     - A. [Documentation Structure](./#a-documentation-structure)
@@ -21,15 +22,20 @@ This folder is relative to the [Microshare documentation website](httms://docs.m
     - D. [Writing new articles - create new pages](./#d-writing-new-articles---create-new-pages)
     - E. [Add a page to the left sidebar menu](./#e-add-a-page-to-the-left-sidebar-menu)
 3. [Contribute](./#3-contribute)
-    - A. [Before all](./#a-before-all)
-    - B. [Create an Issue - not technical](./#b-create-an-issue---not-technical)
-    - C. [Add your own changes on github. - a bit technical](./#c-add-your-own-changes-on-github---a-bit-technical)
-    - D. [Run it locally and add your changes. - strongly technical](./#d-run-it-locally-and-add-your-changes---strongly-technical)
+    - A. [Run it locally and add your changes. - strongly technical](./#a-run-it-locally-and-add-your-changes---strongly-technical)
         - [Prerequisites](./#prerequisites)
         - [Build](./#build)
 4. [Visit Microshare](https://www.microshare.io)
 
 ---------------------------------------
+
+# Jira to Doc
+
+This page contain a lot of details on content creation and architecture. 
+To understand quickly how to add content we have a special page for you : [https://github.com/microshare/microshare.github.io/tree/master/jira](https://github.com/microshare/microshare.github.io/tree/master/jira)
+
+So from a Jira ticket you can directly write documentation. And you can use chat gpt to help you ! 
+
 
 
 # 1. Introduction
@@ -204,57 +210,10 @@ To add a new article to the left sidebar menu head to [_data/docs.yml](_data/doc
 # 3. Contribute
 
 
-There are many ways to contribute to this documentation. 
-
-The following steps will explain, in a non-technical way, how to contribute to this documentation. We will assume that some of the contributors have probably never been on Github before. It's just a little bit of tech but hopefully quite simple. 
-
-## A. Before all
-
-We will outline the three different ways to contribute to this documentation. 
-If at any moment you are contributing to the github you have to follow these rules : 
-
-<!> \[ACTION\] <!> should be \[CREATE\], \[UPDATE\] or \[DELETE\] depending on the changes you made.
-
-#### Microshare Staff
-
-Always branch off master; never commit directly to master.
-Name your branch : 
-- if personal edits : \[ACTION\]yourname-topic
-- if related to a JIRA ticket : #ticketNumber-topic 
-When you are ready to commit, create a new pull request to master from your branch.
-Please make sure you create a Pull Request aka PR with detailed information about the changes you made. 
-Then the PR will be checked and validated by one of the members of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process. 
-
-#### Outside Contributors
-Fork the master branch.
-When you are ready to finalize your changes, commit them, and then make a pull request back to master.
-Name your PR : \[ACTION\]yourname-topic
-
-`/!\ Only one topic of modification per Branch (per Pull Request)/!\`
-
-If you prefer not to touch the files at all, the first way to contribute is to create an issue. Otherwise we will show how to contribute below. 
+To contribute to this documentation, create a jira ticket for the content you want to add, read the section from Jira to Doc. Follow the tutorial and request a PR. 
 
 
-## B. Create an Issue - non-technical
-
-
-If you think something needs to be changed, but you don't have the knowledge, or you think someone is in a better position to make those changes. Simply create an issue in GitHub, and contact jbardin@microshare.io.
-https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue
-
-
-## C. Add your own changes on github. - a bit technical
-
-
-Follow this tutorial https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-your-repository.
-
-/!\ Make sure you understood how our documentation website works.
-
-Please make sure to create a Pull Request aka PR with detailed information about the changes you made.
-
-Then the PR will be checked and validated by one of the members of the dev team. You can also send a message to jbardin@microshare.io, julienbardin on KeyBase to accelerate the process.
-
-
-## D. Run it locally and add your changes. - strongly technical
+## A. Run it locally and add your changes. - strongly technical
 
 You may need https://desktop.github.com/ for a faster way to manage branches. 
 
