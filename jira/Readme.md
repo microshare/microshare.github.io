@@ -13,7 +13,7 @@ To find more details about the content format, read a little about markdown form
 5. Take note of your Jira ticket number (e.g., DOC-22).
 6. Create a branch with the following naming convention: "{Jira ticket number}--{brief explanation}."
 
-![](creating-a-branch.mp4)
+![](./creating-a-branch.mp4)
 
 ## 2. Making Changes - Updating a File
 
