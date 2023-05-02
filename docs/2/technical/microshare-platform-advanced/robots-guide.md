@@ -22,8 +22,9 @@ toc: true
   - C. [Triggered vs scheduled](./#c-triggered-vs-scheduled)
   - D. [Testing](./#d-testing)
 5. [Create a Robot to Transform data and Send alerts](./#4-create-a-robot-to-transform-data-and-send-alerts)
-6. [How do they work?](./#5-how-do-they-work)
-7. [More Information](./#6-more-information)
+  - A. [Incident Generation](./#a-incident-generation)
+7. [How do they work?](./#5-how-do-they-work)
+8. [More Information](./#6-more-information)
 
 ---------------------------------------
 
@@ -235,6 +236,34 @@ function main(text, auth){
 The two Robots are activated in succession. If the mock temperature created is above 30, you will receive an email alert.
 
 You are now ready to setup your own IoT data stream, and transform, analyze, and get alerts on data.
+
+
+### A. Incident Generation
+
+The MicroShare Incident Workflow Robot is a tool that allows users to transform alerts into workflows called incidents. These incidents can help users keep track of open, closed, or timed-out incidents. They are assigned to users via the MicroShare platform and can be interacted with just like a typical ticketing system.
+
+#### Features
+
+- Convert alerts into incidents
+- Keep track of open, closed, or timed-out incidents
+- Assign incidents to users via MicroShare platform
+- Users can interact with their incidents as they would with a typical ticketing system
+
+#### Configuration
+
+Log to your microshare account and use the configuration app.
+
+#### Usage
+
+To use the MicroShare Incident Workflow Robot, follow these steps:
+
+1. Wait for alerts to trigger the robot.
+2. The robot will convert the alert into an incident and assign it to a user via the MicroShare platform.
+3. Users can interact with their incidents just like a typical ticketing system.
+
+#### Conclusion
+
+The MicroShare Incident Workflow Robot is a powerful tool for transforming alerts into incidents and managing them through the MicroShare platform. With its easy installation and configuration, users can quickly get started with this tool and streamline their incident management processes.
 
 ## 6. How do they work?
 ---------------------------------------
