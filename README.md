@@ -8,7 +8,7 @@ This folder is relative to the [Microshare documentation website](httms://docs.m
 
 ##### SUMMARY : 
 
-[From jira to doc website](./#jira-to-doc)
+[From jira to doc website](#jira-to-doc)
 1. [Introduction](./#1-introduction)
 2. [How it works](./#2-how-it-works)
     - A. [Documentation Structure](./#a-documentation-structure)
