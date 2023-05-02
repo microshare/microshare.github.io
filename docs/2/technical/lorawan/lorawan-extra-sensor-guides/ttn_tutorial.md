@@ -108,7 +108,7 @@ Later we'll use the `Request Token` call that returns an access token which is o
 All the other fields are not required for this tutorial.<br>
 Below is an example of an `Integrations` form.
 
-{% include image.html url="/assets/img/ttn_integ_http_form.png" description="TTN HTTP Integration Form" %}
+{% include image.html url="/assets/img/ttn_integ_http_updated_form.png" description="TTN HTTP Integration Form" %}
 
 Next you should see your newly created Microshare HTTP integration running in the Integrations Overview section
 
