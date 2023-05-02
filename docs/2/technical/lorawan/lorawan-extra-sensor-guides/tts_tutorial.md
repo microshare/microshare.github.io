@@ -6,7 +6,24 @@ group: advanced
 toc: true
 ---
 
-# How to: stream IoT packets from The Things Stack (TTS) to Microshare
+--------------------------------------- 
+ 
+{% include image.html url="\assets\img\banner-2.jpg"  description="ms logo" %} 
+
+##### SUMMARY :  
+ 
+1. [Register for a Microshare.io account](./#register-for-a-microshareio-account) 
+2. [How to send data to Microshare](./#how-to-send-data-to-microshare) 
+3. [Generate a Microshare Pipe Token](./#generate-a-microshare-pipe-token) 
+4. [Setup your TTS Application Integration](./#setup-your-tts-application-integration)
+5. [Verify the data streaming to Microshare](./#verify-the-data-streaming-to-microshare) 
+ 
+--------------------------------------- 
+ 
+<br>
+
+
+### How to: stream IoT packets from The Things Stack (TTS) to Microshare
 
 This tutorial assumes that you already registered for and have [a TTS account](https://console.thethingsnetwork.org/){:target="_blank"}. It also assumes that you have provisioned at least one device sending uplink packages to TTS.
 
