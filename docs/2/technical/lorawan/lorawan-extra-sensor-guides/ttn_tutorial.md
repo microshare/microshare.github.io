@@ -1,16 +1,16 @@
 ---
 layout: docs
-title: The Things Network (TTN) & Microshare™ integration
+title: The Things Stack (TTS) & Microshare™ integration
 description:
 group: advanced
 toc: true
 ---
 
-# How to: stream IoT packets from The Things Network (TTN) to Microshare
+# How to: stream IoT packets from The Things Stack (TTS) to Microshare
 
-This tutorial assumes that you already registered for and have [a TTN account](https://console.thethingsnetwork.org/){:target="_blank"}. It also assumes that you have provisioned at least one device sending uplink packages to TTN.
+This tutorial assumes that you already registered for and have [a TTS account](https://console.thethingsnetwork.org/){:target="_blank"}. It also assumes that you have provisioned at least one device sending uplink packages to TTS.
 
-This tutorial will show you how to configure your TTN applications to forward IoT data to the Microshare data lake. It will take you through creating a Microshare account, generating a streaming token, and using it in a TTTN notification target. After this you'll be able to use the functionality of the Microshare platform to share your data securely, build data workflows, Apps, etc.
+This tutorial will show you how to configure your TTS applications to forward IoT data to the Microshare data lake. It will take you through creating a Microshare account, generating a streaming token, and using it in a TTS notification target. After this you'll be able to use the functionality of the Microshare platform to share your data securely, build data workflows, Apps, etc.
 
 ### Register for a Microshare.io account
 
@@ -30,14 +30,14 @@ Your experience should be similar to the screenshots below.
 
 ### How to send data to Microshare
 
-Now that you have created your account, you own a little piece of the Microshare data lake. You will now use TTN's automated redirection of packets, aka a device's notification target, to pass that data through to [Microshare's RESTful API](../../generic-rest-api){:target="_blank"}.
+Now that you have created your account, you own a little piece of the Microshare data lake. You will now use TTS's automated redirection of packets, aka a device's notification target, to pass that data through to [Microshare's RESTful API](../../generic-rest-api){:target="_blank"}.
 
 The API needs to know two things when receiving data from an external service:
 
 - The owner of the data
 - The category of the data
 
-These two pieces of information are configured in TTN's Application Integrations sections.
+These two pieces of information are configured in TTS's Application Integrations sections.
 
 To identify yourself as the owner of the streamed data, you must generate a token for your Microshare account. Generating this token will be covered in the next section.
 
@@ -84,9 +84,9 @@ Later we'll use the `Request Token` call that returns an access token which is o
 
 {% include image.html url="/assets/img/generate-pipe-token-4.png" description="Token revocation page" %}
 
-### Setup your TTN Application Integration
+### Setup your TTS Application Integration
 
-- Now that you have your generated token [log into TTN](https://console.thethingsnetwork.org/) choose your application & click the `Integrations` tab.
+- Now that you have your generated token [log into TTS](https://console.thethingsnetwork.org/) choose your application & click the `Integrations` tab.
 
 {% include image.html url="/assets/img/ttn_app_integration_tab.png" description="" %}
 
@@ -99,10 +99,10 @@ Later we'll use the `Request Token` call that returns an access token which is o
     - **Process ID:** give your integration a name like `microshare_hackiot_reading`
     - **Access Key:** select the `default` option
     - **URL:** the url value is composed of the base url **https://api.microshare.io/share/** and the `recType` value you chose previously.
-    <br>**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in TTN, physically located in Reading in the UK, so the recType can be: `uk.reading.ttn.sodaq` an example url & recType is `https://api.microshare.io/share/uk.reading.ttn.sodaq`
+    <br>**Tip**: We usually compose a recType based on the data's origin, using a schema from the most general to more specific. For example, here the device is a sodaq board, provisioned in TTS, physically located in Reading in the UK, so the recType can be: `uk.reading.ttn.sodaq` an example url & recType is `https://api.microshare.io/share/uk.reading.ttn.sodaq`
     - **Method:** Select the `POST` option
-    - **Authorization:** Enter the word `Bearer` then paste your pipe token that you previously generated. The value should look similar to this example:<br>
-    `Bearer eedbb46fd94XXXXXDDDDD537e0d1c8fd411bb8bf3556a39??`
+    - **Authorization:** Paste your pipe token that you previously generated. The value should look similar to this example:<br>
+    `eedbb46fd94XXXXXDDDDD537e0d1c8fd411bb8bf3556a39??`
     - Click the `Add Integration` button
 
 All the other fields are not required for this tutorial.<br>
@@ -116,13 +116,13 @@ Next you should see your newly created Microshare HTTP integration running in th
 
 ### Verify the data streaming to Microshare
 
-Your TTN device data should now be streaming to your Microshare account. You can verify that with the Microshare API.
+Your TTS device data should now be streaming to your Microshare account. You can verify that with the Microshare API.
 
 You are going to use the `Share -> Get Shares by recType` call, for which you need a `password token`.
 
 1. Open and run the request `Authentication -> Request Token`. The generated `access-token` is automatically copied to your environment, so you are immediately ready to run other requests.
 2. Open the `Shares -> Get Shares by recType` to configure it.
-3. Specify the recType you used in TTN in the query params.
+3. Specify the recType you used in TTS in the query params.
 4. Click `Send`. 
 
 The response of the request is a view of all the data **THAT YOU ONLY HAVE ACCESS TO** stored under the specified recType:
@@ -131,7 +131,7 @@ The response of the request is a view of all the data **THAT YOU ONLY HAVE ACCES
 {% include image.html url="/assets/img/get-share-call-2.png" description="Successful share call" %}
 {% include image.html url="/assets/img/get-share-call-3-ttn-json.png" description="TTN data in microshare example" %}
 
-The TTN data is under the `objs -> data` keys. The `payload_fields` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
+The TTS data is under the `objs -> data` keys. The `payload_fields` key holds your device's payload data which is generally sensor data such as temperature, GPS or CO2 measurements.
 Use our [Robot decoding library](../../robots-libraries/decoding-payloads/) to decode the Low Power Payload
 
 If you execute the request again, the number of records will increase as the data is streamed. The Microshare metadata tells you how many pages of records you have, and the total number of records (platform wide) stored under this recType.
