@@ -13,7 +13,7 @@ To find more details about the content format, read a little about markdown form
 5. Take note of your Jira ticket number (e.g., DOC-22).
 6. Create a branch with the following naming convention: "{Jira ticket number}--{brief explanation}."
 
-![](https://user-images.githubusercontent.com/48103544/235675909-117beb7e-e833-4a87-87e3-5980ce804500.mp4)
+https://user-images.githubusercontent.com/48103544/235675909-117beb7e-e833-4a87-87e3-5980ce804500.mp4
 
 ## 2. Making Changes - Updating a File
 
@@ -24,7 +24,7 @@ To find more details about the content format, read a little about markdown form
 5. Add your content.
 6. Save your changes.
 
-![](https://user-images.githubusercontent.com/48103544/235676079-221a5260-c507-49ad-8e1b-60eaa44a13a8.mp4)
+https://user-images.githubusercontent.com/48103544/235676079-221a5260-c507-49ad-8e1b-60eaa44a13a8.mp4
 
 ## 3. Making Changes - Creating a File
 
@@ -70,7 +70,7 @@ A Rule is a concrete expression of a sharing policy. It allows a data owner to s
 
 ```
 
-![](https://user-images.githubusercontent.com/48103544/235676232-8cd21941-3348-469d-8b77-00e7e5082d65.mp4)
+https://user-images.githubusercontent.com/48103544/235676232-8cd21941-3348-469d-8b77-00e7e5082d65.mp4
 
 
 ## 4. Add your page to the sidebar menu
@@ -80,7 +80,11 @@ A Rule is a concrete expression of a sharing policy. It allows a data owner to s
 3. Add your page title in the correct location following the architecture.
 4. Add some keywords related to the page.
 
-![](adding-page-to-menu.mp4)
+
+
+https://user-images.githubusercontent.com/48103544/235676568-5d40c540-bc28-4071-ad11-b1f12f0d1ad5.mp4
+
+
 
 ## 5. Creating a Pull Request
 
@@ -90,4 +94,4 @@ A Rule is a concrete expression of a sharing policy. It allows a data owner to s
 4. Add the appropriate reviewer.
 5. Validate the pull request.
 
-![](https://user-images.githubusercontent.com/48103544/235676283-34ef7d12-5312-4f94-b0ee-8614a7d8afb0.mp4)
+https://user-images.githubusercontent.com/48103544/235676283-34ef7d12-5312-4f94-b0ee-8614a7d8afb0.mp4
