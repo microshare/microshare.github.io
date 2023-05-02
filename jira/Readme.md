@@ -13,6 +13,8 @@ To find more details about the content format, read a little about markdown form
 5. Take note of your Jira ticket number (e.g., DOC-22).
 6. Create a branch with the following naming convention: "{Jira ticket number}--{brief explanation}."
 
+![](creating-a-branch.mp4)
+
 ## 2. Making Changes - Updating a File
 
 1. Go to the page you want to change on the documentation website.
@@ -21,6 +23,8 @@ To find more details about the content format, read a little about markdown form
 4. Click on "Edit."
 5. Add your content.
 6. Save your changes.
+
+![](updating-a-page.mp4)
 
 ## 3. Making Changes - Creating a File
 
@@ -66,12 +70,17 @@ A Rule is a concrete expression of a sharing policy. It allows a data owner to s
 
 ```
 
+![](creating-a-page.mp4)
+
+
 ## 4. Add your page to the sidebar menu
 
 1. Open [https://github.com/microshare/microshare.github.io/blob/master/_data/docs.yml](https://github.com/microshare/microshare.github.io/blob/master/_data/docs.yml)
 2. Select your branch.
 3. Add your page title in the correct location following the architecture.
 4. Add some keywords related to the page.
+
+![](adding-page-to-menu.mp4)
 
 ## 5. Creating a Pull Request
 
@@ -80,3 +89,5 @@ A Rule is a concrete expression of a sharing policy. It allows a data owner to s
 3. Add some explanations.
 4. Add the appropriate reviewer.
 5. Validate the pull request.
+
+![](pull-request.mp4)
