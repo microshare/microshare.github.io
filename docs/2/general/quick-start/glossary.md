@@ -4,40 +4,47 @@ title: Microshare™ Glossary
 description: Confused on any common Microshare™ terms?
 toc: true
 ---
-
------
-
-
+---
 
 {% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
 
 <br>
 
-----------------------------------
+---
+
 ## Summary
 
 1. [Overview](./#overview)
 2. [Microshare Terminology](./#microshare-terminology)
 3. [Industry Terminology](./#industry-terminology)
+4. [Extended Business Terminology](../faq/business-terms.md)
+5. [Extended IOT Technology Terminology](../faq/technical-terms.md)
+
+
+
 
 ## Overview
----------------------------------------
-With a lot of documentation comes a variety of phrases and words which may not be familiar to the average reader. This page stands as a reference for any unfamiliar word you may come across. The glossary is seperated into two parts, one for Microshare specfic terms and another for terms frequently used in the IoT industry.  
+
+---
+
+With a lot of documentation comes a variety of phrases and words which may not be familiar to the average reader. This page stands as a reference for any unfamiliar word you may come across. The glossary is seperated into two parts, one for Microshare specfic terms and another for terms frequently used in the IoT industry.
 
 Having trouble with a word or phrase that you can't find here? Do not hesitate to ask for help at `support@microshare.io`
 
----------------------------------------
+---
+
 ## Microshare Terminology
 
 <br>
 
 ##### App
 
- a Microshare app is a  web application that is configured, managed, and accessed via the Microshare portal.  Such apps are often used to visualize data in a dashboard.
- 
+a Microshare app is a  web application that is configured, managed, and accessed via the Microshare portal.  Such apps are often used to visualize data in a dashboard.
+
 <br>
 
 <!--Data Formatting may be removed from phrasing in the documentation-->
+
 ##### Data Formatting
 
 Data formatting or processing is the process by which Microshare takes encrypted data from your device(s) and represents them onto your dashboard.
@@ -64,7 +71,7 @@ Microshare uses the term 'device’ to designate an individual hardware componen
 
 ##### Device Cluster
 
-A device cluster is a group of devices of like type – usually physically located in the same place. Device clusters can be further used to logically divide devices into functional groups, whose data is intended to be displayed or analyzed together in a  single representation or visualization. 
+A device cluster is a group of devices of like type – usually physically located in the same place. Device clusters can be further used to logically divide devices into functional groups, whose data is intended to be displayed or analyzed together in a  single representation or visualization.
 
 <br>
 
@@ -80,13 +87,13 @@ Microshare apps store app specific configuration information as JSON fomatted [f
 
 <br>
 
-##### Form 
+##### Form
 
-A form assigns the type of data that is being handled so that the data can be properly used and displayed. 
+A form assigns the type of data that is being handled so that the data can be properly used and displayed.
 
 <br>
 
-##### Identity 
+##### Identity
 
 The account you are under which not only what data you can view, but what apps and forms you have jurisdiction over. An identity shares its applications and sharing rights with its users.
 
@@ -112,7 +119,7 @@ Microshare uses a patented policy fabric to allow its clients to have fine-grain
 
 ##### Record
 
-Each unit of data stored in the Microshare [data lake](./#data-lake) is called a record or a share record. 
+Each unit of data stored in the Microshare [data lake](./#data-lake) is called a record or a share record.
 
 <br>
 
@@ -164,9 +171,9 @@ A View is a component for managing data access. It provides advanced ways of que
 
 <br>
 
+---
 
----------------------------------------
-## Industry Terminology 
+## Industry Terminology
 
 <br>
 
@@ -208,7 +215,7 @@ The "middleman" between the Microshare Network and your [device](./#device). The
 
 ##### JSON
 
-JavaScript Object Notation; a mechanism for storing and retrieving arbitrarily complex data in a variety of data types as a human readable cross-platform string. 
+JavaScript Object Notation; a mechanism for storing and retrieving arbitrarily complex data in a variety of data types as a human readable cross-platform string.
 
 <br>
 
@@ -226,13 +233,13 @@ the physical layer or the wireless modulation utilized to create the long range 
 
 ##### Packed
 
-The raw data sent from your device in hexadecimal format which has not yet been [unpacked](./#unpacked) into digestible data. 
+The raw data sent from your device in hexadecimal format which has not yet been [unpacked](./#unpacked) into digestible data.
 
 <br>
 
 ##### Query
 
-A request to the [API](./#api) or a database for information. 
+A request to the [API](./#api) or a database for information.
 
 <br>
 
@@ -250,7 +257,7 @@ The place where the information is coming from.
 
 ##### Standard
 
-The formal model by which Microshare upholds in our process of managing data. 
+The formal model by which Microshare upholds in our process of managing data.
 
 <br>
 
@@ -266,11 +273,6 @@ A piece of authentication information that last for a short time period used in 
 
 <br>
 
-
 ##### Unpacked
 
 To transform the binary data produced by the device into [JSON](./#json) formated data that can be more easily processed by the downstream data consumer.
-
-
- 
-
