@@ -186,7 +186,7 @@ For more information on the specifications on the SmartEnds Brighterbin and samp
 
 ### Platform Tutorials
 * [Stream IoT packets from Senet to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/senet-tutorial)
-* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/ttn_tutorial)
+* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/tts_tutorial)
 * [Configure Routing from Kerlink Gateway's SPN to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/kerlink-tutorial)
 
  
