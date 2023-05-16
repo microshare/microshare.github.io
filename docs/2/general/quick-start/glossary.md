@@ -57,7 +57,7 @@ Data ingestion is the process by which Microshare consumes data from various sou
 
 <br>
 
-##### Deploy- M
+##### Deploy-M
 
 The Microshare mobile application that provides an easy way to configure your devices on location from your Android or IOS devices.
 
