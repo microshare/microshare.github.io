@@ -4,14 +4,31 @@ title: General FAQ
 description: Have a question not answered here? Do not hesitate to contact us at `support@microshare.io`!
 toc: true
 ---
-
 {% include image.html url="https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png" description="topMicroshare" %}
 
+{% capture title %}
+What terminology should I know to understand how Microshare is deployed and used to solve business problem?
+{% endcapture %}
 
+{% capture content %}
 
-<!-- ********************
-**    New Question     **
-********************* -->
+* [Microshare Glossary](../quick-start/glossary.md)
+* [Extended Business Terminology](./business-terms.md)
+* [Extended IOT Technology Terminology](./technical-terms.md)
+
+{% endcapture %}
+
+{% capture title %}
+I did not set up my password within the 15-minute window, What do I do?
+{% endcapture %}
+
+{% capture content %}
+If you do not set up your password within the 15-minute expiration window, navigate to <a href="https://app.microshare.io">https://app.microshare.io</a> for Production and <a href="https://dapp.microshare.io">https://dapp.microshare.io</a> for Dev and click on the “Forgot Password?” link to reset your password.  You will need to set up your password within 15 minutes of clicking on the link or generate a new email.
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="pw_15min" %}
+
+{% include accordion.html title=title content=content key="pw_15min" %}
 
 {% capture title %}
 I did not set up my password within the 15-minute window, What do I do?
@@ -84,13 +101,13 @@ If you are still unable to access your account, please contact our  support team
 ********************* -->
 
 {% capture title %}
-How do I switch between identities? 
+How do I switch between identities?
 {% endcapture %}
 
 {% capture content %}
-If you have received an email from Microshare informing you that a new identity has been shared with you, or you do not know how to switch between identities. Please follow this link for instructions on switching between identities - <a href="https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/identity-guide/#1-switching-identities">Switching Identities</a> 
+If you have received an email from Microshare informing you that a new identity has been shared with you, or you do not know how to switch between identities. Please follow this link for instructions on switching between identities - <a href="https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/identity-guide/#1-switching-identities">Switching Identities</a>
 <br><br>
-If you have not received this email (please check your Junk Folder) and believe you should have access to an identity. Please contact the administrator for your account.  
+If you have not received this email (please check your Junk Folder) and believe you should have access to an identity. Please contact the administrator for your account.
 <br><br>
 If you are still unable to access the identity, please contact our 24hr support team at support@microshare.io
 {% endcapture %}
@@ -102,13 +119,13 @@ If you are still unable to access the identity, please contact our 24hr support 
 ********************* -->
 
 {% capture title %}
-Why am I unable to log into my Microshare account?  
+Why am I unable to log into my Microshare account?
 {% endcapture %}
 
 {% capture content %}
-Please make sure you are using Google Chrome, Mozilla Firefox or Apple Safari.  Please do not use Internet Explorer as it is not supported. 
+Please make sure you are using Google Chrome, Mozilla Firefox or Apple Safari.  Please do not use Internet Explorer as it is not supported.
 <br><br>
-If the above is not the issue, then please contact our support team at support@microshare.io 
+If the above is not the issue, then please contact our support team at support@microshare.io
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="unable_login" %}
@@ -118,11 +135,11 @@ If the above is not the issue, then please contact our support team at support@m
 ********************* -->
 
 {% capture title %}
-How do I add/delete users from an account?  
+How do I add/delete users from an account?
 {% endcapture %}
 
 {% capture content %}
-If you are the Administrator and would like to have users added/removed from an identity please contact our support team at support@microshare.io 
+If you are the Administrator and would like to have users added/removed from an identity please contact our support team at support@microshare.io
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="delete_user" %}
@@ -132,7 +149,7 @@ If you are the Administrator and would like to have users added/removed from an 
 ********************* -->
 
 {% capture title %}
-What do I do if I do not know where a gateway is installed?    
+What do I do if I do not know where a gateway is installed?
 {% endcapture %}
 
 {% capture content %}
@@ -146,7 +163,7 @@ If you do not know where the gateway has been installed, please contact our supp
 ********************* -->
 
 {% capture title %}
-I keep receiving gateway offline notification, what should I do?    
+I keep receiving gateway offline notification, what should I do?
 {% endcapture %}
 
 {% capture content %}
@@ -160,7 +177,7 @@ If you’re frequently receiving gateway offline notifications, please contact o
 ********************* -->
 
 {% capture title %}
-I am not receiving any notifications/alerts    
+I am not receiving any notifications/alerts
 {% endcapture %}
 
 {% capture content %}
@@ -174,11 +191,11 @@ If you are not receiving notification/alerts that have been set up please contac
 ********************* -->
 
 {% capture title %}
-How do I use Microshare’s API?    
+How do I use Microshare’s API?
 {% endcapture %}
 
 {% capture content %}
-To get your data via the API, please follow this link to our technical documentation - <a href="https://docs.microshare.io/docs/2/technical/api/quick-start/">Using the Microshare API</a> 
+To get your data via the API, please follow this link to our technical documentation - <a href="https://docs.microshare.io/docs/2/technical/api/quick-start/">Using the Microshare API</a>
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="microshare_api" %}
@@ -188,11 +205,11 @@ To get your data via the API, please follow this link to our technical documenta
 ********************* -->
 
 {% capture title %}
-What are the standard rec types to query?    
+What are the standard rec types to query?
 {% endcapture %}
 
 {% capture content %}
-If you are unsure which rec type to query, please follow this link to  – <a href="https://docs.microshare.io/docs/2/technical/data-format/microshare-standards/#f-unpacker">the list of standard rec types</a>. If your solution is not included in this list, please contact our support team at support@microshare.io  
+If you are unsure which rec type to query, please follow this link to  – <a href="https://docs.microshare.io/docs/2/technical/data-format/microshare-standards/#f-unpacker">the list of standard rec types</a>. If your solution is not included in this list, please contact our support team at support@microshare.io
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="rec_types" %}
@@ -202,7 +219,7 @@ If you are unsure which rec type to query, please follow this link to  – <a hr
 ********************* -->
 
 {% capture title %}
-How can I stream data from Microshare?    
+How can I stream data from Microshare?
 {% endcapture %}
 
 {% capture content %}
@@ -216,7 +233,7 @@ For information on streaming integrations, please see our technical documentatio
 ********************* -->
 
 {% capture title %}
-Why am I not receiving data in my stream?    
+Why am I not receiving data in my stream?
 {% endcapture %}
 
 {% capture content %}
@@ -230,13 +247,13 @@ If you have streaming set up, however are unable to see data, please contact our
 ********************* -->
 
 {% capture title %}
-What do I do if I am unable to see data on the Microshare platform?    
+What do I do if I am unable to see data on the Microshare platform?
 {% endcapture %}
 
 {% capture content %}
 If you are unable to see data on the Microshare platform, please check that you are using the correct identity, information on how to do this can be found here  - <a href="https://docs.microshare.io/docs/2/general/quick-start/access-my-apps/">Switching Identities</a>
 <br><br>
-If you do not have access to an identity which you think you should, please contact our Support team at support@microsahare.io 
+If you do not have access to an identity which you think you should, please contact our Support team at support@microsahare.io
 <br><br>
 If you are still unable to view any data, please contact our support team at support@microshare.io
 {% endcapture %}
@@ -248,20 +265,15 @@ If you are still unable to view any data, please contact our support team at sup
 ********************* -->
 
 {% capture title %}
-What do I do if there I am missing data?     
+What do I do if there I am missing data?
 {% endcapture %}
 
 {% capture content %}
-If you are missing data for a set period of time, please contact support@microshare.io 
+If you are missing data for a set period of time, please contact support@microshare.io
 <br><br>
-If you are unable to find the appropriate dashboards, Please click either “Dashboard” in the menu along the top, or the Microshare logo in the top left corner 
+If you are unable to find the appropriate dashboards, Please click either “Dashboard” in the menu along the top, or the Microshare logo in the top left corner
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="missing_data" %}
 
-
-
----------------------------------------
-
- 
-
+---
