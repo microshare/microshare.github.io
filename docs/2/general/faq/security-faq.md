@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: {Microshar Data Security and Privacy FAQs}
-description: {Frequently asked questions regarding Microshare data security and privacy}
+title: Microshare Data Security and Privacy FAQs
+description: Frequently asked questions regarding Microshare data security and privacy
 toc: true
 ---
 
