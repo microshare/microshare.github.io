@@ -96,7 +96,7 @@ I’ve visited the Microshare Data Security and Privacy Trust Center and read th
 {% endcapture %}
 
 {% capture content %}
-For additional information feel free to use the live chat feature available on the [Microshare website](https://www.microshare.io/). Current and perspective contacts can email support@microshare.io for additional details.
+For additional information, feel free to use the live chat feature available on the [Microshare website](https://www.microshare.io/). Current and perspective contacts can email support@microshare.io for additional details.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="security_details" %}
