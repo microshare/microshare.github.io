@@ -66,7 +66,7 @@ Do you leverage encryption to protect data, both at rest and in transit?
 {% endcapture %}
 
 {% capture content %}
-Microshare utilizes encryption in transit and at‐rest by default. TLS 1.2/1.3 with SHA-256/AES-128 is used as a default encryption standard between servers and all clients with TLS 1.2/1.3 support. For more information, please see our [Security Overview document](https://www.microshare.io/wp-content/uploads/2022/11/Security-1-pager-3.pdf).
+Microshare utilizes encryption in transit and at rest by default. TLS 1.2/1.3 with SHA-256/AES-128 is used as a default encryption standard between servers and all clients with TLS 1.2/1.3 support. For more information, please see our [Security Overview document](https://www.microshare.io/wp-content/uploads/2022/11/Security-1-pager-3.pdf).
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="encryption" %}
