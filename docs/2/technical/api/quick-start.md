@@ -108,7 +108,7 @@ Otherwise, you can setup the API manager with Postman on your computer for a qui
 <br>
 **1.** Visit our [API documentation page](../api-collection/) (preferable in another tab so that you may have both references open).
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/800c4698e3342072364c)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6881783-fed1e41c-e08b-4d1e-afea-85b8fc1b05a0)
 
 <br>
 **2.** Click on the `Run in Postman` button to install Postman on you computer and automatically load in our Postman API collection and environment.  
