@@ -17,11 +17,7 @@ toc: true
 1. [Overview](./#overview)
 2. [Microshare Terminology](./#microshare-terminology)
 3. [Industry Terminology](./#industry-terminology)
-4. [Extended Business Terminology](../faq/business-terms.md)
-5. [Extended IOT Technology Terminology](../faq/technical-terms.md)
-
-
-
+4. [Extended IOT Technology Terminology](../faq/technical-terms.md)
 
 ## Overview
 

@@ -13,7 +13,6 @@ What terminology should I know to understand how Microshare is deployed and used
 {% capture content %}
 
 * [Microshare Glossary](../quick-start/glossary.md)
-* [Extended Business Terminology](./business-terms.md)
 * [Extended IOT Technology Terminology](./technical-terms.md)
 
 {% endcapture %}
