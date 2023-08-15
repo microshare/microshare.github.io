@@ -33,6 +33,32 @@ If you do not set up your password within the 15-minute expiration window, navig
 ********************* -->
 
 {% capture title %}
+What are the minimum password requirements when creating or resetting my account password?
+{% endcapture %}
+
+{% capture content %}
+Microshare recommends that users create a unique and difficult to guess passwords to help protect their Microshare account from password-based attacks.
+<br><br>
+Your password must:
+<br><br>
+Include at least one number
+<br>
+Include at least one of these special characters !@#$%^&*
+<br>
+Include at least one uppercase letter
+<br>
+Include at least one lowercase letter
+<br>
+Be at least 12 characters in length
+{% endcapture %}
+
+{% include accordion.html title=title content=content key="access_acount" %}
+
+<!-- ********************
+**    New Question     **
+********************* -->
+
+{% capture title %}
 Why can't I see any Dashboards?
 {% endcapture %}
 
