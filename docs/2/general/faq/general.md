@@ -39,7 +39,7 @@ What are the minimum password requirements when creating or resetting my account
 {% capture content %}
 Microshare recommends that users create a unique and difficult to guess passwords to help protect their Microshare account from password-based attacks.
 <br><br>
-Your password must:
+Your account password must:
 <br><br>
 Include at least one number
 <br>
