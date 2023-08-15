@@ -28,18 +28,6 @@ If you do not set up your password within the 15-minute expiration window, navig
 
 {% include accordion.html title=title content=content key="pw_15min" %}
 
-{% include accordion.html title=title content=content key="pw_15min" %}
-
-{% capture title %}
-I did not set up my password within the 15-minute window, What do I do?
-{% endcapture %}
-
-{% capture content %}
-If you do not set up your password within the 15-minute expiration window, navigate to <a href="https://app.microshare.io">https://app.microshare.io</a> for Production and <a href="https://dapp.microshare.io">https://dapp.microshare.io</a> for Dev and click on the “Forgot Password?” link to reset your password.  You will need to set up your password within 15 minutes of clicking on the link or generate a new email.
-{% endcapture %}
-
-{% include accordion.html title=title content=content key="pw_15min" %}
-
 <!-- ********************
 **    New Question     **
 ********************* -->
