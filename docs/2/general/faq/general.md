@@ -50,6 +50,19 @@ Include at least one uppercase letter
 Include at least one lowercase letter
 <br>
 Be at least 12 characters in length
+<br>
+<br>
+Password Storage Best Practices:
+<br>
+'But that sounds hard!' We get it.
+<br>
+Microshare recommends using password management software that can automatically suggest and then securely store your passwords across all of your devices.
+<br>
+Native browser-based password managers are typically considered less secure than an independent, stand-alone password manager.
+<br>
+Once set, users only need to remember one truly epic password to protect the password manager itself.
+<br>
+Seriously, commit that password to memory. You can do it. Don't write it down, stick it in a Word file, or take a picture. Hackers know these tricks.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="access_acount" %}
