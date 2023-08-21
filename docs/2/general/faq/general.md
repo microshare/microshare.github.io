@@ -28,17 +28,44 @@ If you do not set up your password within the 15-minute expiration window, navig
 
 {% include accordion.html title=title content=content key="pw_15min" %}
 
-{% include accordion.html title=title content=content key="pw_15min" %}
+<!-- ********************
+**    New Question     **
+********************* -->
 
 {% capture title %}
-I did not set up my password within the 15-minute window, What do I do?
+What are the minimum password requirements when creating or resetting my account password?
 {% endcapture %}
 
 {% capture content %}
-If you do not set up your password within the 15-minute expiration window, navigate to <a href="https://app.microshare.io">https://app.microshare.io</a> for Production and <a href="https://dapp.microshare.io">https://dapp.microshare.io</a> for Dev and click on the “Forgot Password?” link to reset your password.  You will need to set up your password within 15 minutes of clicking on the link or generate a new email.
+Microshare recommends that users create a unique and difficult to guess passwords to help protect their Microshare account from password-based attacks.
+<br><br>
+Your account password must:
+<br><br>
+Include at least one number
+<br>
+Include at least one of these special characters !@#$%^&*
+<br>
+Include at least one uppercase letter
+<br>
+Include at least one lowercase letter
+<br>
+Be at least 12 characters in length
+<br>
+<br>
+Password Storage Best Practices:
+<br>
+'But that sounds hard!' We get it.
+<br>
+Microshare recommends using password management software that can automatically suggest and then securely store your passwords across all of your devices.
+<br>
+Native browser-based password managers are typically considered less secure than an independent, stand-alone password manager.
+<br>
+Once set, users only need to remember one truly epic password to protect the password manager itself.
+<br>
+Seriously, commit that password to memory. You can do it. Don't write it down, stick it in a Word file, or take a picture. Hackers know these tricks.
 {% endcapture %}
 
-{% include accordion.html title=title content=content key="pw_15min" %}
+{% include accordion.html title=title content=content key="access_acount" %}
 
 <!-- ********************
 **    New Question     **
