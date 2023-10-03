@@ -12,10 +12,10 @@ toc: true
 
 Interested in seeing Microshare's dashboards in action? 
 
-Check out our [Demo Apps](https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null), where you will be able to interact with our dashboards in real time. As seen in the graphic below, you have access to a variety of different apps. <br>
+Check out our [Demo Apps](https://app.microshare.io/guest/63edf6112d0000e2760b7e82), where you will be able to interact with our dashboards in real time. As seen in the graphic below, you have access to a variety of different apps. <br>
 
-<a href="https://dapp.microshare.io/guest/5eaaff443d0000e446d39ff0#null">
-    {% include image.html url="/assets/img/demo-dashboard.jpg" description="Demo Suite App" %}
+<a href="https://app.microshare.io/guest/63edf6112d0000e2760b7e82">
+    {% include image.html url="/assets/img/demo-eversmart-suite.png" description="Demo Suite App" %}
 
 
 ## Demo API 
