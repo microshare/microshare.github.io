@@ -100,7 +100,19 @@ I can see the Dashboards, but I am having trouble seeing any data. What do I do?
 {% endcapture %}
 
 {% capture content %}
-If you can see the Dashboards but are having trouble seeing any data, log out and then log back into the app.
+1. If you encounter a **"Great Scott!"** error message, it means you are logged into the wrong identity for the apps you are trying to access. To switch identities, follow these steps:
+    1. Navigate and log in to the Console screen at [https://app.microshare.io](https://app.microshare.io) for Production and [https://dapp.microshare.io](https://dapp.microshare.io) for Development.
+    2. Click on the person icon in the top right corner of the Console screen.
+    3. Select the identity you want to access.
+    4. View the apps associated with your chosen identity.
+    5. Click on the appropriate app to access the dashboard.
+
+2. If you cannot see the data within the dashboard itself, try the following:
+    1. Log off and log back in to the Console screen at [https://app.microshare.io](https://app.microshare.io) for Production or [https://dapp.microshare.io](https://dapp.microshare.io) for Development.
+    2. Check the date range and filters applied in the Dashboard. Make sure they are set correctly to display the desired data.
+    3. Refresh the Dashboard to see if the data loads correctly.
+
+3. If you are still experiencing issues after following these steps, confirm that your user account has the necessary permissions to access and view the data by contacting Microshare Support at [support@microshare.io](mailto:support@microshare.io) for further assistance.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="data_dashboard" %}
@@ -150,7 +162,29 @@ Why am I unable to log into my Microshare account?
 {% endcapture %}
 
 {% capture content %}
-Please make sure you are using Google Chrome, Mozilla Firefox or Apple Safari.  Please do not use Internet Explorer as it is not supported.
+1. Please ensure you are using **Google Chrome**, **Mozilla Firefox**, or **Apple Safari** as your web browser. Do not use **Internet Explorer**, as it is not supported.
+
+2. **Microshare** operates in two environments: the development environment and the production environment. Each has its own characteristics and serves different purposes.
+    - **Development**: [dapp.microshare.io](https://dapp.microshare.io)
+    - **Production**: [app.microshare.io](https://app.microshare.io)
+    
+   Please make sure that you are using the appropriate link to log in to your account.
+
+3. Ensure you are using the correct email address and password associated with your account. Double-check for any typos or errors.
+
+4. Clear your browser's cache and cookies or try accessing your account using a different browser or device.
+
+5. If you have forgotten your password, use the "Forgot Password" option on the login page to reset it.
+
+   Your account password must:
+   - Include at least one number
+   - Include at least one of these special characters !@#$%^&*
+   - Include at least one uppercase letter
+   - Include at least one lowercase letter
+   - Be at least 12 characters in length
+
+If the above steps do not resolve the issue, please contact our support team at [support@microshare.io](mailto:support@microshare.io).
+
 <br><br>
 If the above is not the issue, then please contact our support team at support@microshare.io
 {% endcapture %}
@@ -166,7 +200,7 @@ How do I add/delete users from an account?
 {% endcapture %}
 
 {% capture content %}
-If you are the Administrator and would like to have users added/removed from an identity please contact our support team at support@microshare.io
+Kindly reach out to our support team at support@microshare.io.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="delete_user" %}
@@ -180,7 +214,7 @@ What do I do if I do not know where a gateway is installed?
 {% endcapture %}
 
 {% capture content %}
-If you do not know where the gateway has been installed, please contact our support team at support@microshare.io
+Microshare does not maintain records of gateway installation locations at the site. Consult with your team members, supervisor, or the person responsible for installing and managing the gateways within your organization.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="gateway_location" %}
@@ -194,7 +228,11 @@ I keep receiving gateway offline notification, what should I do?
 {% endcapture %}
 
 {% capture content %}
-If you’re frequently receiving gateway offline notifications, please contact our support team about moving the errant gateway to a more reliable location.
+1. Check the physical connection of the gateway to ensure it is properly connected to the power source and the network.
+2. Verify if there are any network issues or outages in the area that might be affecting the gateway's connection.
+3. Confirm that the gateway is within the range of the network it is trying to connect to.
+4. Restart the gateway and observe if the issue persists.
+5. If the problem continues after following the above steps, contact Microshare Support at [support@microshare.io](mailto:support@microshare.io) for further assistance.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="gateway_notification" %}
@@ -208,7 +246,8 @@ I am not receiving any notifications/alerts
 {% endcapture %}
 
 {% capture content %}
-If you are not receiving notification/alerts that have been set up please contact your account administrator.
+1. Verify with your supervisor that your email is configured to receive notifications/alerts.
+2. If your email is set up correctly and you are still not receiving notifications, contact Microshare Support at [support@microshare.io](mailto:support@microshare.io).
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="alerts_notification" %}
@@ -264,7 +303,7 @@ Why am I not receiving data in my stream?
 {% endcapture %}
 
 {% capture content %}
-If you have streaming set up, however are unable to see data, please contact our support team at support@microshare.io
+Kindly reach out to our support team at support@microshare.io.
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="data_stream" %}
@@ -296,9 +335,11 @@ What do I do if there I am missing data?
 {% endcapture %}
 
 {% capture content %}
-If you are missing data for a set period of time, please contact support@microshare.io
-<br><br>
-If you are unable to find the appropriate dashboards, Please click either “Dashboard” in the menu along the top, or the Microshare logo in the top left corner
+If you see missing data in the dashboard then:
+1. Log off and log back in to the Console screen at [https://app.microshare.io](https://app.microshare.io) for Production or [https://dapp.microshare.io](https://dapp.microshare.io) for Development.
+2. Try accessing the dashboard and check if you see the data.
+If the above steps do not resolve the issue, please contact our support team at [support@microshare.io](mailto:support@microshare.io).
+If you see missing data in the stream, then kindly reach out to our support team at [support@microshare.io](mailto:support@microshare.io).
 {% endcapture %}
 
 {% include accordion.html title=title content=content key="missing_data" %}
