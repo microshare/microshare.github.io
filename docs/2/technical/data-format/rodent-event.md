@@ -20,7 +20,7 @@ This page provides an overview of the data structure for a motion detection even
 ---------------------------------------
 
 
-#### Main Fields: Contains information about type of event detected by the device 
+### Main Fields: Contains information about type of event detected by the device 
 
 **solution:** Name of the solution at microshare (string), the solution is here Eversmart Alert so the name is "alert"
 
@@ -33,7 +33,7 @@ This page provides an overview of the data structure for a motion detection even
 **time:** Iso Time of the event (string). 
 
 
-#### Device: Contains information about the physical end device 
+### Device: Contains information about the physical end device 
 
 **battery:** Contains information about the device's battery. 
 
@@ -50,7 +50,7 @@ This page provides an overview of the data structure for a motion detection even
 **id:** The unique identifier for the device (string). 
  
 
-#### Meta: Contains location and network information 
+### Meta: Contains location and network information 
 
 **device:** An array containing information about the device’s location. 
 
@@ -69,6 +69,10 @@ This page provides an overview of the data structure for a motion detection even
 **fcnt_up:** The uplink frame counter (integer). 
 
 **fport:** The device's communication port (integer). 
+
+
+## 3. Example
+---------------------------------------
 
 
 {% highlight javascript %}
