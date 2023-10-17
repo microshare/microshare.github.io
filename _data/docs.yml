@@ -125,6 +125,8 @@
       keywords : ["meta","Ipso","meta.iot","origin","unpacker","motion","environment","temperature","feedback"]
     - title: Event Formats
       keywords : ["meta","event","meta.iot","feedback"]
+    - title: Motion Event
+      keyword : ["traffic","occupancy","motion", "presence", "people", "counting"]
     - title: Feedback
       keyword : ["meta","event","clean","staff","skiply","touchfree","leak","toilet","soap"]
     - title: People Counter
