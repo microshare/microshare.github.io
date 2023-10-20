@@ -127,6 +127,8 @@
       keywords : ["meta","event","meta.iot","feedback"]
     - title: Feedback
       keyword : ["meta","event","clean","staff","skiply","touchfree","leak","toilet","soap"]
+    - title: Rodent Event
+      keyword : ["meta","event","rodent","rat","trap"]
     - title: People Counter
       keyword : ["count","doorway","counting"]
     - title: Contact Tracing
