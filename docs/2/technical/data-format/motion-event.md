@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Rodent Event
-description: Let's take a look at the Microshare™ rodent event data structure.
+title: Motion Event
+description: Let's take a look at the Microshare™ motion event data structure.
 toc: true
 ---
 
@@ -13,9 +13,9 @@ toc: true
 ## Introduction
 ---------------------------------------
 
-This page provides an overview of the data structure for a motion sensor event. This sensor is specifically used for motion/traffic (through a door) monitoring and also occupancy monitoring (inside a room). The data is presented in JSON format and contains information about the device, event, and metadata related to the device and event. 
+This page provides an overview of the data structure for a motion sensor event. This sensor is specifically used for monitoring motion/traffic through a door and occupancy within a room. The data is presented in JSON format and contains information about the device, event, and metadata related to the device and event.
 
-Rectype: io.microshare.motion.unpacked.event or io.microshare.occupancy.unpacked.event
+`Rectype` can be either `io.microshare.motion.unpacked.event` or `io.microshare.occupancy.unpacked.event`.
 
 ## 2. Data Fields
 ---------------------------------------
