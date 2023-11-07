@@ -20,7 +20,7 @@ For many use-cases, Microshare will provide an additional interpretation stage i
 ---------------------------------------
 
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -122,13 +122,13 @@ For many use-cases, Microshare will provide an additional interpretation stage i
     ]
 }
 
-{% endhighlight %}
+```
 
 ## 3. Microshare Motion event data example
 ---------------------------------------
 
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -245,4 +245,4 @@ For many use-cases, Microshare will provide an additional interpretation stage i
         }
     ]
 }
-{% endhighlight %}
+```

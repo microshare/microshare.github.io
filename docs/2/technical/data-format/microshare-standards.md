@@ -54,7 +54,7 @@ Additionally, this guide will discuss tags. Tags are labels or descriptions atta
 
 Example : 
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -220,10 +220,7 @@ Example :
       "updateDate": "2020-06-17T09:48:08.980Z",
       "updaterId": "yourname@microshare.io"
     },
-
-.......
-
-{% endhighlight %}
+```
 
 #### A. General Structure
 
@@ -254,7 +251,7 @@ All these values are explained with their units in the following table:
 
 `{Data}` contains information about the device that provided the data payload. This usually includes the device id, battery type, battery type, etc. The code supplied will look like: 
 
-{% highlight javascript %}
+```
 "device": {
   "battery": {
     "power": 80,
@@ -264,7 +261,7 @@ All these values are explained with their units in the following table:
   },
   "id": "58-A0-CB-00-00-40-??-??"
 },
-{% endhighlight %}
+```
 
 #### C. Ipso
 
@@ -275,7 +272,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 #### D. Meta/IoT
 
-{% highlight javascript %}
+```
 "meta": {
   "device": [
     "London",
@@ -303,7 +300,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
   },
   "source": []
 },
-{% endhighlight %}
+```
 
 ##### The `meta` will provide:
 
@@ -331,7 +328,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 #### E. Origin
 
-{% highlight javascript %}
+```
 "origin": {
   "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
   "createDate": "2020-06-17T09:48:08.980Z",
@@ -345,7 +342,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
     "ip": "your ip address"
   }
 },
-{% endhighlight %}
+```
 
 A thorough explanation of the origins can be found in the  [Overview page](/docs/2/technical/data-format/overview/#b3-origin). 
 
@@ -353,13 +350,13 @@ Some information may differ if you unpack the data in an account that is not the
 
 #### F. Unpacker
 
-{% highlight javascript %}
+```
 "unpacker": {
   "class": "io.tracknet.healthy.TBHV100.Decoder",
   "library": "lorawan_device_unpack",
   "version": "0.5.5"
 },
-{% endhighlight %}
+```
 
 The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
@@ -511,7 +508,7 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 
 #### A. Motion Data
 
-{% highlight javascript %}
+```
 {
     "meta": {
         "currentCount": 355,
@@ -668,7 +665,7 @@ The last block of data in `{Data}` describes the device cluster that is permitte
             "updateDate": "2020-06-17T13:41:33.425Z",
             "updaterId": "yourname@microshare.io"
         },
-{% endhighlight %}
+```
 
 The count represents the number of movements triggered, the range is 0 - 16,777,215. It resets at any power-cycle or battery replacement. 
 The time represents the number of minutes since the last movement have been triggerd. The range is 0 – 65,535, it will be reset at the same time as the count. 
@@ -677,7 +674,7 @@ The time represents the number of minutes since the last movement have been trig
 
 #### B. Temperature Data
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -843,14 +840,11 @@ The time represents the number of minutes since the last movement have been trig
       "updateDate": "2020-06-17T09:48:08.980Z",
       "updaterId": "yourname@microshare.io"
     },
-
-.......
-
-{% endhighlight %}
+```
 
 #### C. Feedback Data
 
-{% highlight javascript %}
+```
 {
     "meta": {
         "currentCount": 261,
@@ -1017,11 +1011,11 @@ The time represents the number of minutes since the last movement have been trig
             "updateDate": "2020-06-17T13:43:47.365Z",
             "updaterId": "yourname@microshare.io"
         },
-{% endhighlight %}
+```
 
 #### D. Contact Tracing
 
-{% highlight java %}
+```
   {
     "meta": {
         "currentCount": 1,
@@ -1112,9 +1106,9 @@ The time represents the number of minutes since the last movement have been trig
         }
     ]
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+```
 {
     "event_type":"create",
     "id":"5edfb7e246e0fb00297b5???",
@@ -1214,14 +1208,14 @@ The time represents the number of minutes since the last movement have been trig
     "recType":"io.microshare.contact.unpacked.event",
     "source":"ShareService"
 }
-{% endhighlight %}
+```
 
 
 #### E. Asset Zoning
 
 See below the code for more detail on the meaning of the different fields.
 
-{% highlight java %}
+```
   {
         "_id": "5fb54be9a401e8001d80c7fb",
         "checksum": "AC23F16DDC3330223DEC3AE9B60DF4FC03BC9CD633A07294BF1BE2B97D9E5BA7L633",
@@ -1314,7 +1308,7 @@ See below the code for more detail on the meaning of the different fields.
         "updateDate": "2020-10-17T16:29:29.769Z",
         "updaterId": "admin@microshare.io"
       }
-{% endhighlight %}
+```
 
 * data.event - this has 3 values:
 * "new" - the device has entered the range of the wave scanner
@@ -1339,8 +1333,7 @@ Used in contact tracing and asset zoning solutions, a heartbeat record indicates
 - `messageType`: This feild will be "contact" for a contact tracing solution and "asset" for a asset zoning solution. 
 - `mode`: This field will read "storage" if the device in contact is in storage and inactive. If "nominal", the device in contact is active but has no previous contact records. 
 
-{% highlight javascript %}
-
+```
 {
   "device": {
     "id": "ACD340663???"
@@ -1369,6 +1362,4 @@ Used in contact tracing and asset zoning solutions, a heartbeat record indicates
   "mode": "nominal",
   "time": "2020-10-05T17:19:02.855Z"
 }
-
-{% endhighlight %}
-
+```
