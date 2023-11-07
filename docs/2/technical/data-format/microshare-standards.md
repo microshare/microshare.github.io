@@ -387,54 +387,124 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 ## 3. Standards Data Table
 ---------------------------------------
 
-| Name                     | Unit | Meaning                                                  |
-| ------------------------ | ---- | -------------------------------------------------------- |
-| temperature              | °C   | Temperature of area in degrees celcius                   |
-| humidity                 | %    | Percentage of water vapor mass in dry air of area        |
-| pressure                 | hpa  | Pressure of the area                                     |
-| illuminance              | lx   | Amount of light in the area                              |
-| voc                      | ppb  | How much Volatile Organic Compound in ppb is in the area |
-| co2                      | ppm  | Carbon Dioxide Concentration in ppm in area              |
-| iaq                      | n/a  | Indoor Air Quality Index (0-500)                         |
-| loudness                 | dba  | Level of Volume of area                                  |
-| haziness                 | %    | level of impared vision from environment                 |
-| smokiness                | %dbm | level of smoke in the environment                        |
-| gas                      | n/a  | level of gas in the environment                          |
-| voltage                  | V    | battery voltage                                          |
-| current                  | A    | electrical current                                       |
-| multiplier               | n/a  | electrical current value multiplier                      |
-| presence                 | n/a  | true= presebce detected                                  |
-| motions\_since\_reset    | n/a  | motion since reset                                       |
-| motions\_since\_transmit | n/a  | motion since last transmit                               |
-| acceleration             | m/s2 | Acceleration of motion detected                          |
-| velocity                 | m/s  | velocity of motion detected                              |
-| x                        | n/a  | position on the x- plane                                 |
-| y                        | n/a  | position on the y- plane                                 |
-| z                        | n/a  | position on the z- plane                                 |
-| leak                     | n/a  | true= leak detected                                      |
-| lighter                  | n/a  | true= lighter                                            |
-| darker                   | n/a  | true= darker                                             |
-| dismantle                | n/a  | true= dismantled                                         |
-| charge                   | %    | Battery Charge                                           |
-| period                   | s    | Time in between measurements                             |
-| rssi                     | dbm  | Recieved Signal Strength Indication                      |
-| snr                      | db   | Signal to Noise Ratio, quality of signal                 |
-| reports\_since\_reset    | n/a  | number of reports since last reset                       |
-| closed                   | n/a  | true= closed                                             |
-| fill                     | %    | Fill Level frame/Uplink frame                            |
-| distance                 | cm   | distance from monitor to device                          |
-| gps                      | °    | GPS Coordinates                                          |
-| lat                      | °    | Latitude                                                 |
-| lon                      | °    | Longitude                                                |
-| push                     | n/a  | true= button pushed                                      |
-| swipe                    | n/a  | true= swiped                                             |
-| pushes\_since\_reset     | n/a  | button pushes since reset                                |
-| alarm                    | n/a  | true = there is an alarm                                 |
-| time                     | s    | seconds since 1/1/1970                                   |
-| iso\_time                | s    | ISO 8601 datetime                                        |
-| seconds\_since\_change   | s    | seconds since last transmit                              |
-| msg\_type                | n/a  | Type of message recieved                                 |
-| fault                    | n/a  | number of faults detected in payload   
+|**Measurement**|**Field**|**Unit**|**Device Field**|**Meaning**|
+| - | - | - | - |- |
+|Message Type|msg_type||true|Vendor-specific support for multipurpose devices|
+|Device Fault|fault||true|Vendor-specific single that device/sensor is malfunctioning|
+|Device Alert|alert||true|Vendor-specific single that device/sensor has alert|
+||||||
+|Device battery voltage |voltage|V|true|Electrical potential of battery or power-source|
+|Device battery charge|charge|A|true|Percentage of battery charge remaining|
+|Transmission Period|period|s|true|Frequency of device reporting|
+|Transmission RSSI|rssi|dBm|true|Relative Signal Strength Indicator measuring wireless network signal strength|
+|Transmission SNR|snr|dB|true|Signal to Noise Ratio indicator measuring wireless network signal interference|
+|Device Reports since reset|reports_since_reset||true|Count of reports since device power-up or reset|
+|PCB Temperature|temperature|°C|true|Temperature at the printed circuit board|
+||||||
+|Temperature|temperature|°C||Measure of hotness or coldness expressed in Celsius scale|
+|Relative Humidity|humidity|%||Measure of concentration of water vapour present in the air relative to maximum (aka Relative Humidity)|
+|Pressure|pressure|hPa||Measure of atmospheric pressure in force per unit area exerted by an atmospheric column|
+|Illuminance|illuminance|lx||Measure of the amount of light falling onto and spreading over a given surface area|
+|VOC|voc|ppb||Measure of Volatile Organic Compounds present in the air|
+|CO2|co2|ppm||Measure of Carbon Dioxide present in the air|
+|IAQ - Indoor Air Quality|iaq|||Vendor-specific measure of Air Quality relative to ideal for human-use|
+|AQI- Air Quality Index|air_quality_index|||Vendor-specific measure of Air Quality relative to ideal for human-use|
+|Loudness|loudness|dBA||Measure of magnitude of the auditory sensation conducted through the air|
+|Haze Luminous Transmittance|haze_luminous_transmittance|%||Percentage of transmission light blocked by particles in the air|
+|Smoke Optical Density|smoke_optical_density|dBm||Percentage of transmission light blocked by smoke in the air|
+|Gas|gas|%LEL||Percentage of the gas composition of air by mole fraction|
+|Particulate Matter|particulate_matter|µg/m³|||
+|Particulate Matter Mass|particulate_matter_number|µg/m³|||
+|Particulate Matter Typical Particle Size|particulate_matter_typical_particle_size|µm|||
+||||||
+| Formaldehyde          | formaldehyde         | µg/m³                |                  |Measure of presence of element within air|
+| Benzene               | benzene              | µg/m³                |                  |Measure of presence of element within air|
+| Ozone                 | ozone                | µg/m³                |                  |Measure of presence of element within air|
+| Carbon Monoxide       | carbon_monoxide      | µg/m³                |                  |Measure of presence of element within air|
+| Chlorine              | chlorine             | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen              | hydrogen             | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Sulphide     | hydrogen_sulphide    | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Chloride     | hydrogen_chloride    | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Cyanide      | hydrogen_cyanide     | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Fluoride     | hydrogen_fluoride    | µg/m³                |                  |Measure of presence of element within air|
+| Ammonia               | ammonia              | µg/m³                |                  |Measure of presence of element within air|
+| Nitrogen Dioxide      | nitrogen_dioxide     | µg/m³                |                  |Measure of presence of element within air|
+| Nitrogen Oxide        | nitrogen_oxide       | ppb                  |                  |Measure of presence of element within air|
+| Oxygen                | oxygen               | µg/m³                |                  |Measure of presence of element within air|
+| Sulfur Dioxide        | sulfur_dioxide       | µg/m³                |                  |Measure of presence of element within air|
+| Sulfurous Odours      | sulfurous_odours     | OU           |                  |Measure of presence of element within air|
+||||||
+| Lighting Color                | lighting_color               | °K    |                  |Represents the color temperature of lighting, measured in Kelvin|
+| Lighting Flickering           | lighting_flickering          | %   |                  |Measures the fluctuation in light output as a percentage|
+||||||
+| Health Index                  | health_index                 | %   |                  ||
+| Cognitivity Index             | cognitivity_index            | %   |                  ||
+| Sleep Index                   | sleep_index                  | %   |                  ||
+| Throat Irritation Index       | throat_irritation_index      | %   |                  ||
+| Building Health Index         | building_health_index        | %   |                  ||
+| Virus Spreading Index         | virus_spreading_index        | %   |                  ||
+||||||
+|Leak|leak|||Binary presence of electrically detectable liquid|
+|Lighter|lighter||||
+|Darker|darker||||
+|Dismantle|dismantle||||
+||||||
+|Current|current|A||Measure of electrical flow or movement of charge carriers through a conductive medium|
+|Electric Multiplier|multiplier|||Mathematical multiplier to set scale for an electrical measure|
+|Power|power|kW|||
+|Power Consumption|power_consumption|kWh|||
+||||||
+|Presence|presence|||Binary measure representing the detection of a warm object|
+|Motions since reset|motions_since_reset|||Count of warm object positional changes (motions) since device power-up or reset|
+|Events since reset|events_since_reset|||Count of state changes since device power-up or reset|
+|Motion since transmit|motions_since_transmit|||Count of warm object positional changes (motions) since last report|
+|Acceleration|acceleration|m/s2||Measure of the change in velocity of a solid object|
+|Velocity|velocity|m/s||Measure of the speed of motion of a solid object|
+|*Compound field* X|x|||Position relative to an arbitrary starting point in horizontal plane|
+|*Compound field* Y|y|||Position relative to an arbitrary starting point in vertical plane|
+|*Compound field* Z|z|||Position relative to an arbitrary starting point in longitudinal plane|
+||||||
+|Closed status|closed|||Binary measure representing the proximate relative location (close) of two magnetic objects (Hall Effect) or electronic circuit ON|
+|Open status|open|||Binary measure representing the proximate relative location (far) of two magnetic objects (Hall Effect) or electronic circuit OFF|
+||||||
+|Fill status|fill|%||Percentage measure of the reduction in capacity of a fixed depth container|
+|Distance status|distance|m||Measure of unobstructed space between two solid objects|
+||||||
+|GPS|gps|||Measure of location relative to the surface of the Earth following the geographic coordinate system|
+|*Compound field* Latitude|lat|||Measure of the North/South distance relative to the Earth's equator|
+|*Compound field* Longitude|lon|||Measure of the East/West distance relative to the Earth's prime meridian|
+|Accuracy|accuracy|m||Measure of the expected radius of uncertainty for a positional measurement|
+||||||
+|Push|push|||Binary measure of button or switch mechanical activation|
+|Swipe|swipe|||Binary measure of electro-mechanical activation|
+|Push since reset|push_since_reset|||Count of mechanical activation (pushes) since device power-up or reset|
+||||||
+| Learning Percentage                         | learning_percentage                            | %     |                  |Represents the percentage completion of a machine learning process or the degree to which a system has 'learned' from its dataset|
+| Peak Frequency Index                        | peak_frequency_index                           | Hz       |                  |Denotes the index or position of the peak frequency within a spectrum, commonly used in signal processing to identify the dominant frequency component|
+| Learning Type                               | learning_type                                  |       |                  |Indicates the category or method of learning employed by a system, such as supervised, unsupervised, reinforcement, or semi-supervised learning|
+| Fast Fourier Transform                      | fast_fourier_transform                         | Hz       |                  |Refers to the result of a Fast Fourier Transform computation, which transforms a signal from the time domain into the frequency domain, revealing the frequency components of the signal|
+||||||
+| Vibration                                   | vibration                                      | Hz       |                  |Measure of oscillation of or in a solid object|
+| Vibration Amplitude                         | vibration_amplitude                            | G     |                  |Measure of the maximum extent of a vibration or oscillation, taken from the position of equilibrium|
+| Vibration Drift                             | vibration_drift                                | %     |                  |Percentage change in the vibration frequency or position over time|
+| Vibration Drift Duration                    | vibration_drift_duration                       | min      |                  |Time duration over which vibration drift is observed or measured|
+| Vibration Drift Prediction 24 Hours         | vibration_drift_prediction_24_hours            | hour        |                  |Predicted change in vibration behavior or characteristics 24 hours into the future|
+| Vibration Drift Prediction 30 Days          | vibration_drift_prediction_30_days             | day         |                  |Predicted change in vibration behavior or characteristics 30 days into the future|
+| Vibration Drift Prediction 6 Months         | vibration_drift_prediction_6_months            | month       |                  |Predicted change in vibration behavior or characteristics 6 months into the future|
+| Operating Time                              | operating_time                                 | min      |                  ||
+| Alarm Number                                | alarm_number                                   |       |                  ||
+| Report Period                               | report_period                                  | min      |                  ||
+||||||
+|Count Since Reset|count_since_reset|||Count of generic events since device power-up or reset|
+|Count Since Transmit|count_since_transmit|||Count of generic events since last report|
+||||||
+|Alarm |alarm|||Binary measure of generic event occurance (see SubTypes)|
+||||||
+|Time seconds since 1970|time|s||Measure of the thing that keeps on slipping into the future in seconds since Jan 1, 1970|
+|ISO Time (ISO TIME - general field)|iso_time|||Measure of the thing that keeps on slipping into the future in ISO 8601 format|
+|Seconds since change|seconds_since_change|s||Count of seconds since last event state change|
+|Seconds|seconds|s||Measurement of time|
+||||||
 
 ## 4. Example
 ---------------------------------------

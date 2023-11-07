@@ -37,87 +37,69 @@ It looks like :
 
 ```
 {
-          "_warning_": "This data is not real data and is provided solely for demo purposes.",
-          "count_1": 4,
-          "count_2": 58,
-          "count_3": 7,
-          "count_4": 18,
-          "count_5": 99,
-          "device": {
-            "id": "70-B3-D5-32-60-00-01-00"
-          },
-          "ipso": {
-            "3302": {
-              "5500": false,
-              "5751": "Hall Effect activated"
-            },
-            "3347": [
-              {
-                "5501": 4,
-                "5502": false,
-                "5527": "Button #1, Upper Left, count of reports since power-on/reset",
-                "5750": "Push Button",
-                "5853": "Button #1, Upper Left"
-              },
-              {
-                "5501": 58,
-                "5502": false,
-                "5527": "Button #2, Upper Right, count of reports since power-on/reset",
-                "5750": "Push Button",
-                "5853": "Button #2, Upper Right"
-              },
-              {
-                "5501": 7,
-                "5502": false,
-                "5527": "Button #3, Lower Left, count of reports since power-on/reset",
-                "5750": "Push Button",
-                "5853": "Button #3, Lower Left"
-              },
-              {
-                "5501": 18,
-                "5502": false,
-                "5527": "Button #4, Lower Right, count of reports since power-on/reset",
-                "5750": "Push Button",
-                "5853": "Button #4, Lower Right"
-              },
-              {
-                "5501": 99,
-                "5502": false,
-                "5527": "Button #5, Middle, count of reports since power-on/reset",
-                "5750": "Push Button",
-                "5853": "Button #5, Middle"
-              }
-            ],
-            "10241": {
-              "5905": "skiply.eu",
-              "5906": "Smilio Action",
-              "5908": "1.2.0.1"
-            }
-          },
-          "meta": {
-            "device": [
-              "London",
-              "1st Floor",
-              "Bathroom"
-            ],
-            "global": [
-              "Microshare",
-              "Demo",
-              "Feedback5B"
-            ],
-            "iot": {
-              "device_id": "70-B3-D5-32-60-00-01-00",
-              "iso_time": "2022-01-10T16:55:52.414Z",
-              "time": "2022-01-10T16:55:52.414Z"
-            },
-            "source": []
-          },
-          "trigger": false,
-          "unpacker": {
-            "class": "eu.skiply.button.SmilioAction.Decoder",
-            "library": "lorawan_device_unpack"
-          }
-        }
+  "_warning_": "This data is not real data and is provided solely for demo purposes.",
+  "pushes_since_reset": [
+      {
+          "context_id": "Button #1, Upper Left",
+          "value": 237
+      },
+      {
+          "context_id": "Button #2, Upper Right",
+          "value": 27
+      },
+      {
+          "context_id": "Button #3, Lower Left",
+          "value": 93
+      },
+      {
+          "context_id": "Button #4, Lower Right",
+          "value": 47
+      },
+      {
+          "context_id": "Button #5, Middle",
+          "value": 781
+      }
+  ],
+  "swipe": [
+      {
+          "value": false
+      }
+  ]
+  "meta": {
+      "backboard": "5ea0488146e0fb002a074145",
+      "device": [
+        "Building 1",
+        "1st Floor",
+        "Men-West",
+        "Men"
+      ],
+      "global": [
+        "Europe",
+        "United Kingdom",
+        "London"
+      ],
+      "iot": {
+          "bw": 125,
+          "channel": 1,
+          "device_id": "70-B3-D5-32-6B-00-08-8E",
+          "fcnt_dwn": 0,
+          "fcnt_up": 2,
+          "fport": 2,
+          "freq": 902.5,
+          "iso_time": "2023-11-05T01:25:25.673Z",
+          "ns_version": "v3.0",
+          "payload": "0200ed001b030d005d002f",
+          "payload_fmt": 1,
+          "rssi": -76,
+          "sf": 10,
+          "snr": 10.2,
+          "time": "2023-11-05T01:25:25.673Z",
+          "type": "uplink"
+      },
+      "source": [],
+      "usecase": "SF01"
+  },
+}
 ```
 
 This data is not really helpful, you always need 2 pieces of data to understand what happened, what's the real event. 
@@ -137,31 +119,46 @@ Here is what we get :
 {
           "change": 1,
           "current": {
-            "sum": 99
+            "sum": 781
           },
           "event": "Button #5, Middle",
           "history": {
-            "sum": 98
+            "sum": 780
           },
           "meta": {
             "device": [
-              "London",
+              "Building 1",
               "1st Floor",
-              "Bathroom"
+              "Men-West",
+              "Men"
             ],
             "global": [
-              "Microshare",
-              "Demo",
-              "Feedback5B"
+              "Europe",
+              "United Kingdom",
+              "London"
             ],
             "iot": {
-              "device_id": "70-B3-D5-32-60-00-01-00",
-              "iso_time": "2022-01-10T16:55:52.414Z",
-              "time": "2022-01-10T16:55:52.414Z"
+                "bw": 125,
+                "channel": 1,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 2,
+                "fport": 2,
+                "freq": 902.5,
+                "iso_time": "2023-11-05T01:25:25.673Z",
+                "ns_version": "v3.0",
+                "payload": "0200ed001b030d005d002f",
+                "payload_fmt": 1,
+                "rssi": -76,
+                "sf": 10,
+                "snr": 10.2,
+                "time": "2023-11-05T01:25:25.673Z",
+                "type": "uplink"
             },
-            "source": []
+            "source": [],
+            "usecase": "SF01"
           },
-          "time": "2022-01-10T16:55:52.414Z"
+          "time": "2023-11-05T01:25:25.673Z"
         }
 ```
 
@@ -180,32 +177,46 @@ RECTYPE : io.microshare.feedback.unpacked.event.meta
     "button": "Button #5, Middle",
     "change": 1,
     "current": {
-        "sum": 99
+        "sum": 781
     },
     "event": "good",
     "history": {
-        "sum": 98
+        "sum": 780
     },
     "label": "Great job",
     "meta": {
-        "device": [
-            "London",
-            "1st Floor",
-            "Bathroom"
-        ],
-        "global": [
-            "Microshare",
-            "Demo",
-            "Feedback5B"
-        ],
-        "iot": {
-            "device_id": "70-B3-D5-32-60-00-01-00",
-            "iso_time": "2022-01-10T16:55:52.414Z",
-            "time": "2022-01-10T16:55:52.414Z"
-        },
-        "source": []
+      "device": [
+        "Building 1",
+        "1st Floor",
+        "Men-West",
+        "Men"
+      ],
+      "global": [
+        "Europe",
+        "United Kingdom",
+        "London"
+      ],
+      "iot": {
+          "bw": 125,
+          "channel": 1,
+          "device_id": "70-B3-D5-32-6B-00-08-8E",
+          "fcnt_dwn": 0,
+          "fcnt_up": 2,
+          "fport": 2,
+          "freq": 902.5,
+          "iso_time": "2023-11-05T01:25:25.673Z",
+          "ns_version": "v3.0",
+          "payload": "0200ed001b030d005d002f",
+          "payload_fmt": 1,
+          "rssi": -76,
+          "sf": 10,
+          "snr": 10.2,
+          "time": "2023-11-05T01:25:25.673Z",
+          "type": "uplink"
+      },
+      "source": [],
+      "usecase": "SF01"
     },
-    "time": "2022-01-10T16:55:52.414Z"
 }
 ```
 
@@ -230,9 +241,9 @@ So here is some explanations on the fields :
 - `meta.global` : global location of the building + usecase tagging. (the global tagging should be more like `Continent`,`Country`,`City`,`SiteName` ....)
 
 - `iot`: {
-            `device_id`: `70-B3-D5-32-60-00-01-00`, which device is it
-            `iso_time`: `2022-01-10T16:55:52.414Z`, and when the button have been pushed
-            `time`: `2022-01-10T16:55:52.414Z`
+            `device_id`: `70-B3-D5-32-6B-00-08-8E`, which device is it
+            `iso_time`: `2023-11-05T01:25:25.673Z`, and when the button have been pushed
+            `time`: `2023-11-05T01:25:25.673Z`
         }
 
 
