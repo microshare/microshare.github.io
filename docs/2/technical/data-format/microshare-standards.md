@@ -19,7 +19,7 @@ toc: true
 2. [Microshare Standards Data](./#2-microshare-standards-data)
     - A. [General Structure](./#a-general-structure)
     - B. [{Data}](./#b-data)
-    - C. [Ipso](./#c-ipso)
+    - C. [Microshare Field Types](./#c-field-types)
     - D. [Meta/IoT](./#d-metaiot)
     - E. [Origin](./#e-origin)
     - F. [Unpacker](./#f-unpacker)
@@ -263,12 +263,20 @@ All these values are explained with their units in the following table:
 },
 ```
 
-#### C. Ipso
+#### C. Microshare Field Types
 
+Microshare® has dedicated substantial effort towards developing a comprehensive library of Field Types to standardize the categorization of measurement data derived from sensors.
 
-Micoshare® upholds the IPSO values for cohesion with our international partners. You can learn more about the IPSO IoT standards on this web page: 
+We have enhanced the precision and clarity of data collected from various sensors where sensor data forms the foundation of decision-making, such as environmental monitoring, industrial automation, and smart city management. 
 
-[http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)
+Each Field Type within the library encapsulates a set of attributes:
+- Unique identifier.
+- Standard unit of measure.
+- Comprehensive description that clearly explains what the sensor is measuring and how it should be interpreted.
+
+This level of detail ensures that users across different domains can understand the significance of the sensor data without ambiguity whilst reducing errors in data interpretation and promoting interoperability across systems and applications that rely on sensor data.
+
+The maintenance of this library is an ongoing process, reflecting the dynamic nature of technology and the emergence as new Field Types are introduced and existing ones refined. Microshare® ensures that its library remains an authoritative source for sensor data categorization, ultimately aiding in creating more intelligent, responsive, and efficient systems.
 
 #### D. Meta/IoT
 
