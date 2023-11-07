@@ -68,158 +68,108 @@ Example :
     {
       "_id": "5ed1123046e0fb0028b70???",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-      "createDate": "2020-06-17T09:48:08.980Z",
+      "createDate": "2023-10-02T13:28:32.556Z",
       "creatorId": "yourname@microshare.io",
       "data": {
-        "co2": 65535,
-        "co2_label": "65535ppm",
-        "co2_unit": "ppm",
-        "device": {
-          "battery": {
-            "power": 80,
-            "power_label": "0.8%",
-            "voltage": 3.6,
-            "voltage_label": "3.6V"
-          },
-          "id": "58-A0-CB-00-00-40-??-??"
-        },
-        "humidity": 64,
-        "humidity_label": "64%",
-        "humidity_unit": "%",
-        "ipso": {
-          "3302": {
-              "5500": false,
-              "5751": "PIR"
-          },
-          "3303": {
-              "5700": 19,
-              "5701": "Cel"
-          },
-          "3304": {
-              "5700": 64,
-              "5701": "%"
-          },
-          "3316": {
-              "5700": 3.6,
-              "5701": "V",
-              "5750": "device battery state: voltage"
-          },
-          "3320": {
-              "5700": 0.8,
-              "5701": "%",
-              "5750": "device battery state: percentage charged"
-          },
-          "3325-1": {
-              "5700": 65535,
-              "5701": "ppm",
-              "5750": "concentration of CO2 in ppm"
-          },
-          "3325-2": {
-              "5700": 65535,
-              "5701": "ppb",
-              "5750": "concentration of VOCs in ppb"
-          }
-        },
-        "meta": {
-          "device": [
-            "London Office",
-            "1st Floor",
-            "Office 3"
+          co2": [
+              {
+                  "unit": "ppm",
+                  "value": 462
+              }
           ],
-          "global": [
-            "Europe",
-            "United Kingdom",
-            "London",
-            "5 Merchant Square",
-            "your environment"
+          "device_health": {
+              "id": "00-16-16-00-00-00-0C-BB",
+              "voltage": [
+                  {
+                      "unit": "V",
+                      "value": 3.6
+                  }
+              ]
+          },
+          "humidity": [
+              {
+                  "unit": "%RH",
+                  "value": 35
+              }
           ],
-          "iot": {
-            "device_id": "58-A0-CB-00-00-40-??-??",
-            "fcnt_dwn": 749,
-            "fcnt_up": 4510,
-            "fport": 103,
-            "iso_time": "2020-06-17T09:48:08.494Z",
-            "ns_version": "v3.0",
-            "payload": "08cb3340ffffffff",
-            "payload_fmt": 1,
-            "time": "2020-06-17T09:48:08.494Z",
-            "type": "uplink"
-          },
-          "source": []
+          "temperature": [
+              {
+                  "unit": "°C",
+                  "value": 23
+              }
+          ],
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
+            },
+            "source": [],
+            "usecase": "SE09"
         },
-        "origin": {
-          "adr": true,
-          "classB": false,
-          "confirmed": false,
-          "delayed": false,
-          "encodingType": "HEXA",
-          "encrypted": false,
-          "endDevice": {
-              "cluster": {
-                  "id": 66
-              },
-              "devAddr": "E04123???",
-              "devEui": "58A0CB000040????"
-          },
-          "fCntDown": 749,
-          "fCntUp": 4510,
-          "fPort": 103,
-          "id": "5ee9e6d860baf40001b9e???",
-          "payload": "08cb3340ffffffff",
-          "recvTime": 1592387288494
-        },
-        "status": 8,
-        "status_label": "false",
-        "temp": 19,
-        "temp_label": "19 °C",
-        "temp_unit": "°C",
-        "unpacker": {
-          "class": "io.tracknet.healthy.TBHV100.Decoder",
-          "library": "lorawan_device_unpack",
-          "version": "0.5.5"
-        },
-        "voc": 65535,
-        "voc_label": "65535ppb",
-        "voc_unit": "ppb"
-      },
-      "desc": "",
-      "id": "5ed1123046e0fb0028b70???",
-      "name": "",
-      "origin": {
-        "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-        "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
-        "id": "5ed1123046e0fb0028b70???",
-        "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "your remote address",
-        "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "your ip address"
-        }
-      },
-      "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-        "meta": {},
-        "org": "io.microshare",
-        "owners": [],
-        "user": "yourname@microshare.io"
-      },
-      "recType": "io.microshare.yourenvironment.unpacked",
-      "tags": [
-        "Europe",
-        "United Kingdom",
-        "London",
-        "5 Merchant Square",
-        "your environment",
-        "London Office",
-        "1st Floor",
-        "Office 3"
-      ],
-      "tstamp": 1592387288980,
-      "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "yourname@microshare.io"
-    },
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
+            "name": "",
+            "origin": {
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
+                "creatorId": "yourname@microshare.io",
+                "desc": "Record of Type io.microshare.environment.unpacked",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
+                "tokendata": {
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
+                }
+            },
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.microshare",
+                "owners": [],
+                "user": "yourname@microshare.io"
+            },
+            "recType": "io.microshare.environment.unpacked",
+            "tags": [
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
+            "updaterId": "yourname@microshare.io"
+    }
+  }
+]}
 ```
 
 #### A. General Structure
@@ -238,7 +188,7 @@ This is how the device cluster is set up:
 Now let's talk about the `{Data}`, which contains the device information.
 
 The various components include: 
-  - C. [Ipso](./#c-ipso)
+  - C. [Microshare Field Types](./#c-field-types)
   - D. [Meta/IoT](./#d-metaiot)
   - E. [Origin](./#e-origin)
   - F. [Unpacker](./#f-unpacker)
@@ -252,14 +202,14 @@ All these values are explained with their units in the following table:
 `{Data}` contains information about the device that provided the data payload. This usually includes the device id, battery type, battery type, etc. The code supplied will look like: 
 
 ```
-"device": {
-  "battery": {
-    "power": 80,
-    "power_label": "0.8%",
-    "voltage": 3.6,
-    "voltage_label": "3.6V"
-  },
-  "id": "58-A0-CB-00-00-40-??-??"
+"device_health": {
+    "id": "00-16-16-00-00-00-0C-BB",
+    "voltage": [
+        {
+            "unit": "V",
+            "value": 3.6
+        }
+    ]
 },
 ```
 
@@ -530,147 +480,116 @@ The last block of data in `{Data}` describes the device cluster that is permitte
         {
             "_id": "5eea1d8d46e0fb0028a0b???",
             "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9EZE34CAC3671A7D3AF90C89CEC5DAABC2L1425",
-            "createDate": "2020-06-17T13:41:33.425Z",
+            "createDate": "2023-10-02T13:28:32.556Z",
             "creatorId": "yourname@microshare.io",
             "data": {
-                "device": {
-                    "battery": {
-                        "power": 0.8,
-                        "power_label": "80%",
-                        "voltage": 3.6,
-                        "voltage_label": "3.6V"
-                    },
-                    "count": 2997,
-                    "id": "58-A0-CB-00-00-22-??-??"
-                },
-                "ipso": {
-                    "3000": {
-                        "5534": 2997,
-                        "5750": "count of reports since power-on"
-                    },
-                    "3302": {
-                        "5500": true,
-                        "5750": "TRUE = presence detected",
-                        "5751": "PIR"
-                    },
-                    "3303": {
-                        "5700": 25,
-                        "5701": "Cel"
-                    },
-                    "3316": {
-                        "5700": 3.6,
-                        "5701": "V",
-                        "5750": "device battery state: voltage"
-                    },
-                    "3320": {
-                        "5700": 0.8,
-                        "5701": "%",
-                        "5750": "device battery state: percentage charged"
-                    },
-                    "3333": {
-                        "5707": 0,
-                        "5750": "seconds elapsed since last state change"
+                "device_health": {
+                      "charge": [
+                          {
+                              "unit": "%",
+                              "value": 0
+                          }
+                      ],
+                      "id": "E8-E1-E1-00-01-03-C8-57",
+                      "temperature": [
+                          {
+                              "unit": "°C",
+                              "value": 6
+                          }
+                      ],
+                      "voltage": [
+                          {
+                              "unit": "V",
+                              "value": 3.6
+                          }
+                      ]
+                  },
+                  "motions_since_reset": [
+                    {
+                        "value": 86282
                     }
-                },
+                ],
+                "presence": [
+                    {
+                        "value": false
+                    }
+                ],
+                "seconds_since_change": [
+                    {
+                        "unit": "s",
+                        "value": 129900
+                    }
+                ]
                 "meta": {
+                    "backboard": "5ea0488146e0fb002a074145",
                     "device": [
-                        "London Office",
-                        "Ground Floor",
-                        "Office 2"
+                      "Building 1",
+                      "1st Floor",
+                      "Men-West",
+                      "Men"
                     ],
                     "global": [
-                        "Europe",
-                        "United Kingdom",
-                        "London",
-                        "5 Merchant Square",
-                        "door"
+                      "Europe",
+                      "United Kingdom",
+                      "London"
                     ],
                     "iot": {
-                        "device_id": "58-A0-CB-00-00-22-??-??",
-                        "fcnt_dwn": 761,
-                        "fcnt_up": 5551,
-                        "fport": 102,
-                        "iso_time": "2020-06-17T13:41:32.967Z",
+                        "bw": 125,
+                        "channel": 7,
+                        "device_id": "70-B3-D5-32-6B-00-08-8E",
+                        "fcnt_dwn": 0,
+                        "fcnt_up": 6,
+                        "fport": 2,
+                        "freq": 903.7,
+                        "iso_time": "2023-10-02T13:28:32.556Z",
                         "ns_version": "v3.0",
-                        "payload": "01cb390000b50b00",
+                        "payload": "0200dd001a02f2005a002f",
                         "payload_fmt": 1,
-                        "time": "2020-06-17T13:41:32.967Z",
+                        "rssi": -79,
+                        "sf": 10,
+                        "snr": 9.5,
+                        "time": "2023-10-02T13:28:32.556Z",
                         "type": "uplink"
                     },
-                    "source": []
+                    "source": [],
+                    "usecase": "SC03"
                 },
-                "origin": {
-                    "adr": true,
-                    "classB": false,
-                    "confirmed": false,
-                    "delayed": false,
-                    "encodingType": "HEXA",
-                    "encrypted": false,
-                    "endDevice": {
-                        "cluster": {
-                            "id": 84
-                        },
-                        "devAddr": "00000???",
-                        "devEui": "58A0CB000022????"
-                    },
-                    "fCntDown": 761,
-                    "fCntUp": 5551,
-                    "fPort": 102,
-                    "id": "5eea1d8d60baf40001ba2???",
-                    "payload": "01cb390000b50b00",
-                    "recvTime": 1592401292967
-                },
-                "payload": "01cb390000b50b00",
-                "status": 1,
-                "status_label": "occupied",
-                "temp": 25,
-                "temp_label": "25°C",
-                "temp_unit": "°C",
-                "time": 0,
-                "time_label": "0 minutes",
-                "time_unit": "minutes",
-                "unpacker": {
-                    "class": "io.tracknet.motion.TMBS100.Decoder",
-                    "library": "lorawan_device_unpack",
-                    "version": "0.5.5"
-                }
+                "time": "2023-10-02T13:28:32.556Z"
             },
             "desc": "",
-            "id": "5eea1d8d46e0fb0028a0b???",
+            "id": "651ac581c280e00aef5407dd",
             "name": "",
             "origin": {
-                "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9C2BF56CAC3671A7D3AF90C89CEC5DAABC2L1425",
-                "createDate": "2020-06-17T13:41:33.425Z",
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
                 "creatorId": "yourname@microshare.io",
-                "desc": "Record of Type io.microshare.motion.unpacked",
-                "id": "5eea1d8d46e0fb0028a0b???",
-                "name": "io.microshare.motion.unpacked",
-                "remoteAddress": "your remote address",
+                "desc": "Record of Type io.microshare.feedback.unpacked.event.meta",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.feedback.unpacked.event.meta",
+                "remoteAddress": "172.172.172.35",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "your ip address"
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-                "meta": {},
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
                 "org": "io.microshare",
                 "owners": [],
                 "user": "yourname@microshare.io"
             },
-            "recType": "io.microshare.motion.unpacked",
+            "recType": "io.microshare.feedback.unpacked.event.meta",
             "tags": [
-                "Europe",
-                "United Kingdom",
-                "London",
-                "5 Merchant Square",
-                "door",
-                "London Office",
-                "Ground Floor",
-                "Office 2"
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
             ],
-            "tstamp": 1592401293425,
-            "updateDate": "2020-06-17T13:41:33.425Z",
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
             "updaterId": "yourname@microshare.io"
         },
 ```
@@ -696,329 +615,228 @@ The time represents the number of minutes since the last movement have been trig
     {
       "_id": "5ed1123046e0fb0028b70???",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-      "createDate": "2020-06-17T09:48:08.980Z",
+      "createDate": "2023-10-02T13:28:32.556Z",
       "creatorId": "yourname@microshare.io",
       "data": {
-        "co2": 65535,
-        "co2_label": "65535ppm",
-        "co2_unit": "ppm",
-        "device": {
-          "battery": {
-            "power": 80,
-            "power_label": "0.8%",
-            "voltage": 3.6,
-            "voltage_label": "3.6V"
-          },
-          "id": "58-A0-CB-00-00-40-??-??"
-        },
-        "humidity": 64,
-        "humidity_label": "64%",
-        "humidity_unit": "%",
-        "ipso": {
-          "3302": {
-              "5500": false,
-              "5751": "PIR"
-          },
-          "3303": {
-              "5700": 19,
-              "5701": "Cel"
-          },
-          "3304": {
-              "5700": 64,
-              "5701": "%"
-          },
-          "3316": {
-              "5700": 3.6,
-              "5701": "V",
-              "5750": "device battery state: voltage"
-          },
-          "3320": {
-              "5700": 0.8,
-              "5701": "%",
-              "5750": "device battery state: percentage charged"
-          },
-          "3325-1": {
-              "5700": 65535,
-              "5701": "ppm",
-              "5750": "concentration of CO2 in ppm"
-          },
-          "3325-2": {
-              "5700": 65535,
-              "5701": "ppb",
-              "5750": "concentration of VOCs in ppb"
-          }
-        },
-        "meta": {
-          "device": [
-            "London",
-            "1st Floor",
-            "Office 3"
+          co2": [
+              {
+                  "unit": "ppm",
+                  "value": 462
+              }
           ],
-          "global": [
-            "Europe",
-            "United Kingdom",
-            "London",
-            "5 Merchant Square",
-            "your environment"
+          "device_health": {
+              "id": "00-16-16-00-00-00-0C-BB",
+              "voltage": [
+                  {
+                      "unit": "V",
+                      "value": 3.6
+                  }
+              ]
+          },
+          "humidity": [
+              {
+                  "unit": "%RH",
+                  "value": 35
+              }
           ],
-          "iot": {
-            "device_id": "58-A0-CB-00-00-40-??-??",
-            "fcnt_dwn": 749,
-            "fcnt_up": 4510,
-            "fport": 103,
-            "iso_time": "2020-06-17T09:48:08.494Z",
-            "ns_version": "v3.0",
-            "payload": "08cb3340ffffffff",
-            "payload_fmt": 1,
-            "time": "2020-06-17T09:48:08.494Z",
-            "type": "uplink"
-          },
-          "source": []
+          "temperature": [
+              {
+                  "unit": "°C",
+                  "value": 23
+              }
+          ],
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
+            },
+            "source": [],
+            "usecase": "SE09"
         },
-        "origin": {
-          "adr": true,
-          "classB": false,
-          "confirmed": false,
-          "delayed": false,
-          "encodingType": "HEXA",
-          "encrypted": false,
-          "endDevice": {
-              "cluster": {
-                  "id": 66
-              },
-              "devAddr": "E04123???",
-              "devEui": "58A0CB000040????"
-          },
-          "fCntDown": 749,
-          "fCntUp": 4510,
-          "fPort": 103,
-          "id": "5ee9e6d860baf40001b9e???",
-          "payload": "08cb3340ffffffff",
-          "recvTime": 1592387288494
-        },
-        "status": 8,
-        "status_label": "false",
-        "temp": 19,
-        "temp_label": "19 °C",
-        "temp_unit": "°C",
-        "unpacker": {
-          "class": "io.tracknet.healthy.TBHV100.Decoder",
-          "library": "lorawan_device_unpack",
-          "version": "0.5.5"
-        },
-        "voc": 65535,
-        "voc_label": "65535ppb",
-        "voc_unit": "ppb"
-      },
-      "desc": "",
-      "id": "5ed1123046e0fb0028b70???",
-      "name": "",
-      "origin": {
-        "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-        "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
-        "id": "5ed1123046e0fb0028b70???",
-        "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "your remote address",
-        "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "your ip address"
-        }
-      },
-      "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-        "meta": {},
-        "org": "io.microshare",
-        "owners": [],
-        "user": "yourname@microshare.io"
-      },
-      "recType": "io.microshare.your environment.unpacked",
-      "tags": [
-        "Europe",
-        "United Kingdom",
-        "London",
-        "5 Merchant Square",
-        "your environment",
-        "London",
-        "1st Floor",
-        "Office 3"
-      ],
-      "tstamp": 1592387288980,
-      "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "yourname@microshare.io"
-    },
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
+            "name": "",
+            "origin": {
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
+                "creatorId": "yourname@microshare.io",
+                "desc": "Record of Type io.microshare.environment.unpacked",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
+                "tokendata": {
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
+                }
+            },
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.microshare",
+                "owners": [],
+                "user": "yourname@microshare.io"
+            },
+            "recType": "io.microshare.environment.unpacked",
+            "tags": [
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
+            "updaterId": "yourname@microshare.io"
+    }
+  }
+]}
 ```
 
 #### C. Feedback Data
 
 ```
 {
-    "meta": {
-        "currentCount": 261,
-        "currentPage": 1,
-        "perPage": 1000,
-        "source": "db",
-        "totalCount": 1000,
-        "totalPages": 1
-    },
-    "objs": [
-        {
-            "_id": "5eea1e1346e0fb0022355???",
-            "checksum": "C6E1072EB86D537C2E7E9B8D3A3244BA4FC5BEDD44718F32532ZZER5E6A56E28F9L1818",
-            "createDate": "2020-06-17T13:43:47.365Z",
-            "creatorId": "yourname@microshare.io",
-            "data": {
-                "count_1": 75,
-                "count_2": 610,
-                "count_3": 42,
-                "count_4": 246,
-                "count_5": 882,
-                "device": {
-                    "id": "70-B3-D5-32-60-00-??-??"
-                },
-                "ipso": {
-                    "10241": {
-                        "5905": "skiply.eu",
-                        "5906": "Smilio Action",
-                        "5908": "1.2.0.1"
-                    },
-                    "3302": {
-                        "5500": false,
-                        "5751": "Hall Effect activated"
-                    },
-                    "3347": [
-                        {
-                            "5501": 75,
-                            "5502": false,
-                            "5527": "Button #1, Upper Left, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #1, Upper Left"
-                        },
-                        {
-                            "5501": 610,
-                            "5502": false,
-                            "5527": "Button #2, Upper Right, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #2, Upper Right"
-                        },
-                        {
-                            "5501": 42,
-                            "5502": false,
-                            "5527": "Button #3, Lower Left, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #3, Lower Left"
-                        },
-                        {
-                            "5501": 246,
-                            "5502": false,
-                            "5527": "Button #4, Lower Right, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #4, Lower Right"
-                        },
-                        {
-                            "5501": 882,
-                            "5502": false,
-                            "5527": "Button #5, Middle, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #5, Middle"
-                        }
-                    ]
-                },
-                "meta": {
-                    "device": [
-                        "London Office",
-                        "1st Floor",
-                        "Kitchen"
-                    ],
-                    "global": [
-                        "Europe",
-                        "United Kingdom",
-                        "London",
-                        "5 Merchant Square",
-                        "5b_feedback"
-                    ],
-                    "iot": {
-                        "device_id": "70-B3-D5-32-60-00-??-??",
-                        "fcnt_dwn": 28,
-                        "fcnt_up": 1778,
-                        "fport": 2,
-                        "iso_time": "2020-06-17T13:43:46.924Z",
-                        "ns_version": "v3.0",
-                        "payload": "02004b02620372002a00f6",
-                        "payload_fmt": 1,
-                        "time": "2020-06-17T13:43:46.924Z",
-                        "type": "uplink"
-                    },
-                    "source": []
-                },
-                "origin": {
-                    "adr": true,
-                    "classB": false,
-                    "confirmed": false,
-                    "delayed": false,
-                    "encodingType": "HEXA",
-                    "encrypted": false,
-                    "endDevice": {
-                        "cluster": {
-                            "id": 2
-                        },
-                        "devAddr": "E0423???",
-                        "devEui": "70B3D5326000C???"
-                    },
-                    "fCntDown": 28,
-                    "fCntUp": 1778,
-                    "fPort": 2,
-                    "id": "5eea1e1360baf40001ba2???",
-                    "payload": "02004b02620372002a00f6",
-                    "recvTime": 1592401426924
-                },
-                "payload": "02004b02620372002a00f6",
-                "trigger": false,
-                "unpacker": {
-                    "class": "eu.skiply.button.SmilioAction.Decoder",
-                    "library": "lorawan_device_unpack",
-                    "version": "0.5.5"
-                }
+  "meta": {
+    "currentCount": 337,
+    "currentPage": 1,
+    "perPage": 1000,
+    "source": "db",
+    "totalCount": 1000,
+    "totalPages": 1
+  },
+  "objs": [
+    {
+      "_id": "5ed1123046e0fb0028b70???",
+      "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
+      "createDate": "2023-10-02T13:28:32.556Z",
+      "creatorId": "yourname@microshare.io",
+      "data": {
+          "pushes_since_reset": [
+              {
+                  "context_id": "Button #1, Upper Left",
+                  "value": 237
+              },
+              {
+                  "context_id": "Button #2, Upper Right",
+                  "value": 27
+              },
+              {
+                  "context_id": "Button #3, Lower Left",
+                  "value": 93
+              },
+              {
+                  "context_id": "Button #4, Lower Right",
+                  "value": 47
+              },
+              {
+                  "context_id": "Button #5, Middle",
+                  "value": 781
+              }
+          ],
+          "swipe": [
+              {
+                  "value": false
+              }
+          ]
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
             },
-            "desc": "",
-            "id": "5eea1e1346e0fb0028915???",
+            "source": [],
+            "usecase": "SF01"
+        },
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
             "name": "",
             "origin": {
-                "checksum": "C6E1072EB86D537C2E7E9B8D3ACREZERT3BEDD44718F9898C234352A56E28F9L1818",
-                "createDate": "2020-06-17T13:43:47.365Z",
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
                 "creatorId": "yourname@microshare.io",
                 "desc": "Record of Type io.microshare.feedback.unpacked",
-                "id": "5eea1e1346e0fb0028915???",
-                "name": "io.microshare.feedback.unpacked",
-                "remoteAddress": "your remote address",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "your ip address"
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-                "meta": {},
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
                 "org": "io.microshare",
                 "owners": [],
                 "user": "yourname@microshare.io"
             },
             "recType": "io.microshare.feedback.unpacked",
             "tags": [
-                "Europe",
-                "United Kingdom",
-                "London",
-                "5 Merchant Square",
-                "5b_feedback",
-                "London Office",
-                "1st Floor",
-                "Kitchen"
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
             ],
-            "tstamp": 1592401427365,
-            "updateDate": "2020-06-17T13:43:47.365Z",
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
             "updaterId": "yourname@microshare.io"
-        },
+    }
+  }
+]}
 ```
 
 #### D. Contact Tracing
