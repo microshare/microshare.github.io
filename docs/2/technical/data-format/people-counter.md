@@ -38,82 +38,84 @@ Example data:
 ```
 {
   "_warning_": "This data is not real data and is provided solely for demo purposes.",
-  "count_since_reset": [
-    {
-      "context_id": "A",
-      "value": 2565
+  "data": {
+      "count_since_reset": [
+      {
+        "context_id": "A",
+        "value": 459
+      },
+      {
+        "context_id": "B",
+        "value": 453
+      }
+    ],
+    "count_since_transmit": [
+      {
+        "context_id": "A",
+        "value": 0
+      },
+      {
+        "context_id": "B",
+        "value": 0
+      }
+    ],
+    "device_health": {
+      "alert": [
+        {
+          "subtype": "reconnect",
+          "value": false
+        },
+        {
+          "subtype": "settings_changed",
+          "value": false
+        },
+        {
+          "subtype": "placed_battery_not_full",
+          "value": false
+        },
+        {
+          "subtype": "low_battery",
+          "value": false
+        }
+      ],
+      "fault": [
+        {
+          "subtype": "infrared_signal_not_at_full_strength",
+          "value": false
+        },
+        {
+          "subtype": "disturbance",
+          "value": false
+        },
+        {
+          "subtype": "infrared_blocked",
+          "value": false
+        }
+      ],
+      "id": "00-04-A3-0B-00-F7-E8-19",
+      "voltage": [
+        {
+          "unit": "V",
+          "value": 2.9
+        }
+      ]
     },
-    {
-      "context_id": "B",
-      "value": 2672
+    "meta": {
+      "device": [
+        "Building A",
+        "4th Floor",
+        "Room 71",
+        "Doorway A"
+      ],
+      "global": [
+        "Microshare",
+        "demo",
+        "solutions",
+        "people"
+      ],
+      "reset_hour": 0,
+      "timezone": "Europe/London"
     }
-  ],
-  "count_since_transmit": [
-    {
-      "context_id": "A",
-      "value": 0
-    },
-    {
-      "context_id": "B",
-      "value": 0
-    }
-  ],
-  "device": {
-    "alert": [
-      {
-        "context_id": "Placed_battery_not_full",
-        "value": false
-      },
-      {
-        "context_id": "Receiver_low_battery",
-        "value": false
-      },
-      {
-        "context_id": "Reconnect",
-        "value": false
-      },
-      {
-        "context_id": "Settings_changed",
-        "value": false
-      }
-    ],
-    "fault": [
-      {
-        "context_id": "IR_signal_not_at_full_strength",
-        "value": false
-      },
-      {
-        "context_id": "Infrared_blocked",
-        "value": false
-      },
-      {
-        "context_id": "Receiver_detected_disturbance_on_the_sensor",
-        "value": false
-      }
-    ],
-    "voltage": [
-      {
-        "unit": "V",
-        "value": 2.6
-      }
-    ]
-  },
-	"meta": {
-    "device": [
-      "Building A",
-      "4th Floor",
-      "Room 71",
-      "Doorway A"
-    ],
-    "global": [
-      "Microshare",
-      "demo",
-      "solutions",
-      "people"
-    ],
-    "reset_hour": 0,
-    "timezone": "Europe/London"
-  }
 }
 
 ```
@@ -180,46 +182,6 @@ Example data:
     "start_of_total": false,
     "timezone": "Europe/London",
     "traffic": 66
-  },
-  "device": {
-    "alert": [
-      {
-        "context_id": "Placed_battery_not_full",
-        "value": false
-      },
-      {
-        "context_id": "Receiver_low_battery",
-        "value": false
-      },
-      {
-        "context_id": "Reconnect",
-        "value": false
-      },
-      {
-        "context_id": "Settings_changed",
-        "value": false
-      }
-    ],
-    "fault": [
-      {
-        "context_id": "IR_signal_not_at_full_strength",
-        "value": false
-      },
-      {
-        "context_id": "Infrared_blocked",
-        "value": false
-      },
-      {
-        "context_id": "Receiver_detected_disturbance_on_the_sensor",
-        "value": false
-      }
-    ],
-    "voltage": [
-      {
-        "unit": "V",
-        "value": 2.6
-      }
-    ]
   },
   "event": "people_counter",
   "meta": {

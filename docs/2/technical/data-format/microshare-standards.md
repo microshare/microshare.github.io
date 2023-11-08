@@ -19,7 +19,7 @@ toc: true
 2. [Microshare Standards Data](./#2-microshare-standards-data)
     - A. [General Structure](./#a-general-structure)
     - B. [{Data}](./#b-data)
-    - C. [Ipso](./#c-ipso)
+    - C. [Microshare Field Types](./#c-field-types)
     - D. [Meta/IoT](./#d-metaiot)
     - E. [Origin](./#e-origin)
     - F. [Unpacker](./#f-unpacker)
@@ -54,7 +54,7 @@ Additionally, this guide will discuss tags. Tags are labels or descriptions atta
 
 Example : 
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -68,162 +68,109 @@ Example :
     {
       "_id": "5ed1123046e0fb0028b70???",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-      "createDate": "2020-06-17T09:48:08.980Z",
+      "createDate": "2023-10-02T13:28:32.556Z",
       "creatorId": "yourname@microshare.io",
       "data": {
-        "co2": 65535,
-        "co2_label": "65535ppm",
-        "co2_unit": "ppm",
-        "device": {
-          "battery": {
-            "power": 80,
-            "power_label": "0.8%",
-            "voltage": 3.6,
-            "voltage_label": "3.6V"
-          },
-          "id": "58-A0-CB-00-00-40-??-??"
-        },
-        "humidity": 64,
-        "humidity_label": "64%",
-        "humidity_unit": "%",
-        "ipso": {
-          "3302": {
-              "5500": false,
-              "5751": "PIR"
-          },
-          "3303": {
-              "5700": 19,
-              "5701": "Cel"
-          },
-          "3304": {
-              "5700": 64,
-              "5701": "%"
-          },
-          "3316": {
-              "5700": 3.6,
-              "5701": "V",
-              "5750": "device battery state: voltage"
-          },
-          "3320": {
-              "5700": 0.8,
-              "5701": "%",
-              "5750": "device battery state: percentage charged"
-          },
-          "3325-1": {
-              "5700": 65535,
-              "5701": "ppm",
-              "5750": "concentration of CO2 in ppm"
-          },
-          "3325-2": {
-              "5700": 65535,
-              "5701": "ppb",
-              "5750": "concentration of VOCs in ppb"
-          }
-        },
-        "meta": {
-          "device": [
-            "London Office",
-            "1st Floor",
-            "Office 3"
+          co2": [
+              {
+                  "unit": "ppm",
+                  "value": 462
+              }
           ],
-          "global": [
-            "Europe",
-            "United Kingdom",
-            "London",
-            "5 Merchant Square",
-            "your environment"
+          "device_health": {
+              "id": "00-16-16-00-00-00-0C-BB",
+              "voltage": [
+                  {
+                      "unit": "V",
+                      "value": 3.6
+                  }
+              ]
+          },
+          "humidity": [
+              {
+                  "unit": "%RH",
+                  "value": 35
+              }
           ],
-          "iot": {
-            "device_id": "58-A0-CB-00-00-40-??-??",
-            "fcnt_dwn": 749,
-            "fcnt_up": 4510,
-            "fport": 103,
-            "iso_time": "2020-06-17T09:48:08.494Z",
-            "ns_version": "v3.0",
-            "payload": "08cb3340ffffffff",
-            "payload_fmt": 1,
-            "time": "2020-06-17T09:48:08.494Z",
-            "type": "uplink"
-          },
-          "source": []
+          "temperature": [
+              {
+                  "unit": "°C",
+                  "value": 23
+              }
+          ],
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
+            },
+            "source": [],
+            "usecase": "SE09"
         },
-        "origin": {
-          "adr": true,
-          "classB": false,
-          "confirmed": false,
-          "delayed": false,
-          "encodingType": "HEXA",
-          "encrypted": false,
-          "endDevice": {
-              "cluster": {
-                  "id": 66
-              },
-              "devAddr": "E04123???",
-              "devEui": "58A0CB000040????"
-          },
-          "fCntDown": 749,
-          "fCntUp": 4510,
-          "fPort": 103,
-          "id": "5ee9e6d860baf40001b9e???",
-          "payload": "08cb3340ffffffff",
-          "recvTime": 1592387288494
-        },
-        "status": 8,
-        "status_label": "false",
-        "temp": 19,
-        "temp_label": "19 °C",
-        "temp_unit": "°C",
-        "unpacker": {
-          "class": "io.tracknet.healthy.TBHV100.Decoder",
-          "library": "lorawan_device_unpack",
-          "version": "0.5.5"
-        },
-        "voc": 65535,
-        "voc_label": "65535ppb",
-        "voc_unit": "ppb"
-      },
-      "desc": "",
-      "id": "5ed1123046e0fb0028b70???",
-      "name": "",
-      "origin": {
-        "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-        "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
-        "id": "5ed1123046e0fb0028b70???",
-        "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "your remote address",
-        "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "your ip address"
-        }
-      },
-      "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-        "meta": {},
-        "org": "io.microshare",
-        "owners": [],
-        "user": "yourname@microshare.io"
-      },
-      "recType": "io.microshare.yourenvironment.unpacked",
-      "tags": [
-        "Europe",
-        "United Kingdom",
-        "London",
-        "5 Merchant Square",
-        "your environment",
-        "London Office",
-        "1st Floor",
-        "Office 3"
-      ],
-      "tstamp": 1592387288980,
-      "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "yourname@microshare.io"
-    },
-
-.......
-
-{% endhighlight %}
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
+            "name": "",
+            "origin": {
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
+                "creatorId": "yourname@microshare.io",
+                "desc": "Record of Type io.microshare.environment.unpacked",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
+                "tokendata": {
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
+                }
+            },
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.microshare",
+                "owners": [],
+                "user": "yourname@microshare.io"
+            },
+            "recType": "io.microshare.environment.unpacked",
+            "tags": [
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
+            "updaterId": "yourname@microshare.io"
+    }
+  }
+]}
+```
 
 #### A. General Structure
 
@@ -241,7 +188,7 @@ This is how the device cluster is set up:
 Now let's talk about the `{Data}`, which contains the device information.
 
 The various components include: 
-  - C. [Ipso](./#c-ipso)
+  - C. [Microshare Field Types](./#c-field-types)
   - D. [Meta/IoT](./#d-metaiot)
   - E. [Origin](./#e-origin)
   - F. [Unpacker](./#f-unpacker)
@@ -254,28 +201,36 @@ All these values are explained with their units in the following table:
 
 `{Data}` contains information about the device that provided the data payload. This usually includes the device id, battery type, battery type, etc. The code supplied will look like: 
 
-{% highlight javascript %}
-"device": {
-  "battery": {
-    "power": 80,
-    "power_label": "0.8%",
-    "voltage": 3.6,
-    "voltage_label": "3.6V"
-  },
-  "id": "58-A0-CB-00-00-40-??-??"
+```
+"device_health": {
+    "id": "00-16-16-00-00-00-0C-BB",
+    "voltage": [
+        {
+            "unit": "V",
+            "value": 3.6
+        }
+    ]
 },
-{% endhighlight %}
+```
 
-#### C. Ipso
+#### C. Microshare Field Types
 
+Microshare® has dedicated substantial effort towards developing a comprehensive library of Field Types to standardize the categorization of measurement data derived from sensors.
 
-Micoshare® upholds the IPSO values for cohesion with our international partners. You can learn more about the IPSO IoT standards on this web page: 
+We have enhanced the precision and clarity of data collected from various sensors where sensor data forms the foundation of decision-making, such as environmental monitoring, industrial automation, and smart city management. 
 
-[http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)
+Each Field Type within the library encapsulates a set of attributes:
+- Unique identifier.
+- Standard unit of measure.
+- Comprehensive description that clearly explains what the sensor is measuring and how it should be interpreted.
+
+This level of detail ensures that users across different domains can understand the significance of the sensor data without ambiguity whilst reducing errors in data interpretation and promoting interoperability across systems and applications that rely on sensor data.
+
+The maintenance of this library is an ongoing process, reflecting the dynamic nature of technology and the emergence as new Field Types are introduced and existing ones refined. Microshare® ensures that its library remains an authoritative source for sensor data categorization, ultimately aiding in creating more intelligent, responsive, and efficient systems.
 
 #### D. Meta/IoT
 
-{% highlight javascript %}
+```
 "meta": {
   "device": [
     "London",
@@ -303,7 +258,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
   },
   "source": []
 },
-{% endhighlight %}
+```
 
 ##### The `meta` will provide:
 
@@ -331,7 +286,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
 
 #### E. Origin
 
-{% highlight javascript %}
+```
 "origin": {
   "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
   "createDate": "2020-06-17T09:48:08.980Z",
@@ -345,7 +300,7 @@ Micoshare® upholds the IPSO values for cohesion with our international partners
     "ip": "your ip address"
   }
 },
-{% endhighlight %}
+```
 
 A thorough explanation of the origins can be found in the  [Overview page](/docs/2/technical/data-format/overview/#b3-origin). 
 
@@ -353,13 +308,13 @@ Some information may differ if you unpack the data in an account that is not the
 
 #### F. Unpacker
 
-{% highlight javascript %}
+```
 "unpacker": {
   "class": "io.tracknet.healthy.TBHV100.Decoder",
   "library": "lorawan_device_unpack",
   "version": "0.5.5"
 },
-{% endhighlight %}
+```
 
 The last block of data in `{Data}` describes the device cluster that is permitted to unpack the payload. This is important as Microshare has a large number of unpackers and sending the payload to the wrong unpacker may result in lost information. Below is the `library` of all the various Microshare unpackers and where it is located. The descriptors 'class'  and 'version' helps navigate this library. 
 
@@ -387,61 +342,131 @@ The last block of data in `{Data}` describes the device cluster that is permitte
 ## 3. Standards Data Table
 ---------------------------------------
 
-| Name                     | Unit | Meaning                                                  |
-| ------------------------ | ---- | -------------------------------------------------------- |
-| temperature              | °C   | Temperature of area in degrees celcius                   |
-| humidity                 | %    | Percentage of water vapor mass in dry air of area        |
-| pressure                 | hpa  | Pressure of the area                                     |
-| illuminance              | lx   | Amount of light in the area                              |
-| voc                      | ppb  | How much Volatile Organic Compound in ppb is in the area |
-| co2                      | ppm  | Carbon Dioxide Concentration in ppm in area              |
-| iaq                      | n/a  | Indoor Air Quality Index (0-500)                         |
-| loudness                 | dba  | Level of Volume of area                                  |
-| haziness                 | %    | level of impared vision from environment                 |
-| smokiness                | %dbm | level of smoke in the environment                        |
-| gas                      | n/a  | level of gas in the environment                          |
-| voltage                  | V    | battery voltage                                          |
-| current                  | A    | electrical current                                       |
-| multiplier               | n/a  | electrical current value multiplier                      |
-| presence                 | n/a  | true= presebce detected                                  |
-| motions\_since\_reset    | n/a  | motion since reset                                       |
-| motions\_since\_transmit | n/a  | motion since last transmit                               |
-| acceleration             | m/s2 | Acceleration of motion detected                          |
-| velocity                 | m/s  | velocity of motion detected                              |
-| x                        | n/a  | position on the x- plane                                 |
-| y                        | n/a  | position on the y- plane                                 |
-| z                        | n/a  | position on the z- plane                                 |
-| leak                     | n/a  | true= leak detected                                      |
-| lighter                  | n/a  | true= lighter                                            |
-| darker                   | n/a  | true= darker                                             |
-| dismantle                | n/a  | true= dismantled                                         |
-| charge                   | %    | Battery Charge                                           |
-| period                   | s    | Time in between measurements                             |
-| rssi                     | dbm  | Recieved Signal Strength Indication                      |
-| snr                      | db   | Signal to Noise Ratio, quality of signal                 |
-| reports\_since\_reset    | n/a  | number of reports since last reset                       |
-| closed                   | n/a  | true= closed                                             |
-| fill                     | %    | Fill Level frame/Uplink frame                            |
-| distance                 | cm   | distance from monitor to device                          |
-| gps                      | °    | GPS Coordinates                                          |
-| lat                      | °    | Latitude                                                 |
-| lon                      | °    | Longitude                                                |
-| push                     | n/a  | true= button pushed                                      |
-| swipe                    | n/a  | true= swiped                                             |
-| pushes\_since\_reset     | n/a  | button pushes since reset                                |
-| alarm                    | n/a  | true = there is an alarm                                 |
-| time                     | s    | seconds since 1/1/1970                                   |
-| iso\_time                | s    | ISO 8601 datetime                                        |
-| seconds\_since\_change   | s    | seconds since last transmit                              |
-| msg\_type                | n/a  | Type of message recieved                                 |
-| fault                    | n/a  | number of faults detected in payload   
+|**Measurement**|**Field**|**Unit**|**Device Field**|**Meaning**|
+| - | - | - | - |- |
+|Message Type|msg_type||true|Vendor-specific support for multipurpose devices|
+|Device Fault|fault||true|Vendor-specific single that device/sensor is malfunctioning|
+|Device Alert|alert||true|Vendor-specific single that device/sensor has alert|
+||||||
+|Device battery voltage |voltage|V|true|Electrical potential of battery or power-source|
+|Device battery charge|charge|A|true|Percentage of battery charge remaining|
+|Transmission Period|period|s|true|Frequency of device reporting|
+|Transmission RSSI|rssi|dBm|true|Relative Signal Strength Indicator measuring wireless network signal strength|
+|Transmission SNR|snr|dB|true|Signal to Noise Ratio indicator measuring wireless network signal interference|
+|Device Reports since reset|reports_since_reset||true|Count of reports since device power-up or reset|
+|PCB Temperature|temperature|°C|true|Temperature at the printed circuit board|
+||||||
+|Temperature|temperature|°C||Measure of hotness or coldness expressed in Celsius scale|
+|Relative Humidity|humidity|%||Measure of concentration of water vapour present in the air relative to maximum (aka Relative Humidity)|
+|Pressure|pressure|hPa||Measure of atmospheric pressure in force per unit area exerted by an atmospheric column|
+|Illuminance|illuminance|lx||Measure of the amount of light falling onto and spreading over a given surface area|
+|VOC|voc|ppb||Measure of Volatile Organic Compounds present in the air|
+|CO2|co2|ppm||Measure of Carbon Dioxide present in the air|
+|IAQ - Indoor Air Quality|iaq|||Vendor-specific measure of Air Quality relative to ideal for human-use|
+|AQI- Air Quality Index|air_quality_index|||Vendor-specific measure of Air Quality relative to ideal for human-use|
+|Loudness|loudness|dBA||Measure of magnitude of the auditory sensation conducted through the air|
+|Haze Luminous Transmittance|haze_luminous_transmittance|%||Percentage of transmission light blocked by particles in the air|
+|Smoke Optical Density|smoke_optical_density|dBm||Percentage of transmission light blocked by smoke in the air|
+|Gas|gas|%LEL||Percentage of the gas composition of air by mole fraction|
+|Particulate Matter|particulate_matter|µg/m³|||
+|Particulate Matter Mass|particulate_matter_number|µg/m³|||
+|Particulate Matter Typical Particle Size|particulate_matter_typical_particle_size|µm|||
+||||||
+| Formaldehyde          | formaldehyde         | µg/m³                |                  |Measure of presence of element within air|
+| Benzene               | benzene              | µg/m³                |                  |Measure of presence of element within air|
+| Ozone                 | ozone                | µg/m³                |                  |Measure of presence of element within air|
+| Carbon Monoxide       | carbon_monoxide      | µg/m³                |                  |Measure of presence of element within air|
+| Chlorine              | chlorine             | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen              | hydrogen             | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Sulphide     | hydrogen_sulphide    | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Chloride     | hydrogen_chloride    | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Cyanide      | hydrogen_cyanide     | µg/m³                |                  |Measure of presence of element within air|
+| Hydrogen Fluoride     | hydrogen_fluoride    | µg/m³                |                  |Measure of presence of element within air|
+| Ammonia               | ammonia              | µg/m³                |                  |Measure of presence of element within air|
+| Nitrogen Dioxide      | nitrogen_dioxide     | µg/m³                |                  |Measure of presence of element within air|
+| Nitrogen Oxide        | nitrogen_oxide       | ppb                  |                  |Measure of presence of element within air|
+| Oxygen                | oxygen               | µg/m³                |                  |Measure of presence of element within air|
+| Sulfur Dioxide        | sulfur_dioxide       | µg/m³                |                  |Measure of presence of element within air|
+| Sulfurous Odours      | sulfurous_odours     | OU           |                  |Measure of presence of element within air|
+||||||
+| Lighting Color                | lighting_color               | °K    |                  |Represents the color temperature of lighting, measured in Kelvin|
+| Lighting Flickering           | lighting_flickering          | %   |                  |Measures the fluctuation in light output as a percentage|
+||||||
+| Health Index                  | health_index                 | %   |                  ||
+| Cognitivity Index             | cognitivity_index            | %   |                  ||
+| Sleep Index                   | sleep_index                  | %   |                  ||
+| Throat Irritation Index       | throat_irritation_index      | %   |                  ||
+| Building Health Index         | building_health_index        | %   |                  ||
+| Virus Spreading Index         | virus_spreading_index        | %   |                  ||
+||||||
+|Leak|leak|||Binary presence of electrically detectable liquid|
+|Lighter|lighter||||
+|Darker|darker||||
+|Dismantle|dismantle||||
+||||||
+|Current|current|A||Measure of electrical flow or movement of charge carriers through a conductive medium|
+|Electric Multiplier|multiplier|||Mathematical multiplier to set scale for an electrical measure|
+|Power|power|kW|||
+|Power Consumption|power_consumption|kWh|||
+||||||
+|Presence|presence|||Binary measure representing the detection of a warm object|
+|Motions since reset|motions_since_reset|||Count of warm object positional changes (motions) since device power-up or reset|
+|Events since reset|events_since_reset|||Count of state changes since device power-up or reset|
+|Motion since transmit|motions_since_transmit|||Count of warm object positional changes (motions) since last report|
+|Acceleration|acceleration|m/s2||Measure of the change in velocity of a solid object|
+|Velocity|velocity|m/s||Measure of the speed of motion of a solid object|
+|*Compound field* X|x|||Position relative to an arbitrary starting point in horizontal plane|
+|*Compound field* Y|y|||Position relative to an arbitrary starting point in vertical plane|
+|*Compound field* Z|z|||Position relative to an arbitrary starting point in longitudinal plane|
+||||||
+|Closed status|closed|||Binary measure representing the proximate relative location (close) of two magnetic objects (Hall Effect) or electronic circuit ON|
+|Open status|open|||Binary measure representing the proximate relative location (far) of two magnetic objects (Hall Effect) or electronic circuit OFF|
+||||||
+|Fill status|fill|%||Percentage measure of the reduction in capacity of a fixed depth container|
+|Distance status|distance|m||Measure of unobstructed space between two solid objects|
+||||||
+|GPS|gps|||Measure of location relative to the surface of the Earth following the geographic coordinate system|
+|*Compound field* Latitude|lat|||Measure of the North/South distance relative to the Earth's equator|
+|*Compound field* Longitude|lon|||Measure of the East/West distance relative to the Earth's prime meridian|
+|Accuracy|accuracy|m||Measure of the expected radius of uncertainty for a positional measurement|
+||||||
+|Push|push|||Binary measure of button or switch mechanical activation|
+|Swipe|swipe|||Binary measure of electro-mechanical activation|
+|Push since reset|push_since_reset|||Count of mechanical activation (pushes) since device power-up or reset|
+||||||
+| Learning Percentage                         | learning_percentage                            | %     |                  |Represents the percentage completion of a machine learning process or the degree to which a system has 'learned' from its dataset|
+| Peak Frequency Index                        | peak_frequency_index                           | Hz       |                  |Denotes the index or position of the peak frequency within a spectrum, commonly used in signal processing to identify the dominant frequency component|
+| Learning Type                               | learning_type                                  |       |                  |Indicates the category or method of learning employed by a system, such as supervised, unsupervised, reinforcement, or semi-supervised learning|
+| Fast Fourier Transform                      | fast_fourier_transform                         | Hz       |                  |Refers to the result of a Fast Fourier Transform computation, which transforms a signal from the time domain into the frequency domain, revealing the frequency components of the signal|
+||||||
+| Vibration                                   | vibration                                      | Hz       |                  |Measure of oscillation of or in a solid object|
+| Vibration Amplitude                         | vibration_amplitude                            | G     |                  |Measure of the maximum extent of a vibration or oscillation, taken from the position of equilibrium|
+| Vibration Drift                             | vibration_drift                                | %     |                  |Percentage change in the vibration frequency or position over time|
+| Vibration Drift Duration                    | vibration_drift_duration                       | min      |                  |Time duration over which vibration drift is observed or measured|
+| Vibration Drift Prediction 24 Hours         | vibration_drift_prediction_24_hours            | hour        |                  |Predicted change in vibration behavior or characteristics 24 hours into the future|
+| Vibration Drift Prediction 30 Days          | vibration_drift_prediction_30_days             | day         |                  |Predicted change in vibration behavior or characteristics 30 days into the future|
+| Vibration Drift Prediction 6 Months         | vibration_drift_prediction_6_months            | month       |                  |Predicted change in vibration behavior or characteristics 6 months into the future|
+| Operating Time                              | operating_time                                 | min      |                  ||
+| Alarm Number                                | alarm_number                                   |       |                  ||
+| Report Period                               | report_period                                  | min      |                  ||
+||||||
+|Count Since Reset|count_since_reset|||Count of generic events since device power-up or reset|
+|Count Since Transmit|count_since_transmit|||Count of generic events since last report|
+||||||
+|Alarm |alarm|||Binary measure of generic event occurance (see SubTypes)|
+||||||
+|Time seconds since 1970|time|s||Measure of the thing that keeps on slipping into the future in seconds since Jan 1, 1970|
+|ISO Time (ISO TIME - general field)|iso_time|||Measure of the thing that keeps on slipping into the future in ISO 8601 format|
+|Seconds since change|seconds_since_change|s||Count of seconds since last event state change|
+|Seconds|seconds|s||Measurement of time|
+||||||
 
 ## 4. Example
 ---------------------------------------
 
 #### A. Motion Data
 
-{% highlight javascript %}
+```
 {
     "meta": {
         "currentCount": 355,
@@ -455,150 +480,119 @@ The last block of data in `{Data}` describes the device cluster that is permitte
         {
             "_id": "5eea1d8d46e0fb0028a0b???",
             "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9EZE34CAC3671A7D3AF90C89CEC5DAABC2L1425",
-            "createDate": "2020-06-17T13:41:33.425Z",
+            "createDate": "2023-10-02T13:28:32.556Z",
             "creatorId": "yourname@microshare.io",
             "data": {
-                "device": {
-                    "battery": {
-                        "power": 0.8,
-                        "power_label": "80%",
-                        "voltage": 3.6,
-                        "voltage_label": "3.6V"
-                    },
-                    "count": 2997,
-                    "id": "58-A0-CB-00-00-22-??-??"
-                },
-                "ipso": {
-                    "3000": {
-                        "5534": 2997,
-                        "5750": "count of reports since power-on"
-                    },
-                    "3302": {
-                        "5500": true,
-                        "5750": "TRUE = presence detected",
-                        "5751": "PIR"
-                    },
-                    "3303": {
-                        "5700": 25,
-                        "5701": "Cel"
-                    },
-                    "3316": {
-                        "5700": 3.6,
-                        "5701": "V",
-                        "5750": "device battery state: voltage"
-                    },
-                    "3320": {
-                        "5700": 0.8,
-                        "5701": "%",
-                        "5750": "device battery state: percentage charged"
-                    },
-                    "3333": {
-                        "5707": 0,
-                        "5750": "seconds elapsed since last state change"
+                "device_health": {
+                      "charge": [
+                          {
+                              "unit": "%",
+                              "value": 0
+                          }
+                      ],
+                      "id": "E8-E1-E1-00-01-03-C8-57",
+                      "temperature": [
+                          {
+                              "unit": "°C",
+                              "value": 6
+                          }
+                      ],
+                      "voltage": [
+                          {
+                              "unit": "V",
+                              "value": 3.6
+                          }
+                      ]
+                  },
+                  "motions_since_reset": [
+                    {
+                        "value": 86282
                     }
-                },
+                ],
+                "presence": [
+                    {
+                        "value": false
+                    }
+                ],
+                "seconds_since_change": [
+                    {
+                        "unit": "s",
+                        "value": 129900
+                    }
+                ]
                 "meta": {
+                    "backboard": "5ea0488146e0fb002a074145",
                     "device": [
-                        "London Office",
-                        "Ground Floor",
-                        "Office 2"
+                      "Building 1",
+                      "1st Floor",
+                      "Men-West",
+                      "Men"
                     ],
                     "global": [
-                        "Europe",
-                        "United Kingdom",
-                        "London",
-                        "5 Merchant Square",
-                        "door"
+                      "Europe",
+                      "United Kingdom",
+                      "London"
                     ],
                     "iot": {
-                        "device_id": "58-A0-CB-00-00-22-??-??",
-                        "fcnt_dwn": 761,
-                        "fcnt_up": 5551,
-                        "fport": 102,
-                        "iso_time": "2020-06-17T13:41:32.967Z",
+                        "bw": 125,
+                        "channel": 7,
+                        "device_id": "70-B3-D5-32-6B-00-08-8E",
+                        "fcnt_dwn": 0,
+                        "fcnt_up": 6,
+                        "fport": 2,
+                        "freq": 903.7,
+                        "iso_time": "2023-10-02T13:28:32.556Z",
                         "ns_version": "v3.0",
-                        "payload": "01cb390000b50b00",
+                        "payload": "0200dd001a02f2005a002f",
                         "payload_fmt": 1,
-                        "time": "2020-06-17T13:41:32.967Z",
+                        "rssi": -79,
+                        "sf": 10,
+                        "snr": 9.5,
+                        "time": "2023-10-02T13:28:32.556Z",
                         "type": "uplink"
                     },
-                    "source": []
+                    "source": [],
+                    "usecase": "SC03"
                 },
-                "origin": {
-                    "adr": true,
-                    "classB": false,
-                    "confirmed": false,
-                    "delayed": false,
-                    "encodingType": "HEXA",
-                    "encrypted": false,
-                    "endDevice": {
-                        "cluster": {
-                            "id": 84
-                        },
-                        "devAddr": "00000???",
-                        "devEui": "58A0CB000022????"
-                    },
-                    "fCntDown": 761,
-                    "fCntUp": 5551,
-                    "fPort": 102,
-                    "id": "5eea1d8d60baf40001ba2???",
-                    "payload": "01cb390000b50b00",
-                    "recvTime": 1592401292967
-                },
-                "payload": "01cb390000b50b00",
-                "status": 1,
-                "status_label": "occupied",
-                "temp": 25,
-                "temp_label": "25°C",
-                "temp_unit": "°C",
-                "time": 0,
-                "time_label": "0 minutes",
-                "time_unit": "minutes",
-                "unpacker": {
-                    "class": "io.tracknet.motion.TMBS100.Decoder",
-                    "library": "lorawan_device_unpack",
-                    "version": "0.5.5"
-                }
+                "time": "2023-10-02T13:28:32.556Z"
             },
             "desc": "",
-            "id": "5eea1d8d46e0fb0028a0b???",
+            "id": "651ac581c280e00aef5407dd",
             "name": "",
             "origin": {
-                "checksum": "8BAA297C7FC219B1EFFA2846C5B9C9C2BF56CAC3671A7D3AF90C89CEC5DAABC2L1425",
-                "createDate": "2020-06-17T13:41:33.425Z",
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
                 "creatorId": "yourname@microshare.io",
-                "desc": "Record of Type io.microshare.motion.unpacked",
-                "id": "5eea1d8d46e0fb0028a0b???",
-                "name": "io.microshare.motion.unpacked",
-                "remoteAddress": "your remote address",
+                "desc": "Record of Type io.microshare.feedback.unpacked.event.meta",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.feedback.unpacked.event.meta",
+                "remoteAddress": "172.172.172.35",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "your ip address"
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-                "meta": {},
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
                 "org": "io.microshare",
                 "owners": [],
                 "user": "yourname@microshare.io"
             },
-            "recType": "io.microshare.motion.unpacked",
+            "recType": "io.microshare.feedback.unpacked.event.meta",
             "tags": [
-                "Europe",
-                "United Kingdom",
-                "London",
-                "5 Merchant Square",
-                "door",
-                "London Office",
-                "Ground Floor",
-                "Office 2"
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
             ],
-            "tstamp": 1592401293425,
-            "updateDate": "2020-06-17T13:41:33.425Z",
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
             "updaterId": "yourname@microshare.io"
         },
-{% endhighlight %}
+```
 
 The count represents the number of movements triggered, the range is 0 - 16,777,215. It resets at any power-cycle or battery replacement. 
 The time represents the number of minutes since the last movement have been triggerd. The range is 0 – 65,535, it will be reset at the same time as the count. 
@@ -607,7 +601,7 @@ The time represents the number of minutes since the last movement have been trig
 
 #### B. Temperature Data
 
-{% highlight javascript %}
+```
 {
   "meta": {
     "currentCount": 337,
@@ -621,337 +615,233 @@ The time represents the number of minutes since the last movement have been trig
     {
       "_id": "5ed1123046e0fb0028b70???",
       "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-      "createDate": "2020-06-17T09:48:08.980Z",
+      "createDate": "2023-10-02T13:28:32.556Z",
       "creatorId": "yourname@microshare.io",
       "data": {
-        "co2": 65535,
-        "co2_label": "65535ppm",
-        "co2_unit": "ppm",
-        "device": {
-          "battery": {
-            "power": 80,
-            "power_label": "0.8%",
-            "voltage": 3.6,
-            "voltage_label": "3.6V"
-          },
-          "id": "58-A0-CB-00-00-40-??-??"
-        },
-        "humidity": 64,
-        "humidity_label": "64%",
-        "humidity_unit": "%",
-        "ipso": {
-          "3302": {
-              "5500": false,
-              "5751": "PIR"
-          },
-          "3303": {
-              "5700": 19,
-              "5701": "Cel"
-          },
-          "3304": {
-              "5700": 64,
-              "5701": "%"
-          },
-          "3316": {
-              "5700": 3.6,
-              "5701": "V",
-              "5750": "device battery state: voltage"
-          },
-          "3320": {
-              "5700": 0.8,
-              "5701": "%",
-              "5750": "device battery state: percentage charged"
-          },
-          "3325-1": {
-              "5700": 65535,
-              "5701": "ppm",
-              "5750": "concentration of CO2 in ppm"
-          },
-          "3325-2": {
-              "5700": 65535,
-              "5701": "ppb",
-              "5750": "concentration of VOCs in ppb"
-          }
-        },
-        "meta": {
-          "device": [
-            "London",
-            "1st Floor",
-            "Office 3"
+          co2": [
+              {
+                  "unit": "ppm",
+                  "value": 462
+              }
           ],
-          "global": [
-            "Europe",
-            "United Kingdom",
-            "London",
-            "5 Merchant Square",
-            "your environment"
+          "device_health": {
+              "id": "00-16-16-00-00-00-0C-BB",
+              "voltage": [
+                  {
+                      "unit": "V",
+                      "value": 3.6
+                  }
+              ]
+          },
+          "humidity": [
+              {
+                  "unit": "%RH",
+                  "value": 35
+              }
           ],
-          "iot": {
-            "device_id": "58-A0-CB-00-00-40-??-??",
-            "fcnt_dwn": 749,
-            "fcnt_up": 4510,
-            "fport": 103,
-            "iso_time": "2020-06-17T09:48:08.494Z",
-            "ns_version": "v3.0",
-            "payload": "08cb3340ffffffff",
-            "payload_fmt": 1,
-            "time": "2020-06-17T09:48:08.494Z",
-            "type": "uplink"
-          },
-          "source": []
-        },
-        "origin": {
-          "adr": true,
-          "classB": false,
-          "confirmed": false,
-          "delayed": false,
-          "encodingType": "HEXA",
-          "encrypted": false,
-          "endDevice": {
-              "cluster": {
-                  "id": 66
-              },
-              "devAddr": "E04123???",
-              "devEui": "58A0CB000040????"
-          },
-          "fCntDown": 749,
-          "fCntUp": 4510,
-          "fPort": 103,
-          "id": "5ee9e6d860baf40001b9e???",
-          "payload": "08cb3340ffffffff",
-          "recvTime": 1592387288494
-        },
-        "status": 8,
-        "status_label": "false",
-        "temp": 19,
-        "temp_label": "19 °C",
-        "temp_unit": "°C",
-        "unpacker": {
-          "class": "io.tracknet.healthy.TBHV100.Decoder",
-          "library": "lorawan_device_unpack",
-          "version": "0.5.5"
-        },
-        "voc": 65535,
-        "voc_label": "65535ppb",
-        "voc_unit": "ppb"
-      },
-      "desc": "",
-      "id": "5ed1123046e0fb0028b70???",
-      "name": "",
-      "origin": {
-        "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
-        "createDate": "2020-06-17T09:48:08.980Z",
-        "creatorId": "yourname@microshare.io",
-        "desc": "Record of Type io.microshare.yourenvironment.unpacked",
-        "id": "5ed1123046e0fb0028b70???",
-        "name": "io.microshare.yourenvironment.unpacked",
-        "remoteAddress": "your remote address",
-        "tokendata": {
-          "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-          "ip": "your ip address"
-        }
-      },
-      "owner": {
-        "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-        "meta": {},
-        "org": "io.microshare",
-        "owners": [],
-        "user": "yourname@microshare.io"
-      },
-      "recType": "io.microshare.your environment.unpacked",
-      "tags": [
-        "Europe",
-        "United Kingdom",
-        "London",
-        "5 Merchant Square",
-        "your environment",
-        "London",
-        "1st Floor",
-        "Office 3"
-      ],
-      "tstamp": 1592387288980,
-      "updateDate": "2020-06-17T09:48:08.980Z",
-      "updaterId": "yourname@microshare.io"
-    },
-
-.......
-
-{% endhighlight %}
-
-#### C. Feedback Data
-
-{% highlight javascript %}
-{
-    "meta": {
-        "currentCount": 261,
-        "currentPage": 1,
-        "perPage": 1000,
-        "source": "db",
-        "totalCount": 1000,
-        "totalPages": 1
-    },
-    "objs": [
-        {
-            "_id": "5eea1e1346e0fb0022355???",
-            "checksum": "C6E1072EB86D537C2E7E9B8D3A3244BA4FC5BEDD44718F32532ZZER5E6A56E28F9L1818",
-            "createDate": "2020-06-17T13:43:47.365Z",
-            "creatorId": "yourname@microshare.io",
-            "data": {
-                "count_1": 75,
-                "count_2": 610,
-                "count_3": 42,
-                "count_4": 246,
-                "count_5": 882,
-                "device": {
-                    "id": "70-B3-D5-32-60-00-??-??"
-                },
-                "ipso": {
-                    "10241": {
-                        "5905": "skiply.eu",
-                        "5906": "Smilio Action",
-                        "5908": "1.2.0.1"
-                    },
-                    "3302": {
-                        "5500": false,
-                        "5751": "Hall Effect activated"
-                    },
-                    "3347": [
-                        {
-                            "5501": 75,
-                            "5502": false,
-                            "5527": "Button #1, Upper Left, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #1, Upper Left"
-                        },
-                        {
-                            "5501": 610,
-                            "5502": false,
-                            "5527": "Button #2, Upper Right, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #2, Upper Right"
-                        },
-                        {
-                            "5501": 42,
-                            "5502": false,
-                            "5527": "Button #3, Lower Left, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #3, Lower Left"
-                        },
-                        {
-                            "5501": 246,
-                            "5502": false,
-                            "5527": "Button #4, Lower Right, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #4, Lower Right"
-                        },
-                        {
-                            "5501": 882,
-                            "5502": false,
-                            "5527": "Button #5, Middle, count of reports since power-on/reset",
-                            "5750": "Push Button",
-                            "5853": "Button #5, Middle"
-                        }
-                    ]
-                },
-                "meta": {
-                    "device": [
-                        "London Office",
-                        "1st Floor",
-                        "Kitchen"
-                    ],
-                    "global": [
-                        "Europe",
-                        "United Kingdom",
-                        "London",
-                        "5 Merchant Square",
-                        "5b_feedback"
-                    ],
-                    "iot": {
-                        "device_id": "70-B3-D5-32-60-00-??-??",
-                        "fcnt_dwn": 28,
-                        "fcnt_up": 1778,
-                        "fport": 2,
-                        "iso_time": "2020-06-17T13:43:46.924Z",
-                        "ns_version": "v3.0",
-                        "payload": "02004b02620372002a00f6",
-                        "payload_fmt": 1,
-                        "time": "2020-06-17T13:43:46.924Z",
-                        "type": "uplink"
-                    },
-                    "source": []
-                },
-                "origin": {
-                    "adr": true,
-                    "classB": false,
-                    "confirmed": false,
-                    "delayed": false,
-                    "encodingType": "HEXA",
-                    "encrypted": false,
-                    "endDevice": {
-                        "cluster": {
-                            "id": 2
-                        },
-                        "devAddr": "E0423???",
-                        "devEui": "70B3D5326000C???"
-                    },
-                    "fCntDown": 28,
-                    "fCntUp": 1778,
-                    "fPort": 2,
-                    "id": "5eea1e1360baf40001ba2???",
-                    "payload": "02004b02620372002a00f6",
-                    "recvTime": 1592401426924
-                },
-                "payload": "02004b02620372002a00f6",
-                "trigger": false,
-                "unpacker": {
-                    "class": "eu.skiply.button.SmilioAction.Decoder",
-                    "library": "lorawan_device_unpack",
-                    "version": "0.5.5"
-                }
+          "temperature": [
+              {
+                  "unit": "°C",
+                  "value": 23
+              }
+          ],
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
             },
-            "desc": "",
-            "id": "5eea1e1346e0fb0028915???",
+            "source": [],
+            "usecase": "SE09"
+        },
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
             "name": "",
             "origin": {
-                "checksum": "C6E1072EB86D537C2E7E9B8D3ACREZERT3BEDD44718F9898C234352A56E28F9L1818",
-                "createDate": "2020-06-17T13:43:47.365Z",
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
                 "creatorId": "yourname@microshare.io",
-                "desc": "Record of Type io.microshare.feedback.unpacked",
-                "id": "5eea1e1346e0fb0028915???",
-                "name": "io.microshare.feedback.unpacked",
-                "remoteAddress": "your remote address",
+                "desc": "Record of Type io.microshare.environment.unpacked",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
                 "tokendata": {
-                  "id": "006f6b5f-171e-46cf-8f70-c4fa15b6????",
-                  "ip": "your ip address"
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
                 }
             },
             "owner": {
-                "appid": "B8E2F5B2-969D-4EFF-BD45-B8CFF2F2????",
-                "meta": {},
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
+                "org": "io.microshare",
+                "owners": [],
+                "user": "yourname@microshare.io"
+            },
+            "recType": "io.microshare.environment.unpacked",
+            "tags": [
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
+            "updaterId": "yourname@microshare.io"
+    }
+  }
+]}
+```
+
+#### C. Feedback Data
+
+```
+{
+  "meta": {
+    "currentCount": 337,
+    "currentPage": 1,
+    "perPage": 1000,
+    "source": "db",
+    "totalCount": 1000,
+    "totalPages": 1
+  },
+  "objs": [
+    {
+      "_id": "5ed1123046e0fb0028b70???",
+      "checksum": "09BE84FF7E4E9CF6E4777C9900EDCDE0C0397956F251C8BCF08A5226A387FFA1L1521",
+      "createDate": "2023-10-02T13:28:32.556Z",
+      "creatorId": "yourname@microshare.io",
+      "data": {
+          "pushes_since_reset": [
+              {
+                  "context_id": "Button #1, Upper Left",
+                  "value": 237
+              },
+              {
+                  "context_id": "Button #2, Upper Right",
+                  "value": 27
+              },
+              {
+                  "context_id": "Button #3, Lower Left",
+                  "value": 93
+              },
+              {
+                  "context_id": "Button #4, Lower Right",
+                  "value": 47
+              },
+              {
+                  "context_id": "Button #5, Middle",
+                  "value": 781
+              }
+          ],
+          "swipe": [
+              {
+                  "value": false
+              }
+          ]
+         "meta": {
+            "device": [
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
+            ],
+            "global": [
+              "Europe",
+              "United Kingdom",
+              "London"
+            ],
+            "iot": {
+                "bw": 125,
+                "channel": 7,
+                "device_id": "70-B3-D5-32-6B-00-08-8E",
+                "fcnt_dwn": 0,
+                "fcnt_up": 6,
+                "fport": 2,
+                "freq": 903.7,
+                "iso_time": "2023-10-02T13:28:32.556Z",
+                "ns_version": "v3.0",
+                "payload": "0200dd001a02f2005a002f",
+                "payload_fmt": 1,
+                "rssi": -79,
+                "sf": 10,
+                "snr": 9.5,
+                "time": "2023-10-02T13:28:32.556Z",
+                "type": "uplink"
+            },
+            "source": [],
+            "usecase": "SF01"
+        },
+        "time": "2023-10-02T13:28:32.556Z"
+        "desc": "",
+            "id": "651ac581c280e00aef5407dd",
+            "name": "",
+            "origin": {
+                "checksum": "1FA94476E4CAA524F2622E41805A0484AD03D4DCA50FB0C0BC6B8933441E6445L650",
+                "createDate": "2023-10-02T13:28:33.029Z",
+                "creatorId": "yourname@microshare.io",
+                "desc": "Record of Type io.microshare.feedback.unpacked",
+                "id": "651ac581c280e00aef5407dd",
+                "name": "io.microshare.environment.unpacked",
+                "remoteAddress": "172.172.172.35",
+                "tokendata": {
+                    "id": "58fb08bc-5b6f-4607-9606-8f8a821a0477",
+                    "ip": "172.172.172.114"
+                }
+            },
+            "owner": {
+                "appid": "51C54CDB-D278-4CFD-B8378EF13462E5FB",
                 "org": "io.microshare",
                 "owners": [],
                 "user": "yourname@microshare.io"
             },
             "recType": "io.microshare.feedback.unpacked",
             "tags": [
-                "Europe",
-                "United Kingdom",
-                "London",
-                "5 Merchant Square",
-                "5b_feedback",
-                "London Office",
-                "1st Floor",
-                "Kitchen"
+              "Europe",
+              "United Kingdom",
+              "London",
+              "Building 1",
+              "1st Floor",
+              "Men-West",
+              "Men"
             ],
-            "tstamp": 1592401427365,
-            "updateDate": "2020-06-17T13:43:47.365Z",
+            "tstamp": 1696253313029,
+            "updateDate": "2023-10-02T13:28:33.029Z",
             "updaterId": "yourname@microshare.io"
-        },
-{% endhighlight %}
+    }
+  }
+]}
+```
 
 #### D. Contact Tracing
 
-{% highlight java %}
+```
   {
     "meta": {
         "currentCount": 1,
@@ -1042,9 +932,9 @@ The time represents the number of minutes since the last movement have been trig
         }
     ]
 }
-{% endhighlight %}
+```
 
-{% highlight java %}
+```
 {
     "event_type":"create",
     "id":"5edfb7e246e0fb00297b5???",
@@ -1144,14 +1034,14 @@ The time represents the number of minutes since the last movement have been trig
     "recType":"io.microshare.contact.unpacked.event",
     "source":"ShareService"
 }
-{% endhighlight %}
+```
 
 
 #### E. Asset Zoning
 
 See below the code for more detail on the meaning of the different fields.
 
-{% highlight java %}
+```
   {
         "_id": "5fb54be9a401e8001d80c7fb",
         "checksum": "AC23F16DDC3330223DEC3AE9B60DF4FC03BC9CD633A07294BF1BE2B97D9E5BA7L633",
@@ -1244,7 +1134,7 @@ See below the code for more detail on the meaning of the different fields.
         "updateDate": "2020-10-17T16:29:29.769Z",
         "updaterId": "admin@microshare.io"
       }
-{% endhighlight %}
+```
 
 * data.event - this has 3 values:
 * "new" - the device has entered the range of the wave scanner
@@ -1269,8 +1159,7 @@ Used in contact tracing and asset zoning solutions, a heartbeat record indicates
 - `messageType`: This feild will be "contact" for a contact tracing solution and "asset" for a asset zoning solution. 
 - `mode`: This field will read "storage" if the device in contact is in storage and inactive. If "nominal", the device in contact is active but has no previous contact records. 
 
-{% highlight javascript %}
-
+```
 {
   "device": {
     "id": "ACD340663???"
@@ -1299,6 +1188,4 @@ Used in contact tracing and asset zoning solutions, a heartbeat record indicates
   "mode": "nominal",
   "time": "2020-10-05T17:19:02.855Z"
 }
-
-{% endhighlight %}
-
+```
