@@ -5,7 +5,7 @@
   pages:
   - title: Welcome
     keywords : ["start","first"]
-  - title: Realease notes
+  - title: Release notes
     keywords : ["updates", "new", "deployments", "fix"]
   subpages:
   - title: Meet Microshare
