@@ -8,6 +8,37 @@ toc: true
 ---------------------------------------
 
 
+## Release Notes for December 14, 2023
+
+**New Features**
+
+Data 
+
+- Our systems now annotate sensor GPS data (if available from a device) to the data stream 
+
+Manage > Devices 
+
+- All asset types now include ownership details in the info panel.  Simply select a Device Cluster and click the “i” Info button.  Ownership information then appears in the slide-out panel on the right side of the screen. 
+
+**Feature Enhancements**
+
+- n/a
+
+**Bug Fixes**
+
+- n/a
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+
+
 ## Release Notes for November 20, 2023
 
 **New Features**
