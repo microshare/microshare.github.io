@@ -7,6 +7,78 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for February 7, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+Suite App
+
+- The tab name and icon of a user’s browser page updates to display the current application as users switch between applications in the Suite App.
+
+EverSmart
+
+- EverSmart now displays the same icon in the upper right corner of the dashboard interface as is displayed on the apps list. This creates a more consistent app branding style.
+
+DeployM
+
+- The “Use development/training server” button has been moved from the sign-in screen to the Settings page.
+
+EverSmart and DeployM
+
+- Labels (aka headings) for the location tags displayed in the EverSmart dashboard now align with the labels as displayed in DeployM. If the labels changed unexpectedly in this new release, please contact support@microshare.io.
+
+**Bug Fixes**
+
+- Moving from Suite App to any app and then clicking Back in browser immediately returns the user to the Suite App as expected.
+- The operators for the Traffic data field in EverSmart Clean have been updated and now include sum, average, max, sumMean, and sumMax. 
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
+
+## Release Notes for December 14, 2023
+
+**New Features**
+
+Data
+
+- Our systems now annotate sensor GPS data (if available from a device) to the data stream.
+
+Manage > Devices
+
+- All asset types now include ownership details in the info panel.  Simply select a Device Cluster and click the “i” Info button.  Ownership information then appears in the slide-out panel on the right side of the screen. 
+
+**Feature Enhancements**
+
+- n/a
+
+**Bug Fixes**
+
+- n/a
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
 
 ## Release Notes for November 20, 2023
 
