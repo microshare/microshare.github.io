@@ -7,6 +7,35 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for March 20, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+- n/a
+
+**Bug Fixes**
+
+DeployM
+- Resolved issue with DeployM sometimes reverting the DevEUI for a previously updated device within a Device Cluster. 
+- Fixed a stability issue related to tapping the map icon in DeployM on Android devices. 
+- Addressed a problem on Android devices with entering data for tag 4 on Gateways. 
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
+
 ## Release Notes for February 7, 2024
 
 **New Features**
