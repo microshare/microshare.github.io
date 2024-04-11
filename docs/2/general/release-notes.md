@@ -5,6 +5,33 @@ description: Take a look at our latest updates
 toc: true
 ---
 
+
+---------------------------------------
+
+## Release Notes for April 11, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+- n/a
+
+**Bug Fixes**
+
+DeployM
+- The default number of Gateways and Devices for a new Rodent instance in DeployM has been updated to be 2 Gateways and 12 Devices.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
 ---------------------------------------
 
 ## Release Notes for March 20, 2024
