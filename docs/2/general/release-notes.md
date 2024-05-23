@@ -8,6 +8,34 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for May 23, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+EverSmart
+- EverSmart now persists the value of the Time range filter, except when the duration is larger than 14 days.
+- The “IoT Monitor” button in the EverSmart Alert - Rodent Control Overview page has been renamed to “Device Health”.
+- Individual users can now save custom filter settings in the EverSmart dashboards.  See the “Saved Filters” option in the user interface. 
+
+**Bug Fixes**
+
+- n/a
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
 ## Release Notes for April 11, 2024
 
 **New Features**
