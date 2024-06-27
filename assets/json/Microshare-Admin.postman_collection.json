@@ -1506,11 +1506,11 @@
 							"variable": [
 								{
 									"key": "recType",
-									"value": "pipe"
+									"value": "io.microshare.test"
 								},
 								{
 									"key": "id",
-									"value": "5e73b63d3a00002a934523d4"
+									"value": "667db7eaef6bd35845f20a52"
 								}
 							]
 						},
@@ -1534,7 +1534,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"recType\" : \"pipe\",\n  \"name\" : \"Microshare Onboarding App\",\n  \"desc\" : \"Link to Microshare Onboarding App\",\n  \"uuid\": \"GUIDHERE-1234-5678-9012-345678901234\",\n  \"data\": {\n    \"email\" : \"guest@microshare.online\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
+							"raw": " {\n  \"name\" : \"Microshare Onboarding App\",\n  \"desc\" : \"Link to Microshare Onboarding App\",\n  \"uuid\": \"GUIDHERE-1234-5678-9012-345678901234\",\n  \"data\": {\n    \"email\" : \"guest@microshare.online\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{hostname}}/link/:recType/",
@@ -1573,7 +1573,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"recType\" : \"pipe\",\n  \"name\" : \"A NEW LINK VIA CLASSIC-API\",\n  \"desc\" : \"Updated Via PUT\",\n  \"data\": {\n    \"email\" : \"guest@microshare.net\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
+							"raw": " {\n  \"name\" : \"Microshare Onboarding App\",\n  \"desc\" : \"Updated Link to Microshare Onboarding App\",\n  \"uuid\": \"GUIDHERE-1234-5678-9012-345678901234\",\n  \"data\": {\n    \"email\" : \"guest@microshare.online\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
 						},
 						"url": {
 							"raw": "{{hostname}}/link/:recType/:id",
@@ -1592,7 +1592,7 @@
 								},
 								{
 									"key": "id",
-									"value": "665f53fb95e8126e37c44259"
+									"value": "667db7eaef6bd35845f20a52"
 								}
 							]
 						},
@@ -1635,7 +1635,7 @@
 								},
 								{
 									"key": "id",
-									"value": "665f53fb95e8126e37c44259"
+									"value": "667db7eaef6bd35845f20a52"
 								}
 							]
 						},
