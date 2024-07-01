@@ -13,7 +13,7 @@ toc: true
 ## 1. Microshare incident
 ---------------------------------------
 
-To understand better what is an incident please refer to the page [](../microshare-platform/incident.md).
+To understand better what is an incident please refer to the page [](../microshare-platform-advanced/incident.md).
 
 ## 2. Microshare incident data format
 ---------------------------------------
