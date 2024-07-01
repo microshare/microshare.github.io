@@ -134,6 +134,8 @@
     - title: People Counter
       keyword : ["count","doorway","counting"]
     - title: Contact Tracing
+    - title: Incident
+      keywords : ["incident","reactm","tasks","routing","action"]
   - title: Microshare Platform
     pages:
     - title: Quick Start
@@ -157,6 +159,8 @@
     - title: Robots Guide
       keyword : ["triggered","scheduled","alerts","notifications"]
     - title: Robots Library
+    - title: Incident
+      keywords : ["incident","reactm","tasks","routing","action"]
   - title: Streaming Integration
     pages:
     - title: Overview
