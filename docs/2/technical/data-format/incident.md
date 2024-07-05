@@ -283,9 +283,7 @@ This section shows the status of the whole process (incident): when it started a
 
 #### workflow.userTask
 
-The user task name refers to which step (config.steps) of the process we are on. It also defines when this step started and what its status is now (open if the process is open, or different if the process isn't open
-
- anymore).
+The user task name refers to which step (config.steps) of the process we are on. It also defines when this step started and what its status is now (open if the process is open, or different if the process isn't open anymore).
 
 ### C. Microshare incident data format -- history
 ---------------------------------------
