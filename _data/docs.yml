@@ -136,6 +136,8 @@
     - title: Contact Tracing
     - title: Incident
       keywords : ["incident","reactm","tasks","routing","action"]
+    - title: Hourly Saver
+      keywords : ["hourly","saver","snapshot", "hourly snapshot", "hourly saver", "predictive cleaning", "cleaning"]
   - title: Microshare Platform
     pages:
     - title: Quick Start
