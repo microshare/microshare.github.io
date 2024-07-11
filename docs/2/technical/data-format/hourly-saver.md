@@ -21,7 +21,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented using the json format and contains information about the actual hourly motion, expected hourly motion, location data and statistical analysis of data from the same day and hour across the past few weeks.
+This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented using the json format and contains information about the actual hourly metric, expected hourly metric, location data and statistical analysis of data from the same day and hour across the past few weeks.
 
 
 ## 2. Microshare hourly saver data format
@@ -121,6 +121,14 @@ This is an example piece of data. Elements of this data will be explained in the
 
 This element contains statistical measures for data collected from the same day and hour over the past few weeks.
 
+- **coefficientOfVariation**: The ratio of the standard deviation to the mean, expressed as a percentage. It measures the relative variability of the data points.
+- **relativeRange**: The ratio of the range (max - min) to the mean. It provides a normalized measure of the range.
+- **variation**: A measure of the dispersion of the data points. It is often used interchangeably with variance but can also refer to other measures of spread.
+- **within1Stddev**: Indicates whether the data points fall within one standard deviation of the mean.
+- **within2Stddev**: Indicates whether the data points fall within two standard deviations of the mean.
+- **within3Stddev**: Indicates whether the data points fall within three standard deviations of the mean.
+- **zScore**: The number of standard deviations a data point is from the mean. It is used to identify how unusual a data point is within the distribution.
+
 ### B. Current
 ---------------------------------------
 
@@ -138,7 +146,17 @@ This element contains statistical measures for data collected from the same day 
 }
 ```
 
-This element specifies the actual motion data detected in a certain location within the current hour.
+This element specifies the actual metric data detected in a certain location within the current hour.
+
+- **avg**: The average value of the data points.
+- **count**: The total number of data points.
+- **first**: The first data point in the series.
+- **last**: The last data point in the series.
+- **max**: The maximum value among the data points.
+- **median**: The median value of the data points.
+- **min**: The minimum value among the data points.
+- **range**: The difference between the maximum and minimum values.
+- **sum**: The sum of all the data points.
 
 ### C. Expected
 ---------------------------------------
@@ -160,6 +178,18 @@ This element specifies the actual motion data detected in a certain location wit
 ```
 
 This element specifies the expected traffic for the current hour. The expected traffic count is determined by analyzing the observed data from the same hour on the same day over the past few weeks and calculating the relevant statistical measures.
+
+- **avg**: The average value of the data points, calculated as the sum of the data points divided by the count.
+- **count**: The total number of data points.
+- **first**: The first data point in the series.
+- **last**: The last data point in the series.
+- **max**: The maximum value among the data points.
+- **median**: The middle value of the data points when they are sorted in ascending order. If the count is even, it is the average of the two middle numbers.
+- **min**: The minimum value among the data points.
+- **range**: The difference between the maximum and minimum values.
+- **stddev**: The standard deviation of the data points, which measures the amount of variation or dispersion from the average.
+- **sum**: The sum of all the data points.
+- **variance**: The variance of the data points, which is the average of the squared differences from the mean. It is a measure of how spread out the data points are.
 
 ### D. Meta
 ---------------------------------------
@@ -206,12 +236,9 @@ This element specifies the expected traffic for the current hour. The expected t
 
 This element specifies the miscellaneous meta data related to this specific hour's data.
 
-**agg.period:** Specifies the start and end times for the current hour.
-
-**date:** Specifies the date range over which the expected data is aggregated.
-
-**device:** Specifies the location of the device generating this data.
-
-**global:** Organisation that owns the device.
-
-**iot.time:** Timestamp of the time this data was generated.
+- **agg.period:** Start and end times for the current hour.
+- **date:** Date range over which the expected data is aggregated.
+- **device:** Location of the device generating this data.
+- **global:** Organisation that owns the device. 
+- **iot.time:** Timestamp of the time this data was generated.
+- **snapshot:** The category of the device and the type of metric that is calculated. eg: motion, snr, etc.
