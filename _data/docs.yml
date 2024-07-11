@@ -137,7 +137,9 @@
     - title: Incident
       keywords : ["incident","reactm","tasks","routing","action"]
     - title: Hourly Saver
-      keywords : ["hourly","saver","snapshot", "hourly snapshot", "hourly saver", "predictive cleaning", "cleaning"]
+      keywords : ["hourly","saver", "hourly saver", "predictive cleaning", "cleaning"]
+    - title: Hourly Snapshot
+      keywords : ["hourly","snapshot", "hourly snapshot", "predictive cleaning", "cleaning"]
   - title: Microshare Platform
     pages:
     - title: Quick Start
