@@ -236,11 +236,11 @@ This element specifies the expected traffic for the current hour. The expected t
 
 This element specifies the miscellaneous meta data related to this specific hour's data.
 
-- **agg.period:** Start and end times for the current hour.
-- **date:** Date range over which the expected data is aggregated.
-- **device:** Location of the device generating this data.
-- **global:** Organisation that owns the device. 
-- **iot.time:** Timestamp of the time this data was generated.
-- **snapshot:** An object containing:
-  - **category:** The category of the device (e.g., "device").
-  - **metric:** The type of metric that is calculated (e.g., "snr" for signal-to-noise ratio).
+- **agg.period**: Start and end times for the current hour.
+- **date**: Date range over which the expected data is aggregated.
+- **device**: Location of the device generating this data.
+- **global**: Organisation that owns the device. 
+- **iot.time**: Timestamp of the time this data was generated.
+- **snapshot**: An object containing:
+  - **category**: The category of the device (e.g., "device").
+  - **metric**: The type of metric that is calculated (e.g., "snr" for signal-to-noise ratio).
