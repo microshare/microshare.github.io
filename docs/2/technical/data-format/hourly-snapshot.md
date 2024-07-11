@@ -16,6 +16,8 @@ toc: true
 
 1. [Overview](./#1-overview)
 2. [Hourly snapshot data format](./#2-hourly-snapshot-data-format)
+    - A. [Current](./#a-current)
+    - B. [Meta](./#b-meta)
 
 ---------------------------------------
 
@@ -23,6 +25,9 @@ toc: true
 ---------------------------------------
 This page provides an overview of the data structure for the hourly snapshot data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented in JSON format and contains hourly aggregated snapshots of a given metric produced by a device.
 
+Hourly snapshots aggregate data collected over each hour, summarizing it into hourly metrics. This method helps manage and reduce the volume of data, making storage and processing more efficient compared to daily snapshots. By condensing data into hourly intervals, the number of raw data points is significantly reduced, which facilitates more efficient querying and analysis. This approach not only enhances data management but also allows for quicker and more detailed insights into hourly trends and patterns. Consequently, it becomes easier to monitor and respond to changes in the data on an hourly basis, providing a more granular view of the metrics being tracked.
+
+Rectype for hourly snapshots: io.microshare.lake.snapshot.hourly
 
 ## 2. Hourly snapshot data format
 ---------------------------------------

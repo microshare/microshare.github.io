@@ -16,13 +16,20 @@ toc: true
 
 1. [Overview](./#1-overview)
 2. [Hourly saver data format](./#2-hourly-saver-data-format)
+    - A. [Analytics](./#a-analytics)
+    - B. [Expected](./#b-expected)
+    - C. [Current](./#c-current)
+    - D. [Meta](./#d-meta)
 
 ---------------------------------------
 
 ## 1. Overview
 ---------------------------------------
-This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented using the json format and contains information about the actual hourly metric, expected hourly metric, location data and statistical analysis of data from the same day and hour across the past few weeks.
+This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™.
 
+The hourly saver leverages hourly snapshots to aggregate data every hour, which proves to be more advantageous than daily aggregations. This method helps manage and reduce the volume of data, making storage and processing more efficient. This approach enhances the ability to predict expected values for any given metric throughout the day with greater efficiency. The hourly saver data format, includes actual and expected hourly metrics, location data, and statistical analysis from the same day and hour across previous weeks. This structured data, presented in JSON format, allows for better management and analysis, ultimately improving the accuracy of hourly predictions.
+
+Rectype for hourly saver data: io.microshare.lake.saver.hourly
 
 ## 2. Hourly saver data format
 ---------------------------------------
@@ -242,5 +249,5 @@ This element specifies the miscellaneous meta data related to this specific hour
 - **global**: Organisation that owns the device. 
 - **iot.time**: Timestamp of the time this data was generated.
 - **snapshot**: An object containing:
-  - **category**: The category of the device (e.g., "device").
-  - **metric**: The type of metric that is calculated (e.g., "snr" for signal-to-noise ratio).
+  - **category**: The category of the device (e.g., "device"). This field can be used to query data belonging to a specific category of devices.
+  - **metric**: The type of metric that is calculated. This field can be used to query data of a desired data type (e.g., "snr" for signal-to-noise ratio or "traffic" for motion data)
