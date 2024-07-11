@@ -21,7 +21,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-This page provides an overview of the data structure for the hourly snapshot data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented using the json format and contains information about the actual hourly metric, expected hourly metric, location data and statistical analysis of data from the same day and hour across the past few weeks.
+This page provides an overview of the data structure for the hourly snapshot data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented in JSON format and contains hourly aggregated snapshots of a given metric produced by a device.
 
 
 ## 2. Microshare hourly snapshot data format
@@ -42,16 +42,7 @@ This is an example piece of data. Elements of this data will be explained in the
         "sum": 8.8
     },
     "meta": {
-        "agg": {
-            "period": {
-                "from": "2024-05-20T23:00:00.000Z",
-                "to": "2024-05-21T00:00:00.000Z"
-            }
-        },
-        "date": {
-            "firstDate": "2024-05-06T23:00:00.000Z",
-            "lastDate": "2024-05-20T23:00:00.000Z"
-        },
+        "date": "2024-05-20T23:00:00.000Z"
         "details": {
             "label": "",
             "unit": ""
@@ -116,16 +107,7 @@ This element specifies the actual metric data detected in a certain location wit
 
 ```
 "meta": {
-    "agg": {
-        "period": {
-            "from": "2024-05-20T23:00:00.000Z",
-            "to": "2024-05-21T00:00:00.000Z"
-        }
-    },
-    "date": {
-        "firstDate": "2024-05-06T23:00:00.000Z",
-        "lastDate": "2024-05-20T23:00:00.000Z"
-    },
+    "date": "2024-05-20T23:00:00.000Z",
     "details": {
         "label": "",
         "unit": ""
@@ -153,12 +135,12 @@ This element specifies the actual metric data detected in a certain location wit
     }
 }
 ```
+This element specifies the miscellaneous meta data related to the current hour's snapshot
 
-This element specifies the miscellaneous meta data related to this specific hour's data.
-
-- **agg.period:** Start and end times for the current hour.
-- **date:** Date range over which the expected data is aggregated.
-- **device:** Location of the device generating this data.
-- **global:** Organisation that owns the device. 
-- **iot.time:** Timestamp of the time this data was generated.
-- **snapshot:** The category of the device and the type of metric that is calculated. eg: motion, snr, etc.
+- **date:** The date when the snapshot was taken.
+- **device:** The location of the device generating this data, specified as an array of strings detailing the building, floor, specific area, and desk number.
+- **global:** An array of strings representing the organization that owns the device and other relevant tags.
+- **iot.time:** The timestamp indicating when this data was generated.
+- **snapshot:** An object containing:
+  - **category:** The category of the device (e.g., "device").
+  - **metric:** The type of metric that is calculated (e.g., "snr" for signal-to-noise ratio).

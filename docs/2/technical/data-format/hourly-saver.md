@@ -241,4 +241,6 @@ This element specifies the miscellaneous meta data related to this specific hour
 - **device:** Location of the device generating this data.
 - **global:** Organisation that owns the device. 
 - **iot.time:** Timestamp of the time this data was generated.
-- **snapshot:** The category of the device and the type of metric that is calculated. eg: motion, snr, etc.
+- **snapshot:** An object containing:
+  - **category:** The category of the device (e.g., "device").
+  - **metric:** The type of metric that is calculated (e.g., "snr" for signal-to-noise ratio).
