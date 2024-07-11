@@ -15,7 +15,7 @@ toc: true
 ##### SUMMARY: 
 
 1. [Overview](./#1-overview)
-2. [Microshare hourly saver data format](./#2-microshare-hourly-saver-data-format)
+2. [Hourly saver data format](./#2-hourly-saver-data-format)
 
 ---------------------------------------
 
@@ -24,7 +24,7 @@ toc: true
 This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented using the json format and contains information about the actual hourly metric, expected hourly metric, location data and statistical analysis of data from the same day and hour across the past few weeks.
 
 
-## 2. Microshare hourly saver data format
+## 2. Hourly saver data format
 ---------------------------------------
 This is an example piece of data. Elements of this data will be explained in the further sections.
 
