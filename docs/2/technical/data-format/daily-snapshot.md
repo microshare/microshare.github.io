@@ -23,7 +23,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-This page provides an overview of the data structure for the daily snapshot data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™. The data is presented in JSON format and contains daily aggregated snapshots of a given metric produced by a device.
+This page provides an overview of the data structure for the daily snapshot data format. The data is presented in JSON format and contains daily aggregated snapshots of a given metric produced by a device.
 
 Daily snapshots create day-wise aggregations for collected data of a specific type of metric. This means that data points collected throughout the day are summarized into a single set of metrics for that day. By doing so, it becomes easier to manage and analyze large volumes of data, as the daily aggregation reduces the number of data points that need to be stored and processed. Daily snapshots are particularly useful for long-term monitoring and reporting, providing a clear and concise view of how metrics evolve on a daily basis.
 
