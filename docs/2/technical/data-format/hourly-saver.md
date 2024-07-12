@@ -25,7 +25,7 @@ toc: true
 
 ## 1. Overview
 ---------------------------------------
-This page provides an overview of the data structure for the hourly saver data format used in the [predictive cleaning](https://www.microshare.io/eversmart-predictive-cleaning/) solution developed by Microshare™.
+This page provides an overview of the data structure for the hourly saver data format.
 
 The hourly saver leverages hourly snapshots to aggregate data every hour, which proves to be more advantageous than daily aggregations. This method helps manage and reduce the volume of data, making storage and processing more efficient. This approach enhances the ability to predict expected values for any given metric throughout the day with greater efficiency. The hourly saver data format, includes actual and expected hourly metrics, location data, and statistical analysis from the same day and hour across previous weeks. This structured data, presented in JSON format, allows for better management and analysis, ultimately improving the accuracy of hourly predictions.
 
