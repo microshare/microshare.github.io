@@ -8,6 +8,37 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for July 24, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+Platform
+- We've added api.microshare.io to support /Link API to GET/POST/PUT/DELETE that supports the ability for apps to be shared with unauthenticated guests.  We’ve deprecated app.microshare.io /links2 endpoints which have been used to accomplish the same thing functionally.
+- Web documentation: the Postman API Examples for Links, Apps, Icons and Forms has been updated.
+
+EverSmart
+- Saved Filters are now available for a user across all devices and browsers. 
+
+**Bug Fixes**
+
+Platform
+- Pagination has been implemented for Devices, Robots, Views and Rules to address lag and/or crashes when updating 1500+ Device Clusters at a time.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
 ## Release Notes for May 23, 2024
 
 **New Features**
