@@ -1,0 +1,4303 @@
+{
+	"info": {
+		"_postman_id": "9e8316fb-1ca9-44cb-954c-97ccfe8cf967",
+		"name": "Microshare Admin API",
+		"description": "Dev Server : [dapp.microshare.io](https://dapp.microshare.io/login)<br>\nProd Server : [app.microshare.io](https://app.microshare.io/login)\n\n---------------------------------------\nBefore tackling the concepts on this page, please follow the Microshare Share API guide first!\n\nThese requests allow you to outsource actions made on the Microshare® Composer. Before exercising this ability, you must understand how an item works on Microshare® before using the corresponding APIs.\n\nFor this part we will assume that you are comfortable with interacting with the Microshare® APIs, and the Microshare® platform..\n\nHave a question not answered here? Do not hesitate to contact us at `support@microshare.io`!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34481643"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Request Bearer Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh\", jsonData.refresh_token);",
+									"/*[[start postmanerator]]*/",
+									"function populateNewAPIStructures() {",
+									"    APIStructures['robot'] = {",
+									"        name: 'Robots',",
+									"        description: 'Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the robot', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the robot', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the robot', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['rule'] = {",
+									"        name: 'Rules',",
+									"        description: 'Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the rule', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the rule', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the rule', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code>', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['share'] = {",
+									"        name: 'Shares',",
+									"        description: 'Shares represent your data stored in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the share', type: 'ObjectId'},",
+									"            {name: '<code>data</code>', description: 'The data object is where your data is stored in our data lake', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"}",
+									"/*[[end postmanerator]]*/"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"{{username}}\",\n\t\"password\":\"{{password}}\",\n\t\"client_id\":\"{{apikey}}\",\n\t\"grant_type\":\"password\",\n\t\"identity\":\"pointdefau\",\n\t\"scope\":\"ALL:ALL\"\n}"
+						},
+						"url": {
+							"raw": "{{authHostname}}/oauth2/token",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Request an Authentification token required to use this API. \n\nYou will need to provide username, password, as well as a valid API Key. You can manage your API keys in our [Keys Console](https://msaf.microshare.io/composer#/keys).\n\nThe default scope is `ALL:ALL`, but you can replace it to request tokens that will allow limited operations. For example, if the scope is `SHARE:READ` the token will only allow you to read Shares."
+					},
+					"response": []
+				},
+				{
+					"name": "Request Pipe Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+									"/*[[start postmanerator]]*/",
+									"function populateNewAPIStructures() {",
+									"    APIStructures['robot'] = {",
+									"        name: 'Robots',",
+									"        description: 'Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the robot', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the robot', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the robot', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['rule'] = {",
+									"        name: 'Rules',",
+									"        description: 'Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the rule', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the rule', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the rule', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code>', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['share'] = {",
+									"        name: 'Shares',",
+									"        description: 'Shares represent your data stored in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the share', type: 'ObjectId'},",
+									"            {name: '<code>data</code>', description: 'The data object is where your data is stored in our data lake', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"}",
+									"/*[[end postmanerator]]*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{authHostname}}/oauth2/token?username={{username}}&password={{password}}&client_id={{apikey}}&grant_type=pipe&scope=ALL:ALL",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}"
+								},
+								{
+									"key": "client_id",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "grant_type",
+									"value": "pipe"
+								},
+								{
+									"key": "scope",
+									"value": "ALL:ALL"
+								}
+							]
+						},
+						"description": "Request a pipe Authentification token, required to stream data to your microshare account. \n\nYou will need to provide username, password, as well as a valid API Key. You can manage your API keys in our [Keys Console](https://dapp.microshare.io/composer#/keys).\n\nThe default scope is `ALL:ALL`, but you can replace it to request tokens that will allow limited operations. For example, if the scope is `SHARE:READ` the token will only allow you to read Shares."
+					},
+					"response": []
+				},
+				{
+					"name": "Check License Acceptance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh\", jsonData.refresh_token);",
+									"/*[[start postmanerator]]*/",
+									"function populateNewAPIStructures() {",
+									"    APIStructures['robot'] = {",
+									"        name: 'Robots',",
+									"        description: 'Robots allow you to write scripts against your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the robot', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the robot', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the robot', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains a <code>scope</code> array with a list of scopes, a token under the <code>auth</code> key, the script of the robot under the <code>script</code> key, and a boolean <code>isActive</code> flag to activate or deactivate the robot', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['rule'] = {",
+									"        name: 'Rules',",
+									"        description: 'Rules allow you to limit the visibility of your data stored as Shares in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the rule', type: 'ObjectId'},",
+									"            {name: '<code>name</code>', description: 'Name of the rule', type: 'string'},",
+									"            {name: '<code>desc</code>', description: 'Description of the rule', type: 'string'},",
+									"            {name: '<code>data</code>', description: 'The data object contains an <code>operations</code> array with a list of operations, and other variables defining the restrictions the rule is going to apply. More information is available below in the <code>POST /rule</code>', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"",
+									"    APIStructures['share'] = {",
+									"        name: 'Shares',",
+									"        description: 'Shares represent your data stored in Microshare&#39;s data lake',",
+									"        fields: [",
+									"            {name: '<code>recType</code>', description: 'Record type using the dot notation format (eg. io.microshare.test)', type: 'string'},",
+									"            {name: '<code>id</code>', description: 'An auto-generated unique identifier for the share', type: 'ObjectId'},",
+									"            {name: '<code>data</code>', description: 'The data object is where your data is stored in our data lake', type: 'JSON Object'}",
+									"        ]",
+									"    };",
+									"}",
+									"/*[[end postmanerator]]*/"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userPrincipalName",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{authHostname}}/licensing/user",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"licensing",
+								"user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wf Process Login Page Submit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "tpanagos@microshare.io",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{wfhostname}}/process",
+							"host": [
+								"{{wfhostname}}"
+							],
+							"path": [
+								"process"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Request and revoke tokens used to authenticate to our API**"
+		},
+		{
+			"name": "Shares",
+			"item": [
+				{
+					"name": "Get one Share",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5ffc77f97eddf37aedafb7bb"
+								}
+							]
+						},
+						"description": "Retrieve one share by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shares by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:recType?details=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "100",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all shares under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shares by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2?details=true&page=1&perPage=100",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "100"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "Building1"
+								},
+								{
+									"key": "tag2",
+									"value": "1st%20Floor"
+								}
+							]
+						},
+						"description": "Retrieve all shares under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Shares by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/latest?details=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "100",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve the most recently uploaded shares under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |\n| `sort`        | string        | Specifies if sorting needs to be applied and to which field in the data |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shares Through a View",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:view_rectype?id=5c4a34f6958d38706721058a&param1=io.microshare.test.test.latest&param2=projected",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":view_rectype"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5c4a34f6958d38706721058a"
+								},
+								{
+									"key": "param1",
+									"value": "io.microshare.test.test.latest"
+								},
+								{
+									"key": "param2",
+									"value": "projected"
+								},
+								{
+									"key": "param3",
+									"value": "c",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "view_rectype",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Microshare give you access to a powerful tool called a \"View\", through a view you can query a huge amount of data, transform it, do some calculation and display it as you want.\n\nThis API call require the `id`, `view_rectype`, to use the right view. Views may accept variables with an arbitrary name as query string parameters.  In this example `param1` value correspond to your data rectype that your view will aggregate and `param2` is the name of the element to be used to capture the data from each."
+					},
+					"response": []
+				},
+				{
+					"name": "Create one Share",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hello\": \"world\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`. This inserts a new record into the Microshare data lake.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`)."
+					},
+					"response": []
+				},
+				{
+					"name": "Create one Share with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hello\": \"world\",\n    \"welcome\":\"to Microshare\",\n    \"now\": \"with tags\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/tags/:tag1/:tag2/:tag3",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2",
+								":tag3"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "Building1"
+								},
+								{
+									"key": "tag2",
+									"value": "1st%20Floor"
+								},
+								{
+									"key": "tag3",
+									"value": "Rm%20305"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`, with searchable `tags`. This inserts a new record into the Microshare data lake.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`).\n\nTags allow you to later search objects with the same `recType` with a `GET` request. You can specify as many tags as you need."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one Share",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/share/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5ffccde767614445a125c055"
+								}
+							]
+						},
+						"description": "Permanently delete one share by `recType` and object `id`"
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Each piece of data is called a \"Share\", here you can find all the requests to access your data.**\n\n"
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Create one device",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Test Device Cluster - Created via Postman\",\n   \"data\":{\n      \"isActive\": true,\n      \"readAuth\": \"\",\n      \"writeAuth\": \"\",\n      \"devices\":[\n         {\n            \"id\":\"58-A0-CB-00-00-00-00-00\",\n            \"meta\":{\n               \"lora\":{\n                  \"AppKey\":\"GD711F6F52AE456IB95A1820EB36713A\",\n                  \"NwkKey\":\"235FBCC234ADAB685BCB23AA0923DCD32\",\n                  \"JoinEUI\":\"58-A0-CB-00-00-00-00-01\",\n                  \"DevEUI\":\"58-A0-CB-00-00-00-00-00\"\n               },\n               \"location\":[\n                  \"Building 1\",\n                  \"1st Floor\",\n                  \"Room 1\"\n               ]\n            }\n         }\n      ],\n      \"network\":{\n         \"network\":\"com.kerlink.wmc\"\n      },\n      \"meta\":{\n         \"type\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"unpacker\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"location\":\"Microshare, Demo, Environment\"\n      },\n      \"targetRecType\":\"io.microshare.test.unpacked\",\n      \"recType\": \"io.microshare.test\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/device/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new **Device Cluster** by `recType`. This creates a new Device Cluster (DC) into your account, this DC is going to handle your device and will start the unpacking process.\n\nYou must include a some informations in the body as explained below : \n\n* name : the name of your DC\n* desc : an optional description of your DC\n* data : contain all the data requested to create your DC\n   * isActive : set true if you want your data to be unpacked\n   * readAuth, writeAuth, leave it like this\n   * devices : set the right informations for your devices so they can work, and their location tags will be assigned.\n   * network : the selected Network Server\n   * meta : the selected unpacker\n   * recType : recType"
+					},
+					"response": []
+				},
+				{
+					"name": "Create one device with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Test Device Cluster - Created via Postman\",\n   \"data\":{\n      \"isActive\": true,\n      \"readAuth\": \"\",\n      \"writeAuth\": \"\",\n      \"devices\":[\n         {\n            \"id\":\"58-A0-CB-00-00-00-00-00\",\n            \"meta\":{\n               \"lora\":{\n                  \"AppKey\":\"GD711F6F52AE456IB95A1820EB36713A\",\n                  \"NwkKey\":\"235FBCC234ADAB685BCB23AA0923DCD32\",\n                  \"JoinEUI\":\"58-A0-CB-00-00-00-00-01\",\n                  \"DevEUI\":\"58-A0-CB-00-00-00-00-00\"\n               },\n               \"location\":[\n                  \"Building 1\",\n                  \"1st Floor\",\n                  \"Room 1\"\n               ]\n            }\n         }\n      ],\n      \"network\":{\n         \"network\":\"com.kerlink.wmc\"\n      },\n      \"meta\":{\n         \"type\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"unpacker\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"location\":\"Microshare, Demo, Environment\"\n      },\n      \"targetRecType\":\"io.microshare.test.unpacked\",\n      \"recType\": \"io.microshare.test\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/device/:recType/tags/:tag1/:tag2",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "It works the same as the previous request, and the tags will be added as metatags to the DC."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Devices",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/device/*?details=true&page=1&perPage=200&discover=false&field=name&search=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "200"
+								},
+								{
+									"key": "discover",
+									"value": "false"
+								},
+								{
+									"key": "field",
+									"value": "name"
+								},
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						},
+						"description": "Get the list of all your device clusters. Including there settings and the devices they contain. "
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Device",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/device/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "59238b9346e0fb0352c2948b"
+								}
+							]
+						},
+						"description": "Retrieve one Device Cluster by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Device by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1a96f3f985db067826fec8a7145c31d8ac699f77d13f9cc0ad7dae9343a842b3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/device/:recType/tags/:tag1?details=false&page=1&perPage=10000",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								"tags",
+								":tag1"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "false"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "10000"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test",
+									"description": "io.microshare.contact.packed"
+								},
+								{
+									"key": "tag1",
+									"value": "gsk"
+								}
+							]
+						},
+						"description": "Retrieve all Device Clusters under a specific `recType`\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Devices by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/device/:recType/tags/:tag1/:tag2?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Retrieve all Device Clusters under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Device by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/device/:recType/tags/latest?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve the latest Device Cluster by recType.\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one Device",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/device/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5ffcce4567614445a125c058"
+								}
+							]
+						},
+						"description": "Permanently delete one Device Cluster by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update one Device",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Updated Test Device Cluster - Created via Postman\",\n   \"data\":{\n      \"isActive\": true,\n      \"readAuth\": \"\",\n      \"writeAuth\": \"\",\n      \"devices\":[\n         {\n            \"id\":\"58-A0-CB-00-00-00-00-00\",\n            \"meta\":{\n               \"lora\":{\n                  \"AppKey\":\"GD711F6F52AE456IB95A1820EB36713A\",\n                  \"NwkKey\":\"235FBCC234ADAB685BCB23AA0923DCD32\",\n                  \"JoinEUI\":\"58-A0-CB-00-00-00-00-01\",\n                  \"DevEUI\":\"58-A0-CB-00-00-00-00-00\"\n               },\n               \"location\":[\n                  \"Building 1\",\n                  \"1st Floor\",\n                  \"Room 2\"\n               ]\n            }\n         }\n      ],\n      \"network\":{\n         \"network\":\"com.kerlink.wmc\"\n      },\n      \"meta\":{\n         \"type\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"unpacker\":\"io.tracknet.healthy.TBHV100.Decoder\",\n         \"location\":\"Microshare, Demo, Environment\"\n      },\n      \"targetRecType\":\"io.microshare.test.unpacked\",\n      \"recType\": \"io.microshare.test\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/device/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"device",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5ffccea167614445a125c05a"
+								}
+							]
+						},
+						"description": "Update one Device Cluster by `recType` and object `id`. You will have to set in the Body the new settings of your device cluster. Be careful the changes are permanent."
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Upload your data and easily share it with the Share API**\n"
+		},
+		{
+			"name": "Rule",
+			"item": [
+				{
+					"name": "Get All Rules",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/rule/*?details=true&page=1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"rule",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get the list of all your Rules. You will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rules by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/rule/*?details=true&page=1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"rule",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rule by recType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"_id\":\"foobar\",\n   \"name\":\"test\",\n   \"desc\":\"\",\n   \"data\":{\n      \"resourceType\":\"objs\",\n      \"resourceId\":\"*\",\n      \"ownerUser\":\"email@owner.io\",\n      \"ownerOrg\":\"io.microshare\",\n      \"ownerApp\":\"*\",\n      \"callingUser\":\"*\",\n      \"callingOrg\":\"*\",\n      \"callingApp\":\"*\",\n      \"callingRole\":\"*\",\n      \"callingLoc\":\"*\",\n      \"operations\":[\n         \"Read\"\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/rule/:recType/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"rule",
+								":recType",
+								""
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a share Rule directly form the API, simply complete the body to set which data you share with who. \n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rule by recType and id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"_id\":\"foobar\",\n   \"name\":\"testv2\",\n   \"desc\":\"\",\n   \"data\":{\n      \"resourceType\":\"objs\",\n      \"resourceId\":\"*\",\n      \"ownerUser\":\"email@owner.io\",\n      \"ownerOrg\":\"io.microshare\",\n      \"ownerApp\":\"appid1\",\n      \"callingUser\":\"*\",\n      \"callingOrg\":\"*\",\n      \"callingApp\":\"*\",\n      \"callingRole\":\"*\",\n      \"callingLoc\":\"*\",\n      \"operations\":[\n         \"Read\"\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/rule/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"rule",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5fab0544374c1e477994d78a"
+								}
+							]
+						},
+						"description": "Modify a Rule by `recType` and `Id`, these changes are permanent. \n\n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rules by recType and  Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"betternotchange\",\n  \"id\": \"nochange\",\n  \"name\": \"new name from PUT\",\n  \"desc\": \"PUT an update\",\n  \"recType\": \"shouldnotsee\",\n  \"data\": {\n    \"resourceType\": \"objs\",\n    \"resourceId\": \"*\",\n    \"ownerUser\": \"email@owner.io\",\n    \"ownerOrg\": \"io.microshare\",\n    \"ownerApp\": \"*\",\n    \"callingUser\": \"*\",\n    \"callingOrg\": \"*\",\n    \"callingApp\": \"*\",\n    \"callingRole\": \"*\",\n    \"callingLoc\": 172.23,\n    \"operations\": [\n      \"Read\",\n      \"Execute\"\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/rule/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"rule",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5981f3c946e0fb00203b3796"
+								}
+							]
+						},
+						"description": "Permanently delete a Rule by `recType` and `Id`."
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Access your Microshare sharing Rules directly from the API, get the list of your rules, create or modify a rule and finally if necessary you can delete a Rule.**"
+		},
+		{
+			"name": "Link",
+			"item": [
+				{
+					"name": "Get All Links",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/link/*?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Get the list of all your Rules. You will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Links by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/link/:recType?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "pipe"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Link by recType/Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/link/:recType/:id?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								":recType",
+								":id"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "667db7eaef6bd35845f20a52"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link by recType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"name\" : \"Microshare Onboarding App\",\n  \"desc\" : \"Link to Microshare Onboarding App\",\n  \"uuid\": \"GUIDHERE-1234-5678-9012-345678901234\",\n  \"data\": {\n    \"email\" : \"guest@microshare.online\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/link/:recType/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								":recType",
+								""
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a share Rule directly form the API, simply complete the body to set which data you share with who. \n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Link by recType/Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"name\" : \"Microshare Onboarding App\",\n  \"desc\" : \"Updated Link to Microshare Onboarding App\",\n  \"uuid\": \"GUIDHERE-1234-5678-9012-345678901234\",\n  \"data\": {\n    \"email\" : \"guest@microshare.online\",\n    \"targetId\" : \"662a8bb43c0000ca28c0aaaa\",\n    \"targetType\" : \"app\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/link/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "667db7eaef6bd35845f20a52"
+								}
+							]
+						},
+						"description": "Modify a Rule by `recType` and `Id`, these changes are permanent. \n\n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Link by recType/Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"betternotchange\",\n  \"id\": \"nochange\",\n  \"name\": \"new name from PUT\",\n  \"desc\": \"PUT an update\",\n  \"recType\": \"shouldnotsee\",\n  \"data\": {\n    \"resourceType\": \"objs\",\n    \"resourceId\": \"*\",\n    \"ownerUser\": \"email@owner.io\",\n    \"ownerOrg\": \"io.microshare\",\n    \"ownerApp\": \"*\",\n    \"callingUser\": \"*\",\n    \"callingOrg\": \"*\",\n    \"callingApp\": \"*\",\n    \"callingRole\": \"*\",\n    \"callingLoc\": 172.23,\n    \"operations\": [\n      \"Read\",\n      \"Execute\"\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/link/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"link",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "667db7eaef6bd35845f20a52"
+								}
+							]
+						},
+						"description": "Permanently delete a Rule by `recType` and `Id`."
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Access your Microshare sharing Rules directly from the API, get the list of your rules, create or modify a rule and finally if necessary you can delete a Rule.**"
+		},
+		{
+			"name": "Views",
+			"item": [
+				{
+					"name": "Get All Views",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/view/:recType?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"view",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.fm.master.agg"
+								}
+							]
+						},
+						"description": "Get the list of all the views you owe and the views you have access to (shared). "
+					},
+					"response": []
+				},
+				{
+					"name": "Find Views by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/view/:recType?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"view",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.fm.master.agg"
+								}
+							]
+						},
+						"description": "Get the list of your Views by `recType`. Most of the Microshare Views are using the recType : _io.microshare.fm.master.agg_. Only few views are using an other recType for specific cases. \n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Find Views by recType and Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/view/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"view",
+								":recType",
+								":id"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.fm.master.agg"
+								},
+								{
+									"key": "id",
+									"value": "5d37193746e0fb002a9cb09e"
+								}
+							]
+						},
+						"description": "Search a specific view by `recType` and `Id`."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete View by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"betternotchange\",\n  \"id\": \"nochange\",\n  \"name\": \"new name from PUT\",\n  \"desc\": \"PUT an update\",\n  \"recType\": \"shouldnotsee\",\n  \"data\": {\n    \"resourceType\": \"objs\",\n    \"resourceId\": \"*\",\n    \"ownerUser\": \"email@owner.io\",\n    \"ownerOrg\": \"io.microshare\",\n    \"ownerApp\": \"*\",\n    \"callingUser\": \"*\",\n    \"callingOrg\": \"*\",\n    \"callingApp\": \"*\",\n    \"callingRole\": \"*\",\n    \"callingLoc\": 172.23,\n    \"operations\": [\n      \"Read\",\n      \"Execute\"\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/view/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"view",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5981f3c946e0fb00203b3796"
+								}
+							]
+						},
+						"description": "Permanently delete a View by `recType` and `Id`."
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Create and manage Views directly from the API**"
+		},
+		{
+			"name": "Robots",
+			"item": [
+				{
+					"name": "Create a Robot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"NEW ROBOT CONFIGURATION\",\n  \"desc\": \"\",\n  \"recType\": \"io.microshare.test\",\n  \"data\": {\n    \"scopes\": [\n      \"SHARE:READ\",\n      \"SHARE:WRITE\"\n    ],\n    \"auth\": \"test\",\n    \"script\": \"var lib = require('./libs/helpers');\\nfunction main(text, auth){\\n    var count = bindings.count;\\n    print('HELLO CUSTOM!!: ' + count);\\n    bindings.count = count + 1;\\n}\",\n    \"isActive\": true,\n    \"schedule\": {\n      \"delay\": 5000,\n      \"interval\": 5000\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/robo/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"robo",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new Robot by `recType`. This creates a new Robot that automates the tasks associated with transforming, enriching, and annotating your data.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`) this is the data source you are going to trigger."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Robots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/robo/*?details=true&page=&perPage=1000",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"robo",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": "1000"
+								}
+							]
+						},
+						"description": "Retrieve all your Robots."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Robots by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/share/:recType?details=true&page=&perPage=1000",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"share",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": "1000"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieve all your Robots by `recType`/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Robot by recType and Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/robo/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"robo",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "58fe78504d74e21f64ff511b"
+								}
+							]
+						},
+						"description": "Retrieve a specific Robot by `recType` and `Id`."
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Create and manage Robots directly from the API**"
+		},
+		{
+			"name": "Stream",
+			"item": [
+				{
+					"name": "Create one stream",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Test Device Cluster\",\n   \"recType\": \"io.microshare.test-only.test-only\",\n   \"data\":{\n      \"recTypes\": [\"com.test.test\"],\n      \"streamType\": \"kafka\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/stream/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`. This creates a new Streaming process into the Microshare data management.\n\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`)."
+					},
+					"response": []
+				},
+				{
+					"name": "Create one stream with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"foobar\",\n  \"name\": \"test\",\n  \"desc\": \"test via api\",\n  \"data\": {\n    \"devices\": [],\n    \"network\": {},\n    \"meta\": {}\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/tags/:tag1/:tag2",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Create a new Stream by `recType`, with searchable `tags`. This creates a new Streaming process into the Microshare data management.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`).\n\nTags allow you to later search objects with the same `recType` with a `GET` request. You can specify as many tags as you need."
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Stream",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "59238b9346e0fb0352c2948b"
+								}
+							]
+						},
+						"description": "Retrieve one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stream by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/stream/:recType?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Stream under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Streams by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/tags/:tag1/:tag2?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest Device by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/tags/latest?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one Stream",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5f9c9d6f3343a13b005fadab"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update one Stream",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Update from Postman\",\n   \"name\":\"Updated Test Device Cluster\",\n   \"data\":{\n      \"recTypes\": [\"test\",\"added\"],\n      \"streamType\": \"eventhub\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/stream/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"stream",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "5f9c9d6f3343a13b005fadab"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Use the Microshare Streaming option to directly push your data to your big data tenancy**"
+		},
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "Create one config",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Test Device Cluster\",\n   \"recType\": \"io.microshare.test-only.test-only\",\n   \"data\":{\n      \"recTypes\": [\"com.test.test\"],\n      \"streamType\": \"kafka\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/config/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`. This creates a new Streaming process into the Microshare data management.\n\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`)."
+					},
+					"response": []
+				},
+				{
+					"name": "Create one config with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"foobar\",\n  \"name\": \"test\",\n  \"desc\": \"test via api\",\n  \"data\": {\n    \"devices\": [],\n    \"network\": {},\n    \"meta\": {}\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/config/:recType/tags/:tag1/:tag2",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Create a new Stream by `recType`, with searchable `tags`. This creates a new Streaming process into the Microshare data management.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`).\n\nTags allow you to later search objects with the same `recType` with a `GET` request. You can specify as many tags as you need."
+					},
+					"response": []
+				},
+				{
+					"name": "Get one config",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/config/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Retrieve one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get config by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/config/:recType?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Stream under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get config by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/config/:recType/tags/:tag1/:tag2?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest config by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/config/:recType/tags/latest?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one config",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/config/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update one config",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Update from Postman\",\n   \"name\":\"Updated Test Device Cluster\",\n   \"data\":{\n      \"recTypes\": [\"test\",\"added\"],\n      \"streamType\": \"eventhub\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/config/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"config",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Use the Microshare Streaming option to directly push your data to your big data tenancy**"
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Create one profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Motion Cluster API\",\n   \"name\":\"Test Device Cluster\",\n   \"recType\": \"io.microshare.test-only.test-only\",\n   \"data\":{\n      \"recTypes\": [\"com.test.test\"],\n      \"streamType\": \"kafka\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/profile/:recType",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a new share by `recType`. This creates a new Streaming process into the Microshare data management.\n\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`)."
+					},
+					"response": []
+				},
+				{
+					"name": "Create one profile with Tags",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"foobar\",\n  \"name\": \"test\",\n  \"desc\": \"test via api\",\n  \"data\": {\n    \"devices\": [],\n    \"network\": {},\n    \"meta\": {}\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/tags/:tag1/:tag2",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Create a new Stream by `recType`, with searchable `tags`. This creates a new Streaming process into the Microshare data management.\n\nYou must include a record type using the dot notation format (eg. `io.microshare.test`).\n\nTags allow you to later search objects with the same `recType` with a `GET` request. You can specify as many tags as you need."
+					},
+					"response": []
+				},
+				{
+					"name": "Get one profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Retrieve one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/profile/:recType?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Stream under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile by Tags and recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/tags/:tag1/:tag2?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								"tags",
+								":tag1",
+								":tag2"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "tag1",
+									"value": "foo"
+								},
+								{
+									"key": "tag2",
+									"value": "bar"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific `recType` and containing one or several `tags`. Specify as many `tags` as you need, and objects containing all of these tags will be returned.\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latest profile by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/tags/latest?details=true&page=&perPage=",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								"tags",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "perPage",
+									"value": ""
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Retrieve all Streams under a specific recType\n\n\n\n###### Query parameters available\n\n| Parameter     | Type          | Description  |\n| ------------- |:-------------:| -----:|\n| `details`     | boolean       | `true` will return matching objects with their details, `false` will only return main information |\n| `page`        | int           | Specifies the requested page, defaults to 1 |\n| `perPage`     | int           | Specifies the number of objects to be returned per page, defaults to 999 |"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update one profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"desc\":\"Update from Postman\",\n   \"name\":\"Updated Test Device Cluster\",\n   \"data\":{\n      \"recTypes\": [\"test\",\"added\"],\n      \"streamType\": \"eventhub\",\n      \"targetType\": \"create\",\n      \"targetTopic\": \"foo.topic\",\n      \"isActive\": true,\n      \"server\":{\n         \"network\":\"somejunk\"\n      },\n      \"ownership\":[\n      \t{\n         \"appid\":\"*\",\n         \"org\":\"*\",\n         \"user\":\"tpanagos@microshare.io\"\n    \t}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/profile/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"profile",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "64b56ea813c302056bfd972b"
+								}
+							]
+						},
+						"description": "Permanently delete one Stream by `recType` and object `id`"
+					},
+					"response": []
+				}
+			],
+			"description": "![alt text](https://www.microshare.io/wp-content/uploads/2017/06/microshare-data-page.png)\n\n**Use the Microshare Streaming option to directly push your data to your big data tenancy**"
+		},
+		{
+			"name": "Templates",
+			"item": [
+				{
+					"name": "Get Templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{wfHostname}}/templates?Authorization={{skey}}&details=false",
+							"host": [
+								"{{wfHostname}}"
+							],
+							"path": [
+								"templates"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "{{skey}}"
+								},
+								{
+									"key": "details",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Templates",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appType\": \"Display\",\n    \"name\": \"TEST\",\n    \"desc\": \"NEW APP DESCRIPTION\",\n    \"parentTags\": [],\n    \"childTag\": \"\",\n    \"data\": {\n        \"style\": \"<!--Enter Style Here-->\",\n        \"include\": \"\",\n        \"forms\": [\n            {\n                \"formid\": \"5d1113e2c60000c23dca452a\"\n            }\n        ],\n        \"providers\": [],\n        \"facts\": {},\n        \"template\": \"\",\n        \"processtype\": {},\n        \"icon\": \"\",\n        \"diagram_xml\": \"\",\n        \"styleChoice\": \"Showcase\",\n        \"styleLink\": \"\",\n        \"signature\": \"\"\n    },\n    \"id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{wfHostname}}/templates?Authorization={{skey}}",
+							"host": [
+								"{{wfHostname}}"
+							],
+							"path": [
+								"templates"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "{{skey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forms",
+			"item": [
+				{
+					"name": "Get All Forms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/form/*?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Get the list of all your Rules. You will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Forms by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/form/:recType?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "form"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Forms by recType/Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/form/:recType/:id?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								":recType",
+								":id"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "form"
+								},
+								{
+									"key": "id",
+									"value": "667b2e13886bf6741811f45e"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Forms by recType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"\",\n    \"name\":\"OK to delete - test \",\n    \"desc\":\"form created for replicating API requests in postman\",\n    \"data\": {\n        \"form\":\"<!DOCTYPE html>\\n<html>\\n    <head>\\n    <title>Document Title</title>\\n    </head>\\n    \\n    <body>\\n    document body\\n    </body>\\n</html>\\n\",\n        \"facts\":{}\n    }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/form/:recType/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								":recType",
+								""
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "form"
+								}
+							]
+						},
+						"description": "Create a share Rule directly form the API, simply complete the body to set which data you share with who. \n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Forms by recType/Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"{{id}}\",\n    \"name\":\"OK to delete - test \",\n    \"desc\":\"form created for replicating API requests in postman\",\n    \"data\": {\n        \"form\":\"<!DOCTYPE html>\\n<html>\\n    <head>\\n    <title>Document Title</title>\\n    </head>\\n    \\n    <body>\\n    document body - updated\\n    </body>\\n</html>\\n\",\n        \"facts\":{}\n    }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/form/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "form"
+								},
+								{
+									"key": "id",
+									"value": "667b22484c3a7545b206df5e"
+								}
+							]
+						},
+						"description": "Modify a Rule by `recType` and `Id`, these changes are permanent. \n\n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Forms by recType/Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{hostname}}/form/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"form",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "form"
+								},
+								{
+									"key": "id",
+									"value": "667b2e13886bf6741811f45e"
+								}
+							]
+						},
+						"description": "Permanently delete a Rule by `recType` and `Id`."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Icons",
+			"item": [
+				{
+					"name": "Get All Icons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/icon/*?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Get the list of all your Rules. You will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Icons by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/icon/:recType?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "icon"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Icons by recType/Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/icon/:recType/:id?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								":recType",
+								":id"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "icon"
+								},
+								{
+									"key": "id",
+									"value": "645d68eb380000a78a49c1d4"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Icons by recType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"\",\n    \"desc\":\"\",\n    \"data\":{\n        \"icon\":\"\"\n    }\n}\n"
+						},
+						"url": {
+							"raw": "{{hostname}}/icon/:recType/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								":recType",
+								""
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								}
+							]
+						},
+						"description": "Create a share Rule directly form the API, simply complete the body to set which data you share with who. \n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Icons by recType/Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"\",\n    \"desc\":\"updated test icon\",\n    \"data\":{\n        \"icon\":\"\"\n    }\n}\n"
+						},
+						"url": {
+							"raw": "{{hostname}}/icon/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "667c528b886bf674181e24e0"
+								}
+							]
+						},
+						"description": "Modify a Rule by `recType` and `Id`, these changes are permanent. \n\n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Icons by recType/Id Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"betternotchange\",\n  \"id\": \"nochange\",\n  \"name\": \"new name from PUT\",\n  \"desc\": \"PUT an update\",\n  \"recType\": \"shouldnotsee\",\n  \"data\": {\n    \"resourceType\": \"objs\",\n    \"resourceId\": \"*\",\n    \"ownerUser\": \"email@owner.io\",\n    \"ownerOrg\": \"io.microshare\",\n    \"ownerApp\": \"*\",\n    \"callingUser\": \"*\",\n    \"callingOrg\": \"*\",\n    \"callingApp\": \"*\",\n    \"callingRole\": \"*\",\n    \"callingLoc\": 172.23,\n    \"operations\": [\n      \"Read\",\n      \"Execute\"\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/icon/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"icon",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "io.microshare.test"
+								},
+								{
+									"key": "id",
+									"value": "667c528b886bf674181e24e0"
+								}
+							]
+						},
+						"description": "Permanently delete a Rule by `recType` and `Id`."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apps",
+			"item": [
+				{
+					"name": "Get All Apps",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/app/*?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								"*"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Get the list of all your Rules. You will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Apps by recType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/app/:recType?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								":recType"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "Display"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Apps by recType/Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{hostname}}/app/:recType/:id?details=true&page=1&discover=true",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								":recType",
+								":id"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "discover",
+									"value": "true"
+								}
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "Display"
+								},
+								{
+									"key": "id",
+									"value": "635867ba2e0000a63f28f6aa"
+								}
+							]
+						},
+						"description": "Get the list of your Rules by `recType`.\n\nYou will be able to see what you are sharing with who like if you were on the Microshare Composer."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Apps by recType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appType\":\"Display\",\n    \"name\":\"test app - for deletion\",\n    \"desc\":\"app created for replicating API requests in postman\",\n    \"parentTags\":[],\n    \"childTag\":\"\",\n    \"data\":{\n        \"style\":\"<!--Enter Style Here-->\",\n        \"include\":\"\",\n        \"forms\":[{\"formid\":\"5d44832b1e0000563c33343c\"}],\n        \"providers\":[],\n        \"facts\":{},\n        \"template\":\"\",\n        \"processtype\":{},\n        \"icon\":\"\",\n        \"diagram_xml\":\"\",\n        \"styleChoice\":\"Showcase\",\n        \"styleLink\":\"\",\n        \"signature\":\"\"\n    },\n    \"id\":\"\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/app/:recType/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								":recType",
+								""
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "app"
+								}
+							]
+						},
+						"description": "Create a share Rule directly form the API, simply complete the body to set which data you share with who. \n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Apps by recType/Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appType\":\"Display\",\n    \"name\":\"test app - for deletion\",\n    \"desc\":\"app created for replicating API requests in postman - updated\",\n    \"parentTags\":[],\n    \"childTag\":\"\",\n    \"data\":{\n        \"style\":\"<!--Enter Style Here-->\",\n        \"include\":\"\",\n        \"forms\":[{\"formid\":\"5d44832b1e0000563c33343c\"}],\n        \"providers\":[],\n        \"facts\":{},\n        \"template\":\"\",\n        \"processtype\":{},\n        \"icon\":\"\",\n        \"diagram_xml\":\"\",\n        \"styleChoice\":\"Showcase\",\n        \"styleLink\":\"\",\n        \"signature\":\"\"\n    },\n    \"id\":\"\"\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/app/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "app"
+								},
+								{
+									"key": "id",
+									"value": "667b10cafe8dc0578b905350"
+								}
+							]
+						},
+						"description": "Modify a Rule by `recType` and `Id`, these changes are permanent. \n\n\nHere are the details on the different body tags : \n* name : the name of your sharing rule\n* desc : (optional) add a description to this sharing rule\n* data  : \n   * resourceType : what are you looking to share ? \n   * resourceId : are you looking to share only a specific resource so specify its **id**, otherwise leave **\"*\"** \n   * ownerUser : put the email of the owner of the resource. Indeed it might be you, but if someone share you something with the \"Policy\" value you can share it from your account then.\n   * ownerOrg : put the org of the owner of the resource. \n   * ownerApp : put the owner AppKey, it's easier to leave **\"*\"**\n   * callingUser, callingOrg, callingApp, callingRole, callingLoc : who should be able to get this resource ? leave as **\"*\"** for everyone, or specify at the right step (user/org/role ..) who should have access.\n   * operations : which access do you give ? \n         - Read : ability to simply read the resource\n         - Query : ability to query the resource (through a view for instance)\n         - Write : ability to modify the resource, or write a resource if it's an access to entire recType for instance\n         - Delete : ability to delete the resource or part of it\n         - Execute : ability to execute the resource (use a view for instance)\n         - Policy : ability to share the resource again\n       you can set many operations at once : \n       - \"operations\":[ \"Read\", \"Read\",\"Execute\" ]"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Apps by recType/Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\": \"betternotchange\",\n  \"id\": \"nochange\",\n  \"name\": \"new name from PUT\",\n  \"desc\": \"PUT an update\",\n  \"recType\": \"shouldnotsee\",\n  \"data\": {\n    \"resourceType\": \"objs\",\n    \"resourceId\": \"*\",\n    \"ownerUser\": \"email@owner.io\",\n    \"ownerOrg\": \"io.microshare\",\n    \"ownerApp\": \"*\",\n    \"callingUser\": \"*\",\n    \"callingOrg\": \"*\",\n    \"callingApp\": \"*\",\n    \"callingRole\": \"*\",\n    \"callingLoc\": 172.23,\n    \"operations\": [\n      \"Read\",\n      \"Execute\"\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{hostname}}/app/:recType/:id",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"app",
+								":recType",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "recType",
+									"value": "app"
+								},
+								{
+									"key": "id",
+									"value": "667b3347886bf67418122922"
+								}
+							]
+						},
+						"description": "Permanently delete a Rule by `recType` and `Id`."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orgs & Users",
+			"item": [
+				{
+					"name": "Create Org, Admin, Identity Flow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"name\": \"TestOrg McAdmin\",\n      \"domain\": \"testorg.org\",\n      \"identifier\": \"testorg\",\n      \"admin\": \"balls@point.io\"\n    }"
+						},
+						"url": {
+							"raw": "{{authHostname}}/orgs",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"orgs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invite User (to Identity)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"email\": \"jquest@point.io\",\n      \"firstname\": \"Johny\",\n      \"lastname\": \"Quest\",\n      \"identity\": \"testorg.testorg.org\"\n    }"
+						},
+						"url": {
+							"raw": "{{authApiHost}}/users/invite",
+							"host": [
+								"{{authApiHost}}"
+							],
+							"path": [
+								"users",
+								"invite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"email\": \"jquest@point.io\",\n      \"firstname\": \"Johny\",\n      \"lastname\": \"Quest\",\n      \"identity\": \"testorg.testorg.org\"\n    }"
+						},
+						"url": {
+							"raw": "{{authApiHost}}/users",
+							"host": [
+								"{{authApiHost}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate User Invite",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{authHostname}}/users/process/:token ",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"users",
+								"process",
+								":token "
+							],
+							"variable": [
+								{
+									"key": "token ",
+									"value": "foobar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Invite & Finalize Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"088ad8fa-14f8-4180-b714-3b27d82e68b4\",\n    \"password\": \"!2PassWithCompliance2!\"\n}"
+						},
+						"url": {
+							"raw": "{{authApiHost}}/users/accept",
+							"host": [
+								"{{authApiHost}}"
+							],
+							"path": [
+								"users",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enable User (for Identity)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{authHostname}}/users/enable/:identity/:email",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"users",
+								"enable",
+								":identity",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "identity",
+									"value": "testorg"
+								},
+								{
+									"key": "email",
+									"value": "jquest@point.io"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User (for Identity)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{authHostname}}/users/enable/:identity/:email",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"users",
+								"enable",
+								":identity",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "identity",
+									"value": "testorg"
+								},
+								{
+									"key": "email",
+									"value": "jquest@point.io"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User (permanently)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{authHostname}}/users/:email",
+							"host": [
+								"{{authHostname}}"
+							],
+							"path": [
+								"users",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "jquest@point.io"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "wfHostname",
+			"value": "api.microshare.io"
+		}
+	]
+}
