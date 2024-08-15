@@ -5,6 +5,33 @@ description: Take a look at our latest updates
 toc: true
 ---
 
+---------------------------------------
+
+## Release Notes for August 15, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+- n/a 
+
+**Bug Fixes**
+
+Platform
+- Upon Device Cluster re-authorization, fields (except for password) are now pre-populated based on the currently logged-in user.
+- Manage navigation menu is hidden unless a user is an admin or a Microshare employee.
+- Fixes outstanding security patches for various CVEs for 3rd party libraries.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
 
 ---------------------------------------
 
