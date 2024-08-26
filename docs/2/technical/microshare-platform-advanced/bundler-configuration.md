@@ -85,7 +85,10 @@ These nested objects contain objects for different parameters within the alerts 
 
 Once the right config for a given alert is found, the respective fields inside the default config are over written by matching fields under this new config. The updated default config is then used by the bundler robot to create an incident from that alert.
 
-Example of a nested config
+### Configure by event type
+We can create nested configurations that can be tailored for certain event types of your choice.
+
+example nested config
 ```
 "solutions": {
     "alert": {
@@ -220,7 +223,7 @@ The provided JSON object demonstrates how nested configurations are used to mana
       - **rodent**: Configuration for rodent-related alerts.
         - **config**: Defines the default configuration for rodent alerts.
         - **events**: Specific events related to rodent alerts.
-          - **rodent_present**: Overwrites this config over default config if a rodent is present. Currently this is empty.
+          - **rodent_present**: placeholder for alerts indicating presence of a rodent.
       - **service**: Configuration for service-related alerts.
         - **config**: Defines the default config for service alerts.
         - **events**: Placeholder for additional service-related events.
@@ -230,19 +233,185 @@ The provided JSON object demonstrates how nested configurations are used to mana
     - **alerts**: Contains specific alert types and their configurations.
       - **feedback**: Configuration for feedback-related alerts.
         - **config**: Placeholder for feedback configuration.
-        - **events**: Specific events related to feedback alerts.
+        - **events**: Configuration.
           - **clean**: Configuration for clean-related feedback.
-            - **incident**: Specifies the priority of the incident.
           - **leak**: Configuration for leak-related feedback.
-            - **incident**: Specifies the priority of the incident.
           - **paper**: Configuration for paper-related feedback.
-            - **incident**: Specifies the priority of the incident.
           - **soap**: Configuration for soap-related feedback.
-            - **incident**: Specifies the priority of the incident.
           - **toilet**: Configuration for toilet-related feedback.
-            - **incident**: Specifies the priority of the incident.
     - **config**: Defines the default incident settings for cleaning alerts.
 
 #### How It Works
 
 When an alert is received, the incident bundler robot matches it with the appropriate nested JSON object based on the type of solution, alert, and format. The robot traverses the nested structure until it finds the right configuration for the specific alert. Once the correct configuration is identified, it overrides the default configuration and uses the new settings to create an incident from the alert. This approach ensures that each type of alert is handled according to its specific requirements, providing a flexible and efficient incident management system.
+
+### Configure by Location
+
+```
+{
+    "config": {
+        "labels": {
+            "complementaryTodo": "$<bindings.share.event> event",
+            "initialTodo": "$<bindings.share.event> event"
+        },
+        "todos": []
+    },
+    "solutions": {
+        ...
+    }
+    "locations": [
+    {
+        "device": ["Executive Plaza"],
+        "config": {
+            "incident": {
+                "priority": "100"
+            }
+        },
+        "solutions": {
+            "clean": {
+                "alerts": {
+                    "feedback": {
+                        "config": {},
+                        "events": {
+                            "clean": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            },
+                            "leak": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            },
+                            "supplies": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            },
+                            "toilet": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "config": {
+                    "incident": {
+                        "title": "New $<bindings.share.event> request"
+                    },
+                    "labels": {
+                        "complementaryTodo": "$<bindings.share.event> event",
+                        "initialTodo": "$<bindings.share.event> event"
+                    },
+                    "timing": {
+                        "globalReminderTime": "PT12H",
+                        "globalTimeoutTime": "PT8H"
+                    },
+                    "todos": [],
+                    "workload": {
+                        "deviceTag": "3",
+                        "joinedEvent": true
+                    }
+                }
+            }
+        }
+    }
+    ],
+    "version": "2.0.0"
+}
+```
+
+Location-based nested configurations enable the specification of custom settings for particular locations, allowing the default configuration to be overridden based on the specific needs of the customer. For example, in the provided configuration, there is a custom setup for the "Executive Plaza" location.
+
+### Configuration Details
+
+- **Global Configuration**: Contains the default configuration for all alert types
+- **Location-Specific Configuration**:
+  - **Executive Plaza**: Custom configuration for incidents at this location.
+      - **incident**: Sets the priority of incidents to `100`.
+    - **solutions**: Contains custom nested configs for various types of alerts from "Executive Plaza"
+      - **clean**: Custom settings for cleaning-related alerts.
+        - **alerts**:
+          - **feedback**: Configuration for feedback-related alerts.
+            - **events**: Configurations for different types of events
+        - **config**: Additional settings for cleaning-related incidents.
+
+This structure allows for flexible and precise customization of incident management based on location-specific requirements, ensuring that each location can have tailored settings that meet its unique needs.
+
+## 5. Configuring Bundler for Custom event types and locations.
+Using the guide for [Creating Custom Incidents](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/creating-custom-incidents/), we can trigger custom incidents that create custom tasks which may or may not be associated to a sensor alert type or location.
+
+To write a bundler config for custom incidents, we can write a nested configuration in the same way as demonstrated above but the location names and alert types must match the ones used in the custom incidents. 
+
+For example:- 
+
+```
+{
+    "config": {
+        "labels": {
+            "complementaryTodo": "$<bindings.share.event> event",
+            "initialTodo": "$<bindings.share.event> event"
+        },
+        "todos": []
+    },
+    "solutions": {
+        ...
+    }
+    "locations": [
+    {
+        "device": ["Metro Station", "Platform 2"],
+        "config": {
+            "incident": {
+                "priority": "100"
+            }
+        },
+        "solutions": {
+            "Maintenance": {
+                "alerts": {
+                    "feedback": {
+                        "config": {},
+                        "events": {
+                            "clean": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            },
+                            "track": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            },
+                            "lights": {
+                                "config": {
+                                    "incident": {
+                                        "priority": "80"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "config": {}
+            }
+        }
+    }
+    ],
+    "version": "2.0.0"
+}
+```
+
+The above configuration is an example config for a custom location and alert type.
+The custom location is Metro Station Platform 2 and the custom alert types are "clean", "track", "lights".
