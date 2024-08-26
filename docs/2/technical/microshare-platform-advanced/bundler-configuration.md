@@ -16,7 +16,10 @@ toc: true
 1. [Microshare Incidents](./#1-microshare-incidents)
 2. [Overview](./#2-overview)
 3. [Default Configuration](./#3-default-configuration)
+    - A. [Configure by event type](./#a-configure-by-event-type)
+    - B. [Configure by Location](./#b-configure-by-location)
 4. [Nested Configurations](./#4-nested-configurations)
+5. [Configuring Bundler for Custom event types and locations](./#5-configuring-bundler-for-custom-event-types-and-locations)
 
 ---------------------------------------
 
