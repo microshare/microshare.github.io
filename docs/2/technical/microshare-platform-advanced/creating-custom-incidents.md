@@ -17,6 +17,8 @@ toc: true
 2. [Overview](./#2-overview)
 3. [Create Share API for alert](./#3-create-share-api-for-alert)
 4. [Verify Alert Creation](./#4-verify-alert-creation)
+5. [Create alerts by custom location](./#5-create-alerts-by-custom-location)
+6. [Create alerts by custom Alert type](./#6-create-alerts-by-custom-alert-type)
 
 ---------------------------------------
 
@@ -48,6 +50,8 @@ for eg. io.microshare.event.alert
 {% include image.html url="/assets/img/incidents/image1.png" description="thumbnail 1" %}
 
 Next, in the Body tab of the request, select the raw format for the body, and write the body for the alert you wish to create in the format given below.
+
+```
 { 
   "alert": "<alert_type>", 
   "change": 1, 
@@ -73,7 +77,8 @@ Next, in the Body tab of the request, select the raw format for the body, and wr
     "usecase": "SF01" 
   }, 
   "solution": "<solution_type>" 
-} 
+}
+``` 
 
 {% include image.html url="/assets/img/incidents/image2.png" description="thumbnail 2" %}
 
@@ -89,3 +94,62 @@ Now hit send. You should see a response body like shown below, which should cont
 {% include image.html url="/assets/img/incidents/image5.png" description="thumbnail 5" %}
 
 With this you can verify if your share has been created correctly, After a while, your new alert should be reflected in your routing app and this can be assigned to the respective personnel.
+
+## 5. Create alerts by custom location
+---------------------------------------
+Example body to add alerts for custom location.
+```
+{ 
+  "alert": "clean", 
+  "change": 1, 
+  "current": { 
+    "sum": 1 
+  }, 
+  "event": "clean", 
+  "history": { 
+    "sum": 0 
+  }, 
+  "label": "<label>", 
+  "meta": { 
+    "device": [ 
+      "My Custom Location"
+    ],
+    "iot": { 
+        "time": "YYYY-MM-DDThh:mm:ss.000Z",    
+    }, 
+    "source": [], 
+    "usecase": "SF01" 
+  }, 
+  "solution": "<solution_type>" 
+}
+``` 
+The above example demonstrates a request body for creating a share with a custom location tag with a known alert and event type. This location may not be associated with a sensor location and can be for an ad-hoc task for a particular location.
+
+## 6. Create alerts by custom Alert type
+---------------------------------------
+```
+{ 
+  "alert": "My Custom Alert Type", 
+  "change": 1, 
+  "current": { 
+    "sum": 1 
+  }, 
+  "event": "My Custom Event Type", 
+  "history": { 
+    "sum": 0 
+  }, 
+  "label": "<label>", 
+  "meta": { 
+    "device": [ 
+      "<location>"
+    ],
+    "iot": { 
+        "time": "YYYY-MM-DDThh:mm:ss.000Z",    
+    }, 
+    "source": [], 
+    "usecase": "SF01" 
+  }, 
+  "solution": "<solution_type>" 
+}
+``` 
+The above example demonstrates the creation of a task with a custom alert and event type. This can be used to assign ad-hoc tasks which may or may not be related to sensor alerts.
