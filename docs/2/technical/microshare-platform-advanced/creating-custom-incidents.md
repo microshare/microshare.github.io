@@ -19,6 +19,7 @@ toc: true
 4. [Verify Alert Creation](./#4-verify-alert-creation)
 5. [Create alerts by custom location](./#5-create-alerts-by-custom-location)
 6. [Create alerts by custom Alert type](./#6-create-alerts-by-custom-alert-type)
+7. [Bundler Configuration](./#7-bundler-configuration)
 
 ---------------------------------------
 
@@ -29,7 +30,7 @@ In the Microshare data pipeline, we process our IoT data (from sensors) into eve
 
 Alert data is the end of the process in the basic IoT pipeline, leading to a notification, a text message, or an email and leaving the customer to decide what to do next.
 
-
+To learn more about incidents and alerts, please refer to the [Incidents](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/incident/) guide.
 
 ## 2. Overview
 ---------------------------------------
@@ -44,7 +45,7 @@ To get started with microshare's API interface, refer to the [Quick Start](https
 ## 3. Create Share API for alert
 ---------------------------------------
 
-In the microshare collection that you would have setup, select the "Create One Share" request. Under path variables, set the value for rectype as the rectype for the type of event alert you wish to create.
+In the microshare api collection that you would have setup after following the api quickstart guide, select the "Create One Share" request. Under path variables, set the value for rectype as the rectype for the type of event alert you wish to create.
 
 for eg. io.microshare.event.alert
 {% include image.html url="/assets/img/incidents/image1.png" description="thumbnail 1" %}
@@ -79,15 +80,19 @@ Next, in the Body tab of the request, select the raw format for the body, and wr
   "solution": "<solution_type>" 
 }
 ``` 
+For sample bodies to create alerts for custom locations and alert types, refer sections [5](./#5-create-alerts-by-custom-location) and [6](./#6-create-alerts-by-custom-alert-type)
 
 {% include image.html url="/assets/img/incidents/image2.png" description="thumbnail 2" %}
 
+After adding your body and the appropriate rectype (io.microshare.event.alert), hit send on the request and a new share should be added in the appropriate rectype. Next, verify whether the share has been created or not.
+
 ## 4. Verify Alert Creation
 ---------------------------------------
-When you create one share of the new alert on the alert rectype, you will get a confirmation response body like so
+When you create one share of the new alert on the alert rectype, you will get a confirmation response body like so.
 {% include image.html url="/assets/img/incidents/image3.png" description="thumbnail 3" %}
 
-From this body, copy the url field. Next, open the "Get One Share" request and replace the selected part with the url you copied before
+From this body, copy the url field. 
+Next, open the "Get One Share" request and replace the selected part with the url you copied before.
 {% include image.html url="/assets/img/incidents/image4.png" description="thumbnail 4" %}
 
 Now hit send. You should see a response body like shown below, which should contain the body of the alert you created. 
@@ -100,7 +105,7 @@ With this you can verify if your share has been created correctly, After a while
 Example body to add alerts for custom location.
 ```
 { 
-  "alert": "clean", 
+  "alert": "feedback", 
   "change": 1, 
   "current": { 
     "sum": 1 
@@ -109,19 +114,25 @@ Example body to add alerts for custom location.
   "history": { 
     "sum": 0 
   }, 
-  "label": "<label>", 
+  "label": "Label", 
   "meta": { 
     "device": [ 
-      "My Custom Location"
-    ],
+      "custom building", 
+      "custom floor", 
+      "custom room", 
+      "custom end location" 
+    ], 
+    "global": [ 
+      "custom global tags"
+    ], 
     "iot": { 
-        "time": "YYYY-MM-DDThh:mm:ss.000Z",    
+        "time": "YYYY-MM-DDThh:mm:ss.sssZ"
     }, 
     "source": [], 
-    "usecase": "SF01" 
+    "usecase": "Usecase" 
   }, 
-  "solution": "<solution_type>" 
-}
+  "solution": "clean" 
+} 
 ``` 
 The above example demonstrates a request body for creating a share with a custom location tag with a known alert and event type. This location may not be associated with a sensor location and can be for an ad-hoc task for a particular location.
 
@@ -129,27 +140,37 @@ The above example demonstrates a request body for creating a share with a custom
 ---------------------------------------
 ```
 { 
-  "alert": "My Custom Alert Type", 
+  "alert": "Custom Alert", 
   "change": 1, 
   "current": { 
     "sum": 1 
   }, 
-  "event": "My Custom Event Type", 
+  "event": "Custom Event", 
   "history": { 
     "sum": 0 
   }, 
-  "label": "<label>", 
+  "label": "Label", 
   "meta": { 
     "device": [ 
-      "<location>"
-    ],
+      "custom building", 
+      "custom floor", 
+      "custom room", 
+      "custom end location" 
+    ], 
+    "global": [ 
+      "custom global tags"
+    ], 
     "iot": { 
-        "time": "YYYY-MM-DDThh:mm:ss.000Z",    
+        "time": "YYYY-MM-DDThh:mm:ss.sssZ"
     }, 
     "source": [], 
-    "usecase": "SF01" 
+    "usecase": "Usecase" 
   }, 
-  "solution": "<solution_type>" 
-}
+  "solution": "clean" 
+} 
 ``` 
 The above example demonstrates the creation of a task with a custom alert and event type. This can be used to assign ad-hoc tasks which may or may not be related to sensor alerts.
+
+## 7. Bundler Configuration
+---------------------------------------
+For these new custom alerts to be registered in the routing app, a bundler robot has to be configured to handle your custom alerts. To configure A Bundler robot, refer to [bundler configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) guide.
