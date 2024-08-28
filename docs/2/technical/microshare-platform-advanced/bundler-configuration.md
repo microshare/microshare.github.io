@@ -44,16 +44,27 @@ The default configuration is the config that is applied to every alert encounter
 Example Default config
 
 ```
-"config": {
-    "version" : "2.0.0"
+function main(text, auth) {
+    print("bundler_rodent")
+    try{
+        var bundler = require('./libs/products/bundler');
+        var config = {
+            "version" : "2.0.0"
+        }
+        bindings.auth = auth
+        bundler.action(text, config)
+    } catch (error) {
+        print(error)
+    }
 }
 ```
 
 The `config` object defines the settings and parameters for the incident bundler robot.
+This guide only walks you through writing configurations for bundler robots. To learn more about creating robots, refer to the [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Robots Library](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-library/)
 
 The version field denotes the version of the bundler configuration, which in this case is "2.0.0".
-
-In Bundler Config v2.0.0, the Default Config is empty. The configuration for a given alert is obtained using nested configurations. It's working is explained below
+In Bundler Config v2.0.0, the Default Config is empty. 
+The configuration for a given alert is obtained using nested configurations. It's working is explained in further sections.
 
 ## 4. Nested Configurations
 ---------------------------------------
@@ -207,7 +218,7 @@ These nested objects contain objects for different parameters within the alerts 
 
 Once the right config for a given alert is found, the respective fields inside the default config are over written by matching fields under this new config. The updated default config is then used by the bundler robot to create an incident from that alert.
 
-### Shared Configuration
+### Default Shared Configuration
 ```
 "config": {
     "incident": {
@@ -225,8 +236,7 @@ Once the right config for a given alert is found, the respective fields inside t
     "todos": []
 },
 ```
-
-The shared configuration is the default configuration that is shared across all event types.
+This section of the shared config is the default config used for all event types.
 When an event is received by the bundler, the fields inside the event are matched with nested fields in the nested configuration. Once the right configuration is found for the given event, the default shared config is overwritten by the config for that event in the nested config.
 
 ### Configure by event type
@@ -388,11 +398,13 @@ Example:
 Take the config for the alert type Solutions->clean->alerts->feedback->leak. The configuration looks like:
 
 ```
-"config": {
-    "incident": {
-        "priority": "25"
+"leak": {
+    "config": {
+        "incident": {
+            "priority": "25"
+        }
     }
-}
+},
 ```
 
 This configuration is overwritten to the shared default config as so:-
@@ -413,6 +425,9 @@ This configuration is overwritten to the shared default config as so:-
     },
     "todos": []
 },
+.
+.
+.
 ```
 
 Notice that the priority field under the incident object is changed to 25
@@ -576,4 +591,8 @@ For example:-
 ```
 
 The above configuration is an example config for a custom location and alert type.
-The custom location is Metro Station Platform 2 and the custom alert types are "clean", "track", "lights".
+The custom location is Railway Station Platform 2 and the custom alert types are "clean", "track", "lights".
+
+For custom alerts, you might have created respective custom rectypes so you will have to update the custom rectype in the robot settings as highlighted below.
+{% include image.html url="/assets/img/bundlerConf/image1.png" description="thumbnail-1" %}
+(replace the highlighted part with your custom rectype)
