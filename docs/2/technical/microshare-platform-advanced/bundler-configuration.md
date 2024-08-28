@@ -263,6 +263,13 @@ function main(text, auth) {
 The configuration in the config object overrides the default shared configuration for the respective fields. 
 The working of nested configurations is explained in further sections.
 
+Note: To find the default configuration for your account, go to the home tab and click the hamburger menu on the right. Then scroll down and select exit to console:
+{% include image.html url="/assets/img/bundlerConf/image2.png" description="thumbnail-2" %}
+
+Next, go to the views section and search for "Bundler Shared Config" view. 
+Open that view and go to the static json tab in that view. There you should find the default configuration for your account.
+{% include image.html url="/assets/img/bundlerConf/image3.png" description="thumbnail-3" %} 
+
 ## 4. Nested Configurations
 ---------------------------------------
 In nested configurations, we have nested json objects which include configurations for different types of alerts in a nested manner.
@@ -710,7 +717,64 @@ Location-based nested configurations enable the specification of custom settings
 
 This structure allows for flexible and precise customization of incident management based on location-specific requirements, ensuring that each location can have tailored settings that meet its unique needs.
 
-## 5. Configuring Bundler for Custom event types and locations.
+## 5. Updating Robot configs
+---------------------------------------
+To find existing robots, exit to console as shown in section 3 and go to the Robots tab.
+There you can find all the active and inactive robots running for your account.
+{% include image.html url="/assets/img/bundlerConf/image4.png" description="thumbnail-4" %} 
+
+Once you open an active robot, you will find settings for the robot as shown.
+{% include image.html url="/assets/img/bundlerConf/image5.png" description="thumbnail-5" %} 
+Here, take a note of the rectype field. The robot you have opened will take data only from that rectype. Open the robot that is written for alerts from your desired rectype.
+For example: the rectype io.microshare.event.alert.feedback is for feedback alerts which means the robot works only for feedback alerts.
+
+After you find the right robot, you can find the configuration for that robot in the script section as shown below
+{% include image.html url="/assets/img/bundlerConf/image6.png" description="thumbnail-6" %}
+
+Once you find the config object, you can make changes to the robot config.
+
+### Changing priority of the config
+Most Configurations for robots have a priority field. This priority field determines the priority of the incident that is created after bundling the incoming alerts.
+We can change the priority for the default configuration and the nested configurations as needed.
+
+#### Changing priority in existing config: 
+For existing configurations, we can change the priority by tweaking the value of the priority field under the incident object of the main bundler configuration.
+{% include image.html url="/assets/img/bundlerConf/image7.png" description="thumbnail-7" %} 
+The lesser the value of the priority field, the greater the priority of the resulting incident.
+
+#### Creating a new config and setting the priority.
+If the config object in the robot is empty, you can add your own config and set a desired priority level which will override the existing default configuration.
+
+For example:
+```
+function main(text, auth) {
+    print("bundler_rodent")
+    
+    try {
+        var bundler = require('./libs/products/bundler');
+        var config = {
+            "version": "2.0.0",
+            "config": {
+                "incident": {
+                    "priority": "5",
+                    "title": "Critical Incident"
+                },
+                "todos": [
+                    "Add some todos"
+                ]
+            }
+        };
+        bindings.auth = auth;
+        bundler.action(text, config);
+    } catch (error) {
+        print(error);
+    }
+}
+```
+Using the above structure format, you can add a priority field which overrides the default configuration.
+
+## 6. Configuring Bundler for Custom event types and locations.
+---------------------------------------
 Using the guide for [Creating Custom Incidents](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/creating-custom-incidents/), we can trigger custom incidents that create custom tasks which may or may not be associated to a sensor alert type or location.
 
 To write a bundler config for custom incidents, we can write a nested configuration in the same way as demonstrated above but the location names and alert types must match the ones used in the custom incidents. 
