@@ -15,11 +15,15 @@ toc: true
 
 1. [Microshare Incidents](./#1-microshare-incidents)
 2. [Overview](./#2-overview)
-3. [Default Configuration](./#3-default-configuration)
-    - A. [Configure by event type](./#a-configure-by-event-type)
-    - B. [Configure by Location](./#b-configure-by-location)
+3. [Robot with default configuration](./#3-robot-with-default-configuration)
+    - A. [Overriding default configuration](./#a-overriding-default-configuration)
 4. [Nested Configurations](./#4-nested-configurations)
-5. [Configuring Bundler for Custom event types and locations](./#5-configuring-bundler-for-custom-event-types-and-locations)
+    - A. [Working of Nested Configuration](./#a-working-of-nested-configuration)
+    - B. [Configure by event type](./#b-configure-by-event-type)
+    - C. [Configure by Location](./#c-configure-by-location)
+5. [Updating Robot configs](./#5-updating-robot-configs)
+    - A [Changing priority of the config](./#a-changing-priority-of-the-config)
+6. [Configuring Bundler for Custom event types and locations](./#5-configuring-bundler-for-custom-event-types-and-locations)
 
 ---------------------------------------
 
