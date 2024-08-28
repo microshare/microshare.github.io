@@ -19,7 +19,8 @@ toc: true
 4. [Verify Alert Creation](./#4-verify-alert-creation)
 5. [Create alerts by custom location](./#5-create-alerts-by-custom-location)
 6. [Create alerts by custom Alert type](./#6-create-alerts-by-custom-alert-type)
-7. [Bundler Configuration](./#7-bundler-configuration)
+7. [RecTypes](./#7-rectypes)
+8. [Bundler Configuration](./#8-bundler-configuration)
 
 ---------------------------------------
 
@@ -171,6 +172,13 @@ The above example demonstrates a request body for creating a share with a custom
 ``` 
 The above example demonstrates the creation of a task with a custom alert and event type. This can be used to assign ad-hoc tasks which may or may not be related to sensor alerts.
 
-## 7. Bundler Configuration
+## 7. RecTypes
+---------------------------------------
+The dafault recType for alerts is io.microshare.event.alert.
+You can create shares of alerts in the same rectype or you can define your own custom rectype. (refer to [Share API documentation](https://docs.microshare.io/docs/2/technical/api/share-api/#2-write-data) for more)
+
+For example: rectype = io.microshare.event.custom.task
+
+## 8. Bundler Configuration
 ---------------------------------------
 For these new custom alerts to be registered in the routing app, a bundler robot has to be configured to handle your custom alerts. To configure A Bundler robot, refer to [bundler configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) guide.
