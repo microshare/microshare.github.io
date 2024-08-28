@@ -37,11 +37,11 @@ An incident bundler robot collects multiple alerts from sensors and consolidates
 
 The bundler robot relies on a JSON configuration to understand how to consolidate alerts into an incident. This configuration file contains the rules and parameters that dictate how alerts should be grouped. By using this configuration format, the bundler robot can adapt to various scenarios and requirements, providing accurate and efficient incident management.
 
-## 3. Default Configuration
+## 3. Robot with default configuration
 ---------------------------------------
 The default configuration is the config that is applied to every alert encountered by the bundler. All incoming alerts are bundled into incidents by the bundler using the default configuration. 
 
-Example Default config
+Example robot with default config
 
 ```
 function main(text, auth) {
@@ -63,17 +63,14 @@ The `config` object defines the settings and parameters for the incident bundler
 This guide only walks you through writing configurations for bundler robots. To learn more about creating robots, refer to the [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Robots Library](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-library/)
 
 The version field denotes the version of the bundler configuration, which in this case is "2.0.0".
-In Bundler Config v2.0.0, the Default Config is empty. 
-The configuration for a given alert is obtained using nested configurations. It's working is explained in further sections.
 
-## 4. Nested Configurations
----------------------------------------
-In nested configurations, we have nested json objects which include configurations for different types of alerts in a nested manner.
-Following is an example nested configuration for a bundler robot.
-
+### Overriding default configuration
 ```
 {
     "config": {
+        "extra": {
+            "wf_notify_on": "accept"
+        },
         "incident": {
             "priority": "10",
             "title": "New Incident"
@@ -86,7 +83,9 @@ Following is an example nested configuration for a bundler robot.
             "globalReminderTime": "P2W",
             "globalTimeoutTime": "P3W"
         },
-        "todos": []
+        "todos": [
+            "Acknowledge the incident and take appropriate action."
+        ]
     },
     "solutions": {
         "alert": {
@@ -201,7 +200,9 @@ Following is an example nested configuration for a bundler robot.
                     "globalReminderTime": "PT4H",
                     "globalTimeoutTime": "PT3H"
                 },
-                "todos": [],
+                "todos": [
+                    "Acknowledge the feedback request and take appropriate action."
+                ],
                 "workload": {
                     "deviceTag": "4",
                     "joinedEvent": true
@@ -212,13 +213,208 @@ Following is an example nested configuration for a bundler robot.
     "version": "2.0.0"
 }
 ```
+A sample default configuration for all alerts may look like this.
+
+We can override certain parts of this configuration by passing our own custom configuration to the "config" object of the bundler robot as demonstrated below.
+```
+function main(text, auth) {
+    print("bundler_rodent")
+    
+    try {
+        var bundler = require('./libs/products/bundler');
+        var config = {
+            "version": "2.0.0",
+            "config": {
+                "incident": {
+                    "priority": "5",
+                    "title": "Critical Incident"
+                },
+                "todos": [
+                    "Acknowledge the incident immediately.",
+                    "Contact the relevant team."
+                ]
+            },
+            "solutions": {
+                "alert": {
+                    "alerts": {
+                        "rodent": {
+                            "config": {
+                                "incident": {
+                                    "priority": "10",
+                                    "title": "Urgent Rodent Incident"
+                                },
+                                "todos": [
+                                    "Inspect the area for rodents.",
+                                    "Set up additional traps."
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        bindings.auth = auth;
+        bundler.action(text, config);
+    } catch (error) {
+        print(error);
+    }
+}
+```
+The configuration in the config object overrides the default shared configuration for the respective fields. 
+The working of nested configurations is explained in further sections.
+
+## 4. Nested Configurations
+---------------------------------------
+In nested configurations, we have nested json objects which include configurations for different types of alerts in a nested manner.
+Following is an example nested configuration for a bundler robot.
+
+```
+"config": {
+    "incident": {
+        "priority": "10",
+        "title": "New Incident"
+    },
+    "labels": {
+        "complementaryTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>",
+        "initialTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>"
+    },
+    "timing": {
+        "globalReminderTime": "P2W",
+        "globalTimeoutTime": "P3W"
+    },
+    "todos": []
+},
+"solutions": {
+    "alert": {
+        "alerts": {
+            "rodent": {
+                "config": {
+                    "incident": {
+                        "priority": "20",
+                        "title": "Rodent Incident"
+                    },
+                    "labels": {
+                        "complementaryTodo": "Check trap at $<bindings.share.currentLoc.join(\", \")>",
+                        "initialTodo": "Check trap at $<bindings.share.currentLoc.join(\", \")>"
+                    },
+                    "timing": {
+                        "globalReminderTime": "P2W",
+                        "globalTimeoutTime": "P3W"
+                    },
+                    "todos": [
+                        "Acknowledge the rodent detection and take appropriate action."
+                    ],
+                    "workload": {
+                        "deviceTag": "2",
+                        "joinedEvent": false
+                    }
+                },
+                "events": {
+                    "rodent_present": {
+                        "config": {}
+                    }
+                }
+            },
+            "service": {
+                "config": {
+                    "incident": {
+                        "priority": "30",
+                        "title": "New $<bindings.share.event> request"
+                    },
+                    "labels": {
+                        "complementaryTodo": "Respond to the $<bindings.share.event> request at $<bindings.share.currentLoc.join(\", \")>",
+                        "initialTodo": "Respond to the $<bindings.share.event> request at $<bindings.share.currentLoc.join(\", \")>"
+                    },
+                    "timing": {
+                        "globalReminderTime": "PT4H",
+                        "globalTimeoutTime": "PT3H"
+                    },
+                    "todos": [
+                        "Acknowledge the service request and take appropriate action."
+                    ],
+                    "workload": {
+                        "deviceTag": "4",
+                        "joinedEvent": true
+                    }
+                },
+                "events": {}
+            }
+        },
+        "config": {}
+    },
+    "clean": {
+        "alerts": {
+            "feedback": {
+                "config": {},
+                "events": {
+                    "clean": {
+                        "config": {
+                            "incident": {
+                                "priority": "15"
+                            }
+                        }
+                    },
+                    "leak": {
+                        "config": {
+                            "incident": {
+                                "priority": "25"
+                            }
+                        }
+                    },
+                    "paper": {
+                        "config": {
+                            "incident": {
+                                "priority": "15"
+                            }
+                        }
+                    },
+                    "soap": {
+                        "config": {
+                            "incident": {
+                                "priority": "10"
+                            }
+                        }
+                    },
+                    "toilet": {
+                        "config": {
+                            "incident": {
+                                "priority": "20"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "config": {
+            "incident": {
+                "title": "New $<bindings.share.event> request"
+            },
+            "labels": {
+                "complementaryTodo": "Respond to the $<bindings.share.event> request at $<bindings.share.currentLoc.join(\", \")>",
+                "initialTodo": "Respond to the $<bindings.share.event> request at $<bindings.share.currentLoc.join(\", \")>"
+            },
+            "timing": {
+                "globalReminderTime": "PT4H",
+                "globalTimeoutTime": "PT3H"
+            },
+            "todos": [],
+            "workload": {
+                "deviceTag": "4",
+                "joinedEvent": true
+            }
+        }
+    }
+},
+"version": "2.0.0"
+```
 
 When a certain type of alert is received, it is matched with a nested json object until the right configuration for that type of alert is encountered.
 These nested objects contain objects for different parameters within the alerts which are then matched accordingly. These alerts are matched based on the type of solution, alert and format.
 
 Once the right config for a given alert is found, the respective fields inside the default config are over written by matching fields under this new config. The updated default config is then used by the bundler robot to create an incident from that alert.
 
-### Default Shared Configuration
+### Working of Nested Configuration
+
 ```
 "config": {
     "incident": {
@@ -238,6 +434,38 @@ Once the right config for a given alert is found, the respective fields inside t
 ```
 This section of the shared config is the default config used for all event types.
 When an event is received by the bundler, the fields inside the event are matched with nested fields in the nested configuration. Once the right configuration is found for the given event, the default shared config is overwritten by the config for that event in the nested config.
+
+Example:
+Take the config for the alert type Solutions->clean->alerts->feedback->leak. The configuration looks like:
+
+```
+"config": {
+    "incident": {
+        "priority": "25"
+    }
+}
+```
+
+This configuration is overwritten to the config for the alert as so:-
+
+```
+"config": {
+    "incident": {
+        "priority": "25",
+        "title": "New Incident"
+    },
+    "labels": {
+        "complementaryTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>",
+        "initialTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>"
+    },
+    "timing": {
+        "globalReminderTime": "P2W",
+        "globalTimeoutTime": "P3W"
+    },
+    "todos": []
+},
+```
+Notice how the priority field under the incident object is changed from 10 to 25.
 
 ### Configure by event type
 We can create nested configurations that can be tailored for certain event types of your choice.
@@ -389,48 +617,6 @@ The provided JSON object demonstrates how nested configurations are used to mana
         - **config**: Placeholder for feedback configuration.
         - **events**: Configurations for different types of events.
     - **config**: Defines the default incident settings for cleaning alerts.
-
-#### How It Works
-
-When an alert is received, the incident bundler robot matches it with the appropriate nested JSON object based on the type of solution, alert, and format. The robot traverses the nested structure until it finds the right configuration for the specific alert. Once the correct configuration is identified, it overrides the default configuration and uses the new settings to create an incident from the alert. This approach ensures that each type of alert is handled according to its specific requirements, providing a flexible and efficient incident management system.
-
-Example:
-Take the config for the alert type Solutions->clean->alerts->feedback->leak. The configuration looks like:
-
-```
-"leak": {
-    "config": {
-        "incident": {
-            "priority": "25"
-        }
-    }
-},
-```
-
-This configuration is overwritten to the shared default config as so:-
-
-```
-"config": {
-    "incident": {
-        "priority": "25",
-        "title": "New Incident"
-    },
-    "labels": {
-        "complementaryTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>",
-        "initialTodo": "Respond to the $<bindings.share.event> event at $<bindings.share.currentLoc.join(\", \")>"
-    },
-    "timing": {
-        "globalReminderTime": "P2W",
-        "globalTimeoutTime": "P3W"
-    },
-    "todos": []
-},
-.
-.
-.
-```
-
-Notice that the priority field under the incident object is changed to 25
 
 ### Configure by Location
 ```
@@ -596,3 +782,5 @@ The custom location is Railway Station Platform 2 and the custom alert types are
 For custom alerts, you might have created respective custom rectypes so you will have to update the custom rectype in the robot settings as highlighted below.
 {% include image.html url="/assets/img/bundlerConf/image1.png" description="thumbnail-1" %}
 (replace the highlighted part with your custom rectype)
+
+Then You will have to write your own custom robot with the above bundler configuration and rectype.
