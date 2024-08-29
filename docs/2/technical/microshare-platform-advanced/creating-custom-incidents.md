@@ -48,7 +48,7 @@ To get started with microshare's API interface, refer to the [Quick Start](https
 
 In the microshare api collection that you would have setup after following the api quickstart guide, select the "Create One Share" request. Under path variables, set the value for rectype as the rectype for the type of event alert you wish to create.
 
-for eg. io.microshare.event.alert
+for eg. io.microshare.event.alert.feedback
 {% include image.html url="/assets/img/incidents/image1.png" description="thumbnail 1" %}
 
 This rectype can be an existing rectype or can be a new custom rectype of your choice. If the rectype is a custom rectype then you will need to configure a new bundler robot that will handle alerts from your new rectype. To create a new robot and configure it, refer to [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Bundler Configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/)
@@ -87,7 +87,7 @@ For sample bodies to create alerts for custom locations and alert types, refer s
 
 {% include image.html url="/assets/img/incidents/image2.png" description="thumbnail 2" %}
 
-After adding your body and the appropriate rectype (io.microshare.event.alert), hit send on the request and a new share should be added in the appropriate rectype. Next, verify whether the share has been created or not.
+After adding your body and the appropriate rectype (eg. io.microshare.event.alert.feedback), hit send on the request and a new share should be added in the appropriate rectype. Next, verify whether the share has been created or not.
 
 ## 4. Verify Alert Creation
 ---------------------------------------
