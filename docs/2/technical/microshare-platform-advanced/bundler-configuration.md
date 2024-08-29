@@ -846,7 +846,7 @@ For example:-
 The above configuration is an example config for a custom location and alert type.
 The custom location is Railway Station Platform 2 and the custom alert types are "clean", "track", "lights".
 
-For custom alerts, you might have created respective custom rectypes so you will have to update the custom rectype in the robot settings as highlighted below.
+For custom alerts, if you have created custom rectypes, you will have to update the custom rectype in the robot settings as highlighted below.
 {% include image.html url="/assets/img/bundlerConf/image1.png" description="thumbnail-1" %}
 (replace the highlighted part with your custom rectype)
 
