@@ -72,9 +72,6 @@ The version field denotes the version of the bundler configuration, which in thi
 ```
 {
     "config": {
-        "extra": {
-            "wf_notify_on": "accept"
-        },
         "incident": {
             "priority": "10",
             "title": "New Incident"
@@ -87,9 +84,7 @@ The version field denotes the version of the bundler configuration, which in thi
             "globalReminderTime": "P2W",
             "globalTimeoutTime": "P3W"
         },
-        "todos": [
-            "Acknowledge the incident and take appropriate action."
-        ]
+        "todos": []
     },
     "solutions": {
         "alert": {
@@ -204,9 +199,7 @@ The version field denotes the version of the bundler configuration, which in thi
                     "globalReminderTime": "PT4H",
                     "globalTimeoutTime": "PT3H"
                 },
-                "todos": [
-                    "Acknowledge the feedback request and take appropriate action."
-                ],
+                "todos": [],
                 "workload": {
                     "deviceTag": "4",
                     "joinedEvent": true
@@ -217,7 +210,7 @@ The version field denotes the version of the bundler configuration, which in thi
     "version": "2.0.0"
 }
 ```
-A sample default configuration for all alerts may look like this.
+A sample default shared configuration for all alerts may look like this.
 
 We can override certain parts of this configuration by passing our own custom configuration to the "config" object of the bundler robot as demonstrated below.
 ```
@@ -765,6 +758,20 @@ function main(text, auth) {
                 "todos": [
                     "Add some todos"
                 ]
+            },
+            "solutions": {
+                "clean": {
+                    "feedback": {
+                        "supplies": {
+                            "config": {
+                                "incident": {
+                                    "priority": "10",
+                                    "title": "Urgent Rodent Incident"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         };
         bindings.auth = auth;
@@ -775,6 +782,8 @@ function main(text, auth) {
 }
 ```
 Using the above structure format, you can add a priority field which overrides the default configuration.
+Here, the priority for solutions->clean->feedback->supplies will be overridden over the default config to 10. 
+{% include image.html url="/assets/img/bundlerConf/image8.png" description="thumbnail-8" %} 
 
 ## 6. Configuring Bundler for Custom event types and locations.
 ---------------------------------------
