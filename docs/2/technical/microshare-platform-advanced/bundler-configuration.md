@@ -744,7 +744,6 @@ We can change the priority for the default configuration and the nested configur
 #### Changing priority in existing config: 
 For existing configurations, we can change the priority by tweaking the value of the priority field under the incident object of the main bundler configuration.
 {% include image.html url="/assets/img/bundlerConf/image7.png" description="thumbnail-7" %} 
-The lesser the value of the priority field, the greater the priority of the resulting incident.
 
 #### Creating a new config and setting the priority.
 If the config object in the robot is empty, you can add your own config and set a desired priority level which will override the existing default configuration.
