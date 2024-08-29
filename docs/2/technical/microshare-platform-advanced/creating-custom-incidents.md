@@ -180,6 +180,7 @@ The dafault recType for alerts is io.microshare.event.alert.
 You can create shares of alerts in the same rectype or you can define your own custom rectype. (refer to [Share API documentation](https://docs.microshare.io/docs/2/technical/api/share-api/#2-write-data) for more)
 
 For example: rectype = io.microshare.event.custom.task
+{% include image.html url="/assets/img/incidents/image6.png" description="thumbnail 6" %}
 
 ### Bundler Configuration
 ---------------------------------------
