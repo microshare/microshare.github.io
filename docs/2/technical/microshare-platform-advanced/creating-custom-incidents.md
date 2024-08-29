@@ -120,10 +120,10 @@ Example body to add alerts for custom location.
   "label": "Label", 
   "meta": { 
     "device": [ 
-      "custom building", 
-      "custom floor", 
-      "custom room", 
-      "custom end location" 
+      "Building B", 
+      "Floor 2", 
+      "Kitchen", 
+      "Sink" 
     ], 
     "global": [ 
       "custom global tags"
@@ -134,31 +134,36 @@ Example body to add alerts for custom location.
     "source": [], 
     "usecase": "Usecase" 
   }, 
-  "solution": "clean" 
+  "solution": "alert" 
 } 
 ``` 
 The above example demonstrates a request body for creating a share with a custom location tag with a known alert and event type. This location may not be associated with a sensor location and can be for an ad-hoc task for a particular location.
 
+For handling custom locations, you will have to configure the respective bundler robot for the given alert rectype.
+
+For eg. here, solution is alert and alert type is feedback so you can [configure](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) the existing robot for the rectype "io.microshare.event.alert.feedback" to handle the new location which is ["Building B", "Floor 2", "Kitchen", "Sink"].
+
 ## 6. Create alerts by custom Alert type
 ---------------------------------------
+Example Body for creating alert with custom alert type
 ```
 { 
-  "alert": "Custom Alert", 
+  "alert": "trash", 
   "change": 1, 
   "current": { 
     "sum": 1 
   }, 
-  "event": "Custom Event", 
+  "event": "full", 
   "history": { 
     "sum": 0 
   }, 
   "label": "Label", 
   "meta": { 
     "device": [ 
-      "custom building", 
-      "custom floor", 
-      "custom room", 
-      "custom end location" 
+      "Building A", 
+      "Floor 4", 
+      "Room 1", 
+      "Trash Can" 
     ], 
     "global": [ 
       "custom global tags"
@@ -172,14 +177,22 @@ The above example demonstrates a request body for creating a share with a custom
   "solution": "clean" 
 } 
 ``` 
-The above example demonstrates the creation of a task with a custom alert and event type. This can be used to assign ad-hoc tasks which may or may not be related to sensor alerts.
+The above example demonstrates the creation of a task with a custom alert and event type. 
+Here, the task is to empty the trash can.
+{% include image.html url="/assets/img/incidents/image7.png" description="thumbnail 7" %}
+
+This type of format can be used to assign ad-hoc tasks which may or may not be related to sensor alerts.
+
+For alerts with custom alert and event types, a custom incident bundler robot has to be [created](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and [configured](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) 
 
 ## 7. RecTypes
 ---------------------------------------
-The dafault recType for alerts is io.microshare.event.alert.
-You can create shares of alerts in the same rectype or you can define your own custom rectype. (refer to [Share API documentation](https://docs.microshare.io/docs/2/technical/api/share-api/#2-write-data) for more)
+The default recType for alerts is io.microshare.event.alert.(alertType)
+You can create shares of alerts in the same rectype or you can define your own custom rectype. 
 
-For example: rectype = io.microshare.event.custom.task
+Custom rectypes can be defined in the format io.microshare.event.alert.(customAlertType)
+
+For example: rectype = io.microshare.event.alert.refill
 {% include image.html url="/assets/img/incidents/image6.png" description="thumbnail 6" %}
 
 ### Bundler Configuration
@@ -189,4 +202,4 @@ If the alert share is created in an existing recType, then you will need to upda
 If you have created a new rectype for your custom alert share, then you will need to create a new incident bundler robot.
 
 To configure A Bundler robot, refer to [bundler configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) guide.
-To create a new robot, refer to [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and then refer to the [bundler configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) for configuring the robot.
+To create a new robot, refer to [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and then refer to the [bundler configuration](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/bundler-configuration/) for configuring the incident bundler robot.
