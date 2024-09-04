@@ -5,6 +5,43 @@ description: Take a look at our latest updates
 toc: true
 ---
 
+
+---------------------------------------
+
+## Release Notes for Spetember 5, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+Platform
+- Composer Search functionality is no longer case sensitive.
+- Console allows escape from forced suite app start.
+- Rule Editor now has "Configs", “Profiles” and “Streams” in the "RESOURCE TYPE" dropdown.
+- When deleting a device in a Device Cluster, the prompt upon clicking Delete now includes the device tags.
+- The search functionality of Composer has been updated and expanded with the ability to search on the Dev EUI.
+- The Device Cluster CSV upload format no longer requires only semi-colons and now accepts comma delimited CSV files as well.
+
+EverSmart
+- Implemented a bulk user upload feature in the Settings app to assist in adding large numbers of users. 
+
+**Bug Fixes**
+
+Platform
+- Device Cluster Downloads now support leading zeros in tags.
+
+**Additional Resources**
+
+EULA
+- Our EULA has been updated.
+
+**Ops**
+
+- n/a
+
+
 ---------------------------------------
 
 ## Release Notes for August 15, 2024
