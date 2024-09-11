@@ -8,7 +8,7 @@ toc: true
 
 ---------------------------------------
 
-## Release Notes for Spetember 5, 2024
+## Release Notes for September 5, 2024
 
 **New Features**
 
