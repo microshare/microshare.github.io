@@ -165,7 +165,8 @@ DeployM
 
 **Feature Enhancements**
 
-- n/a
+EverSmart
+- A magnet swipe/touch against a Smilio A device is recognized as a button push and is associated with the service request button push. The magnet touch closes the incident / event.
 
 **Bug Fixes**
 
