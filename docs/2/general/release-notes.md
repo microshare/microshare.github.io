@@ -25,12 +25,26 @@ Platform
 - The Device Cluster CSV upload format no longer requires only semi-colons and now accepts comma delimited CSV files as well.
 
 EverSmart
-- Implemented a bulk user upload feature in the Settings app to assist in adding large numbers of users. 
+- Implemented a bulk user upload feature in the Settings app to assist in adding large numbers of users.
+
+DeployM 
+- The “Scan a real device” prompt message in Deploy-M has been updated to “! Scan a physical device’s QR code” this is intended to assist users in understanding the next action to take when starting to use Deploy-M.  
+- The QR code icon has been updated to a camera icon to make it clearer that this starting point for a new user to begin at. 
+– Deploy-M’s Search functionality now has the ability to search on the the data, such as a name, used in a tag field. So, for a User they could now search on a site name e.g. Gianni’s or Pizzeria to more quickly find the correct device in a device cluster. 
+- There is now a warning when deleting a device in Deploy-M. 
+- Improved the "purpose" string used to ask the user permission to access location data. 
+- Improved usability and styling to give an improved look and feel 
+– Deploy-M now provides a pre-populated list of suggestions for tag values where appropriate. This provides suggested terminology for users to select when tagging a device in the field and will hopefully deliver more consistency in tagging descriptions.  
 
 **Bug Fixes**
 
 Platform
 - Device Cluster Downloads now support leading zeros in tags.
+
+DeployM
+- Users can now clearly see any Configuration tag in DeployM as it is being typed. 
+- It’s now easier to view, scroll and select from the Language selection list in DeployM on iPhone. 
+- Fixed issue when editing the tags out of order (for example - editing tag 3 before tag 1) where the “new tag” would incorrectly become the first tag instead of the third tag.  
 
 **Additional Resources**
 
