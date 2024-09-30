@@ -8,6 +8,39 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for September 26, 2024
+
+**New Features**
+
+- n/a
+
+**Feature Enhancements**
+
+Platform
+- Console > Devices > Device IDs now persist when being edited.
+
+EverSmart
+- Suite App > Exit to Console redirects to console only in appropriate context – i.e. user is not a rodent user without Admin privileges.
+- In the Settings app you can now pick if a new user is an Admin, Pro or Lite user. 
+Important Note!!!: There is a request to have multiple Admins.  At this point the above features related to this are incomplete, so please avoid using them for now.    
+
+**Bug Fixes**
+
+- n/a
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+
+---------------------------------------
+
 ## Release Notes for September 5, 2024
 
 **New Features**
