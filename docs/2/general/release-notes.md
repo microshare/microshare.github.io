@@ -8,6 +8,64 @@ toc: true
 
 ---------------------------------------
 
+## Release Notes for October 17, 2024
+
+**New Features**
+
+Platform
+- An unpacker for the Xibu Hagleitner level sensor has been created.
+- The Xibu Hagleitner Paper Towel Sensor has completed the development certification process.
+
+**Feature Enhancements**
+
+Platform
+- The processes API has been enhanced to retrieve all details within a Task.
+
+EverSmart
+- The Exit to Console menu item is only displayed to Microshare users and admins.   
+  - By default, Exit to Console should now be available for: 
+    - users whose email ends with @microshare.io 
+    - users whose email begins with “ms_admin@” 
+    - users whose email begins with “root@” 
+    - users whose isAdmin is true 
+    - users whose roles contains “admin” 
+  - If hideExitToConsoleForAdmin is set to true, then Exit to Console should ONLY be available for:  
+    - users whose email ends with “@microshare.io” 
+    - users whose email begins with “ms_admin@” 
+    - users whose email begins with “root@”
+
+   
+- In the UI, in the “Summary” tiles on the Overview page and in Device Health, we have updated the description/naming of un-twinned devices to better reflect their status.
+  - Un-twinned devices are no longer classed as “Unhealthy” by default. The devices are now described as “Unconfigured”. This will aid new users in understanding the information being displayed to them.   
+  - Only devices with issues e.g. low battery will now be described as Unhealthy. 
+  - These were the devices previously set-up with the "dummy" devEUI 00-00-00-00-00-00 (aka “unconfigured devices”). See in-app Help document for more details. 
+
+**Bug Fixes**
+
+Platform
+- Identities in the Composer > Switch Org dropdown are now listed alphabetically.
+- When viewing the Composer > Forms > Info slide-out (i), the Owner, Imported By, and Created By fields are now filled in.
+- The Composer > App Update screen now displays the standard Update App surround and shows the app id with Copy-to-Clipboard enabled.
+- Composer > Keys auth access for an account no longer incorrectly persists across a user signing out and signing back in as a different user.
+- The Device Cluster > Quick Update loading icon now appears when expected.
+- When clicking the Composer > Device Cluster > Network > Create button only a single call is made now.  This improvement has been made in order to reduce the load on the server and time on the browser to populate the drop-down.
+- The API has been updated to automatically remove trailing spaces in all location tags (e.g. Loc1, Loc2, Loc3, Loc4) for devices in a Device Cluster.
+
+EverSmart
+- When refreshing an EverSmart app within the Suite app, the active page is now preserved.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for September 26, 2024
 
 **New Features**
