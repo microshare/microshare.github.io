@@ -103,6 +103,10 @@
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
       keywords : ["wearable","wristband"]
+  - title: Hardware Maintenance
+    pages:
+    - title: How to Change a Battery on a Skiply Clock E Feedback Device
+      keywords : ["battery","feedback","skiply"]
 
 - title: Technical
   desc : A more in-depth look at Microshare technology
