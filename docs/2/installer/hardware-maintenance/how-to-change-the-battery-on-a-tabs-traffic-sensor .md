@@ -9,6 +9,8 @@ toc: true
 
 ### How to Change the Battery on a TABS Traffic Sensor
 
+<br>
+
 1.  Remove battery cover using a tool such as a trim remover, flathead
     screwdriver or similar
 
