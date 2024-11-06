@@ -23,8 +23,11 @@ toc: true
     c.  the three LEDs should begin to flash green/red and cycle though
         the reset
 
+<br>
 {% include image.html url="/assets/img/reset-skiply-clock-e/image1.jpg" width=400 description="Banner" %}
 
-3.  The reset will end with a long flash of red LED's
+<br>
+-  The reset will end with a long flash of red LED's
 
-4.  The manual reset is now complete
+<br>
+-  The manual reset is now complete
