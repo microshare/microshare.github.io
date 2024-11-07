@@ -1,12 +1,10 @@
----
-layout: docs
-title: How to Change the Battery on a TABS Traffic Sensor
-description: How to Change the Battery on a TABS Traffic Sensor
-toc: true
----
-
----------------------------------------
-
+---    
+layout: docs    
+title: How to Change the Battery on a TABS Traffic Sensor    
+description: How to Change the Battery on a TABS Traffic Sensor    
+toc: true    
+---    
+---------------------------------------    
 ### How to Change the Battery on a TABS Traffic Sensor
 
 <br>
