@@ -27,7 +27,6 @@ toc: true
 {% include image.html url="/assets/img/reset-skiply-clock-e/image1.jpg" width=400 description="Banner" %}
 
 <br>
--  The reset will end with a long flash of red LED's
+-  Note: The reset will end with a long flash of red LED's
 
-<br>
--  The manual reset is now complete
+The manual reset is now complete
