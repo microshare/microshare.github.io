@@ -7,6 +7,42 @@ toc: true
 
 
 ---------------------------------------
+---------------------------------------
+
+## Release Notes for November 7, 2024
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform
+- The User Creation API now allows the creation of an admin email to be CC'd on invitation emails. 
+- Our /config endpoint now interprets “rules” consistently based on a combination of input of solution-type, alert-type, event-type, and locations array, factoring both asset account product default rules and at least one organizational override config record. 
+- The Manage > Configs section now supports a JSON editor for creating, reading, updating, and deleting records. 
+
+EverSmart 
+- Settings dashboard > Test Notifications tab has been removed pending a redesign of the feature.    
+
+**Bug Fixes**
+
+Platform
+- Under the Manage > Devices > Registered Devices section, we now indicate the sort order of the Device ID and Location Tags columns. 
+- When clicking Cancel after editing in Manage > Devices > Registered Devices, changes are properly discarded as expected. 
+- Text for long Org names displayed on cards under Manage > Apps no longer overrun the boundary of the cards. 
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
 
 ## Release Notes for October 17, 2024
 
