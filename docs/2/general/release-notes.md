@@ -5,6 +5,41 @@ description: Take a look at our latest updates
 toc: true
 ---
 
+---------------------------------------
+---------------------------------------
+
+## Release Notes for November 27, 2024
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform
+- The Wizard has been updated to set the use case of gateway for all rodent solutions to GATEWAY.  This will allow DeployM to show gateway specific tag labels. 
+
+EverSmart 
+- Settings App: New Rules should default to listen for incident alerts - event: "incident_start".   
+  - New notification rules are now created by default to notify the user when an "Incident" is "Created".  This means that the first time an alert (like a rodent presence prediction) occurs, the user is notified, but they will not be notified for subsequent alerts at that same location until the incident is resolved (for example, times out). 
+  - Grouping multiple alerts into a single incident (where it results in a single notification) is called "bundling".  The user can instead opt to be notified when individual alerts occur by choosing "Rodent Alert" instead. 
+  - In the past, users could ONLY listen for the creation of the bundled incident. This type of notification rule used to be shown in the Settings app as "Rodent Alert".  Now that we differentiate between listening to the bundled "incident" vs listening for individual alerts, we have updated the meaning of "Rodent Alert" to mean getting notified for individual alerts.  This means that in order to achieve the same functionality that our users previously experienced, we have updated all existing "Rodent Alert" rules to "Incident Created" rules.
+- Routing App: After performing an action on an incident, the loading spinner is now displayed only on the incident and the rest of the Routing app remains usable while the action gets processed in the background.
+- Settings App: Added an option to Settings for an Admin to be CC’d on user invitation/creation for single and bulk invites to the platform.
+
+**Bug Fixes**
+
+Platform
+- SMS exceptions no longer cause other notifications to fail.
+
+**Additional Resources**
+
+- EverSmart Rodent online help has been updated.
+
+**Ops**
+
+- n/a
+
 
 ---------------------------------------
 ---------------------------------------
