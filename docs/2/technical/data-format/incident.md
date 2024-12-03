@@ -181,6 +181,13 @@ Here is an example of a piece of data. We will then break down the different ele
       "recType": "io.microshare.event.alert.rodent"
     }
   ],
+  "escalation" :{
+    "priority": 10,
+    "time": "PT20M",
+    "timestamp": [
+      {{iso time strings}}
+    ]
+  }
   "solution": "alert",
   "time": "2024-01-09T16:03:56.573Z",
   "todos": [

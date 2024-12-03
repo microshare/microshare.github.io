@@ -15,15 +15,11 @@ toc: true
 
 1. [Microshare Incidents](./#1-microshare-incidents)
 2. [Overview](./#2-overview)
-3. [Robot with default configuration](./#3-robot-with-default-configuration)
-    - A. [Overriding default configuration](./#a-overriding-default-configuration)
+3. [Default Configuration](./#3-default-configuration)
 4. [Nested Configurations](./#4-nested-configurations)
-    - A. [Working of Nested Configuration](./#a-working-of-nested-configuration)
-    - B. [Configure by event type](./#b-configure-by-event-type)
-    - C. [Configure by Location](./#c-configure-by-location)
-5. [Updating Robot configs](./#5-updating-robot-configs)
-    - A [Changing priority of the config](./#a-changing-priority-of-the-config)
-6. [Configuring Bundler for Custom event types and locations](./#5-configuring-bundler-for-custom-event-types-and-locations)
+5. [Using with your own configuration](./#5-using-with-your-own-configuration)
+6. [Configuring Bundler for Custom event types and locations](./#6-configuring-bundler-for-custom-event-types-and-locations)
+
 
 ---------------------------------------
 
@@ -39,21 +35,17 @@ This page describes how to configure a bundler robot which will bundle certain t
 ---------------------------------------
 An incident bundler robot collects multiple alerts from sensors and consolidates related alerts into a single incident. This process involves analyzing incoming alerts, identifying correlations, and grouping them based on predefined criteria which are given by the bundler robot configuration . Once the alerts are consolidated into a single incident, a notification is triggered and sent to the respective customer.
 
-The bundler robot relies on a JSON configuration to understand how to consolidate alerts into an incident. This configuration file contains the rules and parameters that dictate how alerts should be grouped. By using this configuration format, the bundler robot can adapt to various scenarios and requirements, providing accurate and efficient incident management.
+The bundler robot relies on a JSON configuration (in the configuration section) to understand how to consolidate alerts into an incident. This configuration file contains the rules and parameters that dictate how alerts should be grouped. By using this configuration format, the bundler robot can adapt to various scenarios and requirements, providing accurate and efficient incident management.
 
-## 3. Robot with default configuration
----------------------------------------
-The default configuration is the config that is applied to every alert encountered by the bundler. All incoming alerts are bundled into incidents by the bundler using the default configuration. 
-
-Example robot with default config
-
+The robot code is be quite simple: 
 ```
 function main(text, auth) {
     print("bundler_rodent")
+
     try{
         var bundler = require('./libs/products/bundler');
         var config = {
-            "version" : "2.0.0"
+            "version" : "3.0.0",
         }
         bindings.auth = auth
         bundler.action(text, config)
@@ -63,12 +55,29 @@ function main(text, auth) {
 }
 ```
 
-The `config` object defines the settings and parameters for the incident bundler robot.
-This guide only walks you through writing configurations for bundler robots. To learn more about creating robots, refer to the [Robots Guide](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-guide/) and [Robots Library](https://docs.microshare.io/docs/2/technical/microshare-platform-advanced/robots-library/)
+You should be able to find it in your robot section. If your robot look different and refers to version 1.0.0 or 2.0.0, refers to Microshare support if you need to do any changes. 
 
-The version field denotes the version of the bundler configuration, which in this case is "2.0.0".
+That robot is very simple as the configuration is made in the "configs" section of the Microshare console. See following section. 
 
-### Overriding default configuration
+
+## 3. Default Configuration
+---------------------------------------
+To access the config you will need to access the config section in the Microshare console.  
+
+The default configuration for the bundler robot is stored in the "Product Bundler Config" config. This configuration is linked to our product line, this is how the product are configured as sold. This configuration is used as a template for creating incidents from alerts. The configuration contains settings for different types of alerts, including their priority, title, and timing. You can't modify this shared config as it is read only and owned by Microshare. 
+
+However you can take a look at it: 
+
+on dev: [https://dapp.microshare.io/composer#/configs/io.microshare.config.bundler/67081107aa70d30eb2800a03](https://dapp.microshare.io/composer#/configs/io.microshare.config.bundler/67081107aa70d30eb2800a03)
+on prod: [https://app.microshare.io/composer#/configs/io.microshare.config.bundler/67081107aa70d30eb2800a03](https://app.microshare.io/composer#/configs/io.microshare.config.bundler/67081107aa70d30eb2800a03)
+
+This config will be used by your robot to create incidents from alerts. 
+
+
+
+### Config Structure
+
+This the example of our default config at the time of writing.
 ```
 {
     "config": {
@@ -207,65 +216,12 @@ The version field denotes the version of the bundler configuration, which in thi
             }
         }
     },
-    "version": "2.0.0"
+    "version": "3.0.0"
 }
 ```
-A sample default shared configuration for all alerts may look like this.
 
-We can override certain parts of this configuration by passing our own custom configuration to the "config" object of the bundler robot as demonstrated below.
-```
-function main(text, auth) {
-    print("bundler_rodent")
-    
-    try {
-        var bundler = require('./libs/products/bundler');
-        var config = {
-            "version": "2.0.0",
-            "config": {
-                "incident": {
-                    "priority": "5",
-                    "title": "Critical Incident"
-                },
-                "todos": [
-                    "Acknowledge the incident immediately.",
-                    "Contact the relevant team."
-                ]
-            },
-            "solutions": {
-                "alert": {
-                    "alerts": {
-                        "rodent": {
-                            "config": {
-                                "incident": {
-                                    "priority": "10",
-                                    "title": "Urgent Rodent Incident"
-                                },
-                                "todos": [
-                                    "Inspect the area for rodents.",
-                                    "Set up additional traps."
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        };
-        bindings.auth = auth;
-        bundler.action(text, config);
-    } catch (error) {
-        print(error);
-    }
-}
-```
-The configuration in the config object overrides the default shared configuration for the respective fields. 
-The working of nested configurations is explained in further sections.
+The configuration is divided into two main sections: "config" and "solutions". The "config" section contains the default settings for incidents, including priority, title, labels, timing, and todos. The "solutions" section contains configurations for different types of alerts, such as "rodent" and "service". Each alert type has its own configuration, which can override the default settings for incidents.
 
-Note: To find the default configuration for your account, go to the home tab and click the hamburger menu on the right. Then scroll down and select exit to console:
-{% include image.html url="/assets/img/bundlerConf/image2.png" description="thumbnail-2" %}
-
-Next, go to the views section and search for "Bundler Shared Config" view. 
-Open that view and go to the static json tab in that view. There you should find the default configuration for your account.
-{% include image.html url="/assets/img/bundlerConf/image3.png" description="thumbnail-3" %} 
 
 ## 4. Nested Configurations
 ---------------------------------------
@@ -409,7 +365,7 @@ Following is an example nested configuration for a bundler robot.
         }
     }
 },
-"version": "2.0.0"
+"version": "3.0.0"
 ```
 
 When a certain type of alert is received, it is matched with a nested json object until the right configuration for that type of alert is encountered.
@@ -702,7 +658,7 @@ The provided JSON object demonstrates how nested configurations are used to mana
         }
     }
     ],
-    "version": "2.0.0"
+    "version": "3.0.0"
 }
 ```
 
@@ -714,21 +670,219 @@ Location-based nested configurations enable the specification of custom settings
 
 This structure allows for flexible and precise customization of incident management based on location-specific requirements, ensuring that each location can have tailored settings that meet its unique needs.
 
-## 5. Updating Robot configs
+## 5. Using with your own configuration
 ---------------------------------------
-To find existing robots, exit to console as shown in section 3 and go to the Robots tab.
-There you can find all the active and inactive robots running for your account.
-{% include image.html url="/assets/img/bundlerConf/image4.png" description="thumbnail-4" %} 
+To use your own configuration, you can create a new config in the config tab and set the desired configuration for the incident bundler.
 
-Once you open an active robot, you will find settings for the robot as shown.
-{% include image.html url="/assets/img/bundlerConf/image5.png" description="thumbnail-5" %} 
-Here, take a note of the rectype field. The robot you have opened will take data only from that rectype. Open the robot that is written for alerts from your desired rectype.
-For example: the rectype io.microshare.event.alert.feedback is for feedback alerts which means the robot works only for feedback alerts.
+Make sure to give it the recType: io.microshare.config.bundler
 
-After you find the right robot, you can find the configuration for that robot in the script section as shown below
-{% include image.html url="/assets/img/bundlerConf/image6.png" description="thumbnail-6" %}
+Ant put the content of the configuration you want to use in the content field. It could look like this:
 
-Once you find the config object, you can make changes to the robot config.
+```
+{
+    "config": {
+        "escalation": {
+            "priority": 1,
+            "time": "PT20M"
+        },
+        "incident": {
+            "priority": 0,
+            "threshold": {
+                "high": 100,
+                "low": 50,
+                "medium": 75,
+                "notify": 75
+            }
+        },
+        "solution": "clean",
+        "timing": {
+            "globalReminderTime": "P5D",
+            "globalTimeoutTime": "P2D"
+        }
+    },
+    "locations": [
+        {
+            "config": {
+                "area": 10,
+                "incident": {
+                    "threshold": {
+                        "high": 120,
+                        "low": 60,
+                        "medium": 90,
+                        "notify": 90
+                    }
+                },
+                "notes": "Dummy Note 1",
+                "solution": "clean",
+                "tour": "Demo Tour 1"
+            },
+            "device": [
+                "Device-A1",
+                "001",
+                "101",
+                "Type-X"
+            ]
+        },
+        {
+            "config": {
+                "area": 15,
+                "incident": {
+                    "threshold": {
+                        "high": 200,
+                        "low": 100,
+                        "medium": 150,
+                        "notify": 150
+                    }
+                },
+                "notes": "Dummy Note 2",
+                "solution": "clean",
+                "tour": "Demo Tour 2"
+            },
+            "device": [
+                "Device-B2",
+                "002",
+                "202",
+                "Type-Y"
+            ]
+        }
+    ],
+    "solutions": {
+        "clean": {
+            "alerts": {
+                "feedback": {
+                    "events": {
+                        "clean": {
+                            "config": {
+                                "incident": {
+                                    "priority": 10
+                                },
+                                "labels": {
+                                    "complementaryTodo": "Action needed",
+                                    "initialTodo": "Perform cleaning"
+                                },
+                                "todos": []
+                            }
+                        }
+                    }
+                }
+            },
+            "config": {
+                "incident": {
+                    "threshold": {
+                        "high": 150,
+                        "low": 75,
+                        "medium": 100,
+                        "notify": 100
+                    }
+                }
+            }
+        }
+    },
+```
+{
+    "config": {
+        "escalation": {
+            "priority": 1,
+            "time": "PT20M"
+        },
+        "incident": {
+            "priority": 0,
+            "threshold": {
+                "high": 100,
+                "low": 50,
+                "medium": 75,
+                "notify": 75
+            }
+        },
+        "solution": "clean",
+        "timing": {
+            "globalReminderTime": "P5D",
+            "globalTimeoutTime": "P2D"
+        }
+    },
+    "locations": [
+        {
+            "config": {
+                "area": 10,
+                "incident": {
+                    "threshold": {
+                        "high": 120,
+                        "low": 60,
+                        "medium": 90,
+                        "notify": 90
+                    }
+                },
+                "notes": "Dummy Note 1",
+                "solution": "clean",
+                "tour": "Demo Tour 1"
+            },
+            "device": [
+                "Device-A1",
+                "001",
+                "101",
+                "Type-X"
+            ]
+        },
+        {
+            "config": {
+                "area": 15,
+                "incident": {
+                    "threshold": {
+                        "high": 200,
+                        "low": 100,
+                        "medium": 150,
+                        "notify": 150
+                    }
+                },
+                "notes": "Dummy Note 2",
+                "solution": "clean",
+                "tour": "Demo Tour 2"
+            },
+            "device": [
+                "Device-B2",
+                "002",
+                "202",
+                "Type-Y"
+            ]
+        }
+    ],
+    "solutions": {
+        "clean": {
+            "alerts": {
+                "feedback": {
+                    "events": {
+                        "clean": {
+                            "config": {
+                                "incident": {
+                                    "priority": 10
+                                },
+                                "labels": {
+                                    "complementaryTodo": "Action needed",
+                                    "initialTodo": "Perform cleaning"
+                                },
+                                "todos": []
+                            }
+                        }
+                    }
+                }
+            },
+            "config": {
+                "incident": {
+                    "threshold": {
+                        "high": 150,
+                        "low": 75,
+                        "medium": 100,
+                        "notify": 100
+                    }
+                }
+            }
+        }
+    },
+    "version": "3.0.0"
+}
+```
+
+Indeed you need to keep the same nested data format as explained in section 4.
 
 ### Changing priority of the config
 Most Configurations for robots have a priority field. This priority field determines the priority of the incident that is created after bundling the incoming alerts.
@@ -736,54 +890,10 @@ We can change the priority for the default configuration and the nested configur
 
 #### Changing priority in existing config: 
 For existing configurations, we can change the priority by tweaking the value of the priority field under the incident object of the main bundler configuration.
-{% include image.html url="/assets/img/bundlerConf/image7.png" description="thumbnail-7" %} 
 
-#### Creating a new config and setting the priority.
-If the config object in the robot is empty, you can add your own config and set a desired priority level which will override the existing default configuration.
-
-For example:
-```
-function main(text, auth) {
-    print("bundler_rodent")
-    
-    try {
-        var bundler = require('./libs/products/bundler');
-        var config = {
-            "version": "2.0.0",
-            "config": {
-                "incident": {
-                    "priority": "5",
-                    "title": "Critical Incident"
-                },
-                "todos": [
-                    "Add some todos"
-                ]
-            },
-            "solutions": {
-                "clean": {
-                    "feedback": {
-                        "supplies": {
-                            "config": {
-                                "incident": {
-                                    "priority": "10",
-                                    "title": "Urgent Rodent Incident"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        };
-        bindings.auth = auth;
-        bundler.action(text, config);
-    } catch (error) {
-        print(error);
-    }
-}
-```
 Using the above structure format, you can add a priority field which overrides the default configuration.
-Here, the priority for solutions->clean->feedback->supplies will be overridden over the default config to 10. 
-{% include image.html url="/assets/img/bundlerConf/image8.png" description="thumbnail-8" %} 
+Here, the priority for solutions->clean->feedback->clean will be overridden over the default config to 10. 
+
 
 ## 6. Configuring Bundler for Custom event types and locations.
 ---------------------------------------
@@ -848,15 +958,31 @@ For example:-
         }
     }
     ],
-    "version": "2.0.0"
+    "version": "3.0.0"
 }
 ```
 
 The above configuration is an example config for a custom location and alert type.
 The custom location is Railway Station Platform 2 and the custom alert types are "clean", "track", "lights".
 
-For custom alerts, if you have created custom rectypes, you will have to update the custom rectype in the robot settings as highlighted below.
-{% include image.html url="/assets/img/bundlerConf/image1.png" description="thumbnail-1" %}
-(replace the highlighted part with your custom rectype)
+For custom alerts, if you have created custom rectypes, you will have to duplicate the robot code shown earlier and replace the rectype in the robot parameters with your custom rectype.
 
-Then You will have to write your own custom robot with the above bundler configuration and rectype.
+
+```
+function main(text, auth) {
+    print("bundler_rodent")
+
+    try{
+        var bundler = require('./libs/products/bundler');
+        var config = {
+            "version" : "3.0.0",
+        }
+        bindings.auth = auth
+        bundler.action(text, config)
+    } catch (error) {
+        print(error)
+    }
+}
+```
+
+Then you will have to create a new config in the config tab and set the desired configuration for the incident bundler.
