@@ -28,24 +28,6 @@
         <!-- page-content" -->
     </div>
 
-    <script>
-      // Function to get URL parameters
-      function getUrlParams() {
-        const params = new URLSearchParams(window.location.search);
-        return params;
-      }
-
-      // Check if hideFrame is true
-      const params = getUrlParams();
-      const hideFrame = params.get('hideFrame') === 'true';
-
-      if (hideFrame) {
-        document.querySelector('.docs-header').style.display = 'none';
-        document.querySelector('.docs-navbar').style.display = 'none';
-        document.querySelector('.docs-aside').style.display = 'none';
-      }
-    </script>
-
 </body>
 {% include docs-scripts.html %}
 {% include search-engine.html %}

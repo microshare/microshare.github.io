@@ -16,6 +16,27 @@
 
     <script src="{{ site.baseurl }}/assets/js/toc.js"></script>
 
+
+    <script>
+      // Function to get URL parameters
+      function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        return params;
+      }
+
+      // Check if hideFrame is true
+      const params = getUrlParams();
+      console.log("params", params);
+      const hideFrame = params.get('hideFrame') === 'true';
+      console.log("hideFrame", hideFrame);
+
+      if (hideFrame) {
+        document.querySelector('.docs-header').style.display = 'none';
+        document.querySelector('.docs-navbar').style.display = 'none';
+        document.querySelector('.docs-aside').style.display = 'none';
+      }
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('#toc').toc({
