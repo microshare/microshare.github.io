@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta name="description" content="{{page.description}}">
-  <meta name="keyword" content=documentation,microshare,{{ page.title | split : ","}}>
+  <meta name="keyword" content="documentation,microshare,{{ page.title | split : ","}}">
   {% include docs-header.html %}
 <body>
   {% include docs-navbar.html %}
@@ -18,15 +18,34 @@
                         <hr class="text-microshare-light" class="p-1 my-2">
                       {{ content }}
                       {% include content-footer.html %}
-
                     </article>
-                    {% include docs-aside.html %}
+                    <aside id="docs-aside" class="docs-aside col-md-3">
+                      {% include docs-aside.html %}
+                    </aside>
                 </div>
             </div>
         </main>
         <!-- page-content" -->
     </div>
-    
+
+    <script>
+      // Function to get URL parameters
+      function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        return params;
+      }
+
+      // Check if hideFrame is true
+      const params = getUrlParams();
+      const hideFrame = params.get('hideFrame') === 'true';
+
+      if (hideFrame) {
+        document.querySelector('.docs-header').style.display = 'none';
+        document.querySelector('.docs-navbar').style.display = 'none';
+        document.querySelector('.docs-aside').style.display = 'none';
+      }
+    </script>
+
 </body>
 {% include docs-scripts.html %}
 {% include search-engine.html %}
@@ -36,5 +55,4 @@
 #mCSB_1,#mCSB_1_container {
   overflow:visible !important;
 }
-
 </style>
