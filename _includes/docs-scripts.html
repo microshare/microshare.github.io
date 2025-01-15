@@ -31,9 +31,25 @@
       console.log("hideFrame", hideFrame);
 
       if (hideFrame) {
-        document.querySelector('.docs-header').style.display = 'none';
-        document.querySelector('.docs-navbar').style.display = 'none';
-        document.querySelector('.docs-aside').style.display = 'none';
+        const header = document.querySelector('.sidebar-wrapper');
+        const navbarDocs = document.querySelector('.docs-navbar');
+        const navbar = document.querySelector('.navbar');
+        const aside = document.querySelector('.docs-aside');
+        const pageContent = document.querySelector('.page-content')
+        const pageWrapper = document.querySelector('.page-wrapper')
+        const mainContent = document.querySelector('.main-content')
+        const rowText = document.querySelector('.container-fluid > div')
+        const iFrameContainer = document.querySelector('.iframe-container')
+        
+        if (header) header.style.display = 'none';
+        if (navbarDocs) navbarDocs.style.display = 'none';
+        if (navbar) navbar.style.display = 'none';
+        if (aside) aside.style.display = 'none';
+        if (pageContent) pageContent.style.padding = '0';
+        if (pageWrapper) pageWrapper.style.padding = '0';
+        if (mainContent) mainContent.style.maxWidth = "100vw";
+        if (iFrameContainer) mainContent.style.height = "100vh";
+        if (rowText) rowText.style.display = "block";
       }
     </script>
 
