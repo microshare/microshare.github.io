@@ -1,40 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <meta name="description" content="{{page.description}}">
-  <meta name="keyword" content="documentation,microshare,{{ page.title | split : ","}}">
-  {% include docs-header.html %}
-<body>
+---
+layout: base
+---
+
+{% unless page.embed %}
   {% include docs-navbar.html %}
-    <div class="page-wrapper toggled light-theme"  style="padding-top: 60px;">
+{% endunless %}
+
+<div class="page-wrapper toggled light-theme" {% unless page.embed %}style="padding-top: 60px;"{% endunless %}>
+    {% unless page.embed %}
         {% include docs-sidebar.html %}
-        <!-- page-content  -->
-        <main class="page-content">
-            <div id="overlay" class="overlay"></div>
-            <div class="container-fluid">
-                <div class="row p-lg-4">
-                    <article class="main-content col-md-9 pr-lg-5">
-                      <h1 class="text-microshare-dark mt-2">{{ page.title }}</h1>
-                      <h6 class="text-microshare-light">{{ page.description }}</h6>
-                        <hr class="text-microshare-light" class="p-1 my-2">
-                      {{ content }}
-                      {% include content-footer.html %}
-                    </article>
+    {% endunless %}
+    
+    <!-- page-content  -->
+    <main class="page-content">
+        <div id="overlay" class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row {% unless page.embed %}p-lg-4{% endunless %}">
+                <article class="main-content {% unless page.embed %}col-md-9 pr-lg-5{% endunless %}">
+                    <h1 class="text-microshare-dark mt-2">{{ page.title }}</h1>
+                    <h6 class="text-microshare-light">{{ page.description }}</h6>
+                    <hr class="text-microshare-light" class="p-1 my-2">
+                    {{ content }}
+                    {% unless page.embed %}
+                        {% include content-footer.html %}
+                    {% endunless %}
+                </article>
+                {% unless page.embed %}
                     <aside id="docs-aside" class="docs-aside col-md-3">
-                      {% include docs-aside.html %}
+                        {% include docs-aside.html %}
                     </aside>
-                </div>
+                {% endunless %}
             </div>
-        </main>
-        <!-- page-content" -->
-    </div>
-
-</body>
-{% include docs-scripts.html %}
-{% include search-engine.html %}
-</html>
-
-<style>
-#mCSB_1,#mCSB_1_container {
-  overflow:visible !important;
-}
-</style>
+        </div>
+    </main>
+    <!-- page-content" -->
+</div>

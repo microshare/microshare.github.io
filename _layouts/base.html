@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="description" content="{{page.description}}">
+  <meta name="keyword" content="documentation,microshare,{{ page.title | split : ","}}">
+  {% include docs-header.html %}
+<body>
+    {{ content }}
+</body>
+{% include docs-scripts.html %}
+{% include search-engine.html %}
+</html>
+
+<style>
+#mCSB_1,#mCSB_1_container {
+  overflow:visible !important;
+}
+</style> 
