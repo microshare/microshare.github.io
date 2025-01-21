@@ -8,6 +8,36 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for December 18, 2024
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+EverSmart 
+- The Device Health > Battery “Voltage” now displays the last voltage reading to be the average over last 24 hours.
+
+**Bug Fixes**
+
+EverSmart
+- In the Settings app, uploading users now also updates the role of existing users if needed.
+- The table on the Smilio Device Health Trending page is now filled in properly when any state variable is selected for Today.  Each row should show one category as 100% and the other categories as 0%.
+- Voltage and Battery Health now match up on the Device Health Overview page. 
+
+**Additional Resources**
+
+- En/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for November 27, 2024
 
 **New Features**
