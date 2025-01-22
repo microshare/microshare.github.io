@@ -7,6 +7,7 @@
     keywords : ["start","first"]
   - title: Release notes
     keywords : ["updates", "new", "deployments", "fix"]
+    
   subpages:
   - title: Meet Microshare
     pages:
@@ -17,6 +18,34 @@
     - title: Demo
       keywords : ["try"]
     - title: Demo Live
+  
+  - title: Dashboards
+    pages:
+    - title: Overview
+      url: /docs/2/general/dashboards/overview
+      keywords: ["dashboard", "overview", "dashboards", "charts", "data", "visualization"]
+    - title: Washroom Traffic
+      url: /docs/2/general/dashboards/washroom-traffic
+      keywords: ["washroom", "restroom","traffic", "activity"]
+    - title: Washroom Feedback
+      url: /docs/2/general/dashboards/washroom-feedback
+      keywords: ["washroom", "restroom", "feedback", "satisfaction"]
+    - title: Rodent Alert
+      url: /docs/2/general/dashboards/rodent-alert
+      keywords: ["rodent", "alert", "detection"]
+    - title: Rodent Works
+      url: /docs/2/general/dashboards/rodent-works
+      keywords: ["rodent", "alert", "works", "maintenance"]
+    - title: Device Health
+      url: /docs/2/general/dashboards/device-health
+      keywords: ["device", "health", "monitoring", "status", "IoT"]
+    - title: Settings
+      url: /docs/2/general/dashboards/settings
+      keywords: ["settings", "configuration", "IoT", "notification", "alerts", "rules", "triggers"]
+    - title: Routing
+      url: /docs/2/general/dashboards/routing
+      keywords: ["routing", "IoT", "data", "visualization", "rules", "triggers", "workflow", "automation"]
+
   - title: Quick Start
     pages:
     - title: Create an Account
@@ -25,7 +54,7 @@
     - title: Access my Apps
       keywords : ["switch identites","access","signin","login"]
     - title: Glossary
-      keywords : ["dictionnary"]
+      keywords : ["dictionary"]
   - title: FAQ
     pages:
     - title: General
