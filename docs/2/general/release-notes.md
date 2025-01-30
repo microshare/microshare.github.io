@@ -8,6 +8,36 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for January 30, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+React-M 
+- Various React-M improvements including auto sign-in with face ID, the ability to select “No Tour”, and better ticket UI among other changes.
+
+Smart Office Masters
+- The Trending and Realtime forms have been updated to use Window.accessToken now provided by the App service.  
+
+**Bug Fixes**
+
+- n/a
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for December 18, 2024
 
 **New Features**
@@ -28,7 +58,7 @@ EverSmart
 
 **Additional Resources**
 
-- En/a
+- n/a
 
 **Ops**
 
