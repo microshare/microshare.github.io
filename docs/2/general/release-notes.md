@@ -8,7 +8,7 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
-## Release Notes for January 30, 2025
+## Release Notes for February 5, 2025
 
 **New Features**
 
@@ -16,8 +16,36 @@ toc: true
 
 **Feature Enhancements**
 
-React-M 
-- Various React-M improvements including auto sign-in with face ID, the ability to select “No Tour”, and better ticket UI among other changes.
+React-M v1.1.41
+- Background Loading & Caching – Tasks now load and cache in the background, reducing loading times and improving app responsiveness.
+- Automatic Task Refresh on Notification – When a new notification arrives, React-M will now automatically refresh tasks to ensure users always see the latest updates.
+- Email & Password Validation on Submission – Prevents UI glitches by checking the validity of email-password combinations upon submission, reducing issues with keyboard behavior while typing.
+
+**Bug Fixes**
+
+React-M v1.1.41
+- Optimized app performance with background caching, reducing lag and improving efficiency.
+- Fixed an issue where invalid email-password combinations could cause UI inconsistencies during login.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for January 30, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
 
 Smart Office Masters
 - The Trending and Realtime forms have been updated to use Window.accessToken now provided by the App service.  
