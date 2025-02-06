@@ -41,11 +41,11 @@ If you have any questions that are unanswered in this documentation, contact `jb
 
 Microshare provides Data Strategy as a Service, enabling our clients to quickly capture previously hidden data insights that produce cost savings, sustainability metrics and business opportunities. Our solutions produce data on Day One, installed at scale quickly by non-technical staff and operate separate from sensitive corporate IT networks. Our solutions create a Digital Twin of your physical assets, providing comprehensive picture of their performance, the risks they face going forward, and the steps required to produce maximum returns from these assets.
 
-React-M is a tool created by Microshare to bring reactivity to your team. Move from data analysis to action. From the data collected through your Microshare solution (feedback, motion, environment...) you can set up triggers and alerts to set up actions. 
+React-M is a tool created by Microshare to collect data from sensors and external data sources and create incidents that occur across your organisation that you can manage, track and act upon. 
 
-You can definitely create email/text message notifications, but we created React-M for better management of TODOs. In one location you get all your TODOs, and you can claim and act on them. You know the **locations and requirements, you know what to do and when**. 
+React-M has been developed for the management of incidents, replacing traditional email-based notification systems. Individuals can access all incidents assigned to them in a single location and claim and act on them. This app streamlines communication between the Supervisors and Technicians and allows for a more streamlined tracking and management of incidents. 
 
-Through this User Guide, we will drive you through how to get the app working and how to use it. 
+Through this User Guide, we will take you through the steps to get the app working and make the most of this app. 
 
 Want to learn more about Microshare solutions, check out our website at [microshare.io.](https://www.microshare.io/)
 
