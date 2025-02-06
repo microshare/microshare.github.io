@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: React-M User Guide
-description: Get started with React-M™, the world's only data-triggered TODO management system.
+description: Get started with React-M™, the world's only data-triggered Incident management system.
 toc: true
 ---
 
@@ -14,22 +14,23 @@ toc: true
 1. [Introduction](./#introduction)
 
 
-2. [Downloading](./#downloading)
+2. [Log in to React-M](./#log-in-to-react-m)
 
 
-3. [Account](./#account)
+3. [Select Roster](./#select-roster)
 
 
-4. [Use](./#use)
+4. [Task Actions](./#task-actions)
 
 
-5. [TODO](./#todo)
+5. [Log Out](./#log-out)
 
 
-    A. [Motion Driven](./#motion-driven)
+6. [Appendix]
 
+    A. [Change Language](./#change-language)
 
-    B. [Feedback Driven](./#feedback-driven)
+    B. [Account Setup](./#account-setup)
 ---------------------------------------
 
 If you have any questions that are unanswered in this documentation, contact `jbardin@microshare.io`.
@@ -49,100 +50,124 @@ Through this User Guide, we will drive you through how to get the app working an
 Want to learn more about Microshare solutions, check out our website at [microshare.io.](https://www.microshare.io/)
 
 
-## Downloading
+## Log in to React-m
 ---------------------------------------
 
-First, we will download the app :
+1. First, download the app, from the respective store depending on your device operating system:
+	iOS: [APPLE STORE](https://apps.apple.com/lk/app/react-m/id1600368531?platform=iphone)
+	Android: [GOOGLE PLAY STORE](https://play.google.com/store/apps/details?id=io.microshare.reactm&pli=1)
+	
+	{% include image.html url="/assets/img/react-m/ReactMDemo.png"  description="react-m app store" %}
+	
+2. Locate the app on your phone and open it:
+	{% include image.html url="/assets/img/react-m/LocateApp.png"  description="Locate App" %}
+	
+3. Type in your credentials and click login:
+	{% include image.html url="/assets/img/react-m/Login.png"  description="Login Page" %}
 
-[APPLE STORE](https://apps.apple.com/lk/app/react-m/id1600368531?platform=iphone)
+4. Once you login, you will get a prompt asking you to save your credentials. 
+	If you want to save your credentials locally, click yes.
+	
+	{% include image.html url="/assets/img/react-m/StoreCreds.png"  description="Store Credentials" %}
+	
+	If you click yes, your credentials are stored on your device, securely. When you are logged out and you want to log back in, you can skip the step of typing your username and password and log back in with a single click.
+	
+	{% include image.html url="/assets/img/react-m/SavedCreds.png"  description="Saved Creds" %}
+	
+	When you log in with your saved credentials, you will get a prompt to log in with your device's local authentication method. (for ex. Face ID, Fingerpring, PIN, Password, etc.)
 
-[GOOGLE PLAY STORE](https://play.google.com/store/apps/details?id=io.microshare.reactm&pli=1)
+5. Once you log in, you will see the Incidents list section.
+	{% include image.html url="/assets/img/react-m/home.png"  description="home" %}
 
-{% include image.html url="/assets/img/react-m/ReactMDemo.png"  description="react-m app store" %}
+## Select Roster
 
-## Account
----------------------------------------
+A Roster is a Shared list of locations that stores all the Incidents related to these locations. By signing up to a Roster, you can see and resolve only the Incidents associated to the locations in the roster.
 
-To use the app you will need to create a Microshare account at this URL : 
-[https://app.microshare.io/login](https://app.microshare.io/login)
+1. In the app, go to the “About” section:
+	{% include image.html url="/assets/img/react-m/ListToAbout.png"  description="List Section to About Section" %}
 
-You can follow our user guide on "how to create an account" if necessary. 
+2. In the about section, click the “Select Roster” button.
+	{% include image.html url="/assets/img/react-m/About.png"  description="About" %}
 
-## Use
----------------------------------------
+3. Then, select the desired roster by scrolling down or searching for the roster
+	{% include image.html url="/assets/img/react-m/RosterList.png"  description="Roster List" %}
+	
+	Then, navigate back to the Incidents section to see the Incidents in that roster.
 
-You now have the app on your phone and your account created. 
+4. If there aren’t any Incidents in the roster, you will see this screen:
+	{% include image.html url="/assets/img/react-m/NoIncidentsScreen.png"  description="No Incidents Screen" %}
+	
+	In this case, wait for the supervisor or the React-M system to assign some tasks to the roster you have selected. The tasks are refreshed every 30 seconds. You can also click “Reload” to manually check for any new tasks.
 
-#### 1) Login on the app :
+5. Finally, if there are some tasks assigned to the roster, this is how they will look:
+	{% include image.html url="/assets/img/react-m/IncidentList.png"  description="Incidents List" %}
+	
+	Notice that these tasks are “Not assigned”. This means that they are assigned to the roster and are ready to be claimed by you.
 
-{% include image.html url="/assets/img/react-m/login.png"  description="react-m login" %}
+6. If a task is assigned to you specifically (for instance when a supervisor assigns a task to your account), then it will look like this:
+	{% include image.html url="/assets/img/react-m/AssignedIncident.png"  description="Assigned Incident List" %}
 
-#### 2) You might find a home screen menu empty. 
+## Task Actions
 
-Indeed you need to share your email with the administrator of your organisation, so you can get assigned to the TODOs. Once this is done when the TODO (you have been linked to) will be generated you will see it on your main menu like this : 
+1. In the task list, click on an Incident to see more details about it
+	{% include image.html url="/assets/img/react-m/IncidentDetails.png"  description="Incident Details" %}
+	
+	You will see a list of tasks to complete in this incident. If you are ready to start this incident, click start
 
-{% include image.html url="/assets/img/react-m/home.png"  description="react-m home" %}
+2. Once you click start, you are navigated back to the incident list screen. Wait for the incident to load.
+	{% include image.html url="/assets/img/react-m/LoadingIncident.png"  description="Incident Loading" %}
 
-#### 3) The TODOs 
+3. Once the task is loaded, you will see the task state to be “In Progress”:
+	{% include image.html url="/assets/img/react-m/IncidentInProgress.png"  description="Incident in Progress" %}
 
-{% include image.html url="/assets/img/react-m/claim.png"  description="react-m claim" %}
+4. Finally, when you perform all the tasks mentioned in the incident and are finished with the incident, click on the incident and click the complete button:
+	{% include image.html url="/assets/img/react-m/IncidentComplete.png"  description="Incident Complete" %}
 
-A Task is composed of a few elements : 
- - the location of the TODO (building, floor, Room, Asset, Id)
- - the due date (when this TODO has started)
- - potentially some tasks inside the TODO
- - a title
- - a status (4 status [Unassigned, Claimed, Started, Done], more details bellow)
+5. You are navigated to a question section. Answer all the questions that follow. (Note. These questions are configured by the supervisor.)
+	{% include image.html url="/assets/img/react-m/QuestionScreen.png"  description="Incident in Progress" %}
+	Once you answer all the questions, you are navigated back to the Incidents section where you will find the rest of the incidents (either assigned to the roster or assigned to you).
 
-Now we can use the app : 
+## Log Out
+Once you are done with incidents assigned to the roster or to you, go to the about section first and select “No Roster” so you won’t receive notifications or incidents later. This also allows your supervisor to know that you are no longer occupying the Roster. Then log out of the app and close it.
 
-{% include image.html url="/assets/img/react-m/home.png"  description="react-m home" %}
+1. Go to the about section and click the “Change Roster” button.
+	{% include image.html url="/assets/img/react-m/ChangeRoster.png"  description="Change Roster" %}
 
-On this home menu, you can see 2 TODOs, we will define the TODOs here, and lower in this user guide we will talk about two common cases of TODOs. 
+2. Then, Select the “No Roster” option at the very top of the scroll list.
+	{% include image.html url="/assets/img/react-m/NoRoster.png"  description="No Roster" %}
 
-A TODO is a 3 steps workflow. 
+3. Then, go back to the Incidents section and log out by clicking the log out button at the top of the Incidents Section:
+	{% include image.html url="/assets/img/react-m/LogOut.png"  description="Log Out" %}
 
-######  3.a) The TODO is created someone has to claim it. 
+4. You will get a log out confirmation dialogue box. Select logout to log out of the app.
+	{% include image.html url="/assets/img/react-m/LogOutConfirmation.png"  description="Log out confirmation" %}
 
-When a TODO is created, generated by our data triggers like feedback or motions, it will generate a TODO following the management rules. If you are linked to TODO, you will receive a notification on your device, and the TODO will appear in your main menu. 
+## Appendix
+#### a) Change Language
 
-If you click on it, you will see that you can claim it : 
+To Change the Language of the app, go to the About Section and click the drop-down menu for select language:
+	{% include image.html url="/assets/img/react-m/ChangeLanguage.png"  description="Change Language" %}
 
-{% include image.html url="/assets/img/react-m/claim.png"  description="react-m claim" %}
+Then, select one of the supported languages that you want. Currently, React-M supports English, German and French.
+	{% include image.html url="/assets/img/react-m/LanguageList.png"  description="Language List" %}
 
-If you claim it then this task is now assigned to you. You will have to then "start" the task and "finish" it. 
+### b) Account Setup
 
-###### 3.b) You own the Todo you can act. 
+1. When your supervisor registers your email-id to the organisation, you will get a welcome email from microshare.
+2. Find and open the “Welcome to Microshare” email.
+3. Click on the “Microshare User Account Activation” Link
+	{% include image.html url="/assets/img/react-m/WelcomeEmail.png"  description="Welcome Email" %}
+	If the link has expired, Check with your supervisor
+4. Enter your user details and choose a secure password. Then click “Finalize Account”
+	{% include image.html url="/assets/img/react-m/UserDetails.jpg"  description="User Details" %}
+	Your account has been setup and now you are ready to start using React-M
 
-As you see in the picture above the TODO can contain some clear details on what the actions are, but the TODO can also just be the name of a task that is known in your role (for instance "Clean this location" is enough for a cleaner to know what to do). Your management can decide what to put here it will not necessarily be a list of tasks in the TODO. 
 
-Once you are at the location you can press the button "Start" to start doing your job, and once you are done simply press Complete. 
 
-The process is as simple as that, you receive the TODOs, and you can claim, start and complete them. Then the TODO is done. 
 
-###### 3.b) Variations. 
 
-If you take too much time at any of these steps you will receive a notification to remind you to act on this TODO. Then after a long time, the TODO will be classified as "timeout" and disappear from your app. 
 
-You can also cancel the TODO if you want to delete it, it will **delete it for all the people assign**, if you simply don't want to do it, **just ignore it.**
 
-Finally, we will store some data on the timing of TODOs and locations of tasks to help your management organise their routes of cleaning and organisation better. 
-
-## TODO
----------------------------------------
-
-As explained, we create TODO based on IoT data and strategies. We mostly use this app for now as part of our Eversmart Washroom and Eversmart Clean Products. 
-It means that these TODO are oriented to be used to strategise on bathroom cleaning. 
-
-#### Motion Driven 
-
-You can receive predictive cleaning requests, triggered by the number of motions going on in a bathroom you will receive a cleaning request for a location that reached the trigger. 
-
-We want to clean the bathroom before it gets too dirty! 
-
-#### Feedback Driven
-
-If someone presses the feedback button on the bathroom if this is a service request that you have been assigned to answer by your manager on the Microshare side, then you will receive a notification and a new TODO will appear in your React-M app. 
 
 
  
