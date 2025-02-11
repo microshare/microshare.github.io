@@ -57,109 +57,155 @@ Want to learn more about Microshare solutions, check out our website at [microsh
 	iOS: [APPLE STORE](https://apps.apple.com/lk/app/react-m/id1600368531?platform=iphone)
 	Android: [GOOGLE PLAY STORE](https://play.google.com/store/apps/details?id=io.microshare.reactm&pli=1)
 	
-	{% include image.html url="/assets/img/react-m/ReactMDemo.png"  description="react-m app store" %}
+	{% include image.html url="/assets/img/react-m/ReactMDemo.png" heigh="500" description="react-m app store" %}
 	
 2. Locate the app on your phone and open it:
-	{% include image.html url="/assets/img/react-m/LocateApp.png"  description="Locate App" %}
+   
+	{% include image.html url="/assets/img/react-m/LocateApp.png" heigh="500"  description="Locate App" %}
 	
 3. Type in your credentials and click login:
-	{% include image.html url="/assets/img/react-m/Login.png"  description="Login Page" %}
+
+	{% include image.html url="/assets/img/react-m/Login.png" heigh="500"  description="Login Page" %}
 
 4. Once you login, you will get a prompt asking you to save your credentials. 
 	If you want to save your credentials locally, click yes.
 	
-	{% include image.html url="/assets/img/react-m/StoreCreds.png"  description="Store Credentials" %}
+	{% include image.html url="/assets/img/react-m/StoreCreds.png" heigh="500"  description="Store Credentials" %}
 	
 	If you click yes, your credentials are stored on your device, securely. When you are logged out and you want to log back in, you can skip the step of typing your username and password and log back in with a single click.
 	
-	{% include image.html url="/assets/img/react-m/SavedCreds.png"  description="Saved Creds" %}
+	{% include image.html url="/assets/img/react-m/SavedCreds.png" heigh="500"  description="Saved Creds" %}
 	
 	When you log in with your saved credentials, you will get a prompt to log in with your device's local authentication method. (for ex. Face ID, Fingerpring, PIN, Password, etc.)
 
 5. Once you log in, you will see the Incidents list section.
-	{% include image.html url="/assets/img/react-m/home.png"  description="home" %}
+
+   
+	{% include image.html url="/assets/img/react-m/home.png" heigh="500"  description="home" %}
 
 ## Select Roster
 
 A Roster is a Shared list of locations that stores all the Incidents related to these locations. By signing up to a Roster, you can see and resolve only the Incidents associated to the locations in the roster.
 
 1. In the app, go to the “About” section:
-	{% include image.html url="/assets/img/react-m/ListToAbout.png"  description="List Section to About Section" %}
+
+
+	{% include image.html url="/assets/img/react-m/ListToAbout.png" heigh="500"  description="List Section to About Section" %}
 
 2. In the about section, click the “Select Roster” button.
-	{% include image.html url="/assets/img/react-m/About.png"  description="About" %}
+
+
+	{% include image.html url="/assets/img/react-m/About.png" heigh="500"  description="About" %}
 
 3. Then, select the desired roster by scrolling down or searching for the roster
-	{% include image.html url="/assets/img/react-m/RosterList.png"  description="Roster List" %}
+
+
+	{% include image.html url="/assets/img/react-m/RosterList.png" heigh="500"  description="Roster List" %}
 	
 	Then, navigate back to the Incidents section to see the Incidents in that roster.
 
 4. If there aren’t any Incidents in the roster, you will see this screen:
-	{% include image.html url="/assets/img/react-m/NoIncidentsScreen.png"  description="No Incidents Screen" %}
+
+
+	{% include image.html url="/assets/img/react-m/NoIncidentsScreen.png" heigh="500"  description="No Incidents Screen" %}
 	
 	In this case, wait for the supervisor or the React-M system to assign some tasks to the roster you have selected. The tasks are refreshed every 30 seconds. You can also click “Reload” to manually check for any new tasks.
 
 5. Finally, if there are some tasks assigned to the roster, this is how they will look:
-	{% include image.html url="/assets/img/react-m/IncidentList.png"  description="Incidents List" %}
+
+
+	{% include image.html url="/assets/img/react-m/IncidentList.png" heigh="500"  description="Incidents List" %}
 	
 	Notice that these tasks are “Not assigned”. This means that they are assigned to the roster and are ready to be claimed by you.
 
 6. If a task is assigned to you specifically (for instance when a supervisor assigns a task to your account), then it will look like this:
-	{% include image.html url="/assets/img/react-m/AssignedIncident.png"  description="Assigned Incident List" %}
+
+
+	{% include image.html url="/assets/img/react-m/AssignedIncident.png" heigh="500"   description="Assigned Incident List" %}
 
 ## Task Actions
 
 1. In the task list, click on an Incident to see more details about it
-	{% include image.html url="/assets/img/react-m/IncidentDetails.png"  description="Incident Details" %}
+
+
+	{% include image.html url="/assets/img/react-m/IncidentDetails.png" heigh="500"  description="Incident Details" %}
 	
 	You will see a list of tasks to complete in this incident. If you are ready to start this incident, click start
 
 2. Once you click start, you are navigated back to the incident list screen. Wait for the incident to load.
-	{% include image.html url="/assets/img/react-m/LoadingIncident.png"  description="Incident Loading" %}
+
+
+	{% include image.html url="/assets/img/react-m/LoadingIncident.png" heigh="500"  description="Incident Loading" %}
 
 3. Once the task is loaded, you will see the task state to be “In Progress”:
-	{% include image.html url="/assets/img/react-m/IncidentInProgress.png"  description="Incident in Progress" %}
+
+
+	{% include image.html url="/assets/img/react-m/IncidentInProgress.png" heigh="500"  description="Incident in Progress" %}
 
 4. Finally, when you perform all the tasks mentioned in the incident and are finished with the incident, click on the incident and click the complete button:
-	{% include image.html url="/assets/img/react-m/IncidentComplete.png"  description="Incident Complete" %}
+	{% include image.html url="/assets/img/react-m/IncidentComplete.png" heigh="500"  description="Incident Complete" %}
 
 5. You are navigated to a question section. Answer all the questions that follow. (Note. These questions are configured by the supervisor.)
-	{% include image.html url="/assets/img/react-m/QuestionScreen.png"  description="Incident in Progress" %}
+
+
+	{% include image.html url="/assets/img/react-m/QuestionScreen.png" heigh="500"  description="Incident in Progress" %}
+
+
 	Once you answer all the questions, you are navigated back to the Incidents section where you will find the rest of the incidents (either assigned to the roster or assigned to you).
 
 ## Log Out
 Once you are done with incidents assigned to the roster or to you, go to the about section first and select “No Roster” so you won’t receive notifications or incidents later. This also allows your supervisor to know that you are no longer occupying the Roster. Then log out of the app and close it.
 
 1. Go to the about section and click the “Change Roster” button.
-	{% include image.html url="/assets/img/react-m/ChangeRoster.png"  description="Change Roster" %}
+
+
+	{% include image.html url="/assets/img/react-m/ChangeRoster.png" heigh="500"  description="Change Roster" %}
 
 2. Then, Select the “No Roster” option at the very top of the scroll list.
-	{% include image.html url="/assets/img/react-m/NoRoster.png"  description="No Roster" %}
+
+
+	{% include image.html url="/assets/img/react-m/NoRoster.png" heigh="500"  description="No Roster" %}
 
 3. Then, go back to the Incidents section and log out by clicking the log out button at the top of the Incidents Section:
-	{% include image.html url="/assets/img/react-m/LogOut.png"  description="Log Out" %}
+
+
+	{% include image.html url="/assets/img/react-m/LogOut.png" heigh="500"  description="Log Out" %}
 
 4. You will get a log out confirmation dialogue box. Select logout to log out of the app.
-	{% include image.html url="/assets/img/react-m/LogOutConfirmation.png"  description="Log out confirmation" %}
+
+
+	{% include image.html url="/assets/img/react-m/LogOutConfirmation.png" heigh="500"  description="Log out confirmation" %}
 
 ## Appendix
 #### a) Change Language
 
+
 To Change the Language of the app, go to the About Section and click the drop-down menu for select language:
-	{% include image.html url="/assets/img/react-m/ChangeLanguage.png"  description="Change Language" %}
+
+
+	{% include image.html url="/assets/img/react-m/ChangeLanguage.png" heigh="500"  description="Change Language" %}
 
 Then, select one of the supported languages that you want. Currently, React-M supports English, German and French.
-	{% include image.html url="/assets/img/react-m/LanguageList.png"  description="Language List" %}
+
+	{% include image.html url="/assets/img/react-m/LanguageList.png" heigh="500"  description="Language List" %}
 
 ### b) Account Setup
 
 1. When your supervisor registers your email-id to the organisation, you will get a welcome email from microshare.
 2. Find and open the “Welcome to Microshare” email.
 3. Click on the “Microshare User Account Activation” Link
-	{% include image.html url="/assets/img/react-m/WelcomeEmail.png"  description="Welcome Email" %}
+
+
+	{% include image.html url="/assets/img/react-m/WelcomeEmail.png" heigh="500"  description="Welcome Email" %}
+
+
 	If the link has expired, Check with your supervisor
 4. Enter your user details and choose a secure password. Then click “Finalize Account”
-	{% include image.html url="/assets/img/react-m/UserDetails.jpg"  description="User Details" %}
+
+
+	{% include image.html url="/assets/img/react-m/UserDetails.jpg" heigh="500"  description="User Details" %}
+
+
 	Your account has been setup and now you are ready to start using React-M
 
 
