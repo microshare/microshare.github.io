@@ -134,10 +134,14 @@
       keywords : ["wearable","wristband"]
   - title: Devices
     pages:
-    - title: Skiply Clock E Manual Reset
-      keywords : ["battery","feedback","skiply"]      
+    - title: Skiply Clock E Installation
+      keywords : ["install","feedback","skiply"]
     - title: Skiply Clock E Battery Replacement
       keywords : ["battery","feedback","skiply"]
+    - title: Skiply Clock E Date Time
+      keywords : ["date time","feedback","skiply"]      
+    - title: Skiply Clock E Manual Reset
+      keywords : ["reset","feedback","skiply"]      
     - title: TABS Motion Installation
       keywords : ["install","motion","tabs"]
     - title: TABS Motion Battery Replacement
@@ -150,7 +154,10 @@
       keywords : ["battery","open close","tabs"]
     - title: TABS Open Close Manual Reset
       keywords : ["reset","open close","tabs"]  
-
+    - title: iFemtocell Gateway Installation
+      keywords : ["installation","gateway","iFemtocell"]       
+    - title: iFemtocell Gateway Verfication
+      keywords : ["verification","gateway","iFemtocell"] 
 - title: Technical
   desc : A more in-depth look at Microshare technology
   color : text-microshare-dark

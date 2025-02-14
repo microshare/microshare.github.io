@@ -7,13 +7,13 @@ toc: true
 ---------------------------------------    
 ### How to Replace the Battery on a Skiply Clock E Feedback Device    
   
-1. Unscrew the four finger-tight chrome screw caps    
+1. Unscrew the four finger-tight chrome screw caps.    
    {% include image.html url="/assets/img/change-battery-skiply-clock-e/image1.jpeg" width=400 description="Banner" %}  
   
-2. Use a Philips head screwdriver to remove the four screws found underneath    
+2. Use a Philips head screwdriver to remove the four screws found underneath.    
    - Be careful not to lose the four brass spacers.  
   
-3. Remove the front face plate    
+3. Remove the front face plate.    
    - Turn the device over and gently tap the back.    
    {% include image.html url="/assets/img/change-battery-skiply-clock-e/image2.jpeg" width=400 description="Banner" %}  
   
@@ -47,3 +47,10 @@ In order for the Feedback Device to join the network after a battery replacement
 - Press any button on the faceplate.    
   This will send data from the device and initiate a join to the network.  
 - Any subsequent button press will be seen as data.  
+
+### Checking Buttons 
+To ensure all buttons are working correctly: 
+- Press each button in sequence, wait 12-15 seconds between each button press.  
+- Wait 12-15 seconds then perform a Badge-In. You can find a link to the process here: [Badge-In Video](https://microsharerootoutlook.sharepoint.com/:v:/s/Delivery/EYxjuFf4gZVLjc7okARqipkBrk6zKUqDFjvPCMMc4mgTew?e=Wg1fnW&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+- You can use Dashboard to check the data. 
+- Check email notifications have been received for Service Request button presses. 
