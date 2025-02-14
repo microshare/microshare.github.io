@@ -132,16 +132,28 @@
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
       keywords : ["wearable","wristband"]
-  - title: Hardware Maintenance
+  - title: Skiply Clock-E Feedback Device
     pages:
-    - title: How to Install a TABS Traffic Sensor
-      keywords : ["install","traffic","tabs"]
-    - title: How to Change the Battery on a TABS Traffic Sensor
-      keywords : ["battery","tabs"]
     - title: How To Perform a Manual Reset of the Skiply Clock E Feedback Device
       keywords : ["battery","feedback","skiply"]      
     - title: How to Change the Battery on a Skiply Clock E Feedback Device
       keywords : ["battery","feedback","skiply"]
+  - title: TABS Motion Sensor
+    pages:  
+    - title: Installation - How to Install a TABS Motion Sensor
+      keywords : ["install","motion","tabs"]
+    - title: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor
+      keywords : ["battery","motion","tabs"]
+    - title: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor
+      keywords : ["reset","motion","tabs"]
+  - title: TABS Open Close Sensor
+    pages:  
+    - title: Installation - How to Install a TABS Open Close Sensor
+      keywords : ["install","open close","tabs"]
+    - title: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor
+      keywords : ["battery","open close","tabs"]
+    - title: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor
+      keywords : ["reset","open close","tabs"]  
 
 - title: Technical
   desc : A more in-depth look at Microshare technology
