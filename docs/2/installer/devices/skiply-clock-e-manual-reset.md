@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: How To Perform a Manual Reset of the Skiply Clock E Feedback Device
-description: How To Perform a Manual Reset of the Skiply Clock E Feedback Device
+title: Skiply Clock-E Manual Reset
+description: Skiply Clock-E Manual Reset
 toc: true
 ---
 

@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor    
-description: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor    
+title: TABS Open Close Battery Replacement    
+description: TABS Open Close Battery Replacement    
 toc: true    
 ---    
 ---------------------------------------    
-### Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor     
+### How to Replace the Battery on a TABS Open/Close Sensor    
   
 1. Remove battery cover using a tool such as a trim remover, flathead screwdriver or similar.
   

@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor   
-description: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor    
+title: TABS Open Close Manual Reset   
+description: TABS Open Close Manual Reset    
 toc: true    
 ---    
 ---------------------------------------    
-### Manual Reset - How to Perform a manual reset of a TABS Motion Sensor and Open Close Sensor  
+### How to Perform a Manual Reset of a TABS Open/Close Sensor  
 
 1.  Insure that the device is located within the gateway\'s range.
 

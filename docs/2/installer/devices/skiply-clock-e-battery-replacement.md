@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: How to Change the Battery on a Skiply Clock E Feedback Device    
-description: How to Change a Battery on a Skiply Clock E Feedback Device    
+title: Skiply Clock E Battery Replacement    
+description: Skiply Clock E Battery Replacement    
 toc: true    
 ---    
 ---------------------------------------    
-### How to Change a Battery on a Skiply Clock E Feedback Device    
+### How to Replace the Battery on a Skiply Clock E Feedback Device    
   
 1. Unscrew the four finger-tight chrome screw caps    
    {% include image.html url="/assets/img/change-battery-skiply-clock-e/image1.jpeg" width=400 description="Banner" %}  

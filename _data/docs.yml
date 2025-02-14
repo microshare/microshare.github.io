@@ -132,27 +132,23 @@
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
       keywords : ["wearable","wristband"]
-  - title: Skiply Clock-E Feedback Device
+  - title: Devices
     pages:
-    - title: How To Perform a Manual Reset of the Skiply Clock E Feedback Device
+    - title: Skiply Clock E Manual Reset
       keywords : ["battery","feedback","skiply"]      
-    - title: How to Change the Battery on a Skiply Clock E Feedback Device
+    - title: Skiply Clock E Battery Replacement
       keywords : ["battery","feedback","skiply"]
-  - title: TABS Motion Sensor
-    pages:  
-    - title: Installation - How to Install a TABS Motion Sensor
+    - title: TABS Motion Installation
       keywords : ["install","motion","tabs"]
-    - title: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor
+    - title: TABS Motion Battery Replacement
       keywords : ["battery","motion","tabs"]
-    - title: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor
+    - title: TABS Motion Manual Reset
       keywords : ["reset","motion","tabs"]
-  - title: TABS Open Close Sensor
-    pages:  
-    - title: Installation - How to Install a TABS Open Close Sensor
+    - title: TABS Open Close Installation
       keywords : ["install","open close","tabs"]
-    - title: Battery Replacement - How to Change the Battery on a TABS Motion and Open Close Sensor
+    - title: TABS Open Close Battery Replacement
       keywords : ["battery","open close","tabs"]
-    - title: Manual Reset - How to Perform a manual reset of a TABS Motion and Open Close Sensor
+    - title: TABS Open Close Manual Reset
       keywords : ["reset","open close","tabs"]  
 
 - title: Technical

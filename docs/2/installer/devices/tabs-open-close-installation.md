@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: Installation - How to Install a TABS Open Close Sensor    
-description: Installation - How to Install a TABS Open Close Sensor    
+title: TABS Open Close Installation    
+description: TABS Open Close Installation    
 toc: true    
 ---    
 ---------------------------------------    
-### Installation - How to Install a TABS Open Close Sensor 
+### How to Install a TABS Open/Close Sensor 
 
 1.  Activate the sensor by pulling the isolating battery tab from the
     sensor.

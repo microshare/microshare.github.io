@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: Installation - How to Install a TABS Motion Sensor    
-description: Installation - How to Install a TABS Motion Sensor    
+title: TABS Motion Installation    
+description: TABS Motion Installation    
 toc: true    
 ---    
 ---------------------------------------    
-### Installation - How to Install a TABS Motion Sensor    
+### How to Install a TABS Motion Sensor    
      
 1.  Activate the sensor by pulling the isolating battery tab from the sensor.
 
