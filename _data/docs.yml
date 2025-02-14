@@ -132,17 +132,32 @@
       keywords : ["tabs","motion","brackets"]
     - title: Universal Contact Tracing Installation Guide
       keywords : ["wearable","wristband"]
-  - title: Hardware Maintenance
+  - title: Devices
     pages:
-    - title: How to Install a TABS Traffic Sensor
-      keywords : ["install","traffic","tabs"]
-    - title: How to Change the Battery on a TABS Traffic Sensor
-      keywords : ["battery","tabs"]
-    - title: How To Perform a Manual Reset of the Skiply Clock E Feedback Device
-      keywords : ["battery","feedback","skiply"]      
-    - title: How to Change the Battery on a Skiply Clock E Feedback Device
+    - title: Skiply Clock E Installation
+      keywords : ["install","feedback","skiply"]
+    - title: Skiply Clock E Battery Replacement
       keywords : ["battery","feedback","skiply"]
-
+    - title: Skiply Clock E Date Time
+      keywords : ["date time","feedback","skiply"]      
+    - title: Skiply Clock E Manual Reset
+      keywords : ["reset","feedback","skiply"]      
+    - title: TABS Motion Installation
+      keywords : ["install","motion","tabs"]
+    - title: TABS Motion Battery Replacement
+      keywords : ["battery","motion","tabs"]
+    - title: TABS Motion Manual Reset
+      keywords : ["reset","motion","tabs"]
+    - title: TABS Open Close Installation
+      keywords : ["install","open close","tabs"]
+    - title: TABS Open Close Battery Replacement
+      keywords : ["battery","open close","tabs"]
+    - title: TABS Open Close Manual Reset
+      keywords : ["reset","open close","tabs"]  
+    - title: iFemtocell Gateway Installation
+      keywords : ["installation","gateway","iFemtocell"]       
+    - title: iFemtocell Gateway Verfication
+      keywords : ["verification","gateway","iFemtocell"] 
 - title: Technical
   desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
