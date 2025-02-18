@@ -138,10 +138,10 @@
       keywords : ["install","feedback","skiply"]
     - title: Skiply Clock E Battery Replacement
       keywords : ["battery","feedback","skiply"]
-    - title: Skiply Clock E Date Time
-      keywords : ["date time","feedback","skiply"]      
     - title: Skiply Clock E Manual Reset
-      keywords : ["reset","feedback","skiply"]      
+      keywords : ["reset","feedback","skiply"] 
+    - title: Skiply Clock E Date Time
+      keywords : ["date time","feedback","skiply"]     
     - title: TABS Motion Installation
       keywords : ["install","motion","tabs"]
     - title: TABS Motion Battery Replacement

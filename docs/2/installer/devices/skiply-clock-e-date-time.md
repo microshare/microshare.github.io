@@ -7,46 +7,35 @@ toc: true
 ---------------------------------------    
 ### How to Change Time & Date on a Skiply Feedback Device 
 
-1.  Unscrew the four finger-tight chrome screw caps
+1.  Unscrew the four finger-tight chrome screw caps.
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image1.jpeg" width=400 description="Banner" %} 
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image1.jpeg" width=400 description="Banner" %}
 
-2.  Use a Philips head screwdriver to remove the four screws found
-    underneath
+2.  Use a Philips head screwdriver to remove the four screws found underneath. **Note:** Be careful not to lose the four brass spacers.
 
--   be careful not to lose the four brass spacers
-
-3.  Remove the front face plate
-
--   turn the device over and gently tap the back
+3.  Remove the front face plate and turn the device over and gently tap the back.
 
    {% include image.html url="/assets/img/date-time-skiply-clock-e/image2.jpeg" width=400 description="Banner" %} 
 
-4.  Remove the four screws on the back of the display board with a
-    Philips head screwdriver
+4.  Remove the four screws on the back of the display board with a Philips head screwdriver.
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image3.jpeg" width=400 description="Banner" %} 
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image3.png" width=400 description="Banner" %} 
 
-5.  Carefully turn over the board so that the display faces upwards
+5.  Carefully turn over the board so that the display faces upwards. **Note:** the display may be blank if a battery change has been performed
 
--   the display may be blank if a battery change has been performed
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image4.png" width=400 description="Banner" %} 
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image4.jpeg" width=400 description="Banner" %} 
+6.  Identify the two control buttons BP1 and BP2 near the edge of the board to the right.
 
-6.  Identify the two control buttons BP1 and BP2 near the edge of the
-    board to the right
+    -   BP1 (red) enters/exits the settings menu and is used to scroll the cursor through the available menu options: *Language*, *Time adjust*, *Date*, *Time*.
 
--   BP1 (red) enters/exits the settings menu and is used to scroll the
-    cursor through the available menu options: *Language*, *Time
-    adjust*, *Date*, *Time*
-
--   BP2 (green) changes the value within the setting menu chosen
+    -   BP2 (green) changes the value within the setting menu chosen.
 
 7.  Press the BP1 button once
 
--   The display will flash and then the settings menu will be displayed
+    -   The display will flash and then the settings menu will be displayed
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image5.jpeg" width=400 description="Banner" %} 
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image5.png" width=400 description="Banner" %} 
 
 8.  Language. If the language displayed is not English:
 
@@ -87,7 +76,7 @@ Step. 7
 
     f.  The display will flash and then display: **"99 days ago at 00:00"**
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image6.jpeg" width=400 description="Banner" %} 
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image6.png" width=400 description="Banner" %} 
 
 12. Return the display board into its correct position, fix the board in
     place with the four screws
@@ -95,7 +84,7 @@ Step. 7
 13. Ensure the black rubber seal is correctly tightly within the groove
     of the backplate
 
-   {% include image.html url="/assets/img/date-time-skiply-clock-e/image7.jpeg" width=400 description="Banner" %} 
+   {% include image.html url="/assets/img/date-time-skiply-clock-e/image7.jpg" width=400 description="Banner" %} 
 
 14. Fit the faceplate onto the backplate, ensure the seal has not moved
 

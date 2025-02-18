@@ -7,13 +7,11 @@ toc: true
 ---------------------------------------    
 ### How to Install a TABS Open/Close Sensor 
 
-1.  Activate the sensor by pulling the isolating battery tab from the
-    sensor.
+1.  Activate the sensor by pulling the isolating battery tab from the sensor.
 
    {% include image.html url="/assets/img/install-tabs-open-close/image1.png" width=400 description="Banner" %}
 
-2.  Apply the adhesive tape to the side of the sensor that does
-    NOT have the QR code.
+2.  Apply the adhesive tape to the side of the sensor that does NOT have the QR code.
 
    {% include image.html url="/assets/img/install-tabs-open-close/image2.png" width=400 description="Banner" %}
 
@@ -28,8 +26,7 @@ toc: true
 
    {% include image.html url="/assets/img/install-tabs-open-close/image4.png" width=400 description="Banner" %}
 
-5.  If tags have been created in advance, Select the location where the
-    device will be installed.
+5.  If tags have been created in advance, Select the location where the device will be installed.
 
 6.  Click on the Camera icon.
 
@@ -43,20 +40,16 @@ toc: true
 
    {% include image.html url="/assets/img/install-tabs-open-close/image7.png" width=400 description="Banner" %}
 
-9.  Confirm the DevEUI on the sensor is now paired to the location in
-    Deploy-M.
+9.  Confirm the DevEUI on the sensor is now paired to the location in Deploy-M.
 
 10. Select Save at the bottom of the screen.
 
    {% include image.html url="/assets/img/install-tabs-open-close/image8.png" width=400 description="Banner" %}
 
-11. Peel off the cover on the adhesive and press the device to the wall
-    next to the opening you wish to monitor.
+11. Peel off the cover on the adhesive and press the device to the wall next to the opening you wish to monitor.
 
-12. Stick the magnet to the door or window close to the sensor, ensuring
-    these align.
+12. Stick the magnet to the door or window close to the sensor, ensuring these align.
 
    {% include image.html url="/assets/img/install-tabs-open-close/image9.png" width=400 description="Banner" %}
 
-13. Press the sensor to the doorway for 30 seconds to allow the adhesive
-    to fully bond.
+13. Press the sensor to the doorway for 30 seconds to allow the adhesive to fully bond.
