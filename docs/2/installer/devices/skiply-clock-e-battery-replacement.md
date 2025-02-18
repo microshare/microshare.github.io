@@ -44,8 +44,7 @@ toc: true
   
 ### Joining the Network  
 In order for the Feedback Device to join the network after a battery replacement:  
-- Press any button on the faceplate.    
-  This will send data from the device and initiate a join to the network.  
+- Press any button on the faceplate. This will send data from the device and initiate a join to the network.  
 - Any subsequent button press will be seen as data.  
 
 ### Checking Buttons 
