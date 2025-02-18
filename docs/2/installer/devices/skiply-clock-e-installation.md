@@ -18,8 +18,7 @@ toc: true
 
     -   Device should be 48 inches high from the ground.
 
-    -   Press against wall for 30 seconds to allow the adhesive to bond.
-        to the wall
+    -   Press against wall for 30 seconds to allow the adhesive to bond to the wall.
 
 5.  Perform a Badge-In.
 

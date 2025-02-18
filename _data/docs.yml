@@ -157,7 +157,7 @@
     - title: iFemtocell Gateway Installation
       keywords : ["installation","gateway","iFemtocell"]       
     - title: iFemtocell Gateway Verfication
-      keywords : ["verification","gateway","iFemtocell"] 
+      keywords : ["verification","gateway","iFemtocell"]  
 - title: Technical
   desc : A more in-depth look at Microshare technology
   color : text-microshare-dark
