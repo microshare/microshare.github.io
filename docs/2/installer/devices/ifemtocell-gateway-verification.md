@@ -1,11 +1,11 @@
 ---    
 layout: docs    
-title: iFemtocell Gateway Verfication    
-description: iFemtocell Gateway Verfication    
+title: iFemtocell Gateway Verification    
+description: iFemtocell Gateway Verification    
 toc: true    
 ---    
 ---------------------------------------    
-### iFemtocell Gateway Hardware Verfication
+### iFemtocell Gateway Hardware Verification
 
 When checking if a gateway is online:
 
