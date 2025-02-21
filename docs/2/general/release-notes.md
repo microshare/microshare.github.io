@@ -8,6 +8,49 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for February 20, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform
+- Improved the displayed message for bad guest links.
+
+EverSmart
+- In-line help has been added to all of the column headers in multiple EverSmart Dashboards.
+- The Device Health "Issues" column is now “iconified” and display icons such as “wrench” for unconfigured devices that a user can click to see a dialog with more info on each issue.
+- The Device Health - Data Loss Column has been improved to help users better understand the information being provided and reduce the anxiety and concern users are experiencing when viewing the data.
+- The Device Health - Overview page - Basic View has had the number of columns shown to users reduced to mitigate any possible customer confusion and unnecessary concern.
+- EverSmart now displays "category" bands on graphs.
+- Various Touch Free Feedback Improvements including use of injected token window.accessToken, use of injected backboard ID, converting from using loc1, loc2,… to using an array, Output alert event AND meta event, update header to display the EverSmart header, upgraded Jquery to the latest and added support for SR01 vs SF01 - now both are supported. 
+
+**Bug Fixes**
+
+Platform
+- Support has been added for Touch Free Feedback to the App-Svc codebase.
+
+EverSmart
+- Improved the battery consumption level values being used for the Skiply Clock-E devices in EverSmart.
+- Improved the battery consumption level values being used for the Tabs Open/Close sensors in EverSmart.
+- Improved the battery consumption level values being used for the Skiply Smilio-S devices in EverSmart.
+
+**Additional Resources**
+
+Documentation
+- Add links to in product documentation files to doc site.
+- EverSmart Release Notes: Solution needed to have in-product Release Notes point to online Release Notes to have a single point of truth and maintenance. 
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for February 5, 2025
 
 **New Features**
