@@ -8,6 +8,44 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for March 13, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform
+- "CC Admin on Create User" email template improved to specify the user account that the email link will activate.
+- Outbound POST calls from a robot can now set 'Content-Type'. 
+
+Wizard
+- Added a leading space to the front of the name in the Eversmart Clean wizard to force the Suite App to prioritize the EverSmart Clean app. 
+
+**Bug Fixes**
+
+Platform
+- Fixed an issue with legacy v1 unpackers pods running branch v1-unpacker feeding from records created by ingest into obj_packed topic.
+
+EverSmart
+- Fixed Rodent Overview page to show current week's data properly when there are no alerts.
+- Fixed error with Settings > My Profile > Add Myself as User button.
+
+**Additional Resources**
+
+Documentation
+- n/a
+
+**Ops**
+
+- n/a
+
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for February 20, 2025
 
 **New Features**
