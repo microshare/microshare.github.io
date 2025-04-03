@@ -8,6 +8,48 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for April3, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform
+- Various general and Haglietner-specific Unpacker Improvements have been implemented.
+- Updated API share POST to allow name/desc setting in body.
+- Created a Lib Decoder for Kerlink Cockpit Gateway Status records.
+- Created a Network Server Decoder for Kerlink Cockpit Gateway Health format.
+- Updated bootstrap & jquery lib versions in composer & app-svc.
+
+Wizard
+- Update Wizard and Composer so "Network Provider" is set to "Actility ThingPark". 
+
+**Bug Fixes**
+
+Platform
+- Fix made to better handle Roster updates.
+- Fixed an issue with the Organization menu when on the Manage pages.
+- Fixed a problem with Manage > App > Facts not being saved on creation or update.
+- Fixed and issue with Manage > Rules not saving scopes.
+
+Deploy-M
+- Fixed an issue in Deploy-M where a user would find a specific device, then tap on the device and it would bring up a different device instead.
+
+**Additional Resources**
+
+Documentation
+- Various new and updated documents have been added to the public documentation area on the website for Tab Motion and Open/Shut Sensors, Skiply Clock-E devices and iFemtocell Gateway hardware.
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for March 13, 2025
 
 **New Features**
@@ -40,7 +82,6 @@ Documentation
 **Ops**
 
 - n/a
-
 
 
 ---------------------------------------
