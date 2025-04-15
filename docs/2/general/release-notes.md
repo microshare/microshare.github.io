@@ -8,7 +8,7 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
-## Release Notes for April3, 2025
+## Release Notes for April 3, 2025
 
 **New Features**
 
@@ -34,8 +34,13 @@ Platform
 - Fixed a problem with Manage > App > Facts not being saved on creation or update.
 - Fixed and issue with Manage > Rules not saving scopes.
 
-Deploy-M
+Deploy-M v2.4.165
 - Fixed an issue in Deploy-M where a user would find a specific device, then tap on the device and it would bring up a different device instead.
+- Scanning a QR Code on Hagleitner Sensors in Deploy-M now displays the correct DevEUI. 
+- Multiple bug fixes and enhancements including:
+  -  Fixed the faulty Remove Device button
+  -  Addressed the Configuration Warning error when Editing a tag
+  -  Added the ability to Switch to the Dev server by LONG Press on the Microshare Inc. copyright on the login page 
 
 **Additional Resources**
 
