@@ -8,6 +8,41 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for June 5, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform 
+- The Invite to the platform timeout has been extended to 1 week. 
+- We’ve moved the Incident system into a plugin-based system to improve performance. 
+- We’ve moved the Priority Management system into a plugin-based system to improve performance. 
+- We’ve moved the Notification Send portion of the Incident Workflow system into a plugin-based system to improve performance. 
+- Notification events are now sent upon the auto-resolve and on the staff-resolve of an Incident. 
+- Consolidated the notification formats for invites, password resets, and new account welcome emails. 
+- For EverSmart Clean, to better understand the level of activity in a washroom, we’ve added a Tag to allow users to state the number of stalls within a washroom. 
+
+**Bug Fixes**
+
+Platform 
+- Fixed a difficult to reproduce issue in Rodent with time out errors that caused an indication of a connectivity problem in IoT Monitor. 
+- Fixed an issue where adding new users via the Settings app did not preserve their roles.
+ 
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for May 15, 2025
 
 **New Features**
