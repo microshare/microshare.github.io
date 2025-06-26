@@ -8,6 +8,50 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for June 26, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform 
+- Pest Incident Templates for email, SMS and push notifications are now available in English, Norwegian Bokmål, French and Spanish language formats.
+- We’ve improved the tagging of incident tags based on their bundling level.
+- We’ve changed the origin alert tags to device/global in the incident.
+- More alert details are now provided in the incident notifications.
+- The isAdmin = admin logic now applies to the API via the Policy Fabric.
+- Added Smart management of thresholds and the capture of timing of threshold milestones, so the timing of when a threshold has been reached is visible in the incident share record.
+- Created a pipeline to generate gateway health records that can be consumed by EverSmart Device Health.
+
+Deploy-M / React-M 
+- ReactM and DeployM have been upgraded to Expo 53.
+- Added Tactacam scan and picture to Depoy-M.
+- Added a password reset feature to Deploy-M. 
+
+**Bug Fixes**
+
+Platform 
+- Addressed an issue with Smilio history not getting re-read when an agent was restarted.
+- Fixed an issue where several Device Cluster could unexpectedly appear to be shared with the user.
+- Network decode for MachineQ work-around empty string for numeric fields
+
+Deploy-M / React-M
+- Fixed a crash in the Deploy-M QR code scanner.
+ 
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for June 5, 2025
 
 **New Features**
