@@ -8,6 +8,71 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for August 5, 2025
+
+**New Features**
+
+Platform 
+- Created an agent to produce alerts for disconnected gateways. 
+- Added time zone annotation for GPS enabled data.
+
+EverSmart
+- An AI-powered “Explain” button is available for configuration for  EverSmart dashboards.
+
+**Feature Enhancements**
+
+Platform 
+- Geolocation is now passed along the streaming pipeline from packed to unpacked and in the proper format. 
+- Create a data frame ready for machine learning ingestion for Rodent false positives. 
+- API now allows regex .* in patterns for the persistance.collection configurations.  
+- "Breadcrumbs" for the originating records for a given record in the pipeline are now output in a standard way to an array - the "sources" field.  This was completed for agents, snapshots, and incidents. 
+- Remove the notification threshold and title (incident/notification) and notification body from incidents. 
+- Add a "test only" option to the View page so it doesn't need to save the view to test it. 
+
+EverSmart
+- The toolbar at the top of Routing (Kanban) and EverSmart is now “sticky”. 
+- The Origin Stats button within the ticket details page now shows aggregated origin data so that origin data is more easily readable by the user. 
+- Added a locale/language preference to Settings > Profile. 
+- Rodent now uses solution “Pest” throughout the architecture and documentation. 
+- Admins are now able to remove a user’s access from the org via the Settings app. 
+- Added the ability to view Gateway Health and connectivity in Device Health or Metrics as configured via the App Facts. 
+- Incidents is now the first folder in the Metrics Dashboard. 
+- Parent Tags for dashboards have been updated. 
+
+**Bug Fixes**
+
+Platform 
+- Addressed an issue where Search in Device Cluster by DevEUI was not working. 
+- Resolved an error when running a match/fetch query in Views.
+
+EverSmart
+- Various fixes and improvements including: 
+   - Fixed suggested tags missing in Routing - ticket title on Kanban board AND in Ticket Details and the EverSmart - table at top of the Trending view. 
+   - Routing > Filter by Location > Locations are no longer collapsed by default. 
+   - Resolved an issue with some “malformed” tickets in unexpected formats.  
+   - Fixed the Save filter in the Incident Manager. 
+- Admin role and "isAdmin" should now work the same to invite/edit/query users in the Settings > Users table. 
+- Various small fixes including: 
+   - Move "Maps" tab from Metrics to Device Health. 
+   - Removed Open Incident Status and Closed Incident Status in "incident". 
+   - Added help file for gateway health. 
+   - Generated inline help for gateway and incident fields. 
+   - Changed rules for currently logged-in user - does not update rules on “My Profile”. 
+- Settings app no longer shows empty "Notification Sensitivity" in Rule Editor when solution is set to "pest". 
+ 
+**Additional Resources**
+
+Web Documentation
+- Documentation for the Quick Start > Create an Account topic has been updated.
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for June 26, 2025
 
 **New Features**
