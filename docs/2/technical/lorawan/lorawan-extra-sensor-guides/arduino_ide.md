@@ -16,4 +16,4 @@ Download the Arduino Desktop IDE for your Linux, Mac OSX or Windows platform.  D
 
 Now that you have the Arduino Desktop IDE installed you can jump over to one of our device programming tutorials and learn how to program your devices.
 
-### [LoRaWAN Devices](/docs/2/technical/lorawan/lorawan-sensors)
+### [LoRaWAN Devices](/docs/2/technical/LoRaWAN/LoRaWAN-sensors)

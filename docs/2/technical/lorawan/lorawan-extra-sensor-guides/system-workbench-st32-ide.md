@@ -37,4 +37,4 @@ When the installation is over, you will be able to open the IDE under System Wor
 
 Now that you have the System Workbench IDE installed you can jump over to one of our device programming tutorials and learn how to program your devices.
 
-### [LoRaWAN Devices](/docs/2/technical/lorawan/lorawan-sensors)
+### [LoRaWAN Devices](/docs/2/technical/LoRaWAN/LoRaWAN-sensors)

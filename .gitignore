@@ -13,3 +13,5 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 _includes/.DS_Store
+.bundle/
+vendor/

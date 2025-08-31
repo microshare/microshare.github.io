@@ -92,7 +92,7 @@ So as you can understand the structure is as follows:
 **11.**	Provide your account token in the box underlined in blue. This can be done through the API, and a tutorial to do so [can be found here](/docs/2/technical/api/quick-start/).
 
 <br>
-**12.**	Click the dropdown underlined in purple for the LoRa frequency plan of your region. If you do not know your region’s frequency plan, you can use [this page](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) to help.
+**12.**	Click the dropdown underlined in purple for the LoRa frequency plan of your region. If you do not know your region’s frequency plan, you can use [this page](https://www.thethingsnetwork.org/docs/LoRaWAN/frequencies-by-country.html) to help.
 
 <br>
 **13.**	Select your LoRaWAN version underlined in orange.
