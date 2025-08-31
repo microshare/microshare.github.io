@@ -15,6 +15,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 
 baseurl: ""
 url: ""
