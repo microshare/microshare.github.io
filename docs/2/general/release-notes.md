@@ -8,6 +8,115 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for August 27, 2025
+
+**New Features**
+
+Platform
+- Added support for bundling gateway incidents and configuring notifications. 
+
+**Feature Enhancements**
+
+Platform 
+- Composer Device Clusters now show and map with marker realignment capability. 
+- We now capture geolocation using our standardized data format and provide it inside the incident data. This will help our different products to access the geolocation of these incidents. 
+- Added new Pest and workflow assets for Pest 2.1. 
+
+EverSmart Pest
+- Metrics: The Explain This modal dialog has been added and made more engaging, available upon custom config. 
+– Settings: In Settings users with pending invites now show as “(pending)”. 
+- Routing: improved handling of upper cases email addresses as assignee. 
+– Metrics, Settings: Improved display of bold fonts. 
+
+React-M
+- Revamped user experience for easier access to priority vs routine tasks. Released a new feature to mark all tasks complete in one go. Added new incidents details helpful for the users such as priority number from low to high priority.
+ 
+**Bug Fixes**
+
+Platform
+- Fixed an issue where the Gateway Agent only produced a disconnect alert for the FIRST unpacked record it processed for a device. 
+- Fixed the use of parameters in the Views page. 
+
+EverSmart Pest
+- Metrics: EverSmart Incident - Age in Minutes is no longer empty when an incident is closed and now displays calculations based on how long all relevant incidents were open. 
+
+**Additional Resources**
+
+Documentation
+- Updated screenshots in Settings Help file doc that showed "Rodent" instead of "Pest".
+- Updated Rodent ES > Alerts > Help > Eversmart Rodent Dashboard User Guide - that referenced "Rodent" in the document title, etc. instead of Pest.
+
+**Ops**
+
+- Fixed Robot Pod restart.
+
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for August 6, 2025
+
+**New Features**
+
+EverSmart Pest
+- Settings, Routing: Added the capability to add a data source to the Settings/Routing app through app facts.
+
+**Feature Enhancements**
+
+Platform 
+- Incident time-escalation is now optional via the bundler config under config.escalation.active true/false.
+- Added support for bundling gateway incidents and configuring notifications.
+- Added the geolocation of origin alerts in the incident data.
+
+EverSmart Pest
+- Metrics: Improved the fields displayed for EverSmart "Incidents": 
+   - Show incident priority (relative or absolute) in "all" of the incident dashboards. 
+   - Revised the ordering of the stages to make it clearer how things are meant to flow. 
+- Metrics: Added the following capabilities to the Tables in EverSmart: 
+   - Pagination for tables with more than 10 rows. 
+   - Ability to collapse/hide whole table. 
+   - Added a Search bar. 
+- Metrics: Changed the word "device" on the Overview for gateways to "gateway". 
+- Settings: Clarified help text in Settings > My Profile > Language > Edit.  
+- Metrics: EverSmart left navigation pane is now collapsible. 
+- Settings: Updated the Settings app styling for users / rules to make active ones more visually distinguishable.
+
+React-M
+- ReactM now provides split priority queues: 
+   - Incidents can be nominal, low, medium or high priority. 
+   - It allows split views for Critical and Routine tasks. 
+   - It allows configurable split levels eg. Critical >= medium.
+ 
+Deploy-M
+- Added a password reset feature to Deploy-M. 
+
+**Bug Fixes**
+
+EverSmart
+- Routing, Settings: The Routing/Settings sticky toolbar now behaves properly on small screens. 
+- Metrics: When there are distinct taglabel sets referenced in one app, we now ensure each one displays correctly.
+
+React-M
+-  The Complete logic flow now fully resolves the ticket. 
+
+Deploy-M 
+- Fixed a possible crash in the QR Code Scanner.
+
+Wizard/Composer
+-  The use of parameter in the View page has been fixed.
+ 
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for August 5, 2025
 
 **New Features**
