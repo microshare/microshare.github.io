@@ -49,7 +49,7 @@ To validate the installation of the devices for a Microshare solution, check tha
 <br>
 **1.** After setting up the gateways and sensors, create these entities on the LoraWan network used. 
 <br>
-**2.** Activate the data bridge between the LoRaWan network and the Microshare device cluster. 
+**2.** Activate the data bridge between the LoRaWAN network and the Microshare device cluster. 
 
 <br>
 Next, scan the devices with the Deploy-M IOS or Android app to register the devices on Microshare. Once you activate the device, it will start sending data. At this point in time, the device on Microshare will switch from this state:

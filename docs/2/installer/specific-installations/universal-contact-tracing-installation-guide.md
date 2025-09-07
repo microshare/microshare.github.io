@@ -49,7 +49,7 @@ We recommend that the hardware is installed/activated in the following order. Af
 <br>
 [Section 1 – Pre-installation data streaming test steps](./#section-1---pre-installation-data-streaming-test-steps)
 
-[Section 2 – Hardware setup steps and LoRaWAN Gateway install instructions](./#section-2--lorawan-gateway-install-instructions)
+[Section 2 – Hardware setup steps and LoRaWAN Gateway install instructions](./#section-2--LoRaWAN-gateway-install-instructions)
 
 [Section 3 – Set up the Wave](./#section-3---installing-the-kerlink-wave)
 
@@ -130,7 +130,7 @@ Inside the box you will find the Indoor Gateway, the device antenna and the powe
 | -Alternatively use the Power Over Ethernet (POE) adaptor as shown in the image | {% include image.html url="/assets/img/UCT_Install_Images/POE_Adaptor1.jpg" description="Banner" %}  |
 | **4.** **Wait 1-2 minutes** <br><br> -After 1-2 minutes, the two LEDs on the front will turn solid green, your LoRaWAN gateway is up and running and your sensors can be deployed in your building.** You&#39;re all done!**Please email [`installation@microshare.io`](mailto:installation@microshare.io) to indicate your gateway is up and running, so that we can confirm at our end. | {% include image.html url="/assets/img/UCT_Install_Images/POE_Adaptor2.jpg" description="Banner" %} |
 
-**If you are installing an outdoor gateway, see [https://docs.microshare.io/docs/2/installer/lorawan/gateway-installations/outdoor-istation/](https://docs.microshare.io/docs/2/installer/lorawan/gateway-installations/outdoor-istation/) for the Outdoor Gateway Installation Instructions**
+**If you are installing an outdoor gateway, see [https://docs.microshare.io/docs/2/installer/LoRaWAN/gateway-installations/outdoor-istation/](https://docs.microshare.io/docs/2/installer/LoRaWAN/gateway-installations/outdoor-istation/) for the Outdoor Gateway Installation Instructions**
 
 ## Section 3 - Installing the Kerlink Wave:
 

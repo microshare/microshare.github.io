@@ -11,7 +11,7 @@ toc: true
 ## 1. Introduction
 ---------------------------------------
 
-Gateways bridge your devices to the internet. Devices use low power LoRaWan networks to connect to the gateway, while the gateway uses high bandwidth networks like WiFi, ethernet or cellular to connect to the cloud.
+Gateways bridge your devices to the internet. Devices use low power LoRaWAN networks to connect to the gateway, while the gateway uses high bandwidth networks like WiFi, ethernet or cellular to connect to the cloud.
 
 
 ## 2. How to install it ?
