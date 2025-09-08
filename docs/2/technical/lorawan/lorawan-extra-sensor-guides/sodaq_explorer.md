@@ -2,7 +2,7 @@
 layout: docs
 title: SODAQ ExpLoRer
 description:
-group: lorawan-devices
+group: LoRaWAN-devices
 toc: true
 ---
 
@@ -95,7 +95,7 @@ The arduino platform maintains it's source code in `sketches` which are files wi
 - Download or Clone the [examples repo](https://github.com/microshare/hackiot_examples){:target="_blank"} so that you have the source code locally
 - Click `File` > `Open` browse to the location where you cloned the repo and open the `hackiot_examples/ttn_sodaq_hackiot_reading/ttn_sodaq_hackiot_reading.ino` file
 
-You should see the codebase that we'll be using for this tutorial in the IDE. In order to properly register & connect the device to TTN we will need some information from the SODAQ board such as the board's [DevEUI](https://www.thethingsnetwork.org/docs/lorawan/address-space.html){:target="_blank"}.  Now you'll compile & upload this example app to the SODAQ board via the ide.  This example code will not function at this point because we're missing keys for the TTN.  In the next steps we'll get the information from the device that's required for registration on the TTN.
+You should see the codebase that we'll be using for this tutorial in the IDE. In order to properly register & connect the device to TTN we will need some information from the SODAQ board such as the board's [DevEUI](https://www.thethingsnetwork.org/docs/LoRaWAN/address-space.html){:target="_blank"}.  Now you'll compile & upload this example app to the SODAQ board via the ide.  This example code will not function at this point because we're missing keys for the TTN.  In the next steps we'll get the information from the device that's required for registration on the TTN.
 
 - Click the `Sketch` > `Upload`
 

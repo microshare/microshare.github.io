@@ -15,6 +15,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 
 baseurl: ""
 url: ""
@@ -58,3 +59,15 @@ blog:             https://microshare.io/blog
 #      type: "posts"
 #    values:
 #      permalink: /blog/:year/:month/:day/:title/
+
+# Ensure admin directory is included in build
+include: ["admin", "_redirects"]
+
+# Prevent Jekyll from processing admin files as pages
+defaults:
+  - scope:
+      path: "admin"
+    values:
+      sitemap: false
+
+include: ["_redirects"]

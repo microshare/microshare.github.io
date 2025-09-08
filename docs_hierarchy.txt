@@ -1,0 +1,127 @@
+=== MICROSHARE DOCUMENTATION HIERARCHY ===
+
+📁 General
+  └── 📄 Welcome
+  └── 📄 Release notes
+  └── 📄 Meet Microshare
+      └── 📄 Why Microshare?
+      └── 📄 Technical Overview
+      └── 📄 Demo
+      └── 📄 Demo Live
+  └── 📄 Dashboards
+      └── 📄 Overview
+      └── 📄 Washroom Traffic
+      └── 📄 Washroom Feedback
+      └── 📄 Rodent Alert
+      └── 📄 Rodent Works
+      └── 📄 Device Health
+      └── 📄 Settings
+      └── 📄 Routing
+  └── 📄 Quick Start
+      └── 📄 Create an Account
+      └── 📄 Dashboard Access Instructions
+      └── 📄 Access my Apps
+      └── 📄 Glossary
+  └── 📄 FAQ
+      └── 📄 General
+      └── 📄 Universal Contact Tracing - Employee FAQ's
+      └── 📄 Microshare Data Security and Privacy FAQs
+📁 Admin
+  └── 📄 Admin Management
+      └── 📄 Overview
+      └── 📄 Identity Admin
+      └── 📄 MS Admin
+      └── 📄 User Management
+📁 Installer
+  └── 📄 Quick Start
+      └── 📄 Overview
+      └── 📄 Validation of a Successfull Installation
+      └── 📄 Kerlink WMC
+      └── 📄 FAQ About Installations
+  └── 📄 Deploy-M
+      └── 📄 Download the App
+      └── 📄 App Guide
+      └── 📄 Installation Tutorials
+  └── 📄 LoRaWAN
+      └── 📄 Gateway Installation
+      └── 📄 Device Declaration
+  └── 📄 Specific Installations
+      └── 📄 Solutions Battery Information
+      └── 📄 Activity Level Indicator Installation Guide
+      └── 📄 Adjusting the B7 wearable battery - UCT
+      └── 📄 Asset Zoning Installation Guide
+      └── 📄 Desk Occupancy Installation Guide
+      └── 📄 Environment Monitoring Installation Guide
+      └── 📄 Feedback Station Installation Guide
+      └── 📄 Fridge Monitoring Installation
+      └── 📄 Leak Detection Installation Guide
+      └── 📄 Open/Shut Indicator Installation
+      └── 📄 Room Occupancy Installation
+      └── 📄 Universal Contact Tracing Installation Guide
+  └── 📄 Devices
+      └── 📄 Skiply Clock E Installation
+      └── 📄 Skiply Clock E Battery Replacement
+      └── 📄 Skiply Clock E Manual Reset
+      └── 📄 Skiply Clock E Date Time
+      └── 📄 TABS Motion Installation
+      └── 📄 TABS Motion Battery Replacement
+      └── 📄 TABS Motion Manual Reset
+      └── 📄 TABS Open Close Installation
+      └── 📄 TABS Open Close Battery Replacement
+      └── 📄 TABS Open Close Manual Reset
+      └── 📄 iFemtocell Gateway Installation
+      └── 📄 iFemtocell Gateway Verification
+📁 Technical
+  └── 📄 Quick Start
+      └── 📄 Overview
+      └── 📄 Microshare Technical Structure
+      └── 📄 Data Integration
+      └── 📄 Basic Dev Roadmap
+      └── 📄 Advanced Dev Roadmap
+      └── 📄 Share secured data with GPG
+  └── 📄 Data Format
+      └── 📄 Overview
+      └── 📄 Microshare Standards
+      └── 📄 Event Formats
+      └── 📄 Motion Event
+      └── 📄 Feedback
+      └── 📄 Rodent Event
+      └── 📄 People Counter
+      └── 📄 Contact Tracing
+      └── 📄 Incident
+      └── 📄 Hourly Saver
+      └── 📄 Hourly Snapshot
+      └── 📄 Daily Snapshot
+  └── 📄 Microshare Platform
+      └── 📄 Quick Start
+      └── 📄 Dashboard Guide
+      └── 📄 Device Cluster Guide
+      └── 📄 Rules Guide
+      └── 📄 Views Guide
+  └── 📄 Microshare Platform Advanced
+      └── 📄 Data Ingestion
+      └── 📄 Data Unpacking
+      └── 📄 Data Unpacking by Robots
+      └── 📄 Identity Guide
+      └── 📄 Robots Guide
+      └── 📄 Robots Library
+      └── 📄 Incident
+  └── 📄 Streaming Integration
+      └── 📄 Overview
+      └── 📄 AWS Kinesis Data Stream Integration
+      └── 📄 AWS SQS Integration
+      └── 📄 Azure Event Hub Integration
+      └── 📄 Azure IoT Hub Integration
+      └── 📄 Google Pub/ Sub Integration
+  └── 📄 API
+      └── 📄 Quick Start
+      └── 📄 Demo API
+      └── 📄 Authentication
+      └── 📄 Share API
+      └── 📄 Admin API
+      └── 📄 API Collection
+  └── 📄 LoRaWAN®
+      └── 📄 Why LoRaWAN®?
+      └── 📄 LoRaWAN® Technology
+      └── 📄 LoRaWAN® Gateways
+      └── 📄 LoRaWAN® Devices

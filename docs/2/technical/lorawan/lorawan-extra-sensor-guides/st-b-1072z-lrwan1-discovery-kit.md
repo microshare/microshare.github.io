@@ -52,7 +52,7 @@ After the project compiles successfully you're ready to being programming the **
 
 ## Provision B-L072Z-LRWAN1 Discovery Kit on [Senet](http://www.senetco.com/){:target="_blank"}
 
-Before you begin programming the device to join the Senet LoRaWan network you must add your device to your Senet Developer account profile. 
+Before you begin programming the device to join the Senet LoRaWAN network you must add your device to your Senet Developer account profile. 
 
 ### Register for a Senet Developer Account
 
