@@ -46,3 +46,8 @@ gem "logger"
 
 # Additional Ruby 3.4+ compatibility gems
 gem "base64"
+
+# Complete Ruby 3.4+ compatibility bundle
+gem "bigdecimal"
+gem "mutex_m"
+gem "drb"
