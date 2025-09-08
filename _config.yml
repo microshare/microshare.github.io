@@ -69,3 +69,5 @@ defaults:
       path: "admin"
     values:
       sitemap: false
+
+include: ["_redirects"]
