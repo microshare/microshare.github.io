@@ -8,6 +8,40 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for September 18, 2025
+
+**New Features**
+
+React-M
+- A Reset Password feature has been added to the React-M login screen. 
+
+**Feature Enhancements**
+
+Platform 
+- Incident and notification events now include more timing details at the completion level and location data for better tracking and analysis. 
+- Device Clusters now include GPS info in the CSV extract.
+- The backend of the incident system will now transform any input email into lowercase to avoid uppercase characters causing issues in the downstream use of the incident system.
+
+Deploy-M
+- Upgraded DeployM to Android API Level 35.
+ 
+**Bug Fixes**
+
+React-M
+- Fixed the ReactM 400 Error when completing a task.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for August 27, 2025
 
 **New Features**
