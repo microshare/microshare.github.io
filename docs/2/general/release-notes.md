@@ -8,6 +8,72 @@ toc: true
 ---------------------------------------
 ---------------------------------------
 
+## Release Notes for October 29, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform 
+- The unpacked data and device health data now includes more device cluster meta data in the data.meta.dc field, including the device type, configured usecase, originating device cluster id and recType. 
+– Added “Kill trap” monitoring to recognize when a rodent does not leave a box. 
+- Incidents handle bundling in a better way to avoid cross solution bundling. 
+- The pictures taken by the Tacticam are now available in the Routing app, inside your incidents. 
+- The images from Tacticam cameras are now available in the Insights emails. .
+
+**Bug Fixes**
+
+Platform
+- Fixed an issue where UK SMS recipients received messages from our US number instead of our UK number. 
+- Patched an issue where the Smilio agent was not producing business events due to change to placement of backboard in shareRec .  .
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for October 8, 2025
+
+**New Features**
+
+Platform
+- Created an app to produce AI generated insights using customer data. 
+
+**Feature Enhancements**
+
+Platform 
+- The "insight" and "report" fields are now passed from the Bridger to the Notifier, enabling richer notification templates.
+- We now use a process "deep" variable to put a lock on the update of an Incident to avoid stuck Incidents. 
+- Added the capability to send "insight" notification (insight email) through the Notifier. 
+- Updated tests to handle Profiles with multiple push tokens.
+
+**Bug Fixes**
+
+React-M
+- Incidents are now updated based on any roster change. 
+- Enhanced flow for “Mark all tasks complete” and “Complete the incident” in the same flow. 
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
 ## Release Notes for September 18, 2025
 
 **New Features**
