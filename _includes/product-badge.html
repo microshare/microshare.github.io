@@ -1,0 +1,10 @@
+{% comment %}
+  Product Badge Include
+  Usage: {% include product-badge.html product="pest" %} or {% include product-badge.html product="clean" %}
+{% endcomment %}
+{% if include.product == "pest" %}
+  <span class="product-badge product-badge-pest">Pest</span>
+{% elsif include.product == "clean" %}
+  <span class="product-badge product-badge-clean">Clean</span>
+{% endif %}
+

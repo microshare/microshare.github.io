@@ -63,7 +63,7 @@
                 {% endif %}
 
                 <li class="{{active}}">
-                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ page.title }}</span> </a>
+                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ page.title }}</span>{% if page.product %}{% include product-badge.html product=page.product %}{% endif %} </a>
                 </li>
 
         {% endfor %}
@@ -93,7 +93,7 @@
                                     {% assign active = 'active' %}
                                 {% endif %}
 
-                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}">{{ subpage.title }}</a> </li>
+                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}">{{ subpage.title }}{% if subpage.product %}{% include product-badge.html product=subpage.product %}{% endif %}</a> </li>
                             {% endfor %}
 
                         </ul>
