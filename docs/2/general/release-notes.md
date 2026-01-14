@@ -13,36 +13,36 @@ pdf: /assets/pdf/release-notes.pdf
 **New Features**
 
 Platform
-- Composer Device Cluster now supports expanded DevEUI formatting such as is used for Tactacam devices. 
-- Updated Pest wizard app facts for the Metrics app to include Explain buttons by default. 
+- Composer Device Cluster now supports expanded DevEUI formatting such as is used for Tactacam devices. [pest]
+- Updated Pest wizard app facts for the Metrics app to include Explain buttons by default. [pest]
 - Pluggable LLM API Endpoint for unifying Smart Features. 
-- Photo and image upload capability for Mobile Apps. 
-– Added support for Amazon-specific Content-Types to RestfulAPIServices to support Tactacam authentication. 
-– Composer “Cards” view: Users are now able to filter by multiple values.
+- Photo and image upload capability for Mobile Apps. [clean]
+– Added support for Amazon-specific Content-Types to RestfulAPIServices to support Tactacam authentication. [pest]
+– Composer "Cards" view: Users are now able to filter by multiple values.
 
 EverSmart
-- Added support for merging gateway alert handling into "regular" routing / settings. 
-- The Metrics app can now be configured to visualize data from the following Hagleitner devices: sanitizer, soap, handtowel, toiletpaper. 
+- Added support for merging gateway alert handling into "regular" routing / settings. [clean]
+- The Metrics app can now be configured to visualize data from the following Hagleitner devices: sanitizer, soap, handtowel, toiletpaper. [clean] 
 
 **Feature Enhancements**
 
 Platform
-- Added a new pest bundler: io.microshare.event.alert.gateway. 
-- Updated the Pest gateway usecase from GATEWAY to SC05GW. 
-– Added a rectype and robot for the new bundler: io.microshare.event.alert.adhoc. 
-- Alert support for Tactacam Reveal series trail cameras. 
-- Unpacking support for Pescle Lite series cameras. 
+- Added a new pest bundler: io.microshare.event.alert.gateway. [pest]
+- Updated the Pest gateway usecase from GATEWAY to SC05GW. [pest]
+– Added a rectype and robot for the new bundler: io.microshare.event.alert.adhoc. [pest]
+- Alert support for Tactacam Reveal series trail cameras. [pest]
+- Unpacking support for Pescle Lite series cameras. [pest]
 - We now allow dynamic values for incidents from alert data. 
 - Trained machine learning models using aggregated event data. 
-- Unpacking support for Tactacam Reveal series trail cameras.
+- Unpacking support for Tactacam Reveal series trail cameras. [pest]
 
 EverSmart
-- Established the correct pattern for manual Tactacam setup:
+- Established the correct pattern for manual Tactacam setup: [pest]
     * Need to create a proper DC with both custom device type (Tactacam Reveal)/network server (Tactacam API)/usecase SC08.
     * Add bundler robot for recType io.microshare.event.alert.gateway.
 - Routing:
-    * Now always includes "Create Work" as button.
-    * Switched "map" to be a tab.
+    * Now always includes "Create Work" as button. [clean]
+    * Switched "map" to be a tab. [clean]
 - EverSmart: Now hides "Field" selector when there is only a single option. 
 - Events Overview page (previously known as Alerts Overview) no longer includes an extraneous "Device Maintenance" box or extraneous "Show All" / "Hide All" buttons in graphs on page. 
 - Alert rodent data is now visualized as event "counts" not "events" 
