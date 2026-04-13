@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microshare Bundling System Overview</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --primary-light: #e8effc;
+    --accent: #059669;
+    --accent-light: #d1fae5;
+    --warn: #d97706;
+    --warn-light: #fef3c7;
+    --danger: #dc2626;
+    --danger-light: #fee2e2;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--gray-50); color: var(--gray-900); line-height: 1.6; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  h1 { font-size: 2rem; font-weight: 700; margin-bottom: .25rem; }
+  .subtitle { color: var(--gray-500); font-size: 1.05rem; margin-bottom: 2.5rem; }
+
+  /* Slide / Section */
+  .slide { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem; margin-bottom: 2rem; }
+  .slide h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem; }
+  .slide h2 .badge { font-size: .7rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: .05em; }
+  .badge-blue { background: var(--primary-light); color: var(--primary); }
+  .badge-green { background: var(--accent-light); color: var(--accent); }
+  .badge-amber { background: var(--warn-light); color: var(--warn); }
+  .badge-purple { background: var(--purple-light); color: var(--purple); }
+
+  /* ========== FLOW DIAGRAM ========== */
+  .flow { display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding: 1rem 0; }
+  .flow-step { display: flex; flex-direction: column; align-items: center; min-width: 130px; text-align: center; position: relative; }
+  .flow-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: var(--shadow); flex-shrink: 0; }
+  .flow-label { margin-top: .5rem; font-weight: 600; font-size: .85rem; }
+  .flow-desc { font-size: .75rem; color: var(--gray-500); max-width: 140px; margin-top: .15rem; }
+  .flow-arrow { display: flex; align-items: center; padding-top: 10px; font-size: 1.4rem; color: var(--gray-300); flex-shrink: 0; }
+  .flow-arrow svg { width: 36px; height: 36px; }
+
+  /* ========== LAYER STACK ========== */
+  .layer-stack { display: flex; flex-direction: column; gap: 4px; }
+  .layer-group-label { font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; margin-top: .75rem; margin-bottom: .25rem; }
+  .layer-row { display: flex; align-items: center; border-radius: 6px; overflow: hidden; font-size: .82rem; }
+  .layer-num { width: 32px; text-align: center; font-weight: 700; color: #fff; padding: 6px 0; flex-shrink: 0; }
+  .layer-path { flex: 1; padding: 6px 12px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: .78rem; }
+  .lg-default .layer-num { background: var(--primary); }
+  .lg-default .layer-path { background: var(--primary-light); }
+  .lg-user .layer-num { background: var(--accent); }
+  .lg-user .layer-path { background: var(--accent-light); }
+  .lg-location .layer-num { background: var(--warn); }
+  .lg-location .layer-path { background: var(--warn-light); }
+
+  .merge-key { display: inline-flex; align-items: center; gap: .35rem; padding: 4px 10px; border-radius: 6px; font-size: .8rem; font-weight: 600; }
+  .merge-keys { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+
+  /* ========== DECISION TREE ========== */
+  .tree { --node-gap: 14px; }
+  .tree-node { position: relative; margin-left: 28px; padding: 8px 14px; border-radius: 8px; font-size: .85rem; margin-bottom: var(--node-gap); }
+  .tree-node::before { content: ''; position: absolute; left: -18px; top: 0; bottom: 0; width: 2px; background: var(--gray-200); }
+  .tree-node::after { content: ''; position: absolute; left: -18px; top: 50%; width: 14px; height: 2px; background: var(--gray-200); }
+  .tree-node:last-child::before { bottom: 50%; }
+  .tree-decision { background: var(--warn-light); border: 1px solid #fcd34d; font-weight: 600; }
+  .tree-action { background: var(--accent-light); border: 1px solid #6ee7b7; }
+  .tree-skip { background: var(--gray-100); border: 1px solid var(--gray-200); color: var(--gray-500); }
+  .tree-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; display: block; }
+  .tree-yes { color: var(--accent); }
+  .tree-no { color: var(--danger); }
+
+  /* ========== ROSTER GRID ========== */
+  .roster-viz { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 1rem; }
+  .roster-box { border-radius: var(--radius); padding: 1.25rem; }
+  .roster-event { background: var(--primary-light); border: 1px solid #bfdbfe; }
+  .roster-arrow-col { display: flex; flex-direction: column; align-items: center; gap: .25rem; }
+  .roster-arrow-col svg { color: var(--gray-300); }
+  .roster-result { background: var(--accent-light); border: 1px solid #6ee7b7; }
+  .roster-field { font-size: .78rem; margin-bottom: .25rem; }
+  .roster-field strong { font-weight: 600; }
+
+  .dim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .75rem; margin-top: 1rem; }
+  .dim-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: .75rem; }
+  .dim-card h4 { font-size: .82rem; font-weight: 700; margin-bottom: .25rem; }
+  .dim-card p { font-size: .78rem; color: var(--gray-500); }
+
+  /* ========== COMPONENTS TABLE ========== */
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+  .comp-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.25rem; background: #fff; }
+  .comp-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .35rem; }
+  .comp-card .tech { font-size: .75rem; color: var(--gray-500); margin-bottom: .5rem; }
+  .comp-card p { font-size: .82rem; color: var(--gray-700); }
+
+  /* ========== CONFIG TREE ========== */
+  .config-tree { font-family: 'SF Mono', 'Fira Code', monospace; font-size: .82rem; line-height: 1.8; background: var(--gray-50); border-radius: 8px; padding: 1.25rem; border: 1px solid var(--gray-200); overflow-x: auto; }
+  .ct-root { color: var(--gray-900); font-weight: 700; }
+  .ct-base { color: var(--primary); }
+  .ct-sol { color: var(--accent); }
+  .ct-alert { color: var(--warn); }
+  .ct-event { color: var(--purple); }
+  .ct-loc { color: var(--danger); }
+  .ct-dim { color: var(--gray-500); font-style: italic; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .75rem; }
+  .legend-item { display: flex; align-items: center; gap: .3rem; font-size: .78rem; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ========== TOOLTIP ========== */
+  .info-tip { display: inline-flex; align-items: center; gap: .3rem; background: var(--gray-100); color: var(--gray-700); border-radius: 6px; padding: 4px 10px; font-size: .78rem; margin-top: .75rem; }
+  .info-tip svg { width: 14px; height: 14px; color: var(--primary); flex-shrink: 0; }
+
+  @media (max-width: 768px) {
+    .flow { flex-wrap: wrap; justify-content: center; }
+    .roster-viz { grid-template-columns: 1fr; }
+    .roster-arrow-col { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:.5rem;">
+  <div>
+    <h1>Microshare Bundling System</h1>
+    <p class="subtitle">How IoT sensor events become actionable workflow tickets</p>
+  </div>
+  <a href="bundling-detail.html" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;white-space:nowrap;box-shadow:var(--shadow);transition:background .15s;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M9 4.5a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5H3.75a.75.75 0 010-1.5h4.5V5.25A.75.75 0 019 4.5z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-1.5a6.5 6.5 0 110-13 6.5 6.5 0 010 13z" clip-rule="evenodd"/></svg>
+    Detail View
+  </a>
+  <a href="bundling-system.md" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;white-space:nowrap;box-shadow:var(--shadow);transition:background .15s;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M9 4.5a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5H3.75a.75.75 0 010-1.5h4.5V5.25A.75.75 0 019 4.5z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-1.5a6.5 6.5 0 110-13 6.5 6.5 0 010 13z" clip-rule="evenodd"/></svg>
+    Technical Spec View
+  </a>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 1: HIGH-LEVEL FLOW -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>End-to-End Flow <span class="badge badge-blue">Overview</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">A sensor fires an event. The bundler resolves configuration, matches a crew roster, and creates or updates a ticket.</p>
+
+  <div class="flow">
+    <!-- 1 IoT Event -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:#dbeafe;color:var(--primary);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 18v-6m0 0V6m0 6h6m-6 0H6"/><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <span class="flow-label">IoT Event</span>
+      <span class="flow-desc">Sensor fires (e.g. soap 80% empty)</span>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg></div>
+
+    <!-- 2 Bundler -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:#fef3c7;color:var(--warn);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M3 9h18"/></svg>
+      </div>
+      <span class="flow-label">Bundler</span>
+      <span class="flow-desc">Client-side JS orchestrator</span>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg></div>
+
+    <!-- 3 Config API -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:var(--primary-light);color:var(--primary);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h8"/></svg>
+      </div>
+      <span class="flow-label">Config API</span>
+      <span class="flow-desc">PATCH /config endpoint</span>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg></div>
+
+    <!-- 4 ConfigProcessor -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:var(--accent-light);color:var(--accent);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+      </div>
+      <span class="flow-label">Config Processor</span>
+      <span class="flow-desc">12-layer merge + roster match</span>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg></div>
+
+    <!-- 5 Decision -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:var(--purple-light);color:var(--purple);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <span class="flow-label">Decision</span>
+      <span class="flow-desc">Create, update, or resolve?</span>
+    </div>
+    <div class="flow-arrow"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg></div>
+
+    <!-- 6 Workflow -->
+    <div class="flow-step">
+      <div class="flow-icon" style="background:var(--danger-light);color:var(--danger);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      </div>
+      <span class="flow-label">Workflow Engine</span>
+      <span class="flow-desc">Ticket created or updated</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2: SYSTEM COMPONENTS -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>System Components <span class="badge badge-green">Architecture</span></h2>
+
+  <div class="comp-grid">
+    <div class="comp-card" style="border-left: 4px solid var(--warn);">
+      <h3>Nashorn Bundler</h3>
+      <div class="tech">JavaScript (Nashorn engine) &middot; bundler.js</div>
+      <p>Client-side orchestrator on the stream server. Receives IoT events, fetches config, and decides the ticket action.</p>
+    </div>
+    <div class="comp-card" style="border-left: 4px solid var(--primary);">
+      <h3>ConfigResource</h3>
+      <div class="tech">Scala (Pekko HTTP) &middot; ConfigResource.scala</div>
+      <p>HTTP route exposing <code>PATCH /config/{recType}</code> for configuration evaluation requests.</p>
+    </div>
+    <div class="comp-card" style="border-left: 4px solid var(--accent);">
+      <h3>ConfigProcessor</h3>
+      <div class="tech">Scala &middot; ConfigProcessor.scala</div>
+      <p>Server-side engine that resolves the 12-layer hierarchical config and matches roster records.</p>
+    </div>
+    <div class="comp-card" style="border-left: 4px solid var(--danger);">
+      <h3>Workflow Engine</h3>
+      <div class="tech">Internal service &middot; Workflow API</div>
+      <p>Creates, updates, and resolves workflow tickets/incidents. Receives the assembled ticket payload.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3: CONFIGURATION HIERARCHY -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>Configuration Hierarchy <span class="badge badge-purple">Config</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">A single config record contains settings at four levels of specificity. More specific levels override general ones.</p>
+
+  <div class="config-tree">
+    <span class="ct-root">data</span><br>
+    &nbsp;&nbsp;<span class="ct-base">config/</span> <span class="ct-dim">&larr; Base defaults (all events)</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ticket: { threshold, priority, timing, escalation, tasks, &hellip; }<br>
+    &nbsp;&nbsp;<span class="ct-sol">solutions/</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-sol">{solution}/</span> <span class="ct-dim">&larr; e.g. "clean"</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-sol">config/</span> <span class="ct-dim">&larr; Solution-level overrides</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-alert">alerts/</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-alert">{alert}/</span> <span class="ct-dim">&larr; e.g. "soap", "trash"</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-alert">config/</span> <span class="ct-dim">&larr; Alert-level overrides</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-event">events/</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-event">{event}/</span> <span class="ct-dim">&larr; e.g. "fill_50", "active"</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ct-event">config/</span> <span class="ct-dim">&larr; Most specific override</span><br>
+    &nbsp;&nbsp;<span class="ct-loc">locations[]</span> <span class="ct-dim">&larr; Per-device / per-area overrides (matched by longest prefix)</span>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:var(--primary);"></span> Base</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--accent);"></span> Solution</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--warn);"></span> Alert</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--purple);"></span> Event</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--danger);"></span> Location</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4: 12-LAYER MERGE -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>The 12-Layer Deep Merge <span class="badge badge-amber">Core Logic</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">Three config sources &times; four specificity levels = 12 layers. Later layers override earlier ones. This is how a single sensor event gets its final, tailored configuration.</p>
+
+  <div class="layer-stack">
+    <div class="layer-group-label" style="color:var(--primary);">Default Record (global/shared)</div>
+    <div class="layer-row lg-default"><span class="layer-num">1</span><span class="layer-path">.config</span></div>
+    <div class="layer-row lg-default"><span class="layer-num">2</span><span class="layer-path">.solutions.{solution}.config</span></div>
+    <div class="layer-row lg-default"><span class="layer-num">3</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.config</span></div>
+    <div class="layer-row lg-default"><span class="layer-num">4</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.events.{event}.config</span></div>
+
+    <div class="layer-group-label" style="color:var(--accent);">User Record (tenant-specific)</div>
+    <div class="layer-row lg-user"><span class="layer-num">5</span><span class="layer-path">.config</span></div>
+    <div class="layer-row lg-user"><span class="layer-num">6</span><span class="layer-path">.solutions.{solution}.config</span></div>
+    <div class="layer-row lg-user"><span class="layer-num">7</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.config</span></div>
+    <div class="layer-row lg-user"><span class="layer-num">8</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.events.{event}.config</span></div>
+
+    <div class="layer-group-label" style="color:var(--warn);">Location Match (best-match device path)</div>
+    <div class="layer-row lg-location"><span class="layer-num">9</span><span class="layer-path">.config</span></div>
+    <div class="layer-row lg-location"><span class="layer-num">10</span><span class="layer-path">.solutions.{solution}.config</span></div>
+    <div class="layer-row lg-location"><span class="layer-num">11</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.config</span></div>
+    <div class="layer-row lg-location"><span class="layer-num">12</span><span class="layer-path">.solutions.{solution}.alerts.{alert}.events.{event}.config</span></div>
+  </div>
+
+  <div class="merge-keys">
+    <span class="merge-key" style="background:var(--primary-light);color:var(--primary);">Objects &rarr; merged recursively</span>
+    <span class="merge-key" style="background:var(--accent-light);color:var(--accent);">Arrays &rarr; concatenated</span>
+    <span class="merge-key" style="background:var(--warn-light);color:var(--warn);">Scalars &rarr; last layer wins</span>
+  </div>
+
+  <div class="info-tip">
+    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/></svg>
+    Location matching uses <strong>longest-prefix match</strong> on the device tag path (e.g. ["A","0","241","AS"]).
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5: ROSTER / ROUTE MATCHING -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>Roster (Route) Assignment <span class="badge badge-green">Routing</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">Rosters determine which work crew or tour receives a ticket. The server evaluates every active roster rule against the incoming event.</p>
+
+  <div class="roster-viz">
+    <div class="roster-box roster-event">
+      <div style="font-weight:700;margin-bottom:.5rem;">Incoming Event</div>
+      <div class="roster-field"><strong>Solution:</strong> clean</div>
+      <div class="roster-field"><strong>Alert:</strong> incident</div>
+      <div class="roster-field"><strong>Event:</strong> high_threshold</div>
+      <div class="roster-field"><strong>Location:</strong> PT &rarr; 0 &rarr; 442A &rarr; LS</div>
+    </div>
+    <div class="roster-arrow-col">
+      <svg width="40" height="40" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18h20m-6-6 6 6-6 6"/></svg>
+      <span style="font-size:.7rem;color:var(--gray-500);font-weight:600;">MATCH</span>
+    </div>
+    <div class="roster-box roster-result">
+      <div style="font-weight:700;margin-bottom:.5rem;">Matched Roster</div>
+      <div class="roster-field"><strong>Name:</strong> Tour 417</div>
+      <div class="roster-field"><strong>Covers:</strong> PT/0/442A, PT/0/444A</div>
+      <div class="roster-field"><strong>Events:</strong> medium_threshold, high_threshold</div>
+      <div class="roster-field"><strong>Result:</strong> roster ID + name &rarr; ticket</div>
+    </div>
+  </div>
+
+  <div class="dim-grid">
+    <div class="dim-card">
+      <h4>Solution</h4>
+      <p>Must match event solution. <code>"*"</code> = any.</p>
+    </div>
+    <div class="dim-card">
+      <h4>Alert</h4>
+      <p>String or array match. <code>"*"</code> = any.</p>
+    </div>
+    <div class="dim-card">
+      <h4>Events</h4>
+      <p>Array of event names. <code>"*"</code> = any.</p>
+    </div>
+    <div class="dim-card">
+      <h4>Location</h4>
+      <p>Nested tree walk with <code>"*"</code> wildcards at each level.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6: DECISION TREE -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>Bundler Decision Logic <span class="badge badge-purple">Decision Tree</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">After configuration is resolved, the bundler decides what to do with the event.</p>
+
+  <div class="tree" style="padding-left:.5rem;">
+    <div class="tree-node tree-decision">
+      <span class="tree-label">Check</span>
+      Is this event set to "avoid" or type "good"?
+    </div>
+    <div style="margin-left:28px;">
+      <div class="tree-node tree-skip">
+        <span class="tree-label tree-yes">Yes &rarr;</span> Skip event entirely
+      </div>
+      <div class="tree-node tree-decision">
+        <span class="tree-label tree-no">No &rarr;</span> Are solution, alert, AND event all present?
+      </div>
+      <div style="margin-left:28px;">
+        <div class="tree-node tree-skip">
+          <span class="tree-label tree-no">No &rarr;</span> Log error, return
+        </div>
+        <div class="tree-node tree-decision">
+          <span class="tree-label tree-yes">Yes &rarr;</span> Search for open tickets at this location
+        </div>
+        <div style="margin-left:28px;">
+          <!-- Open ticket exists -->
+          <div class="tree-node tree-decision" style="background:var(--primary-light);border-color:#93c5fd;">
+            <span class="tree-label" style="color:var(--primary);">Open ticket found</span>
+          </div>
+          <div style="margin-left:28px;">
+            <div class="tree-node tree-action">
+              <span class="tree-label tree-yes">autoResolve?</span> Send auto-resolve signal to workflow
+            </div>
+            <div class="tree-node tree-action">
+              <span class="tree-label tree-yes">staffResolve?</span> Send staff-resolve signal to workflow
+            </div>
+            <div class="tree-node tree-action">
+              <span class="tree-label" style="color:var(--primary);">Otherwise</span> Add this event as a source to the existing ticket
+            </div>
+          </div>
+
+          <!-- No open ticket -->
+          <div class="tree-node tree-decision" style="background:var(--danger-light);border-color:#fca5a5;">
+            <span class="tree-label" style="color:var(--danger);">No open ticket</span>
+          </div>
+          <div style="margin-left:28px;">
+            <div class="tree-node tree-skip">
+              <span class="tree-label tree-yes">Resolve-only event?</span> Nothing to resolve, skip
+            </div>
+            <div class="tree-node tree-action" style="background:#d1fae5;border-color:#34d399;font-weight:700;">
+              <span class="tree-label tree-no">Otherwise &rarr;</span> Create new ticket via Workflow API
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7: deviceTag AGGREGATION -->
+<!-- ============================================================ -->
+<div class="slide">
+  <h2>deviceTag: Aggregation Granularity <span class="badge badge-amber">Key Concept</span></h2>
+  <p style="font-size:.9rem;color:var(--gray-500);margin-bottom:1rem;">The <code>deviceTag</code> setting controls how broadly events are grouped into the same ticket.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:.75rem;">
+    <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:10px;padding:1.25rem;">
+      <div style="font-weight:700;margin-bottom:.5rem;color:var(--primary);">deviceTag = "none" (default)</div>
+      <div style="font-family:monospace;font-size:.82rem;margin-bottom:.5rem;">
+        Location: <strong>A / 0 / 241 / AS</strong><br>
+        Matches only: A / 0 / 241 / AS
+      </div>
+      <p style="font-size:.82rem;color:var(--gray-500);">Full precision. Each specific device gets its own ticket.</p>
+    </div>
+    <div style="background:var(--warn-light);border:1px solid #fcd34d;border-radius:10px;padding:1.25rem;">
+      <div style="font-weight:700;margin-bottom:.5rem;color:var(--warn);">deviceTag = "3"</div>
+      <div style="font-family:monospace;font-size:.82rem;margin-bottom:.5rem;">
+        Location: <strong>A / 0 / 241</strong> / <span style="color:var(--gray-300);text-decoration:line-through;">AS</span><br>
+        Matches: A / 0 / 241 / *
+      </div>
+      <p style="font-size:.82rem;color:var(--gray-500);">Truncated to 3 tags. Events from sub-locations merge into one ticket per area.</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

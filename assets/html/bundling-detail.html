@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microshare Bundling System — Visual Explainer</title>
+  <style>
+    :root {
+      --bg: #080e1a;
+      --s1: #0e1623;
+      --s2: #111d2e;
+      --s3: #1a2a40;
+      --s4: #223352;
+      --border: #1e3150;
+      --border2: #2a4468;
+      --text: #d8eaff;
+      --text2: #6b8db3;
+      --text3: #3a5578;
+      --blue: #4f9eff;
+      --blue-s: rgba(79,158,255,.12);
+      --green: #34d399;
+      --green-s: rgba(52,211,153,.12);
+      --amber: #fbbf24;
+      --amber-s: rgba(251,191,36,.12);
+      --red: #f87171;
+      --red-s: rgba(248,113,113,.12);
+      --purple: #a78bfa;
+      --purple-s: rgba(167,139,250,.12);
+      --teal: #2dd4bf;
+      --teal-s: rgba(45,212,191,.12);
+      --orange: #fb923c;
+      --orange-s: rgba(251,146,60,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    #app { height: 100vh; display: grid; grid-template-rows: 54px 1fr 52px; }
+
+    /* ── HEADER ──────────────────────────────────────────────── */
+    #hdr {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px;
+      background: var(--s1); border-bottom: 1px solid var(--border);
+      z-index: 20;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 14px; color: var(--blue); letter-spacing: .04em; }
+    .logo-icon { width: 26px; height: 26px; }
+    .mode-pill { display: flex; background: var(--s2); border: 1px solid var(--border); border-radius: 8px; padding: 3px; gap: 2px; }
+    .mbtn {
+      border: none; background: none; color: var(--text2);
+      padding: 5px 14px; border-radius: 6px; cursor: pointer;
+      font-size: 12px; font-weight: 600; transition: all .2s; white-space: nowrap;
+    }
+    .mbtn.on { background: var(--blue); color: #fff; }
+    #sctr { font-size: 12px; color: var(--text2); font-variant-numeric: tabular-nums; }
+
+    /* ── SLIDES ──────────────────────────────────────────────── */
+    #sw { position: relative; overflow: hidden; }
+    .slide {
+      position: absolute; inset: 0;
+      padding: 32px 52px;
+      display: flex; flex-direction: column;
+      transition: transform .38s cubic-bezier(.4,0,.2,1), opacity .38s ease;
+    }
+    .slide.hl  { transform: translateX(-100%); opacity: 0; pointer-events: none; }
+    .slide.hr  { transform: translateX(100%);  opacity: 0; pointer-events: none; }
+    .slide.vis { transform: translateX(0);     opacity: 1; }
+    .sh { margin-bottom: 20px; flex-shrink: 0; }
+    .ey { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .st { font-size: 30px; font-weight: 900; line-height: 1.1; }
+    .ss { font-size: 15px; color: var(--text2); margin-top: 6px; font-weight: 400; }
+    .sb { flex: 1; overflow: hidden; min-height: 0; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    #ftr {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px;
+      background: var(--s1); border-top: 1px solid var(--border);
+    }
+    .nbtn {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--s2); border: 1px solid var(--border);
+      color: var(--text); padding: 7px 18px; border-radius: 8px;
+      cursor: pointer; font-size: 13px; font-weight: 600; transition: all .2s;
+    }
+    .nbtn:hover { background: var(--s3); border-color: var(--blue); }
+    .nbtn:disabled { opacity: .3; pointer-events: none; }
+    .dots { display: flex; gap: 7px; align-items: center; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); cursor: pointer; transition: all .2s; }
+    .dot.on { background: var(--blue); transform: scale(1.35); }
+
+    /* ── SHARED COMPONENTS ───────────────────────────────────── */
+    .card {
+      background: var(--s2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    }
+    .pill.b  { background: var(--blue-s);   color: var(--blue); }
+    .pill.g  { background: var(--green-s);  color: var(--green); }
+    .pill.a  { background: var(--amber-s);  color: var(--amber); }
+    .pill.r  { background: var(--red-s);    color: var(--red); }
+    .pill.p  { background: var(--purple-s); color: var(--purple); }
+    .pill.t  { background: var(--teal-s);   color: var(--teal); }
+    code, .mono { font-family: 'JetBrains Mono','Fira Code','Cascadia Code',monospace; font-size: 12px; }
+    .cfg-sel, .cfg-inp {
+      background: var(--s3); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text); font-size: 13px; padding: 6px 10px; width: 100%;
+    }
+    .cfg-sel:focus, .cfg-inp:focus { outline: none; border-color: var(--blue); }
+    .flabel { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .09em; margin-bottom: 4px; display: block; }
+    .tgl {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; user-select: none;
+    }
+    .tgl-track {
+      position: relative; width: 42px; height: 22px;
+      background: var(--s4); border-radius: 11px; border: 1px solid var(--border2);
+      transition: background .2s, border-color .2s; flex-shrink: 0;
+    }
+    .tgl-track.on { background: var(--blue); border-color: var(--blue); }
+    .tgl-thumb {
+      position: absolute; top: 2px; left: 2px; width: 16px; height: 16px;
+      background: #fff; border-radius: 50%; transition: transform .2s;
+    }
+    .tgl-track.on .tgl-thumb { transform: translateX(20px); }
+
+    /* ── MODE VISIBILITY ─────────────────────────────────────── */
+    .ov  { display: block; }
+    .ovf { display: flex; }
+    .ovg { display: grid; }
+    .tc  { display: none; }
+    .tcf { display: none; }
+    .tcg { display: none; }
+    body.tech .ov  { display: none; }
+    body.tech .ovf { display: none; }
+    body.tech .ovg { display: none; }
+    body.tech .tc  { display: block; }
+    body.tech .tcf { display: flex; }
+    body.tech .tcg { display: grid; }
+
+    /* ── ANIMATIONS ──────────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .au  { animation: fadeUp .45s ease both; }
+    .d1  { animation-delay: .08s; }
+    .d2  { animation-delay: .16s; }
+    .d3  { animation-delay: .24s; }
+    .d4  { animation-delay: .32s; }
+    .d5  { animation-delay: .40s; }
+    .d6  { animation-delay: .48s; }
+
+    /* ── SLIDE 0 ─────────────────────────────────────────────── */
+    .hero-title {
+      font-size: clamp(38px, 5vw, 60px); font-weight: 900; line-height: 1.0;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 45%, var(--teal) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 14px;
+    }
+    .hero-sub { font-size: 18px; color: var(--text2); margin-bottom: 40px; font-weight: 300; }
+    .stats { display: flex; gap: 52px; justify-content: center; margin-bottom: 44px; }
+    .stat-n { font-size: 38px; font-weight: 900; color: var(--blue); line-height: 1; }
+    .stat-l { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: .1em; margin-top: 4px; }
+    .hint { font-size: 13px; color: var(--text2); max-width: 420px; line-height: 1.8; }
+    kbd { background: var(--s2); border: 1px solid var(--border2); padding: 2px 7px; border-radius: 5px; font-size: 11px; font-family: inherit; }
+
+    /* ── SLIDE 1 ─────────────────────────────────────────────── */
+    .pipe { display: flex; align-items: center; justify-content: center; gap: 0; padding: 16px 0; }
+    .pnode { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+    .picon {
+      width: 60px; height: 60px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; font-size: 26px;
+      border: 2px solid transparent; transition: all .35s;
+    }
+    .pnode-title { font-size: 11px; font-weight: 700; text-align: center; }
+    .pnode-desc  { font-size: 10px; color: var(--text3); text-align: center; max-width: 90px; }
+    .parr { display: flex; align-items: center; margin-top: -30px; flex-shrink: 0; }
+    .parr-line { width: 28px; height: 2px; background: var(--border2); transition: all .35s; }
+    .parr-head { width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid var(--border2); transition: all .35s; }
+
+    /* ── SLIDE 2 ─────────────────────────────────────────────── */
+    .hlevel {
+      display: flex; align-items: center; gap: 14px;
+      padding: 11px 18px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--s2);
+      cursor: pointer; transition: all .2s; margin-bottom: 7px;
+    }
+    .hlevel.sel { border-color: var(--blue); background: var(--blue-s); }
+
+    /* ── SLIDE 3 ─────────────────────────────────────────────── */
+    .mrow {
+      display: grid; grid-template-columns: 26px 1fr 48px 80px;
+      gap: 8px; align-items: center;
+      padding: 7px 10px; border-radius: 7px; margin-bottom: 2px;
+      border: 1px solid transparent; transition: all .2s;
+    }
+    .mrow:hover { background: var(--s2); }
+    .mrow.has { border-color: var(--blue); background: var(--blue-s); }
+    .mrow-num { font-size: 11px; font-weight: 800; text-align: center; }
+    .mrow-path { font-size: 11px; font-family: monospace; color: var(--text2); line-height: 1.4; }
+    .mbadge { font-size: 10px; padding: 2px 5px; border-radius: 4px; font-weight: 700; text-align: center; }
+    .mval-inp {
+      background: var(--s3); border: 1px solid var(--border);
+      border-radius: 5px; color: var(--text); font-size: 12px;
+      padding: 3px 7px; width: 100%; font-family: monospace;
+    }
+    .mval-inp:focus { outline: none; border-color: var(--blue); }
+
+    /* ── SLIDE 6: PLAYGROUND ─────────────────────────────────── */
+    .sim-btn {
+      width: 100%; background: var(--blue); border: none; border-radius: 8px;
+      color: #fff; font-size: 14px; font-weight: 800; padding: 10px;
+      cursor: pointer; transition: all .2s; margin-top: 10px; letter-spacing: .03em;
+    }
+    .sim-btn:hover { background: #3b8ee8; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(79,158,255,.4); }
+    .sim-btn:disabled { opacity: .5; pointer-events: none; }
+
+    /* scrollbars */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+    /* syntax color helpers */
+    .c-blue   { color: var(--blue);   }
+    .c-green  { color: var(--green);  }
+    .c-amber  { color: var(--amber);  }
+    .c-red    { color: var(--red);    }
+    .c-purple { color: var(--purple); }
+    .c-teal   { color: var(--teal);   }
+    .c-orange { color: var(--orange); }
+    .c-dim    { color: var(--text3);  }
+    .c-muted  { color: var(--text2);  }
+    .fw7      { font-weight: 700; }
+    .fw8      { font-weight: 800; }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <header id="hdr">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 26 26" fill="none">
+        <rect width="26" height="26" rx="6" fill="#4f9eff" opacity=".12"/>
+        <path d="M13 4 L22 13 L13 22 L4 13 Z" stroke="#4f9eff" stroke-width="1.8" fill="none"/>
+        <circle cx="13" cy="13" r="3" fill="#4f9eff"/>
+        <circle cx="13" cy="4"  r="1.5" fill="#4f9eff" opacity=".6"/>
+        <circle cx="22" cy="13" r="1.5" fill="#4f9eff" opacity=".6"/>
+        <circle cx="13" cy="22" r="1.5" fill="#4f9eff" opacity=".6"/>
+        <circle cx="4"  cy="13" r="1.5" fill="#4f9eff" opacity=".6"/>
+      </svg>
+      Microshare · Bundling System
+    </div>
+    <div class="mode-pill">
+      <button class="mbtn on" id="btn-ov" onclick="setMode('ov')">Overview</button>
+      <button class="mbtn"    id="btn-tc" onclick="setMode('tc')">Technical</button>
+    </div>
+    <div id="sctr">Slide <span id="sn">1</span> / <span id="st">8</span></div>
+  </header>
+
+  <!-- SLIDES WRAPPER -->
+  <main id="sw">
+
+    <!-- ═══ SLIDE 0: TITLE ══════════════════════════════════════ -->
+    <div class="slide vis" id="slide-0">
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:0;text-align:center">
+        <div class="hero-title au">Microshare<br>Bundling System</div>
+        <div class="hero-sub au d1">From IoT sensor event → work crew ticket</div>
+        <div class="stats au d2">
+          <div class="stat"><div class="stat-n">12</div><div class="stat-l">Config Layers</div></div>
+          <div class="stat"><div class="stat-n">248</div><div class="stat-l">Roster Records</div></div>
+          <div class="stat"><div class="stat-n">60+</div><div class="stat-l">Location Entries</div></div>
+          <div class="stat"><div class="stat-n">v2.2</div><div class="stat-l">Bundler Version</div></div>
+        </div>
+        <div class="hint au d3">
+          Choose <strong style="color:var(--text)">Overview</strong> for a guided walkthrough or
+          <strong style="color:var(--text)">Technical</strong> for implementation detail.
+          Use <kbd>←</kbd> <kbd>→</kbd> or the arrows below to navigate.
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 1: BIG PICTURE ════════════════════════════════ -->
+    <div class="slide hr" id="slide-1">
+      <div class="sh">
+        <div class="ey">The Big Picture</div>
+        <div class="st">What does the Bundling System do?</div>
+        <div class="ss ov">Turns IoT sensor readings into the right maintenance ticket for the right crew — automatically</div>
+        <div class="ss tc">Event-driven ticket lifecycle management via hierarchical config resolution and roster-based routing</div>
+      </div>
+      <div class="sb" style="display:flex;flex-direction:column;gap:16px;overflow:visible">
+        <div id="fp" class="pipe"></div>
+        <div style="text-align:center">
+          <button onclick="animFlow()" id="fp-btn" style="background:var(--s2);border:1px solid var(--border);color:var(--text);padding:7px 20px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">▶ Animate Flow</button>
+        </div>
+        <!-- Overview cards -->
+        <div class="ovg" style="grid-template-columns:repeat(3,1fr);gap:14px">
+          <div class="card au d1">
+            <div style="font-size:22px;margin-bottom:8px">📡</div>
+            <div class="fw7" style="margin-bottom:5px">Sensor Fires</div>
+            <div style="font-size:12px;color:var(--text2)">An IoT device (soap dispenser, trash sensor, motion detector) reaches a threshold and emits a data event.</div>
+          </div>
+          <div class="card au d2">
+            <div style="font-size:22px;margin-bottom:8px">⚙️</div>
+            <div class="fw7" style="margin-bottom:5px">Rules Applied</div>
+            <div style="font-size:12px;color:var(--text2)">The system fetches layered configuration — base defaults, solution rules, location overrides — and deep-merges them.</div>
+          </div>
+          <div class="card au d3">
+            <div style="font-size:22px;margin-bottom:8px">🎫</div>
+            <div class="fw7" style="margin-bottom:5px">Ticket Managed</div>
+            <div style="font-size:12px;color:var(--text2)">A work ticket is created, updated with new readings, or resolved. The right crew is automatically assigned.</div>
+          </div>
+        </div>
+        <!-- Technical component cards -->
+        <div class="tcg" style="grid-template-columns:repeat(4,1fr);gap:10px">
+          <div class="card" style="border-left:3px solid var(--blue)">
+            <div style="font-size:10px;font-weight:700;color:var(--blue);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em">Nashorn Bundler</div>
+            <div style="font-size:11px;color:var(--text2)">Client-side JS on stream server. Orchestrates the full flow. Entry point: <code>action(text, configObj)</code></div>
+          </div>
+          <div class="card" style="border-left:3px solid var(--purple)">
+            <div style="font-size:10px;font-weight:700;color:var(--purple);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em">Config Resource</div>
+            <div style="font-size:11px;color:var(--text2)">Scala/Pekko HTTP. Exposes <code>PATCH /config/{recType}</code> for config evaluation.</div>
+          </div>
+          <div class="card" style="border-left:3px solid var(--teal)">
+            <div style="font-size:10px;font-weight:700;color:var(--teal);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em">Config Processor</div>
+            <div style="font-size:11px;color:var(--text2)">Server-side Scala. Runs the 12-layer deep merge and matches roster records. <code>processConfig()</code></div>
+          </div>
+          <div class="card" style="border-left:3px solid var(--green)">
+            <div style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em">Workflow Engine</div>
+            <div style="font-size:11px;color:var(--text2)">Creates, updates, and resolves incident tickets. Receives roster assignments for crew notification.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 2: CONFIG HIERARCHY ═══════════════════════════ -->
+    <div class="slide hr" id="slide-2">
+      <div class="sh">
+        <div class="ey">Configuration</div>
+        <div class="st">A hierarchy of rules</div>
+        <div class="ss ov">More specific settings always win — like dress-code rules cascading from company policy down to individual preference</div>
+        <div class="ss tc">Three sources × four specificity levels = 12 merged layers. Click a level to explore its structure.</div>
+      </div>
+      <div class="sb" style="overflow:hidden">
+        <!-- Overview: funnel -->
+        <div class="ovf" style="gap:28px;height:100%;align-items:flex-start">
+          <div style="flex:1" id="hier-list"></div>
+          <div style="flex:1;height:100%" id="hier-detail">
+            <div class="card" style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:14px">
+              ← Click a level to see details
+            </div>
+          </div>
+        </div>
+        <!-- Technical: tree + merge rules -->
+        <div class="tcg" style="grid-template-columns:1fr 1fr;gap:20px;height:100%">
+          <div style="display:flex;flex-direction:column;gap:10px;overflow:hidden">
+            <div class="flabel">Config Tree Structure</div>
+            <pre id="cfg-tree" style="background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:11px;color:var(--text2);line-height:1.9;overflow:auto;flex:1"></pre>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;overflow-y:auto">
+            <div class="flabel">Deep Merge Semantics</div>
+            <div class="card" style="border-left:3px solid var(--teal)"><div class="fw7" style="margin-bottom:4px;font-size:13px">Objects <span class="c-teal">→ Recursive merge</span></div><div style="font-size:12px;color:var(--text2)">Keys from both sides preserved; nested objects recurse deeper into the tree</div></div>
+            <div class="card" style="border-left:3px solid var(--purple)"><div class="fw7" style="margin-bottom:4px;font-size:13px">Arrays <span class="c-purple">→ Concatenated</span></div><div style="font-size:12px;color:var(--text2)">Both sides appended — use this for task lists across config levels</div></div>
+            <div class="card" style="border-left:3px solid var(--green)"><div class="fw7" style="margin-bottom:4px;font-size:13px">Scalars <span class="c-green">→ Later wins</span></div><div style="font-size:12px;color:var(--text2)">More specific layer's value overrides the more general one</div></div>
+            <div class="card" style="border-left:3px solid var(--amber)"><div class="fw7" style="margin-bottom:4px;font-size:13px">Location matching <span class="c-amber">→ Longest prefix</span></div><div style="font-size:12px;color:var(--text2)">Best-matching device tag array wins. <code>["B","0","351","AS"]</code> beats <code>["B"]</code></div></div>
+            <div class="card" style="border-left:3px solid var(--red)"><div class="fw7" style="margin-bottom:4px;font-size:13px">Timing fields <span class="c-red">→ Always use PT format</span></div><div style="font-size:12px;color:var(--text2)">Use <code>PT168H</code> not <code>P1W</code> — wrong format silently breaks ticket display</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 3: 12-LAYER MERGE ═════════════════════════════ -->
+    <div class="slide hr" id="slide-3">
+      <div class="sh">
+        <div class="ey">Configuration Deep-Dive</div>
+        <div class="st ov">Settings cascade like a waterfall</div>
+        <div class="st tc">The 12-Layer Config Merge</div>
+        <div class="ss ov">Each level is more specific than the last. You only set what you want to override — everything else inherits from above.</div>
+        <div class="ss tc">Set a priority value at any layer and watch the final merged result update in real time</div>
+      </div>
+      <div class="sb" style="overflow:hidden">
+        <!-- Overview: cascade blocks -->
+        <div class="ovg" style="grid-template-columns:1fr 1fr;gap:24px;height:100%">
+          <div id="casc-vis" style="display:flex;flex-direction:column;gap:8px;overflow-y:auto"></div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="card" style="border-left:4px solid var(--green)">
+              <div class="fw8" style="margin-bottom:8px;font-size:15px">Key insight</div>
+              <div style="font-size:13px;color:var(--text2);line-height:1.9">
+                You only need to specify the fields you want to override. A location entry only
+                needs <code style="color:var(--blue)">priority: 20</code> — thresholds, timing,
+                and every other field cascade down automatically from the base or solution level.
+              </div>
+            </div>
+            <div class="card">
+              <div class="fw7" style="margin-bottom:10px;font-size:13px">Example: <code style="color:var(--blue)">fill_80</code> event on trash alert</div>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:12px">
+                <div style="display:flex;justify-content:space-between;padding:5px 8px;background:var(--teal-s);border-radius:6px">
+                  <span class="c-teal fw7">Default base</span><span style="color:var(--text2)">priority: 10, timing: PT2H/PT3H</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:5px 8px;background:var(--blue-s);border-radius:6px">
+                  <span class="c-blue fw7">User solution</span><span style="color:var(--text2)">threshold: {green:50, red:150}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:5px 8px;background:var(--purple-s);border-radius:6px">
+                  <span class="c-purple fw7">User event</span><span style="color:var(--text2)">priority: 10 ← overrides default</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:5px 8px;background:var(--green-s);border-radius:6px">
+                  <span class="c-green fw7">Location</span><span style="color:var(--text2)">notes: "MRR", tour: 302</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:7px 8px;background:var(--s3);border-radius:6px;margin-top:2px">
+                  <span class="fw8">Final result</span><span class="c-green fw7">priority: 10, tour: 302, timing: PT2H</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Technical: interactive merge table -->
+        <div class="tcg" style="grid-template-columns:3fr 2fr;gap:20px;height:100%">
+          <div style="display:flex;flex-direction:column;gap:10px;overflow:hidden">
+            <div style="display:flex;gap:10px;flex-shrink:0">
+              <div style="flex:1"><label class="flabel">Solution</label><select class="cfg-sel" id="ms"><option>clean</option><option>safety</option></select></div>
+              <div style="flex:1"><label class="flabel">Alert</label><select class="cfg-sel" id="ma"><option>trash</option><option>feedback</option><option>soap</option></select></div>
+              <div style="flex:1"><label class="flabel">Event</label><select class="cfg-sel" id="me"><option>fill_80</option><option>fill_100</option><option>fill_50</option><option>soap</option></select></div>
+            </div>
+            <div style="font-size:11px;color:var(--text3);flex-shrink:0">
+              Enter a <code>priority</code> value at any layer (blank = not configured at this layer). Last set value wins.
+            </div>
+            <div id="m-table" style="flex:1;overflow-y:auto"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="flabel">Live Merged Result</div>
+            <div id="m-result" style="background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:16px;flex:1;overflow-y:auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 4: DECISION LOGIC ═════════════════════════════ -->
+    <div class="slide hr" id="slide-4">
+      <div class="sh">
+        <div class="ey">Bundler Logic</div>
+        <div class="st">How the bundler decides what to do</div>
+        <div class="ss">Toggle any config value — watch the active path through the decision tree change in real time</div>
+      </div>
+      <div class="sb" style="overflow:hidden">
+        <div style="display:grid;grid-template-columns:250px 1fr;gap:18px;height:100%">
+          <!-- controls -->
+          <div style="display:flex;flex-direction:column;gap:12px;overflow-y:auto">
+            <div class="card">
+              <div class="flabel" style="margin-bottom:8px">Event Type</div>
+              <select class="cfg-sel" id="d-evt" onchange="updDec()">
+                <option value="fill_80">fill_80 (threshold alert)</option>
+                <option value="good">good (no-alert / clear)</option>
+                <option value="soap">soap (feedback)</option>
+                <option value="active">active (motion)</option>
+              </select>
+            </div>
+            <div class="card">
+              <div class="flabel" style="margin-bottom:8px">Config Flags</div>
+              <div id="d-flags" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <div class="card">
+              <div class="flabel" style="margin-bottom:8px">Current State</div>
+              <div id="d-state" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <div id="d-outcome"></div>
+          </div>
+          <!-- SVG flowchart -->
+          <div id="d-svg" style="overflow:hidden;height:100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 5: ROSTER MATCHING ════════════════════════════ -->
+    <div class="slide hr" id="slide-5">
+      <div class="sh">
+        <div class="ey">Roster &amp; Crew Routing</div>
+        <div class="st">How tickets reach the right crew</div>
+        <div class="ss ov">Rosters match tickets to crews based on location, event type, and solution — like postal route assignments</div>
+        <div class="ss tc">The location tree is walked segment-by-segment. Wildcards catch sub-paths. Enter a path to test matching.</div>
+      </div>
+      <div class="sb" style="overflow:hidden">
+        <!-- Overview -->
+        <div class="ovg" style="grid-template-columns:1fr 1fr;gap:20px;height:100%">
+          <div style="display:flex;flex-direction:column;gap:12px;overflow-y:auto">
+            <div class="card">
+              <div style="font-size:22px;margin-bottom:8px">🗺️</div>
+              <div class="fw7" style="font-size:15px;margin-bottom:8px">Think of postal routes</div>
+              <div style="font-size:13px;color:var(--text2);line-height:1.8">
+                A ticket for <strong style="color:var(--text)">Terminal B, Floor 0, Room 351</strong> needs
+                the crew that covers that area. Rosters define which device paths they serve.
+              </div>
+            </div>
+            <div class="card">
+              <div class="fw7" style="font-size:14px;margin-bottom:10px">🎯 Four matching dimensions</div>
+              <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--text2)">
+                <div style="display:flex;gap:8px;align-items:center"><span class="pill b">Solution</span>e.g. "clean", "safety"</div>
+                <div style="display:flex;gap:8px;align-items:center"><span class="pill p">Alert</span>e.g. "trash", "feedback", "incident"</div>
+                <div style="display:flex;gap:8px;align-items:center"><span class="pill t">Events</span>e.g. "medium_threshold", "high_threshold"</div>
+                <div style="display:flex;gap:8px;align-items:center"><span class="pill a">Location</span>nested device-tag tree, <code>"*"</code> = wildcard</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="flabel">Try the Roster Matcher</div>
+            <div style="display:flex;gap:6px;align-items:center" id="ov-loc-row"></div>
+            <div id="ov-result" style="flex:1;overflow-y:auto"></div>
+          </div>
+        </div>
+        <!-- Technical -->
+        <div class="tcg" style="grid-template-columns:1fr 1fr;gap:20px;height:100%;overflow:hidden">
+          <div style="display:flex;flex-direction:column;gap:10px;overflow:hidden">
+            <div class="flabel">Location Tree Matching Algorithm</div>
+            <div class="card" style="border-left:3px solid var(--blue);flex-shrink:0">
+              <div style="font-size:12px;color:var(--text2)">Device tags are matched <strong style="color:var(--text)">segment by segment</strong> through a nested JSON tree. At each level: exact key match first, then <code>"*"</code> wildcard fallback.</div>
+            </div>
+            <div class="flabel" style="margin-top:4px">Enter device path to test:</div>
+            <div style="display:flex;gap:6px">
+              <input class="cfg-inp" id="lt1" value="B"   placeholder="Terminal" style="flex:1">
+              <input class="cfg-inp" id="lt2" value="0"   placeholder="Floor" style="flex:1">
+              <input class="cfg-inp" id="lt3" value="351" placeholder="Room" style="flex:1">
+              <input class="cfg-inp" id="lt4" value="AS"  placeholder="Type" style="flex:1">
+              <button onclick="doRoster()" style="background:var(--blue);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700;white-space:nowrap">Match</button>
+            </div>
+            <div id="tc-result" style="flex:1;overflow-y:auto"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;overflow:hidden">
+            <div class="flabel">Example Rosters (FZAG subset)</div>
+            <div id="roster-ex" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 6: PLAYGROUND ══════════════════════════════════ -->
+    <div class="slide hr" id="slide-6">
+      <div class="sh">
+        <div class="ey">Interactive Simulation</div>
+        <div class="st">Config Playground</div>
+        <div class="ss">Change any setting and run the simulation to see exactly what the bundler does — and why</div>
+      </div>
+      <div class="sb" style="overflow:hidden">
+        <div style="display:grid;grid-template-columns:260px 1fr;gap:16px;height:100%">
+          <!-- config panel -->
+          <div style="background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:0">
+            <div style="margin-bottom:12px">
+              <div class="flabel" style="margin-bottom:8px">Event</div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div><label class="flabel">Solution</label><select class="cfg-sel" id="pg-sol"><option>clean</option><option>safety</option></select></div>
+                <div><label class="flabel">Alert</label><select class="cfg-sel" id="pg-alr"><option>trash</option><option>feedback</option><option>soap</option><option>motion</option></select></div>
+                <div><label class="flabel">Event type</label>
+                  <select class="cfg-sel" id="pg-evt" onchange="pgEvtPreset()">
+                    <option value="fill_50">fill_50 (50% full)</option>
+                    <option value="fill_80" selected>fill_80 (80% full)</option>
+                    <option value="fill_100">fill_100 (100% full)</option>
+                    <option value="soap">soap (button press)</option>
+                    <option value="leak">leak (feedback)</option>
+                    <option value="active">active (motion)</option>
+                    <option value="good">good (clear / resolve)</option>
+                  </select>
+                </div>
+                <div><label class="flabel">Location (comma-sep tags)</label><input class="cfg-inp" id="pg-loc" value="B,0,351,AS"></div>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-bottom:12px">
+              <div class="flabel" style="margin-bottom:8px">Behaviour Flags</div>
+              <div id="pg-flags" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-bottom:12px">
+              <div class="flabel" style="margin-bottom:8px">Workload</div>
+              <div><label class="flabel">deviceTag (aggregation depth)</label>
+                <select class="cfg-sel" id="pg-dt">
+                  <option value="none" selected>none — full path</option>
+                  <option value="1">1 — terminal only</option>
+                  <option value="2">2 — terminal + floor</option>
+                  <option value="3">3 — terminal + floor + room</option>
+                </select>
+              </div>
+              <div style="margin-top:7px"><label class="flabel">Priority override</label><input class="cfg-inp" id="pg-pri" value="10" type="number" min="0" max="100"></div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px">
+              <div class="flabel" style="margin-bottom:8px">Existing State</div>
+              <div id="pg-state" style="display:flex;flex-direction:column;gap:10px"></div>
+            </div>
+            <button class="sim-btn" id="sim-btn" onclick="runSim()">▶ Run Simulation</button>
+          </div>
+          <!-- simulation output -->
+          <div style="display:flex;flex-direction:column;gap:12px;overflow:hidden">
+            <!-- pipeline progress -->
+            <div style="background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:14px 20px">
+              <div id="pg-pipe" style="display:flex;align-items:center;justify-content:space-evenly"></div>
+            </div>
+            <!-- log + outcome -->
+            <div style="flex:1;display:grid;grid-template-columns:1fr 280px;gap:12px;min-height:0">
+              <div style="background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;overflow:hidden">
+                <div class="flabel" style="margin-bottom:8px">Execution Log</div>
+                <div id="pg-log" style="flex:1;overflow-y:auto;font-family:monospace;font-size:11px;color:var(--text2)">
+                  <div style="color:var(--text3);padding:16px 0;text-align:center">Press "Run Simulation" to begin</div>
+                </div>
+              </div>
+              <div style="background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column">
+                <div class="flabel" style="margin-bottom:8px">Outcome</div>
+                <div id="pg-out" style="flex:1;display:flex;align-items:center;justify-content:center">
+                  <div style="color:var(--text3);text-align:center;font-size:12px">Awaiting simulation…</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SLIDE 7: SUMMARY ══════════════════════════════════════ -->
+    <div class="slide hr" id="slide-7">
+      <div class="sh">
+        <div class="ey">Summary</div>
+        <div class="st">Key Takeaways</div>
+        <div class="ss">The bundling system at a glance</div>
+      </div>
+      <div class="sb" style="overflow-y:auto">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
+          <div class="card" style="border-top:3px solid var(--blue)">
+            <div style="font-size:26px;margin-bottom:10px">🔀</div>
+            <div class="fw7" style="font-size:14px;margin-bottom:7px">12-Layer Config Merge</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.8">Default → User → Location. Each of 3 sources walks 4 specificity levels. More specific always wins. Only set what you need to override.</div>
+          </div>
+          <div class="card" style="border-top:3px solid var(--green)">
+            <div style="font-size:26px;margin-bottom:10px">🎫</div>
+            <div class="fw7" style="font-size:14px;margin-bottom:7px">Smart Ticket Bundling</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.8">Multiple events at the same location join one open ticket. Control via <code>avoidEvent</code>, <code>autoResolve</code>, <code>staffResolve</code>, and <code>deviceTag</code> aggregation depth.</div>
+          </div>
+          <div class="card" style="border-top:3px solid var(--purple)">
+            <div style="font-size:26px;margin-bottom:10px">🗺️</div>
+            <div class="fw7" style="font-size:14px;margin-bottom:7px">Roster-Based Routing</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.8">Location trees + solution/alert/event filters route tickets to the right crew. Wildcards provide flexible coverage. 248 rosters at Zurich Airport.</div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="flabel" style="margin-bottom:12px">Common Gotchas</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="display:flex;gap:10px">
+              <span class="c-red" style="font-size:16px;flex-shrink:0">⚠</span>
+              <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">Timing format:</strong> Always <code>PT</code> prefix (<code>PT168H</code> not <code>P1W</code>). Wrong format creates tickets that silently disappear from the UI.</div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <span class="c-amber" style="font-size:16px;flex-shrink:0">⚠</span>
+              <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">Legacy field:</strong> Both <code>incident</code> and <code>ticket</code> are valid. <code>configDefault()</code> normalises <code>incident→ticket</code> but be consistent in new configs.</div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <span class="c-amber" style="font-size:16px;flex-shrink:0">⚠</span>
+              <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">deviceTag aggregation:</strong> <code>deviceTag: "3"</code> groups events from all sub-rooms into one ticket. Intentional for large areas; accidentally set, it hides granularity.</div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <span class="c-blue" style="font-size:16px;flex-shrink:0">ℹ</span>
+              <div style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">Debug tip:</strong> Call <code>PATCH /config</code> directly to preview the full 12-layer merge and matched rosters without triggering a real ticket.</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flabel" style="margin-bottom:10px">Key Source Files</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 20px;font-size:11px;font-family:monospace;color:var(--text2)">
+            <div><span class="c-blue">bundler.js</span> — Client-side orchestrator (Nashorn)</div>
+            <div><span class="c-purple">ConfigResource.scala</span> — PATCH /config HTTP route</div>
+            <div><span class="c-teal">ConfigProcessor.scala</span> — 12-layer merge + roster matching</div>
+            <div><span class="c-green">testFZAGConfig.json</span> — Reference config fixture</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="ftr">
+    <button class="nbtn" id="btn-prev" onclick="nav(-1)" disabled>← Previous</button>
+    <div class="dots" id="dots"></div>
+    <button class="nbtn" id="btn-next" onclick="nav(1)">Next →</button>
+  </footer>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════════════════════════
+const TOTAL = 8;
+let cur = 0, transitioning = false;
+
+// per-slide state
+const mergeVals = Array(12).fill('');
+
+const decState = { avoidEvent: false, autoResolve: false, staffResolve: false, openTicket: false, joinedEvent: true };
+
+const pgState  = { avoidEvent: false, autoResolve: false, staffResolve: false, openTicket: false, running: false };
+
+let flowAnim = false, flowStep = -1, flowTimer = null;
+
+// ════════════════════════════════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════════════════════════════════
+function nav(d) {
+  if (transitioning) return;
+  const nxt = cur + d;
+  if (nxt < 0 || nxt >= TOTAL) return;
+  transitioning = true;
+  document.getElementById(`slide-${cur}`).className = `slide ${d > 0 ? 'hl' : 'hr'}`;
+  document.getElementById(`slide-${nxt}`).className = 'slide vis';
+  cur = nxt;
+  updateNav();
+  slideInit(cur);
+  setTimeout(() => { transitioning = false; }, 420);
+}
+function goTo(n) { if (n !== cur) nav(n - cur); }
+function updateNav() {
+  document.getElementById('sn').textContent = cur + 1;
+  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-next').disabled = cur === TOTAL - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+}
+function setMode(m) {
+  document.body.className = m === 'tc' ? 'tech' : '';
+  document.getElementById('btn-ov').classList.toggle('on', m === 'ov');
+  document.getElementById('btn-tc').classList.toggle('on', m === 'tc');
+  slideInit(cur);
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE INIT DISPATCH
+// ════════════════════════════════════════════════════════════
+function slideInit(n) {
+  [s0,s1,s2,s3,s4,s5,s6,s7][n]?.();
+}
+const s0 = () => {};
+const s7 = () => {};
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 1 — FLOW PIPELINE
+// ════════════════════════════════════════════════════════════
+const FNODES = [
+  { icon:'📡', title:'IoT Event',        desc:'Sensor reaches threshold',       col:'var(--amber)'  },
+  { icon:'⚡', title:'Nashorn Bundler',   desc:'Validates & parses event',       col:'var(--blue)'   },
+  { icon:'🔧', title:'Config API',        desc:'PATCH /config — fetch rules',    col:'var(--purple)' },
+  { icon:'🧠', title:'Config Processor',  desc:'12-layer merge + rosters',       col:'var(--teal)'   },
+  { icon:'🎫', title:'Ticket Decision',   desc:'Create, update, or resolve',     col:'var(--green)'  },
+  { icon:'👷', title:'Crew Notified',     desc:'Roster routes to right team',    col:'var(--orange)' },
+];
+function s1() {
+  const fp = document.getElementById('fp');
+  if (!fp || fp.dataset.built) return;
+  fp.dataset.built = '1';
+  fp.innerHTML = FNODES.map((n,i) => `
+    <div class="pnode">
+      <div class="picon" id="fn${i}" style="border-color:${n.col}22;color:${n.col}">${n.icon}</div>
+      <div class="pnode-title">${n.title}</div>
+      <div class="pnode-desc">${n.desc}</div>
+    </div>
+    ${i < FNODES.length-1 ? `<div class="parr"><div class="parr-line" id="fa${i}"></div><div class="parr-head" id="fh${i}"></div></div>` : ''}
+  `).join('');
+}
+function animFlow() {
+  if (flowAnim) {
+    clearTimeout(flowTimer); flowAnim = false; flowStep = -1;
+    resetFlow(); document.getElementById('fp-btn').textContent = '▶ Animate Flow'; return;
+  }
+  flowAnim = true; flowStep = 0; resetFlow();
+  document.getElementById('fp-btn').textContent = '⏹ Stop';
+  stepFlow();
+}
+function resetFlow() {
+  FNODES.forEach((n,i) => {
+    const el = document.getElementById(`fn${i}`);
+    if (el) { el.style.background=''; el.style.transform=''; el.style.boxShadow=''; el.style.borderColor=n.col+'22'; }
+    const a = document.getElementById(`fa${i}`); if (a) { a.style.background=''; a.style.boxShadow=''; }
+    const h = document.getElementById(`fh${i}`); if (h) h.style.borderLeftColor='';
+  });
+}
+function stepFlow() {
+  if (!flowAnim) return;
+  if (flowStep >= FNODES.length) {
+    flowTimer = setTimeout(() => { if (!flowAnim) return; flowStep=0; resetFlow(); stepFlow(); }, 1600);
+    return;
+  }
+  const n = FNODES[flowStep], el = document.getElementById(`fn${flowStep}`);
+  if (el) { el.style.background=n.col+'1a'; el.style.transform='scale(1.14)'; el.style.boxShadow=`0 0 22px ${n.col}55`; el.style.borderColor=n.col; }
+  if (flowStep > 0) {
+    const a = document.getElementById(`fa${flowStep-1}`), h = document.getElementById(`fh${flowStep-1}`);
+    if (a) { a.style.background=n.col; a.style.boxShadow=`0 0 6px ${n.col}`; }
+    if (h) h.style.borderLeftColor=n.col;
+  }
+  flowStep++;
+  flowTimer = setTimeout(stepFlow, 680);
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 2 — CONFIG HIERARCHY
+// ════════════════════════════════════════════════════════════
+const HLEVELS = [
+  { col:'var(--teal)',   icon:'🌐', label:'Base Defaults',      path:'data.config',
+    desc:'Applies to ALL events across ALL solutions. Sets the global floor: default timing, thresholds, priority.',
+    ex:'priority: 10 · timing: {globalReminderTime:"PT2H", globalTimeoutTime:"PT3H"}' },
+  { col:'var(--blue)',   icon:'🏢', label:'Solution Level',     path:'data.solutions.{solution}.config',
+    desc:'Overrides for a specific solution (e.g. "clean" for facility management). Affects all alerts and events within the solution.',
+    ex:'threshold: {green:50, yellow:100, red:150, notify:50}' },
+  { col:'var(--purple)', icon:'🔔', label:'Alert Level',        path:'...alerts.{alert}.config',
+    desc:'Overrides for a specific alert type within a solution (e.g. "trash" within "clean"). Affects all event variants of this alert.',
+    ex:'autoResolve: false · tasks: ["Check bin", "Replace liner"]' },
+  { col:'var(--orange)', icon:'⚡', label:'Event Level',        path:'...events.{event}.config',
+    desc:'Overrides for a specific event variant (e.g. "fill_100" within "trash"). Most specific non-location override.',
+    ex:'priority: 50 — fill_100 is urgent, so override the default priority: 10' },
+  { col:'var(--green)',  icon:'📍', label:'Location Override',  path:'data.locations[].config',
+    desc:'Overrides for a specific physical location, matched by longest-prefix of the device tag array. Has final say on any setting.',
+    ex:'notes:"MRR" · tour:302 · threshold:{red:120} — this specific room only' },
+];
+function s2() {
+  const list = document.getElementById('hier-list');
+  if (list && !list.dataset.built) {
+    list.dataset.built = '1';
+    list.innerHTML = HLEVELS.map((l,i) => `
+      <div class="hlevel" id="hl${i}" onclick="selHL(${i})" style="position:relative;overflow:hidden">
+        <span style="font-size:20px">${l.icon}</span>
+        <div style="flex:1">
+          <div class="fw7" style="color:${l.col};font-size:13px">${l.label}</div>
+          <div style="font-size:10px;font-family:monospace;color:var(--text3)">${l.path}</div>
+        </div>
+        <div style="width:${100-(i*16)}px;max-width:110px;height:5px;background:${l.col}22;border-radius:3px">
+          <div style="width:100%;height:100%;background:${l.col};border-radius:3px;opacity:.7"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+  const tree = document.getElementById('cfg-tree');
+  if (tree && !tree.dataset.built) {
+    tree.dataset.built = '1';
+    tree.textContent =
+`data
+├── version: "2.0.0"
+├── config                      ← Base defaults (Layer 1)
+│   └── ticket
+│       ├── threshold: {low, medium, high}
+│       ├── priority
+│       ├── timing: {globalReminderTime, globalTimeoutTime}
+│       ├── workload: {deviceTag}
+│       ├── escalation: {priority, time, active}
+│       ├── avoidEvent, autoResolve, staffResolve
+│       └── tasks: [...]
+├── solutions
+│   └── {solution}              ← e.g. "clean"  (Layer 2)
+│       ├── config              ← Solution defaults
+│       └── alerts
+│           └── {alert}         ← e.g. "trash"  (Layer 3)
+│               ├── config      ← Alert defaults
+│               └── events
+│                   └── {event} ← e.g. "fill_80" (Layer 4)
+│                       └── config
+└── locations[]                 ← Location overrides (Layers 9-12)
+    └── {
+          device: ["B","0","351","AS"],
+          global: ["org","site"],   ← optional
+          config: { notes, area, tour, ticket: {...} },
+          solutions: { ... }        ← same nested structure
+        }`;
+  }
+}
+function selHL(i) {
+  HLEVELS.forEach((_,j) => {
+    const el = document.getElementById(`hl${j}`);
+    if (el) { el.style.borderColor='var(--border)'; el.style.background='var(--s2)'; }
+  });
+  const l = HLEVELS[i], el = document.getElementById(`hl${i}`);
+  if (el) { el.style.borderColor=l.col; el.style.background=l.col+'11'; }
+  const det = document.getElementById('hier-detail');
+  if (det) det.innerHTML = `
+    <div class="card" style="height:100%;border-left:4px solid ${l.col};display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:34px">${l.icon}</span>
+        <div>
+          <div style="font-size:18px;font-weight:800;color:${l.col}">${l.label}</div>
+          <div style="font-size:11px;font-family:monospace;color:var(--text2)">${l.path}</div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.9">${l.desc}</div>
+      <div style="background:var(--s3);border-radius:8px;padding:12px;margin-top:auto">
+        <div style="font-size:10px;color:var(--text3);margin-bottom:5px">EXAMPLE</div>
+        <code style="font-size:12px;color:${l.col}">${l.ex}</code>
+      </div>
+    </div>`;
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 3 — 12-LAYER MERGE
+// ════════════════════════════════════════════════════════════
+const MLAYERS = [
+  { n:1,  src:'Default',  badge:'D', path:'.config',                                                     col:'var(--teal)'   },
+  { n:2,  src:'Default',  badge:'D', path:'.solutions.{sol}.config',                                     col:'var(--teal)'   },
+  { n:3,  src:'Default',  badge:'D', path:'.solutions.{sol}.alerts.{alert}.config',                      col:'var(--teal)'   },
+  { n:4,  src:'Default',  badge:'D', path:'.solutions.{sol}.alerts.{alert}.events.{evt}.config',         col:'var(--teal)'   },
+  { n:5,  src:'User',     badge:'U', path:'.config',                                                     col:'var(--blue)'   },
+  { n:6,  src:'User',     badge:'U', path:'.solutions.{sol}.config',                                     col:'var(--blue)'   },
+  { n:7,  src:'User',     badge:'U', path:'.solutions.{sol}.alerts.{alert}.config',                      col:'var(--blue)'   },
+  { n:8,  src:'User',     badge:'U', path:'.solutions.{sol}.alerts.{alert}.events.{evt}.config',         col:'var(--blue)'   },
+  { n:9,  src:'Location', badge:'L', path:'.config',                                                     col:'var(--green)'  },
+  { n:10, src:'Location', badge:'L', path:'.solutions.{sol}.config',                                     col:'var(--green)'  },
+  { n:11, src:'Location', badge:'L', path:'.solutions.{sol}.alerts.{alert}.config',                      col:'var(--green)'  },
+  { n:12, src:'Location', badge:'L', path:'.solutions.{sol}.alerts.{alert}.events.{evt}.config',         col:'var(--green)'  },
+];
+function s3() {
+  // cascade overview
+  const cv = document.getElementById('casc-vis');
+  if (cv && !cv.dataset.built) {
+    cv.dataset.built = '1';
+    const grps = [
+      { label:'Default Record',  layers:[1,2,3,4], col:'var(--teal)',   desc:'System-wide fallback' },
+      { label:'User Record',     layers:[5,6,7,8], col:'var(--blue)',   desc:'Your tenant config' },
+      { label:'Location Override',layers:[9,10,11,12],col:'var(--green)',desc:'Per-room tweaks' },
+    ];
+    const subs = ['Base config','Solution-level','Alert-level','Event-level'];
+    cv.innerHTML = grps.map(g => `
+      <div style="background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:12px;border-left:4px solid ${g.col}">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+          <span class="fw7" style="color:${g.col};font-size:13px">${g.label}</span>
+          <span style="font-size:11px;color:var(--text3)">${g.desc}</span>
+        </div>
+        <div style="display:flex;gap:5px">
+          ${subs.map((s,j) => `
+            <div style="flex:1;padding:5px 6px;background:${g.col}11;border-radius:5px;border:1px solid ${g.col}22;text-align:center">
+              <div style="font-size:9px;color:var(--text3)">${g.layers[j]}</div>
+              <div style="font-size:10px;color:${g.col};font-weight:700">${s}</div>
+            </div>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+  // technical merge table
+  const mt = document.getElementById('m-table');
+  if (mt && !mt.dataset.built) {
+    mt.dataset.built = '1';
+    mt.innerHTML = MLAYERS.map((l,i) => `
+      <div class="mrow ${mergeVals[i]!==''?'has':''}" id="mr${i}">
+        <div class="mrow-num" style="color:${l.col}">${l.n}</div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:${l.col}">${l.src}</div>
+          <div class="mrow-path">${l.path}</div>
+        </div>
+        <span class="mbadge" style="background:${l.col}1a;color:${l.col}">${l.badge}</span>
+        <input class="mval-inp" id="mi${i}" type="number" min="0" max="100" placeholder="—"
+               value="${mergeVals[i]||''}" oninput="setMV(${i},this.value)"
+               style="${mergeVals[i]!==''?`border-color:${l.col}`:''}">
+      </div>`).join('');
+    updMerge();
+  }
+}
+function setMV(i, v) {
+  mergeVals[i] = v !== '' ? parseInt(v) : '';
+  const row = document.getElementById(`mr${i}`), inp = document.getElementById(`mi${i}`);
+  if (row) row.className = `mrow ${v!==''?'has':''}`;
+  if (inp) inp.style.borderColor = v!=='' ? MLAYERS[i].col : '';
+  updMerge();
+}
+function updMerge() {
+  const panel = document.getElementById('m-result');
+  if (!panel) return;
+  let wi = -1, wv = null;
+  for (let i = mergeVals.length-1; i >= 0; i--) { if (mergeVals[i] !== '') { wi=i; wv=mergeVals[i]; break; } }
+  const wl = wi >= 0 ? MLAYERS[wi] : null;
+  const pri = wv !== null ? wv : 10;
+  const priCol = wl ? wl.col : 'var(--text3)';
+  const srcLabel = wl ? `Layer ${wl.n} · ${wl.src}` : 'system default (10)';
+  const setList = mergeVals.map((v,i) => v!==''?i:-1).filter(i=>i>=0);
+  panel.innerHTML = `
+    <div style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px">
+        <code style="color:var(--text2)">ticket.priority</code>
+        <span style="font-size:26px;font-weight:900;color:${priCol}">${pri}</span>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Won by: ${srcLabel}</div>
+      <div style="height:4px;background:var(--s3);border-radius:2px">
+        <div style="height:100%;width:${Math.min(100,pri)}%;background:${priCol};border-radius:2px;transition:all .3s"></div>
+      </div>
+    </div>
+    ${setList.length > 0 ? `
+      <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Layer contributions:</div>
+      ${setList.map(i => {
+        const l = MLAYERS[i], isW = i===wi;
+        return `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 9px;border-radius:6px;margin-bottom:3px;${isW?`background:${l.col}1a;border:1px solid ${l.col}44`:'background:var(--s3)'}">
+          <span style="font-size:11px;color:${isW?l.col:'var(--text3)'}">L${l.n} · ${l.src}</span>
+          <span style="font-weight:800;color:${isW?l.col:'var(--text3)'};">${mergeVals[i]} ${isW?'← wins':''}</span>
+        </div>`;
+      }).join('')}` : `<div style="font-size:12px;color:var(--text3);text-align:center;padding:16px 0">No layers configured — using default value (10)</div>`}
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+      <div style="font-size:10px;font-weight:700;color:var(--text3);margin-bottom:8px">Other fields (defaults):</div>
+      ${[['timing.globalReminderTime','"PT2H"'],['timing.globalTimeoutTime','"PT3H"'],['escalation.active','true'],['escalation.time','"PT20M"'],['avoidEvent','false'],['autoResolve','false']].map(([k,v])=>`
+      <div style="display:flex;justify-content:space-between;font-size:11px;padding:2px 0">
+        <code style="color:var(--text3)">${k}</code><code style="color:var(--text2)">${v}</code>
+      </div>`).join('')}
+    </div>`;
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 4 — DECISION LOGIC
+// ════════════════════════════════════════════════════════════
+const DFLAGS = [
+  { id:'avoidEvent',   label:'avoidEvent',    desc:'Skip this event type entirely' },
+  { id:'autoResolve',  label:'autoResolve',   desc:'Auto-resolve open ticket' },
+  { id:'staffResolve', label:'staffResolve',  desc:'Staff-resolve open ticket' },
+  { id:'joinedEvent',  label:'joinedEvent',   desc:'Allow joining existing ticket', def:true },
+];
+const DSTATE = [{ id:'openTicket', label:'Open ticket exists at location', desc:'' }];
+
+function s4() {
+  const df = document.getElementById('d-flags'), ds = document.getElementById('d-state');
+  if (df && !df.dataset.built) {
+    df.dataset.built='1';
+    df.innerHTML = DFLAGS.map(f => mkTgl(f, f.def||decState[f.id]||false, `togDec('${f.id}')`)).join('');
+  }
+  if (ds && !ds.dataset.built) {
+    ds.dataset.built='1';
+    ds.innerHTML = DSTATE.map(f => mkTgl(f, decState[f.id]||false, `togDec('${f.id}')`)).join('');
+  }
+  drawDecSVG();
+}
+
+function mkTgl(f, on, cb) {
+  return `<label class="tgl" onclick="${cb}">
+    <div>
+      <div style="font-size:13px;font-weight:600">${f.label}</div>
+      <div style="font-size:10px;color:var(--text3)">${f.desc}</div>
+    </div>
+    <div class="tgl-track ${on?'on':''}" id="dt-${f.id}"><div class="tgl-thumb"></div></div>
+  </label>`;
+}
+function togDec(id) {
+  decState[id] = !decState[id];
+  const track = document.getElementById(`dt-${id}`);
+  if (track) { track.classList.toggle('on', decState[id]); }
+  updDec();
+}
+function updDec() { drawDecSVG(); }
+
+function getDecPath() {
+  const evt = document.getElementById('d-evt')?.value || 'fill_80';
+  const { avoidEvent, autoResolve, staffResolve, openTicket, joinedEvent } = decState;
+  const isGood = evt === 'good';
+  if (avoidEvent || isGood) return ['start','avoid','skip'];
+  const base = ['start','avoid','data','find','hasopen'];
+  if (openTicket) {
+    if (autoResolve) return [...base,'resolve','autores'];
+    if (staffResolve) return [...base,'resolve','staffres'];
+    if (!joinedEvent) return [...base,'resolve','nojoin'];
+    return [...base,'resolve','addsrc'];
+  } else {
+    if (autoResolve || evt === 'good') return [...base,'resolveonly','noticket'];
+    return [...base,'resolveonly','create'];
+  }
+}
+
+const CNODES = [
+  { id:'start',      x:280,y:8,  w:160,h:30, label:'Event received',           col:'#6b8db3', shape:'r' },
+  { id:'avoid',      x:210,y:55, w:260,h:38, label:'avoidEvent or event=="good"?',col:'#fbbf24', shape:'d' },
+  { id:'skip',       x:510,y:58, w:90, h:30, label:'→ Skip',                   col:'#fbbf24', shape:'r' },
+  { id:'data',       x:220,y:115,w:240,h:38, label:'solution & alert present?', col:'#fbbf24', shape:'d' },
+  { id:'err',        x:505,y:118,w:80, h:30, label:'→ Error',                  col:'#f87171', shape:'r' },
+  { id:'find',       x:250,y:175,w:180,h:30, label:'findOpenTickets()',         col:'#4f9eff', shape:'r' },
+  { id:'hasopen',    x:225,y:225,w:230,h:38, label:'Open ticket exists?',       col:'#a78bfa', shape:'d' },
+  { id:'resolve',    x:22, y:235,w:170,h:38, label:'autoResolve?',             col:'#2dd4bf', shape:'d' },
+  { id:'autores',    x:22, y:300,w:90, h:30, label:'→ Auto-resolve',           col:'#2dd4bf', shape:'r' },
+  { id:'staffres',   x:127,y:300,w:90, h:30, label:'→ Staff-resolve',          col:'#2dd4bf', shape:'r' },
+  { id:'addsrc',     x:232,y:300,w:90, h:30, label:'→ Add source',             col:'#34d399', shape:'r' },
+  { id:'nojoin',     x:337,y:300,w:90, h:30, label:'→ No join',                col:'#fb923c', shape:'r' },
+  { id:'resolveonly',x:475,y:228,w:100,h:38, label:'Resolve-only?',            col:'#fbbf24', shape:'d' },
+  { id:'noticket',   x:495,y:300,w:90, h:30, label:'→ No ticket',              col:'#f87171', shape:'r' },
+  { id:'create',     x:475,y:300,w:90, h:30, label:'→ New ticket',             col:'#34d399', shape:'r' },
+];
+const CEDGES = [
+  {f:'start',to:'avoid',lbl:''},
+  {f:'avoid',to:'skip',lbl:'Yes'},
+  {f:'avoid',to:'data',lbl:'No'},
+  {f:'data',to:'err',lbl:'No'},
+  {f:'data',to:'find',lbl:'Yes'},
+  {f:'find',to:'hasopen',lbl:''},
+  {f:'hasopen',to:'resolve',lbl:'Yes →'},
+  {f:'hasopen',to:'resolveonly',lbl:'No →'},
+  {f:'resolve',to:'autores',lbl:'Yes'},
+  {f:'resolve',to:'staffres',lbl:'No→staff'},
+  {f:'resolve',to:'addsrc',lbl:'No→join'},
+  {f:'resolve',to:'nojoin',lbl:'No→nojoin'},
+  {f:'resolveonly',to:'noticket',lbl:'Yes'},
+  {f:'resolveonly',to:'create',lbl:'No'},
+];
+
+function drawDecSVG() {
+  const container = document.getElementById('d-svg');
+  if (!container) return;
+  const path = getDecPath();
+  const nmap = Object.fromEntries(CNODES.map(n=>[n.id,n]));
+  const W=640, H=360;
+  const inPath = id => path.includes(id);
+  const isLast = id => path[path.length-1]===id;
+  const edgeInPath = (f,t) => path.includes(f)&&path.includes(t)&&path.indexOf(t)===path.indexOf(f)+1;
+
+  let edges='', nodes='';
+  CEDGES.forEach(e => {
+    const fn=nmap[e.f], tn=nmap[e.to];
+    if(!fn||!tn) return;
+    const fh=fn.h||30, th=tn.h||30;
+    const fx=fn.x+fn.w/2, fy=fn.y+fh;
+    const tx=tn.x+tn.w/2, ty=tn.y;
+    const onP = edgeInPath(e.f,e.to);
+    const col = onP ? '#4f9eff' : '#1e3150';
+    const sw  = onP ? 2 : 1;
+    const mid = (fy+ty)/2;
+    edges += `<path d="M${fx},${fy} C${fx},${mid} ${tx},${mid} ${tx},${ty}" stroke="${col}" stroke-width="${sw}" fill="none" marker-end="url(#arr${onP?'A':'N'})"/>`;
+    if(e.lbl){
+      const mx=(fx+tx)/2+4, my=(fy+ty)/2;
+      edges += `<text x="${mx}" y="${my}" font-size="8" fill="${onP?'#7ab8ff':'#2a4468'}" font-family="Inter,sans-serif">${e.lbl}</text>`;
+    }
+  });
+
+  CNODES.forEach(n => {
+    const h=n.h||30, onP=inPath(n.id), last=isLast(n.id);
+    const fill = onP ? n.col+'20' : '#0e1623';
+    const stroke = onP ? (last ? n.col : '#4f9eff') : '#1e3150';
+    const sw = onP ? (last ? 2.5 : 2) : 1;
+    const tc = onP ? (last ? n.col : '#d8eaff') : '#2a4468';
+    const fw = onP ? '600' : '400';
+    if(n.shape==='d') {
+      const cx=n.x+n.w/2, cy=n.y+h/2, hw=n.w/2, hh=h/2;
+      nodes += `<polygon points="${cx},${cy-hh} ${cx+hw},${cy} ${cx},${cy+hh} ${cx-hw},${cy}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
+    } else {
+      nodes += `<rect x="${n.x}" y="${n.y}" width="${n.w}" height="${h}" rx="6" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
+    }
+    nodes += `<text x="${n.x+n.w/2}" y="${n.y+h/2+4}" text-anchor="middle" font-size="9.5" font-family="Inter,sans-serif" fill="${tc}" font-weight="${fw}">${n.label}</text>`;
+  });
+
+  container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:100%">
+    <defs>
+      <marker id="arrN" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#1e3150"/></marker>
+      <marker id="arrA" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#4f9eff"/></marker>
+    </defs>
+    ${edges}${nodes}
+  </svg>`;
+
+  // Outcome card
+  const oc = document.getElementById('d-outcome');
+  if (!oc) return;
+  const OUTS = {
+    skip:     { icon:'⏭', label:'Event Skipped',          col:'#fbbf24', detail:'avoidEvent=true or event="good". Bundler exits — no ticket action taken.' },
+    err:      { icon:'❌', label:'Error — incomplete data',col:'#f87171', detail:'Missing solution, alert, or event field. Error logged, bundler exits.' },
+    autores:  { icon:'✅', label:'Auto-Resolved',          col:'#2dd4bf', detail:'Open ticket found. autoResolve=true → autoResolve signal sent to workflow.' },
+    staffres: { icon:'👷', label:'Staff-Resolved',         col:'#2dd4bf', detail:'Open ticket found. staffResolve=true → staffResolve signal sent to workflow.' },
+    addsrc:   { icon:'➕', label:'Added to Existing Ticket',col:'#34d399', detail:'Open ticket found. New event appended as source. Complementary tasks added.' },
+    nojoin:   { icon:'🚫', label:'Join Skipped',           col:'#fb923c', detail:'Open ticket found but joinedEvent=false. Event not appended. Silent return.' },
+    create:   { icon:'🎫', label:'New Ticket Created',     col:'#34d399', detail:'No open ticket found. generateTicketConfig() runs, ticket sent to workflow engine.' },
+    noticket: { icon:'🤷', label:'Nothing to Resolve',     col:'#f87171', detail:'Resolve-only event but no open ticket exists at this location. Logged and skipped.' },
+  };
+  const last = path[path.length-1];
+  const o = OUTS[last] || OUTS.create;
+  oc.innerHTML = `<div style="background:${o.col}11;border:2px solid ${o.col}44;border-radius:10px;padding:12px">
+    <div style="font-size:14px;font-weight:800;color:${o.col};margin-bottom:5px">${o.icon} ${o.label}</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7">${o.detail}</div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 5 — ROSTER MATCHING
+// ════════════════════════════════════════════════════════════
+const ROSTERS = [
+  { name:'Tour 302', filter:{sol:'clean',alr:'incident',evts:['medium_threshold','high_threshold']},
+    locs:{B:{2:{'107':{AS:{'*':{}}},'108':{AS:{'*':{}}},'109':{AS:{'*':{}}},'110':{WT:{'*':{}}}}}} },
+  { name:'Tour 405', filter:{sol:'clean',alr:'incident',evts:['medium_threshold','high_threshold']},
+    locs:{B:{0:{'351':{AS:{'*':{}}},'358':{AS:{'*':{}}},'486':{AS:{'*':{}}},'487':{AS:{'*':{}}}}}} },
+  { name:'Tour 417', filter:{sol:'clean',alr:'incident',evts:['medium_threshold','high_threshold']},
+    locs:{PT:{0:{'442A':{LS:{'*':{}}},'444A':{LS:{'*':{}}},'446A':{LS:{'*':{}}}}}} },
+  { name:'Tour B-All (wildcard)', filter:{sol:'clean',alr:'*',evts:['*']},
+    locs:{B:{'*':{}}} },
+  { name:'Tour Global',  filter:{sol:'*',alr:'*',evts:['*']},
+    locs:{'*':{}} },
+];
+
+function locMatch(tree, path) {
+  let node = tree;
+  for (const seg of path) {
+    if (!node || typeof node !== 'object') return false;
+    if (seg in node) { node=node[seg]; continue; }
+    if ('*' in node) { node=node['*']; continue; }
+    return false;
+  }
+  return true;
+}
+function locTrace(tree, path) {
+  let node = tree, parts = [];
+  for (const seg of path) {
+    if (!node || typeof node !== 'object') { parts.push(`✗ "${seg}" — dead end`); return parts.join(' → '); }
+    if (seg in node) { parts.push(`✓ "${seg}"`); node=node[seg]; }
+    else if ('*' in node) { parts.push(`✓ * → "${seg}"`); node=node['*']; }
+    else { parts.push(`✗ "${seg}" not in {${Object.keys(node).join(',')}}`); return parts.join(' → '); }
+  }
+  return parts.join(' → ') + ' → ✅ MATCH';
+}
+function fmtTree(obj, depth=0) {
+  if (!obj || !Object.keys(obj).length) return '{}';
+  const ind = '  '.repeat(depth);
+  const lines = Object.keys(obj).map(k => `${ind}  "${k}": ${fmtTree(obj[k], depth+1)}`);
+  return `{\n${lines.join(',\n')}\n${ind}}`;
+}
+
+function s5() {
+  // overview location row
+  const row = document.getElementById('ov-loc-row');
+  if (row && !row.dataset.built) {
+    row.dataset.built='1';
+    row.innerHTML = `
+      <input class="cfg-inp" id="ol1" value="B"   placeholder="Terminal" style="flex:1">
+      <span style="color:var(--text3)">/</span>
+      <input class="cfg-inp" id="ol2" value="0"   placeholder="Floor" style="flex:1">
+      <span style="color:var(--text3)">/</span>
+      <input class="cfg-inp" id="ol3" value="351" placeholder="Room" style="flex:1">
+      <span style="color:var(--text3)">/</span>
+      <input class="cfg-inp" id="ol4" value="AS"  placeholder="Type" style="flex:1">
+      <button onclick="doRoster()" style="background:var(--blue);border:none;color:#fff;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:700">Match</button>`;
+  }
+  // roster examples
+  const rex = document.getElementById('roster-ex');
+  if (rex && !rex.dataset.built) {
+    rex.dataset.built='1';
+    rex.innerHTML = ROSTERS.map(r => `
+      <div class="card" style="flex-shrink:0">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
+          <span class="fw7 c-blue">${r.name}</span>
+          <span class="pill b">${r.filter.sol}</span>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-bottom:7px">
+          alert: <code>${r.filter.alr}</code> · events: <code>${r.filter.evts.join(', ')}</code>
+        </div>
+        <pre style="background:var(--s3);padding:8px;border-radius:6px;font-size:10px;color:var(--text3);overflow:auto;white-space:pre">${fmtTree(r.locs)}</pre>
+      </div>`).join('');
+  }
+  doRoster();
+}
+
+function doRoster() {
+  const ov = (document.getElementById('ol1')||document.getElementById('lt1'))?.value||'B';
+  const f2 = (document.getElementById('ol2')||document.getElementById('lt2'))?.value||'0';
+  const f3 = (document.getElementById('ol3')||document.getElementById('lt3'))?.value||'351';
+  const f4 = (document.getElementById('ol4')||document.getElementById('lt4'))?.value||'AS';
+  const path = [ov,f2,f3,f4].filter(Boolean);
+
+  // overview result
+  const ovRes = document.getElementById('ov-result');
+  if (ovRes) {
+    const matched   = ROSTERS.filter(r => locMatch(r.locs, path));
+    const unmatched = ROSTERS.filter(r => !locMatch(r.locs, path));
+    ovRes.innerHTML = `
+      <div style="font-size:12px;color:var(--text2);margin-bottom:10px">
+        Path: <code style="color:var(--blue)">[${path.map(s=>`"${s}"`).join(', ')}]</code>
+      </div>
+      ${matched.length ? `
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px">✅ Matched (${matched.length})</div>
+        ${matched.map(r=>`<div style="background:var(--green-s);border:1px solid var(--green)33;border-radius:8px;padding:10px;margin-bottom:6px">
+          <div class="fw7 c-green">${r.name}</div>
+          <div style="font-size:11px;color:var(--text2);margin-top:3px">${r.filter.evts.join(', ')}</div>
+        </div>`).join('')}` : ''}
+      ${unmatched.length ? `
+        <div style="font-size:11px;font-weight:700;color:var(--red);margin-top:8px;margin-bottom:6px">❌ Not matched (${unmatched.length})</div>
+        ${unmatched.map(r=>`<div style="background:var(--s3);border-radius:6px;padding:7px 10px;margin-bottom:4px;font-size:12px;color:var(--text2)">${r.name}</div>`).join('')}` : ''}`;
+  }
+  // tech result
+  const tcRes = document.getElementById('tc-result');
+  if (tcRes) {
+    tcRes.innerHTML = ROSTERS.map(r => {
+      const ok = locMatch(r.locs, path);
+      const tr = locTrace(r.locs, path);
+      return `<div style="background:var(--s2);border:1px solid ${ok?'var(--green)':'var(--border)'};border-radius:8px;padding:10px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span class="fw7" style="color:${ok?'var(--green)':'var(--text2)'}">${r.name}</span>
+          <span class="pill ${ok?'g':'r'}">${ok?'MATCH':'NO MATCH'}</span>
+        </div>
+        <div style="font-size:10px;font-family:monospace;color:var(--text3);word-break:break-all">${tr}</div>
+      </div>`;
+    }).join('');
+  }
+}
+
+// ════════════════════════════════════════════════════════════
+//  SLIDE 6 — PLAYGROUND
+// ════════════════════════════════════════════════════════════
+const PG_FLAGS = [
+  { id:'avoidEvent',   label:'avoidEvent',   desc:'Ignore this event type entirely' },
+  { id:'autoResolve',  label:'autoResolve',  desc:'Auto-resolve any open ticket' },
+  { id:'staffResolve', label:'staffResolve', desc:'Staff-resolve any open ticket' },
+];
+const PG_STATE = [{ id:'openTicket', label:'Open ticket exists at location', desc:'' }];
+const PG_PIPE = [
+  {id:'pp0',icon:'📡',lbl:'Event'},
+  {id:'pp1',icon:'⚡',lbl:'Bundler'},
+  {id:'pp2',icon:'🔧',lbl:'Config API'},
+  {id:'pp3',icon:'🧠',lbl:'Merge'},
+  {id:'pp4',icon:'🎫',lbl:'Decision'},
+  {id:'pp5',icon:'👷',lbl:'Crew'},
+];
+
+function s6() {
+  const pf = document.getElementById('pg-flags'), ps = document.getElementById('pg-state');
+  if (pf && !pf.dataset.built) {
+    pf.dataset.built='1';
+    pf.innerHTML = PG_FLAGS.map(f => mkTgl2(f, pgState[f.id]||false, `togPg('${f.id}')`)).join('');
+  }
+  if (ps && !ps.dataset.built) {
+    ps.dataset.built='1';
+    ps.innerHTML = PG_STATE.map(f => mkTgl2(f, pgState[f.id]||false, `togPg('${f.id}')`)).join('');
+  }
+  const pp = document.getElementById('pg-pipe');
+  if (pp && !pp.dataset.built) {
+    pp.dataset.built='1';
+    pp.innerHTML = PG_PIPE.map((n,i) => `
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div id="${n.id}" style="width:42px;height:42px;border-radius:50%;background:var(--s3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:19px;transition:all .4s">${n.icon}</div>
+          <div style="font-size:9px;color:var(--text3)">${n.lbl}</div>
+        </div>
+        ${i<PG_PIPE.length-1?`<div id="pa${i}" style="font-size:16px;color:var(--border);margin-top:-12px;transition:color .4s">→</div>`:''}
+      </div>`).join('');
+  }
+}
+function mkTgl2(f, on, cb) {
+  return `<label class="tgl" onclick="${cb}">
+    <div>
+      <div style="font-size:12px;font-weight:600">${f.label}</div>
+      <div style="font-size:10px;color:var(--text3)">${f.desc}</div>
+    </div>
+    <div class="tgl-track ${on?'on':''}" id="pt-${f.id}"><div class="tgl-thumb"></div></div>
+  </label>`;
+}
+function togPg(id) {
+  pgState[id]=!pgState[id];
+  const t=document.getElementById(`pt-${id}`);
+  if(t) t.classList.toggle('on',pgState[id]);
+}
+function pgEvtPreset() {
+  const ev=document.getElementById('pg-evt')?.value;
+  const alr=document.getElementById('pg-alr');
+  if(!alr||!ev) return;
+  if(['fill_50','fill_80','fill_100'].includes(ev)) alr.value='trash';
+  else if(['soap','leak','clogged'].includes(ev)) alr.value='feedback';
+  else if(ev==='active') alr.value='motion';
+  else if(ev==='good') alr.value='feedback';
+}
+
+function pipeSet(active) {
+  PG_PIPE.forEach((n,i) => {
+    const el=document.getElementById(n.id);
+    if(!el) return;
+    if(i<active)  { el.style.borderColor='var(--green)'; el.style.background='var(--green-s)'; el.style.boxShadow=''; }
+    else if(i===active) { el.style.borderColor='var(--blue)'; el.style.background='var(--blue-s)'; el.style.boxShadow='0 0 14px rgba(79,158,255,.4)'; }
+    else { el.style.borderColor='var(--border)'; el.style.background='var(--s3)'; el.style.boxShadow=''; }
+    const ar=document.getElementById(`pa${i}`);
+    if(ar) ar.style.color=i<active?'var(--green)':'var(--border)';
+  });
+}
+function resetPipe() {
+  PG_PIPE.forEach((n,i) => {
+    const el=document.getElementById(n.id);
+    if(el){ el.style.borderColor='var(--border)'; el.style.background='var(--s3)'; el.style.boxShadow=''; }
+    const ar=document.getElementById(`pa${i}`);
+    if(ar) ar.style.color='var(--border)';
+  });
+}
+
+function addLog(level, msg) {
+  const log=document.getElementById('pg-log');
+  if(!log) return;
+  const cols={INFO:'#4f9eff',OK:'#34d399',WARN:'#fbbf24',ERR:'#f87171'};
+  const t=new Date().toLocaleTimeString('en-US',{hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  log.innerHTML+=`<div style="padding:2px 0;display:flex;gap:6px"><span style="color:var(--text3)">${t}</span><span style="color:${cols[level]||'#6b8db3'};font-weight:700">[${level}]</span><span>${msg}</span></div>`;
+  log.scrollTop=log.scrollHeight;
+}
+
+async function runSim() {
+  if (pgState.running) return;
+  pgState.running = true;
+  document.getElementById('sim-btn').disabled = true;
+
+  const sol    = document.getElementById('pg-sol')?.value||'clean';
+  const alr    = document.getElementById('pg-alr')?.value||'trash';
+  const evt    = document.getElementById('pg-evt')?.value||'fill_80';
+  const locStr = document.getElementById('pg-loc')?.value||'B,0,351,AS';
+  const dt     = document.getElementById('pg-dt')?.value||'none';
+  const pri    = document.getElementById('pg-pri')?.value||'10';
+  const path   = locStr.split(',').map(s=>s.trim());
+
+  // Reset
+  const log=document.getElementById('pg-log'), out=document.getElementById('pg-out');
+  if(log) log.innerHTML='';
+  if(out) out.innerHTML='<div style="color:var(--text3);text-align:center;font-size:12px">Running…</div>';
+  resetPipe();
+
+  const delay = ms => new Promise(r=>setTimeout(r,ms));
+
+  async function step(idx, fn) {
+    pipeSet(idx); await delay(80); await fn(); await delay(480);
+  }
+
+  let result = 'create';
+
+  await step(0, async () => {
+    addLog('INFO', `Event: sol=${sol} alr=${alr} evt=${evt}`);
+    addLog('INFO', `Device path: [${path.map(s=>`"${s}"`).join(', ')}]`);
+  });
+
+  await step(1, async () => {
+    addLog('INFO', 'Nashorn bundler: triggeringEventRecToBindings()');
+    addLog('INFO', 'Validating auth token and meta tag arrays…');
+    if (pgState.avoidEvent) addLog('WARN', 'avoidEvent=true configured for this event type');
+  });
+
+  await step(2, async () => {
+    addLog('INFO', `PATCH /config/io.microshare.config.bundler`);
+    addLog('INFO', `  ?solution=${sol}&alert=${alr}&event=${evt}&locations=${locStr}`);
+  });
+
+  await step(3, async () => {
+    addLog('INFO', 'ConfigProcessor.processConfig(): 12-layer deep merge');
+    addLog('INFO', 'Layers 1-4: Default record (base → sol → alert → event)');
+    addLog('INFO', 'Layers 5-8: User record (base → sol → alert → event)');
+    const matched = ROSTERS.find(r => locMatch(r.locs, path));
+    if (matched) {
+      addLog('OK',  `Location match → layers 9-12 applied`);
+      addLog('OK',  `Roster matched: ${matched.name}`);
+    } else {
+      addLog('WARN','No location match — layers 9-12 contribute nothing');
+      addLog('WARN','No roster matched for this device path');
+    }
+    addLog('INFO', `configDefault(): normalising, applying fallbacks`);
+    const effLoc = dt!=='none' ? path.slice(0,parseInt(dt)).join(',') : path.join(',');
+    addLog('INFO', `  priority = ${pri}, deviceTag = ${dt}`);
+    addLog('INFO', `  effective location = [${effLoc}]`);
+  });
+
+  await step(4, async () => {
+    if (pgState.avoidEvent || evt==='good') {
+      addLog('WARN', 'avoidEvent=true OR event=="good" — SKIPPING event');
+      result='skip'; return;
+    }
+    const effLoc = dt!=='none' ? path.slice(0,parseInt(dt)).join(',') : path.join(',');
+    addLog('INFO', `findOpenTickets() at [${effLoc}]`);
+    if (pgState.openTicket) {
+      addLog('INFO','Open ticket found');
+      if (pgState.autoResolve)  { addLog('OK','autoResolve=true → autoResolve signal sent'); result='autores'; return; }
+      if (pgState.staffResolve) { addLog('OK','staffResolve=true → staffResolve signal sent'); result='staffres'; return; }
+      addLog('OK','Appending event as addSource to existing ticket');
+      result='addsrc';
+    } else {
+      addLog('INFO','No open ticket found');
+      addLog('OK','createNewTicket() — building ticket payload…');
+      const r2 = ROSTERS.find(r=>locMatch(r.locs,path));
+      if (r2) addLog('OK',`Roster assigned: ${r2.name}`);
+      result='create';
+    }
+  });
+
+  await delay(300);
+  pipeSet(5);
+
+  const ORES = {
+    skip:    { icon:'⏭', label:'Event Skipped',            col:'#fbbf24', detail:'avoidEvent is set — bundler returned without any ticket action.' },
+    autores: { icon:'✅', label:'Ticket Auto-Resolved',     col:'#2dd4bf', detail:'autoResolve signal sent to workflow engine for the open ticket.' },
+    staffres:{ icon:'👷', label:'Staff Resolve Sent',       col:'#2dd4bf', detail:'staffResolve signal sent. A staff member will mark the ticket complete.' },
+    addsrc:  { icon:'➕', label:'Added to Existing Ticket', col:'#34d399', detail:`New event appended as source. Priority ${pri} updated on existing ticket.` },
+    create:  { icon:'🎫', label:'New Ticket Created',       col:'#34d399', detail:`New workflow ticket created: priority ${pri}, location [${dt!=='none'?path.slice(0,parseInt(dt)).join(','):path.join(',')}].` },
+  };
+  const o = ORES[result]||ORES.create;
+  if (out) out.innerHTML = `
+    <div style="text-align:center">
+      <div style="font-size:38px;margin-bottom:10px">${o.icon}</div>
+      <div style="font-size:15px;font-weight:800;color:${o.col};margin-bottom:8px">${o.label}</div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.8">${o.detail}</div>
+    </div>`;
+
+  pgState.running = false;
+  document.getElementById('sim-btn').disabled = false;
+}
+
+// ════════════════════════════════════════════════════════════
+//  BOOTSTRAP
+// ════════════════════════════════════════════════════════════
+function init() {
+  // Build progress dots
+  const dots = document.getElementById('dots');
+  if (dots) dots.innerHTML = Array.from({length:TOTAL},(_,i)=>`<div class="dot${i===0?' on':''}" onclick="goTo(${i})"></div>`).join('');
+  document.getElementById('st').textContent = TOTAL;
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowRight'||e.key===' ') nav(1);
+    if (e.key==='ArrowLeft') nav(-1);
+  });
+
+  slideInit(0);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
