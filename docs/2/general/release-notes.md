@@ -1,9 +1,169 @@
 ---
-layout: docs
+layout: pdf_viewer
 title: Release Notes
 description: Take a look at our latest updates
-toc: true
+pdf: /assets/pdf/release-notes.pdf
 ---
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for December 11, 2025
+
+**New Features**
+
+Platform
+- Composer Device Cluster now supports expanded DevEUI formatting such as is used for Tactacam devices. [pest]
+- Updated Pest wizard app facts for the Metrics app to include Explain buttons by default. [pest]
+- Pluggable LLM API Endpoint for unifying Smart Features. 
+- Photo and image upload capability for Mobile Apps. [clean]
+– Added support for Amazon-specific Content-Types to RestfulAPIServices to support Tactacam authentication. [pest]
+– Composer "Cards" view: Users are now able to filter by multiple values.
+
+EverSmart
+- Added support for merging gateway alert handling into "regular" routing / settings. [clean]
+- The Metrics app can now be configured to visualize data from the following Hagleitner devices: sanitizer, soap, handtowel, toiletpaper. [clean] 
+
+**Feature Enhancements**
+
+Platform
+- Added a new pest bundler: io.microshare.event.alert.gateway. [pest]
+- Updated the Pest gateway usecase from GATEWAY to SC05GW. [pest]
+– Added a rectype and robot for the new bundler: io.microshare.event.alert.adhoc. [pest]
+- Alert support for Tactacam Reveal series trail cameras. [pest]
+- Unpacking support for Pescle Lite series cameras. [pest]
+- We now allow dynamic values for incidents from alert data. 
+- Trained machine learning models using aggregated event data. 
+- Unpacking support for Tactacam Reveal series trail cameras. [pest]
+
+EverSmart
+- Established the correct pattern for manual Tactacam setup: [pest]
+    * Need to create a proper DC with both custom device type (Tactacam Reveal)/network server (Tactacam API)/usecase SC08.
+    * Add bundler robot for recType io.microshare.event.alert.gateway.
+- Routing:
+    * Now always includes "Create Work" as button. [clean]
+    * Switched "map" to be a tab. [clean]
+- EverSmart: Now hides "Field" selector when there is only a single option. 
+- Events Overview page (previously known as Alerts Overview) no longer includes an extraneous "Device Maintenance" box or extraneous "Show All" / "Hide All" buttons in graphs on page. 
+- Alert rodent data is now visualized as event "counts" not "events" 
+- Increased incident retrieval limit in asset view to expand list size in Routing app and ReactM. 
+- All Device Health dashboards now include three additional fields to help with reporting which gateways are forwarding packets:
+    * Gateway Count
+    * Gateway LRR-IDs (only visible when “Show advanced fields” is ON in the Settings)
+    * Gateway Base Station Name (only visible when “Show advanced fields” is ON in the Settings)
+- Explain button has styling to match EverSmart skin. Now allows Print and Download as PDF. Improved AI prompting to emphasize graph/chart descriptions to supplement the data analysis.
+- EverSmart: Terminology and other UI changes 
+    * "incident" should be called “ticket” 
+    * “todo” is now “task”
+    * The “Kanban” tab should now be labeled the “Tickets" tab
+    * “alerts” should now be called “events” and the word “alert” should be used to mean notification
+    * “event” is the activity from the sensor OR the output from "Create Work" button
+    * "Roster" should now be called “Route”
+    * Removed the "Time" dropdown and default to the timezone of the data
+    * Removed the "Refresh" button 
+- If the user logged into one org manages to open a dashboard that belongs to a different org, then the error message will now show the user-facing label of the org instead of the org name. 
+– Added a method to prevent data from different sensors from mixing in the data retrievals for the Device Health dashboard. 
+– Gateway Health: We now auto-resolve an incident when a "reconnect" alert is received. 
+– Routing: Introduced visualization for closed tickets, including per-location views and historical ticket context within ticket details. 
+– Routing: Added incident notes support with improved UI for viewing incident notes in the routing app. 
+– Routing: Various improvements to the Origin Stats feature including:
+    * Renamed the feature from “Origin Stats” to Alerts Per Location.
+    * Added inline help on fields to explain the data in the charts/dashboards.
+    * Completed a re-write of the related online documentation to make it clearer and easier to understand. This includes the purpose of the features, how to use the features and the information in the charts.
+    * Charts – update field names, axis descriptions, labels etc to make it easier to understand from a user’s perspective. 
+- Metrics: We now allow the user to pick the UTC vs data time vs "ago" on the  Latest or Realtime page. 
+– Routing: Added completion status display for updated Todos from react-m in the routing app. 
+
+**Bug Fixes**
+
+Platform
+- Relaxed the BaseEventHandler checking for fport/fcnt to support Agents that are not LoRaWAN based. 
+- Introduction of the solution field in the filtering for the notifier. A notification rule from a solution shouldn't impact an other solution from now on.
+- Devices: Fixed an issue that resulted in a greyed-out screen when clicking “Edit Multiowner Attribution”.
+- Addressed a problem where a Device Cluster change appeared saved, even when the Back button was clicked instead of the Save button.
+
+EverSmart
+- Trending and Heatmap: Fixed an issue with the Trending and Heatmap Buttons not working on the first load of the page.
+- Fixed an issue where extra rodent events sometimes got inserted into data.
+- Settings App: Downloading now reliably includes label for "Locations" column.
+- After a user has been deleted via the Settings app, tickets assigned to the deleted user should still show the deleted user's email address in the Routing app.
+
+React-M
+- Fixed an issue with Roster listings showing as empty in React-M.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for October 29, 2025
+
+**New Features**
+
+- n/a 
+
+**Feature Enhancements**
+
+Platform 
+- The unpacked data and device health data now includes more device cluster meta data in the data.meta.dc field, including the device type, configured usecase, originating device cluster id and recType. 
+– Added “Kill trap” monitoring to recognize when a rodent does not leave a box. 
+- Incidents handle bundling in a better way to avoid cross solution bundling. 
+- The pictures taken by the Tacticam are now available in the Routing app, inside your incidents. 
+- The images from Tacticam cameras are now available in the Insights emails.
+
+**Bug Fixes**
+
+Platform
+- Fixed an issue where UK SMS recipients received messages from our US number instead of our UK number. 
+- Patched an issue where the Smilio agent was not producing business events due to change to placement of backboard in shareRec.
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
+
+---------------------------------------
+---------------------------------------
+
+## Release Notes for October 8, 2025
+
+**New Features**
+
+Platform
+- Created an app to produce AI generated insights using customer data. 
+
+**Feature Enhancements**
+
+Platform 
+- The "insight" and "report" fields are now passed from the Bridger to the Notifier, enabling richer notification templates.
+- We now use a process "deep" variable to put a lock on the update of an Incident to avoid stuck Incidents. 
+- Added the capability to send "insight" notification (insight email) through the Notifier. 
+- Updated tests to handle Profiles with multiple push tokens.
+
+**Bug Fixes**
+
+React-M
+- Incidents are now updated based on any roster change. 
+- Enhanced flow for “Mark all tasks complete” and “Complete the incident” in the same flow. 
+
+**Additional Resources**
+
+- n/a
+
+**Ops**
+
+- n/a
+
 
 ---------------------------------------
 ---------------------------------------

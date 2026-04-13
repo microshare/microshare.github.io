@@ -27,24 +27,36 @@
     - title: Washroom Traffic
       url: /docs/2/general/dashboards/washroom-traffic
       keywords: ["washroom", "restroom","traffic", "activity"]
+      product: clean
+      top_clean: true
     - title: Washroom Feedback
       url: /docs/2/general/dashboards/washroom-feedback
       keywords: ["washroom", "restroom", "feedback", "satisfaction"]
+      product: clean
+      top_clean: true
     - title: Rodent Alert
       url: /docs/2/general/dashboards/rodent-alert
       keywords: ["rodent", "alert", "detection"]
+      product: pest
+      top_pest: true
     - title: Rodent Works
       url: /docs/2/general/dashboards/rodent-works
       keywords: ["rodent", "alert", "works", "maintenance"]
+      product: pest
+      top_pest: true
     - title: Device Health
       url: /docs/2/general/dashboards/device-health
       keywords: ["device", "health", "monitoring", "status", "IoT"]
     - title: Settings
       url: /docs/2/general/dashboards/settings
       keywords: ["settings", "configuration", "IoT", "notification", "alerts", "rules", "triggers"]
+      product: clean
+      top_clean: true
     - title: Routing
       url: /docs/2/general/dashboards/routing
       keywords: ["routing", "IoT", "data", "visualization", "rules", "triggers", "workflow", "automation"]
+      product: clean
+      top_clean: true
 
   - title: Quick Start
     pages:
@@ -112,6 +124,8 @@
       keywords : ["battery","solution","manufacturer"]
     - title: Activity Level Indicator Installation Guide
       keywords : ["tabs","motion","brackets"]
+      product: clean
+      top_clean: true
     - title: Adjusting the B7 wearable battery - UCT
       keywords : ["wristband"]
     - title: Asset Zoning Installation Guide
@@ -122,10 +136,14 @@
       keywords : ["environment","environment monitoring","install"]
     - title: Feedback Station Installation Guide
       keywords : ["feedback station","facilities"]
+      product: clean
+      top_clean: true
     - title: Fridge Monitoring Installation
       keywords : ["fridge monitoring","fridge"]
+      product: clean
     - title: Leak Detection Installation Guide
       keywords : ["leak","water"]
+      product: clean
     - title: Open/Shut Indicator Installation
       keywords : ["open","shut","sensor"]
     - title: Room Occupancy Installation
@@ -136,24 +154,34 @@
     pages:
     - title: Skiply Clock E Installation
       keywords : ["install","feedback","skiply"]
+      product: clean
     - title: Skiply Clock E Battery Replacement
       keywords : ["battery","feedback","skiply"]
+      product: clean
     - title: Skiply Clock E Manual Reset
-      keywords : ["reset","feedback","skiply"] 
+      keywords : ["reset","feedback","skiply"]
+      product: clean
     - title: Skiply Clock E Date Time
-      keywords : ["date time","feedback","skiply"]     
+      keywords : ["date time","feedback","skiply"]
+      product: clean     
     - title: TABS Motion Installation
       keywords : ["install","motion","tabs"]
+      product: clean
     - title: TABS Motion Battery Replacement
       keywords : ["battery","motion","tabs"]
+      product: clean
     - title: TABS Motion Manual Reset
       keywords : ["reset","motion","tabs"]
+      product: clean
     - title: TABS Open Close Installation
       keywords : ["install","open close","tabs"]
+      product: clean
     - title: TABS Open Close Battery Replacement
       keywords : ["battery","open close","tabs"]
+      product: clean
     - title: TABS Open Close Manual Reset
       keywords : ["reset","open close","tabs"]  
+      product: clean
     - title: iFemtocell Gateway Installation
       keywords : ["installation","gateway","iFemtocell"]       
     - title: iFemtocell Gateway Verification
@@ -183,8 +211,10 @@
       keyword : ["traffic","occupancy","motion", "presence", "people", "counting"]
     - title: Feedback
       keyword : ["meta","event","clean","staff","skiply","touchfree","leak","toilet","soap"]
+      product: clean
     - title: Rodent Event
       keyword : ["meta","event","rodent","rat","trap"]
+      product: pest
     - title: People Counter
       keyword : ["count","doorway","counting"]
     - title: Contact Tracing
@@ -194,8 +224,7 @@
       keywords : ["hourly", "saver", "hourly saver", "predictive cleaning", "cleaning"]
     - title: Hourly Snapshot
       keywords : ["hourly", "snapshot", "hourly snapshot", "predictive cleaning", "cleaning"]
-    - title: Daily Snapshot
-      keywords : ["daily", "snapshot", "daily snapshot", "predictive cleaning", "cleaning"]
+      product: clean
   - title: Microshare Platform
     pages:
     - title: Quick Start

@@ -4,14 +4,18 @@
   <meta name="keywords" content="documentation,pdf,{{ page.title | split: ',' }}">
   {% include docs-header.html %}
 <body>
-  {% include docs-navbar.html %}
-  <div class="page-wrapper toggled light-theme" style="padding-top: 60px;">
-    {% include docs-sidebar.html %}
+  {% unless page.embed %}
+    {% include docs-navbar.html %}
+  {% endunless %}
+  <div class="page-wrapper toggled light-theme" {% unless page.embed %}style="padding-top: 60px;"{% endunless %}>
+    {% unless page.embed %}
+      {% include docs-sidebar.html %}
+    {% endunless %}
     <!-- page-content  -->
     <main class="page-content">
       <div id="overlay" class="overlay"></div>
       <!-- Fullscreen PDF Viewer -->
-      <div style="border: 1px solid #ddd; height: calc(100vh - 60px);" class="iframe-container">
+      <div style="border: 1px solid #ddd; height: {% if page.embed %}100vh{% else %}calc(100vh - 60px){% endif %};" class="iframe-container">
         <iframe 
           src="{{ page.pdf | relative_url }}" 
           style="width: 100%; height: 100%;" 
@@ -24,6 +28,8 @@
     <!-- page-content -->
   </div>
 </body>
-{% include docs-scripts.html %}
-{% include search-engine.html %}
+{% unless page.embed %}
+  {% include docs-scripts.html %}
+  {% include search-engine.html %}
+{% endunless %}
 </html>

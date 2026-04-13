@@ -133,3 +133,50 @@
   display: block;
   padding-bottom: 0.50rem;
 }
+
+/* Product Badges */
+.product-badge {
+  display: inline-block !important;
+  padding: 0.125rem 0.5rem !important;
+  margin-left: 0.5rem !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  border-radius: 0.25rem !important;
+  vertical-align: middle !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+}
+
+.product-badge-pest {
+  background-color: #a20044 !important;
+  color: #fff !important;
+}
+
+.product-badge-clean {
+  background-color: #007974 !important;
+  color: #fff !important;
+}
+
+/* Badge in sidebar menu */
+.sidebar-menu .product-badge,
+.sidebar-wrapper .sidebar-menu ul li a .product-badge,
+.sidebar-wrapper .sidebar-menu .sidebar-submenu li a .product-badge {
+  margin-left: 0.25rem !important;
+  font-size: 0.65rem !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  padding: 0.1rem 0.4rem !important;
+}
+
+/* Badge in release notes */
+.release-notes-item {
+  position: relative;
+}
+
+.release-notes-item .product-badge {
+  margin-left: 0.5rem;
+  vertical-align: baseline;
+}

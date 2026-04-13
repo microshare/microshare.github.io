@@ -90,10 +90,150 @@
   </div>
   <!-- End Icon Blocks -->
 
-
-
-
+  <!-- Top Pages by Product -->
   <main>
+    <section class="py-11 pt-5 pb-11">
+      <div class="container">
+        <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
+          <h2 class="h3 text-center">Top Pages by Product</h2>
+          <p>Quick access to the most important pages for each product</p>
+        </div>
+
+        <div class="row">
+          <!-- Pest Product Section (Left) -->
+          <div class="col-lg-6 mb-5">
+            <div class="w-md-75 w-lg-50 mx-auto text-center mb-4">
+              <img src="{{ site.baseurl }}/assets/img/logo/pest-logo.png" alt="Pest" class="mb-3" style="width: 80px; height: 80px; object-fit: contain;">
+              <h3 class="h5">
+                <span class="product-badge product-badge-pest mr-2">Pest</span>
+              </h3>
+            </div>
+            <div>
+              {% for group in site.data.docs %}
+                {% for page in group.pages %}
+                  {% if page.product == "pest" and page.top_pest %}
+                    {% assign page_slug = page.title | slugify %}
+                    {% assign group_slug = group.title | slugify %}
+                    {% if page.url %}
+                      {% assign page_url = page.url %}
+                    {% else %}
+                      {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: page_slug %}
+                    {% endif %}
+                    <div class="mb-4 bg-hover-light">
+                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                        <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                        <div class="media-body">
+                          <h5 class="mb-1">
+                            <a class="link-dark" href="{{ page_url }}">
+                              {{ page.title }}
+                            </a>
+                          </h5>
+                          <p class="mb-0 text-muted small">{{ group.title }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                {% for subgroup in group.subpages %}
+                  {% for subpage in subgroup.pages %}
+                    {% if subpage.product == "pest" and subpage.top_pest %}
+                      {% assign subpage_slug = subpage.title | slugify %}
+                      {% assign subgroup_slug = subgroup.title | slugify %}
+                      {% assign group_slug = group.title | slugify %}
+                      {% if subpage.url %}
+                        {% assign page_url = subpage.url %}
+                      {% else %}
+                        {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: subgroup_slug | append: "/" | append: subpage_slug %}
+                      {% endif %}
+                      <div class="mb-4 bg-hover-light">
+                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                          <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                          <div class="media-body">
+                            <h5 class="mb-1">
+                              <a class="link-dark" href="{{ page_url }}">
+                                {{ subpage.title }}
+                              </a>
+                            </h5>
+                            <p class="mb-0 text-muted small">{{ group.title }} - {{ subgroup.title }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Clean Product Section (Right) -->
+          <div class="col-lg-6 mb-5">
+            <div class="w-md-75 w-lg-50 mx-auto text-center mb-4">
+              <img src="{{ site.baseurl }}/assets/img/logo/clean-logo.png" alt="Clean" class="mb-3" style="width: 80px; height: 80px; object-fit: contain;">
+              <h3 class="h5">
+                <span class="product-badge product-badge-clean mr-2">Clean</span>
+              </h3>
+            </div>
+            <div>
+              {% for group in site.data.docs %}
+                {% for page in group.pages %}
+                  {% if page.product == "clean" and page.top_clean %}
+                    {% assign page_slug = page.title | slugify %}
+                    {% assign group_slug = group.title | slugify %}
+                    {% if page.url %}
+                      {% assign page_url = page.url %}
+                    {% else %}
+                      {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: page_slug %}
+                    {% endif %}
+                    <div class="mb-4 bg-hover-light">
+                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                        <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                        <div class="media-body">
+                          <h5 class="mb-1">
+                            <a class="link-dark" href="{{ page_url }}">
+                              {{ page.title }}
+                            </a>
+                          </h5>
+                          <p class="mb-0 text-muted small">{{ group.title }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                {% for subgroup in group.subpages %}
+                  {% for subpage in subgroup.pages %}
+                    {% if subpage.product == "clean" and subpage.top_clean %}
+                      {% assign subpage_slug = subpage.title | slugify %}
+                      {% assign subgroup_slug = subgroup.title | slugify %}
+                      {% assign group_slug = group.title | slugify %}
+                      {% if subpage.url %}
+                        {% assign page_url = subpage.url %}
+                      {% else %}
+                        {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: subgroup_slug | append: "/" | append: subpage_slug %}
+                      {% endif %}
+                      <div class="mb-4 bg-hover-light">
+                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                          <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
+                          <div class="media-body">
+                            <h5 class="mb-1">
+                              <a class="link-dark" href="{{ page_url }}">
+                                {{ subpage.title }}
+                              </a>
+                            </h5>
+                            <p class="mb-0 text-muted small">{{ group.title }} - {{ subgroup.title }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Top Pages by Product -->
+
     <section class="py-11 pt-5 pb-11">
     {% for group in site.data.docs %}
       {% assign link = group.pages | first %}

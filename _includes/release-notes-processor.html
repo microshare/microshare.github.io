@@ -1,0 +1,13 @@
+{% comment %}
+  Release Notes Processor
+  Converts inline tags like [pest] or [clean] to product badges
+  This processes the already-rendered HTML content from markdown
+  Usage: {% include release-notes-processor.html content=content %}
+{% endcomment %}
+{% assign processed_content = include.content %}
+{% assign processed_content = processed_content | replace: '[pest]', '<span class="product-badge product-badge-pest">Pest</span>' %}
+{% assign processed_content = processed_content | replace: '[clean]', '<span class="product-badge product-badge-clean">Clean</span>' %}
+{% assign processed_content = processed_content | replace: '&lt;span class=&quot;product-badge', '<span class="product-badge' %}
+{% assign processed_content = processed_content | replace: '&lt;/span&gt;', '</span>' %}
+{{ processed_content }}
+
