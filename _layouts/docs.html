@@ -2,6 +2,12 @@
 layout: base
 ---
 
+{% assign page_lang = page.lang | default: "en" %}
+
+<script id="docs-translations-data" type="application/json">{{ page.translations | jsonify }}</script>
+<script src="{{ site.baseurl }}/assets/js/docs-locale.js" defer></script>
+<script src="{{ site.baseurl }}/assets/js/docs-pdf-view.js" defer></script>
+
 {% unless page.embed %}
   {% include docs-navbar.html %}
 {% endunless %}
@@ -16,20 +22,29 @@ layout: base
         <div id="overlay" class="overlay"></div>
         <div class="container-fluid">
             <div class="row {% unless page.embed %}p-lg-4{% endunless %}">
-                <article class="main-content {% unless page.embed %}col-md-9 pr-lg-5{% endunless %}">
-                    <h1 class="text-microshare-dark mt-2">{{ page.title }}</h1>
-                    <h6 class="text-microshare-light">{{ page.description }}</h6>
-                    <hr class="text-microshare-light" class="p-1 my-2">
-                    {{ content }}
-                    {% unless page.embed %}
-                        {% include content-footer.html %}
-                    {% endunless %}
-                </article>
-                {% unless page.embed %}
-                    <aside id="docs-aside" class="docs-aside col-md-3">
-                        {% include docs-aside.html %}
-                    </aside>
-                {% endunless %}
+                <div id="docs-article-view" class="{% unless page.embed %}col-12{% endunless %}">
+                    <div class="row">
+                        <article class="main-content {% unless page.embed %}col-md-9 pr-lg-5{% endunless %}">
+                            <h1 class="text-microshare-dark mt-2">{{ page.title }}</h1>
+                            <h6 class="text-microshare-light">{{ page.description }}</h6>
+                            <hr class="text-microshare-light" class="p-1 my-2">
+                            {{ content }}
+                            {% unless page.embed %}
+                                {% include content-footer.html %}
+                            {% endunless %}
+                        </article>
+                        {% unless page.embed %}
+                            <aside id="docs-aside" class="docs-aside col-md-3">
+                                {% include docs-aside.html %}
+                            </aside>
+                        {% endunless %}
+                    </div>
+                </div>
+                {% if page.pdf %}
+                <div id="docs-pdf-view" class="col-12" hidden>
+                    {% include docs-pdf-viewer.html %}
+                </div>
+                {% endif %}
             </div>
         </div>
     </main>

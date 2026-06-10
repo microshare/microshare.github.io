@@ -1,0 +1,12 @@
+<a
+  href="{{ include.url }}"
+  class="docs-link-card d-flex align-items-center border rounded shadow-sm p-3 mb-3 text-decoration-none link-dark bg-hover-light"
+>
+  <span class="docs-link-card-icon rounded-circle d-inline-flex align-items-center justify-content-center mr-3">
+    <i class="far fa-fw fa-{{ include.icon | default: 'link' }}"></i>
+  </span>
+  <span class="docs-link-card-body">
+    <span class="docs-link-card-title d-block font-weight-bold">{{ include.title }}</span>
+    <span class="docs-link-card-subtitle d-block text-muted small">{{ include.subtitle | default: 'Microshare Documentation' }}</span>
+  </span>
+</a>
