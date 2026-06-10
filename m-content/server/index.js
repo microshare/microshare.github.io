@@ -11,6 +11,7 @@ import { LANGUAGES, DEFAULT_LOCALE, isLocaleCode } from '../shared/languages.js'
 import { buildLocalePath, buildTranslationsMap, buildMigratedCanonicalPath, getCanonicalPath, getLocaleFromPath } from './lib/locale.js'
 import { translatePage } from './lib/translate.js'
 import { ingestPdf } from './lib/pdfIngest.js'
+import { createChangePackageService } from './lib/changePackage.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const APP_ROOT = path.resolve(__dirname, '..')
@@ -691,6 +692,17 @@ async function uniqueAssetPath(folder, originalName) {
 
 async function start() {
   await loadEnv()
+  const changePackages = createChangePackageService({ siteRoot: SITE_ROOT, appRoot: APP_ROOT })
+
+  async function recordContentChange(summary, author) {
+    try {
+      return await changePackages.recordChange(summary, author)
+    } catch (error) {
+      console.warn('[change-package] commit skipped:', error.message)
+      return null
+    }
+  }
+
   const app = express()
   app.use(express.json({ limit: '10mb' }))
   app.use('/assets', express.static(path.join(SITE_ROOT, 'assets')))
@@ -714,7 +726,8 @@ async function start() {
   app.post('/api/page', async (req, res, next) => {
     try {
       const page = await savePage(req.body)
-      res.json({ ok: true, page, site: await buildSiteSnapshot() })
+      const commit = await recordContentChange(`Update page: ${page.title || page.path}`, req.body.author)
+      res.json({ ok: true, page, site: await buildSiteSnapshot(), commit })
     } catch (error) {
       next(error)
     }
@@ -727,7 +740,8 @@ async function start() {
         targetGroupTitle: req.body.targetGroupTitle,
         targetSubgroupTitle: req.body.targetSubgroupTitle || '',
       })
-      res.json({ ok: true, ...result, site: await buildSiteSnapshot() })
+      const commit = await recordContentChange(`Move page: ${result.page?.title || result.canonicalPath}`, req.body.author)
+      res.json({ ok: true, ...result, site: await buildSiteSnapshot(), commit })
     } catch (error) {
       next(error)
     }
@@ -736,7 +750,8 @@ async function start() {
   app.post('/api/menu', async (req, res, next) => {
     try {
       await writeMenu(req.body.menu || [])
-      res.json({ ok: true, site: await buildSiteSnapshot() })
+      const commit = await recordContentChange('Update documentation menu', req.body.author)
+      res.json({ ok: true, site: await buildSiteSnapshot(), commit })
     } catch (error) {
       next(error)
     }
@@ -769,7 +784,78 @@ async function start() {
           size: file.size,
         })
       }
-      res.json({ ok: true, assets: saved, allAssets: await listAssets() })
+      const commit = await recordContentChange(`Upload ${saved.length} image${saved.length === 1 ? '' : 's'}`, req.body.author)
+      res.json({ ok: true, assets: saved, allAssets: await listAssets(), commit })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.get('/api/packages', async (_req, res, next) => {
+    try {
+      res.json(await changePackages.listPackages())
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.get('/api/packages/active', async (_req, res, next) => {
+    try {
+      const pkg = await changePackages.getActivePackage()
+      res.json({ package: pkg, github: changePackages.getGithubStatus() })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.post('/api/packages/start', async (req, res, next) => {
+    try {
+      const pkg = await changePackages.startPackage({
+        title: req.body.title,
+        author: req.body.author,
+      })
+      res.json({ ok: true, package: pkg })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.get('/api/packages/diff', async (req, res, next) => {
+    try {
+      const prNumber = req.query.prNumber ? Number(req.query.prNumber) : undefined
+      res.json(await changePackages.getPackageDiff({ prNumber }))
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.post('/api/packages/submit', async (req, res, next) => {
+    try {
+      const pkg = await changePackages.submitPackage()
+      res.json({ ok: true, package: pkg })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.post('/api/packages/publish', async (req, res, next) => {
+    try {
+      const result = await changePackages.publishPackage({
+        prNumber: req.body.prNumber ? Number(req.body.prNumber) : undefined,
+        author: req.body.author,
+      })
+      res.json({ ok: true, ...result, site: await buildSiteSnapshot() })
+    } catch (error) {
+      next(error)
+    }
+  })
+
+  app.post('/api/packages/abandon', async (req, res, next) => {
+    try {
+      const result = await changePackages.abandonPackage({
+        prNumber: req.body.prNumber ? Number(req.body.prNumber) : undefined,
+      })
+      res.json({ ok: true, ...result, site: await buildSiteSnapshot() })
     } catch (error) {
       next(error)
     }
@@ -810,7 +896,8 @@ async function start() {
           moveFile: false,
           menu: null,
         })
-        res.json({ ok: true, draft, page: saved, site: await buildSiteSnapshot() })
+        const commit = await recordContentChange(`Translate page: ${saved.title || saved.path}`, req.body.author)
+        res.json({ ok: true, draft, page: saved, site: await buildSiteSnapshot(), commit })
         return
       }
 

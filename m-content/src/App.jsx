@@ -16,10 +16,13 @@ import {
   Languages,
   Link,
   List,
+  GitBranch,
   LoaderCircle,
+  Package,
   Plus,
   Quote,
   RefreshCcw,
+  Rocket,
   Save,
   Search,
   Sparkles,
@@ -28,6 +31,7 @@ import {
   Upload,
   Video,
   X,
+  XCircle,
 } from 'lucide-react'
 import { decodeEditorLiquid, htmlToMarkdown, normalizeAssetUrl, renderEditorMarkdown } from './lib/contentBlocks'
 import {
@@ -81,12 +85,22 @@ function App() {
   const [status, setStatus] = useState({ type: 'idle', message: '' })
   const [translatingLang, setTranslatingLang] = useState(null)
   const [migratePageTarget, setMigratePageTarget] = useState(null)
+  const [changePackage, setChangePackage] = useState(null)
+  const [packagesData, setPackagesData] = useState(null)
+  const [packageDiff, setPackageDiff] = useState(null)
+  const [packageBusy, setPackageBusy] = useState(false)
+  const [authorName, setAuthorName] = useState(() => localStorage.getItem('m-content-author') || '')
 
   useEffect(() => {
     loadSite()
+    loadChangePackages()
     // Initial workspace load only; explicit buttons handle refreshes afterward.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem('m-content-author', authorName)
+  }, [authorName])
 
   const pageSections = useMemo(() => buildPageSections(site?.pages || [], pageQuery), [site, pageQuery])
   const pageOptions = useMemo(() => (site?.pages || []).filter((item) => item.exists !== false), [site])
@@ -101,6 +115,125 @@ function App() {
       setStatus({ type: 'success', message: 'Workspace loaded' })
     } catch (error) {
       setStatus({ type: 'error', message: error.message })
+    }
+  }
+
+  async function loadChangePackages() {
+    try {
+      const [activeResult, listResult] = await Promise.all([
+        api('/api/packages/active'),
+        api('/api/packages'),
+      ])
+      setChangePackage(activeResult.package)
+      setPackagesData(listResult)
+    } catch (error) {
+      console.warn('Could not load change packages:', error.message)
+    }
+  }
+
+  async function loadPackageDiff(prNumber) {
+    setPackageBusy(true)
+    try {
+      const query = prNumber ? `?prNumber=${encodeURIComponent(prNumber)}` : ''
+      const diff = await api(`/api/packages/diff${query}`)
+      setPackageDiff(diff)
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message })
+    } finally {
+      setPackageBusy(false)
+    }
+  }
+
+  async function startChangePackage(title) {
+    if (!authorName.trim()) {
+      setStatus({ type: 'error', message: 'Enter your name in the Changes section first' })
+      setView('changes')
+      return
+    }
+    setPackageBusy(true)
+    setStatus({ type: 'busy', message: 'Starting change package...' })
+    try {
+      const result = await api('/api/packages/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, author: authorName.trim() }),
+      })
+      setChangePackage(result.package)
+      await loadChangePackages()
+      setPackageDiff(null)
+      setView('changes')
+      setStatus({ type: 'success', message: `Change package started: ${title}` })
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message })
+    } finally {
+      setPackageBusy(false)
+    }
+  }
+
+  async function submitChangePackage() {
+    if (!window.confirm('Submit this change package for review? You can still make updates until it is published.')) return
+    setPackageBusy(true)
+    setStatus({ type: 'busy', message: 'Uploading changes for review...' })
+    try {
+      const result = await api('/api/packages/submit', { method: 'POST' })
+      setChangePackage(result.package)
+      await loadChangePackages()
+      await loadPackageDiff(result.package.prNumber)
+      setStatus({ type: 'success', message: 'Changes submitted for review' })
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message })
+    } finally {
+      setPackageBusy(false)
+    }
+  }
+
+  async function publishChangePackage(prNumber) {
+    if (!window.confirm('Publish these changes to the live documentation site?')) return
+    setPackageBusy(true)
+    setStatus({ type: 'busy', message: 'Publishing changes...' })
+    try {
+      const result = await api('/api/packages/publish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prNumber, author: authorName.trim() || 'm-content' }),
+      })
+      setChangePackage(null)
+      setPackageDiff(null)
+      if (result.site) {
+        setSite(result.site)
+        setMenuDraft(structuredClone(result.site.menu || []))
+      }
+      await loadChangePackages()
+      setStatus({ type: 'success', message: 'Changes published — the site will update shortly' })
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message })
+    } finally {
+      setPackageBusy(false)
+    }
+  }
+
+  async function abandonChangePackage(prNumber) {
+    if (!window.confirm('Abandon this change package? Unpublished work on this branch will be discarded.')) return
+    setPackageBusy(true)
+    setStatus({ type: 'busy', message: 'Abandoning change package...' })
+    try {
+      const result = await api('/api/packages/abandon', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prNumber }),
+      })
+      setChangePackage(null)
+      setPackageDiff(null)
+      if (result.site) {
+        setSite(result.site)
+        setMenuDraft(structuredClone(result.site.menu || []))
+      }
+      await loadChangePackages()
+      setStatus({ type: 'success', message: 'Change package abandoned' })
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message })
+    } finally {
+      setPackageBusy(false)
     }
   }
 
@@ -152,6 +285,7 @@ function App() {
       body,
       moveFile: false,
       menu: null,
+      author: authorName.trim() || undefined,
     }
     setStatus({ type: 'busy', message: 'Saving page...' })
     try {
@@ -167,7 +301,11 @@ function App() {
       setFrontmatter({ ...defaultFrontmatter, ...result.page.frontmatter })
       setBody(result.page.body || body)
       setDirty(false)
-      setStatus({ type: 'success', message: 'Page saved locally' })
+      await loadChangePackages()
+      setStatus({
+        type: 'success',
+        message: result.commit ? 'Page saved and recorded in change package' : 'Page saved locally',
+      })
     } catch (error) {
       setStatus({ type: 'error', message: error.message })
     }
@@ -179,12 +317,16 @@ function App() {
       const result = await api('/api/menu', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ menu: menuDraft }),
+        body: JSON.stringify({ menu: menuDraft, author: authorName.trim() || undefined }),
       })
       setSite(result.site)
       setMenuDraft(structuredClone(result.site.menu || []))
       setDirty(false)
-      setStatus({ type: 'success', message: 'Menu saved locally' })
+      await loadChangePackages()
+      setStatus({
+        type: 'success',
+        message: result.commit ? 'Menu saved and recorded in change package' : 'Menu saved locally',
+      })
     } catch (error) {
       setStatus({ type: 'error', message: error.message })
     }
@@ -231,10 +373,11 @@ function App() {
       const result = await api('/api/translate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sourcePath, targetLang, save }),
+        body: JSON.stringify({ sourcePath, targetLang, save, author: authorName.trim() || undefined }),
       })
       if (save && result.page) {
         setSite(result.site)
+        await loadChangePackages()
         setPage({ ...result.page, previousPath: result.page.path })
         setDocPath(result.page.path)
         setFrontmatter({ ...defaultFrontmatter, ...result.page.frontmatter })
@@ -304,12 +447,14 @@ function App() {
     const form = new FormData()
     for (const file of files) form.append('files', file)
     form.append('folder', folder || 'uploads')
+    if (authorName.trim()) form.append('author', authorName.trim())
     setStatus({ type: 'busy', message: 'Uploading images...' })
     try {
       const response = await fetch('/api/assets/upload', { method: 'POST', body: form })
       const json = await response.json()
       if (!response.ok) throw new Error(json.error || 'Upload failed')
       setSite((current) => ({ ...current, assets: json.allAssets }))
+      await loadChangePackages()
       setStatus({ type: 'success', message: `${json.assets.length} image saved` })
       return json.assets
     } catch (error) {
@@ -329,9 +474,11 @@ function App() {
           sourcePath: targetPage.path,
           targetGroupTitle,
           targetSubgroupTitle,
+          author: authorName.trim() || undefined,
         }),
       })
       setSite(result.site)
+      await loadChangePackages()
       setMenuDraft(structuredClone(result.site.menu || []))
       setMigratePageTarget(null)
       if (page?.path && result.moves?.some((move) => move.from === page.path || move.to === page.path)) {
@@ -407,6 +554,13 @@ function App() {
         )}
         <span>{status.message || 'Ready'}</span>
         {dirty && <strong>Unsaved changes</strong>}
+        {changePackage && (
+          <button className="package-strip-link" type="button" onClick={() => setView('changes')}>
+            <Package size={14} />
+            {changePackage.title}
+            <span className={`package-status-pill status-${changePackage.status}`}>{packageStatusLabel(changePackage.status)}</span>
+          </button>
+        )}
       </div>
 
       {view === 'pages' && (
@@ -418,6 +572,7 @@ function App() {
           onOpenPage={loadPage}
           onCreatePage={createPage}
           onOpenMenu={() => setView('menu')}
+          onOpenChanges={() => setView('changes')}
           onTranslate={translatePageLocale}
           translatingLang={translatingLang}
           onMigratePage={setMigratePageTarget}
@@ -467,6 +622,26 @@ function App() {
           saveMenu={saveMenu}
           onOpenPage={loadPage}
           onOpenPages={() => setView('pages')}
+          onOpenChanges={() => setView('changes')}
+        />
+      )}
+
+      {view === 'changes' && (
+        <ChangesPanel
+          changePackage={changePackage}
+          packagesData={packagesData}
+          packageDiff={packageDiff}
+          packageBusy={packageBusy}
+          authorName={authorName}
+          setAuthorName={setAuthorName}
+          onStartPackage={startChangePackage}
+          onSubmitPackage={submitChangePackage}
+          onPublishPackage={publishChangePackage}
+          onAbandonPackage={abandonChangePackage}
+          onLoadDiff={loadPackageDiff}
+          onRefresh={loadChangePackages}
+          onOpenPages={() => setView('pages')}
+          onOpenMenu={() => setView('menu')}
         />
       )}
 
@@ -482,7 +657,7 @@ function App() {
   )
 }
 
-function PagesDashboard({ sections, query, setQuery, site, onOpenPage, onCreatePage, onOpenMenu, onTranslate, translatingLang, onMigratePage }) {
+function PagesDashboard({ sections, query, setQuery, site, onOpenPage, onCreatePage, onOpenMenu, onOpenChanges, onTranslate, translatingLang, onMigratePage }) {
   const [selectedCategory, setSelectedCategory] = useState('All pages')
   const allRows = flattenPageSections(sections)
   const selectedSection = sections.find((section) => section.title === selectedCategory)
@@ -491,7 +666,7 @@ function PagesDashboard({ sections, query, setQuery, site, onOpenPage, onCreateP
   return (
     <main className="enterprise-layout">
       <aside className="side-nav">
-        <WorkspaceSideNav active="pages" onOpenPages={() => {}} onOpenMenu={onOpenMenu} />
+        <WorkspaceSideNav active="pages" onOpenPages={() => {}} onOpenMenu={onOpenMenu} onOpenChanges={onOpenChanges} />
         <div className="side-nav-header">
           <h2>Pages</h2>
           <span>{site?.stats?.pageCount || 0}</span>
@@ -1404,12 +1579,13 @@ function EditorAssistant({
       </section>
 
       <section className="helper-section publish-section">
-        <h3>Publishing</h3>
-        <p>{dirty ? 'This page has local unsaved edits.' : 'Everything on this page is saved locally.'}</p>
+        <h3>Saving</h3>
+        <p>{dirty ? 'This page has unsaved edits.' : 'This page is saved on disk.'}</p>
         <button className="primary" type="button" onClick={savePage}>
           <Save size={16} />
           Save page
         </button>
+        <p className="helper-hint">To publish online, use the Changes section to start a change package, then submit and approve.</p>
       </section>
     </div>
   )
@@ -2106,7 +2282,7 @@ function ImageLibraryModal({ assets, query, setQuery, imageRef, onClose, onSelec
   )
 }
 
-function MenuBuilder({ menuDraft, updateMenu, pages, saveMenu, onOpenPage, onOpenPages }) {
+function MenuBuilder({ menuDraft, updateMenu, pages, saveMenu, onOpenPage, onOpenPages, onOpenChanges }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const activeIndex = Math.min(selectedIndex, Math.max(menuDraft.length - 1, 0))
   const activeGroup = menuDraft[activeIndex]
@@ -2114,7 +2290,7 @@ function MenuBuilder({ menuDraft, updateMenu, pages, saveMenu, onOpenPage, onOpe
   return (
     <main className="enterprise-layout">
       <aside className="side-nav">
-        <WorkspaceSideNav active="menu" onOpenPages={onOpenPages} onOpenMenu={() => {}} />
+        <WorkspaceSideNav active="menu" onOpenPages={onOpenPages} onOpenMenu={() => {}} onOpenChanges={onOpenChanges} />
         <div className="side-nav-header">
           <h2>Menu</h2>
           <span>{menuDraft.length}</span>
@@ -2174,7 +2350,7 @@ function MenuBuilder({ menuDraft, updateMenu, pages, saveMenu, onOpenPage, onOpe
   )
 }
 
-function WorkspaceSideNav({ active, onOpenPages, onOpenMenu }) {
+function WorkspaceSideNav({ active, onOpenPages, onOpenMenu, onOpenChanges }) {
   return (
     <nav className="workspace-side-nav" aria-label="Workspace">
       <button className={active === 'pages' ? 'active' : ''} type="button" onClick={onOpenPages}>
@@ -2185,7 +2361,320 @@ function WorkspaceSideNav({ active, onOpenPages, onOpenMenu }) {
         <FolderTree size={16} />
         Menu
       </button>
+      <button className={active === 'changes' ? 'active' : ''} type="button" onClick={onOpenChanges}>
+        <Package size={16} />
+        Changes
+      </button>
     </nav>
+  )
+}
+
+function packageStatusLabel(status) {
+  if (status === 'draft') return 'Draft'
+  if (status === 'review') return 'Awaiting review'
+  if (status === 'published') return 'Published'
+  return 'Closed'
+}
+
+function ChangesPanel({
+  changePackage,
+  packagesData,
+  packageDiff,
+  packageBusy,
+  authorName,
+  setAuthorName,
+  onStartPackage,
+  onSubmitPackage,
+  onPublishPackage,
+  onAbandonPackage,
+  onLoadDiff,
+  onRefresh,
+  onOpenPages,
+  onOpenMenu,
+}) {
+  const [newTitle, setNewTitle] = useState('')
+  const [selectedPr, setSelectedPr] = useState(null)
+  const [expandedFile, setExpandedFile] = useState(null)
+  const packages = packagesData?.packages || []
+  const github = packagesData?.github || changePackage?.github
+
+  useEffect(() => {
+    if (changePackage?.status === 'draft' && !packageDiff && !packageBusy) {
+      onLoadDiff()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [changePackage?.id])
+
+  async function handleReviewPackage(pkg) {
+    setSelectedPr(pkg.prNumber || null)
+    await onLoadDiff(pkg.prNumber || undefined)
+  }
+
+  return (
+    <main className="enterprise-layout changes-layout">
+      <aside className="side-nav">
+        <WorkspaceSideNav active="changes" onOpenPages={onOpenPages} onOpenMenu={onOpenMenu} onOpenChanges={() => {}} />
+        <div className="side-nav-header">
+          <h2>Changes</h2>
+          <button type="button" className="icon-only" title="Refresh" onClick={onRefresh}>
+            <RefreshCcw size={15} />
+          </button>
+        </div>
+
+        <label className="field-block">
+          Your name
+          <input
+            value={authorName}
+            onChange={(event) => setAuthorName(event.target.value)}
+            placeholder="Used for change history"
+          />
+        </label>
+
+        {!changePackage && (
+          <div className="side-actions stack">
+            <label className="field-block">
+              New change package
+              <input
+                value={newTitle}
+                onChange={(event) => setNewTitle(event.target.value)}
+                placeholder="e.g. Welcome page updates"
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' && newTitle.trim()) onStartPackage(newTitle.trim())
+                }}
+              />
+            </label>
+            <button
+              className="primary"
+              type="button"
+              disabled={packageBusy || !newTitle.trim() || !authorName.trim()}
+              onClick={() => onStartPackage(newTitle.trim())}
+            >
+              <Plus size={16} />
+              Start change package
+            </button>
+          </div>
+        )}
+
+        <nav className="package-list" aria-label="Change packages">
+          {packages.length === 0 && <p className="muted-copy">No change packages yet.</p>}
+          {packages.map((pkg) => (
+            <button
+              key={`${pkg.id || pkg.branch}-${pkg.prNumber || 'local'}`}
+              type="button"
+              className={`package-list-item ${pkg.isActive ? 'active' : ''} ${selectedPr === pkg.prNumber ? 'selected' : ''}`}
+              onClick={() => handleReviewPackage(pkg)}
+            >
+              <strong>{pkg.title}</strong>
+              <span>{pkg.author || 'unknown'}</span>
+              <span className={`package-status-pill status-${pkg.status}`}>{packageStatusLabel(pkg.status)}</span>
+            </button>
+          ))}
+        </nav>
+      </aside>
+
+      <section className="work-area changes-work-area">
+        <header className="work-header">
+          <div>
+            <h2>Change packages</h2>
+            <p>Start a package, edit pages, submit for review, then publish to the live site.</p>
+          </div>
+        </header>
+
+        <div className="changes-steps">
+          <div className={`change-step ${changePackage ? 'done' : 'current'}`}>
+            <span>1</span>
+            <div>
+              <strong>Start</strong>
+              <p>Create a named change package</p>
+            </div>
+          </div>
+          <div className={`change-step ${changePackage?.diffStats?.files ? 'done' : changePackage ? 'current' : ''}`}>
+            <span>2</span>
+            <div>
+              <strong>Edit</strong>
+              <p>Update pages, menu, and images</p>
+            </div>
+          </div>
+          <div className={`change-step ${changePackage?.status === 'review' ? 'current' : changePackage?.status === 'published' ? 'done' : ''}`}>
+            <span>3</span>
+            <div>
+              <strong>Submit</strong>
+              <p>Upload changes for review</p>
+            </div>
+          </div>
+          <div className={`change-step ${packageDiff ? 'current' : ''}`}>
+            <span>4</span>
+            <div>
+              <strong>Review</strong>
+              <p>Validate what changed</p>
+            </div>
+          </div>
+          <div className="change-step">
+            <span>5</span>
+            <div>
+              <strong>Publish</strong>
+              <p>Go live on the documentation site</p>
+            </div>
+          </div>
+        </div>
+
+        {changePackage && (
+          <section className="changes-card active-package-card">
+            <header>
+              <div>
+                <h3>{changePackage.title}</h3>
+                <p>
+                  <GitBranch size={14} />
+                  {changePackage.branch}
+                  {changePackage.author ? ` · ${changePackage.author}` : ''}
+                </p>
+              </div>
+              <span className={`package-status-pill status-${changePackage.status}`}>{packageStatusLabel(changePackage.status)}</span>
+            </header>
+
+            <div className="package-meta-grid">
+              <div>
+                <span>Files changed</span>
+                <strong>{changePackage.diffStats?.files ?? packageDiff?.stats?.files ?? 0}</strong>
+              </div>
+              <div>
+                <span>Additions</span>
+                <strong>{changePackage.diffStats?.insertions ?? packageDiff?.stats?.insertions ?? 0}</strong>
+              </div>
+              <div>
+                <span>Deletions</span>
+                <strong>{changePackage.diffStats?.deletions ?? packageDiff?.stats?.deletions ?? 0}</strong>
+              </div>
+              <div>
+                <span>Commits</span>
+                <strong>{changePackage.commitCount ?? packageDiff?.commits?.length ?? 0}</strong>
+              </div>
+            </div>
+
+            <div className="package-actions">
+              {changePackage.status === 'draft' && (
+                <>
+                  <button type="button" onClick={() => onLoadDiff()} disabled={packageBusy}>
+                    <Search size={16} />
+                    Preview changes
+                  </button>
+                  <button className="primary" type="button" onClick={onSubmitPackage} disabled={packageBusy || !github?.configured}>
+                    <Rocket size={16} />
+                    Request upload
+                  </button>
+                  <button type="button" className="danger" onClick={() => onAbandonPackage()} disabled={packageBusy}>
+                    <XCircle size={16} />
+                    Abandon
+                  </button>
+                </>
+              )}
+              {changePackage.status === 'review' && (
+                <>
+                  <button type="button" onClick={() => onLoadDiff(changePackage.prNumber)} disabled={packageBusy}>
+                    <Search size={16} />
+                    Review changes
+                  </button>
+                  {changePackage.prUrl && (
+                    <a className="button-link" href={changePackage.prUrl} target="_blank" rel="noreferrer">
+                      Open on GitHub
+                    </a>
+                  )}
+                  <button className="primary" type="button" onClick={() => onPublishPackage(changePackage.prNumber)} disabled={packageBusy}>
+                    <CheckCircle2 size={16} />
+                    Approve &amp; publish
+                  </button>
+                  <button type="button" className="danger" onClick={() => onAbandonPackage(changePackage.prNumber)} disabled={packageBusy}>
+                    <XCircle size={16} />
+                    Abandon
+                  </button>
+                </>
+              )}
+            </div>
+            {!github?.configured && changePackage.status === 'draft' && (
+              <p className="helper-hint warning-copy">Add GITHUB_TOKEN to .env to submit and publish changes.</p>
+            )}
+          </section>
+        )}
+
+        {packageBusy && (
+          <div className="changes-busy">
+            <LoaderCircle size={18} className="spin" />
+            Working...
+          </div>
+        )}
+
+        {packageDiff && (
+          <section className="changes-card diff-card">
+            <header>
+              <div>
+                <h3>What changed</h3>
+                <p>
+                  {packageDiff.stats.files} file{packageDiff.stats.files === 1 ? '' : 's'} · +{packageDiff.stats.insertions} / -{packageDiff.stats.deletions}
+                </p>
+              </div>
+              {packageDiff.prUrl && (
+                <a className="button-link" href={packageDiff.prUrl} target="_blank" rel="noreferrer">
+                  View pull request
+                </a>
+              )}
+            </header>
+
+            {packageDiff.commits?.length > 0 && (
+              <div className="commit-list">
+                {packageDiff.commits.map((commit) => (
+                  <div key={commit.hash} className="commit-item">
+                    <strong>{commit.message}</strong>
+                    <span>{commit.author} · {formatLocaleDate(commit.date)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="diff-file-list">
+              {packageDiff.files.map((file) => (
+                <div key={file.path} className="diff-file-item">
+                  <button type="button" className="diff-file-header" onClick={() => setExpandedFile(expandedFile === file.path ? null : file.path)}>
+                    <span className={`diff-change-type type-${file.changeType}`}>{file.changeType}</span>
+                    <span className="diff-file-path">{file.path}</span>
+                    <span className="diff-file-stats">+{file.insertions} -{file.deletions}</span>
+                  </button>
+                  {expandedFile === file.path && file.patch && (
+                    <pre className="diff-patch">{file.patch}</pre>
+                  )}
+                  {expandedFile === file.path && !file.patch && (
+                    <p className="muted-copy diff-binary-note">Binary or large file — no text preview available.</p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {changePackage?.status === 'review' && (
+              <div className="diff-publish-bar">
+                <p>Anyone can approve this change package to publish it live.</p>
+                <button className="primary" type="button" onClick={() => onPublishPackage(changePackage.prNumber)} disabled={packageBusy}>
+                  <CheckCircle2 size={16} />
+                  Approve &amp; publish
+                </button>
+              </div>
+            )}
+
+            {!changePackage && selectedPr && (
+              <div className="diff-publish-bar">
+                <p>This change package is awaiting review.</p>
+                <button className="primary" type="button" onClick={() => onPublishPackage(selectedPr)} disabled={packageBusy}>
+                  <CheckCircle2 size={16} />
+                  Approve &amp; publish
+                </button>
+                <button type="button" className="danger" onClick={() => onAbandonPackage(selectedPr)} disabled={packageBusy}>
+                  <XCircle size={16} />
+                  Abandon
+                </button>
+              </div>
+            )}
+          </section>
+        )}
+      </section>
+    </main>
   )
 }
 
