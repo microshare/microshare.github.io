@@ -118,11 +118,23 @@ export function createChangePackageService({ siteRoot, appRoot }) {
 
     const branch = buildBranchName(cleanTitle)
     const stashed = await git.stashIfDirty()
-    await git.fetchOrigin()
-    await git.checkoutDefault(github.defaultBranch)
-    await git.pullDefault(github.defaultBranch)
-    await git.createBranch(branch, github.defaultBranch)
-    if (stashed) await git.popStash()
+    try {
+      await git.fetchOrigin()
+      await git.checkoutDefault(github.defaultBranch)
+      await git.pullDefault(github.defaultBranch)
+      await git.createBranch(branch, github.defaultBranch)
+      if (stashed) await git.applyStash()
+    } catch (error) {
+      if (stashed) {
+        try {
+          await git.checkoutDefault(github.defaultBranch)
+          await git.applyStash()
+        } catch (restoreError) {
+          console.warn('Could not restore stash after failed package start:', restoreError.message)
+        }
+      }
+      throw error
+    }
     await git.commitContentChanges(`Start change package: ${cleanTitle}`, { name: cleanAuthor })
 
     const state = {

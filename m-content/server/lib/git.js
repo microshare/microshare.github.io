@@ -67,9 +67,14 @@ export function createGitClient(siteRoot) {
       await git.stash(['push', '-u', '-m', 'm-content:auto-stash'])
       return true
     },
-    async popStash() {
+    async applyStash() {
+      const list = await git.stashList()
+      const entry = list.all.find((item) => item.message === 'm-content:auto-stash')
+      if (!entry) return false
       try {
-        await git.stash(['pop'])
+        await git.stash(['apply', entry.hash])
+        await git.stash(['drop', entry.hash])
+        return true
       } catch (error) {
         throw new Error(`Could not restore stashed changes: ${error.message}`)
       }
