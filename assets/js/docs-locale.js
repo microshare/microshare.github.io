@@ -1,7 +1,7 @@
 ;(function () {
-  var STORAGE_KEY = 'microshare-docs-lang'
-  var EXPLICIT_KEY = STORAGE_KEY + ':explicit'
+  var SESSION_KEY = 'microshare-docs-lang'
   var SUPPORTED = ['fr', 'de', 'es']
+  var ALL_LOCALES = ['en'].concat(SUPPORTED)
 
   function normalizeLang(value) {
     if (!value) return 'en'
@@ -13,16 +13,6 @@
   function normalizePath(pathname) {
     var path = String(pathname || '').replace(/\/+$/, '').replace(/\.html$/, '')
     return path || '/'
-  }
-
-  function readTranslations() {
-    var node = document.getElementById('docs-translations-data')
-    if (!node) return {}
-    try {
-      return JSON.parse(node.textContent || '{}')
-    } catch (error) {
-      return {}
-    }
   }
 
   function readManifest() {
@@ -37,23 +27,16 @@
   }
 
   function currentLang() {
-    var htmlLang = document.documentElement.getAttribute('lang')
-    if (htmlLang && htmlLang !== 'en') return normalizeLang(htmlLang)
-
     var path = normalizePath(window.location.pathname)
     var parts = path.split('/').filter(Boolean)
     var docsIndex = parts.indexOf('docs')
     if (docsIndex !== -1 && parts[docsIndex + 1] === '2' && SUPPORTED.indexOf(parts[docsIndex + 2]) !== -1) {
       return parts[docsIndex + 2]
     }
-    return 'en'
-  }
 
-  function preferredLang() {
-    if (localStorage.getItem(EXPLICIT_KEY) === '1') {
-      return normalizeLang(localStorage.getItem(STORAGE_KEY))
-    }
-    return normalizeLang(navigator.language || navigator.userLanguage)
+    var htmlLang = document.documentElement.getAttribute('lang')
+    if (htmlLang) return normalizeLang(htmlLang)
+    return 'en'
   }
 
   function navigationKind() {
@@ -95,38 +78,93 @@
   }
 
   function manifestHas(manifest, target) {
-    if (!target) return false
-    if (!manifest) return false
+    if (!target || !manifest) return false
     var normalized = normalizePath(target)
     return manifest.has(normalized) || manifest.has(normalized + '/')
   }
 
-  function resolveTarget(preferred, translations, manifest) {
-    if (translations && translations[preferred]) {
-      var explicit = normalizePath(translations[preferred])
-      if (manifestHas(manifest, explicit)) return explicit
+  function availableLocales(manifest) {
+    var locales = []
+    for (var i = 0; i < ALL_LOCALES.length; i++) {
+      var locale = ALL_LOCALES[i]
+      var path = normalizePath(buildLocalePath(window.location.pathname, locale))
+      if (manifestHas(manifest, path)) locales.push(locale)
+    }
+    return locales
+  }
+
+  function browserLanguagePreferences() {
+    var preferences = []
+    if (navigator.languages && navigator.languages.length) {
+      for (var i = 0; i < navigator.languages.length; i++) {
+        preferences.push(navigator.languages[i])
+      }
+    } else {
+      preferences.push(navigator.language || navigator.userLanguage || 'en')
+    }
+    return preferences
+  }
+
+  function negotiateLocale(manifest) {
+    var available = availableLocales(manifest)
+    if (!available.length) return currentLang()
+
+    var kind = navigationKind()
+    var preferences = browserLanguagePreferences()
+
+    if (kind !== 'reload') {
+      try {
+        var sessionChoice = sessionStorage.getItem(SESSION_KEY)
+        if (sessionChoice) preferences.unshift(sessionChoice)
+      } catch (error) {}
     }
 
-    var built = buildLocalePath(window.location.pathname, preferred)
-    if (built && manifestHas(manifest, built)) return normalizePath(built)
+    for (var i = 0; i < preferences.length; i++) {
+      var lang = normalizeLang(preferences[i])
+      if (available.indexOf(lang) !== -1) return lang
+    }
 
-    return null
+    if (available.indexOf('en') !== -1) return 'en'
+    return available[0]
+  }
+
+  function maybeFallbackToEnglish() {
+    var manifest = readManifest()
+    if (!manifest) return false
+
+    var currentPath = normalizePath(window.location.pathname)
+    var parts = currentPath.split('/').filter(Boolean)
+    var docsIndex = parts.indexOf('docs')
+    if (docsIndex === -1 || parts[docsIndex + 1] !== '2') return false
+
+    var rest = parts.slice(docsIndex + 2)
+    if (!rest.length || SUPPORTED.indexOf(rest[0]) === -1) return false
+
+    if (manifestHas(manifest, currentPath)) return false
+
+    var englishPath = normalizePath(buildLocalePath(window.location.pathname, 'en'))
+    if (!englishPath || !manifestHas(manifest, englishPath)) return false
+    if (englishPath === currentPath) return false
+
+    window.location.replace(englishPath)
+    return true
   }
 
   function maybeRedirect() {
     if (!shouldApplyLocaleRedirect()) return
 
-    var preferred = preferredLang()
-    var active = currentLang()
-    if (preferred === active) return
-
-    var translations = readTranslations()
     var manifest = readManifest()
     if (!manifest) return
 
-    var target = resolveTarget(preferred, translations, manifest)
+    var negotiated = negotiateLocale(manifest)
+    var active = currentLang()
+    if (negotiated === active) return
+
+    var target = normalizePath(buildLocalePath(window.location.pathname, negotiated))
+    if (!manifestHas(manifest, target)) return
+
     var currentPath = normalizePath(window.location.pathname)
-    if (!target || normalizePath(target) === currentPath) return
+    if (target === currentPath) return
 
     window.location.replace(target)
   }
@@ -136,14 +174,20 @@
       link.addEventListener('click', function () {
         var lang = link.getAttribute('data-docs-lang')
         if (!lang) return
-        localStorage.setItem(STORAGE_KEY, lang)
-        localStorage.setItem(EXPLICIT_KEY, '1')
+        try {
+          sessionStorage.setItem(SESSION_KEY, lang)
+        } catch (error) {}
+        try {
+          localStorage.removeItem('microshare-docs-lang')
+          localStorage.removeItem('microshare-docs-lang:explicit')
+        } catch (error) {}
       })
     })
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     bindSwitcher()
+    if (maybeFallbackToEnglish()) return
     maybeRedirect()
   })
 })()
