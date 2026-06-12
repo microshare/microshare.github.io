@@ -4,8 +4,7 @@ layout: base
 
 {% assign page_lang = page.lang | default: "en" %}
 
-<script id="docs-translations-data" type="application/json">{{ page.translations | jsonify }}</script>
-<script src="{{ site.baseurl }}/assets/js/docs-locale.js" defer></script>
+{% include docs-locale-scripts.html %}
 
 {% unless page.embed %}
   {% include docs-navbar.html %}

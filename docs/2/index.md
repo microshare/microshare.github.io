@@ -3,6 +3,10 @@ layout: index
 title: Documentation Home
 description: Microshare documentation home page
 lang: en
+translations:
+  en: /docs/2/
+  fr: /docs/2/fr/
+  es: /docs/2/es/
 hero_title: Hello, how can we help you?
 search_placeholder: Search
 hero_intro: >-
