@@ -1,10 +1,13 @@
 ;(function () {
   var STORAGE_KEY = 'microshare-docs-lang'
+  var EXPLICIT_KEY = STORAGE_KEY + ':explicit'
   var SUPPORTED = ['fr', 'de', 'es']
 
   function normalizeLang(value) {
-    if (!value) return ''
-    return String(value).toLowerCase().split('-')[0]
+    if (!value) return 'en'
+    var lang = String(value).toLowerCase().split('-')[0]
+    if (lang === 'en' || SUPPORTED.indexOf(lang) !== -1) return lang
+    return 'en'
   }
 
   function normalizePath(pathname) {
@@ -35,7 +38,7 @@
 
   function currentLang() {
     var htmlLang = document.documentElement.getAttribute('lang')
-    if (htmlLang && htmlLang !== 'en') return htmlLang
+    if (htmlLang && htmlLang !== 'en') return normalizeLang(htmlLang)
 
     var path = normalizePath(window.location.pathname)
     var parts = path.split('/').filter(Boolean)
@@ -44,6 +47,35 @@
       return parts[docsIndex + 2]
     }
     return 'en'
+  }
+
+  function preferredLang() {
+    if (localStorage.getItem(EXPLICIT_KEY) === '1') {
+      return normalizeLang(localStorage.getItem(STORAGE_KEY))
+    }
+    return normalizeLang(navigator.language || navigator.userLanguage)
+  }
+
+  function navigationKind() {
+    var entries = performance.getEntriesByType && performance.getEntriesByType('navigation')
+    return entries && entries[0] && entries[0].type ? entries[0].type : 'unknown'
+  }
+
+  function isExternalEntry() {
+    var referrer = document.referrer
+    if (!referrer) return true
+    try {
+      return new URL(referrer).origin !== window.location.origin
+    } catch (error) {
+      return true
+    }
+  }
+
+  function shouldApplyLocaleRedirect() {
+    var kind = navigationKind()
+    if (kind === 'reload') return true
+    if (kind === 'back_forward') return false
+    return isExternalEntry()
   }
 
   function buildLocalePath(pathname, locale) {
@@ -63,7 +95,8 @@
   }
 
   function manifestHas(manifest, target) {
-    if (!manifest || !target) return true
+    if (!target) return false
+    if (!manifest) return false
     var normalized = normalizePath(target)
     return manifest.has(normalized) || manifest.has(normalized + '/')
   }
@@ -81,28 +114,30 @@
   }
 
   function maybeRedirect() {
-    if (currentLang() !== 'en') return
+    if (!shouldApplyLocaleRedirect()) return
 
-    var saved = localStorage.getItem(STORAGE_KEY)
-    var preferred = normalizeLang(saved || navigator.language || navigator.userLanguage)
-    if (!preferred || preferred === 'en' || SUPPORTED.indexOf(preferred) === -1) return
-    if (sessionStorage.getItem('docs-locale-checked')) return
+    var preferred = preferredLang()
+    var active = currentLang()
+    if (preferred === active) return
 
     var translations = readTranslations()
     var manifest = readManifest()
-    var target = resolveTarget(preferred, translations, manifest)
-    var current = normalizePath(window.location.pathname)
-    if (!target || normalizePath(target) === current) return
+    if (!manifest) return
 
-    sessionStorage.setItem('docs-locale-checked', '1')
+    var target = resolveTarget(preferred, translations, manifest)
+    var currentPath = normalizePath(window.location.pathname)
+    if (!target || normalizePath(target) === currentPath) return
+
     window.location.replace(target)
   }
 
   function bindSwitcher() {
-    document.querySelectorAll('[data-docs-lang]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        var lang = button.getAttribute('data-docs-lang')
-        if (lang) localStorage.setItem(STORAGE_KEY, lang)
+    document.querySelectorAll('[data-docs-lang]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var lang = link.getAttribute('data-docs-lang')
+        if (!lang) return
+        localStorage.setItem(STORAGE_KEY, lang)
+        localStorage.setItem(EXPLICIT_KEY, '1')
       })
     })
   }
