@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<script id="not-found-i18n" type="application/json">
+{
+  "en": {
+    "title": {{ page.title | jsonify }},
+    "heading": {{ page.heading | jsonify }},
+    "message": {{ page.message | jsonify }},
+    "image_alt_404": {{ page.image_alt_404 | jsonify }},
+    "image_alt_logo": {{ page.image_alt_logo | jsonify }}
+  }{% assign locale_codes = "fr,de,es" | split: "," %}{% for code in locale_codes %}{% assign locale_data = site.data.not_found_locales[code] %}{% if locale_data.labels %},
+  "{{ code }}": {{ locale_data.labels | jsonify }}{% endif %}{% endfor %}
+}
+</script>
+<script src="{{ site.baseurl }}/assets/js/not-found-locale.js" defer></script>
+
+<div class="container py-5 text-center" style="padding-top: 80px;">
+  <img id="not-found-image" src="{{ site.baseurl }}/assets/img/404.png" alt="{{ page.image_alt_404 }}" class="mb-4" style="max-width: 320px;">
+  <h1 id="not-found-heading" class="text-microshare-dark">{{ page.heading }}</h1>
+  <p id="not-found-message" class="lead text-microshare-light">{{ page.message }}</p>
+  <img id="not-found-logo" src="{{ site.baseurl }}/assets/img/microshare-logo.png" alt="{{ page.image_alt_logo }}" class="mt-4" style="max-width: 180px;">
+</div>

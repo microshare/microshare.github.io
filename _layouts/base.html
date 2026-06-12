@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  data-pdf-title="{{ page.title | default: site.title | escape }}"
+  data-pdf-library-url="{{ '/assets/vendor/pdfmake/pdfmake.min.js' | relative_url }}?v=0.3.10"
+  data-pdf-fonts-url="{{ '/assets/vendor/pdfmake/vfs_fonts.js' | relative_url }}?v=0.3.10"
+  {% if page.pdf %}data-pdf-url="{{ page.pdf | relative_url | escape }}"{% endif %}
+>
   <meta name="description" content="{{page.description}}">
   <meta name="keyword" content="documentation,microshare,{{ page.title | split : ","}}">
   {% include docs-header.html %}
@@ -14,4 +20,4 @@
 #mCSB_1,#mCSB_1_container {
   overflow:visible !important;
 }
-</style> 
+</style>

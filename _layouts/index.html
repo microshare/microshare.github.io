@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
   {% include index-header.html %}
 
 <body>
+  {% include index-locale-parts.html %}
   {% include index-navbar.html %}
 
   <!-- Promo Section -->
@@ -10,10 +11,10 @@
     <div class="container duik-promo-container">
       <div class="d-flex justify-content-center position-relative mh-35rem py-11">
         <div class="align-self-center w-md-75">
-          <h1 class="text-white mb-5">Hello, how can we help you?</h1>
+          <h1 class="text-white mb-5">{{ page.hero_title }}</h1>
 
           <form id="searchForm" class="input-group input-group-lg mb-3">
-            <input autocomplete="off" id="search" class="form-control border-0" type="search" placeholder="Search">
+            <input autocomplete="off" id="search" class="form-control border-0" type="search" placeholder="{{ page.search_placeholder }}">
             <span class="input-group-append p-0">
               <button class="btn text-muted" disabled><i class="fas fa-search"></i></button>
             </span>
@@ -22,12 +23,15 @@
           </form>
 
           <p class="font-weight-light small text-left"><span class="mr-2">
-            Get started with Microshare ®, the world's only prebuilt, scalable data management and sharing solution for IoT. 
+            {{ page.hero_intro }}
             <br>
-            Popular Topics:</span> 
-            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/technical/data-format/contact-tracing/">Contact Tracing Data</a>, 
-            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/general/meet-microshare/demo-live/">Demo</a>, 
-            <a class="text-white mr-1" href="{{ site.baseurl }}/docs/2/technical/api/demo-api/">API Demo</a></p>
+            {{ page.popular_topics_label }}</span>
+            {% for topic in page.popular_topics %}
+            {% assign topic_path = topic.url | remove: '/docs/2/' %}
+            {% capture topic_href %}{% include index-doc-href.html path=topic_path %}{% endcapture %}
+            <a class="text-white mr-1" href="{{ topic_href | strip }}">{{ topic.label }}</a>{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          </p>
         </div>
       </div>
     </div>
@@ -45,46 +49,32 @@
   <div class="container position-relative">
     <section class="duik-icon-block duik-icon-block--pull2top rounded">
       <div class="row no-gutters">
-        <div class="col-md border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/general/welcome/"' style="cursor:pointer;">
-          <a href="{{ site.baseurl }}/docs/2/general/welcome/">
-          <div class="duik-icon-block__item">
-            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-check-circle fa-3x text-microshare-light"></i>
-            <h4 class="h5 mb-2">
-              <a class="link-dark" href="{{ site.baseurl }}/docs/2/general/welcome/">General</a>
-            </h4>
-            <span>An introduction to Microshare, the technology and the platform</span>
-          </div></a>
-        </div>
-        <div class="col-md border-md-left border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/admin/admin-management/overview/"' style="cursor:pointer;">
-          <div class="duik-icon-block__item">
-            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-id-card fa-3x text-microshare-light"></i>
-
-            <h4 class="h5 mb-2">
-              <a class="link-dark" href="#">Administrator</a>
-            </h4>
-            <span>An administrators guide to accessing and using the platform</span>
+        {% for group in site.data.docs %}
+          {% assign group_slug = group.title | slugify %}
+          {% assign group_key = group_slug %}
+          {% assign entry_link = group.pages | first %}
+          {% if entry_link == nil and group.subpages.size > 0 %}
+            {% assign first_subgroup = group.subpages | first %}
+            {% assign entry_link = first_subgroup.pages | first %}
+            {% assign entry_slug = entry_link.title | slugify %}
+            {% assign subgroup_slug = first_subgroup.title | slugify %}
+            {% assign entry_path = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: entry_slug %}
+          {% elsif entry_link %}
+            {% assign entry_slug = entry_link.title | slugify %}
+            {% assign entry_path = group_slug | append: '/' | append: entry_slug %}
+          {% endif %}
+          {% capture entry_href %}{% include index-doc-href.html path=entry_path %}{% endcapture %}
+          <div class="col-md {% unless forloop.first %}border-md-left {% endunless %}{% unless forloop.last %}border-bottom border-md-bottom-0{% endunless %}" onclick='location.href="{{ entry_href | strip }}"' style="cursor:pointer;">
+            <a href="{{ entry_href | strip }}">
+            <div class="duik-icon-block__item">
+              <i class="duik-icon-svg-primary mb-4 far fa-fw fa-{{ group.logo }} fa-3x {{ group.color }}"></i>
+              <h4 class="h5 mb-2">
+                <a class="link-dark" href="{{ entry_href | strip }}">{% include docs-menu-label.html key=group_key default=group.title %}</a>
+              </h4>
+              <span>{% if site.data.docs_locales[index_page_lang].labels[group_key].desc %}{{ site.data.docs_locales[index_page_lang].labels[group_key].desc }}{% else %}{{ group.desc }}{% endif %}</span>
+            </div></a>
           </div>
-        </div>
-        <div class="col-md border-md-left border-bottom border-md-bottom-0" onclick='location.href="{{ site.baseurl }}/docs/2/installer/quick-start/overview/"' style="cursor:pointer;">
-          <div class="duik-icon-block__item">
-
-            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-edit fa-3x text-microshare-light"></i>
-
-            <h4 class="h5 mb-2">
-              <a class="link-dark" href="{{ site.baseurl }}/docs/2/installer/quick-start/overview/">Installer</a>
-            </h4>
-            <span>A guide to implementing your Microshare solution</span>
-          </div>
-        </div>
-        <div class="col-md border-md-left" onclick='location.href="{{ site.baseurl }}/docs/2/technical/quick-start/overview/"' style="cursor:pointer;">
-          <div class="duik-icon-block__item">
-            <i class="duik-icon-svg-primary mb-4 far fa-fw fa-chart-bar fa-3x text-microshare-light"></i>
-            <h4 class="h5 mb-2">
-              <a class="link-dark" href="{{ site.baseurl }}/docs/2/technical/quick-start/overview/">Technical</a>
-            </h4>
-            <span>A more in-depth look at Microshare technology</span>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </section>
   </div>
@@ -95,8 +85,8 @@
     <section class="py-11 pt-5 pb-11">
       <div class="container">
         <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
-          <h2 class="h3 text-center">Top Pages by Product</h2>
-          <p>Quick access to the most important pages for each product</p>
+          <h2 class="h3 text-center">{{ page.top_pages_title }}</h2>
+          <p>{{ page.top_pages_desc }}</p>
         </div>
 
         <div class="row">
@@ -115,16 +105,17 @@
                     {% assign page_slug = page.title | slugify %}
                     {% assign group_slug = group.title | slugify %}
                     {% if page.url %}
-                      {% assign page_url = page.url %}
+                      {% assign page_path = page.url | remove: '/docs/2/' %}
                     {% else %}
-                      {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: page_slug %}
+                      {% assign page_path = group_slug | append: '/' | append: page_slug %}
                     {% endif %}
+                    {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
                     <div class="mb-4 bg-hover-light">
-                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
                         <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                         <div class="media-body">
                           <h5 class="mb-1">
-                            <a class="link-dark" href="{{ page_url }}">
+                            <a class="link-dark" href="{{ page_url | strip }}">
                               {{ page.title }}
                             </a>
                           </h5>
@@ -141,16 +132,17 @@
                       {% assign subgroup_slug = subgroup.title | slugify %}
                       {% assign group_slug = group.title | slugify %}
                       {% if subpage.url %}
-                        {% assign page_url = subpage.url %}
+                        {% assign page_path = subpage.url | remove: '/docs/2/' %}
                       {% else %}
-                        {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: subgroup_slug | append: "/" | append: subpage_slug %}
+                        {% assign page_path = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
                       {% endif %}
+                      {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
                       <div class="mb-4 bg-hover-light">
-                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
                           <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                           <div class="media-body">
                             <h5 class="mb-1">
-                              <a class="link-dark" href="{{ page_url }}">
+                              <a class="link-dark" href="{{ page_url | strip }}">
                                 {{ subpage.title }}
                               </a>
                             </h5>
@@ -180,16 +172,17 @@
                     {% assign page_slug = page.title | slugify %}
                     {% assign group_slug = group.title | slugify %}
                     {% if page.url %}
-                      {% assign page_url = page.url %}
+                      {% assign page_path = page.url | remove: '/docs/2/' %}
                     {% else %}
-                      {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: page_slug %}
+                      {% assign page_path = group_slug | append: '/' | append: page_slug %}
                     {% endif %}
+                    {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
                     <div class="mb-4 bg-hover-light">
-                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
                         <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                         <div class="media-body">
                           <h5 class="mb-1">
-                            <a class="link-dark" href="{{ page_url }}">
+                            <a class="link-dark" href="{{ page_url | strip }}">
                               {{ page.title }}
                             </a>
                           </h5>
@@ -206,16 +199,17 @@
                       {% assign subgroup_slug = subgroup.title | slugify %}
                       {% assign group_slug = group.title | slugify %}
                       {% if subpage.url %}
-                        {% assign page_url = subpage.url %}
+                        {% assign page_path = subpage.url | remove: '/docs/2/' %}
                       {% else %}
-                        {% assign page_url = site.baseurl | append: "/docs/" | append: site.docs_version | append: "/" | append: group_slug | append: "/" | append: subgroup_slug | append: "/" | append: subpage_slug %}
+                        {% assign page_path = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
                       {% endif %}
+                      {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
                       <div class="mb-4 bg-hover-light">
-                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url }}"' style="cursor:pointer;">
+                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
                           <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                           <div class="media-body">
                             <h5 class="mb-1">
-                              <a class="link-dark" href="{{ page_url }}">
+                              <a class="link-dark" href="{{ page_url | strip }}">
                                 {{ subpage.title }}
                               </a>
                             </h5>
@@ -242,24 +236,26 @@
       <div class="row pt-4">
         <div class="container">
           <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
-            <h2 class="h3 text-center">{{ group.title }}</h2>
-            <p>{{ group.desc }}</p>
+            <h2 class="h3 text-center">{% include docs-menu-label.html key=group_slug default=group.title %}</h2>
+            <p>{% if site.data.docs_locales[index_page_lang].labels[group_slug].desc %}{{ site.data.docs_locales[index_page_lang].labels[group_slug].desc }}{% else %}{{ group.desc }}{% endif %}</p>
           </div>
 
           <div class="row">
           {% for doc in group.pages %}
             {% assign doc_slug = doc.title | slugify %}
 
+            {% assign doc_path = group_slug | append: '/' | append: doc_slug %}
+            {% capture doc_href %}{% include index-doc-href.html path=doc_path %}{% endcapture %}
             <div class="col-md-6 mb-5 bg-hover-light">
-              <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/"' style="cursor:pointer;">
+              <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ doc_href | strip }}"' style="cursor:pointer;">
                 <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                 <div class="media-body">
                   <h5 class="mb-1">
                     <a class="link-dark">
-                      {{ doc.title }}
+                      {% include docs-menu-label.html key=doc_path default=doc.title %}
                     </a>
                   </h5>
-                  <p class="mb-0">Microshare Documentation</p>
+                  <p class="mb-0">{{ page.card_subtitle }}</p>
                 </div>
               </div>
             </div>
@@ -270,16 +266,19 @@
             {% assign link_slug = link.title | slugify %}
             {% assign doc_slug = doc.title | slugify %}
 
+            {% assign subgroup_key = group_slug | append: '/' | append: doc_slug %}
+            {% assign doc_path = subgroup_key | append: '/' | append: link_slug %}
+            {% capture doc_href %}{% include index-doc-href.html path=doc_path %}{% endcapture %}
             <div class="col-md-6 mb-5 bg-hover-light">
-              <div class="media h-100 shadow rounded p-4"  onclick='location.href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ doc_slug }}/{{link_slug}}"' style="cursor:pointer;">
+              <div class="media h-100 shadow rounded p-4"  onclick='location.href="{{ doc_href | strip }}"' style="cursor:pointer;">
                 <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
                 <div class="media-body">
                   <h5 class="mb-1">
                     <a class="link-dark">
-                      {{ doc.title }}
+                      {% include docs-menu-label.html key=subgroup_key default=doc.title %}
                     </a>
                   </h5>
-                  <p class="mb-0">Microshare Documentation</p>
+                  <p class="mb-0">{{ page.card_subtitle }}</p>
                 </div>
               </div>
             </div>
@@ -302,64 +301,24 @@
     <section class="pb-11">
       <div class="container">
         <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
-          <h2 class="h3 text-center">Helpful Pages</h2>
-          <p>Here are some of our most helpful pages.</p>
+          <h2 class="h3 text-center">{{ page.helpful_title }}</h2>
+          <p>{{ page.helpful_desc }}</p>
         </div>
 
-        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
-        href="{{ site.baseurl }}/docs/2/technical/data-format/contact-tracing/">
+        {% for link in page.helpful_links %}
+        {% assign helpful_path = link.url | remove: '/docs/2/' %}
+        {% capture helpful_href %}{% include index-doc-href.html path=helpful_path %}{% endcapture %}
+        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2"
+        href="{{ helpful_href | strip }}">
           <div class="col-sm">
-            Contact Tracing Data
+            {{ link.title }}
           </div>
 
           <div class="col-sm-2 text-sm-right text-muted small">
-            Technical
+            {{ link.category }}
           </div>
         </a>
-
-        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
-        href="{{ site.baseurl }}/docs/2/installer/deploy-m/download-the-app/">
-          <div class="col-sm">
-            Download Deploy-M
-          </div>
-
-          <div class="col-sm-2 text-sm-right text-muted small">
-            Installer
-          </div>
-        </a>
-
-        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
-        href="{{ site.baseurl }}/docs/2/technical/api/quick-start/">
-          <div class="col-sm">
-            Microshare API and Demo API
-          </div>
-
-          <div class="col-sm-2 text-sm-right text-muted small">
-            Technical
-          </div>
-        </a>
-
-        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
-        href="{{ site.baseurl }}/docs/2/technical/data-format/microshare-standards/">
-          <div class="col-sm">
-            Microshare Data Standards
-          </div>
-
-          <div class="col-sm-2 text-sm-right text-muted small">
-            Technical
-          </div>
-        </a>
-
-        <a class="row border rounded align-items-center justify-content-between py-4 px-3 link-dark link-hover-dark bg-hover-light mx-sm-0 mb-2" 
-        href="{{ site.baseurl }}/docs/2/general/meet-microshare/demo-live/">
-          <div class="col-sm">
-            Demo Dashboards
-          </div>
-
-          <div class="col-sm-2 text-sm-right text-muted small">
-            General User
-          </div>
-        </a>
+        {% endfor %}
       </div>
     </section>
     <!-- End Section -->
@@ -370,12 +329,12 @@
         <div class="card-body p-5">
           <div class="d-md-flex align-items-center">
             <div class="w-100 mb-3 mb-md-0 pr-md-5">
-              <h2 class="h4 font-weight-light text-white mb-0">Can't find what you're looking for?</h2>
-              <p class="font-weight-light  mb-0">Let us help you right now!</p>
+              <h2 class="h4 font-weight-light text-white mb-0">{{ page.cta_title }}</h2>
+              <p class="font-weight-light  mb-0">{{ page.cta_desc }}</p>
             </div>
 
             <div class="text-md-right w-100">
-              <a class="btn btn-light" href="mailto:support@microshare.io">Submit a Request</a>
+              <a class="btn btn-light" href="mailto:support@microshare.io">{{ page.cta_button }}</a>
             </div>
           </div>
         </div>
@@ -386,9 +345,9 @@
     <section class="pb-10 pt-7 text-center">
       <div class="container">
         <i class="fas fa-tools fa-4x text-microshare-dark mb-4"></i>
-        <h2 class="h3 mb-3">When is the next release or planned maintenance?</h2>
-        <div class="lead mb-5">Visit our Console page to see details on both our production and development environments</div>
-        <a class="btn px-5 btn-microshare-dark" href="https://www.microshare.io/management-console-access/">Microshare Console</a>
+        <h2 class="h3 mb-3">{{ page.release_title }}</h2>
+        <div class="lead mb-5">{{ page.release_desc }}</div>
+        <a class="btn px-5 btn-microshare-dark" href="https://www.microshare.io/management-console-access/">{{ page.release_button }}</a>
       </div>
     </section>
 
@@ -399,10 +358,10 @@
         <!-- Images -->
         <div class="row">
           <div class="col-lg-5 align-self-center pr-lg-5 mb-5 mb-lg-0">
-            <h3 class="mb-3">More Information?</h3>
-            <p>For more information on Microshare and all of our solutions, please visit our <strong class="text-primary">Microshare.io</strong> website.</p>
+            <h3 class="mb-3">{{ page.more_info_title }}</h3>
+            <p>{{ page.more_info_desc }}</p>
                 <a class="btn btn-outline-primary" target="_blank" href="https://microshare.io">
-              <i class="fas fa-link mr-2"></i> Microshare
+              <i class="fas fa-link mr-2"></i> {{ page.more_info_button }}
             </a>
           </div>
 
@@ -438,8 +397,8 @@
     <section class="py-11">
       <div class="container">
         <div class="w-md-75 w-lg-50 mx-auto text-center mb-5">
-          <h2 class="h3">Community Help</h2>
-          <p>The Microshare team are always on hand to answer your questions and to help you get the most from our solutions.</p>
+          <h2 class="h3">{{ page.community_title }}</h2>
+          <p>{{ page.community_desc }}</p>
         </div>
 
         <div class="row">
@@ -448,8 +407,8 @@
               <i class="fas fa-envelope fa-3x text-primary mr-4 mt-1"></i>
 
               <div class="media-body">
-                <h5 class="mb-1"><a class="link-dark" href="mailto:support@microshare.io">Email Us</a></h5>
-                <p class="mb-0">Email our support team to answer your questions!</p>
+                <h5 class="mb-1"><a class="link-dark" href="mailto:support@microshare.io">{{ page.community_email_title }}</a></h5>
+                <p class="mb-0">{{ page.community_email_desc }}</p>
               </div>
             </div>
           </div>
@@ -459,8 +418,8 @@
               <i class="fab fa-github fa-3x text-primary mr-4 mt-1"></i>
 
               <div class="media-body">
-                <h5 class="mb-1"><a class="link-dark" href="https://github.com/microshare/microshare.github.io/issues">Github Issues</a></h5>
-                <p class="mb-0">Add your request here for the documentation team.</p>
+                <h5 class="mb-1"><a class="link-dark" href="https://github.com/microshare/microshare.github.io/issues">{{ page.community_github_title }}</a></h5>
+                <p class="mb-0">{{ page.community_github_desc }}</p>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+{% include docs-url-parts.html %}
 <div class=" sidebar-item sidebar-menu">
     <ul>
         <li class="header-menu">
@@ -6,13 +7,9 @@
 
                 {% assign group_slug = group.title | slugify %}
 
-
-                {% assign url_split = page.url | split: '/' %}
-                {% assign page_main_group = url_split[3] | slugify %}
-
-                {% if page_main_group == group_slug %}
+                {% if docs_page_main_group == group_slug %}
                     <button class="btn btn-sm text-microshare-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ group.title }}
+                        {% include docs-menu-label.html key=group_slug default=group.title %}
                     </button>
                 {% endif%}
             {% endfor %}
@@ -23,12 +20,8 @@
 
                 {% assign group_slug = group.title | slugify %}
 
-
-                {% assign url_split = page.url | split: '/' %}
-                {% assign page_main_group = url_split[3] | slugify %}
-
-                {% if page_main_group != group_slug %}
-                    <a class="dropdown-item text-white bg-hover-microshare-light" href="{{ site.baseurl }}/docs/2/{{group_slug}}/">{{group.title}}</a>
+                {% if docs_page_main_group != group_slug %}
+                    <a class="dropdown-item text-white bg-hover-microshare-light" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{group_slug}}/">{% include docs-menu-label.html key=group_slug default=group.title %}</a>
                 {% endif%}
             {% endfor %}
                 </div>
@@ -40,30 +33,26 @@
     
     {% assign group_slug = group.title | slugify %}
 
-
-    {% assign url_split = page.url | split: '/' %}
-    {% assign page_main_group = url_split[3] | slugify %}
-    {% assign page_sub_group = url_split[4] | slugify %}
-    {% assign page_sub_sub_group = url_split[5] | slugify %}
-
-    
-
-    {% if page_main_group == group_slug %}
-
-        
-                <!-- <li class="header-menu"> <span>{{ group.title }}</span> </li> -->
+    {% if docs_page_main_group == group_slug %}
 
         {% for page in group.pages %}
                 {% assign page_slug = page.title | slugify %}
+                {% if page.url %}
+                  {% assign menu_item_key = page.url | remove: '/docs/2/' %}
+                  {% assign menu_item_href = page.url | remove: '/docs/2/' %}
+                {% else %}
+                  {% assign menu_item_key = group_slug | append: '/' | append: page_slug %}
+                  {% assign menu_item_href = group_slug | append: '/' | append: page_slug %}
+                {% endif %}
 
                 {% assign active = nil %}
 
-                {% if page_slug == page_sub_group %}
+                {% if page_slug == docs_page_sub_group %}
                     {% assign active = 'active' %}
                 {% endif %}
 
                 <li class="{{active}}">
-                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ page_slug }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ page.title }}</span>{% if page.product %}{% include product-badge.html product=page.product %}{% endif %} </a>
+                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{% include docs-menu-label.html key=menu_item_key default=page.title %}</span>{% if page.product %}{% include product-badge.html product=page.product %}{% endif %} </a>
                 </li>
 
         {% endfor %}
@@ -71,29 +60,37 @@
         {% for subgroup in group.subpages %}
 
                 {% assign subgroup_slug = subgroup.title | slugify %}
+                {% assign subgroup_key = group_slug | append: '/' | append: subgroup_slug %}
 
                 {% assign active = nil %}
 
-                {% if subgroup_slug == page_sub_group %}
+                {% if subgroup_slug == docs_page_sub_group %}
                     {% assign active = 'active' %}
                 {% endif %}
 
                 <li class="sidebar-dropdown {{active}}">
-                    <a href="#"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{{ subgroup.title }}</span></a>
+                    <a href="#"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{% include docs-menu-label.html key=subgroup_key default=subgroup.title %}</span></a>
                     <div class="sidebar-submenu" {% if active %}style="display: block;"{% endif %}>
                         <ul>
 
                             {% for subpage in subgroup.pages %}
 
                                 {% assign subpage_slug = subpage.title | slugify %}
+                                {% if subpage.url %}
+                                  {% assign menu_item_key = subpage.url | remove: '/docs/2/' %}
+                                  {% assign menu_item_href = subpage.url | remove: '/docs/2/' %}
+                                {% else %}
+                                  {% assign menu_item_key = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
+                                  {% assign menu_item_href = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
+                                {% endif %}
 
                                 {% assign active = nil %}
 
-                                {% if subgroup_slug == page_sub_group and subpage_slug ==  page_sub_sub_group %}
+                                {% if subgroup_slug == docs_page_sub_group and subpage_slug == docs_page_sub_sub_group %}
                                     {% assign active = 'active' %}
                                 {% endif %}
 
-                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ group_slug }}/{{ subgroup_slug }}/{{ subpage_slug }}">{{ subpage.title }}{% if subpage.product %}{% include product-badge.html product=subpage.product %}{% endif %}</a> </li>
+                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}">{% include docs-menu-label.html key=menu_item_key default=subpage.title %}{% if subpage.product %}{% include product-badge.html product=subpage.product %}{% endif %}</a> </li>
                             {% endfor %}
 
                         </ul>
@@ -104,4 +101,5 @@
 
     {% endif %}
 {% endfor %}
-   
+    </ul>
+</div>

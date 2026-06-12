@@ -1,0 +1,25 @@
+{% comment %}
+  Locale-aware docs path segments from page.url.
+  Sets: docs_page_lang, docs_locale_prefix, docs_page_main_group,
+        docs_page_sub_group, docs_page_sub_sub_group
+{% endcomment %}
+{% assign url_split = page.url | split: '/' %}
+{% assign docs_page_lang = page.lang | default: "en" %}
+{% assign docs_locale_codes = "fr,de,es" | split: "," %}
+{% assign docs_has_locale_prefix = false %}
+{% if docs_locale_codes contains url_split[3] %}
+  {% assign docs_has_locale_prefix = true %}
+  {% assign docs_page_lang = url_split[3] %}
+{% endif %}
+
+{% if docs_has_locale_prefix %}
+  {% assign docs_locale_prefix = docs_page_lang | append: "/" %}
+  {% assign docs_page_main_group = url_split[4] | slugify %}
+  {% assign docs_page_sub_group = url_split[5] | slugify %}
+  {% assign docs_page_sub_sub_group = url_split[6] | slugify %}
+{% else %}
+  {% assign docs_locale_prefix = "" %}
+  {% assign docs_page_main_group = url_split[3] | slugify %}
+  {% assign docs_page_sub_group = url_split[4] | slugify %}
+  {% assign docs_page_sub_sub_group = url_split[5] | slugify %}
+{% endif %}

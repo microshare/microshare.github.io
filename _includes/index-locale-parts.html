@@ -1,0 +1,11 @@
+{% assign index_page_lang = page.lang | default: "en" %}
+{% assign locale_codes = "fr,de,es" | split: "," %}
+{% assign url_split = page.url | split: '/' %}
+{% if locale_codes contains url_split[3] %}
+  {% assign index_page_lang = url_split[3] %}
+  {% assign index_locale_prefix = index_page_lang | append: "/" %}
+{% else %}
+  {% assign index_locale_prefix = "" %}
+{% endif %}
+{% assign docs_page_lang = index_page_lang %}
+{% assign docs_locale_prefix = index_locale_prefix %}

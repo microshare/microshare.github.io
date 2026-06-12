@@ -6,7 +6,6 @@ layout: base
 
 <script id="docs-translations-data" type="application/json">{{ page.translations | jsonify }}</script>
 <script src="{{ site.baseurl }}/assets/js/docs-locale.js" defer></script>
-<script src="{{ site.baseurl }}/assets/js/docs-pdf-view.js" defer></script>
 
 {% unless page.embed %}
   {% include docs-navbar.html %}
@@ -40,11 +39,6 @@ layout: base
                         {% endunless %}
                     </div>
                 </div>
-                {% if page.pdf %}
-                <div id="docs-pdf-view" class="col-12" hidden>
-                    {% include docs-pdf-viewer.html %}
-                </div>
-                {% endif %}
             </div>
         </div>
     </main>

@@ -37,3 +37,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Required for local dev on Ruby 3+ (removed from default gems)
+gem 'rexml', '~> 3.4'
+gem 'webrick', '~> 1.8'

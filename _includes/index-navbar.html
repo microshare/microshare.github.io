@@ -1,7 +1,7 @@
 <!-- Header -->
 <header class="duik-header">
     <nav class="navbar navbar-expand-md fixed-top bg-microshare text-dark py-2">
-      <a class="link-dark mr-lg-7 mr-0 mr-md-5" href="{{ site.baseurl }}/docs/{{ site.docs_version }}">
+      <a class="link-dark mr-lg-7 mr-0 mr-md-5" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ index_locale_prefix }}">
         <!-- <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a> -->
         <img src="{{ site.baseurl }}/assets/img/microshare_io.png" style="width:220px">
       </a>
@@ -14,15 +14,15 @@
             <span class="badge badge-light text-space-1">v{{ site.docs_version }}.0.0</span>
           </span>
             <li class="nav-item ml-md-5 my-2 my-md-0">
-            <a class="btn btn-sm bg-white" href="https://docs.microshare.io/docs/2/general/release-notes/">
+            <a class="btn btn-sm bg-white" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ index_locale_prefix }}general/release-notes/">
               <i class="fa fa-tag mr-1"></i> 
-              Release notes
+              {{ page.navbar_release_notes | default: "Release notes" }}
             </a>
           </li>
           <li class="nav-item ml-md-5 my-2 my-md-0">
             <a class="btn btn-sm bg-white" href="https://github.com/microshare/microshare.github.io">
               <i class="fab fa-github mr-1"></i> 
-              Contribute
+              {{ page.navbar_contribute | default: "Contribute" }}
             </a>
           </li>
         </ul>
