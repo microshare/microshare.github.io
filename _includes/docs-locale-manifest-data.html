@@ -1,0 +1,9 @@
+{% comment %}
+  Build docs locale manifest from site.pages (works on GitHub Pages without _plugins).
+  Falls back to site.data.docs_locale_manifest when present (local plugin build).
+{% endcomment %}
+{% if site.data.docs_locale_manifest and site.data.docs_locale_manifest.size > 0 %}
+{{ site.data.docs_locale_manifest | jsonify }}
+{% else %}
+[{% assign manifest_first = true %}{% for p in site.pages %}{% if p.path contains 'docs/2/' %}{% unless manifest_first %},{% endunless %}{{ p.url | jsonify }}{% assign manifest_first = false %}{% endif %}{% endfor %}]
+{% endif %}

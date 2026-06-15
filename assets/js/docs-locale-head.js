@@ -17,12 +17,17 @@
 
   function readManifest() {
     var node = document.getElementById('docs-locale-manifest')
-    if (!node) return null
+    if (!node) return { error: 'docs-locale-manifest element missing' }
+    var raw = (node.textContent || '').trim()
+    if (!raw || raw === 'null') return { error: 'manifest is empty (build may be missing site.pages data)' }
     try {
-      var paths = JSON.parse(node.textContent || '[]')
-      return new Set(paths.map(normalizePath))
+      var paths = JSON.parse(raw)
+      if (!Array.isArray(paths) || !paths.length) {
+        return { error: 'manifest has no paths', raw: raw.slice(0, 80) }
+      }
+      return { paths: new Set(paths.map(normalizePath)) }
     } catch (error) {
-      return null
+      return { error: 'manifest JSON parse failed', raw: raw.slice(0, 80) }
     }
   }
 
@@ -195,14 +200,16 @@
     return true
   }
 
-  var manifest = readManifest()
-  if (!manifest) {
+  var manifestResult = readManifest()
+  if (!manifestResult || !manifestResult.paths) {
     logLocale('locale script inactive', {
-      reason: 'docs-locale-manifest not found on page',
-      path: normalizePath(window.location.pathname)
+      reason: (manifestResult && manifestResult.error) || 'docs-locale-manifest not found on page',
+      path: normalizePath(window.location.pathname),
+      detail: manifestResult && manifestResult.raw
     })
     return
   }
+  var manifest = manifestResult.paths
 
   var pageLang = currentLang()
   var browserLangs = browserLanguagePreferences()
