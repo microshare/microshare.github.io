@@ -11,5 +11,6 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+node_modules/
 Gemfile.lock
 _includes/.DS_Store

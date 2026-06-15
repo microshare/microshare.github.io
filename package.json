@@ -1,0 +1,12 @@
+{
+  "name": "microshare-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "i18n": "node scripts/i18n-md.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "gray-matter": "^4.0.3"
+  }
+}
