@@ -44,21 +44,18 @@
     return entries && entries[0] && entries[0].type ? entries[0].type : 'unknown'
   }
 
-  function isExternalEntry() {
+  function isInternalNavigation() {
     var referrer = document.referrer
-    if (!referrer) return true
+    if (!referrer) return false
     try {
-      return new URL(referrer).origin !== window.location.origin
+      return new URL(referrer).origin === window.location.origin
     } catch (error) {
-      return true
+      return false
     }
   }
 
   function shouldApplyLocaleRedirect() {
-    var kind = navigationKind()
-    if (kind === 'reload') return true
-    if (kind === 'back_forward') return false
-    return isExternalEntry()
+    return navigationKind() !== 'back_forward'
   }
 
   function buildLocalePath(pathname, locale) {
@@ -109,15 +106,7 @@
     var available = availableLocales(manifest)
     if (!available.length) return currentLang()
 
-    var kind = navigationKind()
     var preferences = browserLanguagePreferences()
-
-    if (kind !== 'reload') {
-      try {
-        var sessionChoice = sessionStorage.getItem(SESSION_KEY)
-        if (sessionChoice) preferences.unshift(sessionChoice)
-      } catch (error) {}
-    }
 
     for (var i = 0; i < preferences.length; i++) {
       var lang = normalizeLang(preferences[i])
@@ -132,6 +121,11 @@
     try {
       sessionStorage.setItem(SESSION_KEY, lang)
     } catch (error) {}
+  }
+
+  function logLocale(event, details) {
+    if (typeof console === 'undefined' || !console.info) return
+    console.info('[Microshare i18n]', event, details)
   }
 
   function maybeFallbackToEnglish(manifest) {
@@ -149,32 +143,91 @@
     if (!englishPath || !manifestHas(manifest, englishPath)) return false
     if (englishPath === currentPath) return false
 
+    logLocale('fallback to English', {
+      seen: currentLang(),
+      used: 'en',
+      from: currentPath,
+      to: englishPath,
+      reason: 'no translation for this page'
+    })
     window.location.replace(englishPath)
     return true
   }
 
   function maybeRedirect(manifest) {
-    if (!shouldApplyLocaleRedirect()) return false
+    if (!shouldApplyLocaleRedirect()) {
+      logLocale('redirect skipped', {
+        reason: 'back_forward navigation',
+        used: currentLang(),
+        path: normalizePath(window.location.pathname)
+      })
+      return false
+    }
 
     var negotiated = negotiateLocale(manifest)
     var active = currentLang()
     if (negotiated === active) return false
 
     var target = normalizePath(buildLocalePath(window.location.pathname, negotiated))
-    if (!manifestHas(manifest, target)) return false
+    if (!manifestHas(manifest, target)) {
+      logLocale('redirect skipped', {
+        reason: 'no localized page in manifest',
+        seen: active,
+        wanted: negotiated,
+        target: target,
+        available: availableLocales(manifest)
+      })
+      return false
+    }
 
     var currentPath = normalizePath(window.location.pathname)
     if (target === currentPath) return false
 
+    logLocale('redirect to locale', {
+      seen: active,
+      used: negotiated,
+      from: currentPath,
+      to: target,
+      reason: isInternalNavigation() ? 'browser language (internal link)' : 'browser language',
+      browser: browserLanguagePreferences()
+    })
     window.location.replace(target)
     return true
   }
 
   var manifest = readManifest()
-  if (!manifest) return
+  if (!manifest) {
+    logLocale('locale script inactive', {
+      reason: 'docs-locale-manifest not found on page',
+      path: normalizePath(window.location.pathname)
+    })
+    return
+  }
+
+  var pageLang = currentLang()
+  var browserLangs = browserLanguagePreferences()
+  var sessionLang = null
+  try {
+    sessionLang = sessionStorage.getItem(SESSION_KEY)
+  } catch (error) {}
 
   if (maybeFallbackToEnglish(manifest)) return
   if (maybeRedirect(manifest)) return
 
-  persistLocale(currentLang())
+  var usedLang = currentLang()
+  persistLocale(usedLang)
+
+  logLocale('locale active', {
+    seen: {
+      url: pageLang,
+      html: document.documentElement.getAttribute('lang') || null,
+      browser: browserLangs,
+      session: sessionLang
+    },
+    used: usedLang,
+    available: availableLocales(manifest),
+    navigation: navigationKind(),
+    internal: isInternalNavigation(),
+    path: normalizePath(window.location.pathname)
+  })
 })()

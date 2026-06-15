@@ -1,5 +1,5 @@
 {% assign docs_path_prefix = page.url | default: '' | slice: 0, 8 %}
 {% if docs_path_prefix == '/docs/2/' or page.url contains '/docs/2/' or page.layout == 'index' or page.layout == 'docs' or page.layout == 'not_found' %}
 <script id="docs-locale-manifest" type="application/json">{{ site.data.docs_locale_manifest | jsonify }}</script>
-<script src="{{ site.baseurl }}/assets/js/docs-locale-head.js"></script>
+<script src="{{ site.baseurl }}/assets/js/docs-locale-head.js?v=2"></script>
 {% endif %}
