@@ -1,3 +1,4 @@
-<script id="docs-translations-data" type="application/json">{{ page.translations | default: empty | jsonify }}</script>
-<script id="docs-locale-manifest" type="application/json">{{ site.data.docs_locale_manifest | jsonify }}</script>
-<script src="{{ site.baseurl }}/assets/js/docs-locale.js" defer></script>
+{% comment %}
+  Locale negotiation runs synchronously in docs-locale-head.html (before paint).
+  This include is kept for backwards compatibility with layouts that reference it.
+{% endcomment %}

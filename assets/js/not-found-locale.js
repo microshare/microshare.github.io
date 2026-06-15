@@ -1,4 +1,7 @@
 ;(function () {
+  var SESSION_KEY = 'microshare-docs-lang'
+  var SUPPORTED = { fr: true, de: true, es: true }
+
   function readI18n() {
     var node = document.getElementById('not-found-i18n')
     if (!node) return null
@@ -9,17 +12,28 @@
     }
   }
 
+  function normalizeLang(value) {
+    if (!value) return 'en'
+    var lang = String(value).toLowerCase().split('-')[0]
+    if (lang === 'en' || SUPPORTED[lang]) return lang
+    return 'en'
+  }
+
   function detectLocale() {
-    var supported = { fr: true, de: true, es: true }
+    try {
+      var sessionChoice = sessionStorage.getItem(SESSION_KEY)
+      if (sessionChoice) return normalizeLang(sessionChoice)
+    } catch (error) {}
+
     var ref = document.referrer || ''
     var refMatch = ref.match(/\/docs\/2\/(fr|de|es)(?:\/|$)/)
-    if (refMatch && supported[refMatch[1]]) return refMatch[1]
+    if (refMatch && SUPPORTED[refMatch[1]]) return refMatch[1]
 
     var pathMatch = window.location.pathname.match(/\/docs\/2\/(fr|de|es)(?:\/|$)/)
-    if (pathMatch && supported[pathMatch[1]]) return pathMatch[1]
+    if (pathMatch && SUPPORTED[pathMatch[1]]) return pathMatch[1]
 
     var browser = (navigator.language || '').slice(0, 2).toLowerCase()
-    if (supported[browser]) return browser
+    if (SUPPORTED[browser]) return browser
     return 'en'
   }
 
@@ -44,6 +58,10 @@
   var locale = detectLocale()
   var labels = (i18n && i18n[locale]) || (i18n && i18n.en) || null
   applyLabels(locale, labels)
+
+  try {
+    sessionStorage.setItem(SESSION_KEY, locale)
+  } catch (error) {}
 
   var target = homePath(locale)
   window.setTimeout(function () {

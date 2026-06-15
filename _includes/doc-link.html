@@ -1,0 +1,20 @@
+{% comment %}
+  Locale-aware internal docs link.
+  Usage: {% include doc-link.html path="technical/api/quick-start/" %}
+  Optional: text="Quick Start" (renders an anchor), class="..."
+{% endcomment %}
+{% if include.locale_prefix %}
+  {% assign link_locale_prefix = include.locale_prefix %}
+{% elsif index_locale_prefix %}
+  {% assign link_locale_prefix = index_locale_prefix %}
+{% else %}
+  {% include docs-url-parts.html %}
+  {% assign link_locale_prefix = docs_locale_prefix %}
+{% endif %}
+{% assign doc_path = include.path | remove_first: '/docs/2/' | remove_first: '/docs/2' | remove_first: 'docs/2/' %}
+{% capture doc_href %}{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ link_locale_prefix }}{{ doc_path }}{% endcapture %}
+{% if include.text %}
+<a href="{{ doc_href | strip }}"{% if include.class %} class="{{ include.class }}"{% endif %}>{{ include.text }}</a>
+{% else %}
+{{ doc_href | strip }}
+{% endif %}

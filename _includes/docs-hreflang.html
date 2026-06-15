@@ -1,0 +1,19 @@
+{% assign docs_site_url = site.docs_url | default: site.url | default: "https://docs.microshare.io" %}
+{% if page.translations %}
+  {% assign default_url = page.translations.en | default: page.url %}
+  {% if page.translations.en %}
+    <link rel="alternate" hreflang="en" href="{{ docs_site_url }}{{ site.baseurl }}{{ page.translations.en }}">
+  {% endif %}
+  {% if page.translations.fr %}
+    <link rel="alternate" hreflang="fr" href="{{ docs_site_url }}{{ site.baseurl }}{{ page.translations.fr }}">
+  {% endif %}
+  {% if page.translations.de %}
+    <link rel="alternate" hreflang="de" href="{{ docs_site_url }}{{ site.baseurl }}{{ page.translations.de }}">
+  {% endif %}
+  {% if page.translations.es %}
+    <link rel="alternate" hreflang="es" href="{{ docs_site_url }}{{ site.baseurl }}{{ page.translations.es }}">
+  {% endif %}
+  {% if default_url %}
+    <link rel="alternate" hreflang="x-default" href="{{ docs_site_url }}{{ site.baseurl }}{{ default_url }}">
+  {% endif %}
+{% endif %}

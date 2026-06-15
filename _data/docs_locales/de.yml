@@ -1,0 +1,51 @@
+labels:
+  general:
+    title: Allgemein
+    desc: Eine Einführung in Microshare, die Technologie und die Plattform
+  admin:
+    title: Administration
+    desc: Administratorhandbuch für den Zugriff auf und die Nutzung der Plattform
+  installer:
+    title: Installation
+    desc: Anleitung zur Implementierung Ihrer Microshare-Lösung
+  technical:
+    title: Technisch
+    desc: Ein vertiefter Blick auf die Microshare-Technologie
+  general/welcome:
+    title: Willkommen
+  general/release-notes:
+    title: Versionshinweise
+  general/meet-microshare:
+    title: Microshare kennenlernen
+  general/dashboards:
+    title: Dashboards
+  general/quick-start:
+    title: Schnellstart
+  general/faq:
+    title: FAQ
+  admin/admin-management:
+    title: Admin-Verwaltung
+  installer/quick-start:
+    title: Schnellstart
+  installer/deploy-m:
+    title: Deploy-M
+  installer/lorawan:
+    title: LoRaWAN
+  installer/specific-installations:
+    title: Spezielle Installationen
+  installer/devices:
+    title: Geräte
+  technical/quick-start:
+    title: Schnellstart
+  technical/data-format:
+    title: Datenformat
+  technical/microshare-platform:
+    title: Microshare-Plattform
+  technical/microshare-platform-advanced:
+    title: Microshare-Plattform erweitert
+  technical/streaming-integration:
+    title: Streaming-Integration
+  technical/api:
+    title: API
+  technical/lorawan:
+    title: LoRaWAN®

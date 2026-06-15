@@ -128,10 +128,13 @@
     return available[0]
   }
 
-  function maybeFallbackToEnglish() {
-    var manifest = readManifest()
-    if (!manifest) return false
+  function persistLocale(lang) {
+    try {
+      sessionStorage.setItem(SESSION_KEY, lang)
+    } catch (error) {}
+  }
 
+  function maybeFallbackToEnglish(manifest) {
     var currentPath = normalizePath(window.location.pathname)
     var parts = currentPath.split('/').filter(Boolean)
     var docsIndex = parts.indexOf('docs')
@@ -150,44 +153,28 @@
     return true
   }
 
-  function maybeRedirect() {
-    if (!shouldApplyLocaleRedirect()) return
-
-    var manifest = readManifest()
-    if (!manifest) return
+  function maybeRedirect(manifest) {
+    if (!shouldApplyLocaleRedirect()) return false
 
     var negotiated = negotiateLocale(manifest)
     var active = currentLang()
-    if (negotiated === active) return
+    if (negotiated === active) return false
 
     var target = normalizePath(buildLocalePath(window.location.pathname, negotiated))
-    if (!manifestHas(manifest, target)) return
+    if (!manifestHas(manifest, target)) return false
 
     var currentPath = normalizePath(window.location.pathname)
-    if (target === currentPath) return
+    if (target === currentPath) return false
 
     window.location.replace(target)
+    return true
   }
 
-  function bindSwitcher() {
-    document.querySelectorAll('[data-docs-lang]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var lang = link.getAttribute('data-docs-lang')
-        if (!lang) return
-        try {
-          sessionStorage.setItem(SESSION_KEY, lang)
-        } catch (error) {}
-        try {
-          localStorage.removeItem('microshare-docs-lang')
-          localStorage.removeItem('microshare-docs-lang:explicit')
-        } catch (error) {}
-      })
-    })
-  }
+  var manifest = readManifest()
+  if (!manifest) return
 
-  document.addEventListener('DOMContentLoaded', function () {
-    bindSwitcher()
-    if (maybeFallbackToEnglish()) return
-    maybeRedirect()
-  })
+  if (maybeFallbackToEnglish(manifest)) return
+  if (maybeRedirect(manifest)) return
+
+  persistLocale(currentLang())
 })()
