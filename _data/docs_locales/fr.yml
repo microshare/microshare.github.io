@@ -1,51 +1,256 @@
+---
 labels:
-  general:
-    title: Général
-    desc: Une introduction à Microshare, la technologie et la plateforme
   admin:
     title: Administration
     desc: Guide administrateur pour accéder à la plateforme et l'utiliser
+  admin/admin-management:
+    title: Gestion administrative
+  admin/admin-management/identity-admin:
+    title: Administrateur d'identité
+  admin/admin-management/ms-admin:
+    title: Administrateur MS
+  admin/admin-management/overview:
+    title: Vue d'ensemble
+  admin/admin-management/user-management:
+    title: Gestion des utilisateurs
+  general:
+    title: Général
+    desc: Une introduction à Microshare, la technologie et la plateforme
+  general/dashboards:
+    title: Tableaux de bord
+  general/dashboards/device-health:
+    title: Santé des appareils
+  general/dashboards/overview:
+    title: Vue d'ensemble
+  general/dashboards/rodent-alert:
+    title: Alertes rongeurs
+  general/dashboards/rodent-works:
+    title: Works rongeurs
+  general/dashboards/routing:
+    title: Routage
+  general/dashboards/settings:
+    title: Paramètres
+  general/dashboards/washroom-feedback:
+    title: Retour toilettes
+  general/dashboards/washroom-traffic:
+    title: Trafic toilettes
+  general/faq:
+    title: FAQ
+  general/faq/general:
+    title: Général
+  general/faq/microshare-data-security-and-privacy-faqs:
+    title: FAQ sécurité et confidentialité
+  general/faq/universal-contact-tracing-employee-faq-s:
+    title: FAQ traçage des contacts
+  general/meet-microshare:
+    title: Découvrir Microshare
+  general/meet-microshare/demo:
+    title: Démo
+  general/meet-microshare/demo-live:
+    title: Démo en direct
+  general/meet-microshare/technical-overview:
+    title: Vue d'ensemble technique
+  general/meet-microshare/why-microshare:
+    title: Pourquoi Microshare ?
+  general/quick-start:
+    title: Démarrage rapide
+  general/quick-start/access-my-apps:
+    title: Accéder à mes applications
+  general/quick-start/create-an-account:
+    title: Créer un compte
+  general/quick-start/dashboard-access-instructions:
+    title: Instructions d'accès aux tableaux de bord
+  general/quick-start/glossary:
+    title: Glossaire
+  general/release-notes:
+    title: Notes de version
+  general/welcome:
+    title: Bienvenue
   installer:
     title: Installateur
     desc: Guide pour déployer votre solution Microshare
+  installer/deploy-m:
+    title: Deploy-M
+  installer/deploy-m/app-guide:
+    title: Guide de l'application
+  installer/deploy-m/download-the-app:
+    title: Télécharger l'application
+  installer/deploy-m/installation-tutorials:
+    title: Tutoriels d'installation
+  installer/devices:
+    title: Appareils
+  installer/devices/ifemtocell-gateway-installation:
+    title: Installation passerelle iFemtocell
+  installer/devices/ifemtocell-gateway-verification:
+    title: Vérification passerelle iFemtocell
+  installer/devices/skiply-clock-e-battery-replacement:
+    title: Remplacement batterie Skiply Clock E
+  installer/devices/skiply-clock-e-date-time:
+    title: Date et heure Skiply Clock E
+  installer/devices/skiply-clock-e-installation:
+    title: Installation Skiply Clock E
+  installer/devices/skiply-clock-e-manual-reset:
+    title: Réinitialisation manuelle Skiply Clock E
+  installer/devices/tabs-motion-battery-replacement:
+    title: Remplacement batterie TABS Motion
+  installer/devices/tabs-motion-installation:
+    title: Installation TABS Motion
+  installer/devices/tabs-motion-manual-reset:
+    title: Réinitialisation manuelle TABS Motion
+  installer/devices/tabs-open-close-battery-replacement:
+    title: Remplacement batterie TABS Open Close
+  installer/devices/tabs-open-close-installation:
+    title: Installation TABS Open Close
+  installer/devices/tabs-open-close-manual-reset:
+    title: Réinitialisation manuelle TABS Open Close
+  installer/lorawan:
+    title: LoRaWAN
+  installer/lorawan/device-declaration:
+    title: Déclaration d'appareil
+  installer/lorawan/gateway-installation:
+    title: Installation de passerelle
+  installer/quick-start:
+    title: Démarrage rapide
+  installer/quick-start/faq-about-installations:
+    title: FAQ sur les installations
+  installer/quick-start/kerlink-wmc:
+    title: Kerlink WMC
+  installer/quick-start/overview:
+    title: Vue d'ensemble
+  installer/quick-start/validation-of-a-successfull-installation:
+    title: Validation d'une installation réussie
+  installer/specific-installations:
+    title: Installations spécifiques
+  installer/specific-installations/activity-level-indicator-installation-guide:
+    title: Guide indicateur de niveau d'activité
+  installer/specific-installations/adjusting-the-b7-wearable-battery-uct:
+    title: Réglage batterie wearable B7 - UCT
+  installer/specific-installations/asset-zoning-installation-guide:
+    title: Guide zonage des actifs
+  installer/specific-installations/desk-occupancy-installation-guide:
+    title: Guide occupation de bureau
+  installer/specific-installations/environment-monitoring-installation-guide:
+    title: Guide surveillance environnementale
+  installer/specific-installations/feedback-station-installation-guide:
+    title: Guide station de retour
+  installer/specific-installations/fridge-monitoring-installation:
+    title: Installation surveillance réfrigérateur
+  installer/specific-installations/leak-detection-installation-guide:
+    title: Guide détection de fuites
+  installer/specific-installations/open-shut-indicator-installation:
+    title: Installation indicateur ouvert/fermé
+  installer/specific-installations/room-occupancy-installation:
+    title: Installation occupation de salle
+  installer/specific-installations/solutions-battery-information:
+    title: Informations batteries des solutions
+  installer/specific-installations/universal-contact-tracing-installation-guide:
+    title: Guide traçage des contacts universel
   technical:
     title: Technique
     desc: Un regard approfondi sur la technologie Microshare
-  general/welcome:
-    title: Bienvenue
-  general/release-notes:
-    title: Notes de version
-  general/meet-microshare:
-    title: Découvrir Microshare
-  general/dashboards:
-    title: Tableaux de bord
-  general/quick-start:
+  technical/api:
+    title: API
+  technical/api/admin-api:
+    title: API Admin
+  technical/api/api-collection:
+    title: Collection API
+  technical/api/authentication:
+    title: Authentification
+  technical/api/demo-api:
+    title: API de démo
+  technical/api/quick-start:
     title: Démarrage rapide
-  general/faq:
-    title: FAQ
-  admin/admin-management:
-    title: Gestion administrative
-  installer/quick-start:
-    title: Démarrage rapide
-  installer/deploy-m:
-    title: Deploy-M
-  installer/lorawan:
-    title: LoRaWAN
-  installer/specific-installations:
-    title: Installations spécifiques
-  installer/devices:
-    title: Appareils
-  technical/quick-start:
-    title: Démarrage rapide
+  technical/api/share-api:
+    title: API Share
   technical/data-format:
     title: Format de données
+  technical/data-format/contact-tracing:
+    title: Traçage des contacts
+  technical/data-format/event-formats:
+    title: Formats d'événements
+  technical/data-format/feedback:
+    title: Retour
+  technical/data-format/hourly-saver:
+    title: Hourly Saver
+  technical/data-format/hourly-snapshot:
+    title: Instantané horaire
+  technical/data-format/incident:
+    title: Incident
+  technical/data-format/microshare-standards:
+    title: Standards Microshare
+  technical/data-format/motion-event:
+    title: Événement de mouvement
+  technical/data-format/overview:
+    title: Vue d'ensemble
+  technical/data-format/people-counter:
+    title: Compteur de personnes
+  technical/data-format/rodent-event:
+    title: Événement rongeur
+  technical/lorawan:
+    title: LoRaWAN®
+  technical/lorawan/lorawan-devices:
+    title: Appareils LoRaWAN®
+  technical/lorawan/lorawan-gateways:
+    title: Passerelles LoRaWAN®
+  technical/lorawan/lorawan-technology:
+    title: Technologie LoRaWAN®
+  technical/lorawan/why-lorawan:
+    title: Pourquoi LoRaWAN® ?
   technical/microshare-platform:
     title: Plateforme Microshare
   technical/microshare-platform-advanced:
     title: Plateforme Microshare avancée
+  technical/microshare-platform-advanced/data-ingestion:
+    title: Ingestion de données
+  technical/microshare-platform-advanced/data-unpacking:
+    title: Décompression des données
+  technical/microshare-platform-advanced/data-unpacking-by-robots:
+    title: Décompression par robots
+  technical/microshare-platform-advanced/identity-guide:
+    title: Guide d'identité
+  technical/microshare-platform-advanced/incident:
+    title: Incident
+  technical/microshare-platform-advanced/robots-guide:
+    title: Guide des robots
+  technical/microshare-platform-advanced/robots-library:
+    title: Bibliothèque de robots
+  technical/microshare-platform/dashboard-guide:
+    title: Guide des tableaux de bord
+  technical/microshare-platform/device-cluster-guide:
+    title: Guide des clusters d'appareils
+  technical/microshare-platform/quick-start:
+    title: Démarrage rapide
+  technical/microshare-platform/rules-guide:
+    title: Guide des règles
+  technical/microshare-platform/views-guide:
+    title: Guide des vues
+  technical/quick-start:
+    title: Démarrage rapide
+  technical/quick-start/advanced-dev-roadmap:
+    title: Feuille de route développeur avancé
+  technical/quick-start/basic-dev-roadmap:
+    title: Feuille de route développeur débutant
+  technical/quick-start/data-integration:
+    title: Intégration de données
+  technical/quick-start/microshare-technical-structure:
+    title: Structure technique Microshare
+  technical/quick-start/overview:
+    title: Vue d'ensemble
+  technical/quick-start/share-secured-data-with-gpg:
+    title: Partager des données sécurisées avec GPG
   technical/streaming-integration:
     title: Intégration streaming
-  technical/api:
-    title: API
-  technical/lorawan:
-    title: LoRaWAN®
+  technical/streaming-integration/aws-kinesis-data-stream-integration:
+    title: Intégration AWS Kinesis Data Stream
+  technical/streaming-integration/aws-sqs-integration:
+    title: Intégration AWS SQS
+  technical/streaming-integration/azure-event-hub-integration:
+    title: Intégration Azure Event Hub
+  technical/streaming-integration/azure-iot-hub-integration:
+    title: Intégration Azure IoT Hub
+  technical/streaming-integration/google-pub-sub-integration:
+    title: Intégration Google Pub/Sub
+  technical/streaming-integration/overview:
+    title: Vue d'ensemble
+ui:
+  search_placeholder: Rechercher...

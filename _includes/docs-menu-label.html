@@ -1,8 +1,9 @@
 {% assign default_label = include.default | default: '' %}
-{% if docs_page_lang == 'en' or site.data.docs_locales == nil %}
+{% assign menu_lang = docs_ui_lang | default: docs_page_lang | default: 'en' %}
+{% if menu_lang == 'en' or site.data.docs_locales == nil %}
   {{ default_label }}
 {% else %}
-  {% assign locale_menu = site.data.docs_locales[docs_page_lang] %}
+  {% assign locale_menu = site.data.docs_locales[menu_lang] %}
   {% assign label_key = include.key %}
   {% assign label_entry = locale_menu.labels[label_key] %}
   {% if label_entry.title and label_entry.title != '' %}

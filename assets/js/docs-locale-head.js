@@ -1,5 +1,6 @@
 ;(function () {
   var SESSION_KEY = 'microshare-docs-lang'
+  var UI_SESSION_KEY = 'microshare-docs-ui-lang'
   var SUPPORTED = ['fr', 'de', 'es']
   var ALL_LOCALES = ['en'].concat(SUPPORTED)
 
@@ -125,38 +126,20 @@
   function persistLocale(lang) {
     try {
       sessionStorage.setItem(SESSION_KEY, lang)
+      sessionStorage.setItem(UI_SESSION_KEY, lang)
+    } catch (error) {}
+  }
+
+  function applyUiLocale(lang) {
+    if (!lang || lang === 'en') return
+    try {
+      document.documentElement.setAttribute('data-docs-ui-lang', lang)
     } catch (error) {}
   }
 
   function logLocale(event, details) {
     if (typeof console === 'undefined' || !console.info) return
     console.info('[Microshare i18n]', event, details)
-  }
-
-  function maybeFallbackToEnglish(manifest) {
-    var currentPath = normalizePath(window.location.pathname)
-    var parts = currentPath.split('/').filter(Boolean)
-    var docsIndex = parts.indexOf('docs')
-    if (docsIndex === -1 || parts[docsIndex + 1] !== '2') return false
-
-    var rest = parts.slice(docsIndex + 2)
-    if (!rest.length || SUPPORTED.indexOf(rest[0]) === -1) return false
-
-    if (manifestHas(manifest, currentPath)) return false
-
-    var englishPath = normalizePath(buildLocalePath(window.location.pathname, 'en'))
-    if (!englishPath || !manifestHas(manifest, englishPath)) return false
-    if (englishPath === currentPath) return false
-
-    logLocale('fallback to English', {
-      seen: currentLang(),
-      used: 'en',
-      from: currentPath,
-      to: englishPath,
-      reason: 'no translation for this page'
-    })
-    window.location.replace(englishPath)
-    return true
   }
 
   function maybeRedirect(manifest) {
@@ -218,11 +201,12 @@
     sessionLang = sessionStorage.getItem(SESSION_KEY)
   } catch (error) {}
 
-  if (maybeFallbackToEnglish(manifest)) return
   if (maybeRedirect(manifest)) return
 
+  var negotiated = negotiateLocale(manifest)
   var usedLang = currentLang()
   persistLocale(usedLang)
+  applyUiLocale(negotiated)
 
   logLocale('locale active', {
     seen: {
@@ -232,6 +216,8 @@
       session: sessionLang
     },
     used: usedLang,
+    ui: negotiated,
+    contentFallback: document.documentElement.getAttribute('data-locale-fallback') === 'true',
     available: availableLocales(manifest),
     navigation: navigationKind(),
     internal: isInternalNavigation(),

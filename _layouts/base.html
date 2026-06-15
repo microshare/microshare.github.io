@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html
   lang="{{ page.lang | default: 'en' }}"
+  {% if page.locale_fallback %}data-locale-fallback="true"{% endif %}
   data-pdf-title="{{ page.title | default: site.title | escape }}"
   data-pdf-library-url="{{ '/assets/vendor/pdfmake/pdfmake.min.js' | relative_url }}?v=0.3.10"
   data-pdf-fonts-url="{{ '/assets/vendor/pdfmake/vfs_fonts.js' | relative_url }}?v=0.3.10"

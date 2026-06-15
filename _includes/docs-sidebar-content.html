@@ -9,7 +9,7 @@
 
                 {% if docs_page_main_group == group_slug %}
                     <button class="btn btn-sm text-microshare-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {% include docs-menu-label.html key=group_slug default=group.title %}
+                        <span data-docs-menu-key="{{ group_slug }}" data-docs-menu-default="{{ group.title }}">{% include docs-menu-label.html key=group_slug default=group.title %}</span>
                     </button>
                 {% endif%}
             {% endfor %}
@@ -21,7 +21,7 @@
                 {% assign group_slug = group.title | slugify %}
 
                 {% if docs_page_main_group != group_slug %}
-                    <a class="dropdown-item text-white bg-hover-microshare-light" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{group_slug}}/">{% include docs-menu-label.html key=group_slug default=group.title %}</a>
+                    <a class="dropdown-item text-white bg-hover-microshare-light" href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{group_slug}}/"><span data-docs-menu-key="{{ group_slug }}" data-docs-menu-default="{{ group.title }}">{% include docs-menu-label.html key=group_slug default=group.title %}</span></a>
                 {% endif%}
             {% endfor %}
                 </div>
@@ -52,7 +52,7 @@
                 {% endif %}
 
                 <li class="{{active}}">
-                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{% include docs-menu-label.html key=menu_item_key default=page.title %}</span>{% if page.product %}{% include product-badge.html product=page.product %}{% endif %} </a>
+                    <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text" data-docs-menu-key="{{ menu_item_key }}" data-docs-menu-default="{{ page.title }}">{% include docs-menu-label.html key=menu_item_key default=page.title %}</span>{% if page.product %}{% include product-badge.html product=page.product %}{% endif %} </a>
                 </li>
 
         {% endfor %}
@@ -69,7 +69,7 @@
                 {% endif %}
 
                 <li class="sidebar-dropdown {{active}}">
-                    <a href="#"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text">{% include docs-menu-label.html key=subgroup_key default=subgroup.title %}</span></a>
+                    <a href="#"> <i class="fa fa-{{ group.logo }}"></i> <span class="menu-text" data-docs-menu-key="{{ subgroup_key }}" data-docs-menu-default="{{ subgroup.title }}">{% include docs-menu-label.html key=subgroup_key default=subgroup.title %}</span></a>
                     <div class="sidebar-submenu" {% if active %}style="display: block;"{% endif %}>
                         <ul>
 
@@ -90,7 +90,7 @@
                                     {% assign active = 'active' %}
                                 {% endif %}
 
-                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}">{% include docs-menu-label.html key=menu_item_key default=subpage.title %}{% if subpage.product %}{% include product-badge.html product=subpage.product %}{% endif %}</a> </li>
+                                <li class={{active}}> <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/{{ docs_locale_prefix }}{{ menu_item_href }}"><span data-docs-menu-key="{{ menu_item_key }}" data-docs-menu-default="{{ subpage.title }}">{% include docs-menu-label.html key=menu_item_key default=subpage.title %}</span>{% if subpage.product %}{% include product-badge.html product=subpage.product %}{% endif %}</a> </li>
                             {% endfor %}
 
                         </ul>
