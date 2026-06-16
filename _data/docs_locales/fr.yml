@@ -254,3 +254,9 @@ labels:
     title: Vue d'ensemble
 ui:
   search_placeholder: Rechercher...
+  doc_help_title: Cette documentation vous a-t-elle été utile ?
+  support_contact: Pour toute question ou assistance supplémentaire, contactez-nous à support@microshare.io
+  support_team_question: Vous avez une question pour notre équipe support ?
+  contact_support: Contacter le support
+  edit_page_github: Modifier cette page sur GitHub
+  page_summary: 'Sommaire de la page :'

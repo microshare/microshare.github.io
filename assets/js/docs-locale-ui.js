@@ -33,30 +33,47 @@
     return path.replace('/docs/2/', '/docs/2/' + lang + '/')
   }
 
+  function uiStringFor(ui, key, fallback) {
+    if (!ui || !key) return fallback
+    var value = ui[key]
+    if (value) return value
+    return fallback
+  }
+
   function applyMenuLabels() {
     var lang = uiLang()
     if (!lang || lang === 'en') return
 
     var locales = readLabels()
     var localeLabels = locales && locales[lang] && locales[lang].labels
-    if (!localeLabels) return
 
-    document.querySelectorAll('[data-docs-menu-key]').forEach(function (node) {
-      var key = node.getAttribute('data-docs-menu-key')
-      var fallback = node.getAttribute('data-docs-menu-default') || node.textContent
-      var translated = labelFor(localeLabels, key, fallback)
-      if (translated && translated !== node.textContent) node.textContent = translated
-    })
+    if (localeLabels) {
+      document.querySelectorAll('[data-docs-menu-key]').forEach(function (node) {
+        var key = node.getAttribute('data-docs-menu-key')
+        var fallback = node.getAttribute('data-docs-menu-default') || node.textContent
+        var translated = labelFor(localeLabels, key, fallback)
+        if (translated && translated !== node.textContent) node.textContent = translated
+      })
 
-    document.querySelectorAll('.sidebar-menu a[href*="/docs/2/"]').forEach(function (link) {
-      link.setAttribute('href', prefixDocsPath(link.getAttribute('href'), lang))
-    })
+      document.querySelectorAll('.sidebar-menu a[href*="/docs/2/"]').forEach(function (link) {
+        link.setAttribute('href', prefixDocsPath(link.getAttribute('href'), lang))
+      })
+    }
 
     var ui = locales && locales[lang] && locales[lang].ui
-    if (ui && ui.search_placeholder) {
-      var searchInput = document.getElementById('search')
-      if (searchInput) searchInput.setAttribute('placeholder', ui.search_placeholder)
-    }
+    if (!ui) return
+
+    document.querySelectorAll('[data-docs-ui-key]').forEach(function (node) {
+      var key = node.getAttribute('data-docs-ui-key')
+      var fallback = node.getAttribute('data-docs-ui-default') || node.textContent
+      var translated = uiStringFor(ui, key, fallback)
+      if (!translated) return
+      if (node.tagName === 'INPUT') {
+        node.setAttribute('placeholder', translated)
+      } else if (translated !== node.textContent) {
+        node.textContent = translated
+      }
+    })
   }
 
   if (document.readyState === 'loading') {

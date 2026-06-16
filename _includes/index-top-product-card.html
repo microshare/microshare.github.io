@@ -1,0 +1,22 @@
+<div class="mb-4 bg-hover-light">
+  <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ include.page_url | strip }}"' style="cursor:pointer;">
+    <i class="far fa-fw fa-{{ include.group.logo }} fa-3x {{ include.group.color }} mr-4 mt-1"></i>
+    <div class="media-body">
+      <h5 class="mb-1">
+        <a class="link-dark" href="{{ include.page_url | strip }}" data-docs-menu-key="{{ include.page_path }}" data-docs-menu-default="{{ include.entry_title }}">
+          {% include docs-menu-label.html key=include.page_path default=include.entry_title %}
+        </a>
+      </h5>
+      <p class="mb-0 text-muted small">
+        {% if include.subgroup_slug %}
+          {% assign subgroup_key = include.group_slug | append: '/' | append: include.subgroup_slug %}
+          <span data-docs-menu-key="{{ include.group_slug }}" data-docs-menu-default="{{ include.group_title }}">{% include docs-menu-label.html key=include.group_slug default=include.group_title %}</span>
+          -
+          <span data-docs-menu-key="{{ subgroup_key }}" data-docs-menu-default="{{ include.subgroup_title }}">{% include docs-menu-label.html key=subgroup_key default=include.subgroup_title %}</span>
+        {% else %}
+          <span data-docs-menu-key="{{ include.group_slug }}" data-docs-menu-default="{{ include.group_title }}">{% include docs-menu-label.html key=include.group_slug default=include.group_title %}</span>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>

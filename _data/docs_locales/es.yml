@@ -49,3 +49,11 @@ labels:
     title: API
   technical/lorawan:
     title: LoRaWAN®
+ui:
+  search_placeholder: Buscar...
+  doc_help_title: ¿Le ha sido útil esta documentación?
+  support_contact: Para más preguntas o soporte, contáctenos en support@microshare.io
+  support_team_question: ¿Tiene una pregunta para nuestro equipo de soporte?
+  contact_support: Contactar con soporte
+  edit_page_github: Editar esta página en GitHub
+  page_summary: 'Resumen de la página:'

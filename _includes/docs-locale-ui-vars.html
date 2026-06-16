@@ -1,0 +1,21 @@
+{% include docs-url-parts.html %}
+{% assign docs_ui_doc_help_title = 'Did this doc help you?' %}
+{% assign docs_ui_support_contact = 'For further questions or support, please contact us at support@microshare.io' %}
+{% assign docs_ui_support_team_question = 'You have a question for our Support Team ?' %}
+{% assign docs_ui_contact_support = 'Contact Support' %}
+{% assign docs_ui_edit_page_github = 'Edit this page on Github' %}
+{% assign docs_ui_page_summary = 'Summary of the page :' %}
+{% assign docs_search_placeholder = 'Search...' %}
+
+{% if docs_ui_lang != 'en' %}
+  {% assign docs_locale_ui = site.data.docs_locales[docs_ui_lang].ui %}
+  {% if docs_locale_ui %}
+    {% if docs_locale_ui.doc_help_title %}{% assign docs_ui_doc_help_title = docs_locale_ui.doc_help_title %}{% endif %}
+    {% if docs_locale_ui.support_contact %}{% assign docs_ui_support_contact = docs_locale_ui.support_contact %}{% endif %}
+    {% if docs_locale_ui.support_team_question %}{% assign docs_ui_support_team_question = docs_locale_ui.support_team_question %}{% endif %}
+    {% if docs_locale_ui.contact_support %}{% assign docs_ui_contact_support = docs_locale_ui.contact_support %}{% endif %}
+    {% if docs_locale_ui.edit_page_github %}{% assign docs_ui_edit_page_github = docs_locale_ui.edit_page_github %}{% endif %}
+    {% if docs_locale_ui.page_summary %}{% assign docs_ui_page_summary = docs_locale_ui.page_summary %}{% endif %}
+    {% if docs_locale_ui.search_placeholder %}{% assign docs_search_placeholder = docs_locale_ui.search_placeholder %}{% endif %}
+  {% endif %}
+{% endif %}

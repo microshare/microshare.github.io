@@ -1,20 +1,21 @@
+{% include docs-locale-ui-vars.html %}
 <aside class="docs-aside col-md-3 d-none d-md-block border-left">
     <div  style="position:fixed;">
       <div class="widget widget-support-forum p-md-3 p-sm-2"> <span class="icon icon-forum"></span>
-          <h6>You have a question for our Support Team ?</h6> 
-          <a href="mailto:support@microshare.io" class="btn btn-light">Contact Support</a> </div>
+          <h6 data-docs-ui-key="support_team_question" data-docs-ui-default="You have a question for our Support Team ?">{{ docs_ui_support_team_question }}</h6>
+          <a href="mailto:support@microshare.io" class="btn btn-light" data-docs-ui-key="contact_support" data-docs-ui-default="Contact Support">{{ docs_ui_contact_support }}</a> </div>
       <hr class="my-2">
 
       {% assign url_split = page.url | split: '/' %}
       {% assign url_join = url_split | join: '/' %}
 
         <a class="btn btn-sm bg-white text-microshare-light" href="https://github.com/microshare/microshare.github.io/blob/master{{ url_join }}.md"> <b>
-          <i class="fab fa-github mr-1"></i> 
-          Edit this page on Github
+          <i class="fab fa-github mr-1"></i>
+          <span data-docs-ui-key="edit_page_github" data-docs-ui-default="Edit this page on Github">{{ docs_ui_edit_page_github }}</span>
         </b></a>
       <hr class="my-2 mb-4">
       {% if page.toc %}
-      <a>Summary of the page : <a>
+      <span data-docs-ui-key="page_summary" data-docs-ui-default="Summary of the page :">{{ docs_ui_page_summary }}</span>
       <div class="my-2">
           <div id="toc"></div>
       </div>

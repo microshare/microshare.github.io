@@ -1,6 +1,7 @@
+{% include docs-locale-ui-vars.html %}
 <div class="docs-content-footer">
 <hr style="height: 5px;background-color:#066384;margin-top: 40px;">
-<h5 class="text-microshare-light">Did this doc help you?</h6>
+<h5 class="text-microshare-light" data-docs-ui-key="doc_help_title" data-docs-ui-default="Did this doc help you?">{{ docs_ui_doc_help_title }}</h5>
     <label class="btn btn-rate btn-rate-true x-radio-label" for="helpfulness-yes" onclick="javascript:rating(true);"
         style="cursor: pointer; background-color: #e4e9fc;">
         <svg version="1.1" width="24" height="24" viewBox="0 0 24 24" class="octicon octicon-thumbsup"
@@ -26,7 +27,7 @@
     </label>
     <hr style="height: 5px;background-color:#066384">
     <br>
-    <h5 class="text-microshare-light">For further questions or support, please contact us at support@microshare.io</h5>
+    <h5 class="text-microshare-light" data-docs-ui-key="support_contact" data-docs-ui-default="For further questions or support, please contact us at support@microshare.io">{{ docs_ui_support_contact }}</h5>
 
     {% include image.html url="\assets\img\microshare-logo.png" description="ms logo" %}
 

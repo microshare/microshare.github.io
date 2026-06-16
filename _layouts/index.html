@@ -110,19 +110,7 @@
                       {% assign page_path = group_slug | append: '/' | append: page_slug %}
                     {% endif %}
                     {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
-                    <div class="mb-4 bg-hover-light">
-                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
-                        <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
-                        <div class="media-body">
-                          <h5 class="mb-1">
-                            <a class="link-dark" href="{{ page_url | strip }}">
-                              {{ page.title }}
-                            </a>
-                          </h5>
-                          <p class="mb-0 text-muted small">{{ group.title }}</p>
-                        </div>
-                      </div>
-                    </div>
+                    {% include index-top-product-card.html entry_title=page.title page_path=page_path page_url=page_url group=group group_slug=group_slug group_title=group.title %}
                   {% endif %}
                 {% endfor %}
                 {% for subgroup in group.subpages %}
@@ -137,19 +125,7 @@
                         {% assign page_path = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
                       {% endif %}
                       {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
-                      <div class="mb-4 bg-hover-light">
-                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
-                          <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
-                          <div class="media-body">
-                            <h5 class="mb-1">
-                              <a class="link-dark" href="{{ page_url | strip }}">
-                                {{ subpage.title }}
-                              </a>
-                            </h5>
-                            <p class="mb-0 text-muted small">{{ group.title }} - {{ subgroup.title }}</p>
-                          </div>
-                        </div>
-                      </div>
+                      {% include index-top-product-card.html entry_title=subpage.title page_path=page_path page_url=page_url group=group group_slug=group_slug group_title=group.title subgroup_slug=subgroup_slug subgroup_title=subgroup.title %}
                     {% endif %}
                   {% endfor %}
                 {% endfor %}
@@ -177,19 +153,7 @@
                       {% assign page_path = group_slug | append: '/' | append: page_slug %}
                     {% endif %}
                     {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
-                    <div class="mb-4 bg-hover-light">
-                      <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
-                        <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
-                        <div class="media-body">
-                          <h5 class="mb-1">
-                            <a class="link-dark" href="{{ page_url | strip }}">
-                              {{ page.title }}
-                            </a>
-                          </h5>
-                          <p class="mb-0 text-muted small">{{ group.title }}</p>
-                        </div>
-                      </div>
-                    </div>
+                    {% include index-top-product-card.html entry_title=page.title page_path=page_path page_url=page_url group=group group_slug=group_slug group_title=group.title %}
                   {% endif %}
                 {% endfor %}
                 {% for subgroup in group.subpages %}
@@ -204,19 +168,7 @@
                         {% assign page_path = group_slug | append: '/' | append: subgroup_slug | append: '/' | append: subpage_slug %}
                       {% endif %}
                       {% capture page_url %}{% include index-doc-href.html path=page_path %}{% endcapture %}
-                      <div class="mb-4 bg-hover-light">
-                        <div class="media h-100 shadow rounded p-4" onclick='location.href="{{ page_url | strip }}"' style="cursor:pointer;">
-                          <i class="far fa-fw fa-{{group.logo}} fa-3x {{group.color}} mr-4 mt-1"></i>
-                          <div class="media-body">
-                            <h5 class="mb-1">
-                              <a class="link-dark" href="{{ page_url | strip }}">
-                                {{ subpage.title }}
-                              </a>
-                            </h5>
-                            <p class="mb-0 text-muted small">{{ group.title }} - {{ subgroup.title }}</p>
-                          </div>
-                        </div>
-                      </div>
+                      {% include index-top-product-card.html entry_title=subpage.title page_path=page_path page_url=page_url group=group group_slug=group_slug group_title=group.title subgroup_slug=subgroup_slug subgroup_title=subgroup.title %}
                     {% endif %}
                   {% endfor %}
                 {% endfor %}
