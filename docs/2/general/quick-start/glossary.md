@@ -43,7 +43,7 @@ Having trouble with a word or phrase that you can't find here? Do not hesitate t
 
 a Microshare app is a web application that is configured, managed, and accessed via the Microshare portal. Such apps are often used to visualize data in a dashboard.
 
- sdv<br>
+<br>
 
 ##### Data Formatting
 
