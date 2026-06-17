@@ -5,10 +5,10 @@ description: Guide complet pour installer des capteurs avec Deploy-M
 lang: fr
 translation_of: docs/2/installer/deploy-m/download-the-app.md
 translations:
-  en: /docs/2/installer/deploy-m/download-the-app
   fr: /docs/2/fr/installer/deploy-m/download-the-app
-group: deploy-m
+  en: /docs/2/installer/deploy-m/download-the-app
 toc: true
+group: deploy-m
 ---
 
 Avec l'application Microshare Deploy-M, disponible pour iPhone et Android, vous pouvez configurer et déployer vos composants Smart Facilities en toute simplicité.

@@ -5,8 +5,8 @@ description: Des termes Microshare™ vous semblent obscurs ?
 lang: fr
 translation_of: docs/2/general/quick-start/glossary.md
 translations:
-  en: /docs/2/general/quick-start/glossary
   fr: /docs/2/fr/general/quick-start/glossary
+  en: /docs/2/general/quick-start/glossary
 toc: true
 ---
 ---
