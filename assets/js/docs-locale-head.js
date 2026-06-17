@@ -2,6 +2,7 @@
   var SESSION_KEY = 'microshare-docs-lang'
   var UI_SESSION_KEY = 'microshare-docs-ui-lang'
   var SUPPORTED = ['fr', 'de', 'es']
+  var URL_PREFIX_LOCALES = ['en', 'fr', 'de', 'es']
   var ALL_LOCALES = ['en'].concat(SUPPORTED)
 
   function normalizeLang(value) {
@@ -32,12 +33,19 @@
     }
   }
 
+  function stripUrlLocale(rest) {
+    if (rest.length && URL_PREFIX_LOCALES.indexOf(rest[0]) !== -1) return rest.slice(1)
+    return rest
+  }
+
   function currentLang() {
     var path = normalizePath(window.location.pathname)
     var parts = path.split('/').filter(Boolean)
     var docsIndex = parts.indexOf('docs')
-    if (docsIndex !== -1 && parts[docsIndex + 1] === '2' && SUPPORTED.indexOf(parts[docsIndex + 2]) !== -1) {
-      return parts[docsIndex + 2]
+    if (docsIndex !== -1 && parts[docsIndex + 1] === '2') {
+      var maybeLocale = parts[docsIndex + 2]
+      if (maybeLocale === 'en') return 'en'
+      if (SUPPORTED.indexOf(maybeLocale) !== -1) return maybeLocale
     }
 
     var htmlLang = document.documentElement.getAttribute('lang')
@@ -71,7 +79,7 @@
     if (docsIndex === -1 || parts[docsIndex + 1] !== '2') return null
 
     var rest = parts.slice(docsIndex + 2)
-    if (rest.length && SUPPORTED.indexOf(rest[0]) !== -1) rest = rest.slice(1)
+    rest = stripUrlLocale(rest)
 
     var base = '/' + parts.slice(0, docsIndex + 2).join('/')
     if (locale === 'en') {
@@ -179,7 +187,7 @@
       reason: isInternalNavigation() ? 'browser language (internal link)' : 'browser language',
       browser: browserLanguagePreferences()
     })
-    window.location.replace(target)
+    window.location.replace(target + window.location.search + window.location.hash)
     return true
   }
 

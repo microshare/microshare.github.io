@@ -7,11 +7,12 @@ module Jekyll
 
   module DocsLocaleFallbackPages
     SUPPORTED = %w[fr de es].freeze
+    RESERVED_SEGMENTS = (SUPPORTED + %w[en]).freeze
     DOCS_VERSION = '2'
     PREFIX = "docs/#{DOCS_VERSION}/"
 
     def self.locale_segment?(segment)
-      SUPPORTED.include?(segment.to_s)
+      RESERVED_SEGMENTS.include?(segment.to_s)
     end
 
     def self.english_pages(site)

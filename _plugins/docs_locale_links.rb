@@ -11,7 +11,7 @@ module Jekyll
         https?://docs\.microshare\.io
       )?
       (/docs/#{DOCS_VERSION}/)
-      (?!(?:fr|de|es)/)
+      (?!(?:en|fr|de|es)/)
       ([^"'#?]*)
       \1
     }x.freeze

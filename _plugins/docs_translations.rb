@@ -1,6 +1,6 @@
 module Jekyll
   module DocsTranslations
-    SUPPORTED = %w[fr de es].freeze
+    SUPPORTED = %w[en fr de es].freeze
     DOCS_VERSION = '2'
 
     def self.normalize_path(url)

@@ -1,5 +1,5 @@
 {% assign index_page_lang_from_url = "en" %}
-{% assign locale_codes = "fr,de,es" | split: "," %}
+{% assign locale_codes = "en,fr,de,es" | split: "," %}
 {% assign url_split = page.url | split: '/' %}
 {% if locale_codes contains url_split[3] %}
   {% assign index_page_lang_from_url = url_split[3] %}

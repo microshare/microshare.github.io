@@ -4,6 +4,9 @@
   if (view !== 'embed' && view !== 'pdf') return
 
   var root = document.documentElement
+  var PDF_CONTENT_WIDTH = 527
+  var PDF_MAX_IMAGE_HEIGHT = 650
+  var PDF_SHORT_IMAGE_HEIGHT = 420
   root.classList.add('docs-view-' + view)
 
   if (view === 'embed') return
@@ -51,6 +54,7 @@
       listDepth: 0,
     })
     content = keepHeadingsWithFollowingImage(content)
+    content = stripPdfMetadata(content)
 
     if (!content.length) {
       throw new Error('The article does not contain exportable content.')
@@ -238,6 +242,19 @@
   async function loadImageLibrary(container) {
     var images = Array.prototype.slice.call(container.querySelectorAll('img'))
     var library = new Map()
+    var displayWidths = new Map()
+
+    images.forEach(function (image) {
+      var source = image.currentSrc || image.getAttribute('src')
+      if (!source) return
+
+      var absoluteUrl = new URL(source.replace(/\\/g, '/'), window.location.href).href
+      var desiredWidth = desiredImageWidth(image)
+      var existing = displayWidths.get(absoluteUrl)
+      if (!existing || desiredWidth < existing) {
+        displayWidths.set(absoluteUrl, desiredWidth)
+      }
+    })
 
     await Promise.all(images.map(async function (image) {
       var source = image.currentSrc || image.getAttribute('src')
@@ -247,7 +264,10 @@
       if (library.has(absoluteUrl)) return
 
       try {
-        library.set(absoluteUrl, await imageUrlToDataUrl(absoluteUrl))
+        library.set(
+          absoluteUrl,
+          await imageUrlToDataUrl(absoluteUrl, displayWidths.get(absoluteUrl))
+        )
       } catch (error) {
         library.set(absoluteUrl, null)
       }
@@ -256,7 +276,25 @@
     return library
   }
 
-  async function imageUrlToDataUrl(url) {
+  function desiredImageWidth(image) {
+    var widthAttr = parseInt(image.getAttribute('width'), 10)
+    if (widthAttr > 0) return Math.min(widthAttr, PDF_CONTENT_WIDTH)
+
+    var renderedWidth = Math.round(image.getBoundingClientRect().width)
+    if (renderedWidth > 0) return Math.min(renderedWidth, PDF_CONTENT_WIDTH)
+
+    return PDF_CONTENT_WIDTH
+  }
+
+  function isDrawableImageType(mimeType) {
+    return mimeType === 'image/png'
+      || mimeType === 'image/jpeg'
+      || mimeType === 'image/webp'
+      || mimeType === 'image/gif'
+      || mimeType === 'image/bmp'
+  }
+
+  async function imageUrlToDataUrl(url, maxDisplayWidth) {
     var response = await fetch(url, {
       credentials: new URL(url).origin === window.location.origin ? 'same-origin' : 'omit',
       mode: 'cors',
@@ -267,41 +305,64 @@
     }
 
     var blob = await response.blob()
-    if (blob.type !== 'image/png' && blob.type !== 'image/jpeg') {
+    if (!isDrawableImageType(blob.type)) {
       throw new Error('Unsupported image format: ' + blob.type)
     }
 
-    var dataUrl = await new Promise(function (resolve, reject) {
-      var reader = new FileReader()
-      reader.onload = function () {
-        resolve(reader.result)
-      }
-      reader.onerror = reject
-      reader.readAsDataURL(blob)
-    })
-
-    var dimensions = await readImageDimensions(dataUrl)
-    return {
-      dataUrl: dataUrl,
-      height: dimensions.height,
-      width: dimensions.width,
-    }
+    return blobToDrawableImageData(blob, maxDisplayWidth || PDF_CONTENT_WIDTH)
   }
 
-  function readImageDimensions(dataUrl) {
+  function loadImageElement(url) {
     return new Promise(function (resolve, reject) {
       var image = new Image()
       image.onload = function () {
-        resolve({
-          height: image.naturalHeight || image.height || 1,
-          width: image.naturalWidth || image.width || 1,
-        })
+        resolve(image)
       }
       image.onerror = function () {
-        reject(new Error('The image dimensions could not be read.'))
+        reject(new Error('The image could not be decoded.'))
       }
-      image.src = dataUrl
+      image.src = url
     })
+  }
+
+  async function blobToDrawableImageData(blob, maxDisplayWidth) {
+    var objectUrl = URL.createObjectURL(blob)
+
+    try {
+      var image = await loadImageElement(objectUrl)
+      var naturalWidth = image.naturalWidth || image.width || 1
+      var naturalHeight = image.naturalHeight || image.height || 1
+      var width = naturalWidth
+      var height = naturalHeight
+
+      if (maxDisplayWidth > 0 && maxDisplayWidth < width) {
+        height = Math.max(1, Math.round(height * (maxDisplayWidth / width)))
+        width = maxDisplayWidth
+      }
+
+      var canvas = document.createElement('canvas')
+      canvas.width = width
+      canvas.height = height
+      var context = canvas.getContext('2d')
+
+      if (blob.type !== 'image/jpeg') {
+        context.fillStyle = '#ffffff'
+        context.fillRect(0, 0, width, height)
+      }
+
+      context.drawImage(image, 0, 0, width, height)
+
+      var mimeType = blob.type === 'image/jpeg' ? 'image/jpeg' : 'image/png'
+      var dataUrl = canvas.toDataURL(mimeType, mimeType === 'image/jpeg' ? 0.94 : undefined)
+
+      return {
+        dataUrl: dataUrl,
+        height: height,
+        width: width,
+      }
+    } finally {
+      URL.revokeObjectURL(objectUrl)
+    }
   }
 
   async function convertChildren(container, context) {
@@ -507,20 +568,18 @@
       }
     }
 
-    var maximumWidth = 527
-    var maximumHeight = 500
-    var ratio = Math.min(
-      1,
-      maximumWidth / imageData.width,
-      maximumHeight / imageData.height
-    )
+    var fitWidth = desiredImageWidth(image)
+    var fitHeight = PDF_MAX_IMAGE_HEIGHT
 
     return {
       image: imageData.dataUrl,
-      width: Math.max(1, imageData.width * ratio),
-      height: Math.max(1, imageData.height * ratio),
+      fit: [fitWidth, fitHeight],
       alignment: 'center',
       margin: [0, 6, 0, 10],
+      _pdfFitHeight: Math.min(
+        fitHeight,
+        Math.max(1, imageData.height * (fitWidth / imageData.width))
+      ),
     }
   }
 
@@ -782,6 +841,24 @@
     output.push(converted)
   }
 
+  function stripPdfMetadata(nodes) {
+    return nodes.map(function (node) {
+      if (!node || typeof node !== 'object') return node
+
+      if (Array.isArray(node)) return stripPdfMetadata(node)
+
+      var cleaned = Object.assign({}, node)
+      delete cleaned._pdfFitHeight
+
+      if (cleaned.stack) cleaned.stack = stripPdfMetadata(cleaned.stack)
+      if (cleaned.columns) cleaned.columns = stripPdfMetadata(cleaned.columns)
+      if (cleaned.ul) cleaned.ul = stripPdfMetadata(cleaned.ul)
+      if (cleaned.ol) cleaned.ol = stripPdfMetadata(cleaned.ol)
+
+      return cleaned
+    })
+  }
+
   function keepHeadingsWithFollowingImage(content) {
     var output = []
 
@@ -795,10 +872,22 @@
         }
 
         if (content[imageIndex] && content[imageIndex].image) {
-          output.push({
-            stack: content.slice(index, imageIndex + 1),
-            unbreakable: true,
-          })
+          var imageNode = content[imageIndex]
+          var stack = content.slice(index, imageIndex + 1)
+          var imageHeight = imageNode._pdfFitHeight || PDF_MAX_IMAGE_HEIGHT
+          var headingAllowance = 24 + (item.headlineLevel * 4)
+
+          if (imageHeight + headingAllowance <= PDF_SHORT_IMAGE_HEIGHT) {
+            output.push({
+              stack: stack,
+              unbreakable: true,
+            })
+          } else {
+            stack.forEach(function (node) {
+              output.push(node)
+            })
+          }
+
           index = imageIndex
           continue
         }
@@ -879,7 +968,7 @@
 
     var viewer = document.createElement('iframe')
     viewer.className = 'docs-pdf-frame'
-    viewer.src = blobUrl + '#zoom=page-width&view=FitH'
+    viewer.src = blobUrl + '#view=FitH'
     viewer.title = (root.getAttribute('data-pdf-title') || 'Document') + ' PDF'
 
     shell.appendChild(viewer)

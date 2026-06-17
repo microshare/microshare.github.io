@@ -1,0 +1,20 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+  <link rel="canonical" href="{{ page.canonical_url | escape }}">
+  <script>
+    (function () {
+      var target = {{ page.canonical_url | jsonify }} + window.location.search + window.location.hash
+      window.location.replace(target)
+    })()
+  </script>
+</head>
+<body>
+  <p><a href="{{ page.canonical_url | escape }}">Continue to documentation</a></p>
+</body>
+</html>
