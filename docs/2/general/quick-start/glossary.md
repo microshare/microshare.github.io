@@ -2,6 +2,10 @@
 layout: docs
 title: Microshare™ Glossary
 description: Confused on any common Microshare™ terms?
+lang: en
+translations:
+  fr: /docs/2/fr/general/quick-start/glossary
+  en: /docs/2/general/quick-start/glossary
 toc: true
 embed: false
 ---
