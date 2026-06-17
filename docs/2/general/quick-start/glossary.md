@@ -3,35 +3,33 @@ layout: docs
 title: Microshare™ Glossary
 description: Confused on any common Microshare™ terms?
 toc: true
+embed: false
 ---
----
+* * *
 
 {% include image.html url="/assets/img/thumbnail-3.jpg" description="thumbnail 2" %}
 
 <br>
 
----
+* * *
 
 ## Summary
 
-1. [Overview](./#overview)
-2. [Microshare Terminology](./#microshare-terminology)
-3. [Industry Terminology](./#industry-terminology)
-4. [Extended Business Terminology](../faq/business-terms.md)
-5. [Extended IOT Technology Terminology](../faq/technical-terms.md)
-
-
-
+1.  [Overview](./#overview)
+2.  [Microshare Terminology](./#microshare-terminology)
+3.  [Industry Terminology](./#industry-terminology)
+4.  [Extended Business Terminology](../faq/business-terms.md)
+5.  [Extended IOT Technology Terminology](../faq/technical-terms.md)
 
 ## Overview
 
----
+* * *
 
 With a lot of documentation comes a variety of phrases and words which may not be familiar to the average reader. This page stands as a reference for any unfamiliar word you may come across. The glossary is seperated into two parts, one for Microshare specfic terms and another for terms frequently used in the IoT industry.
 
 Having trouble with a word or phrase that you can't find here? Do not hesitate to ask for help at `support@microshare.io`
 
----
+* * *
 
 ## Microshare Terminology
 
@@ -39,11 +37,9 @@ Having trouble with a word or phrase that you can't find here? Do not hesitate t
 
 ##### App
 
-a Microshare app is a  web application that is configured, managed, and accessed via the Microshare portal.  Such apps are often used to visualize data in a dashboard.
+a Microshare app is a web application that is configured, managed, and accessed via the Microshare portal. Such apps are often used to visualize data in a dashboard.
 
-<br>
-
-<!--Data Formatting may be removed from phrasing in the documentation-->
+ sdv<br>
 
 ##### Data Formatting
 
@@ -71,7 +67,7 @@ Microshare uses the term 'device’ to designate an individual hardware componen
 
 ##### Device Cluster
 
-A device cluster is a group of devices of like type – usually physically located in the same place. Device clusters can be further used to logically divide devices into functional groups, whose data is intended to be displayed or analyzed together in a  single representation or visualization.
+A device cluster is a group of devices of like type – usually physically located in the same place. Device clusters can be further used to logically divide devices into functional groups, whose data is intended to be displayed or analyzed together in a single representation or visualization.
 
 <br>
 
@@ -83,7 +79,7 @@ Data that has been [unpacked](./#packed) but not stored on the Microshare [data 
 
 ##### Facts
 
-Microshare apps store app specific configuration information as JSON fomatted [facts.](./#facts)  When an app is launched, the facts are passed to the JavaScript in the underlying form file like arguments passed to a function.
+Microshare apps store app specific configuration information as JSON fomatted [facts.](./#facts) When an app is launched, the facts are passed to the JavaScript in the underlying form file like arguments passed to a function.
 
 <br>
 
@@ -113,7 +109,7 @@ provides a scalable architecture for intelligent data enrichment and complex eve
 
 ##### Policy Fabric™
 
-Microshare uses a patented policy fabric to allow its clients to have fine-grained control over who can access their data.  Also see [share rules](./#share-rule).
+Microshare uses a patented policy fabric to allow its clients to have fine-grained control over who can access their data. Also see [share rules](./#share-rule).
 
 <br>
 
@@ -171,7 +167,7 @@ A View is a component for managing data access. It provides advanced ways of que
 
 <br>
 
----
+* * *
 
 ## Industry Terminology
 
@@ -197,7 +193,7 @@ Data integration is the process of combining data from different sources into a 
 
 ##### Data Lake
 
-Microshare stores its data in a [data lake](./#data-lake), which is a single repository of differing types of data – both raw and transformed.  Data producers differentiate the data by designating a “record type” aka [recType](./#rectype) when storing records. This same recType must be invoked at data retrieval time.
+Microshare stores its data in a [data lake](./#data-lake), which is a single repository of differing types of data – both raw and transformed. Data producers differentiate the data by designating a “record type” aka [recType](./#rectype) when storing records. This same recType must be invoked at data retrieval time.
 
 <br>
 
