@@ -2,11 +2,11 @@
 layout: docs
 title: Download the app
 description: Comprehensive guide to install some sensors with Deploy-M
-group: deploy-m
 toc: true
+embed: false
+group: deploy-m
 ---
-
-Using the Microshare Deploy-M App available for iPhone and Android you can configure and deploy your Smart Facilities components with ease.
+Using the Microshare Deploy-M2 App available for iPhone and Android you can configure and deploy your Smart Facilities components with ease.
 
 Available on : [iOS](https://apps.apple.com/gb/app/deploy-m2/id1574574162) And [Android](https://play.google.com/store/apps/details?id=com.microshare.DeployM2)
 
