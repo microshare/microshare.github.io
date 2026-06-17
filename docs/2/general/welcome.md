@@ -16,8 +16,6 @@ redirect_from:
 ---
 * * *
 
-{% include image.html url="/assets/img/CleanSafeOverview8.png" description="ms logo" %}
-
 ##### SUMMARY :
 
 1.  [Introduction](./#introduction)
@@ -30,6 +28,13 @@ redirect_from:
 
 Wondering if the Microshare Console is active? Check its status at the [Console Access page](https://www.microshare.io/management-console-access/) for update release dates.
 
+This is a new line. 
+
+{% include image.html url="/assets/img/CleanSafeOverview4.png" description="CleanSafeOverview4" %}
+
+<br>
+<br>
+
 If you have any questions that are unanswered in this documentation, contact `support@microshare.io`.
 
 ## Introduction
@@ -41,6 +46,12 @@ Microshare provides Data Strategy as a Service, enabling our clients to quickly 
 The Microshare documentation guides all users through the process of using the Microshare tools so that they can capitalize on their data.
 
 Want to learn more about Microshare solutions, check out our website at [microshare.io.](https://www.microshare.io/)
+
+<br>
+
+<br>
+
+<br>
 
 ## What can I do?
 
