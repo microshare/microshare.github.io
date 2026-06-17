@@ -2,6 +2,10 @@
 layout: docs
 title: Download the app
 description: Comprehensive guide to install some sensors with Deploy-M
+lang: en
+translations:
+  fr: /docs/2/fr/installer/deploy-m/download-the-app
+  en: /docs/2/installer/deploy-m/download-the-app
 toc: true
 embed: false
 group: deploy-m
