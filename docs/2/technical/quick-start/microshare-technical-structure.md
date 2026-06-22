@@ -13,7 +13,7 @@ toc: true
 ---------------------------------------
 #### Summary:
 1. [Introduction](./#introduction)
-2. [LoRaWAN Technology](./#lorawan-technology)
+2. [LoRaWAN Technology](./#LoRaWAN-technology)
 3. [Microshare's API](./#microshares-api)
 4. [The Microshare Platform](./#the-microshare-platform)
 5. [Where do I start?](./#where-do-i-start)

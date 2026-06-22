@@ -112,7 +112,7 @@
       keywords : ["scan","qrcode"]
     - title: Installation Tutorials
       keywords : ["youtube"]
-  - title: LoRaWan
+  - title: LoRaWAN
     pages:
     - title: Gateway Installation
       keywords : ["indoor","outdoor","iFemtocell"]
@@ -268,12 +268,12 @@
     - title: Admin API
       keyword : ["request"]
     - title: API Collection
-  - title: LoRaWan®
+  - title: LoRaWAN®
     pages:
-    - title: Why LoRaWan®?
-    - title: LoRaWan® Technology
-    - title: LoRaWan® Gateways
-    - title: LoRaWan® Devices
+    - title: Why LoRaWAN®?
+    - title: LoRaWAN® Technology
+    - title: LoRaWAN® Gateways
+    - title: LoRaWAN® Devices
 
 
 

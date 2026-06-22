@@ -25,16 +25,16 @@ redirect_from:
 ## What needs to be installed?
 ---------------------------------------
 
-The main priority of the installation process is to get the client’s devices collecting data as quickly as possible. Before installation, it is crucial that you understand what and why you are installing by reading the following page discussing LoRaWan technology:
+The main priority of the installation process is to get the client’s devices collecting data as quickly as possible. Before installation, it is crucial that you understand what and why you are installing by reading the following page discussing LoRaWAN technology:
 
-###### > [LoRaWan Technology](../../../technical/lorawan/lorawan-technology)
+###### > [LoRaWAN Technology](../../../technical/LoRaWAN/LoRaWAN-technology)
 
-In brief, LoRaWan devices send data using  <em>Lora</em> signal to the gateway or a public network. The gateway/ public network is connected to the internet through WiFI, ethernet or 3G/4G/5G. The data then makes its way through the internet to the cloud where it is then processed and digested for the intended dashboard. 
+In brief, LoRaWAN devices send data using  <em>Lora</em> signal to the gateway or a public network. The gateway/ public network is connected to the internet through WiFI, ethernet or 3G/4G/5G. The data then makes its way through the internet to the cloud where it is then processed and digested for the intended dashboard. 
 
 Here is a visual representation of the process: 
 
 
-{% include image.html url="/assets/img/lorawan-network.png" description="LoRaWan Network" %}
+{% include image.html url="/assets/img/LoRaWAN-network.png" description="LoRaWAN Network" %}
 
 Image from [reasearchgate.net](https://www.researchgate.net/publication/323620460_IoT-based_wireless_seismic_quality_control/figures?lo=1)
 
@@ -63,9 +63,9 @@ Before installation you should...
 
 To set up your system, you will: 
 
-###### > 1. First install the [Gateways](../../lorawan/gateway-installation).
+###### > 1. First install the [Gateways](../../LoRaWAN/gateway-installation).
 
-###### > 2. Install the [Devices](../../lorawan/device-declaration).
+###### > 2. Install the [Devices](../../LoRaWAN/device-declaration).
 
 ###### > 3. Use [Deploy-M](../../deploy-m/app-guide) for a more efficient installation.
 

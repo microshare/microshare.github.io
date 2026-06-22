@@ -9,7 +9,7 @@ toc: true
 #### Summary:
 
 1. [Disclaimer](./#disclaimer)
-2. [LoRaWAN Indoor Gateway Installation](./#lorawan-indoor-gateway-installation)
+2. [LoRaWAN Indoor Gateway Installation](./#LoRaWAN-indoor-gateway-installation)
 3. [What's in the box?](./#whats-in-the-box)
 4. [Installation Instructions](./#installation-instructions)
 
@@ -43,7 +43,7 @@ If you are installing Products at a property owned, operated or managed by a thi
     * There are no user-serviceable parts inside Microshare sensors. For service personnel: Always unplug external power supply, remove batteries, and turn off UPS battery before service operation. 
 
     * Microshare sensors may be damaged by improper storage or handling. Take care not to drop them during transport and installation. 
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/disclaimer-pic.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/disclaimer-pic.png" description="LoRaWAN Technology" %}
    
 **WARNING:** Do not attempt to open or disassemble any Microshare solutions. You run the risk of electric shock and voiding the limited warranty. No user-serviceable parts are inside. 
 
@@ -79,14 +79,14 @@ Microshare delivers the Kerlink iFemtocell Evolution Gateway ready for addition 
 Remove all of the components from the box and remove all packaging from the devices.  The box contains Indoor Gateway(s), device antenna(s) and power supply utility(ies). 
 
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-1-800x800.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-1-800x800.png" description="LoRaWAN Technology" %}
 
 ### 2. Connecting the antenna
 ---------------------------------------
 Screw the antenna to the gold connector on the right-hand side of the gateway.
 
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-2-800x800.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-2-800x800.png" description="LoRaWAN Technology" %}
  
 
 
@@ -95,13 +95,13 @@ Screw the antenna to the gold connector on the right-hand side of the gateway.
 Plug the power adaptor into the power socket on the gateway.
 
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-3-800x800.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-3-800x800.png" description="LoRaWAN Technology" %}
 
 <br>
 Plug the power adaptor into an electricity outlet (the LED’s on the device will be red, showing that power is on).
 
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-4-800x800.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-4-800x800.png" description="LoRaWAN Technology" %}
 
 <br>
 ### 4. Connecting to your network 
@@ -110,12 +110,12 @@ Plug a standard Ethernet cable with Internet access into your gateway.
 
 <br>
 
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new2.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new2.png" description="LoRaWAN Technology" %}
 <br>
 After 1-2 minutes, the two LEDs on the front will turn solid green, your LoRaWAN gateway is now up and running and your sensors can be deployed in your building.
 <br>
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new1.png" description="LoRaWan Technology" %}
-{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-5.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/femto-evo-new1.png" description="LoRaWAN Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell-evo/Femto-evo-5.png" description="LoRaWAN Technology" %}
 
 <br>
 **Your all done!**

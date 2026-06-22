@@ -1,16 +1,16 @@
 ---
 layout: docs
 title: LoRaWAN Technology
-description: What is LoRaWan?
+description: What is LoRaWAN?
 toc: true
 ---
 
 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan01.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan01.png" description="LoRaWAN Technology" %}
 
 <br>
-All the information on this page is taken from [this document](https://lora-alliance.org/sites/default/files/2018-04/what-is-lorawan.pdf) hosted on the [LoRa Alliance website](https://lora-alliance.org).
+All the information on this page is taken from [this document](https://lora-alliance.org/sites/default/files/2018-04/what-is-LoRaWAN.pdf) hosted on the [LoRa Alliance website](https://lora-alliance.org).
 
 ---------------------------------------
 
@@ -21,13 +21,13 @@ All the information on this page is taken from [this document](https://lora-alli
     - B. [Long Range (Lora®)](./#2-sign-in)
 2. [Where does LPWAN fit ?](./#3-access-to-device-cluster)
     - A. [Important factor in LPWAN](./#4-add-a-device)
-3. [What is LoRaWan™](./#4-add-a-device)
+3. [What is LoRaWAN™](./#4-add-a-device)
     - A. [Network Architecture](./#5-change-a-device)
     - B. [Battery Lifetime](./#5-change-a-device)
     - C. [Network Capacity](./#5-change-a-device)
     - D. [Device Classes – Not All Nodes Are Created Equal](./#5-change-a-device)
     - E. [Security](./#5-change-a-device)
-4. [LoRaWan™ Regional Summery](./#5-change-a-device)
+4. [LoRaWAN™ Regional Summery](./#5-change-a-device)
     - A. [LoRaWAN™ for Europe](./#5-change-a-device)
     - B. [LoRaWAN™ for North America](./#5-change-a-device)
     - C. [LoRaWAN™ Hybrid mode for North America](./#5-change-a-device)
@@ -61,7 +61,7 @@ LoRa® is the first low cost implementation for commercial usage.
 
 ### B. Long Range (Lora®)
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan02.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan02.png" description="LoRaWAN Technology" %}
 
 The advantage of LoRa® is in
 the technology’s long range
@@ -88,7 +88,7 @@ multi-year battery lifetime and is designed for sensors and applications that ne
 send small amounts of data over long distances a few times per hour from varying
 environments 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan03.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan03.png" description="LoRaWAN Technology" %}
 
 ### A. Important factor in LPWAN
 
@@ -102,10 +102,10 @@ The most critical factors in a LPWAN are:
 •	 One-way vs two-way communication
 •	 Variety of applications served
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan04.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan04.png" description="LoRaWAN Technology" %}
 
 
-## 3. What is LoRaWan™
+## 3. What is LoRaWAN™
 ---------------------------------------
 
 LoRaWAN™ defines the communication protocol and system architecture for the
@@ -114,7 +114,7 @@ The protocol and network architecture have the most influence in determining the
 battery lifetime of a node, the network capacity, the quality of service, the security,
 and the variety of applications served by the network. 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan05.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan05.png" description="LoRaWAN Technology" %}
 
 ### A. Network Architecture
 
@@ -126,7 +126,7 @@ lifetime as nodes receive and forward information from other nodes that is likel
 irrelevant for them. Long range star architecture makes the most sense for preserving
 battery lifetime when long-range connectivity can be achieved. 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan06.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan06.png" description="LoRaWAN Technology" %}
 
 In a LoRaWAN™ network nodes are not associated with a specific gateway. Instead,
 data transmitted by a node is typically received by multiple gateways. Each
@@ -185,7 +185,7 @@ classes. The device classes trade off network downlink communication latency
 versus battery lifetime. In a control or actuator-type application, the downlink
 communication latency is an important factor.
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan07.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan07.png" description="LoRaWAN Technology" %}
 
 Bi-directional end-devices (Class A): End-devices of Class A allow for bi-directional
 communications whereby each end-device’s uplink transmission is followed by two
@@ -216,7 +216,7 @@ There are trade-offs in every technology choice but the LoRaWAN™ features
 in network architecture, device classes, security, scalability for capacity, and
 optimization for mobility address the widest variety of potential IoT applications. 
 
-## 4. LoRaWan™ Regional Summary
+## 4. LoRaWAN™ Regional Summary
 ---------------------------------------
 
 The LoRaWAN™ specification varies slightly from region to region based on
@@ -226,7 +226,7 @@ regions are still being defined by the technical committee. Joining the LoRa® A
 as a contributor member and participating in the technical committee can have
 significant advantages to companies targeting solutions for the Asia market. 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan08.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan08.png" description="LoRaWAN Technology" %}
 
 ### A. LoRaWAN™ for Europe
 
@@ -246,7 +246,7 @@ to 927.5MHz. The maximum output power in North America 902-928MHz band is
 +30dBm but for most devices +20dBm is sufficient. Under FCC there are no duty
 cycle limitations but there is a 400msec max dwell time per channel. 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan09.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan09.png" description="LoRaWAN Technology" %}
 
 
 ### C. LoRaWAN™ Hybrid mode for North America
@@ -289,7 +289,7 @@ interference
 • Availability of end-products to ensure ROI of network deployment
 • Strength of ecosystem to ensure quality and longevity of the solution
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan10.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan10.png" description="LoRaWAN Technology" %}
 
 ## 6. LPWAN Cost vs Legacy Systems
 ---------------------------------------
@@ -298,9 +298,9 @@ infrastructure compared to existing systems. The below analysis is done by Talkp
 who have significant experience in deploying both WMBus and LoRa® based
 solutions. 
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan11.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan11.png" description="LoRaWAN Technology" %}
 
-{% include image.html url="/assets/img/LoRaWan/LoRaWan12.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan12.png" description="LoRaWAN Technology" %}
 
 
 

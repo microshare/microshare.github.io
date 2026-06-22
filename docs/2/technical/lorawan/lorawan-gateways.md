@@ -9,7 +9,7 @@ toc: true
 
 
 
-{% include image.html url="/assets/img/thumbnail-3.jpg" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/thumbnail-3.jpg" description="LoRaWAN Technology" %}
 
 <br>
 
@@ -24,7 +24,7 @@ toc: true
 ---------------------------------------
 ### 1. Introduction
 ---------------------------------------
-{% include image.html url="/assets/img/LoRaWan/LoRaWan06.png" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/LoRaWAN/LoRaWan06.png" description="LoRaWAN Technology" %}
 
 As seen above, the gateways serve as the bridge between your devices and the network server using bandwidth networks like WiFi, ethernet or cellular signal to communicate. LoRaWAN® gateways have the ability to recieve LoRa packets from your device, while regular gateways rely on WiFi or cellular technology (3G, 4G, 5G, etc.). 
 
@@ -60,7 +60,7 @@ The Kerlink iFemtocell and Kerlink iFemtocell Evolution receives radio transmiss
 - Feedback or Timecard Stations
 
 ### How do I install my Kerlink iFemtocell?
-Our installation page has a great tutorial for both the [iFemtocell](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell) and the [iFemtocell EVO](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell-evo/)!
+Our installation page has a great tutorial for both the [iFemtocell](/docs/2/installer/LoRaWAN/gateway-installations/indoor-ifemtocell) and the [iFemtocell EVO](/docs/2/installer/LoRaWAN/gateway-installations/indoor-ifemtocell-evo/)!
 
 #### Kerlink Outdoor iStation
 
@@ -78,7 +78,7 @@ The Kerlink iStation is a carrier-grade LoRaWAN® outdoor gateway which receives
 - Smart Legionella Prevention
 
 ### How do I install my Kerlink iFemtocell?
-Our installation page has a great tutorial for both the [iFemtocell](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell) and the [iFemtocell EVO](/docs/2/installer/lorawan/gateway-installations/indoor-ifemtocell-evo/)!
+Our installation page has a great tutorial for both the [iFemtocell](/docs/2/installer/LoRaWAN/gateway-installations/indoor-ifemtocell) and the [iFemtocell EVO](/docs/2/installer/LoRaWAN/gateway-installations/indoor-ifemtocell-evo/)!
 
 
 

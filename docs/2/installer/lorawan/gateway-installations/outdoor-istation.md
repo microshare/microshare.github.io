@@ -6,7 +6,7 @@ toc: true
 ---
 ## Planning your install
 
-{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWAN Technology" %}
 
 ### Recommended clearance for the antenna is 1 to 1.5 metres above all obstacles to improve the Fresnel Zone radius, therefore enhancing the radio signal.
 
@@ -20,7 +20,7 @@ Please make sure your selected physical install location will allow for a good c
 
 ### What is included
 
-{% include image.html width=400 url="/assets/img/outdoor-station/iStation-included.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/iStation-included.png" description="LoRaWAN Technology" %}
 
 Microshare delivers Kerlink iStations pre-configured, including an indoor PoE injector, external antenna and a 4G SIM card within the station.
 
@@ -30,7 +30,7 @@ Outdoor PoE injectors are available upon request at additional cost.
 
 ### In the box
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Box-contents.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Box-contents.png" description="LoRaWAN Technology" %}
 
 The gateway box contains the following:
 
@@ -42,7 +42,7 @@ the gateway itself
 
 ### What is not included and required
 
-{% include image.html width=400 url="/assets/img/outdoor-station/iStation-required3.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/iStation-required3.png" description="LoRaWAN Technology" %}
 
 You will need standard Cat5/Cat6 twisted pair Ethernet cabling to power the gateway.
 
@@ -53,7 +53,7 @@ For optimal radio performance, the gateway should be installed on a pole for whi
 ## Prepare the PoE Cable to power the gateway
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Ethernet-cable-prep.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Ethernet-cable-prep.png" description="LoRaWAN Technology" %}
 
 
 Pick the end of the cable which will be connected to the gateway outside and prepare the connector with the following steps:
@@ -61,13 +61,13 @@ Pick the end of the cable which will be connected to the gateway outside and pre
 1. slide the provided cable gland on the cable with the screws towards the end where the RJ45 connector will be.
 
 2. strip the cable to expose the twisted pairs and align the wires in the correct order. We recommend using the T-568A standard as shown below:
-{% include image.html width=400 url="/assets/img/outdoor-station/T-568A-standard-wiring.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/T-568A-standard-wiring.png" description="LoRaWAN Technology" %}
 3. Use the crimp tool to secure the wires into the RJ45 connector
 
 ## Feed the cable through to internal power supply
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Feeding-cable.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Feeding-cable.png" description="LoRaWAN Technology" %}
 
 Find the appropriate location to feed the Ethernet cable through the wall towards the internal power supply, keeping the end with the cable gland and terminated RJ45 connector with enough loose cable to allow for the gateway to be installed.
 
@@ -75,7 +75,7 @@ Find the appropriate location to feed the Ethernet cable through the wall toward
 ## Connect the cable to the PoE injector
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Power-connector.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Power-connector.png" description="LoRaWAN Technology" %}
 
 Internally run the Ethernet Cat5/Cat6 cable to an appropriate internal power socket and terminate the cable with a standard RJ45 connector and protector, using the same wire order as above (T-568A standard).
 
@@ -85,7 +85,7 @@ Connect the Ethernet cable to the PoE injector, making sure to use the correct j
 ## Verify the power connection
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Power-on.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Power-on.png" description="LoRaWAN Technology" %}
 
 
 Power on the internal PoE injector and plug the outside Ethernet RJ45 connector into the gateway on the left handside.
@@ -100,7 +100,7 @@ You should unplug the PoE injector for safety while you’re installing the gate
 ## Fix the Gateway Mount in place
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Mount-install.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Mount-install.png" description="LoRaWAN Technology" %}
 
 
 The mounting bracket must be fixed securely to either a pole (recommended so the gateway will be higher and have less interferences) or to a wall using appropriate strapping, bolts or screws (not provided).
@@ -110,7 +110,7 @@ Make sure the four mounting “triangles” are pointing downwards and the secur
 ## Install the gateway on the mount
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/Install-on-mount.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/Install-on-mount.png" description="LoRaWAN Technology" %}
 
 
 The gateway will slot directly on the mount fixed in the previous step. The following steps are critical to ensure a safe and alsting connection:
@@ -123,7 +123,7 @@ screw the external antenna either directly or via a coaxial N-type cable at the 
 ## Secure the installation
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/outdoor-station/iStation_installed.png" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/outdoor-station/iStation_installed.png" description="LoRaWAN Technology" %}
 
 Installed Kerlink iStation on a pole
 Make sure to secure the pole using the appropriate fixing, .e.g. lashing kit, brackets, etc.
@@ -135,4 +135,4 @@ You’re all done! Please send an email to support@microshare.io to indicate the
 ---------------------------------------
 
 ### Reminder: for optimal performances
-{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWan Technology" %}
+{% include image.html width=800 url="/assets/img/outdoor-station/fresnel.jpg" description="LoRaWAN Technology" %}

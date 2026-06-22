@@ -8,7 +8,7 @@ toc: true
 
 
 
-{% include image.html url="/assets/img/thumbnail-4.jpg" description="LoRaWan Technology" %}
+{% include image.html url="/assets/img/thumbnail-4.jpg" description="LoRaWAN Technology" %}
 
 <br>
 
@@ -133,7 +133,7 @@ For more information on the specifications on the ambient light device and sampl
 
 ### B. Kerlink 
 
-Although Kerlink products are mostly used as [LoRaWAN Gateways](/docs/2/technical/lorawan/lorawan-gateways) for your devices to communicate with Microshare platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
+Although Kerlink products are mostly used as [LoRaWAN Gateways](/docs/2/technical/LoRaWAN/LoRaWAN-gateways) for your devices to communicate with Microshare platform, the Kerlink Wave serves as an anchor between your LoRaWAN device using WiFi and BLE to further secure and assess your IoT solution.
 
 {% include image.html url="\assets\img\LoRaWAN Device pictures\Kerlink_Wave.png" height="250" width="250" description="Kerlink" %}
 
@@ -177,16 +177,16 @@ For more information on the specifications on the SmartEnds Brighterbin and samp
 ---------------------------------------
 
 ### Interactive Development Environment
-* [Arduino IDE](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/arduino_ide)
-* [System Workbench ST32](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/system-workbench-st32-ide)
+* [Arduino IDE](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/arduino_ide)
+* [System Workbench ST32](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/system-workbench-st32-ide)
 
 ### Device Tutorials
-* [SODAQ ExLoRer](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/sodaq_explorer)
-* [ST B-L072Z-LRWAN1 LoRa Discovery kit](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/st-b-1072z-lrwan1-discovery-kit)
+* [SODAQ ExLoRer](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/sodaq_explorer)
+* [ST B-L072Z-LRWAN1 LoRa Discovery kit](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/st-b-1072z-lrwan1-discovery-kit)
 
 ### Platform Tutorials
-* [Stream IoT packets from Senet to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/senet-tutorial)
-* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/tts_tutorial)
-* [Configure Routing from Kerlink Gateway's SPN to Microshare](/docs/2/technical/lorawan/lorawan-extra-sensor-guides/kerlink-tutorial)
+* [Stream IoT packets from Senet to Microshare](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/senet-tutorial)
+* [Stream IoT packets from The Things Network (TTN) to Microshare](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/tts_tutorial)
+* [Configure Routing from Kerlink Gateway's SPN to Microshare](/docs/2/technical/LoRaWAN/LoRaWAN-extra-sensor-guides/kerlink-tutorial)
 
  

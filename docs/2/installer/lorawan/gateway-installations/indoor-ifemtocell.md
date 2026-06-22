@@ -11,7 +11,7 @@ toc: true
 The Kerlink iFemtocell receives radio transmissions from the Microshare IoT devices in and around your building and uses an integrated Ethernet or cellular/mobile connection to send data securely to the Microshare Smart Network.
 Please make sure your selected physical install location will allow for a good cellular signal and is central to the IoT devices you will use in your facility. Contact Microshare if you have any doubts on the best place to install the gateway. Bad placement will result in poor performance of the overall system.
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step1-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step1-800x800.jpg" description="LoRaWAN Technology" %}
 
 Microshare delivers Kerlink iFemtocells pre-configured and if required with a 4G USB dongle already activated.
 All you need to do to have your LoRaWAN network up and running is to:
@@ -26,7 +26,7 @@ Kerlink Waves are powered by standard Micro-USB 5V power. The power source shoul
 ### Box contents:
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step2-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step2-800x800.jpg" description="LoRaWAN Technology" %}
 
 <br> 1x Kerlink iFemtocell carrier-grade LoRaWAN™ gateway
 <br> 1x Kerlink high-gain antenna
@@ -37,7 +37,7 @@ Kerlink Waves are powered by standard Micro-USB 5V power. The power source shoul
 ### Re-Assembly
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step3-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step3-800x800.jpg" description="LoRaWAN Technology" %}
 
 
 ###### Step 1
@@ -46,7 +46,7 @@ Screw the antenna to the gold connector on the right-hand side of the iFemtocell
 
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step4-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step4-800x800.jpg" description="LoRaWAN Technology" %}
 
 ###### Step 2
 
@@ -55,7 +55,7 @@ Screw the antenna to the gold connector on the right-hand side of the iFemtocell
 
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step5-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step5-800x800.jpg" description="LoRaWAN Technology" %}
 
 
 ###### Step 3
@@ -65,7 +65,7 @@ Plug the power adapter into the iFemtocell
 ### Power On
 ---------------------------------------
 
-{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step6-800x800.jpg" description="LoRaWan Technology" %}
+{% include image.html width=400 url="/assets/img/ifemtocell/femto-usb-step6-800x800.jpg" description="LoRaWAN Technology" %}
 
 
 ###### Step 4

@@ -60,7 +60,7 @@ Microshare’s plug-n-play IoT modules are our scalable solutions that power dat
 
 #### No technology training required
 
-Your pre-registered sensors install in minutes with average battery life of 5 years. Mount to walls and tables with standard screws, tape and silicone. Activate a local LoRaWAN gateway with our [Installation Guide](/docs/2/installer/lorawan/gateway-installation/). And all of your sensors are managed centrally so data populates your Microshare smart facility application in minutes.
+Your pre-registered sensors install in minutes with average battery life of 5 years. Mount to walls and tables with standard screws, tape and silicone. Activate a local LoRaWAN gateway with our [Installation Guide](/docs/2/installer/LoRaWAN/gateway-installation/). And all of your sensors are managed centrally so data populates your Microshare smart facility application in minutes.
 
 #### The technology behind the scenes
 

@@ -2,7 +2,7 @@
 layout: docs
 title: Decoding Adeunis Demonstrator V1.1
 description:
-group: advanced/lorawan-devices
+group: advanced/LoRaWAN-devices
 toc: true
 ---
 
