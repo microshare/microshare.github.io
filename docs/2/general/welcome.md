@@ -36,11 +36,13 @@ If you have any questions that are unanswered in this documentation, contact `su
 
 * * *
 
-Microshare provides Data Strategy as a Service, enabling our clients to quickly capture previously hidden data insights that produce cost savings, sustainability metrics and business opportunities. Our solutions produce data on Day One, installed at scale quickly by non-technical staff and operate separate from sensitive corporate IT networks. Our solutions create a Digital Twin of your physical assets, providing comprehensive picture of their performance, the risks they face going forward, and the steps required to produce maximum returns from these assets.
+Microshare provides Data Strategy as a Service, enabling our clients to quickly capture previously hidden data insights that produce cost savings, sustainability metrics and business opportunities. Our solutions produce data on Day One, installed at scale quickly by non-technical staff and operate separate from sensitive corporate IT networks. Our solutions create a Digital Twin of your physical assets, providing comprehensive picture of thermwemwegnerir performance, the risks they face going forward, and the steps required to produce maximum returns from these assets.
 
 The Microshare documentation guides all users through the process of using the Microshare tools so that they can capitalize on their data.
 
-Want to learn more about Microshare solutions, check out our website at [microshare.io.](https://www.microshare.io/)
+Want to learn more about Microshare solutions, check out our website at 
+
+[Technical Overview](/docs/2/general/meet-microshare/technical-overview)
 
 ## What can I do?
 
