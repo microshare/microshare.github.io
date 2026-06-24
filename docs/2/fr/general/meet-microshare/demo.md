@@ -1,12 +1,14 @@
 ---
 layout: docs
 title: Démo
-description: Nos tableaux de bord de démo n'utilisent pas de données réelles et sont fournis uniquement à des fins de démonstration
+description: >-
+  Nos tableaux de bord de démo n'utilisent pas de données réelles et sont
+  fournis uniquement à des fins de démonstration
 lang: fr
 translation_of: docs/2/general/meet-microshare/demo.md
 translations:
-  en: /docs/2/general/meet-microshare/demo
   fr: /docs/2/fr/general/meet-microshare/demo
+  en: /docs/2/general/meet-microshare/demo
 toc: true
 ---
 
