@@ -5,8 +5,8 @@ description: Le Policy Fabric™ breveté de Microshare™ alimente l'économie 
 lang: fr
 translation_of: docs/2/general/meet-microshare/why-microshare.md
 translations:
-  en: /docs/2/general/meet-microshare/why-microshare
   fr: /docs/2/fr/general/meet-microshare/why-microshare
+  en: /docs/2/general/meet-microshare/why-microshare
 toc: true
 ---
 ---------------------------------------
