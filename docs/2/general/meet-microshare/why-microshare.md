@@ -4,6 +4,10 @@ title: 'Analyser, étiqueter et installer un capteur'
 description: >-
   Guide étape par étape pour scanner, étiqueter et installer un capteur via
   l'application DeployM.
+lang: en
+translations:
+  fr: /docs/2/fr/general/meet-microshare/why-microshare
+  en: /docs/2/general/meet-microshare/why-microshare
 toc: true
 embed: false
 ---
